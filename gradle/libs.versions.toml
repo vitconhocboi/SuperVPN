@@ -39,6 +39,8 @@ firebaseConfigKtx = "22.0.0"
 preferenceKtx = "1.2.1"
 activity = "1.9.2"
 constraintlayout = "2.1.4"
+legacySupportV4 = "1.0.0"
+lifecycleLivedataKtx = "2.8.7"
 
 [libraries]
 androidx-camera-camera2 = { module = "androidx.camera:camera-camera2", version.ref = "cameraCore" }
@@ -98,6 +100,8 @@ androidx-preference-ktx = { group = "androidx.preference", name = "preference-kt
 dotsindicator = { group = "com.tbuonomo", name = "dotsindicator", version.ref = "dotsindicator" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-legacy-support-v4 = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "legacySupportV4" }
+androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

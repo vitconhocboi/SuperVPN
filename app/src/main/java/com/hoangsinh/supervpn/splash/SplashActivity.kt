@@ -25,7 +25,7 @@ class SplashActivity : ProductActivity<ActivitySplashBinding>() {
                 progress += 5
                 binding.customProgressBar.progress = progress
             }
-            Navigator.startMainActivity(SuperVpnApplication.instance)
+            nextScreen()
         }
     }
 

@@ -31,16 +31,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/size15"
-            android:fontFamily="@font/pixeloid_sans"
+            android:fontFamily="@font/inter"
             android:gravity="left"
+            android:textFontWeight="500"
             android:inputType="textCapSentences|textCapWords"
             android:text="English"
-            android:textColor="@color/tab_my_workspace_selector"
+            android:textColor="@color/textColor"
             android:textSize="@dimen/text_medium" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
     <com.common.baseui.view.roundimage.RoundedImageView
-        android:id="@+id/flagImageView"
+        android:id="@+id/ivSelect"
         android:layout_width="@dimen/size20"
         android:layout_height="@dimen/size20"
         android:layout_alignParentEnd="true"

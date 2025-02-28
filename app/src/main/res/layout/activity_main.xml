@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/actionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/size15"
+        app:layout_constraintTop_toTopOf="parent">
+
+<!--        <androidx.appcompat.widget.LinearLayoutCompat-->
+<!--            android:id="@+id/subActionBarSetting"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:visibility="gone">-->
+
+<!--            <androidx.appcompat.widget.AppCompatImageView-->
+<!--                android:id="@+id/ivBack"-->
+<!--                android:layout_width="@dimen/size40"-->
+<!--                android:layout_height="@dimen/size24"-->
+<!--                android:background="@drawable/bg_ripple_transparent_oval"-->
+<!--                android:foreground="?selectableItemBackgroundBorderless"-->
+<!--                android:src="@drawable/ic_arrow_left" />-->
+
+<!--            <androidx.appcompat.widget.AppCompatTextView-->
+<!--                android:id="@+id/tvTitleSetting"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fontFamily="@font/pixeloid_sans"-->
+<!--                android:maxLines="1"-->
+<!--                android:text="@string/title_setting"-->
+<!--                android:textColor="#474747"-->
+<!--                android:textSize="@dimen/text_title" />-->
+
+<!--            <View-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:layout_weight="1" />-->
+<!--        </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/subActionBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textAlignment="center"
+                android:fontFamily="@font/teko"
+                android:text="@string/vpn"
+                android:textSize="@dimen/size50"
+                android:textColor="#EC3E0D"
+                android:textFontWeight="600" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/ivVipReady"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size5"
+                android:paddingHorizontal="@dimen/size3"
+                android:paddingVertical="@dimen/size3"
+                android:gravity="bottom"
+                android:fontFamily="@font/teko"
+                android:text="@string/fast_and_safe"
+                android:textSize="@dimen/size20"
+                android:textFontWeight="500"
+                android:textColor="@color/textColor" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/lnSetting"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/size12"
+                android:background="@drawable/bg_ripple_transparent_oval"
+                android:foreground="?selectableItemBackgroundBorderless"
+                android:padding="@dimen/size3"
+                android:src="@drawable/ic_menu" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <FrameLayout
+        android:id="@+id/frameContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
+        app:layout_constraintTop_toBottomOf="@id/actionBar"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="-138dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
