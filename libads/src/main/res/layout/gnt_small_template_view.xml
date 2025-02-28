@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.gms.ads.nativead.NativeAdView
+        android:id="@+id/native_ad_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:background="@color/white"
+        android:paddingStart="@dimen/_12sdp"
+        android:paddingTop="@dimen/_12sdp"
+        android:paddingEnd="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_12sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icon"
+                android:layout_width="@dimen/_39sdp"
+                android:layout_height="@dimen/_39sdp"
+                android:scaleType="fitCenter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/ad_notification_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:background="@drawable/lib_gnt_rounded_corners_shape"
+                android:gravity="center"
+                android:minWidth="@dimen/_12sdp"
+                android:minHeight="@dimen/_12sdp"
+                android:paddingStart="@dimen/_2sdp"
+                android:paddingTop="@dimen/_1sdp"
+                android:paddingEnd="@dimen/_2sdp"
+                android:paddingBottom="@dimen/_1sdp"
+                android:text="Ad"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="@id/primary"
+                app:layout_constraintStart_toEndOf="@id/icon"
+                app:layout_constraintTop_toTopOf="@id/icon" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/primary"
+                style="@style/Title1Line14Bold"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_6sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:text="Test AD : Flood-It!"
+                android:textColor="@color/native_primary_text_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ad_notification_view"
+                app:layout_constraintTop_toTopOf="@id/icon"
+                app:layout_goneMarginStart="0.0dip" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/body"
+                style="@style/Caption12Regular"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="Install Flood-It App for free! Free Popurlar Casual Game"
+                android:textColor="@color/native_body_text_color"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/ad_notification_view"
+                app:layout_constraintTop_toBottomOf="@id/primary" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/cta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/lib_bg_radius_10"
+                android:backgroundTint="@color/lib_bg_cta"
+                android:paddingTop="@dimen/_8sdp"
+                style="@style/CtaStyle"
+                android:paddingBottom="@dimen/_9sdp"
+                app:layout_constraintTop_toBottomOf="@id/body" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.gms.ads.nativead.NativeAdView>
+</merge>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1037832808547",
+    "project_id": "pixel-art-e5364",
+    "storage_bucket": "pixel-art-e5364.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037832808547:android:5207a21438df4659057056",
+        "android_client_info": {
+          "package_name": "com.hoangsinh.supervpn"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHrQyxGU9m4zNFU9m78UoqLkFOC7oGU28"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

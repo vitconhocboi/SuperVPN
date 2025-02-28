@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lnMain"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/size50"
+    android:layout_marginHorizontal="@dimen/size5"
+    android:layout_marginTop="@dimen/size10"
+    android:gravity="center_vertical"
+    android:background="@drawable/bg_radius_8"
+    android:paddingHorizontal="@dimen/size10">
+
+    <com.common.baseui.view.roundimage.RoundedImageView
+        android:id="@+id/flagImageView"
+        android:layout_width="@dimen/size20"
+        android:layout_height="@dimen/size20"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+        android:src="@color/black"
+        app:riv_oval="true" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/langNameLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size15"
+            android:fontFamily="@font/pixeloid_sans"
+            android:gravity="left"
+            android:inputType="textCapSentences|textCapWords"
+            android:text="English"
+            android:textColor="@color/tab_my_workspace_selector"
+            android:textSize="@dimen/text_medium" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <com.common.baseui.view.roundimage.RoundedImageView
+        android:id="@+id/flagImageView"
+        android:layout_width="@dimen/size20"
+        android:layout_height="@dimen/size20"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+        android:background="@drawable/ic_select_item"
+        app:riv_oval="true" />
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

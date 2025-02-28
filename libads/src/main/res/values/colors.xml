@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#fff</color>
+    <color name="black">#000</color>
+    <color name="color_mediaview">#000</color>
+    <color name="gray">#BDBDBD</color>
+    <color name="gray_shimmer">#BDBDBD</color>
+    <color name="cta">#24C9C5</color>
+    <color name="ripple">#9B9B9B</color>
+
+    <color name="native_bg_ad_attribution">#15C969</color>
+    <color name="native_body_text_color">#ff7f7f7f</color>
+    <color name="native_primary_text_color">#ff1d1d1d</color>
+    <color name="text1">#ff22326b</color>
+    <color name="gnt_text_color">#ff564e74</color>
+    <color name="support_07">#ff2d9cdb</color>
+    <color name="neutral_gray1">#fff2f4f6</color>
+
+
+    <color name="lib_bg_cta">#24C9C5</color>
+    <color name="lib_ads_bg">#F2F2F2</color>
+    <color name="lib_ads_media_bg">#000000</color>
+    <color name="lib_ads_bg_shimmer">#5C5C5C</color>
+    <color name="lib_ads_bg_stroke">#007C7C7C</color>
+    <color name="lib_ads_primary">#151515</color>
+    <color name="lib_ads_body">#434343</color>
+    <color name="lib_ads_label">#FFFFFF</color>
+    <color name="lib_ads_star">#FFFFFF</color>
+    <color name="lib_ads_secondary">#ffffff</color>
+    <color name="lib_ads_gray_shimmer">#7E7E7E</color>
+    <color name="lib_ads_banner_holder">#7E7E7E</color>
+</resources>

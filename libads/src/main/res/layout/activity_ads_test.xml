@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.simple.libads.FrameAds
+            android:id="@+id/frame1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.simple.libads.FrameAds
+            android:id="@+id/frame2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.simple.libads.FrameAds
+            android:id="@+id/frame3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.simple.libads.FrameAds
+            android:id="@+id/frame4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.simple.libads.FrameAds
+            android:id="@+id/frame5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.simple.libads.FrameAds
+            android:id="@+id/frame6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.simple.libads.FrameAds
+            android:id="@+id/frame7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <com.simple.libads.FrameAds
+            android:id="@+id/frame8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <com.simple.libads.FrameAds
+            android:id="@+id/frame9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.simple.libads.FrameAds
+            android:id="@+id/frame10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <com.simple.libads.FrameAds
+            android:id="@+id/frame11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.simple.libads.FrameAds
+            android:id="@+id/frame12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.core.widget.NestedScrollView>

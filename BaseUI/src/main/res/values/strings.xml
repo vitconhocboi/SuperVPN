@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BaseUI</string>
+    <string name="toast_message" translatable="false">Toast message</string>
+</resources>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.gms.ads.nativead.NativeAdView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/native_ad_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_6sdp"
+    android:background="@drawable/lib_bg_native_ad"
+    android:paddingStart="@dimen/_6sdp"
+    android:paddingTop="@dimen/_9sdp"
+    android:paddingEnd="@dimen/_6sdp"
+    android:paddingBottom="@dimen/_9sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icon"
+            android:layout_width="@dimen/_39sdp"
+            android:layout_height="@dimen/_39sdp"
+            android:scaleType="fitCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/ad_notification_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:background="@drawable/lib_gnt_rounded_corners_shape"
+            android:gravity="center"
+            android:minWidth="@dimen/_12sdp"
+            android:minHeight="@dimen/_12sdp"
+            android:paddingStart="@dimen/_2sdp"
+            android:paddingTop="@dimen/_1sdp"
+            android:paddingEnd="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_1sdp"
+            android:text="Ad"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="@id/primary"
+            app:layout_constraintStart_toEndOf="@id/icon"
+            app:layout_constraintTop_toTopOf="@id/icon" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/primary"
+            style="@style/Title1Line14Bold"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:text="sdfsdf"
+            android:textColor="@color/lib_ads_primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ad_notification_view"
+            app:layout_constraintTop_toTopOf="@id/icon"
+            app:layout_goneMarginStart="0.0dip" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/body"
+            style="@style/Caption12Regular"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/lib_ads_body"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/ad_notification_view"
+            app:layout_constraintTop_toBottomOf="@id/primary" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/cta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/lib_bg_radius_10"
+            android:backgroundTint="@color/lib_bg_cta"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingBottom="@dimen/_9sdp"
+            style="@style/CtaStyle"
+            app:layout_constraintTop_toBottomOf="@id/body" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.gms.ads.nativead.NativeAdView>

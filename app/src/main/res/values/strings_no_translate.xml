@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="lang_en" translatable="false">English</string>
+    <string name="lang_vi" translatable="false">Vietnamese</string>
+    <string name="lang_hi" translatable="false">India</string>
+    <string name="lang_ms" translatable="false">Singapore</string>
+    <string name="lang_ru" translatable="false">Russian</string>
+    <string name="lang_pt" translatable="false">Portuguese</string>
+    <string name="lang_fr" translatable="false">French</string>
+    <string name="lang_de" translatable="false">German</string>
+    <string name="lang_es" translatable="false">Spanish</string>
+    <string name="lang_in" translatable="false">Indonesian</string>
+    <string name="lang_ja" translatable="false">Japanese</string>
+    <string name="lang_ko" translatable="false">Korean</string>
+    <string name="language" translatable="false">Language</string>
+    <string name="lang_ar" translatable="false">ar</string>
+    <string name="ads" translatable="false">AD</string>
+
+    <string name="_pro" translatable="false">Pro</string>
+    <string name="fb_email_feedback" translatable="false">sendermail@gmail.com</string>
+</resources>

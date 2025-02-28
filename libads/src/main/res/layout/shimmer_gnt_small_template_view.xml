@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.facebook.shimmer.ShimmerFrameLayout android:background="@color/white"
+    android:id="@+id/native_ad_view"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_6sdp"
+    android:layout_width="match_parent"
+    android:paddingBottom="@dimen/_12sdp"
+    android:paddingEnd="@dimen/_12sdp"
+    android:paddingStart="@dimen/_12sdp"
+    android:paddingTop="@dimen/_12sdp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/background"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icon"
+            android:layout_height="@dimen/_39sdp"
+            android:background="@color/gray_shimmer"
+            android:layout_width="@dimen/_39sdp"
+            android:scaleType="fitCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:background="@drawable/lib_gnt_rounded_corners_shape"
+            android:gravity="center"
+            android:id="@+id/ad_notification_view"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_width="wrap_content"
+            android:minHeight="@dimen/_12sdp"
+            android:minWidth="@dimen/_12sdp"
+            android:paddingBottom="@dimen/_1sdp"
+            android:paddingEnd="@dimen/_2sdp"
+            android:paddingStart="@dimen/_2sdp"
+            android:paddingTop="@dimen/_1sdp"
+            android:text="Ad"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="@id/primary"
+            app:layout_constraintStart_toEndOf="@id/icon"
+            app:layout_constraintTop_toTopOf="@id/icon" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/Body14Bold"
+            android:id="@+id/primary"
+            android:background="@color/gray_shimmer"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_width="0.0dip"
+            android:lines="1"
+            android:textColor="@color/native_primary_text_color"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ad_notification_view"
+            app:layout_constraintTop_toTopOf="@id/icon"
+            app:layout_goneMarginStart="0.0dip" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/Caption12Regular"
+            android:ellipsize="end"
+            android:id="@+id/body"
+            android:background="@color/gray_shimmer"
+            android:layout_height="wrap_content"
+            android:layout_width="0.0dip"
+            android:maxLines="2"
+            android:textColor="@color/native_body_text_color"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/ad_notification_view"
+            app:layout_constraintTop_toBottomOf="@id/primary" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:fontFamily="@font/sf_pro_bold"
+            android:gravity="center"
+            android:background="@color/gray_shimmer"
+            android:id="@+id/cta"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_width="match_parent"
+            android:paddingBottom="@dimen/_9sdp"
+            android:paddingTop="@dimen/_8sdp"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16sdp"
+            app:layout_constraintTop_toBottomOf="@id/body" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.facebook.shimmer.ShimmerFrameLayout>

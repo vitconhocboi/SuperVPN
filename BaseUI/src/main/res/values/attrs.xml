@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RoundedImageView">
+        <attr name="riv_corner_radius" format="dimension" />
+        <attr name="riv_corner_radius_top_left" format="dimension" />
+        <attr name="riv_corner_radius_top_right" format="dimension" />
+        <attr name="riv_corner_radius_bottom_left" format="dimension" />
+        <attr name="riv_corner_radius_bottom_right" format="dimension" />
+        <attr name="riv_border_width" format="dimension" />
+        <attr name="riv_border_color" format="color" />
+        <attr name="riv_mutate_background" format="boolean" />
+        <attr name="riv_oval" format="boolean" />
+        <attr name="android:scaleType" />
+        <attr name="riv_tile_mode">
+            <enum name="clamp" value="0" />
+            <enum name="repeat" value="1" />
+            <enum name="mirror" value="2" />
+        </attr>
+        <attr name="riv_tile_mode_x">
+            <enum name="clamp" value="0" />
+            <enum name="repeat" value="1" />
+            <enum name="mirror" value="2" />
+        </attr>
+        <attr name="riv_tile_mode_y">
+            <enum name="clamp" value="0" />
+            <enum name="repeat" value="1" />
+            <enum name="mirror" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <attr name="indicatorColor" format="color"/>
+    <attr name="indicatorSelectedColor" format="color"/>
+    <attr name="indicatorGap" format="dimension"/>
+    <attr name="indicatorItemCount" format="integer"/>
+    <attr name="indicatorCornerRadius" format="dimension"/>
+
+    <declare-styleable name="CircleIndicator">
+        <attr name="indicatorColor"/>
+        <attr name="indicatorSelectedColor"/>
+        <attr name="indicatorGap"/>
+        <attr name="indicatorRadius" format="dimension"/>
+        <attr name="indicatorItemCount"/>
+    </declare-styleable>
+
+    <declare-styleable name="RectIndicator">
+        <attr name="indicatorColor"/>
+        <attr name="indicatorSelectedColor"/>
+        <attr name="indicatorGap"/>
+        <attr name="indicatorItemCount"/>
+        <attr name="indicatorCornerRadius"/>
+        <attr name="indicatorWidth" format="dimension"/>
+        <attr name="indicatorHeight" format="dimension"/>
+    </declare-styleable>
+</resources>
