@@ -1,31 +1,18 @@
 package com.hoangsinh.supervpn.home
 
-import androidx.fragment.app.viewModels
-import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import com.hoangsinh.supervpn.R
+import com.hoangsinh.supervpn.ProductFragment
+import com.hoangsinh.supervpn.databinding.FragmentHomeBinding
 
-class HomeFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = HomeFragment()
+class HomeFragment : ProductFragment<FragmentHomeBinding>() {
+    override fun bindingProvider(
+        inflater: LayoutInflater, container: ViewGroup?
+    ): FragmentHomeBinding {
+        return FragmentHomeBinding.inflate(inflater, container, false)
     }
 
-    private val viewModel: HomeViewModel by viewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // TODO: Use the ViewModel
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+    override fun initView() {
+        super.initView()
     }
 }
