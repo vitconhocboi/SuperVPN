@@ -15,4 +15,27 @@ object BaseAppConfig {
         set(value) {
             SharedPrefs.instance.put(KEY_FIRST_TIME_SETUP, value)
         }
+    private const val KEY_PROXY_ADDRESS = "PROXY_ADDRESS"
+
+    var proxyAddress: String
+        get() = SharedPrefs.instance[KEY_PROXY_ADDRESS, String::class.java, ""]
+        set(value) {
+            SharedPrefs.instance.put(KEY_PROXY_ADDRESS, value)
+        }
+
+    private const val KEY_PUBLIC_IP = "PUBLIC_IP"
+
+    var publicIP: String
+        get() = SharedPrefs.instance[KEY_PUBLIC_IP, String::class.java, "26.25.12.132"]
+        set(value) {
+            SharedPrefs.instance.put(KEY_PUBLIC_IP, value)
+        }
+
+    private const val KEY_APP_INSTALL_ID = "APP_INSTALL_ID"
+
+    var appInstallID: String
+        get() = SharedPrefs.instance[KEY_APP_INSTALL_ID, String::class.java, ""]
+        set(value) {
+            SharedPrefs.instance.put(KEY_APP_INSTALL_ID, value)
+        }
 }

@@ -21,7 +21,7 @@ class SplashActivity : ProductActivity<ActivitySplashBinding>() {
         lifecycleScope.launch {
             var progress = 0
             while (progress < 100) {
-                delay(200)  // Wait for 200ms
+                delay(50)  // Wait for 200ms
                 progress += 5
                 binding.customProgressBar.progress = progress
             }

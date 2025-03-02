@@ -24,7 +24,7 @@
         android:id="@+id/ivConnect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_connect"
+        android:src="@drawable/ic_status_connection"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/inter"
-            android:text="Connecting..."
+            android:text="Disconnected"
             android:textColor="@color/textColor"
             android:textSize="@dimen/size18"
              />

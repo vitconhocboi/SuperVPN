@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.SuperVPN" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.SuperVPN" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/bg_splash</item>
+    </style>
     <!-- Base application theme. -->
     <style name="Base.Theme.SuperVPN" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:windowBackground">@drawable/bg_splash</item>
     </style>
 </resources>
