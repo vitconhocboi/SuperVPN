@@ -108,9 +108,12 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     }
 
     private fun stopVpnService() {
-//        isConnected = false
-//        binding.ivConnect.isSelected = false
-//        context?.startService(intent)
-//        binding.tvStatus.text = "Disconnecting..."
+        isConnected = false
+        binding.ivConnect.isSelected = false
+        context?.stopService( Intent(
+            context,
+            LocalVpnService::class.java
+        ))
+        binding.tvStatus.text = "Disconnecting..."
     }
 }

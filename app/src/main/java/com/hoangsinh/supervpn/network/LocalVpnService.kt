@@ -4,12 +4,15 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.net.ProxyInfo
+import android.net.Uri
 import android.net.VpnService
 import android.os.Build
 import android.os.Handler
 import android.os.IBinder
 import android.os.ParcelFileDescriptor
 import android.util.Log
+import androidx.annotation.RequiresApi
 import com.common.baseui.BaseAppConfig
 import com.hoangsinh.supervpn.MainActivity
 import com.hoangsinh.supervpn.network.dns.DnsPacket
@@ -294,6 +297,9 @@ class LocalVpnService : VpnService(), Runnable {
         if (proxyAddress != null) {
             this.SetProxyServer(proxyAddress)
         }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            builder.setHttpProxy(ProxyInfo.buildDirectProxy("192.168.1.102", 8080))
+        }
 
         val ipAddress = ProxyConfig.Instance.defaultLocalIP
         LOCAL_IP = CommonMethods.ipStringToInt(ipAddress.Address)
@@ -344,8 +350,7 @@ class LocalVpnService : VpnService(), Runnable {
         builder.setSession(ProxyConfig.Instance.sessionName)
         val pfdDescriptor: ParcelFileDescriptor? = builder.establish()
         onStatusChanged(
-            ProxyConfig.Instance.sessionName + " connected",
-            true
+            ProxyConfig.Instance.sessionName + " connected", true
         )
         return pfdDescriptor
     }
@@ -353,8 +358,7 @@ class LocalVpnService : VpnService(), Runnable {
     @Synchronized
     private fun dispose() {
         onStatusChanged(
-            ProxyConfig.Instance.sessionName + " disconnected",
-            false
+            ProxyConfig.Instance.sessionName + " disconnected", false
         )
 
         IsRunning = false
@@ -423,40 +427,6 @@ class LocalVpnService : VpnService(), Runnable {
     protected val byPassURL: Array<String>
         get() {
             var byPassLink = emptyArray<String>()
-            val defaultSetting =
-                "{\"link\":\".googlevideo.com;.youtube-mp3.com;.ytimg.com;yt3.ggpht.com;fonts.googleapis.com;.hls.ttvnw.net;" + ".cloudfront.net;static-cdn.jtvnw.net;.sndcdn.com;braze-images.com;.tenor.com\"}"
-            var result = ""
-            try {
-                val url =
-                    URL("http://45.86.208.175:3100/profile/get-bypass-link?version=" + version_bypass)
-                val connection = url.openConnection() as HttpURLConnection
-                // Set up the request method (GET by default)
-                connection.requestMethod = "GET"
-                // Read the response
-                val reader = BufferedReader(InputStreamReader(connection.inputStream))
-                var line: String
-                while ((reader.readLine().also { line = it }) != null) {
-                    result += line
-                }
-
-                reader.close()
-                connection.disconnect()
-            } catch (e: Exception) {
-                Log.e("HTTP Request", e.toString())
-                result = defaultSetting
-            }
-            try {
-                // Parse the JSON string into a JSONObject
-                Log.e("ByPassLink : ", result!!)
-                val jsonObject = JSONObject(result)
-
-                // Get the value associated with the "link" key
-                val linkValue = jsonObject.getString("link")
-                byPassLink =
-                    linkValue.split(";".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-            } catch (e: Exception) {
-                Log.e("Bypass object Error", e.toString())
-            }
             return byPassLink
         }
 
