@@ -5,4 +5,5 @@
     <color name="textColor">#ECEFF5</color>
     <color name="topBarColor">#02091A</color>
     <color name="itemBackground">#172032</color>
+    <color name="line_header_proxy">#303A4E</color>
 </resources>

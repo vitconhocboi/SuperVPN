@@ -9,6 +9,7 @@ import com.hoangsinh.supervpn.SuperVpnApplication
 import com.hoangsinh.supervpn.databinding.ActivitySplashBinding
 import com.hoangsinh.supervpn.language.LangType
 import com.hoangsinh.supervpn.utils.Navigator
+import com.hoangsinh.supervpn.utils.NetworkUtils
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -25,7 +26,9 @@ class SplashActivity : ProductActivity<ActivitySplashBinding>() {
                 progress += 5
                 binding.customProgressBar.progress = progress
             }
-            nextScreen()
+            if (NetworkUtils.hasInternetAccess(this@SplashActivity)) {
+                nextScreen()
+            }
         }
     }
 
