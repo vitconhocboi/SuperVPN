@@ -9,11 +9,11 @@ plugins {
 }
 
 android {
-    namespace = "com.hoangsinh.supervpn"
+    namespace = "com.akmobile.supervpn"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.hoangsinh.supervpn"
+        applicationId = "com.akmobile.supervpn"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

@@ -19,20 +19,40 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvTime"
+            android:id="@+id/tv_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/size28"
+            android:layout_marginBottom="@dimen/margin_24"
             android:fontFamily="@font/inter"
             android:text="01:30:00"
-            android:textColor="@color/textColor"
-            android:textSize="@dimen/size36"
-            app:layout_constraintBottom_toTopOf="@id/ivConnect"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:textColor="@color/white"
+            android:textSize="@dimen/size36" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size24"
+            android:visibility="gone"
+            android:gravity="center">
+            <ProgressBar
+                android:id="@+id/progressLoadAds"
+                android:layout_width="@dimen/size16"
+                android:layout_height="@dimen/size16"
+                android:layout_marginRight="@dimen/size3"
+                android:indeterminateTint="@color/green_1"
+                android:secondaryProgressTint="@color/green_1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Disconnected"
+                android:textColor="#C4C9D9"
+                android:textSize="@dimen/size14" />
+        </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivConnect"
+            android:id="@+id/iv_connect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_status_connection"
@@ -41,49 +61,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/size24"
-            android:gravity="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ivConnect">
-
-            <ProgressBar
-                android:id="@+id/progressLoadAds"
-                android:layout_width="@dimen/size16"
-                android:layout_height="@dimen/size16"
-                android:layout_marginRight="@dimen/size3"
-                android:indeterminateTint="#F15E24"
-                android:secondaryProgressTint="#F15E24" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvStatus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/inter"
-                android:text="Disconnected"
-                android:textColor="@color/textColor"
-                android:textSize="@dimen/size18" />
-        </LinearLayout>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/size16"
         android:layout_marginBottom="@dimen/size16"
-        android:background="@drawable/bg_radius_12"
+        android:background="@drawable/bg_setting_items"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/subActionBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_connected_proxy"
+            android:background="@drawable/bg_setting_items"
             android:orientation="horizontal"
-            android:paddingVertical="@dimen/size16">
+            android:gravity="center"
+            android:paddingVertical="@dimen/size24">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"
@@ -96,7 +90,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginLeft="@dimen/size8"
-                android:text="@string/ip_proxy" />
+                android:text="@string/ip_proxy"
+                android:textColor="@color/green_1"/>
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"

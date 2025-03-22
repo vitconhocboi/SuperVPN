@@ -11,6 +11,8 @@
     <color name="test">#2C000000</color>
     <color name="transparent">#00000000</color>
 
+    <color name="gray_1">#11141D</color>
+
     <color name="defaultTextColor">#FFFFFF</color>
     <color name="errorColor">#D50000</color>
     <color name="infoColor">#3F51B5</color>

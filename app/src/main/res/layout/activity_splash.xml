@@ -1,12 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_splash"
+    android:background="@color/backgroundColor2"
     android:fitsSystemWindows="true"
     tools:context=".splash.SplashActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ic_splash"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:src="@drawable/ic_flash"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_pro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_big"
+        android:ellipsize="middle"
+        android:text="@string/setting_vpn_fast_and_safe"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/ic_splash"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <ProgressBar
         android:id="@+id/customProgressBar"
@@ -16,7 +40,7 @@
         android:layout_height="@dimen/size8"
         android:layout_marginBottom="@dimen/size14"
         android:indeterminate="false"
-        android:indeterminateTint="@color/primary_color"
+        android:indeterminateTint="@color/green_1"
         android:max="100"
         android:progress="50"
         android:progressDrawable="@drawable/progress_bar"
@@ -30,6 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/size10"
         android:text="@string/ads_message_notice"
+        android:textColor="@color/gray_2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

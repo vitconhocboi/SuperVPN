@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="backgroundColor">#FFFFFF</color>
-    <color name="backgroundColor2">#F6F6F6</color>
+    <color name="backgroundColor2">#000000</color>
     <color name="textColor">#212121</color>
     <color name="topBarColor">#F15E24</color>
     <color name="itemBackground">#FFFFFF</color>
     <color name="line_header_proxy">#F0F0F0</color>
+    <color name="gray_2">#767C8A</color>
+    <color name="green_1">#03C343</color>
+    <color name="language_item_text_color">#ECEFF5</color>
 </resources>
