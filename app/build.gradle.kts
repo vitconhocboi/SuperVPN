@@ -74,11 +74,11 @@ android {
             jniLibs.srcDirs("libs")
         }
     }
-    externalNativeBuild {
-        ndkBuild {
-            path = file("src/main/cpp/Privoxy/Android.mk")  // Specify the path to your Android.mk file
-        }
-    }
+//    externalNativeBuild {
+//        ndkBuild {
+//            path = file("src/main/cpp/Privoxy/Android.mk")  // Specify the path to your Android.mk file
+//        }
+//    }
 }
 
 dependencies {
