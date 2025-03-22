@@ -290,9 +290,9 @@ class LocalVpnService : VpnService(), Runnable {
         if (proxyAddress != null) {
             this.SetProxyServer(proxyAddress)
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            builder.setHttpProxy(ProxyInfo.buildDirectProxy("192.168.1.102", 8080))
-        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+//            builder.setHttpProxy(ProxyInfo.buildDirectProxy("192.168.1.102", 8080))
+//        }
 
         val ipAddress = ProxyConfig.Instance.defaultLocalIP
         LOCAL_IP = CommonMethods.ipStringToInt(ipAddress.Address)
