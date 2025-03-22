@@ -2,10 +2,10 @@
 <resources>
 
     <style name="Theme.SuperVPN" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:windowBackground">@drawable/bg_splash</item>
+        <item name="android:windowFullscreen">true</item>
     </style>
     <!-- Base application theme. -->
     <style name="Base.Theme.SuperVPN" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="android:windowBackground">@drawable/bg_splash</item>
+        <item name="android:windowFullscreen">true</item>
     </style>
 </resources>
