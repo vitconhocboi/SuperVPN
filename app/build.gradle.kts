@@ -23,6 +23,10 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        ndk {
+            abiFilters += listOf("armeabi-v7a", "arm64-v8a") // Specify architectures
+        }
     }
 
     buildTypes {
@@ -63,6 +67,17 @@ android {
     buildFeatures {
         viewBinding = true
         buildConfig = true
+    }
+
+    sourceSets {
+        sourceSets.getByName("main") {
+            jniLibs.srcDirs("libs")
+        }
+    }
+    externalNativeBuild {
+        ndkBuild {
+            path = file("src/main/cpp/Privoxy/Android.mk")  // Specify the path to your Android.mk file
+        }
     }
 }
 
