@@ -170,6 +170,8 @@
 /*
  * Keep connections alive if possible.
  */
+#define FEATURE_GRACEFUL_TERMINATION 1
+
 #define FEATURE_CONNECTION_KEEP_ALIVE 1
 
 /*
