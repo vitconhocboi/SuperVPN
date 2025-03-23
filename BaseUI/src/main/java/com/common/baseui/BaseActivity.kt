@@ -7,6 +7,7 @@ import android.content.IntentFilter
 import android.net.ConnectivityManager
 import android.os.Bundle
 import android.util.Log
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.result.ActivityResult
@@ -57,6 +58,11 @@ abstract class BaseActivity: AdsActivity() {
         ) { result ->
             onResult?.invoke(result)
         }
+
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
 
 
         mAskCheckPermissionStorage =

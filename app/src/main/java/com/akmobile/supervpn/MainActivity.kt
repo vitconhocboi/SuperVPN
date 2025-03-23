@@ -1,9 +1,12 @@
 package com.akmobile.supervpn
 
 import android.annotation.SuppressLint
+import android.content.pm.ApplicationInfo
+import android.content.pm.PackageManager
 import android.view.LayoutInflater
 import com.akmobile.supervpn.databinding.ActivityMainBinding
 import com.akmobile.supervpn.home.HomeFragment
+import com.akmobile.supervpn.settings.SettingFragment
 
 class MainActivity : ProductActivity<ActivityMainBinding>() {
     private val mHomeFragment by lazy {
@@ -16,6 +19,11 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
 
     override fun initView() {
         showFragment(mHomeFragment)
+        with (binding) {
+            lnSetting.setOnClickListener {
+                showFragment(SettingFragment())
+            }
+        }
     }
 
     private var mListFragment = arrayListOf<androidx.fragment.app.Fragment>()
@@ -38,5 +46,14 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
         }
 
         fragmentTransaction.commitNow()
+    }
+
+    private fun getInstalledAppsWithInternetPermission(): List<ApplicationInfo> {
+        val packageManager = packageManager
+        val installedApps = packageManager.getInstalledApplications(PackageManager.GET_META_DATA)
+
+        return installedApps.filter { appInfo ->
+            packageManager.checkPermission(android.Manifest.permission.INTERNET, appInfo.packageName) == PackageManager.PERMISSION_GRANTED
+        }
     }
 }
