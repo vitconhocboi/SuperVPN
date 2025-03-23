@@ -80,12 +80,6 @@ class LocalVpnService : VpnService(), Runnable {
     }
 
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
-        if (intent.action == "STOP_VPN") {
-            Log.d(Constant.TAG, "Received STOP_VPN action")
-            stopSelf()
-            return START_NOT_STICKY
-        }
-
         super.onStartCommand(intent, flags, startId)
         IsRunning = true
         // Start a new session by creating a new thread.

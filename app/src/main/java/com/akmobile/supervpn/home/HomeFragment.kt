@@ -109,11 +109,6 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 
     private fun stopVpnService() {
         try {
-            val intent = Intent(context, LocalVpnService::class.java)
-            intent.action = "STOP_VPN"  // Add a custom action
-            context?.startService(
-                intent
-            )
             LocalVpnService.IsRunning = false
             isConnected = false
             binding.ivConnect.isSelected = false

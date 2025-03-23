@@ -19,22 +19,9 @@ static pthread_t privoxy_thread = 0;
 static bool is_running = false;
 static std::string config_path;
 
-
-void signal_handler(int sig) {
-    if (sig == SIGUSR1) {
-        // Clean up any resources
-        pthread_exit(NULL);  // Exit the thread
-    }
-}
-
 // Thread function to run Privoxy
 void *run_privoxy(void *arg) {
     char *config = (char *) arg;
-    struct sigaction sa;
-    sigemptyset(&sa.sa_mask);
-    sa.sa_flags = 0;
-    sa.sa_handler = signal_handler;
-    sigaction(SIGUSR1, &sa, NULL);
 
     const char *argv[] = {
             "privoxy",
@@ -50,7 +37,6 @@ void *run_privoxy(void *arg) {
 
     return NULL;
 }
-
 
 extern "C"
 JNIEXPORT jboolean JNICALL
