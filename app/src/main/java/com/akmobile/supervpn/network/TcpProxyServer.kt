@@ -15,9 +15,9 @@ class TcpProxyServer(port: Int) : Runnable {
     var Stopped: Boolean = false
     var Port: Short = 0
 
-    var m_Selector: Selector?
-    var m_ServerSocketChannel: ServerSocketChannel?
-    var m_ServerThread: Thread? = null
+    private var m_Selector: Selector?
+    private var m_ServerSocketChannel: ServerSocketChannel?
+    private var m_ServerThread: Thread? = null
 
     init {
         m_Selector = Selector.open()
@@ -26,7 +26,7 @@ class TcpProxyServer(port: Int) : Runnable {
             it.configureBlocking(false)
             it.socket().bind(InetSocketAddress(port))
             it.register(m_Selector, SelectionKey.OP_ACCEPT)
-            this.Port = it.socket().localPort.toShort()
+            Port = it.socket().localPort.toShort()
         }
         Log.d(Constant.TAG, "AsyncTcpServer listen on " + (Port.toInt() and 0xFFFF))
     }
@@ -40,57 +40,73 @@ class TcpProxyServer(port: Int) : Runnable {
 
     @Synchronized
     fun stop() {
-        this.Stopped = true
-        if (m_Selector != null) {
+        Stopped = true
+        m_Selector?.wakeup()
+        
+        m_ServerSocketChannel?.let {
             try {
-                m_Selector!!.close()
+                it.close()
             } catch (e: Exception) {
-                Log.e(Constant.TAG, "Exception when closing m_Selector", e)
-            } finally {
-                m_Selector = null
+                Log.e(Constant.TAG, "Error closing server socket", e)
             }
         }
+        m_ServerSocketChannel = null
 
-        if (m_ServerSocketChannel != null) {
+        m_Selector?.let {
             try {
-                m_ServerSocketChannel!!.close()
+                it.close()
             } catch (e: Exception) {
-                Log.e(Constant.TAG, "Exception when closing m_ServerSocketChannel", e)
-            } finally {
-                m_ServerSocketChannel = null
+                Log.e(Constant.TAG, "Error closing selector", e)
             }
         }
+        m_Selector = null
     }
 
     override fun run() {
         try {
-            while (true) {
-                m_Selector!!.select()
-                val keyIterator = m_Selector!!.selectedKeys().iterator()
+            while (!Stopped) {
+                val readyChannels = m_Selector!!.select(250)
+                
+                if (readyChannels == 0) continue
+                
+                val selectedKeys = m_Selector!!.selectedKeys()
+                val keyIterator = selectedKeys.iterator()
+                
                 while (keyIterator.hasNext()) {
                     val key = keyIterator.next()
-                    if (key.isValid) {
-                        try {
-                            if (key.isReadable) {
-                                (key.attachment() as Tunnel).onReadable(key)
-                            } else if (key.isWritable) {
-                                (key.attachment() as Tunnel).onWritable(key)
-                            } else if (key.isConnectable) {
-                                (key.attachment() as Tunnel).onConnectable()
-                            } else if (key.isAcceptable) {
+                    try {
+                        when {
+                            !key.isValid -> {
+                                key.cancel()
+                            }
+                            key.isAcceptable -> {
                                 onAccepted(key)
                             }
-                        } catch (e: Exception) {
-                            Log.d(Constant.TAG, e.toString())
+                            key.isReadable -> {
+                                (key.attachment() as Tunnel).onReadable(key)
+                            }
+                            key.isWritable -> {
+                                (key.attachment() as Tunnel).onWritable(key)
+                            }
+                            key.isConnectable -> {
+                                (key.attachment() as Tunnel).onConnectable()
+                            }
                         }
+                    } catch (e: Exception) {
+                        Log.e(Constant.TAG, "Error handling key: ${e.message}", e)
+                        key.cancel()
+                        try {
+                            key.channel()?.close()
+                        } catch (ignored: Exception) {}
+                    } finally {
+                        keyIterator.remove()
                     }
-                    keyIterator.remove()
                 }
             }
         } catch (e: Exception) {
-            Log.e(Constant.TAG, "TcpServer", e)
+            Log.e(Constant.TAG, "TcpServer error", e)
         } finally {
-            this.stop()
+            stop()
             Log.d(Constant.TAG, "TcpServer thread exited.")
         }
     }
@@ -122,7 +138,7 @@ class TcpProxyServer(port: Int) : Runnable {
         return null
     }
 
-    fun onAccepted(key: SelectionKey?) {
+    private fun onAccepted(key: SelectionKey?) {
         var localTunnel: Tunnel? = null
         try {
             val localChannel = m_ServerSocketChannel!!.accept()

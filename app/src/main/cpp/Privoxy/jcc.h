@@ -1,5 +1,6 @@
 #ifndef JCC_H_INCLUDED
 #define JCC_H_INCLUDED
+#define JCC_H_VERSION "$Id: jcc.h,v 1.35 2014/06/02 06:22:21 fabiankeil Exp $"
 /*********************************************************************
  *
  * File        :  $Source: /cvsroot/ijbswa/current/jcc.h,v $
@@ -8,7 +9,7 @@
  *                the main connection-handling function.
  *
  * Copyright   :  Written by and Copyright (C) 2001-2014 the
- *                Privoxy team. https://www.privoxy.org/
+ *                Privoxy team. http://www.privoxy.org/
  *
  *                Based on the Internet Junkbuster originally written
  *                by and Copyright (C) 1997 Anonymous Coders and
@@ -82,15 +83,6 @@ extern privoxy_mutex_t connection_reuse_mutex;
 extern privoxy_mutex_t external_filter_mutex;
 #endif
 
-#ifdef FEATURE_CLIENT_TAGS
-extern privoxy_mutex_t client_tags_mutex;
-#endif
-
-#ifdef FEATURE_EXTENDED_STATISTICS
-extern privoxy_mutex_t filter_statistics_mutex;
-extern privoxy_mutex_t block_statistics_mutex;
-#endif
-
 #ifndef HAVE_GMTIME_R
 extern privoxy_mutex_t gmtime_mutex;
 #endif /* ndef HAVE_GMTIME_R */
@@ -107,28 +99,19 @@ extern privoxy_mutex_t resolver_mutex;
 extern privoxy_mutex_t rand_mutex;
 #endif /* ndef HAVE_RANDOM */
 
-#ifdef FEATURE_HTTPS_INSPECTION
-extern privoxy_mutex_t certificate_mutex;
-extern privoxy_mutex_t ssl_init_mutex;
-#endif
-
 #endif /* FEATURE_PTHREAD */
 
 /* Functions */
 
-//#ifdef __MINGW32__
-//int real_main(int argc, char **argv);
-//#else
-//int main(int argc, char **argv);
-//#endif
-typedef void (*shadowpath_cb) (int fd, void*);
-extern int shadowpath_main(int argc, char **argv, shadowpath_cb cb, void *data);
-
-#ifdef FUZZ
-extern int fuzz_client_request(struct client_state *csp, char *fuzz_input_file);
-extern int fuzz_server_response(struct client_state *csp, char *fuzz_input_file);
-extern int fuzz_chunked_transfer_encoding(struct client_state *csp, char *fuzz_input_file);
+#ifdef __MINGW32__
+int real_main(int argc, char **argv);
+#else
+extern int privoxy_main(int argc, char **argv);
 #endif
+
+/* Revision control strings from this header and associated .c file */
+extern const char jcc_rcs[];
+extern const char jcc_h_rcs[];
 
 #endif /* ndef JCC_H_INCLUDED */
 

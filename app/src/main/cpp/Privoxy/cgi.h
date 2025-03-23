@@ -1,17 +1,18 @@
 #ifndef CGI_H_INCLUDED
 #define CGI_H_INCLUDED
+#define CGI_H_VERSION "$Id: cgi.h,v 1.43 2013/11/24 14:23:28 fabiankeil Exp $"
 /*********************************************************************
  *
  * File        :  $Source: /cvsroot/ijbswa/current/cgi.h,v $
  *
  * Purpose     :  Declares functions to intercept request, generate
- *                html or gif answers, and to compose HTTP responses.
+ *                html or gif answers, and to compose HTTP resonses.
  *
  *                Functions declared include:
  *
  *
  * Copyright   :  Written by and Copyright (C) 2001-2009 the
- *                Privoxy team. https://www.privoxy.org/
+ *                Privoxy team. http://www.privoxy.org/
  *
  *                Based on the Internet Junkbuster originally written
  *                by and Copyright (C) 1997 Anonymous Coders and
@@ -110,6 +111,7 @@ extern char *compress_buffer(char *buffer, size_t *buffer_length, int compressio
  */
 extern void get_http_time(int time_offset, char *buf, size_t buffer_size);
 extern char *add_help_link(const char *item, struct configuration_spec *config);
+extern char *make_menu(const char *self, const unsigned feature_flags);
 extern char *dump_map(const struct map *the_map);
 
 /*
@@ -119,6 +121,10 @@ extern const char image_pattern_data[];
 extern const size_t  image_pattern_length;
 extern const char image_blank_data[];
 extern const size_t  image_blank_length;
+
+/* Revision control strings from this header and associated .c file */
+extern const char cgi_rcs[];
+extern const char cgi_h_rcs[];
 
 #endif /* ndef CGI_H_INCLUDED */
 
