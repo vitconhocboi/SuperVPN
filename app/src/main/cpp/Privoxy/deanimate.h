@@ -1,5 +1,6 @@
 #ifndef DEANIMATE_H_INCLUDED
 #define DEANIMATE_H_INCLUDED
+#define DEANIMATE_H_VERSION "$Id: deanimate.h,v 1.15 2013/11/24 14:23:28 fabiankeil Exp $"
 /*********************************************************************
  *
  * File        :  $Source: /cvsroot/ijbswa/current/deanimate.h,v $
@@ -12,7 +13,7 @@
  *
  *
  * Copyright   :  Written by and Copyright (C) 2001 - 2004 by the the
- *                Privoxy team. https://www.privoxy.org/
+ *                SourceForge Privoxy team. http://www.privoxy.org/
  *
  *                Based on ideas from the Image::DeAnim Perl module by
  *                Ken MacFarlane, <ksm+cpan@universal.dca.net>
@@ -59,6 +60,11 @@ struct binbuffer
 extern int gif_deanimate(struct binbuffer *src, struct binbuffer *dst, int get_first_image);
 extern void buf_free(struct binbuffer *buf);
 
+/*
+ * Revision control strings from this header and associated .c file
+ */
+extern const char deanimate_rcs[];
+extern const char deanimate_h_rcs[];
 
 #endif /* ndef DEANIMATE_H_INCLUDED */
 

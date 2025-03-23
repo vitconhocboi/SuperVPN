@@ -24,6 +24,13 @@ android {
             useSupportLibrary = true
         }
 
+        externalNativeBuild {
+            cmake {
+                cppFlags("")
+                arguments("-DANDROID_STL=c++_shared")
+            }
+        }
+
         ndk {
             abiFilters += listOf("armeabi-v7a", "arm64-v8a") // Specify architectures
         }
@@ -74,11 +81,12 @@ android {
             jniLibs.srcDirs("libs")
         }
     }
-//    externalNativeBuild {
-//        ndkBuild {
-//            path = file("src/main/cpp/Privoxy/Android.mk")  // Specify the path to your Android.mk file
-//        }
-//    }
+
+    externalNativeBuild {
+        cmake {
+            path = file("src/main/cpp/CMakeLists.txt")
+        }
+    }
 }
 
 dependencies {
@@ -107,6 +115,8 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
     implementation(libs.androidx.multidex)
+    // Add zlib dependency for compression functionality
+    implementation("com.jcraft:jzlib:1.1.3")
 }
 
 // Allow references to generated code

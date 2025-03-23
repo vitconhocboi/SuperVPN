@@ -48,6 +48,8 @@ class LocalVpnService : VpnService(), Runnable {
     private var m_ReceivedBytes: Long = 0
     private lateinit var m_Blacklist: Array<String>
 
+    private var m_PrivoxyManager: PrivoxyManager? = null
+
     init {
         ID++
         m_Handler = Handler()
@@ -61,16 +63,15 @@ class LocalVpnService : VpnService(), Runnable {
         Log.d("VpnProxy", "New VPNService" + ID)
     }
 
-    override fun onCreate() {/*
-        writeLog("This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.");
-        writeLog("This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.");
-
-        writeLog("This program includes two other open source programs:");
-        writeLog("SmartProxy Copyright (C) 2014 hedaode. GPLv3");
-        writeLog("Lantern Copyright 2010 Brave New Software Project, Inc. Apache 2.0");
-*/
-
+    override fun onCreate() {
         try {
+            m_PrivoxyManager = PrivoxyManager(this)
+            if (m_PrivoxyManager!!.initialize() && m_PrivoxyManager!!.start()) {
+                writeLog("Privoxy started on: " + m_PrivoxyManager!!.getProxyAddress())
+            } else {
+                writeLog("Failed to start Privoxy")
+            }
+
             m_TcpProxyServer = TcpProxyServer(0)
             m_TcpProxyServer!!.start()
             writeLog("LocalTcpServer started.")
@@ -112,11 +113,7 @@ class LocalVpnService : VpnService(), Runnable {
 
     fun writeLog(format: String?, vararg args: Any?) {
         val logString = String.format(format!!, *args)
-        m_Handler.post {
-            for ((key) in m_OnStatusChangedListeners) {
-                key.onLogReceived(logString)
-            }
-        }
+        Log.d("SinhTest", logString)
     }
 
     fun sendUDPPacket(ipHeader: IPHeader, udpHeader: UDPHeader?) {
@@ -290,9 +287,9 @@ class LocalVpnService : VpnService(), Runnable {
         if (proxyAddress != null) {
             this.SetProxyServer(proxyAddress)
         }
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-//            builder.setHttpProxy(ProxyInfo.buildDirectProxy("192.168.1.102", 8080))
-//        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            builder.setHttpProxy(ProxyInfo.buildDirectProxy("localhost", 8118))
+        }
 
         val ipAddress = ProxyConfig.Instance.defaultLocalIP
         LOCAL_IP = CommonMethods.ipStringToInt(ipAddress.Address)

@@ -1,3 +1,4 @@
+const char pcrs_rcs[] = "$Id: pcrs.c,v 1.48 2015/12/27 12:45:46 fabiankeil Exp $";
 /*********************************************************************
  *
  * File        :  $Source: /cvsroot/ijbswa/current/pcrs.c,v $
@@ -16,20 +17,21 @@
  *                Copyright (C) 2006, 2007 Fabian Keil <fk@fabiankeil.de>
  *
  *                This program is free software; you can redistribute it
- *                and/or modify it under the terms of the GNU General
- *                Public License as published by the Free Software
- *                Foundation; either version 2 of the License, or (at
- *                your option) any later version.
+ *                and/or modify it under the terms of the GNU Lesser
+ *                General Public License (LGPL), version 2.1, which  should
+ *                be included in this distribution (see LICENSE.txt), with
+ *                the exception that the permission to replace that license
+ *                with the GNU General Public License (GPL) given in section
+ *                3 is restricted to version 2 of the GPL.
  *
  *                This program is distributed in the hope that it will
  *                be useful, but WITHOUT ANY WARRANTY; without even the
  *                implied warranty of MERCHANTABILITY or FITNESS FOR A
- *                PARTICULAR PURPOSE.  See the GNU General Public
- *                License for more details.
+ *                PARTICULAR PURPOSE.  See the license for more details.
  *
- *                The GNU General Public License should be included with
- *                this file.  If not, you can view it at
- *                http://www.gnu.org/copyleft/gpl.html
+ *                The GNU Lesser General Public License should be included
+ *                with this file.  If not, you can view it at
+ *                http://www.gnu.org/licenses/lgpl.html
  *                or write to the Free Software Foundation, Inc., 59
  *                Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  *
@@ -52,6 +54,8 @@
 #include "encode.h"
 
 #include "pcrs.h"
+
+const char pcrs_h_rcs[] = PCRS_H_VERSION;
 
 /*
  * Internal prototypes
@@ -168,7 +172,6 @@ static int pcrs_parse_perl_options(const char *optstring, int *flags)
          case 'o': break;
          case 's': rc |= PCRE_DOTALL; break;
          case 'x': rc |= PCRE_EXTENDED; break;
-         case 'D': *flags |= PCRS_DYNAMIC; break;
          case 'U': rc |= PCRE_UNGREEDY; break;
          case 'T': *flags |= PCRS_TRIVIAL; break;
          default: break;
@@ -177,38 +180,6 @@ static int pcrs_parse_perl_options(const char *optstring, int *flags)
    return rc;
 
 }
-
-
-#ifdef FUZZ
-/*********************************************************************
- *
- * Function    :  pcrs_compile_fuzzed_replacement
- *
- * Description :  Wrapper around pcrs_compile_replacement() for
- *                fuzzing purposes.
- *
- * Parameters  :
- *          1  :  replacement = replacement part of s/// operator
- *                              in perl syntax
- *          2  :  errptr = pointer to an integer in which error
- *                         conditions can be returned.
- *
- * Returns     :  pcrs_substitute data structure, or NULL if an
- *                error is encountered. In that case, *errptr has
- *                the reason.
- *
- *********************************************************************/
-extern pcrs_substitute *pcrs_compile_fuzzed_replacement(const char *replacement, int *errptr)
-{
-   int capturecount = PCRS_MAX_SUBMATCHES; /* XXX: fuzzworthy? */
-   int trivial_flag = 0; /* We don't want to fuzz strncpy() */
-
-   *errptr = 0; /* XXX: Should pcrs_compile_replacement() do this? */
-
-   return pcrs_compile_replacement(replacement, trivial_flag, capturecount, errptr);
-
-}
-#endif
 
 
 /*********************************************************************
@@ -238,13 +209,10 @@ extern pcrs_substitute *pcrs_compile_fuzzed_replacement(const char *replacement,
 static pcrs_substitute *pcrs_compile_replacement(const char *replacement, int trivialflag, int capturecount, int *errptr)
 {
    int i, k, l, quoted;
+   size_t length;
    char *text;
    pcrs_substitute *r;
-#ifndef FUZZ
-   size_t length;
-#else
-   static size_t length;
-#endif
+
    i = k = l = quoted = 0;
 
    /*
@@ -281,7 +249,7 @@ static pcrs_substitute *pcrs_compile_replacement(const char *replacement, int tr
     */
    if (trivialflag)
    {
-      strlcpy(text, replacement, length + 1);
+      text = strncpy(text, replacement, length + 1);
       k = (int)length;
    }
 
@@ -407,11 +375,8 @@ static pcrs_substitute *pcrs_compile_replacement(const char *replacement, int tr
                goto plainchar;
             }
 
-            assert(r->backref[l] < PCRS_MAX_SUBMATCHES + 2);
             /* Valid and in range? -> record */
-            if ((0 <= r->backref[l]) &&
-               (r->backref[l] < PCRS_MAX_SUBMATCHES + 2) &&
-               (l < PCRS_MAX_SUBMATCHES - 1))
+            if (0 <= r->backref[l] && r->backref[l] < PCRS_MAX_SUBMATCHES + 2)
             {
                r->backref_count[r->backref[l]] += 1;
                r->block_offset[++l] = k;
@@ -472,14 +437,7 @@ pcrs_job *pcrs_free_job(pcrs_job *job)
    {
       next = job->next;
       if (job->pattern != NULL) free(job->pattern);
-      if (job->hints != NULL)
-      {
-#ifdef PCRE_CONFIG_JIT
-         pcre_free_study(job->hints);
-#else
-         free(job->hints);
-#endif
-      }
+      if (job->hints != NULL) free(job->hints);
       if (job->substitute != NULL)
       {
          if (job->substitute->text != NULL) free(job->substitute->text);
@@ -629,7 +587,6 @@ pcrs_job *pcrs_compile(const char *pattern, const char *substitute, const char *
    int flags;
    int capturecount;
    const char *error;
-   int pcre_study_options = 0;
 
    *errptr = 0;
 
@@ -669,18 +626,11 @@ pcrs_job *pcrs_compile(const char *pattern, const char *substitute, const char *
    }
 
 
-#ifdef PCRE_STUDY_JIT_COMPILE
-   if (!(flags & PCRS_DYNAMIC))
-   {
-      pcre_study_options = PCRE_STUDY_JIT_COMPILE;
-   }
-#endif
-
    /*
     * Generate hints. This has little overhead, since the
     * hints will be NULL for a boring pattern anyway.
     */
-   newjob->hints = pcre_study(newjob->pattern, pcre_study_options, &error);
+   newjob->hints = pcre_study(newjob->pattern, 0, &error);
    if (error != NULL)
    {
       *errptr = PCRS_ERR_STUDY;
@@ -1011,7 +961,7 @@ static int is_hex_sequence(const char *sequence)
  *                FALSE
  *
  *********************************************************************/
-int pcrs_job_is_dynamic(char *job)
+int pcrs_job_is_dynamic (char *job)
 {
    const char delimiter = job[1];
    const size_t length = strlen(job);
@@ -1122,6 +1072,7 @@ char *pcrs_execute_single_command(const char *subject, const char *pcrs_command,
 }
 
 
+static const char warning[] = "... [too long, truncated]";
 /*********************************************************************
  *
  * Function    :  pcrs_compile_dynamic_command
@@ -1178,7 +1129,7 @@ pcrs_job *pcrs_compile_dynamic_command(char *pcrs_command, const struct pcrs_var
        */
       assert(NULL == strchr(v->name, d));
 
-      ret = snprintf(buf, sizeof(buf), "s%c\\$%s%c%s%cDgT", d, v->name, d, v->value, d);
+      ret = snprintf(buf, sizeof(buf), "s%c\\$%s%c%s%cgT", d, v->name, d, v->value, d);
       assert(ret >= 0);
       if (ret >= sizeof(buf))
       {
@@ -1188,11 +1139,10 @@ pcrs_job *pcrs_compile_dynamic_command(char *pcrs_command, const struct pcrs_var
           * with a truncation message and close the pattern
           * properly.
           */
-         static const char warning[] = "... [too long, truncated]";
-         const size_t trailer_size = sizeof(warning) + 4; /* 4 for d + "DgT" */
+         const size_t trailer_size = sizeof(warning) + 3; /* 3 for d + "gT" */
          char *trailer_start = buf + sizeof(buf) - trailer_size;
 
-         ret = snprintf(trailer_start, trailer_size, "%s%cDgT", warning, d);
+         ret = snprintf(trailer_start, trailer_size, "%s%cgT", warning, d);
          assert(ret == trailer_size - 1);
          assert(sizeof(buf) == strlen(buf) + 1);
          truncation = 1;

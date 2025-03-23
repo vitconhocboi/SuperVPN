@@ -55,6 +55,7 @@ abstract class Tunnel {
         if (LocalVpnService.Instance.protect(m_InnerChannel!!.socket())) {
             m_DestAddress = destAddress
             m_InnerChannel!!.register(m_Selector, SelectionKey.OP_CONNECT, this)
+            m_Selector?.wakeup()
             m_InnerChannel!!.connect(m_ServerEP)
         } else {
             throw Exception("VPN protect socket failed.")
@@ -67,6 +68,7 @@ abstract class Tunnel {
             m_InnerChannel!!.configureBlocking(false)
         }
         m_InnerChannel!!.register(m_Selector, SelectionKey.OP_READ, this)
+        m_Selector?.wakeup()
     }
 
 
@@ -89,6 +91,7 @@ abstract class Tunnel {
                 m_SendRemainBuffer!!.put(buffer)
                 m_SendRemainBuffer!!.flip()
                 m_InnerChannel!!.register(m_Selector, SelectionKey.OP_WRITE, this)
+                m_Selector?.wakeup()
             }
             return false
         } else {

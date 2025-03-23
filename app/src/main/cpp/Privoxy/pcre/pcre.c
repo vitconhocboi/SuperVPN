@@ -41,7 +41,7 @@ restrictions:
 inline, and there are *still* stupid compilers about that don't like indented
 pre-processor statements. I suppose it's only been 10 years... */
 
-#ifdef DEBUG_PCRE
+#ifdef DEBUG
 #define DPRINTF(p) printf p
 #else
 #define DPRINTF(p) /*nothing*/
@@ -83,7 +83,7 @@ static const char rep_max[] = { 0, 0, 0, 0, 1, 1 };
 
 /* Text forms of OP_ values and things, for debugging (not all used) */
 
-#ifdef DEBUG_PCRE
+#ifdef DEBUG
 static const char *OP_names[] = {
   "End", "\\A", "\\B", "\\b", "\\D", "\\d",
   "\\S", "\\s", "\\W", "\\w", "\\Z", "\\z",
@@ -441,7 +441,7 @@ return 0;
 
 
 
-#ifdef DEBUG_PCRE
+#ifdef DEBUG
 /*************************************************
 *        Debugging function to print chars       *
 *************************************************/
@@ -730,7 +730,7 @@ if (*p == '}') max = min; else
 /* Do paranoid checks, then fill in the required variables, and pass back the
 pointer to the terminating '}'. */
 
-if (min < 0 || min > 65535 || max < -1 || max > 65535)
+if (min > 65535 || max > 65535)
   *errorptr = ERR5;
 else
   {
@@ -2050,7 +2050,7 @@ for (;; ptr++)
 
     /* This "while" is the end of the "do" above. */
 
-    while (*ptr && length < MAXLIT && (cd->ctypes[c = *(++ptr)] & ctype_meta) == 0);
+    while (length < MAXLIT && (cd->ctypes[c = *(++ptr)] & ctype_meta) == 0);
 
     /* Update the last character and the count of literals */
 
@@ -2488,7 +2488,7 @@ int brastack[BRASTACK_SIZE];
 uschar bralenstack[BRASTACK_SIZE];
 const size_t pattern_length = strlen(pattern);
 
-#ifdef DEBUG_PCRE
+#ifdef DEBUG
 uschar *code_base, *code_end;
 #endif
 
@@ -2660,13 +2660,8 @@ while ((c = *(++ptr)) != 0)
         }
       else class_charcount++;
       ptr++;
-      if (*ptr == 0)
-        {
-        *errorptr = ERR6;
-        goto PCRE_ERROR_RETURN;
-        }
       }
-    while (*ptr != ']');
+    while (*ptr != 0 && *ptr != ']');
 
     /* Repeats for negated single chars are handled by the general code */
 
@@ -3146,7 +3141,7 @@ if (reqchar >= 0 && (countlits > 1 || (re->options & PCRE_FIRSTSET) == 0))
 
 /* Print out the compiled data for debugging */
 
-#ifdef DEBUG_PCRE
+#ifdef DEBUG
 
 printf("Length = %d top_bracket = %d top_backref = %d\n",
   length, re->top_bracket, re->top_backref);
@@ -3414,7 +3409,7 @@ match_ref(int offset, register const uschar *eptr, int length, match_data *md,
 {
 const uschar *p = md->start_subject + md->offset_vector[offset];
 
-#ifdef DEBUG_PCRE
+#ifdef DEBUG
 if (eptr >= md->end_subject)
   printf("matching subject <null>");
 else
@@ -3519,7 +3514,7 @@ for (;;)
     int number = op - OP_BRA;
     int offset = number << 1;
 
-#ifdef DEBUG_PCRE
+#ifdef DEBUG
     printf("start bracket %d subject=", number);
     pchars(eptr, 16, TRUE, md);
     printf("\n");
@@ -4289,7 +4284,7 @@ for (;;)
       register int length = ecode[1];
       ecode += 2;
 
-#ifdef DEBUG_PCRE    /* Sigh. Some compilers never learn. */
+#ifdef DEBUG    /* Sigh. Some compilers never learn. */
       if (eptr >= md->end_subject)
         printf("matching subject <null> against pattern ");
       else
@@ -5044,7 +5039,7 @@ do
       }
     }
 
-#ifdef DEBUG_PCRE  /* Sigh. Some compilers never learn. */
+#ifdef DEBUG  /* Sigh. Some compilers never learn. */
   printf(">>>> Match against: ");
   pchars(start_match, end_subject - start_match, TRUE, &match_block);
   printf("\n");

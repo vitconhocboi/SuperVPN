@@ -76,10 +76,10 @@ typedef struct {
 
 /* The functions */
 
-extern int pcre_regcomp(regex_t *, const char *, int);
-extern int pcre_regexec(regex_t *, const char *, size_t, regmatch_t *, int);
-extern size_t pcre_regerror(int, const regex_t *, char *, size_t);
-extern void pcre_regfree(regex_t *);
+extern int regcomp(regex_t *, const char *, int);
+extern int regexec(regex_t *, const char *, size_t, regmatch_t *, int);
+extern size_t regerror(int, const regex_t *, char *, size_t);
+extern void regfree(regex_t *);
 
 #ifdef __cplusplus
 }   /* extern "C" */

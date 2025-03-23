@@ -136,7 +136,7 @@ return REG_ASSERT;
 *************************************************/
 
 size_t
-pcre_regerror(int errcode, const regex_t *preg, char *errbuf, size_t errbuf_size)
+regerror(int errcode, const regex_t *preg, char *errbuf, size_t errbuf_size)
 {
 const char *message, *addmessage;
 size_t length, addlength;
@@ -146,13 +146,13 @@ message = (errcode >= (int)(sizeof(pstring)/sizeof(char *)))?
 length = strlen(message) + 1;
 
 addmessage = " at offset ";
-addlength = (preg != NULL && (int)preg->re_nsub != -1)?
+addlength = (preg != NULL && (int)preg->re_erroffset != -1)?
   strlen(addmessage) + 6 : 0;
 
 if (errbuf_size > 0)
   {
   if (addlength > 0 && errbuf_size >= length + addlength)
-    sprintf(errbuf, "%s%s%-6d", message, addmessage, (int)preg->re_nsub);
+    sprintf(errbuf, "%s%s%-6d", message, addmessage, (int)preg->re_erroffset);
   else
     {
     strncpy(errbuf, message, errbuf_size - 1);
@@ -171,9 +171,9 @@ return length + addlength;
 *************************************************/
 
 void
-pcre_regfree(regex_t *preg)
+regfree(regex_t *preg)
 {
-(pcre_free)(preg->re_g);
+(pcre_free)(preg->re_pcre);
 }
 
 
@@ -194,7 +194,7 @@ Returns:      0 on success
 */
 
 int
-pcre_regcomp(regex_t *preg, const char *pattern, int cflags)
+regcomp(regex_t *preg, const char *pattern, int cflags)
 {
 const char *errorptr;
 int erroffset;
@@ -203,12 +203,12 @@ int options = 0;
 if ((cflags & REG_ICASE) != 0) options |= PCRE_CASELESS;
 if ((cflags & REG_NEWLINE) != 0) options |= PCRE_MULTILINE;
 
-preg->re_g = pcre_compile(pattern, options, &errorptr, &erroffset, NULL);
-preg->re_nsub = erroffset;
+preg->re_pcre = pcre_compile(pattern, options, &errorptr, &erroffset, NULL);
+preg->re_erroffset = erroffset;
 
-if (preg->re_g == NULL) return pcre_posix_error_code(errorptr);
+if (preg->re_pcre == NULL) return pcre_posix_error_code(errorptr);
 
-preg->re_nsub = pcre_info(preg->re_g, NULL, NULL);
+preg->re_nsub = pcre_info(preg->re_pcre, NULL, NULL);
 return 0;
 }
 
@@ -225,7 +225,7 @@ the POSIX structures as was done in earlier releases when PCRE needed only 2
 ints. */
 
 int
-pcre_regexec(regex_t *preg, const char *string, size_t nmatch,
+regexec(regex_t *preg, const char *string, size_t nmatch,
   regmatch_t pmatch[], int eflags)
 {
 int rc;
@@ -235,7 +235,7 @@ int *ovector = NULL;
 if ((eflags & REG_NOTBOL) != 0) options |= PCRE_NOTBOL;
 if ((eflags & REG_NOTEOL) != 0) options |= PCRE_NOTEOL;
 
-preg->re_nsub = (size_t)(-1);   /* Only has meaning after compile */
+preg->re_erroffset = (size_t)(-1);   /* Only has meaning after compile */
 
 if (nmatch > 0)
   {
@@ -243,7 +243,7 @@ if (nmatch > 0)
   if (ovector == NULL) return REG_ESPACE;
   }
 
-rc = pcre_exec(preg->re_g, NULL, string, (int)strlen(string), 0, options,
+rc = pcre_exec(preg->re_pcre, NULL, string, (int)strlen(string), 0, options,
   ovector, nmatch * 3);
 
 if (rc == 0) rc = nmatch;    /* All captured slots were filled in */

@@ -1,5 +1,6 @@
 #ifndef CGIEDIT_H_INCLUDED
 #define CGIEDIT_H_INCLUDED
+#define CGIEDIT_H_VERSION "$Id: cgiedit.h,v 1.13 2013/11/24 14:23:28 fabiankeil Exp $"
 /*********************************************************************
  *
  * File        :  $Source: /cvsroot/ijbswa/current/cgiedit.h,v $
@@ -9,8 +10,8 @@
  *                Functions declared include:
  *
  *
- * Copyright   :  Written by and Copyright (C) 2001 members of the
- *                Privoxy team. https://www.privoxy.org/
+ * Copyright   :  Written by and Copyright (C) 2001 the SourceForge
+ *                Privoxy team. http://www.privoxy.org/
  *
  *                Based on the Internet Junkbuster originally written
  *                by and Copyright (C) 1997 Anonymous Coders and
@@ -88,6 +89,10 @@ extern jb_err cgi_toggle(struct client_state *csp,
                          struct http_response *rsp,
                          const struct map *parameters);
 #endif /* def FEATURE_TOGGLE */
+
+/* Revision control strings from this header and associated .c file */
+extern const char cgiedit_rcs[];
+extern const char cgiedit_h_rcs[];
 
 #endif /* ndef CGI_H_INCLUDED */
 

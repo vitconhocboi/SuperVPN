@@ -18,7 +18,7 @@ object BaseAppConfig {
     private const val KEY_PROXY_ADDRESS = "PROXY_ADDRESS"
 
     var proxyAddress: String
-        get() = SharedPrefs.instance[KEY_PROXY_ADDRESS, String::class.java, ""]
+        get() = "http://US443764:oQFW9r2p@5.181.164.131:56789"
         set(value) {
             SharedPrefs.instance.put(KEY_PROXY_ADDRESS, value)
         }
