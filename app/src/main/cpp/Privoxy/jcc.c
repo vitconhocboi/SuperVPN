@@ -130,6 +130,9 @@ int urls_rejected = 0;     /* total nr of urls rejected */
 
 #ifdef FEATURE_GRACEFUL_TERMINATION
 int g_terminate = 0;
+int stop_privoxy(){
+    g_terminate = 1;
+}
 #endif
 
 #if !defined(_WIN32) && !defined(__OS2__) && !defined(AMIGA)

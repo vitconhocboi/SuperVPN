@@ -109,6 +109,10 @@ int real_main(int argc, char **argv);
 extern int privoxy_main(int argc, char **argv);
 #endif
 
+#ifdef FEATURE_GRACEFUL_TERMINATION
+extern int stop_privoxy();
+#endif
+
 /* Revision control strings from this header and associated .c file */
 extern const char jcc_rcs[];
 extern const char jcc_h_rcs[];
