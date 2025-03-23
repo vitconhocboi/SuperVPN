@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.4.1)
 
 add_definitions(-DHAVE_CONFIG_H)
+add_definitions(-DFEATURE_GRACEFUL_TERMINATION)
 #add_definitions(-DFEATURE_HTTPS_INSPECTION)
 #add_definitions(-DFEATURE_HTTPS_INSPECTION_OPENSSL)
 

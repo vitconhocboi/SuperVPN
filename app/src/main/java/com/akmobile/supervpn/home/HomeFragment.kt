@@ -3,6 +3,7 @@ package com.akmobile.supervpn.home
 import android.app.Activity
 import android.content.Intent
 import android.net.VpnService
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
@@ -99,8 +100,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         isConnected = true
         context?.startService(
             Intent(
-                context,
-                LocalVpnService::class.java
+                context, LocalVpnService::class.java
             )
         )
         binding.ivConnect.isSelected = true
@@ -108,12 +108,18 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     }
 
     private fun stopVpnService() {
-        isConnected = false
-        binding.ivConnect.isSelected = false
-        context?.stopService( Intent(
-            context,
-            LocalVpnService::class.java
-        ))
-        binding.tvStatus.text = "Disconnecting..."
+        try {
+            val intent = Intent(context, LocalVpnService::class.java)
+            intent.action = "STOP_VPN"  // Add a custom action
+            context?.startService(
+                intent
+            )
+            LocalVpnService.IsRunning = false
+            isConnected = false
+            binding.ivConnect.isSelected = false
+            binding.tvStatus.text = "Disconnecting..."
+        } catch (e: Exception) {
+            Log.e("VPN", "Error stopping VPN service", e)
+        }
     }
 }

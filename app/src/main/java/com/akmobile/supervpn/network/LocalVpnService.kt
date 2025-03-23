@@ -65,20 +65,13 @@ class LocalVpnService : VpnService(), Runnable {
 
     override fun onCreate() {
         try {
-            m_PrivoxyManager = PrivoxyManager(this)
-            if (m_PrivoxyManager!!.initialize() && m_PrivoxyManager!!.start()) {
-                writeLog("Privoxy started on: " + m_PrivoxyManager!!.getProxyAddress())
-            } else {
-                writeLog("Failed to start Privoxy")
-            }
-
-            m_TcpProxyServer = TcpProxyServer(0)
-            m_TcpProxyServer!!.start()
-            writeLog("LocalTcpServer started.")
-
-            m_DnsProxy = DnsProxy()
-            m_DnsProxy!!.start()
-            writeLog("LocalDnsProxy started.")
+//            m_TcpProxyServer = TcpProxyServer(0)
+//            m_TcpProxyServer!!.start()
+//            writeLog("LocalTcpServer started.")
+//
+//            m_DnsProxy = DnsProxy()
+//            m_DnsProxy!!.start()
+//            writeLog("LocalDnsProxy started.")
         } catch (e: Exception) {
             writeLog("Failed to start TCP/DNS Proxy")
         }
@@ -87,11 +80,24 @@ class LocalVpnService : VpnService(), Runnable {
     }
 
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
+        if (intent.action == "STOP_VPN") {
+            Log.d(Constant.TAG, "Received STOP_VPN action")
+            stopSelf()
+            return START_NOT_STICKY
+        }
+
         super.onStartCommand(intent, flags, startId)
         IsRunning = true
         // Start a new session by creating a new thread.
         m_VPNThread = Thread(this, "VPNServiceThread")
         m_VPNThread!!.start()
+
+        m_PrivoxyManager = PrivoxyManager(this)
+        if (m_PrivoxyManager!!.initialize() && m_PrivoxyManager!!.start()) {
+            writeLog("Privoxy started on: " + m_PrivoxyManager!!.getProxyAddress())
+        } else {
+            writeLog("Failed to start Privoxy")
+        }
         return START_NOT_STICKY
     }
 
@@ -405,6 +411,7 @@ class LocalVpnService : VpnService(), Runnable {
         } catch (e: Exception) {
             // ignore
         }
+        m_PrivoxyManager!!.stop()
         super.onDestroy()
     }
 

@@ -79,7 +79,7 @@ class PrivoxyManager(private val context: Context) {
     private fun createConfigFile(privoxyDir: File): String {
         val actionFile = File(privoxyDir, "default.action")
         actionFile.writeText("""
-        {+add-header{proxy-authentication: Basic VVM0NDM3NjQ6b1FGVzlyMnA=}}
+        {+add-header{proxy-authorization: Basic VVM0NDM3NjQ6b1FGVzlyMnA=}}
         /
         """.trimIndent())
         val configFile = File(privoxyDir, "config")
@@ -87,7 +87,6 @@ class PrivoxyManager(private val context: Context) {
             """
             listen-address 127.0.0.1:$port
             actionsfile ${actionFile.absolutePath}
-            enable-proxy-authentication-forwarding 1
             # Forward settings
             ${getForwardSettings()}
         """.trimIndent()
