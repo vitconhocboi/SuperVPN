@@ -52,9 +52,9 @@ file(GLOB PRIVOXY_SOURCES
 add_library(
     privoxy-jni
     SHARED
-    privoxy-jni.cpp
-    ${PRIVOXY_SOURCES}
     ${PCRE_SOURCES}
+    ${PRIVOXY_SOURCES}
+    privoxy-jni.cpp
 )
 
 find_library( # Sets the name of the path variable.
