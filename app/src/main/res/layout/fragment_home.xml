@@ -14,7 +14,7 @@
         android:background="@drawable/bg_earth"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/pnProxy"
         app:layout_constraintDimensionRatio="H,1:1"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -32,8 +32,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/size24"
-            android:visibility="gone"
-            android:gravity="center">
+            android:gravity="center"
+            android:visibility="gone">
+
             <ProgressBar
                 android:id="@+id/progressLoadAds"
                 android:layout_width="@dimen/size16"
@@ -64,36 +65,40 @@
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/pnProxy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size16"
         android:layout_marginBottom="@dimen/size16"
         android:background="@drawable/bg_setting_items"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/subActionBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_setting_items"
-            android:orientation="horizontal"
+            android:background="@drawable/bg_setting_pro"
             android:gravity="center"
-            android:paddingVertical="@dimen/size24">
+            android:orientation="horizontal"
+            android:padding="@dimen/size16">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/size22"
+                android:layout_height="@dimen/size22"
                 android:layout_marginLeft="@dimen/size16"
                 android:src="@drawable/ic_earth" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginLeft="@dimen/size8"
+                android:layout_weight="1"
                 android:text="@string/ip_proxy"
-                android:textColor="@color/green_1"/>
+                android:textColor="@color/green_1" />
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSelectProxy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/size16"
@@ -102,5 +107,65 @@
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/subActionBar2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_setting_pro2"
+            android:orientation="horizontal"
+            android:padding="@dimen/size16">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/size48"
+                    android:layout_height="@dimen/size48"
+                    android:src="@drawable/flag_us" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="@dimen/size16">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvProxyLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/language_item_text_color"
+                        android:text="United States - Newyork"
+                        android:textSize="@dimen/size16"
+                        android:textFontWeight="600"
+                        android:fontFamily="@font/inter"
+                        />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvProxyIp"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="bottom"
+                        android:text="103.23.35.102"
+                        android:textSize="@dimen/size16"
+                        android:textColor="@color/gray_2"
+                        android:fontFamily="@font/inter"
+                        />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSelectProxy"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size48"
+                android:gravity="center"
+                android:text="@string/select_connection_area"
+                android:textColor="@color/topBarColor"
+                android:textSize="@dimen/size14"
+                android:visibility="visible" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.view.LayoutInflater
 import com.akmobile.supervpn.databinding.ActivityMainBinding
 import com.akmobile.supervpn.home.HomeFragment
+import com.akmobile.supervpn.proxy.ProxyFragment
 import com.akmobile.supervpn.settings.SettingFragment
 
 class MainActivity : ProductActivity<ActivityMainBinding>() {
@@ -19,7 +20,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
 
     override fun initView() {
         showFragment(mHomeFragment)
-        with (binding) {
+        with(binding) {
             lnSetting.setOnClickListener {
                 showFragment(SettingFragment())
             }
@@ -53,7 +54,10 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
         val installedApps = packageManager.getInstalledApplications(PackageManager.GET_META_DATA)
 
         return installedApps.filter { appInfo ->
-            packageManager.checkPermission(android.Manifest.permission.INTERNET, appInfo.packageName) == PackageManager.PERMISSION_GRANTED
+            packageManager.checkPermission(
+                android.Manifest.permission.INTERNET,
+                appInfo.packageName
+            ) == PackageManager.PERMISSION_GRANTED
         }
     }
 }

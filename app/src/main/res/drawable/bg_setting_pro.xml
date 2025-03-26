@@ -14,7 +14,7 @@
         android:right="@dimen/size16">
         <shape xmlns:android="http://schemas.android.com/apk/res/android"
             android:shape="rectangle">
-            <solid android:color="#F0F0F0" />
+            <solid android:color="#303A4E" />
         </shape>
     </item>
     <item

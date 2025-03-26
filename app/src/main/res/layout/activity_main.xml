@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,44 +11,13 @@
         android:id="@+id/actionBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
         android:background="@color/black"
+        android:gravity="center_vertical"
         android:paddingHorizontal="@dimen/size15"
         app:layout_constraintTop_toTopOf="parent">
 
-<!--        <androidx.appcompat.widget.LinearLayoutCompat-->
-<!--            android:id="@+id/subActionBarSetting"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:gravity="center_vertical"-->
-<!--            android:visibility="gone">-->
-
-<!--            <androidx.appcompat.widget.AppCompatImageView-->
-<!--                android:id="@+id/ivBack"-->
-<!--                android:layout_width="@dimen/size40"-->
-<!--                android:layout_height="@dimen/size24"-->
-<!--                android:background="@drawable/bg_ripple_transparent_oval"-->
-<!--                android:foreground="?selectableItemBackgroundBorderless"-->
-<!--                android:src="@drawable/ic_arrow_left" />-->
-
-<!--            <androidx.appcompat.widget.AppCompatTextView-->
-<!--                android:id="@+id/tvTitleSetting"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:fontFamily="@font/pixeloid_sans"-->
-<!--                android:maxLines="1"-->
-<!--                android:text="@string/title_setting"-->
-<!--                android:textColor="#474747"-->
-<!--                android:textSize="@dimen/text_title" />-->
-
-<!--            <View-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="1dp"-->
-<!--                android:layout_weight="1" />-->
-<!--        </androidx.appcompat.widget.LinearLayoutCompat>-->
-
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/subActionBar"
+            android:id="@+id/homeActionBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="bottom">
@@ -58,37 +26,37 @@
                 android:id="@+id/tvTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:maxLines="1"
-                android:textAlignment="center"
                 android:fontFamily="@font/teko"
+                android:maxLines="1"
                 android:text="@string/vpn"
-                android:textSize="@dimen/size50"
+                android:textAlignment="center"
                 android:textColor="@color/green_1"
-                android:textFontWeight="600" />
+                android:textFontWeight="600"
+                android:textSize="@dimen/size50" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/ivVipReady"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/size5"
+                android:layout_weight="1"
+                android:fontFamily="@font/teko"
+                android:gravity="bottom"
                 android:paddingHorizontal="@dimen/size3"
                 android:paddingVertical="@dimen/size3"
-                android:gravity="bottom"
-                android:fontFamily="@font/teko"
                 android:text="@string/fast_and_safe"
-                android:textSize="@dimen/size20"
+                android:textColor="@color/white"
                 android:textFontWeight="500"
-                android:textColor="@color/white" />
+                android:textSize="@dimen/size20" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/lnSetting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginStart="@dimen/size12"
                 android:background="@drawable/bg_ripple_transparent_oval"
                 android:foreground="?selectableItemBackgroundBorderless"
-                android:layout_gravity="center"
                 android:padding="@dimen/size3"
                 android:src="@drawable/ic_menu" />
         </androidx.appcompat.widget.LinearLayoutCompat>

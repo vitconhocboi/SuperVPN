@@ -10,6 +10,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import com.akmobile.supervpn.ProductFragment
 import com.akmobile.supervpn.databinding.FragmentHomeBinding
 import com.akmobile.supervpn.network.LocalVpnService
+import com.akmobile.supervpn.utils.Navigator
 
 class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     private var isConnected = false
@@ -84,6 +85,10 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
             } else {
                 stopVpnService()
             }
+        }
+
+        binding.ivSelectProxy.setOnClickListener {
+            Navigator.startProxyActivity(requireContext())
         }
     }
 
