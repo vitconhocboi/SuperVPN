@@ -87,8 +87,8 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
             }
         }
 
-        binding.ivSelectProxy.setOnClickListener {
-            Navigator.startProxyActivity(requireContext())
+        binding.pnProxy.setOnClickListener {
+            Navigator.startProxyActivity(requireContext(), null)
         }
     }
 

@@ -50,7 +50,7 @@ class LanguageFragment : ProductFragment<FragmentLanguageBinding>() {
             }
 
             (activity as? LanguageActivity)?.apply {
-                Navigator.startMainActivity(this)
+                Navigator.startMainActivity(this, null)
                 finish()
             }
         }

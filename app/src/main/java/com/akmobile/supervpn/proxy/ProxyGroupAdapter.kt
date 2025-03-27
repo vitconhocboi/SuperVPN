@@ -1,14 +1,14 @@
 package com.akmobile.supervpn.proxy
 
-import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.akmobile.supervpn.R
 import com.akmobile.supervpn.databinding.AdapterProxyGroupBinding
 import com.akmobile.supervpn.home.ProxyGroupUI
-import com.akmobile.supervpn.network.dns.Resource
+import com.akmobile.supervpn.home.ProxyUI
 import com.common.baseui.adapter.BaseAdapter
 import com.common.baseui.adapter.BaseViewHolder
+import com.common.baseui.extension.setVisible
 import javax.inject.Inject
 
 class ProxyGroupAdapter @Inject constructor() :
@@ -23,6 +23,8 @@ class ProxyGroupAdapter @Inject constructor() :
             )
         )
     }
+
+    var onProxyClick: ((position: Int, item: ProxyUI) -> Unit)? = null
 
     inner class ProxyGroupViewHolder(private val mViewBinding: AdapterProxyGroupBinding) :
         BaseViewHolder<ProxyGroupUI>(mViewBinding.root) {
@@ -40,6 +42,18 @@ class ProxyGroupAdapter @Inject constructor() :
                     }
                 )
                 tvTitle.setText(data.group)
+
+                ivCollapse.setImageResource(if (data.collapsed) R.drawable.ic_arrow_down else R.drawable.ic_next_arrow)
+
+                var mDailyAdapter = ProxyAdapter().apply {
+                    updateData(data.list)
+                }
+
+                mDailyAdapter.onItemClick = { position, item ->
+                    onProxyClick?.invoke(position, item)
+                }
+                rcvProxyItems.adapter = mDailyAdapter
+                rcvProxyItems.setVisible(data.collapsed)
             }
         }
 
