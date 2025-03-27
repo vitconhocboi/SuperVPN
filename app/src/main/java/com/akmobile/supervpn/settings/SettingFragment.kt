@@ -1,33 +1,26 @@
 package com.akmobile.supervpn.settings
 
-import android.app.Activity
-import android.net.VpnService
+import android.content.pm.PackageManager
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import androidx.activity.result.contract.ActivityResultContracts
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.akmobile.supervpn.ProductFragment
+import com.akmobile.supervpn.R
 import com.akmobile.supervpn.databinding.FragmentSettingBinding
+import com.akmobile.supervpn.settings.appproxy.AppInfo
+import com.akmobile.supervpn.settings.appproxy.AppProxyFragment
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class SettingFragment : ProductFragment<FragmentSettingBinding>() {
-    private var isConnected = false
 
-    private val vpnPermissionLauncher =
-        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
-                startVpnService()
-            }
-        }
-
-//    private val vpnStatusReceiver = object : BroadcastReceiver() {
-//        override fun onReceive(context: Context?, intent: Intent?) {
-//            val status = intent?.getStringExtra(SupperVpnService.EXTRA_VPN_STATUS)
-//            updateUI(status)
-//        }
-//    }
-
-    private fun updateUI(status: String?) {
-
-    }
+    private val mViewModel: SettingViewModel by viewModels()
 
     override fun bindingProvider(
         inflater: LayoutInflater, container: ViewGroup?
@@ -37,35 +30,45 @@ class SettingFragment : ProductFragment<FragmentSettingBinding>() {
 
     override fun initView() {
         super.initView()
+        mViewModel.loadingApps.observe(viewLifecycleOwner) {
+            binding.progress.visibility = if (it) View.VISIBLE else View.GONE
+        }
 
-    }
-
-    private fun prepareVpn() {
-        val intent = VpnService.prepare(context)
-        if (intent != null) {
-            vpnPermissionLauncher.launch(intent)
-        } else {
-            startVpnService()
+        binding.apply {
+            rowAppProxy.setOnClickListener {
+                fetchInstalledApps()
+            }
         }
     }
 
-    private fun startVpnService() {
-//        isConnected = true
-//        context?.startService(
-//            Intent(
-//                context,
-//                LocalVpnService::class.java
-//            )
-//        )
+    private fun fetchInstalledApps() {
+        lifecycleScope.launch {
+            mViewModel.loadingApp()
+            val installedApps = getInstalledAppsWithInternetPermission()
+            mViewModel.loadingAppDone()
+            openAppProxy(installedApps)
+        }
     }
 
-    private fun stopVpnService() {
-//        isConnected = false
-//        binding.ivConnect.isSelected = false
-//        context?.stopService( Intent(
-//            context,
-//            LocalVpnService::class.java
-//        ))
-//        binding.tvStatus.text = "Disconnecting..."
+    private fun getInstalledAppsWithInternetPermission(): ArrayList<AppInfo> {
+        val packageManager = requireContext().packageManager
+        return packageManager.getInstalledApplications(PackageManager.GET_META_DATA)
+            .mapNotNull { appInfo ->
+                if (packageManager.checkPermission(
+                        android.Manifest.permission.INTERNET, appInfo.packageName
+                    ) == PackageManager.PERMISSION_GRANTED
+                ) {
+                    val appName = packageManager.getApplicationLabel(appInfo).toString()
+                    val appIcon = packageManager.getApplicationIcon(appInfo)
+                    AppInfo(appInfo.packageName, appIcon, appName)
+                } else null
+            } as ArrayList<AppInfo>
+    }
+
+    private fun openAppProxy(list: ArrayList<AppInfo>) {
+        childFragmentManager.beginTransaction()
+            .replace(R.id.frame_container, AppProxyFragment(list))
+            .addToBackStack(null)
+            .commit()
     }
 }
