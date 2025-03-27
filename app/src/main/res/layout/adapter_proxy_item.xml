@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_radius_8"
+    android:layout_marginVertical="@dimen/size4"
+    android:layout_marginHorizontal="@dimen/size8"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/size12"
+        android:layout_marginTop="@dimen/size12"
+        android:fontFamily="@font/inter"
+        android:gravity="center_vertical"
+        android:text="United States - Newyork"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/text_large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvProxyIp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/size12"
+        android:layout_marginBottom="@dimen/size12"
+        android:fontFamily="@font/inter"
+        android:gravity="center_vertical"
+        android:text="103.23.23.123"
+        android:textColor="@color/gray_2"
+        android:textSize="@dimen/text_normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivWifi"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/size16"
+        android:src="@drawable/ic_wifi"
+        app:layout_constraintBottom_toBottomOf="@id/tvProxyIp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toEndOf="@id/tvProxyIp"
+        app:layout_constraintTop_toTopOf="@id/tvProxyIp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvNetworkSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/size6"
+        android:fontFamily="@font/inter"
+        android:gravity="center_vertical"
+        android:text="16m/s"
+        android:textColor="@color/green_1"
+        android:textSize="@dimen/text_normal"
+        app:layout_constraintStart_toEndOf="@id/ivWifi"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivNext"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/size16"
+        android:layout_marginTop="@dimen/size12"
+        android:layout_marginRight="@dimen/size12"
+        android:src="@drawable/ic_turn_right_arrow"
+        app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/connectingState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/bg_connected_item"
+        android:gravity="center_vertical"
+        android:paddingVertical="@dimen/size4"
+        android:paddingHorizontal="@dimen/size12"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ivSelect"
+            android:src="@drawable/ic_round_selected" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvConnectStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/size6"
+            android:fontFamily="@font/inter"
+            android:gravity="center_vertical"
+            android:text="Connected"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/text_small" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>

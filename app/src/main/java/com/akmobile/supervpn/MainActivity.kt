@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.view.LayoutInflater
 import com.akmobile.supervpn.databinding.ActivityMainBinding
 import com.akmobile.supervpn.home.HomeFragment
+import com.akmobile.supervpn.proxy.ProxyFragment
 import com.akmobile.supervpn.settings.SettingFragment
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -21,7 +22,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
 
     override fun initView() {
         showFragment(mHomeFragment)
-        with (binding) {
+        with(binding) {
             lnSetting.setOnClickListener {
                 showFragment(SettingFragment())
             }
