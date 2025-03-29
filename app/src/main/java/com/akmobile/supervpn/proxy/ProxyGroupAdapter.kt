@@ -4,10 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.akmobile.supervpn.R
 import com.akmobile.supervpn.databinding.AdapterProxyGroupBinding
-import com.akmobile.supervpn.home.ProxyGroupUI
-import com.akmobile.supervpn.home.ProxyUI
+import com.akmobile.supervpn.utils.Utils
 import com.common.baseui.adapter.BaseAdapter
 import com.common.baseui.adapter.BaseViewHolder
+import com.common.baseui.extension.context
+import com.common.baseui.extension.setOnClickNoDoubleClick
 import com.common.baseui.extension.setVisible
 import javax.inject.Inject
 
@@ -30,18 +31,16 @@ class ProxyGroupAdapter @Inject constructor() :
         BaseViewHolder<ProxyGroupUI>(mViewBinding.root) {
         override fun bindData(position: Int, data: ProxyGroupUI) {
             mViewBinding.apply {
-                ivFlag.setImageResource(
-                    when (data.country) {
-                        "vietnam" -> R.drawable.ic_flag_vietnam
-                        "us" -> R.drawable.flag_us
-                        "korea" -> R.drawable.ic_flag_korea
-                        "arab" -> R.drawable.ic_flag_arab
-                        "india" -> R.drawable.ic_flag_india
-                        "japan" -> R.drawable.ic_flag_japan
-                        else -> R.drawable.ic_flag_default
-                    }
+                ivFlag.setImageResource(Utils.getFlag(data.country))
+                tvTitle.setText(
+                    context.getString(
+                        context.resources.getIdentifier(
+                            data.country,
+                            "string",
+                            context.packageName
+                        )
+                    )
                 )
-                tvTitle.setText(data.group)
 
                 ivCollapse.setImageResource(if (data.collapsed) R.drawable.ic_arrow_down else R.drawable.ic_next_arrow)
 
@@ -54,6 +53,12 @@ class ProxyGroupAdapter @Inject constructor() :
                 }
                 rcvProxyItems.adapter = mDailyAdapter
                 rcvProxyItems.setVisible(data.collapsed)
+
+                pnGroupProxy.setOnClickNoDoubleClick {
+                    data.collapsed = !data.collapsed
+                    ivCollapse.setImageResource(if (data.collapsed) R.drawable.ic_arrow_down else R.drawable.ic_next_arrow)
+                    rcvProxyItems.setVisible(data.collapsed)
+                }
             }
         }
 

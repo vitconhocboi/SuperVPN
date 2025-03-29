@@ -3,7 +3,6 @@ package com.akmobile.supervpn.proxy
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.akmobile.supervpn.databinding.AdapterProxyItemBinding
-import com.akmobile.supervpn.home.ProxyUI
 import com.common.baseui.adapter.BaseAdapter
 import com.common.baseui.adapter.BaseViewHolder
 import com.common.baseui.extension.setOnClickNoDoubleClick
@@ -27,7 +26,7 @@ class ProxyAdapter @Inject constructor() : BaseAdapter<ProxyUI, BaseViewHolder<P
             mViewBinding.apply {
                 tvTitle.text = data.name
                 tvProxyIp.text = data.host
-                connectingState.setVisible(data.connecting)
+                connectingState.setVisible(data.active)
                 root.setOnClickNoDoubleClick {
                     onItemClick?.invoke(position, data)
                 }

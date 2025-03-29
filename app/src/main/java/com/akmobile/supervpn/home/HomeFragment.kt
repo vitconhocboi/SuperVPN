@@ -7,13 +7,26 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.fragment.app.viewModels
 import com.akmobile.supervpn.ProductFragment
 import com.akmobile.supervpn.databinding.FragmentHomeBinding
 import com.akmobile.supervpn.network.LocalVpnService
+import com.akmobile.supervpn.proxy.ProxyViewModel
 import com.akmobile.supervpn.utils.Navigator
+import com.akmobile.supervpn.utils.Utils
+import com.common.baseui.extension.bindFlowCreate
+import com.common.baseui.extension.gone
+import com.common.baseui.extension.invisible
+import com.common.baseui.extension.processResultData
+import com.common.baseui.extension.visible
+import com.simple.libads.gone
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     private var isConnected = false
+    private var proxyId: String? = ""
+    private val proxyViewModel: ProxyViewModel by viewModels()
 
     private val vpnPermissionLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -78,17 +91,34 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 //                vpnStatusReceiver, IntentFilter(LocalVpnService.ACTION_VPN_STATUS)
 //            )
 //        }
-
-        binding.ivConnect.setOnClickListener {
-            if (!isConnected) {
-                prepareVpn()
-            } else {
-                stopVpnService()
+        with(binding) {
+            bindFlowCreate(proxyViewModel.getActiveProxy()) {
+                processResultData(it, onSuccess = { it ->
+                    if (it != null) {
+                        ivFlag.setImageResource(Utils.getFlag(it.country))
+                        tvProxyLocation.text = it.name
+                        tvProxyIp.text = it.host
+                        pnProxyInfo.visible()
+                        tvSelectProxy.invisible()
+                    } else {
+                        pnProxyInfo.invisible()
+                        tvSelectProxy.visible()
+                    }
+                })
             }
-        }
+            ivConnect.setOnClickListener {
+                if (!isConnected) {
+                    prepareVpn()
+                } else {
+                    stopVpnService()
+                }
+            }
 
-        binding.pnProxy.setOnClickListener {
-            Navigator.startProxyActivity(requireContext(), null)
+            pnProxy.setOnClickListener {
+                Navigator.startProxyActivity(requireContext(), null)
+            }
+
+            proxyId = arguments?.getString("id", null)
         }
     }
 

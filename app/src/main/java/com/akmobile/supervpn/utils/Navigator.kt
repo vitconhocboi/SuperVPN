@@ -11,7 +11,6 @@ object Navigator {
 
     fun startMainActivity(context: Context, proxyId: String?) {
         context.startActivity(Intent(context, MainActivity::class.java).apply {
-            addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
             putExtra("ID", proxyId)
         })
     }

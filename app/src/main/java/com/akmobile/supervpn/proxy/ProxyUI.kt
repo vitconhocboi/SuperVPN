@@ -1,4 +1,4 @@
-package com.akmobile.supervpn.home
+package com.akmobile.supervpn.proxy
 
 
 data class ProxyUI(
@@ -9,5 +9,6 @@ data class ProxyUI(
     val port: String,
     val username: String,
     val password: String,
-    val connecting: Boolean = false
+    val country: String,
+    var active: Boolean = false
 )
