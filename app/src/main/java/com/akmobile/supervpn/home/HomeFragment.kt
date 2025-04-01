@@ -14,6 +14,7 @@ import com.akmobile.supervpn.network.LocalVpnService
 import com.akmobile.supervpn.proxy.ProxyViewModel
 import com.akmobile.supervpn.utils.Navigator
 import com.akmobile.supervpn.utils.Utils
+import com.common.baseui.BaseAppConfig
 import com.common.baseui.extension.bindFlowCreate
 import com.common.baseui.extension.gone
 import com.common.baseui.extension.invisible
@@ -92,15 +93,29 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 //            )
 //        }
         with(binding) {
-            bindFlowCreate(proxyViewModel.getActiveProxy()) {
+            proxyViewModel.getActiveProxy()
+            bindFlowCreate(proxyViewModel.activeProxy) {
                 processResultData(it, onSuccess = { it ->
                     if (it != null) {
+                        //set to pref
+                        BaseAppConfig.proxyType = it.type
+                        BaseAppConfig.proxyHost = it.host
+                        BaseAppConfig.proxyPort = it.port
+                        BaseAppConfig.proxyUser = it.username
+                        BaseAppConfig.proxyPass = it.password
+                        //update UI
                         ivFlag.setImageResource(Utils.getFlag(it.country))
                         tvProxyLocation.text = it.name
                         tvProxyIp.text = it.host
                         pnProxyInfo.visible()
                         tvSelectProxy.invisible()
                     } else {
+                        BaseAppConfig.proxyType = ""
+                        BaseAppConfig.proxyHost = ""
+                        BaseAppConfig.proxyPort = ""
+                        BaseAppConfig.proxyUser = ""
+                        BaseAppConfig.proxyPass = ""
+
                         pnProxyInfo.invisible()
                         tvSelectProxy.visible()
                     }

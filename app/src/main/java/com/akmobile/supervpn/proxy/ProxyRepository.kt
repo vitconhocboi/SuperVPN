@@ -1,12 +1,13 @@
 package com.akmobile.supervpn.proxy
 
+import com.akmobile.supervpn.db.VpnDatabase
 import com.akmobile.supervpn.utils.Constant
 import com.common.baseui.ResultData
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-class ProxyRepository @Inject constructor() : ProxyInterface {
+class ProxyRepository @Inject constructor(private val database: VpnDatabase) : ProxyInterface {
     var list = mutableListOf(
         ProxyUI(
             "1",
@@ -61,29 +62,34 @@ class ProxyRepository @Inject constructor() : ProxyInterface {
         ),
     )
 
-    override fun getAllProxy(): Flow<ResultData<List<ProxyGroupUI>>> {
-        return flow {
-            val group = list.groupBy { it.country }.map {
-                ProxyGroupUI(it.key, it.value.find { it.active } != null, it.value)
-            }
-
-            if (group.find { it.collapsed } == null) {
-                group.first().collapsed = true
-            }
-
-            emit(ResultData.success(group))
+    override fun getAllProxy(): Flow<ResultData<List<ProxyGroupUI>>> = flow {
+        var cached = database.proxyDAO().getAll()
+        if (cached.isNullOrEmpty()) {
+            database.proxyDAO().insertAll(list.map { it.mapToDB() })
+            cached = database.proxyDAO().getAll()
         }
+        val group = cached.groupBy { it.country }.map {
+            ProxyGroupUI(it.key, it.value.find { it.active } != null, it.value.map { it.mapToUI() })
+        }
+
+        val activeGroup = group.find(ProxyGroupUI::collapsed)
+        if (activeGroup != null) {
+            activeGroup.collapsed = true
+        } else {
+            group.first().collapsed = true
+        }
+
+        emit(ResultData.success(group))
     }
 
-    override fun getActiveProxy(): Flow<ResultData<ProxyUI?>> {
-        return flow {
-            emit(ResultData.success(list.filter { it.active }.firstOrNull()))
-        }
+
+    override fun getActiveProxy(): Flow<ResultData<ProxyUI?>> = flow {
+        emit(ResultData.success(database.proxyDAO().findActiveProxy()?.mapToUI()))
     }
+
 
     override fun setActiveProxy(id: String): Flow<ResultData<Boolean>> {
-        list.find { it.active }?.active = false
-        list.find { it.id == id }?.active = true
+        database.proxyDAO().updateActiveProxy(id)
         return flow {
             emit(ResultData.success(true))
         }

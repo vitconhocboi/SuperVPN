@@ -38,12 +38,6 @@ class ProxyConfig {
         dnsList.add(IPAddress("1.1.1.1"))
     }
 
-    fun setProxy(proxy: String?) {
-        val config: Config = HttpConnectConfig.parse(proxy)
-        m_ProxyList.clear()
-        m_ProxyList.add(config)
-    }
-
     fun setPublicIp(IP: String?) {
         if (IP != null) {
             m_IpList.clear()
@@ -54,8 +48,7 @@ class ProxyConfig {
     val defaultProxy: Config
         get() {
             if (m_ProxyList.isEmpty()) {
-                val proxyAddress: String = BaseAppConfig.proxyAddress
-                val config: Config = HttpConnectConfig.parse(proxyAddress)
+                val config: Config = HttpConnectConfig.getProxyConfig()
                 m_ProxyList.clear()
                 m_ProxyList.add(config)
                 return config

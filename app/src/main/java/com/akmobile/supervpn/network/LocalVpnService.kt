@@ -283,10 +283,10 @@ class LocalVpnService : VpnService(), Runnable {
         val builder: Builder = Builder()
         builder.setMtu(ProxyConfig.Instance.mTU)
         //longld set current proxy to reference
-        val proxyAddress: String = BaseAppConfig.proxyAddress
-        if (proxyAddress != null) {
-            this.SetProxyServer(proxyAddress)
-        }
+//        val proxyAddress: String = BaseAppConfig.proxyHost
+//        if (proxyAddress.isNotEmpty()) {
+//            this.SetProxyServer(proxyAddress)
+//        }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             builder.setHttpProxy(ProxyInfo.buildDirectProxy("localhost", 8118))
         }
