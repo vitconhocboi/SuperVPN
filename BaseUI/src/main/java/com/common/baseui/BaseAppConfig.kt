@@ -15,12 +15,42 @@ object BaseAppConfig {
         set(value) {
             SharedPrefs.instance.put(KEY_FIRST_TIME_SETUP, value)
         }
-    private const val KEY_PROXY_ADDRESS = "PROXY_ADDRESS"
 
-    var proxyAddress: String
-        get() = "http://US443764:oQFW9r2p@5.181.164.131:56789"
+    private const val KEY_PROXY_TYPE = "PROXY_TYPE"
+
+    var proxyType: String
+        get() = SharedPrefs.instance[KEY_PROXY_TYPE, String::class.java, "http"]
         set(value) {
-            SharedPrefs.instance.put(KEY_PROXY_ADDRESS, value)
+            SharedPrefs.instance.put(KEY_PROXY_TYPE, value)
+        }
+
+    private const val KEY_PROXY_HOST = "PROXY_HOST"
+
+    var proxyHost: String
+        get() = SharedPrefs.instance[KEY_PROXY_HOST, String::class.java, ""]
+        set(value) {
+            SharedPrefs.instance.put(KEY_PROXY_HOST, value)
+        }
+
+    private const val KEY_PROXY_PORT = "PROXY_PORT"
+    var proxyPort: String
+        get() = SharedPrefs.instance[KEY_PROXY_PORT, String::class.java, ""]
+        set(value) {
+            SharedPrefs.instance.put(KEY_PROXY_PORT, value)
+        }
+
+    private const val KEY_PROXY_USER = "PROXY_USER"
+    var proxyUser: String
+        get() = SharedPrefs.instance[KEY_PROXY_USER, String::class.java, ""]
+        set(value) {
+            SharedPrefs.instance.put(KEY_PROXY_USER, value)
+        }
+
+    private const val KEY_PROXY_PASS = "PROXY_PASS"
+    var proxyPass: String
+        get() = SharedPrefs.instance[KEY_PROXY_PASS, String::class.java, ""]
+        set(value) {
+            SharedPrefs.instance.put(KEY_PROXY_PASS, value)
         }
 
     private const val KEY_PUBLIC_IP = "PUBLIC_IP"

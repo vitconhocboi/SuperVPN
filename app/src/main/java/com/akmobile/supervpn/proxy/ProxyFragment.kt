@@ -37,7 +37,8 @@ class ProxyFragment : ProductFragment<FragmentProxyBinding>() {
 
             }
             rcvGroupProxy.adapter = mPagerAdapter
-            bindFlowCreate(mProxyViewModel.getAllProxy()) { result ->
+            mProxyViewModel.getAllProxy()
+            bindFlowCreate(mProxyViewModel.allProxy) { result ->
                 processResultData(result, onSuccess = {
                     mPagerAdapter.updateData(it)
                 })
