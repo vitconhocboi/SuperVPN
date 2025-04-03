@@ -81,17 +81,30 @@ class LocalVpnService : VpnService(), Runnable {
 
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
         super.onStartCommand(intent, flags, startId)
-        IsRunning = true
-        // Start a new session by creating a new thread.
-        m_VPNThread = Thread(this, "VPNServiceThread")
-        m_VPNThread!!.start()
 
-        m_PrivoxyManager = PrivoxyManager(this)
-        if (m_PrivoxyManager!!.initialize() && m_PrivoxyManager!!.start()) {
-            writeLog("Privoxy started on: " + m_PrivoxyManager!!.getProxyAddress())
-        } else {
-            writeLog("Failed to start Privoxy")
+        when (intent.action) {
+            ACTION_START -> {
+                IsRunning = true
+                // Start a new session by creating a new thread.
+                m_VPNThread = Thread(this, "VPNServiceThread")
+                m_VPNThread!!.start()
+
+                m_PrivoxyManager = PrivoxyManager(this)
+                if (m_PrivoxyManager!!.initialize() && m_PrivoxyManager!!.start()) {
+                    writeLog("Privoxy started on: " + m_PrivoxyManager!!.getProxyAddress())
+                } else {
+                    writeLog("Failed to start Privoxy")
+                }
+            }
+
+            ACTION_STOP -> {
+                if (IsRunning) {
+
+                }
+            }
         }
+
+
         return START_NOT_STICKY
     }
 
@@ -113,7 +126,6 @@ class LocalVpnService : VpnService(), Runnable {
 
     fun writeLog(format: String?, vararg args: Any?) {
         val logString = String.format(format!!, *args)
-        Log.d("SinhTest", logString)
     }
 
     fun sendUDPPacket(ipHeader: IPHeader, udpHeader: UDPHeader?) {
@@ -422,6 +434,10 @@ class LocalVpnService : VpnService(), Runnable {
         }
 
     companion object {
+
+        private const val ACTION_START = "ACTION_START"
+        private const val ACTION_STOP = "ACTION_STOP"
+
         lateinit var Instance: LocalVpnService
         var IsRunning: Boolean = false
         var version_bypass: String = "1.0.1"
@@ -440,5 +456,15 @@ class LocalVpnService : VpnService(), Runnable {
                 m_OnStatusChangedListeners.remove(listener)
             }
         }
+
+        fun startProxy(context: Context) =
+            Intent(context, LocalVpnService::class.java).apply {
+                action = ACTION_START
+            }
+
+        fun stopProxy(context: Context) =
+            Intent(context, LocalVpnService::class.java).apply {
+                action = ACTION_STOP
+            }
     }
 }

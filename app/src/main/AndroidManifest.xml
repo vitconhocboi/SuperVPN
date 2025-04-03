@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 
     <application
         android:name=".SuperVpnApplication"
@@ -22,9 +23,6 @@
             android:name=".ProxyActivity"
             android:exported="false"
             android:theme="@style/Theme.SuperVPN" />
-        <activity
-            android:name=".proxy.ProxyActivity"
-            android:exported="false" />
         <activity
             android:name=".LanguageActivity"
             android:exported="false"
@@ -59,6 +57,19 @@
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.SuperVPN" />
+
+        <receiver
+            android:name=".broadcast.SchedulerReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="super-vpn.STOP_PROXY" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>

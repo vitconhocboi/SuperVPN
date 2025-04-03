@@ -1,7 +1,10 @@
 package com.akmobile.supervpn.proxy
 
+import android.content.Context
+import android.content.Intent
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.akmobile.supervpn.network.LocalVpnService
 import com.common.baseui.ResultData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -32,5 +35,13 @@ class ProxyViewModel @Inject constructor(private val proxyUseCase: ProxyInterfac
         viewModelScope.launch(Dispatchers.IO) {
             proxyUseCase.setActiveProxy(id)
         }
+    }
+
+    fun startProxy(context: Context?) {
+        LocalVpnService.startProxy(context!!)
+    }
+
+    fun stopProxy(context: Context?) {
+        LocalVpnService.stopProxy(context!!)
     }
 }

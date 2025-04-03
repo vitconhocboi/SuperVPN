@@ -23,6 +23,7 @@
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
+
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="vn">Việt Name</string>
@@ -31,4 +32,19 @@
     <string name="arb">Arab</string>
     <string name="ind">India</string>
     <string name="jp">Japan</string>
+
+    <string name="connecting">Connecting…</string>
+    <string name="connected">Connected</string>
+    <string name="disconnecting">Disconnection…</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="connect_error">Connect Failed</string>
+
+    <string name="home_settime">Choose time connection</string>
+    <string name="home_settime_1">After one hour</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="auto">Auto</string>
+    <string name="min_60">60 Minutes</string>
+    <string name="min_90">90 Minutes</string>
+    <string name="min_120">120 Minutes</string>
 </resources>

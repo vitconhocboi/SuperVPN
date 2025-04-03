@@ -1,6 +1,7 @@
 package com.akmobile.supervpn.home
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.net.VpnService
 import android.util.Log
@@ -22,6 +23,8 @@ import com.common.baseui.extension.processResultData
 import com.common.baseui.extension.visible
 import com.simple.libads.gone
 import dagger.hilt.android.AndroidEntryPoint
+import com.akmobile.supervpn.R
+import com.akmobile.supervpn.scheduler.StopProxyScheduler
 
 @AndroidEntryPoint
 class HomeFragment : ProductFragment<FragmentHomeBinding>() {
@@ -46,33 +49,33 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     private fun updateUI(status: String?) {
         when (status) {
             "CONNECTING" -> {
-                binding.tvStatus.text = "Connecting..."
+                binding.tvStatus.text = activity?.resources?.getString(R.string.connecting)
                 binding.ivConnect.isEnabled = false
             }
 
             "CONNECTED" -> {
                 binding.ivConnect.isSelected = true
                 isConnected = true
-                binding.tvStatus.text = "Connected"
+                binding.tvStatus.text = activity?.resources?.getString(R.string.connected)
                 binding.ivConnect.isEnabled = true
             }
 
             "DISCONNECTING" -> {
-                binding.tvStatus.text = "Disconnecting..."
+                binding.tvStatus.text = activity?.resources?.getString(R.string.disconnecting)
                 binding.ivConnect.isEnabled = false
             }
 
             "DISCONNECTED" -> {
                 isConnected = false
                 binding.ivConnect.isSelected = false
-                binding.tvStatus.text = "Disconnected"
+                binding.tvStatus.text = activity?.resources?.getString(R.string.disconnected)
                 binding.ivConnect.isEnabled = true
             }
 
             "ERROR" -> {
                 binding.ivConnect.isSelected = false
                 isConnected = false
-                binding.tvStatus.text = "Connect (Error)"
+                binding.tvStatus.text = activity?.resources?.getString(R.string.connect_error)
                 binding.ivConnect.isEnabled = true
             }
         }
@@ -122,11 +125,19 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 })
             }
             ivConnect.setOnClickListener {
-                if (!isConnected) {
-                    prepareVpn()
-                } else {
-                    stopVpnService()
-                }
+                ChooseTimeDialog(
+                    requireActivity(),
+                    onSelect = { min ->
+                        StopProxyScheduler.stopProxy(requireContext(), min) {
+                            if (!isConnected) {
+                                prepareVpn()
+                            } else {
+                                stopVpnService()
+                            }
+                        }
+                    }
+                ).show()
+
             }
 
             pnProxy.setOnClickListener {
@@ -148,13 +159,9 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 
     private fun startVpnService() {
         isConnected = true
-        context?.startService(
-            Intent(
-                context, LocalVpnService::class.java
-            )
-        )
+        proxyViewModel.startProxy(context)
         binding.ivConnect.isSelected = true
-        binding.tvStatus.text = "Connecting..."
+        binding.tvStatus.text = activity?.resources?.getString(R.string.connecting)
     }
 
     private fun stopVpnService() {
@@ -162,7 +169,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
             LocalVpnService.IsRunning = false
             isConnected = false
             binding.ivConnect.isSelected = false
-            binding.tvStatus.text = "Disconnecting..."
+            binding.tvStatus.text = activity?.resources?.getString(R.string.disconnecting)
         } catch (e: Exception) {
             Log.e("VPN", "Error stopping VPN service", e)
         }
