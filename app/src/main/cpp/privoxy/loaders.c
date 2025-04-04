@@ -1017,6 +1017,8 @@ void unload_forward_spec(struct forward_spec *fwd)
    free_pattern_spec(fwd->url);
    freez(fwd->gateway_host);
    freez(fwd->forward_host);
+   freez(fwd->auth_username);
+   freez(fwd->auth_password);
    free(fwd);
 
    return;
