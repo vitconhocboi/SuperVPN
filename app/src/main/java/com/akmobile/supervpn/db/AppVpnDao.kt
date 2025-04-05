@@ -2,6 +2,7 @@ package com.akmobile.supervpn.db
 
 import androidx.room.Dao
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
 
@@ -11,7 +12,7 @@ interface AppVpnDao {
     @Insert
     fun insertAll(items: List<VpnAppItemDB>)
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(item: VpnAppItemDB)
 
     @Query("DELETE FROM VpnAppItemDB")
@@ -21,5 +22,5 @@ interface AppVpnDao {
     fun delete(packageName: String)
 
     @Query("SELECT * FROM VpnAppItemDB")
-    fun getAll() : Flow<List<VpnAppItemDB>>
+    fun getAll(): List<VpnAppItemDB>
 }

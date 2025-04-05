@@ -24,13 +24,19 @@ import com.common.baseui.extension.visible
 import com.simple.libads.gone
 import dagger.hilt.android.AndroidEntryPoint
 import com.akmobile.supervpn.R
+import com.akmobile.supervpn.db.VpnAppItemDB
 import com.akmobile.supervpn.scheduler.StopProxyScheduler
+import com.akmobile.supervpn.settings.appproxy.AppProxyViewModel
 
 @AndroidEntryPoint
 class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     private var isConnected = false
     private var proxyId: String? = ""
     private val proxyViewModel: ProxyViewModel by viewModels()
+
+    private val allowAppViewModel: AppProxyViewModel by viewModels()
+
+    private var allowApp: List<VpnAppItemDB>? = null
 
     private val vpnPermissionLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -124,19 +130,33 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                     }
                 })
             }
+
+            allowAppViewModel.getAllowApp()
+
+            bindFlowCreate(allowAppViewModel.allowApp) { result ->
+                processResultData(result, onSuccess = {
+                    allowApp = it
+                })
+            }
+
             ivConnect.setOnClickListener {
-                ChooseTimeDialog(
-                    requireActivity(),
-                    onSelect = { min ->
-                        StopProxyScheduler.stopProxy(requireContext(), min) {
-                            if (!isConnected) {
-                                prepareVpn()
-                            } else {
-                                stopVpnService()
-                            }
-                        }
-                    }
-                ).show()
+//                ChooseTimeDialog(
+//                    requireActivity(),
+//                    onSelect = { min ->
+//                        StopProxyScheduler.stopProxy(requireContext(), min) {
+//                            if (!isConnected) {
+//                                prepareVpn()
+//                            } else {
+//                                stopVpnService()
+//                            }
+//                        }
+//                    }
+//                ).show()
+                if (!isConnected) {
+                    prepareVpn()
+                } else {
+                    stopVpnService()
+                }
 
             }
 
@@ -159,7 +179,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 
     private fun startVpnService() {
         isConnected = true
-        proxyViewModel.startProxy(context)
+        proxyViewModel.startProxy(context, allowApp = allowApp?.map { it.packageName })
         binding.ivConnect.isSelected = true
         binding.tvStatus.text = activity?.resources?.getString(R.string.connecting)
     }

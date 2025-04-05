@@ -9,12 +9,9 @@ import androidx.lifecycle.lifecycleScope
 import com.akmobile.supervpn.ProductFragment
 import com.akmobile.supervpn.R
 import com.akmobile.supervpn.databinding.FragmentSettingBinding
-import com.akmobile.supervpn.settings.appproxy.AppInfo
+import com.akmobile.supervpn.settings.appproxy.AppProxyUI
 import com.akmobile.supervpn.settings.appproxy.AppProxyFragment
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -50,7 +47,7 @@ class SettingFragment : ProductFragment<FragmentSettingBinding>() {
         }
     }
 
-    private fun getInstalledAppsWithInternetPermission(): ArrayList<AppInfo> {
+    private fun getInstalledAppsWithInternetPermission(): ArrayList<AppProxyUI> {
         val packageManager = requireContext().packageManager
         return packageManager.getInstalledApplications(PackageManager.GET_META_DATA)
             .mapNotNull { appInfo ->
@@ -60,12 +57,12 @@ class SettingFragment : ProductFragment<FragmentSettingBinding>() {
                 ) {
                     val appName = packageManager.getApplicationLabel(appInfo).toString()
                     val appIcon = packageManager.getApplicationIcon(appInfo)
-                    AppInfo(appInfo.packageName, appIcon, appName)
+                    AppProxyUI(appInfo.packageName, appIcon, appName)
                 } else null
-            } as ArrayList<AppInfo>
+            } as ArrayList<AppProxyUI>
     }
 
-    private fun openAppProxy(list: ArrayList<AppInfo>) {
+    private fun openAppProxy(list: ArrayList<AppProxyUI>) {
         childFragmentManager.beginTransaction()
             .replace(R.id.frame_container, AppProxyFragment(list))
             .addToBackStack(null)

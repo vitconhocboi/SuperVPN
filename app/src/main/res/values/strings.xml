@@ -34,10 +34,13 @@
     <string name="jp">Japan</string>
 
     <string name="connecting">Connecting…</string>
-    <string name="connected">Connected</string>
+    <string name="connected">CONNECTED</string>
     <string name="disconnecting">Disconnection…</string>
     <string name="disconnected">Disconnected</string>
     <string name="connect_error">Connect Failed</string>
+    <string name="tap_to_connect">TAP TO CONNECT</string>
+    <string name="upload">UPLOAD</string>
+    <string name="download">DOWNLOAD</string>
 
     <string name="home_settime">Choose time connection</string>
     <string name="home_settime_1">After one hour</string>

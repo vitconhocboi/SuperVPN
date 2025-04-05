@@ -24,6 +24,7 @@ import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.io.IOException
 import java.nio.ByteBuffer
+import java.util.ArrayList
 import java.util.concurrent.ConcurrentHashMap
 
 //import go.lantern.Lantern;
@@ -49,6 +50,7 @@ class LocalVpnService : VpnService(), Runnable {
     private lateinit var m_Blacklist: Array<String>
 
     private var m_PrivoxyManager: PrivoxyManager? = null
+    private var allowApp: List<String>? = null
 
     init {
         ID++
@@ -81,6 +83,9 @@ class LocalVpnService : VpnService(), Runnable {
 
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
         super.onStartCommand(intent, flags, startId)
+        if (intent.getStringArrayListExtra("allowApp")?.isNotEmpty() == true) {
+            allowApp = intent.getStringArrayListExtra("allowApp")
+        }
 
         when (intent.action) {
             ACTION_START -> {
@@ -317,6 +322,12 @@ class LocalVpnService : VpnService(), Runnable {
             builder.addDnsServer(dns.Address)
         }
 
+        if (allowApp?.isNotEmpty() == true) {
+            for (app in allowApp!!) {
+                builder.addAllowedApplication(app)
+            }
+        }
+
         m_Blacklist = byPassURL
         ProxyConfig.Instance.resetDomain(m_Blacklist)
 
@@ -457,9 +468,10 @@ class LocalVpnService : VpnService(), Runnable {
             }
         }
 
-        fun startProxy(context: Context) =
+        fun startProxy(context: Context, allowApp: List<String>?) =
             Intent(context, LocalVpnService::class.java).apply {
                 action = ACTION_START
+                putStringArrayListExtra("allowApp", allowApp as ArrayList<String>?)
             }
 
         fun stopProxy(context: Context) =

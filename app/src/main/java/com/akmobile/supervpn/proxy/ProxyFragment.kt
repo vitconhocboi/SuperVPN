@@ -5,8 +5,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.akmobile.supervpn.ProductFragment
 import com.akmobile.supervpn.databinding.FragmentProxyBinding
+import com.akmobile.supervpn.db.VpnAppItemDB
+import com.akmobile.supervpn.settings.appproxy.AppProxyViewModel
 import com.akmobile.supervpn.utils.Navigator
-import com.common.baseui.extension.bindFlow
 import com.common.baseui.extension.bindFlowCreate
 import com.common.baseui.extension.processResultData
 import dagger.hilt.android.AndroidEntryPoint
