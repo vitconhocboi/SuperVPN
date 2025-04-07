@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.SuperVPN" parent="android:Theme.Material.Light.NoActionBar">
+    <style name="Theme.SuperVPN" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowFullscreen">true</item>
+        <!--Text Appearance-->
+        <item name="textAppearanceHeadline3">@style/App_TextAppearanceTitle1</item>
+        <item name="textAppearanceHeadline4">@style/App_TextAppearanceTitle2</item>
+
+        <item name="textAppearanceBody1">@style/App_TextAppearanceBody1</item>
+        <item name="textAppearanceBody2">@style/App_TextAppearanceBody2</item>
     </style>
     <!-- Base application theme. -->
-    <style name="Base.Theme.SuperVPN" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.SuperVPN" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowFullscreen">true</item>
     </style>
 </resources>

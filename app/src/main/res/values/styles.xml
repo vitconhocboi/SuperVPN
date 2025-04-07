@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="App_TextAppearanceTitle1" parent="TextAppearance.AppCompat.Title">
+        <item name="fontFamily">@font/inter_bold</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="App_TextAppearanceTitle2" parent="TextAppearance.AppCompat.Title">
+        <item name="fontFamily">@font/inter_bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/successColor</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+
+    <style name="App_TextAppearanceBody1" parent="TextAppearance.AppCompat.Title">
+        <item name="fontFamily">@font/inter_bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="App_TextAppearanceBody2" parent="TextAppearance.AppCompat.Title">
+        <item name="fontFamily">@font/inter_bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="App_TextAppearanceButton1" parent="TextAppearance.AppCompat.Title">
+        <item name="fontFamily">@font/inter_bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+
+</resources>

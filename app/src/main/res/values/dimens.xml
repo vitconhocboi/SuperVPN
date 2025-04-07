@@ -5,8 +5,10 @@
     <dimen name="margin_medium">8dp</dimen>
     <dimen name="margin_big">12dp</dimen>
     <dimen name="margin_24">24dp</dimen>
+    <dimen name="margin_3x">36dp</dimen>
     <dimen name="size_8">8dp</dimen>
 
+    <dimen name="size_16">16dp</dimen>
     <dimen name="size_30">30dp</dimen>
     <dimen name="size_50">50dp</dimen>
     <dimen name="size_60">60dp</dimen>

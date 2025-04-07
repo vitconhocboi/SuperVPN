@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.akmobile.supervpn.ProductFragment
 import com.akmobile.supervpn.databinding.FragmentHomeBinding
 import com.akmobile.supervpn.network.LocalVpnService
@@ -28,6 +29,15 @@ import com.akmobile.supervpn.scheduler.StopProxyScheduler
 
 @AndroidEntryPoint
 class HomeFragment : ProductFragment<FragmentHomeBinding>() {
+
+    companion object {
+        public const val CONNECTING = "CONNECTING"
+        public const val CONNECTED = "CONNECTED"
+        public const val DISCONNECTING = "DISCONNECTING"
+        public const val DISCONNECTED = "DISCONNECTED"
+        public const val ERROR = "ERROR"
+    }
+
     private var isConnected = false
     private var proxyId: String? = ""
     private val proxyViewModel: ProxyViewModel by viewModels()
@@ -48,31 +58,31 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 
     private fun updateUI(status: String?) {
         when (status) {
-            "CONNECTING" -> {
+            CONNECTING -> {
                 binding.tvStatus.text = activity?.resources?.getString(R.string.connecting)
                 binding.ivConnect.isEnabled = false
             }
 
-            "CONNECTED" -> {
+            CONNECTED -> {
                 binding.ivConnect.isSelected = true
                 isConnected = true
                 binding.tvStatus.text = activity?.resources?.getString(R.string.connected)
                 binding.ivConnect.isEnabled = true
             }
 
-            "DISCONNECTING" -> {
+            DISCONNECTING -> {
                 binding.tvStatus.text = activity?.resources?.getString(R.string.disconnecting)
                 binding.ivConnect.isEnabled = false
             }
 
-            "DISCONNECTED" -> {
+            DISCONNECTED -> {
                 isConnected = false
                 binding.ivConnect.isSelected = false
                 binding.tvStatus.text = activity?.resources?.getString(R.string.disconnected)
                 binding.ivConnect.isEnabled = true
             }
 
-            "ERROR" -> {
+            ERROR -> {
                 binding.ivConnect.isSelected = false
                 isConnected = false
                 binding.tvStatus.text = activity?.resources?.getString(R.string.connect_error)
@@ -125,19 +135,18 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 })
             }
             ivConnect.setOnClickListener {
-                ChooseTimeDialog(
-                    requireActivity(),
-                    onSelect = { min ->
-                        StopProxyScheduler.stopProxy(requireContext(), min) {
-                            if (!isConnected) {
+                if (isConnected) {
+                    stopVpnService()
+                } else {
+                    ChooseTimeDialog(
+                        requireActivity(),
+                        onSelect = { min ->
+                            StopProxyScheduler.runProxy(requireContext(), min) {
                                 prepareVpn()
-                            } else {
-                                stopVpnService()
                             }
                         }
-                    }
-                ).show()
-
+                    ).show()
+                }
             }
 
             pnProxy.setOnClickListener {
@@ -146,6 +155,11 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 
             proxyId = arguments?.getString("id", null)
         }
+
+        proxyViewModel.isConnected.observe(viewLifecycleOwner) { status ->
+            updateUI(status)
+        }
+
     }
 
     private fun prepareVpn() {
@@ -160,16 +174,17 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     private fun startVpnService() {
         isConnected = true
         proxyViewModel.startProxy(context)
-        binding.ivConnect.isSelected = true
-        binding.tvStatus.text = activity?.resources?.getString(R.string.connecting)
+//        binding.ivConnect.isSelected = true
+//        binding.tvStatus.text = activity?.resources?.getString(R.string.connecting)
     }
 
     private fun stopVpnService() {
         try {
-            LocalVpnService.IsRunning = false
-            isConnected = false
-            binding.ivConnect.isSelected = false
-            binding.tvStatus.text = activity?.resources?.getString(R.string.disconnecting)
+            proxyViewModel.stopProxy(context)
+//            LocalVpnService.IsRunning = false
+//            isConnected = false
+//            binding.ivConnect.isSelected = false
+//            binding.tvStatus.text = activity?.resources?.getString(R.string.disconnecting)
         } catch (e: Exception) {
             Log.e("VPN", "Error stopping VPN service", e)
         }

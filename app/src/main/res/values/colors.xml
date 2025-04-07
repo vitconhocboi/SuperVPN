@@ -9,4 +9,7 @@
     <color name="gray_2">#767C8A</color>
     <color name="green_1">#03C343</color>
     <color name="language_item_text_color">#ECEFF5</color>
+
+    <color name="text_gray_1">#E6E9F0</color>
+    <color name="text_gray_2">#767C8A</color>
 </resources>

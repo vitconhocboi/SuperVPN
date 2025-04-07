@@ -33,7 +33,7 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/size16"
             android:layout_weight="1"
-            android:fontFamily="@font/inter"
+            android:fontFamily="@font/inter_bold"
             android:gravity="center_vertical"
             android:text="United States"
             android:textColor="@color/textColor"

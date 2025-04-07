@@ -1,33 +1,49 @@
 package com.akmobile.supervpn.network
 
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.net.ProxyInfo
 import android.net.VpnService
+import android.os.Binder
 import android.os.Build
 import android.os.Handler
 import android.os.IBinder
+import android.os.Looper
 import android.os.ParcelFileDescriptor
 import android.util.Log
+import androidx.core.app.NotificationCompat
 import com.common.baseui.BaseAppConfig
 import com.akmobile.supervpn.MainActivity
+import com.akmobile.supervpn.home.HomeFragment
 import com.akmobile.supervpn.network.dns.DnsPacket
 import com.akmobile.supervpn.network.tcpip.CommonMethods
 import com.akmobile.supervpn.network.tcpip.IPHeader
 import com.akmobile.supervpn.network.tcpip.TCPHeader
 import com.akmobile.supervpn.network.tcpip.UDPHeader
+import com.akmobile.supervpn.proxy.ProxyConnection
 import com.akmobile.supervpn.utils.Constant
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.FlowPreview
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.io.IOException
 import java.nio.ByteBuffer
 import java.util.concurrent.ConcurrentHashMap
+import javax.inject.Inject
 
-//import go.lantern.Lantern;
+@AndroidEntryPoint
 class LocalVpnService : VpnService(), Runnable {
+
+    @Inject
+    lateinit var proxyConnection : ProxyConnection
+
     private val device: String = Build.DEVICE
     private val model: String = Build.MODEL
     private val version = "" + Build.VERSION.SDK_INT + " (" + Build.VERSION.RELEASE + ")"
@@ -65,13 +81,13 @@ class LocalVpnService : VpnService(), Runnable {
 
     override fun onCreate() {
         try {
-//            m_TcpProxyServer = TcpProxyServer(0)
-//            m_TcpProxyServer!!.start()
-//            writeLog("LocalTcpServer started.")
-//
-//            m_DnsProxy = DnsProxy()
-//            m_DnsProxy!!.start()
-//            writeLog("LocalDnsProxy started.")
+            m_TcpProxyServer = TcpProxyServer(0)
+            m_TcpProxyServer!!.start()
+            writeLog("LocalTcpServer started.")
+
+            m_DnsProxy = DnsProxy()
+            m_DnsProxy!!.start()
+            writeLog("LocalDnsProxy started.")
         } catch (e: Exception) {
             writeLog("Failed to start TCP/DNS Proxy")
         }
@@ -92,29 +108,55 @@ class LocalVpnService : VpnService(), Runnable {
                 m_PrivoxyManager = PrivoxyManager(this)
                 if (m_PrivoxyManager!!.initialize() && m_PrivoxyManager!!.start()) {
                     writeLog("Privoxy started on: " + m_PrivoxyManager!!.getProxyAddress())
+                    proxyConnection.updateUI(HomeFragment.CONNECTED)
                 } else {
                     writeLog("Failed to start Privoxy")
+                    proxyConnection.updateUI(HomeFragment.DISCONNECTED)
                 }
             }
 
             ACTION_STOP -> {
                 if (IsRunning) {
-
+                    IsRunning = false
+                    proxyConnection.updateUI(HomeFragment.DISCONNECTED)
                 }
             }
         }
 
+        startForeground(1, createNotification())
 
         return START_NOT_STICKY
     }
 
-    override fun onBind(intent: Intent): IBinder? {
-        val action = intent.action
-        if (action == SERVICE_INTERFACE) {
-            return super.onBind(intent)
+    private fun createNotification(): Notification {
+        val channelId = "vpn_service"
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(channelId, "Vpn Service", NotificationManager.IMPORTANCE_LOW)
+            (getSystemService(NotificationManager::class.java)).createNotificationChannel(channel)
         }
-        return null
+
+        return NotificationCompat.Builder(this, channelId)
+            .setSmallIcon(android.R.color.transparent) // Hide icon
+            .setContentTitle("")
+            .setContentText("")
+            .setPriority(NotificationCompat.PRIORITY_MIN)
+            .build()
     }
+
+    override fun onBind(intent: Intent): IBinder? {
+//        val action = intent.action
+//        if (action == SERVICE_INTERFACE) {
+//            return super.onBind(intent)
+//        }
+//        return null
+        return LocalBinder(this)
+    }
+
+    fun getStatus() : Boolean {
+        return IsRunning
+    }
+
+    class LocalBinder(val service: LocalVpnService) : Binder()
 
     private fun onStatusChanged(status: String, isRunning: Boolean) {
         m_Handler.post {
@@ -195,6 +237,9 @@ class LocalVpnService : VpnService(), Runnable {
                     Thread.sleep(100)
                 }
             }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            e.printStackTrace()
         } finally {
             input.close()
         }
@@ -457,14 +502,20 @@ class LocalVpnService : VpnService(), Runnable {
             }
         }
 
-        fun startProxy(context: Context) =
-            Intent(context, LocalVpnService::class.java).apply {
-                action = ACTION_START
-            }
+        fun startProxy(context: Context) {
+            context.startService(
+                Intent(context, LocalVpnService::class.java).apply {
+                    action = ACTION_START
+                }
+            )
+        }
 
-        fun stopProxy(context: Context) =
-            Intent(context, LocalVpnService::class.java).apply {
-                action = ACTION_STOP
-            }
+        fun stopProxy(context: Context) {
+            context.startService(
+                Intent(context, LocalVpnService::class.java).apply {
+                    action = ACTION_STOP
+                }
+            )
+        }
     }
 }

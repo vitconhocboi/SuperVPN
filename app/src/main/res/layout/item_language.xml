@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/size15"
-            android:fontFamily="@font/inter"
+            android:fontFamily="@font/inter_bold"
             android:gravity="left"
             android:textFontWeight="500"
             android:inputType="textCapSentences|textCapWords"

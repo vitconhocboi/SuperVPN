@@ -13,7 +13,7 @@ import androidx.core.net.toUri
 object StopProxyScheduler {
 
     @SuppressLint("ScheduleExactAlarm")
-    fun stopProxy(context: Context, afterMinutes: Int, callback: () -> Unit) {
+    fun runProxy(context: Context, afterMinutes: Int, callback: () -> Unit) {
         if (afterMinutes > 0) {
             if (canScheduleExactAlarms(context)) {
                 val triggerTime = System.currentTimeMillis() + afterMinutes * 60 * 1000

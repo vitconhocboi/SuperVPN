@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/size16"
             android:layout_weight="1"
-            android:fontFamily="@font/inter"
+            android:fontFamily="@font/inter_bold"
             android:text="@string/ip_proxy"
             android:textColor="@color/textColor"
             android:textSize="@dimen/text_medium" />
