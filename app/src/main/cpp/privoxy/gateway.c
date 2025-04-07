@@ -235,6 +235,8 @@ void remember_connection(const struct reusable_connection *connection)
 
    assert(reusable_connection[slot].gateway_host == NULL);
    assert(reusable_connection[slot].gateway_port == 0);
+    assert(reusable_connection[slot].auth_username == NULL);
+    assert(reusable_connection[slot].auth_password == NULL);
    assert(reusable_connection[slot].forwarder_type == SOCKS_NONE);
    assert(reusable_connection[slot].forward_host == NULL);
    assert(reusable_connection[slot].forward_port == 0);
@@ -248,6 +250,23 @@ void remember_connection(const struct reusable_connection *connection)
    {
       reusable_connection[slot].gateway_host = NULL;
    }
+    if (NULL != connection->auth_username)
+    {
+        reusable_connection[slot].auth_username = strdup_or_die(connection->auth_username);
+    }
+    else
+    {
+        reusable_connection[slot].auth_username = NULL;
+    }
+    if (NULL != connection->auth_password)
+    {
+        reusable_connection[slot].auth_password = strdup_or_die(connection->auth_password);
+    }
+    else
+    {
+        reusable_connection[slot].auth_password = NULL;
+    }
+
    reusable_connection[slot].gateway_port = connection->gateway_port;
 
    if (NULL != connection->forward_host)
@@ -291,6 +310,8 @@ void mark_connection_closed(struct reusable_connection *closed_connection)
    closed_connection->forwarder_type = SOCKS_NONE;
    freez(closed_connection->gateway_host);
    closed_connection->gateway_port = 0;
+   freez(closed_connection->auth_username);
+   freez(closed_connection->auth_password);
    freez(closed_connection->forward_host);
    closed_connection->forward_port = 0;
 }
@@ -378,6 +399,28 @@ int connection_destination_matches(const struct reusable_connection *connection,
          connection->gateway_host, fwd->gateway_host);
       return FALSE;
    }
+
+    if ((    (NULL != connection->auth_username)
+             && (NULL != fwd->auth_username)
+             && strcmpic(connection->auth_username, fwd->auth_username))
+        && (connection->auth_username != fwd->auth_username))
+    {
+        log_error(LOG_LEVEL_CONNECT,
+                  "Socks username mismatch. Previous username: %s. Current username: %s",
+                  connection->auth_username, fwd->auth_username);
+        return FALSE;
+    }
+
+    if ((    (NULL != connection->auth_password)
+             && (NULL != fwd->auth_password)
+             && strcmpic(connection->auth_password, fwd->auth_password))
+        && (connection->auth_password != fwd->auth_password))
+    {
+        log_error(LOG_LEVEL_CONNECT,
+                  "Socks password mismatch. Previous password: %s. Current password: %s",
+                  connection->auth_password, fwd->auth_password);
+        return FALSE;
+    }
 
    if ((    (NULL != connection->forward_host)
          && (NULL != fwd->forward_host)
@@ -1001,7 +1044,12 @@ static jb_socket socks5_connect(const struct forward_spec *fwd,
 
    client_pos = 0;
    cbuf[client_pos++] = '\x05'; /* Version */
-   cbuf[client_pos++] = '\x01'; /* One authentication method supported */
+   if(fwd->auth_username && fwd->auth_password){
+       cbuf[client_pos++] = '\x02'; /* Two authentication method supported */
+       cbuf[client_pos++] = '\x02'; /* Two authentication method supported */
+   }else {
+       cbuf[client_pos++] = '\x01'; /* One authentication method supported */
+   }
    cbuf[client_pos++] = '\x00'; /* The no authentication authentication method */
 
    if (write_socket(sfd, cbuf, client_pos))
@@ -1044,11 +1092,64 @@ static jb_socket socks5_connect(const struct forward_spec *fwd,
       err = 1;
    }
 
-   if (!err && (sbuf[1] != '\x00'))
-   {
-      errstr = "SOCKS5 negotiation protocol error";
-      err = 1;
-   }
+    if (!err && (sbuf[1] == '\x02'))
+    {
+        if (fwd->auth_username && fwd->auth_password)
+        {
+            /* check cbuf overflow */
+            size_t auth_len = strlen(fwd->auth_username) + strlen(fwd->auth_password) + 3;
+            if (auth_len > sizeof(cbuf))
+            {
+                errstr = "SOCKS5 username and/or password too long";
+                err = 1;
+            }
+        }
+        else
+        {
+            errstr = "SOCKS5 server requested authentication while "
+                     "no credentials are configured";
+            err = 1;
+        }
+
+        if (!err)
+        {
+            client_pos = 0;
+            cbuf[client_pos++] = '\x01'; /* Version */
+            cbuf[client_pos++] = (char)strlen(fwd->auth_username);
+
+            memcpy(cbuf + client_pos, fwd->auth_username, strlen(fwd->auth_username));
+            client_pos += strlen(fwd->auth_username);
+            cbuf[client_pos++] = (char)strlen(fwd->auth_password);
+            memcpy(cbuf + client_pos, fwd->auth_password, strlen(fwd->auth_password));
+            client_pos += strlen(fwd->auth_password);
+
+            if (write_socket(sfd, cbuf, client_pos))
+            {
+                errstr = "SOCKS5 negotiation auth write failed";
+                csp->error_message = strdup(errstr);
+                log_error(LOG_LEVEL_CONNECT, "%s", errstr);
+                close_socket(sfd);
+                return(JB_INVALID_SOCKET);
+            }
+
+            if (read_socket(sfd, sbuf, sizeof(sbuf)) != 2)
+            {
+                errstr = "SOCKS5 negotiation auth read failed";
+                err = 1;
+            }
+        }
+
+        if (!err && (sbuf[1] != '\x00'))
+        {
+            errstr = "SOCKS5 authentication failed";
+            err = 1;
+        }
+    }
+    else if (!err && (sbuf[1] != '\x00'))
+    {
+        errstr = "SOCKS5 negotiation protocol error";
+        err = 1;
+    }
 
    if (err)
    {

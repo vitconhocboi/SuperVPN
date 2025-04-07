@@ -1436,17 +1436,31 @@ int match_portlist(const char *portlist, int port)
  *                JB_ERR_PARSE on malformed address.
  *
  *********************************************************************/
-jb_err parse_forwarder_address(char *address, char **hostname, int *port)
+jb_err parse_forwarder_address(char *address, char **hostname, int *port, char **username, char **password)
 {
-   char *p = address;
+   char *p;
+   char *tmp;
 
-   if ((*address == '[') && (NULL == strchr(address, ']')))
+   tmp = *hostname = strdup_or_die(address);
+
+   if(username && password && (NULL != (p = strchr(*hostname, '@')))){
+       *p++ = '\0';
+       *username = strdup_or_die(*hostname);
+       *hostname = strdup_or_die(p);
+       if(NULL != (p = strchr(*username, ':'))){
+           *p++ = '\0';
+           *password = strdup_or_die(p);
+       }
+       free(tmp);
+   }
+
+   p = *hostname;
+
+   if ((*p == '[') && (NULL == strchr(p, ']')))
    {
       /* XXX: Should do some more validity checks here. */
       return JB_ERR_PARSE;
    }
-
-   *hostname = strdup_or_die(address);
 
    if ((**hostname == '[') && (NULL != (p = strchr(*hostname, ']'))))
    {

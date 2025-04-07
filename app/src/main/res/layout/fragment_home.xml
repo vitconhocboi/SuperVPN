@@ -22,11 +22,71 @@
             android:id="@+id/tv_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/disconnected"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size28" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/connectTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_24"
             android:fontFamily="@font/inter_bold"
             android:text="01:30:00"
             android:textColor="@color/white"
             android:textSize="@dimen/size36" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_24"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/customProgressBar"
+                style="?android:attr/spinnerStyle"
+                android:layout_width="@dimen/size16"
+                android:layout_height="@dimen/size16"
+                android:layout_marginBottom="@dimen/size14"
+                android:background="@color/transparent"
+                android:clipToOutline="true"
+                android:indeterminate="false"
+                android:indeterminateTint="@color/green_1"
+                android:max="100"
+                android:progress="50"
+                android:progressDrawable="@drawable/progress_bar" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size8"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/connecting"
+                android:textColor="@color/greyColor"
+                android:textSize="@dimen/size12" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_24"
+            android:gravity="center_vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/size16"
+                android:layout_height="@dimen/size16"
+                android:src="@drawable/ic_status_connected" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size8"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/connected"
+                android:textColor="@color/successColor"
+                android:textSize="@dimen/size12" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -47,7 +107,7 @@
                 android:id="@+id/tvStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Disconnected"
+                android:text="@string/disconnected"
                 android:textColor="#C4C9D9"
                 android:textSize="@dimen/size14" />
         </LinearLayout>
@@ -61,6 +121,71 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/size44"
+            android:layout_marginTop="@dimen/margin_24">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_upload_button" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size14"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/upload"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size12" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--"
+                    android:textColor="@color/warningColor"
+                    android:textSize="@dimen/size16" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_download_button" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size14"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/upload"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size12" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--"
+                    android:textColor="@color/infoColor"
+                    android:textSize="@dimen/size16" />
+            </LinearLayout>
+        </LinearLayout>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -130,8 +255,9 @@
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:layout_marginLeft="@dimen/size16">
+                    android:layout_marginLeft="@dimen/size16"
+                    android:orientation="vertical">
+
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tvProxyLocation"
                         android:layout_width="match_parent"
@@ -150,7 +276,6 @@
                         android:layout_weight="1"
                         android:gravity="bottom"
                         android:text="103.23.35.102"
-                        android:textSize="@dimen/size16"
                         android:textColor="@color/gray_2"
                         android:fontFamily="@font/inter_bold"
                         />

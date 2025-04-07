@@ -45,6 +45,7 @@ const char errlog_rcs[] = "$Id: errlog.c,v 1.124 2016/01/21 20:53:01 diem Exp $"
 
 /* For gettimeofday() */
 #include <sys/time.h>
+#include <android/log.h>
 
 #if !defined(_WIN32) && !defined(__OS2__)
 #include <unistd.h>
@@ -81,7 +82,9 @@ const char errlog_rcs[] = "$Id: errlog.c,v 1.124 2016/01/21 20:53:01 diem Exp $"
 
 const char errlog_h_rcs[] = ERRLOG_H_VERSION;
 
-
+#define LOG_TAG "PrivoxyJNI"
+#define LOGI(...) __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)
+#define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
 /*
  * LOG_LEVEL_FATAL cannot be turned off.  (There are
  * some exceptional situations where we need to get a
@@ -946,7 +949,7 @@ void log_error(int loglevel, const char *fmt, ...)
     */
    assert(NULL != logfp);
 #endif
-
+   LOGI("%s",outbuf_save);
    if (loglevel == LOG_LEVEL_FATAL)
    {
       fatal_error(outbuf_save);

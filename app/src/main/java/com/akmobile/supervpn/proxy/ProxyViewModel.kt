@@ -51,8 +51,8 @@ class ProxyViewModel @Inject constructor(
         }
     }
 
-    fun startProxy(context: Context?) {
-        LocalVpnService.startProxy(context!!)
+    fun startProxy(context: Context?, allowApp: List<String>?) {
+        LocalVpnService.startProxy(context!!, allowApp)
         proxyUpdate.setProxyUpdate(this)
     }
 

@@ -60,6 +60,16 @@ class ProxyRepository @Inject constructor(private val database: VpnDatabase) : P
             "eTwU4h4p",
             "us",
         ),
+        ProxyUI(
+            "6",
+            Constant.PROXY_SOCKS5,
+            "Privoxy",
+            "192.168.1.215",
+            "1080",
+            "test",
+            "test",
+            "vn",
+        ),
     )
 
     override fun getAllProxy(): Flow<ResultData<List<ProxyGroupUI>>> = flow {

@@ -692,6 +692,8 @@ struct reusable_connection
    int  gateway_port;
    char *forward_host;
    int  forward_port;
+   char* auth_username;
+   char* auth_password;
 };
 
 
@@ -1105,6 +1107,10 @@ struct forward_spec
 
    /** SOCKS server hostname.  Only valid if "type" is SOCKS_4 or SOCKS_4A. */
    char *gateway_host;
+
+   char *auth_username;
+
+   char *auth_password;
 
    /** SOCKS server port. */
    int   gateway_port;

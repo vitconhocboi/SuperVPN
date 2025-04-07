@@ -2,41 +2,37 @@ package com.akmobile.supervpn.settings.appproxy
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
-import androidx.recyclerview.widget.RecyclerView
 import com.akmobile.supervpn.databinding.AppProxyItemBinding
+import com.common.baseui.adapter.BaseAdapter
+import com.common.baseui.adapter.BaseViewHolder
+import javax.inject.Inject
 
-class AppProxyAdapter: ListAdapter<AppInfo, AppProxyAdapter.ViewHolder>(diffUtil) {
-
-    class ViewHolder(val binding: AppProxyItemBinding) : RecyclerView.ViewHolder(binding.root)
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(
+class AppProxyAdapter @Inject constructor() :
+    BaseAdapter<AppProxyUI, BaseViewHolder<AppProxyUI>>() {
+    override fun onCreateViewHolder(
+        parent: ViewGroup, viewType: Int
+    ): BaseViewHolder<AppProxyUI> {
+        return AppProxyViewHolder(
             AppProxyItemBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false
+                LayoutInflater.from(parent.context), parent, false
             )
         )
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = getItem(position)
-        holder.binding.apply {
-            appName.text = item.appName
-            appIcon.setImageDrawable(item.image)
+
+    inner class AppProxyViewHolder(private val mViewBinding: AppProxyItemBinding) :
+        BaseViewHolder<AppProxyUI>(mViewBinding.root) {
+        override fun bindData(position: Int, data: AppProxyUI) {
+            mViewBinding.apply {
+                appName.text = data.appName
+                appIcon.setImageDrawable(data.image)
+                checkboxProxy.isChecked = data.allowed
+                root.setOnClickListener {
+                    data.allowed = !data.allowed
+                    checkboxProxy.isChecked = data.allowed
+                    onItemClick?.invoke(position, data)
+                }
+            }
         }
     }
-}
-
-val diffUtil = object : DiffUtil.ItemCallback<AppInfo>() {
-    override fun areItemsTheSame(oldItem: AppInfo, newItem: AppInfo): Boolean {
-        TODO("Not yet implemented")
-    }
-
-    override fun areContentsTheSame(oldItem: AppInfo, newItem: AppInfo): Boolean {
-        TODO("Not yet implemented")
-    }
-
 }

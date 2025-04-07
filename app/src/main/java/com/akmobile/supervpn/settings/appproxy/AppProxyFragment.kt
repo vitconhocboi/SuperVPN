@@ -1,14 +1,22 @@
 package com.akmobile.supervpn.settings.appproxy
 
-import android.content.pm.PackageManager
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.akmobile.supervpn.ProductFragment
 import com.akmobile.supervpn.databinding.FragmentAppProxyBinding
+import com.common.baseui.extension.bindFlowCreate
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-class AppProxyFragment(val list: ArrayList<AppInfo>)  : ProductFragment<FragmentAppProxyBinding>() {
+@AndroidEntryPoint
+class AppProxyFragment(val list: ArrayList<AppProxyUI>) :
+    ProductFragment<FragmentAppProxyBinding>() {
 
-    private lateinit var appProxyAdapter: AppProxyAdapter
+    @Inject
+    lateinit var appProxyAdapter: AppProxyAdapter
+
+    private val allowAppViewModel: AppProxyViewModel by viewModels()
 
     override fun bindingProvider(
         inflater: LayoutInflater, container: ViewGroup?
@@ -19,7 +27,18 @@ class AppProxyFragment(val list: ArrayList<AppInfo>)  : ProductFragment<Fragment
     override fun initView() {
         super.initView()
         appProxyAdapter = AppProxyAdapter()
-        appProxyAdapter.submitList(list)
+        allowAppViewModel.getAllowApp()
+        bindFlowCreate(allowAppViewModel.allowApp) { allowApp ->
+            val listMergeAllowApp = list.map { app ->
+                app.allowed =
+                    (allowApp.data?.find { allowed -> app.packageName == allowed.packageName } != null)
+                app
+            }
+            appProxyAdapter.updateData(listMergeAllowApp)
+        }
+        appProxyAdapter.onItemClick = { _, item ->
+            allowAppViewModel.setAllowApp(item)
+        }
         binding.apply {
             recyclerViewApps.adapter = appProxyAdapter
         }

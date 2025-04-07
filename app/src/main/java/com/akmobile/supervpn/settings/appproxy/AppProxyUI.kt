@@ -2,8 +2,9 @@ package com.akmobile.supervpn.settings.appproxy
 
 import android.graphics.drawable.Drawable
 
-data class AppInfo (
-    val packageName: String,
+data class AppProxyUI(
+    var packageName: String,
     val image: Drawable,
-    val appName: String
+    val appName: String,
+    var allowed: Boolean = false
 )

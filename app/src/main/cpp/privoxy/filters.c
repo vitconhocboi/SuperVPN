@@ -2480,7 +2480,7 @@ static const struct forward_spec *get_forward_override_settings(struct client_st
          /* Parse the SOCKS proxy host[:port] */
          fwd->gateway_port = 1080;
          parse_forwarder_address(socks_proxy,
-            &fwd->gateway_host, &fwd->gateway_port);
+            &fwd->gateway_host, &fwd->gateway_port, &fwd->auth_username, &fwd->auth_password);
 
          http_parent = vec[2];
       }
@@ -2498,7 +2498,7 @@ static const struct forward_spec *get_forward_override_settings(struct client_st
    {
       fwd->forward_port = 8000;
       parse_forwarder_address(http_parent,
-         &fwd->forward_host, &fwd->forward_port);
+         &fwd->forward_host, &fwd->forward_port, NULL, NULL);
    }
 
    assert (NULL != fwd);

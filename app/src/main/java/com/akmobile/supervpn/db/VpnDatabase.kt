@@ -14,7 +14,7 @@ import com.akmobile.supervpn.proxy.ProxyDB
     exportSchema = true
 )
 abstract class VpnDatabase : RoomDatabase() {
-    abstract fun createAppVpnDao(): AppVpnDao
+    abstract fun appVpnDao(): AppVpnDao
 
     abstract fun proxyDAO(): ProxyDAO
 }

@@ -16,7 +16,7 @@ import javax.inject.Inject
 @HiltViewModel
 class SettingViewModel @Inject constructor(private val database: VpnDatabase) : ViewModel() {
 
-    val loadingApps =  MutableLiveData(false)
+    val loadingApps = MutableLiveData(false)
 
     fun loadingApp() {
         getAllVpnedApp()
@@ -29,9 +29,8 @@ class SettingViewModel @Inject constructor(private val database: VpnDatabase) : 
 
     fun getAllVpnedApp() {
         viewModelScope.launch(Dispatchers.IO) {
-            database.createAppVpnDao().getAll().collect { it ->
-                Timber.d("sizesize ${it.size}")
-            }
+            val list = database.appVpnDao().getAll()
+            Timber.d("sizesize ${list.size}")
         }
     }
 }
