@@ -102,11 +102,19 @@ extern privoxy_mutex_t rand_mutex;
 #endif /* FEATURE_PTHREAD */
 
 /* Functions */
+#include <jni.h>
+typedef struct vpn_context {
+    JavaVM *javaVM;
+    const char* config_path;
+    jclass managerClz;
+    jobject managerObj;
+    int done;
+} VPNContext;
 
 #ifdef __MINGW32__
 int real_main(int argc, char **argv);
 #else
-extern int privoxy_main(int argc, char **argv);
+extern int privoxy_main(int argc, char **argv, void *context);
 #endif
 
 #ifdef FEATURE_GRACEFUL_TERMINATION

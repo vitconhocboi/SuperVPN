@@ -149,6 +149,8 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 })
             }
 
+            tvTrafficDownload.text = context?.getSharedPreferences("PRIVOXY_TRAFFIC", Context.MODE_PRIVATE)?.getInt("DOWNLOAD", 0).toString()
+
             ivConnect.setOnClickListener {
 //                if (isConnected) {
 //                    stopVpnService()
