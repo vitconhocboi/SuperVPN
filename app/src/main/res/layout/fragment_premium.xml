@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/frame_corner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_12"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ic_pre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_premium"
+            android:rotation="45"
+            android:scaleType="centerInside"
+            />
+
+    </FrameLayout>
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btn_close"
+        android:layout_width="@dimen/size32"
+        android:layout_height="@dimen/size32"
+        android:layout_marginTop="@dimen/margin_16"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:src="@drawable/ic_close"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_68"
+        android:ellipsize="middle"
+        android:text="@string/premium_title"
+        android:textSize="30sp"
+        android:textAppearance="@style/App_TextAppearanceTitle1"
+        android:textColor="@color/successColor"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_sub1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16"
+        android:ellipsize="middle"
+        android:text="@string/premium_sub1"
+        android:textColor="@color/text_gray_1"
+        android:drawableStart="@drawable/ic_pre"
+        android:drawablePadding="@dimen/size10"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        app:layout_constraintStart_toStartOf="@+id/tv_sub2"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_sub2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16"
+        android:ellipsize="middle"
+        android:text="@string/premium_sub2"
+        android:textColor="@color/text_gray_1"
+        android:drawableStart="@drawable/ic_pre"
+        android:drawablePadding="@dimen/size10"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sub1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_sub3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16"
+        android:ellipsize="middle"
+        android:text="@string/premium_sub3"
+        android:textColor="@color/text_gray_1"
+        android:drawableStart="@drawable/ic_pre"
+        android:drawablePadding="@dimen/size10"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sub2"
+        app:layout_constraintStart_toStartOf="@+id/tv_sub2"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_sub4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16"
+        android:ellipsize="middle"
+        android:text="@string/premium_sub4"
+        android:textColor="@color/text_gray_1"
+        android:drawableStart="@drawable/ic_pre"
+        android:drawablePadding="@dimen/size10"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sub3"
+        app:layout_constraintStart_toStartOf="@+id/tv_sub2"/>
+
+    <LinearLayout
+        android:id="@+id/ln_weekly"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:paddingHorizontal="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_32"
+        android:layout_marginHorizontal="@dimen/margin_16"
+        android:gravity="center"
+        android:background="@drawable/bg_line_premium"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sub4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_weekly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="middle"
+            android:text="@string/premium_weekly"
+            android:textColor="@color/text_gray_1"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/price_weekly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="middle"
+            android:text="@string/premium_weekly"
+            android:textColor="@color/text_gray_1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ln_monthly"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:paddingHorizontal="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_12"
+        android:layout_marginHorizontal="@dimen/margin_16"
+        android:gravity="center"
+        android:background="@drawable/bg_line_premium"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/ln_weekly"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_monthly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="middle"
+            android:text="@string/premium_monthly"
+            android:textColor="@color/text_gray_1"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/price_monthly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="middle"
+            android:text="@string/premium_monthly"
+            android:textColor="@color/text_gray_1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ln_yearly"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:paddingHorizontal="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_12"
+        android:layout_marginHorizontal="@dimen/margin_16"
+        android:gravity="center"
+        android:background="@drawable/bg_line_premium"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/ln_monthly"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_yearly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="middle"
+            android:text="@string/premium_yearly"
+            android:textColor="@color/text_gray_1"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/price_yearly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="middle"
+            android:text="@string/premium_weekly"
+            android:textColor="@color/text_gray_1"/>
+    </LinearLayout>
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_32"
+        android:ellipsize="middle"
+        android:text="@string/premium_desc"
+        android:textColor="@color/text_gray_2"
+        app:layout_constraintTop_toBottomOf="@+id/ln_yearly"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <LinearLayout
+        android:id="@+id/start_trial"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:paddingHorizontal="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_12"
+        android:layout_marginHorizontal="@dimen/margin_16"
+        android:gravity="center"
+
+        android:background="@drawable/bg_start_trial"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/tv_desc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/btn_start_trial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="middle"
+            android:textAppearance="@style/App_TextAppearanceTitle2"
+            android:textAllCaps="true"
+            android:text="@string/premium_start_trial"
+            android:textColor="@color/text_gray_1"/>
+    </LinearLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_32"
+        android:ellipsize="middle"
+        android:text="@string/premium_trial_desc"
+        android:maxLines="2"
+        android:textColor="@color/text_gray_2"
+        app:layout_constraintTop_toBottomOf="@+id/start_trial"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

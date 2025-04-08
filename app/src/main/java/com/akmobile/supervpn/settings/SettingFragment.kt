@@ -11,6 +11,7 @@ import com.akmobile.supervpn.R
 import com.akmobile.supervpn.databinding.FragmentSettingBinding
 import com.akmobile.supervpn.settings.appproxy.AppProxyUI
 import com.akmobile.supervpn.settings.appproxy.AppProxyFragment
+import com.akmobile.supervpn.utils.Navigator
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -34,6 +35,10 @@ class SettingFragment : ProductFragment<FragmentSettingBinding>() {
         binding.apply {
             rowAppProxy.setOnClickListener {
                 fetchInstalledApps()
+            }
+
+            btnPro.setOnClickListener {
+                Navigator.startPremiumActivity(requireContext())
             }
         }
     }

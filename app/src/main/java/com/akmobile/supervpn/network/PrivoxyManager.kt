@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.Base64
 import android.util.Log
 import com.common.baseui.BaseAppConfig
+import timber.log.Timber
 import java.io.File
 
 class PrivoxyManager(private val context: Context) {
@@ -38,7 +39,7 @@ class PrivoxyManager(private val context: Context) {
             configPath = createConfigFile(privoxyDir)
             return true
         } catch (e: Exception) {
-            Log.e("PrivoxyManager", "Failed to initialize Privoxy", e)
+            Timber.tag("PrivoxyManager").e(e, "Failed to initialize Privoxy")
             return false
         }
     }
@@ -49,9 +50,9 @@ class PrivoxyManager(private val context: Context) {
         val success = nativeStartPrivoxy(configPath)
         if (success) {
             isRunning = true
-            Log.d("PrivoxyManager", "Privoxy started successfully")
+            Timber.tag("PrivoxyManager").d("Privoxy started successfully")
         } else {
-            Log.e("PrivoxyManager", "Failed to start Privoxy")
+            Timber.tag("PrivoxyManager").e("Failed to start Privoxy")
         }
         return success
     }
@@ -62,9 +63,9 @@ class PrivoxyManager(private val context: Context) {
         val success = nativeStopPrivoxy()
         if (success) {
             isRunning = false
-            Log.d("PrivoxyManager", "Privoxy stopped successfully")
+            Timber.tag("PrivoxyManager").d("Privoxy stopped successfully")
         } else {
-            Log.e("PrivoxyManager", "Failed to stop Privoxy")
+            Timber.tag("PrivoxyManager").e("Failed to stop Privoxy")
         }
         return success
     }

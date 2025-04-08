@@ -41,6 +41,14 @@ class AppProxyFragment(val list: ArrayList<AppProxyUI>) :
         }
         binding.apply {
             recyclerViewApps.adapter = appProxyAdapter
+
+            btnOk.setOnClickListener {
+
+            }
+
+            btnCancel.setOnClickListener {
+
+            }
         }
     }
 }
