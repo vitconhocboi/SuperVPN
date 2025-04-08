@@ -36,11 +36,16 @@ class PrivoxyManager(private val context: Context) {
 
             // Create config file
             configPath = createConfigFile(privoxyDir)
+            context.getSharedPreferences("privoxy_traffic",Context.MODE_PRIVATE).edit().putString("privoxy_config_path", configPath).apply()
             return true
         } catch (e: Exception) {
             Log.e("PrivoxyManager", "Failed to initialize Privoxy", e)
             return false
         }
+    }
+
+    fun saveToPref(name: String, value: Int){
+        Log.i("PrivoxyManager", "Saving to pref: $name = $value");
     }
 
     fun start(): Boolean {

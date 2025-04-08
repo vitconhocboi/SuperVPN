@@ -44,7 +44,7 @@ const char jcc_rcs[] = "$Id: jcc.c,v 1.440 2016/01/16 12:33:36 fabiankeil Exp $"
 #include <fcntl.h>
 #include <errno.h>
 #include <assert.h>
-
+#include <jni.h>
 #ifdef _WIN32
 # ifndef FEATURE_PTHREAD
 #  ifndef STRICT
@@ -120,6 +120,24 @@ const char jcc_rcs[] = "$Id: jcc.c,v 1.440 2016/01/16 12:33:36 fabiankeil Exp $"
 #include "cgi.h"
 #include "loadcfg.h"
 #include "urlmatch.h"
+
+VPNContext *pctx;
+
+void saveToPref(char* name, int value){
+    JNIEnv *env;
+    JavaVM *javaVM = pctx->javaVM;
+    jint res = (*javaVM)->GetEnv(javaVM, (void **)&env, JNI_VERSION_1_6);
+    if (res != JNI_OK) {
+        res = (*javaVM)->AttachCurrentThread(javaVM, &env, NULL);
+        if (JNI_OK != res) {
+            log_error(LOG_LEVEL_FATAL,"Failed to AttachCurrentThread, ErrorCode = %d", res);
+            return;
+        }
+    }
+    jmethodID statusId = (*env)->GetMethodID(
+            env, pctx->managerClz, "saveToPref", "(Ljava/lang/String;I)V");
+
+}
 
 const char jcc_h_rcs[] = JCC_H_VERSION;
 const char project_h_rcs[] = PROJECT_H_VERSION;
@@ -1262,6 +1280,7 @@ static char *get_request_line(struct client_state *csp) {
         }
 
         len = read_socket(csp->cfd, buf, sizeof(buf) - 1);
+        saveToPref("DOWNLOAD",len);
 
         if (len <= 0) return NULL;
 
@@ -1388,6 +1407,7 @@ static jb_err receive_chunked_client_request_body(struct client_state *csp) {
             break;
         }
         len = read_socket(csp->cfd, buf, sizeof(buf) - 1);
+        saveToPref("DOWNLOAD",len);
         if (len <= 0) {
             log_error(LOG_LEVEL_ERROR, "Read the client body failed: %E");
             break;
@@ -3093,13 +3113,14 @@ static void initialize_mutexes(void) {
 #ifdef __MINGW32__
 int real_main(int argc, char **argv)
 #else
-
-int privoxy_main(int argc, char **argv)
+int privoxy_main(int argc, char **argv,void *context)
 #endif
 {
     int argc_pos = 0;
     int do_config_test = 0;
     unsigned int random_seed;
+    pctx = (VPNContext *)context;
+
 #ifdef unix
     struct passwd *pw = NULL;
     struct group *grp = NULL;

@@ -1,11 +1,13 @@
-extern "C" int privoxy_main(int argc, char *argv[]);
+#include <jni.h>
+
+extern "C" int privoxy_main(int argc, char *argv[], void *context);
 extern "C" int stop_privoxy();
 
-#include <jni.h>
+#include <jcc.h>
 #include <string>
 #include <pthread.h>
 #include <android/log.h>
-#include <jcc.h>
+
 #include <unistd.h>
 
 // Define the log tag
@@ -19,9 +21,21 @@ static pthread_t privoxy_thread = 0;
 static bool is_running = false;
 static std::string config_path;
 
+VPNContext g_ctx;
+
+JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
+    JNIEnv *env;
+    memset(&g_ctx, 0, sizeof(g_ctx));
+    g_ctx.javaVM = vm;
+    return JNI_VERSION_1_6;
+}
+
 // Thread function to run Privoxy
-void *run_privoxy(void *arg) {
-    char *config = (char *) arg;
+void *run_privoxy(void *context) {
+
+    VPNContext *pctx = (VPNContext *)context;
+    const char *config = pctx->config_path;
+
 
     const char *argv[] = {
             "privoxy",
@@ -31,7 +45,7 @@ void *run_privoxy(void *arg) {
 
     LOGI("Starting Privoxy with config: %s", config);
     is_running = true;
-    int result = privoxy_main(3, (char **) argv);
+    int result = privoxy_main(3, (char **) argv, context);
     is_running = false;
     LOGI("Privoxy exited with code: %d", result);
 
@@ -40,7 +54,7 @@ void *run_privoxy(void *arg) {
 
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_com_akmobile_supervpn_network_PrivoxyManager_nativeStartPrivoxy(JNIEnv *env, jclass clazz,
+Java_com_akmobile_supervpn_network_PrivoxyManager_nativeStartPrivoxy(JNIEnv *env, jobject instance,
                                                                      jstring config_path_java) {
     // If already running, return true
     if (is_running) {
@@ -53,7 +67,12 @@ Java_com_akmobile_supervpn_network_PrivoxyManager_nativeStartPrivoxy(JNIEnv *env
     env->ReleaseStringUTFChars(config_path_java, config_path_c);
 
     // Create thread to run Privoxy
-    int result = pthread_create(&privoxy_thread, NULL, run_privoxy, (void *) config_path.c_str());
+    g_ctx.config_path = config_path.c_str();
+    jclass clz = env->GetObjectClass( instance);
+    g_ctx.managerClz = static_cast<jclass>(env->NewGlobalRef(clz));
+    g_ctx.managerObj = env->NewGlobalRef(instance);
+
+    int result = pthread_create(&privoxy_thread, NULL, run_privoxy, (void *) &g_ctx);
 
     if (result != 0) {
         LOGE("Failed to create Privoxy thread: %d", result);
@@ -89,4 +108,4 @@ extern "C"
 JNIEXPORT jboolean JNICALL
 Java_com_akmobile_supervpn_network_PrivoxyManager_nativeIsRunning(JNIEnv *env, jclass clazz) {
     return is_running ? JNI_TRUE : JNI_FALSE;
-} 
+}
