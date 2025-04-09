@@ -45,9 +45,25 @@
     <string name="home_settime">Choose time connection</string>
     <string name="home_settime_1">After one hour</string>
     <string name="btn_ok">OK</string>
+    <string name="btn_apply">Apply</string>
     <string name="btn_cancel">Cancel</string>
     <string name="auto">Auto</string>
     <string name="min_60">60 Minutes</string>
     <string name="min_90">90 Minutes</string>
     <string name="min_120">120 Minutes</string>
+    <string name="setting">Setting</string>
+
+    <string name="premium_title">VPN Fast &amp; Safe Pro</string>
+    <string name="premium_sub1">No ads</string>
+    <string name="premium_sub2">Fast and stable speed</string>
+    <string name="premium_sub3">Worldwide location</string>
+    <string name="premium_sub4">App proxy</string>
+    <string name="premium_weekly">Weekly</string>
+    <string name="premium_monthly">Monthly</string>
+    <string name="premium_yearly">Yearly</string>
+    <string name="premium_desc">First 7 day free,  then the plan auto-renews yearly</string>
+    <string name="premium_start_trial">Start trial</string>
+    <string name="premium_trial_desc">Recurring billing. Cancel anytime on Google Play Store.</string>
+
+
 </resources>
