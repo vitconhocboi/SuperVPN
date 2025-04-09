@@ -1,9 +1,11 @@
 package com.akmobile.supervpn.settings
 
 import android.content.pm.PackageManager
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.akmobile.supervpn.ProductFragment
@@ -28,11 +30,19 @@ class SettingFragment : ProductFragment<FragmentSettingBinding>() {
 
     override fun initView() {
         super.initView()
+
+        val bitmap = BitmapFactory.decodeResource(resources, R.drawable.ic_setting_pro_bg)
+        val roundedDrawable = RoundedBitmapDrawableFactory.create(resources, bitmap)
+        roundedDrawable.cornerRadius = 20f  // Adjust your radius
+
         mViewModel.loadingApps.observe(viewLifecycleOwner) {
             binding.progress.visibility = if (it) View.VISIBLE else View.GONE
         }
 
         binding.apply {
+
+            premium.background = roundedDrawable
+
             rowAppProxy.setOnClickListener {
                 fetchInstalledApps()
             }
