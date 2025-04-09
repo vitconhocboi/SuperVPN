@@ -4,6 +4,8 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.net.VpnService
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -31,7 +33,7 @@ import com.akmobile.supervpn.settings.appproxy.AppProxyViewModel
 
 @AndroidEntryPoint
 class HomeFragment : ProductFragment<FragmentHomeBinding>() {
-
+    private val handler = Handler(Looper.getMainLooper())
     companion object {
         public const val CONNECTING = "CONNECTING"
         public const val CONNECTED = "CONNECTED"
@@ -39,6 +41,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         public const val DISCONNECTED = "DISCONNECTED"
         public const val ERROR = "ERROR"
     }
+    private val interval = 5000L
 
     private var isConnected = false
     private var proxyId: String? = ""
@@ -101,6 +104,25 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         inflater: LayoutInflater, container: ViewGroup?
     ): FragmentHomeBinding {
         return FragmentHomeBinding.inflate(inflater, container, false)
+    }
+
+    private val updateRunnable = object : Runnable {
+        override fun run() {
+            val trafficDownload = context?.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE)?.getInt("download",0)
+            if(trafficDownload != null && trafficDownload > 0){
+                binding.tvTrafficDownload.text = "${trafficDownload}"
+            }else{
+                binding.tvTrafficDownload.text = "--"
+            }
+
+            val trafficUpload = context?.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE)?.getInt("upload",0)
+            if(trafficUpload != null && trafficUpload > 0){
+                binding.tvTrafficUpload.text = "${trafficUpload}"
+            }else{
+                binding.tvTrafficUpload.text = "--"
+            }
+            handler.postDelayed(this, interval)
+        }
     }
 
     override fun initView() {
@@ -191,6 +213,16 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         } else {
             startVpnService()
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        handler.post(updateRunnable)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        handler.removeCallbacks(updateRunnable)
     }
 
     private fun startVpnService() {

@@ -52,39 +52,39 @@ void *run_privoxy(void *context) {
     return NULL;
 }
 
-extern "C"
-JNIEXPORT jboolean JNICALL
-Java_com_akmobile_supervpn_network_PrivoxyManager_nativeStartPrivoxy(JNIEnv *env, jobject instance,
-                                                                     jstring config_path_java) {
-    // If already running, return true
-    if (is_running) {
-        return JNI_TRUE;
-    }
-
-    // Convert Java string to C++ string
-    const char *config_path_c = env->GetStringUTFChars(config_path_java, 0);
-    config_path = std::string(config_path_c);
-    env->ReleaseStringUTFChars(config_path_java, config_path_c);
-
-    // Create thread to run Privoxy
-    g_ctx.config_path = config_path.c_str();
-    jclass clz = env->GetObjectClass( instance);
-    g_ctx.managerClz = static_cast<jclass>(env->NewGlobalRef(clz));
-    g_ctx.managerObj = env->NewGlobalRef(instance);
-
-    int result = pthread_create(&privoxy_thread, NULL, run_privoxy, (void *) &g_ctx);
-
-    if (result != 0) {
-        LOGE("Failed to create Privoxy thread: %d", result);
-        return JNI_FALSE;
-    }
-
-    // Sleep for 500ms to ensure Privoxy starts
-
-    usleep(500000); // 500ms = 500,000 microseconds
-
-    return is_running ? JNI_TRUE : JNI_FALSE;
-}
+//extern "C"
+//JNIEXPORT jboolean JNICALL
+//Java_com_akmobile_supervpn_network_PrivoxyManager_nativeStartPrivoxy(JNIEnv *env,jobject instance,
+//                                                                     jstring config_path_java) {
+//    // If already running, return true
+//    if (is_running) {
+//        return JNI_TRUE;
+//    }
+//
+//    // Convert Java string to C++ string
+//    const char *config_path_c = env->GetStringUTFChars(config_path_java, 0);
+//    config_path = std::string(config_path_c);
+//    env->ReleaseStringUTFChars(config_path_java, config_path_c);
+//
+//    // Create thread to run Privoxy
+//    g_ctx.config_path = config_path.c_str();
+//    jclass clz = env->GetObjectClass( instance);
+//    g_ctx.managerClz = env->NewGlobalRef(clz);
+//    g_ctx.managerObj = env->NewGlobalRef(instance);
+//
+//    int result = pthread_create(&privoxy_thread, NULL, run_privoxy, (void *) &g_ctx);
+//
+//    if (result != 0) {
+//        LOGE("Failed to create Privoxy thread: %d", result);
+//        return JNI_FALSE;
+//    }
+//
+//    // Sleep for 500ms to ensure Privoxy starts
+//
+//    usleep(500000); // 500ms = 500,000 microseconds
+//
+//    return is_running ? JNI_TRUE : JNI_FALSE;
+//}
 
 extern "C"
 JNIEXPORT jboolean JNICALL
@@ -107,5 +107,38 @@ Java_com_akmobile_supervpn_network_PrivoxyManager_nativeStopPrivoxy(JNIEnv *env,
 extern "C"
 JNIEXPORT jboolean JNICALL
 Java_com_akmobile_supervpn_network_PrivoxyManager_nativeIsRunning(JNIEnv *env, jclass clazz) {
+    return is_running ? JNI_TRUE : JNI_FALSE;
+}
+extern "C"
+JNIEXPORT jboolean JNICALL
+Java_com_akmobile_supervpn_network_PrivoxyManager_nativeStartPrivoxy(JNIEnv *env, jclass clazz,
+                                                                     jstring config_path_java,
+                                                                     jobject owner) {
+    // If already running, return true
+    if (is_running) {
+        return JNI_TRUE;
+    }
+
+    // Convert Java string to C++ string
+    const char *config_path_c = env->GetStringUTFChars(config_path_java, 0);
+    config_path = std::string(config_path_c);
+    env->ReleaseStringUTFChars(config_path_java, config_path_c);
+
+    // Create thread to run Privoxy
+    g_ctx.config_path = config_path.c_str();
+    g_ctx.managerClz = static_cast<jclass>(env->NewGlobalRef(clazz));
+    g_ctx.managerObj = env->NewGlobalRef(owner);
+
+    int result = pthread_create(&privoxy_thread, NULL, run_privoxy, (void *) &g_ctx);
+
+    if (result != 0) {
+        LOGE("Failed to create Privoxy thread: %d", result);
+        return JNI_FALSE;
+    }
+
+    // Sleep for 500ms to ensure Privoxy starts
+
+    usleep(500000); // 500ms = 500,000 microseconds
+
     return is_running ? JNI_TRUE : JNI_FALSE;
 }

@@ -11,6 +11,8 @@ class PrivoxyManager(private val context: Context) {
     private var isRunning = false
     private var configPath: String = ""
     private var port: Int = 8118 // Default Privoxy port
+    private val UPLOAD: Int = 0
+    private val DOWNLOAD: Int = 1
 
     companion object {
         init {
@@ -18,7 +20,7 @@ class PrivoxyManager(private val context: Context) {
         }
 
         @JvmStatic
-        private external fun nativeStartPrivoxy(configPath: String): Boolean
+        private external fun nativeStartPrivoxy(configPath: String,owner: PrivoxyManager ): Boolean
 
         @JvmStatic
         private external fun nativeStopPrivoxy(): Boolean
@@ -37,7 +39,6 @@ class PrivoxyManager(private val context: Context) {
 
             // Create config file
             configPath = createConfigFile(privoxyDir)
-            context.getSharedPreferences("privoxy_traffic",Context.MODE_PRIVATE).edit().putString("privoxy_config_path", configPath).apply()
             return true
         } catch (e: Exception) {
             Timber.tag("PrivoxyManager").e(e, "Failed to initialize Privoxy")
@@ -45,14 +46,20 @@ class PrivoxyManager(private val context: Context) {
         }
     }
 
-    fun saveToPref(name: String, value: Int){
-        Log.i("PrivoxyManager", "Saving to pref: $name = $value");
+    fun saveToPref(type: Int, value: Int){
+        if(type == DOWNLOAD){
+            var totalDownload = context.getSharedPreferences("privoxy_traffic",Context.MODE_PRIVATE).getInt("download",0)
+            context.getSharedPreferences("privoxy_traffic",Context.MODE_PRIVATE).edit().putInt("download", totalDownload + value).apply()
+        }else{
+            var totalDownload = context.getSharedPreferences("privoxy_traffic",Context.MODE_PRIVATE).getInt("upload",0)
+            context.getSharedPreferences("privoxy_traffic",Context.MODE_PRIVATE).edit().putInt("upload", totalDownload + value).apply()
+        }
     }
 
     fun start(): Boolean {
         if (isRunning) return true
 
-        val success = nativeStartPrivoxy(configPath)
+        val success = nativeStartPrivoxy(configPath,this@PrivoxyManager)
         if (success) {
             isRunning = true
             Timber.tag("PrivoxyManager").d("Privoxy started successfully")

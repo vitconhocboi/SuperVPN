@@ -123,7 +123,7 @@ const char jcc_rcs[] = "$Id: jcc.c,v 1.440 2016/01/16 12:33:36 fabiankeil Exp $"
 
 VPNContext *pctx;
 
-void saveToPref(char* name, int value){
+void saveToPref(int type, int value){
     JNIEnv *env;
     JavaVM *javaVM = pctx->javaVM;
     jint res = (*javaVM)->GetEnv(javaVM, (void **)&env, JNI_VERSION_1_6);
@@ -134,9 +134,9 @@ void saveToPref(char* name, int value){
             return;
         }
     }
-    jmethodID statusId = (*env)->GetMethodID(
-            env, pctx->managerClz, "saveToPref", "(Ljava/lang/String;I)V");
-
+    jmethodID saveToPref = (*env)->GetMethodID(
+            env, pctx->managerClz,"saveToPref", "(II)V");
+    (*env)->CallVoidMethod(env,pctx->managerObj,saveToPref,type,value);
 }
 
 const char jcc_h_rcs[] = JCC_H_VERSION;
@@ -1280,7 +1280,7 @@ static char *get_request_line(struct client_state *csp) {
         }
 
         len = read_socket(csp->cfd, buf, sizeof(buf) - 1);
-        saveToPref("DOWNLOAD",len);
+        saveToPref(0,len);
 
         if (len <= 0) return NULL;
 
@@ -1407,7 +1407,6 @@ static jb_err receive_chunked_client_request_body(struct client_state *csp) {
             break;
         }
         len = read_socket(csp->cfd, buf, sizeof(buf) - 1);
-        saveToPref("DOWNLOAD",len);
         if (len <= 0) {
             log_error(LOG_LEVEL_ERROR, "Read the client body failed: %E");
             break;
@@ -1523,6 +1522,7 @@ static jb_err receive_client_request(struct client_state *csp) {
     memset(buf, 0, sizeof(buf));
 
     req = get_request_line(csp);
+
     if (req == NULL) {
         mark_server_socket_tainted(csp);
         return JB_ERR_PARSE;
@@ -2407,6 +2407,7 @@ static void chat(struct client_state *csp) {
                     }
                 }
                 byte_count += (unsigned long long) len;
+
                 continue;
             } else {
                 /*
@@ -2623,7 +2624,7 @@ static void chat(struct client_state *csp) {
 
     log_error(LOG_LEVEL_CLF, "%s - - [%T] \"%s\" 200 %llu",
               csp->ip_addr_str, http->ocmd, csp->content_length);
-
+    saveToPref(1,csp->content_length);
     csp->server_connection.timestamp = time(NULL);
 }
 
