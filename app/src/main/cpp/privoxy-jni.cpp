@@ -99,7 +99,7 @@ Java_com_akmobile_supervpn_network_PrivoxyManager_nativeStopPrivoxy(JNIEnv *env,
     is_running = false;
 
     stop_privoxy();
-    pthread_exit(NULL);
+    pthread_join(privoxy_thread, nullptr);
     privoxy_thread = 0;
     return JNI_TRUE;
 }
@@ -118,6 +118,7 @@ Java_com_akmobile_supervpn_network_PrivoxyManager_nativeStartPrivoxy(JNIEnv *env
     if (is_running) {
         return JNI_TRUE;
     }
+    g_terminate = 0;
 
     // Convert Java string to C++ string
     const char *config_path_c = env->GetStringUTFChars(config_path_java, 0);

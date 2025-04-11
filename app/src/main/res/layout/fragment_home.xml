@@ -19,28 +19,32 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_time"
+            android:id="@+id/connectTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/inter_bold"
             android:text="@string/disconnected"
             android:textColor="@color/white"
-            android:textSize="@dimen/size28" />
+            android:layout_marginBottom="@dimen/size8"
+            android:textSize="@dimen/size28"
+            android:visibility="visible"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/connectTitle"
+            android:id="@+id/tvTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_24"
+            android:layout_marginBottom="@dimen/size8"
             android:fontFamily="@font/inter_bold"
             android:text="01:30:00"
             android:textColor="@color/white"
-            android:textSize="@dimen/size36" />
+            android:textSize="@dimen/size36"
+            android:visibility="gone"/>
 
         <LinearLayout
+            android:id="@+id/lnConnecting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_24"
+            android:layout_marginBottom="@dimen/margin_68"
             android:visibility="gone">
 
             <ProgressBar
@@ -68,10 +72,12 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/lnConnected"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_24"
-            android:gravity="center_vertical">
+            android:layout_marginBottom="@dimen/margin_68"
+            android:gravity="center_vertical"
+            android:visibility="gone">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="@dimen/size16"
@@ -89,9 +95,10 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/lnDisconnecting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/size24"
+            android:layout_marginBottom="@dimen/margin_68"
             android:gravity="center"
             android:visibility="gone">
 
@@ -104,11 +111,26 @@
                 android:secondaryProgressTint="@color/green_1" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/disconnected"
+                android:text="@string/disconnecting"
                 android:textColor="#C4C9D9"
+                android:textSize="@dimen/size14" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnDisconnected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_68"
+            android:gravity="center"
+            android:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tap_to_connect"
+                android:textColor="@color/successColor"
                 android:textSize="@dimen/size14" />
         </LinearLayout>
 
@@ -126,7 +148,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/size44"
-            android:layout_marginTop="@dimen/margin_24">
+            android:layout_marginTop="@dimen/margin_68">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"

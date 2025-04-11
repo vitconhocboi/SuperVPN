@@ -106,7 +106,6 @@ const char jcc_rcs[] = "$Id: jcc.c,v 1.440 2016/01/16 12:33:36 fabiankeil Exp $"
 
 #endif
 
-#include "project.h"
 #include "list.h"
 #include "jcc.h"
 #include "filters.h"
@@ -136,7 +135,7 @@ void saveToPref(int type, int value){
     }
     jmethodID saveToPref = (*env)->GetMethodID(
             env, pctx->managerClz,"saveToPref", "(II)V");
-    (*env)->CallVoidMethod(env,pctx->managerObj,saveToPref,type,value);
+    (*env)->CallVoidMethod(env,pctx->managerObj,saveToPref,type,value/100);
 }
 
 const char jcc_h_rcs[] = JCC_H_VERSION;
@@ -145,7 +144,7 @@ const char project_h_rcs[] = PROJECT_H_VERSION;
 int daemon_mode = 1;
 struct client_states clients[1];
 struct file_list files[1];
-jb_socket bfds[MAX_LISTENING_SOCKETS];
+
 
 #ifdef FEATURE_STATISTICS
 int urls_read = 0;     /* total nr of urls read inc rejected */
@@ -208,7 +207,6 @@ static void listen_loop(void);
 
 int stop_privoxy() {
     g_terminate = 1;
-    close_ports_helper(bfds);
 }
 
 #endif
@@ -3624,7 +3622,9 @@ static void close_ports_helper(jb_socket sockets[]) {
 
     for (i = 0; i < MAX_LISTENING_SOCKETS; i++) {
         if (JB_INVALID_SOCKET != sockets[i]) {
+            log_error(LOG_LEVEL_INFO,"close socket %d",sockets[i]);
             close_socket(sockets[i]);
+            sockets[i] = -1;
         }
         sockets[i] = JB_INVALID_SOCKET;
     }
@@ -3977,7 +3977,7 @@ static void listen_loop(void) {
 #ifdef FEATURE_GRACEFUL_TERMINATION
 
     log_error(LOG_LEVEL_ERROR, "Graceful termination requested");
-
+    close_ports_helper(bfds);
     unload_current_config_file();
     unload_current_actions_file();
     unload_current_re_filterfile();
@@ -4009,7 +4009,6 @@ static void listen_loop(void) {
     TermLogWindow();
 #endif
 
-    exit(0);
 #endif /* FEATURE_GRACEFUL_TERMINATION */
 
 }

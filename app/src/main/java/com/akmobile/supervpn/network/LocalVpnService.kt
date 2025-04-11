@@ -43,7 +43,7 @@ import javax.inject.Inject
 class LocalVpnService : VpnService(), Runnable {
 
     @Inject
-    lateinit var proxyConnection : ProxyConnection
+    lateinit var proxyConnection: ProxyConnection
 
     private val device: String = Build.DEVICE
     private val model: String = Build.MODEL
@@ -123,12 +123,12 @@ class LocalVpnService : VpnService(), Runnable {
             ACTION_STOP -> {
                 if (IsRunning) {
                     IsRunning = false
-                    proxyConnection.updateUI(HomeFragment.DISCONNECTED)
+                    stopSelf()
                 }
             }
         }
 
-        startForeground(1, createNotification())
+//        startForeground(1, createNotification())
 
         return START_NOT_STICKY
     }
@@ -136,7 +136,8 @@ class LocalVpnService : VpnService(), Runnable {
     private fun createNotification(): Notification {
         val channelId = "vpn_service"
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channel = NotificationChannel(channelId, "Vpn Service", NotificationManager.IMPORTANCE_LOW)
+            val channel =
+                NotificationChannel(channelId, "Vpn Service", NotificationManager.IMPORTANCE_LOW)
             (getSystemService(NotificationManager::class.java)).createNotificationChannel(channel)
         }
 
@@ -157,7 +158,7 @@ class LocalVpnService : VpnService(), Runnable {
         return LocalBinder(this)
     }
 
-    fun getStatus() : Boolean {
+    fun getStatus(): Boolean {
         return IsRunning
     }
 
@@ -473,7 +474,11 @@ class LocalVpnService : VpnService(), Runnable {
         } catch (e: Exception) {
             // ignore
         }
-        m_PrivoxyManager!!.stop()
+        proxyConnection.updateUI(HomeFragment.DISCONNECTING)
+        if (m_PrivoxyManager!!.stop()) {
+            proxyConnection.updateUI(HomeFragment.DISCONNECTED)
+        }
+        m_PrivoxyManager = null
         super.onDestroy()
     }
 

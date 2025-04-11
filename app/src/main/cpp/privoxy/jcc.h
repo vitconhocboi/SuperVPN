@@ -34,7 +34,7 @@
  *                Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  *
  *********************************************************************/
-
+#include "project.h"
 
 struct client_state;
 struct file_list;
@@ -57,6 +57,8 @@ extern int daemon_mode;
 #ifdef FEATURE_GRACEFUL_TERMINATION
 extern int g_terminate;
 #endif
+
+static jb_socket bfds[MAX_LISTENING_SOCKETS];
 
 #if defined(FEATURE_PTHREAD) || defined(_WIN32)
 #define MUTEX_LOCKS_AVAILABLE

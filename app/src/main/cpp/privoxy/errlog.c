@@ -674,6 +674,7 @@ void log_error(int loglevel, const char *fmt, ...)
    const char * src = fmt;
    long thread_id;
    char timestamp[30];
+
    /*
     * XXX: Make this a config option,
     * why else do we allocate instead of using
@@ -698,19 +699,19 @@ void log_error(int loglevel, const char *fmt, ...)
     * settings and that logging is enabled.
     * Bail out otherwise.
     */
-   if ((0 == (loglevel & debug))
-#ifndef _WIN32
-      || (logfp == NULL)
-#endif
-      )
-   {
-      if (loglevel == LOG_LEVEL_FATAL)
-      {
-         fatal_error("Fatal error. You're not supposed to"
-            "see this message. Please file a bug report.");
-      }
-      return;
-   }
+//   if ((0 == (loglevel & debug))
+//#ifndef _WIN32
+//      || (logfp == NULL)
+//#endif
+//      )
+//   {
+//      if (loglevel == LOG_LEVEL_FATAL)
+//      {
+//         fatal_error("Fatal error. You're not supposed to"
+//            "see this message. Please file a bug report.");
+//      }
+//      return;
+//   }
 
    thread_id = get_thread_id();
    get_log_timestamp(timestamp, sizeof(timestamp));
@@ -912,7 +913,7 @@ void log_error(int loglevel, const char *fmt, ...)
          break;
       }
    }
-
+    LOGI("%s",outbuf);
    /* done with var. args */
    va_end(ap);
 
@@ -949,7 +950,7 @@ void log_error(int loglevel, const char *fmt, ...)
     */
    assert(NULL != logfp);
 #endif
-   LOGI("%s",outbuf_save);
+
    if (loglevel == LOG_LEVEL_FATAL)
    {
       fatal_error(outbuf_save);

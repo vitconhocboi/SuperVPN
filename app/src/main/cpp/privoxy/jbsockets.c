@@ -1210,6 +1210,9 @@ int accept_connection(struct client_state * csp, jb_socket fds[])
    struct sockaddr_in client;
 #endif
    jb_socket afd;
+    struct timeval timeout;
+    timeout.tv_sec = 1;  // 1 second timeout
+    timeout.tv_usec = 0;
 #if defined(_WIN32) || defined(__OS2__) || defined(AMIGA)
    /* Wierdness - fix a warning. */
    int c_length;
@@ -1248,7 +1251,7 @@ int accept_connection(struct client_state * csp, jb_socket fds[])
    }
    do
    {
-      retval = select(max_selected_socket, &selected_fds, NULL, NULL, NULL);
+      retval = select(max_selected_socket, &selected_fds, NULL, NULL, &timeout);
    } while (retval < 0 && errno == EINTR);
    if (retval <= 0)
    {
