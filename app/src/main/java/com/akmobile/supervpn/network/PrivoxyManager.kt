@@ -124,6 +124,7 @@ class PrivoxyManager(private val context: Context) {
 
 {+block{Doubleclick banners.} +handle-as-image}
 *.doubleclick.net
+.doubleclick.net
 ads.pubmatic.com
 ads.betweendigital.com
 ads.stickyadstv.com
@@ -131,11 +132,14 @@ ads.stickyadstv.com
 *.smartadserver.com
 *.googlesyndication.com
 beacons.gcp.gvt2.com
+beacons.gvt2.com
 pix.pubpowerplatform.io
 *.adnxs.com
 *.creativecdn.com
 *.unrulymedia.com
 *.pubmatic.com
+*.richaudience.com
+*.aralego.com
 prebid.*
                 """.replaceIndent()
             )
@@ -160,17 +164,17 @@ ${getForwardSettings()}
         val proxyUser = BaseAppConfig.proxyUser
         val proxyPass = BaseAppConfig.proxyPass
 
-        if (proxyType.isNotEmpty() && proxyHost.isNotEmpty() && proxyPort.isNotEmpty()) {
-            if (proxyType.lowercase() == "http") {
-                return """forward / $proxyHost:$proxyPort
-enable-proxy-authentication-forwarding 1
-""".replaceIndent("")
-            } else {
-                return """forward-socks5 / $proxyUser:$proxyPass@$proxyHost:$proxyPort .
-""".trimMargin().replaceIndent("")
-            }
-        } else {
+//        if (proxyType.isNotEmpty() && proxyHost.isNotEmpty() && proxyPort.isNotEmpty()) {
+//            if (proxyType.lowercase() == "http") {
+//                return """forward / $proxyHost:$proxyPort
+//enable-proxy-authentication-forwarding 1
+//""".replaceIndent("")
+//            } else {
+//                return """forward-socks5 / $proxyUser:$proxyPass@$proxyHost:$proxyPort .
+//""".trimMargin().replaceIndent("")
+//            }
+//        } else {
             return "forward / ."  // Direct connection
-        }
+//        }
     }
 } 
