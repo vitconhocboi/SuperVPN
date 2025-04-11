@@ -20,7 +20,7 @@ class PrivoxyManager(private val context: Context) {
         }
 
         @JvmStatic
-        private external fun nativeStartPrivoxy(configPath: String,owner: PrivoxyManager ): Boolean
+        private external fun nativeStartPrivoxy(configPath: String, owner: PrivoxyManager): Boolean
 
         @JvmStatic
         private external fun nativeStopPrivoxy(): Boolean
@@ -46,22 +46,34 @@ class PrivoxyManager(private val context: Context) {
         }
     }
 
-    fun saveToPref(type: Int, value: Int){
-        if(type == DOWNLOAD){
-            var totalDownload = context.getSharedPreferences("privoxy_traffic",Context.MODE_PRIVATE).getInt("download",0)
-            context.getSharedPreferences("privoxy_traffic",Context.MODE_PRIVATE).edit().putInt("download", totalDownload + value).apply()
-        }else{
-            var totalDownload = context.getSharedPreferences("privoxy_traffic",Context.MODE_PRIVATE).getInt("upload",0)
-            context.getSharedPreferences("privoxy_traffic",Context.MODE_PRIVATE).edit().putInt("upload", totalDownload + value).apply()
+    fun saveToPref(type: Int, value: Int) {
+        if (type == DOWNLOAD) {
+            var totalDownload =
+                context.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE)
+                    .getInt("download", 0)
+            context.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE).edit()
+                .putInt("download", totalDownload + value).apply()
+        } else {
+            var totalDownload =
+                context.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE)
+                    .getInt("upload", 0)
+            context.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE).edit()
+                .putInt("upload", totalDownload + value).apply()
         }
     }
 
     fun start(): Boolean {
         if (isRunning) return true
 
-        val success = nativeStartPrivoxy(configPath,this@PrivoxyManager)
+        val success = nativeStartPrivoxy(configPath, this@PrivoxyManager)
         if (success) {
             isRunning = true
+            context.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE).edit()
+                .putInt("upload", 0).apply()
+            context.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE).edit()
+                .putInt("download", 0).apply()
+            context.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE).edit()
+                .putInt("start", System.currentTimeMillis().toInt() / 1000).apply()
             Timber.tag("PrivoxyManager").d("Privoxy started successfully")
         } else {
             Timber.tag("PrivoxyManager").e("Failed to start Privoxy")
@@ -71,7 +83,6 @@ class PrivoxyManager(private val context: Context) {
 
     fun stop(): Boolean {
         if (!isRunning) return true
-
         val success = nativeStopPrivoxy()
         if (success) {
             isRunning = false
@@ -79,8 +90,10 @@ class PrivoxyManager(private val context: Context) {
         } else {
             Timber.tag("PrivoxyManager").e("Failed to stop Privoxy")
         }
-        return success
+
+        return true
     }
+
 
     fun isRunning(): Boolean {
         return nativeIsRunning()
@@ -99,7 +112,11 @@ class PrivoxyManager(private val context: Context) {
             val proxyPass = BaseAppConfig.proxyPass
             actionFile.writeText(
                 """
-{+add-header{proxy-authorization: Basic ${Base64.encodeToString("$proxyUser:$proxyPass".toByteArray(),Base64.NO_WRAP)}}}
+{+add-header{proxy-authorization: Basic ${
+                    Base64.encodeToString(
+                        "$proxyUser:$proxyPass".toByteArray(), Base64.NO_WRAP
+                    )
+                }}}
 /
                 """.replaceIndent()
             )

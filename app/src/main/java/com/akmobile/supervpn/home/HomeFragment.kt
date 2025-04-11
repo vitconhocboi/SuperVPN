@@ -34,6 +34,7 @@ import com.akmobile.supervpn.settings.appproxy.AppProxyViewModel
 @AndroidEntryPoint
 class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     private val handler = Handler(Looper.getMainLooper())
+
     companion object {
         public const val CONNECTING = "CONNECTING"
         public const val CONNECTED = "CONNECTED"
@@ -41,7 +42,8 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         public const val DISCONNECTED = "DISCONNECTED"
         public const val ERROR = "ERROR"
     }
-    private val interval = 5000L
+
+    private val interval = 1000L
 
     private var isConnected = false
     private var proxyId: String? = ""
@@ -68,33 +70,43 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     private fun updateUI(status: String?) {
         when (status) {
             CONNECTING -> {
-                binding.tvStatus.text = activity?.resources?.getString(R.string.connecting)
+                binding.connectTitle.invisible()
+                binding.tvTime.text = "00:00:00"
+                binding.tvTime.visible()
+                binding.lnDisconnected.invisible()
+                binding.lnConnecting.visible()
                 binding.ivConnect.isEnabled = false
             }
 
             CONNECTED -> {
                 binding.ivConnect.isSelected = true
                 isConnected = true
-                binding.tvStatus.text = activity?.resources?.getString(R.string.connected)
+                binding.lnConnecting.invisible()
+                binding.lnConnected.visible()
                 binding.ivConnect.isEnabled = true
             }
 
             DISCONNECTING -> {
-                binding.tvStatus.text = activity?.resources?.getString(R.string.disconnecting)
+                binding.lnConnected.invisible()
+                binding.lnDisconnecting.visible()
                 binding.ivConnect.isEnabled = false
             }
 
             DISCONNECTED -> {
                 isConnected = false
+                binding.tvTime.invisible()
+                binding.connectTitle.visible()
                 binding.ivConnect.isSelected = false
-                binding.tvStatus.text = activity?.resources?.getString(R.string.disconnected)
+                binding.lnDisconnecting.invisible()
+                binding.lnDisconnected.visible()
                 binding.ivConnect.isEnabled = true
             }
 
             ERROR -> {
                 binding.ivConnect.isSelected = false
                 isConnected = false
-                binding.tvStatus.text = activity?.resources?.getString(R.string.connect_error)
+                binding.lnConnecting.invisible()
+                binding.lnDisconnected.visible()
                 binding.ivConnect.isEnabled = true
             }
         }
@@ -108,21 +120,52 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 
     private val updateRunnable = object : Runnable {
         override fun run() {
-            val trafficDownload = context?.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE)?.getInt("download",0)
-            if(trafficDownload != null && trafficDownload > 0){
-                binding.tvTrafficDownload.text = "${trafficDownload}"
-            }else{
+            val trafficDownload =
+                context?.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE)
+                    ?.getInt("download", 0)
+            if (trafficDownload != null && trafficDownload > 0) {
+                binding.tvTrafficDownload.text = formatBytes(trafficDownload)
+            } else {
                 binding.tvTrafficDownload.text = "--"
             }
 
-            val trafficUpload = context?.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE)?.getInt("upload",0)
-            if(trafficUpload != null && trafficUpload > 0){
-                binding.tvTrafficUpload.text = "${trafficUpload}"
-            }else{
+            val trafficUpload =
+                context?.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE)
+                    ?.getInt("upload", 0)
+            if (trafficUpload != null && trafficUpload > 0) {
+                binding.tvTrafficUpload.text = formatBytes(trafficUpload)
+            } else {
                 binding.tvTrafficUpload.text = "--"
             }
+            val start =
+                context?.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE)
+                    ?.getInt("start", 0)
+            val diff = System.currentTimeMillis().toInt() / 1000 - start!!
+
+            binding.tvTime.text = formatSecondsToTime(diff)
             handler.postDelayed(this, interval)
         }
+    }
+
+    fun formatBytes(bytes: Int): String {
+        if (bytes < 1024) return "$bytes B"
+        val units = arrayOf("KB", "MB", "GB", "TB", "PB")
+        var value = bytes.toDouble()
+        var index = 0
+
+        while (value >= 1024 && index < units.lastIndex) {
+            value /= 1024
+            index++
+        }
+
+        return String.format("%.2f %s", value, units[index])
+    }
+
+    fun formatSecondsToTime(seconds: Int): String {
+        val hours = seconds / 3600
+        val minutes = (seconds % 3600) / 60
+        val secs = seconds % 60
+        return String.format("%02d:%02d:%02d", hours, minutes, secs)
     }
 
     override fun initView() {
@@ -171,7 +214,9 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 })
             }
 
-            tvTrafficDownload.text = context?.getSharedPreferences("PRIVOXY_TRAFFIC", Context.MODE_PRIVATE)?.getInt("DOWNLOAD", 0).toString()
+            tvTrafficDownload.text =
+                context?.getSharedPreferences("PRIVOXY_TRAFFIC", Context.MODE_PRIVATE)
+                    ?.getInt("DOWNLOAD", 0).toString()
 
             ivConnect.setOnClickListener {
 //                if (isConnected) {
@@ -189,6 +234,8 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 if (!isConnected) {
                     prepareVpn()
                 } else {
+                    handler.removeCallbacks(updateRunnable)
+                    vpnPermissionLauncher.unregister()
                     stopVpnService()
                 }
             }
@@ -226,12 +273,14 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     }
 
     private fun startVpnService() {
+        proxyViewModel.updateUI(CONNECTING)
         isConnected = true
         proxyViewModel.startProxy(context, allowApp = allowApp?.map { it.packageName })
     }
 
     private fun stopVpnService() {
         try {
+            proxyViewModel.updateUI(DISCONNECTING)
             proxyViewModel.stopProxy(context)
 //            LocalVpnService.IsRunning = false
 //            isConnected = false
