@@ -30,6 +30,7 @@ import com.akmobile.supervpn.utils.Constant
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
+import timber.log.Timber
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
@@ -358,8 +359,8 @@ class LocalVpnService : VpnService(), Runnable {
         LOCAL_IP = CommonMethods.ipStringToInt(ipAddress.Address)
 
         builder.addAddress(ipAddress.Address, ipAddress.PrefixLength)
-        if (ProxyConfig.IS_DEBUG) Log.d(
-            Constant.TAG, java.lang.String.format(
+        if (ProxyConfig.IS_DEBUG) Timber.tag(Constant.TAG).d(
+            java.lang.String.format(
                 "addAddress: %s/%d\n", ipAddress.Address, ipAddress.PrefixLength
             )
         )

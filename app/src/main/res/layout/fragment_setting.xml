@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/size_172"
         android:layout_margin="@dimen/margin_16"
-        android:foreground="?selectableItemBackgroundBorderless"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -32,10 +31,10 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ic_pro"
-            android:layout_width="@dimen/size_50"
-            android:layout_height="@dimen/size_50"
-            android:padding="@dimen/margin_medium"
-            android:src="@drawable/ic_setting_app_proxy"
+            android:layout_width="@dimen/size55"
+            android:layout_height="@dimen/size22"
+            android:src="@drawable/ic_setting_pro"
+            android:layout_marginStart="@dimen/margin_12"
             app:layout_constraintBottom_toBottomOf="@+id/tv_pro"
             app:layout_constraintStart_toEndOf="@+id/tv_pro"
             app:layout_constraintTop_toTopOf="@+id/tv_pro" />
@@ -61,7 +60,7 @@
             android:layout_height="@dimen/size42"
             android:layout_marginTop="@dimen/margin_12"
             android:layout_marginHorizontal="@dimen/margin_16"
-            android:layout_marginBottom="@dimen/margin_16"
+            android:layout_marginBottom="@dimen/margin_20"
             android:ellipsize="middle"
             android:background="@drawable/bg_3_day_trial"
             android:text="@string/setting_trial"
@@ -84,37 +83,30 @@
         app:layout_constraintTop_toBottomOf="@+id/premium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginHorizontal="10dp"
-        android:padding="10dp">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ic_app_proxy"
-            android:layout_width="@dimen/size_50"
-            android:layout_height="@dimen/size_50"
-            android:padding="@dimen/margin_medium"
-            android:src="@drawable/ic_setting_app_proxy"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginHorizontal="10dp">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_app_proxy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_big"
-            android:layout_marginEnd="@dimen/margin_big"
+            android:layout_marginVertical="@dimen/margin_16"
+            android:layout_marginStart="@dimen/margin_16"
             android:ellipsize="middle"
             android:text="@string/setting_app_proxy"
+            android:drawableStart="@drawable/ic_setting_app_proxy"
+            android:drawablePadding="@dimen/margin_16"
             android:textStyle="bold"
             android:textColor="@color/white"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/ic_app_proxy"/>
-
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+6
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/btn_action"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:padding="@dimen/margin_medium"
+            android:padding="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_16"
             android:src="@drawable/ic_setting_right_arrow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -125,7 +117,7 @@
         android:id="@+id/row_language"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_12"
         android:layout_marginBottom="@dimen/margin_medium"
         android:background="@drawable/bg_setting_items"
         android:foreground="?selectableItemBackgroundBorderless"
@@ -133,37 +125,30 @@
         app:layout_constraintTop_toBottomOf="@+id/row_app_proxy"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginHorizontal="10dp"
-        android:padding="10dp">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ic_language"
-            android:layout_width="@dimen/size_50"
-            android:layout_height="@dimen/size_50"
-            android:padding="@dimen/margin_medium"
-            android:src="@drawable/ic_setting_language"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginHorizontal="10dp">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_language"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_big"
-            android:layout_marginEnd="@dimen/margin_big"
+            android:layout_marginVertical="@dimen/margin_16"
+            android:layout_marginStart="@dimen/margin_16"
             android:ellipsize="middle"
             android:text="@string/setting_language"
+            android:drawableStart="@drawable/ic_setting_language"
+            android:drawablePadding="@dimen/margin_16"
             android:textStyle="bold"
             android:textColor="@color/white"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/ic_language"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/btn_language_action"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:padding="@dimen/margin_medium"
+            android:padding="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_16"
             android:src="@drawable/ic_setting_right_arrow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -174,7 +159,7 @@
         android:id="@+id/row_rate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_12"
         android:layout_marginBottom="@dimen/margin_medium"
         android:background="@drawable/bg_setting_items"
         android:foreground="?selectableItemBackgroundBorderless"
@@ -182,37 +167,30 @@
         app:layout_constraintTop_toBottomOf="@+id/row_language"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginHorizontal="10dp"
-        android:padding="10dp">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ic_rate"
-            android:layout_width="@dimen/size_50"
-            android:layout_height="@dimen/size_50"
-            android:padding="@dimen/margin_medium"
-            android:src="@drawable/ic_setting_rate"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginHorizontal="10dp">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_rate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_big"
-            android:layout_marginEnd="@dimen/margin_big"
+            android:layout_marginVertical="@dimen/margin_16"
+            android:layout_marginStart="@dimen/margin_16"
             android:ellipsize="middle"
             android:text="@string/setting_rate"
+            android:drawableStart="@drawable/ic_setting_rate"
+            android:drawablePadding="@dimen/margin_16"
             android:textStyle="bold"
             android:textColor="@color/white"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/ic_rate"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/btn_rate_action"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:padding="@dimen/margin_medium"
+            android:padding="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_16"
             android:src="@drawable/ic_setting_right_arrow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -223,7 +201,7 @@
         android:id="@+id/row_share"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_12"
         android:layout_marginBottom="@dimen/margin_medium"
         android:background="@drawable/bg_setting_items"
         android:foreground="?selectableItemBackgroundBorderless"
@@ -231,37 +209,30 @@
         app:layout_constraintTop_toBottomOf="@+id/row_rate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginHorizontal="10dp"
-        android:padding="10dp">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ic_share"
-            android:layout_width="@dimen/size_50"
-            android:layout_height="@dimen/size_50"
-            android:padding="@dimen/margin_medium"
-            android:src="@drawable/ic_setting_share"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginHorizontal="10dp">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_share"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_big"
-            android:layout_marginEnd="@dimen/margin_big"
+            android:layout_marginVertical="@dimen/margin_16"
+            android:layout_marginStart="@dimen/margin_16"
             android:ellipsize="middle"
             android:text="@string/setting_share"
+            android:drawableStart="@drawable/ic_setting_share"
+            android:drawablePadding="@dimen/margin_16"
             android:textStyle="bold"
             android:textColor="@color/white"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/ic_share"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/btn_share_action"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:padding="@dimen/margin_medium"
+            android:padding="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_16"
             android:src="@drawable/ic_setting_right_arrow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -272,7 +243,7 @@
         android:id="@+id/row_feedback"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_12"
         android:layout_marginBottom="@dimen/margin_medium"
         android:background="@drawable/bg_setting_items"
         android:foreground="?selectableItemBackgroundBorderless"
@@ -280,37 +251,30 @@
         app:layout_constraintTop_toBottomOf="@+id/row_share"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginHorizontal="10dp"
-        android:padding="10dp">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ic_feedback"
-            android:layout_width="@dimen/size_50"
-            android:layout_height="@dimen/size_50"
-            android:padding="@dimen/margin_medium"
-            android:src="@drawable/ic_setting_feedback"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginHorizontal="10dp">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_feedback"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_big"
-            android:layout_marginEnd="@dimen/margin_big"
+            android:layout_marginVertical="@dimen/margin_16"
+            android:layout_marginStart="@dimen/margin_16"
             android:ellipsize="middle"
             android:text="@string/setting_feedback"
+            android:drawableStart="@drawable/ic_setting_feedback"
+            android:drawablePadding="@dimen/margin_16"
             android:textStyle="bold"
             android:textColor="@color/white"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/ic_feedback"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/btn_feedback_action"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:padding="@dimen/margin_medium"
+            android:padding="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_16"
             android:src="@drawable/ic_setting_right_arrow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"

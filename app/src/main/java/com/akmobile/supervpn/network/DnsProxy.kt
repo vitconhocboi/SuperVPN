@@ -171,24 +171,10 @@ class DnsProxy : Runnable {
 
         if (question?.Type?.toInt() == 1) {
             val need = ProxyConfig.Instance.needProxy(question.Domain)
-            Log.d(Constant.TAG, "LONGLD DNS Query ${question.Domain} ---> $need")
             if (need) {
                 val fakeIP = question?.Domain?.let { getOrCreateFakeIP(it) }
                 if (fakeIP != null) {
                     tamperDnsResponse(ipHeader.m_Data, dnsPacket, fakeIP)
-                }
-
-                if (ProxyConfig.IS_DEBUG) {
-                    Log.d(
-                        Constant.TAG,
-                        "LONGLD interceptDns FakeDns: ${question.Domain} ${
-                            fakeIP?.let {
-                                CommonMethods.ipIntToString(
-                                    it
-                                )
-                            }
-                        }"
-                    )
                 }
 
                 val sourceIP = ipHeader.sourceIP
@@ -219,7 +205,7 @@ class DnsProxy : Runnable {
     fun onDnsRequestReceived(ipHeader: IPHeader, udpHeader: UDPHeader, dnsPacket: DnsPacket) {
         if (!interceptDns(ipHeader, udpHeader, dnsPacket)) {
             val state = QueryState()
-            state.ClientQueryID = dnsPacket?.Header?.id!!
+            state.ClientQueryID = dnsPacket.Header?.id!!
             state.QueryNanoTime = System.nanoTime()
             state.ClientIP = ipHeader.sourceIP
             state.ClientPort = udpHeader.sourcePort
@@ -233,7 +219,6 @@ class DnsProxy : Runnable {
                 clearExpiredQueries()
                 m_QueryArray.put(m_QueryID.toInt(), state)
             }
-            Log.d("LONGLD", "LONGLD onDnsRequestReceived: $state")
             val remoteAddress = InetSocketAddress(
                 CommonMethods.ipIntToInet4Address(state.RemoteIP),
                 state.RemotePort.toInt()
