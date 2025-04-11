@@ -1,7 +1,9 @@
 package com.akmobile.supervpn.settings
 
+import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +15,7 @@ import com.akmobile.supervpn.R
 import com.akmobile.supervpn.databinding.FragmentSettingBinding
 import com.akmobile.supervpn.settings.appproxy.AppProxyUI
 import com.akmobile.supervpn.settings.appproxy.AppProxyFragment
+import com.akmobile.supervpn.utils.Constant
 import com.akmobile.supervpn.utils.Navigator
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch

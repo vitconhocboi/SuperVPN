@@ -118,12 +118,32 @@ class PrivoxyManager(private val context: Context) {
                     )
                 }}}
 /
+
+{+block{No nasty stuff for you.}}
+.nasty-stuff.example.com
+
+{+block{Doubleclick banners.} +handle-as-image}
+*.doubleclick.net
+ads.pubmatic.com
+ads.betweendigital.com
+ads.stickyadstv.com
+*adsystem.com
+*.smartadserver.com
+*.googlesyndication.com
+beacons.gcp.gvt2.com
+pix.pubpowerplatform.io
+*.adnxs.com
+*.creativecdn.com
+*.unrulymedia.com
+*.pubmatic.com
+prebid.*
                 """.replaceIndent()
             )
         }
         val configFile = File(privoxyDir, "config")
         configFile.writeText(
             """listen-address 127.0.0.1:$port
+                debug 66048
 actionsfile ${actionFile.absolutePath}
 ${getForwardSettings()}
 """.replaceIndent()
