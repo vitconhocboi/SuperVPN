@@ -176,11 +176,11 @@ class ProxyConfig {
         val FAKE_NETWORK_MASK: Int = CommonMethods.ipStringToInt("255.255.0.0")
         val FAKE_NETWORK_IP: Int = CommonMethods.ipStringToInt("26.25.0.0")
 
-        @SuppressLint("AuthLeak")
-        fun getHttpProxyServer(ctx: Context): String? {
-            return ctx.getSharedPreferences("proxyConfig", Context.MODE_PRIVATE)
-                .getString("serverAddress", "http://qhipbvvb:1mwz1lgkcveg@154.95.36.199:6893")
-        }
+//        @SuppressLint("AuthLeak")
+//        fun getHttpProxyServer(ctx: Context): String? {
+//            return ctx.getSharedPreferences("proxyConfig", Context.MODE_PRIVATE)
+//                .getString("serverAddress", "http://qhipbvvb:1mwz1lgkcveg@154.95.36.199:6893")
+//        }
 
         fun isFakeIP(ip: Int): Boolean {
             return (ip and FAKE_NETWORK_MASK) == FAKE_NETWORK_IP
