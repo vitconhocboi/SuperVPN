@@ -13,11 +13,9 @@ import android.os.Binder
 import android.os.Build
 import android.os.Handler
 import android.os.IBinder
-import android.os.Looper
 import android.os.ParcelFileDescriptor
 import android.util.Log
 import androidx.core.app.NotificationCompat
-import com.common.baseui.BaseAppConfig
 import com.akmobile.supervpn.MainActivity
 import com.akmobile.supervpn.home.HomeFragment
 import com.akmobile.supervpn.network.dns.DnsPacket
@@ -27,16 +25,14 @@ import com.akmobile.supervpn.network.tcpip.TCPHeader
 import com.akmobile.supervpn.network.tcpip.UDPHeader
 import com.akmobile.supervpn.proxy.ProxyConnection
 import com.akmobile.supervpn.utils.Constant
+import com.common.baseui.BaseAppConfig
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.FlowPreview
 import timber.log.Timber
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.io.IOException
 import java.nio.ByteBuffer
-import java.util.ArrayList
 import java.util.concurrent.ConcurrentHashMap
 import javax.inject.Inject
 
@@ -78,8 +74,6 @@ class LocalVpnService : VpnService(), Runnable {
         m_UDPHeader = UDPHeader(m_Packet, 20)
         m_DNSBuffer = (ByteBuffer.wrap(m_Packet).position(28) as ByteBuffer).slice()
         Instance = this
-
-        Log.d("VpnProxy", "New VPNService" + ID)
     }
 
     override fun onCreate() {
@@ -171,6 +165,11 @@ class LocalVpnService : VpnService(), Runnable {
                 key.onStatusChanged(status, isRunning)
             }
         }
+    }
+
+    override fun onRevoke() {
+        Log.d(Constant.TAG, "VPN has been revoked (likely by another VPN)")
+        stopSelf()
     }
 
     fun writeLog(format: String?, vararg args: Any?) {
@@ -501,7 +500,7 @@ class LocalVpnService : VpnService(), Runnable {
         private const val ACTION_STOP = "ACTION_STOP"
 
         lateinit var Instance: LocalVpnService
-        var IsRunning: Boolean = false
+        public var IsRunning: Boolean = false
         var version_bypass: String = "1.0.1"
         private var ID = 0
         private var LOCAL_IP = 0

@@ -164,17 +164,17 @@ ${getForwardSettings()}
         val proxyUser = BaseAppConfig.proxyUser
         val proxyPass = BaseAppConfig.proxyPass
 
-//        if (proxyType.isNotEmpty() && proxyHost.isNotEmpty() && proxyPort.isNotEmpty()) {
-//            if (proxyType.lowercase() == "http") {
-//                return """forward / $proxyHost:$proxyPort
-//enable-proxy-authentication-forwarding 1
-//""".replaceIndent("")
-//            } else {
-//                return """forward-socks5 / $proxyUser:$proxyPass@$proxyHost:$proxyPort .
-//""".trimMargin().replaceIndent("")
-//            }
-//        } else {
+        if (proxyType.isNotEmpty() && proxyHost.isNotEmpty() && proxyPort.isNotEmpty()) {
+            if (proxyType.lowercase() == "http") {
+                return """forward / $proxyHost:$proxyPort
+enable-proxy-authentication-forwarding 1
+""".replaceIndent("")
+            } else {
+                return """forward-socks5 / $proxyUser:$proxyPass@$proxyHost:$proxyPort .
+""".trimMargin().replaceIndent("")
+            }
+        } else {
             return "forward / ."  // Direct connection
-//        }
+        }
     }
 } 
