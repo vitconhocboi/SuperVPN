@@ -4,7 +4,7 @@ import android.content.res.Resources
 import android.view.LayoutInflater
 import androidx.lifecycle.lifecycleScope
 import com.common.baseui.BaseAppConfig
-import com.akmobile.supervpn.ProductActivity
+import com.akmobile.supervpn.base.ProductActivity
 import com.akmobile.supervpn.databinding.ActivitySplashBinding
 import com.akmobile.supervpn.language.LangType
 import com.akmobile.supervpn.utils.Navigator

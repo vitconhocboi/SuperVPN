@@ -1,33 +1,44 @@
-package com.akmobile.supervpn
+package com.akmobile.supervpn.main
 
+import android.Manifest
 import android.annotation.SuppressLint
-import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
-import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.LayoutInflater
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
-import androidx.core.content.res.ResourcesCompat
-import androidx.core.view.isVisible
+import androidx.activity.viewModels
+import androidx.fragment.app.Fragment
+import com.akmobile.supervpn.base.ProductActivity
 import com.akmobile.supervpn.databinding.ActivityMainBinding
 import com.akmobile.supervpn.home.HomeFragment
-import com.akmobile.supervpn.proxy.ProxyFragment
 import com.akmobile.supervpn.settings.SettingFragment
-import com.common.baseui.extension.context
+import com.akmobile.supervpn.settings.appproxy.AppProxyFragment
+import com.google.firebase.FirebaseApp
+import com.google.firebase.firestore.FirebaseFirestore
 import com.simple.libads.setVisible
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 @AndroidEntryPoint
 class MainActivity : ProductActivity<ActivityMainBinding>() {
 
     var isSettingFragment = false
+    var isAppProxyFragment = false
+
+    private val mainViewModel : MainViewModel by viewModels()
 
     private val mHomeFragment by lazy {
         HomeFragment()
     }
 
+    private val mAppProxyFragment by lazy {
+        AppProxyFragment()
+    }
+
     private val mSettingFragment by lazy {
-        SettingFragment()
+        SettingFragment {
+            showAppProxy()
+        }
     }
 
     override fun bindingProvider(inflater: LayoutInflater): ActivityMainBinding {
@@ -37,7 +48,10 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
     override fun initView() {
         mListFragment.add(mHomeFragment)
         mListFragment.add(mSettingFragment)
+        mListFragment.add(mAppProxyFragment)
+
         showFragment(mHomeFragment)
+//        binding.progress.setVisible(true)
         with(binding) {
             lnSetting.setOnClickListener {
                 showFragment(mSettingFragment)
@@ -45,6 +59,10 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
 
             icBack.setOnClickListener {
                 onBackPressedDispatcher.onBackPressed()
+            }
+
+            cbSelectAll.setOnClickListener {
+
             }
         }
 
@@ -54,6 +72,8 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                 override fun handleOnBackPressed() {
                         if (isSettingFragment) {
                             showFragment(mHomeFragment)
+                        } else if (isAppProxyFragment) {
+                            showFragment(mSettingFragment)
                         } else {
                             this@MainActivity.finish()
                         }
@@ -62,14 +82,19 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
             })
     }
 
-    private var mListFragment = arrayListOf<androidx.fragment.app.Fragment>()
+    private var mListFragment = arrayListOf<Fragment>()
 
     @SuppressLint("CommitTransaction")
-    fun showFragment(fragment: androidx.fragment.app.Fragment) {
+    fun showFragment(fragment: Fragment) {
         val fragmentTransaction = supportFragmentManager.beginTransaction()
         val otherFragment = mListFragment.filter { it != fragment }
 
+        isAppProxyFragment = fragment is AppProxyFragment
+
         if (fragment.isAdded) {
+            if (isAppProxyFragment) {
+                mAppProxyFragment.loadData()
+            }
             fragmentTransaction.show(fragment)
         } else {
             fragmentTransaction.add(binding.frameContainer.id, fragment)
@@ -85,7 +110,14 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
 
         isSettingFragment = fragment is SettingFragment
 
-        binding.homeActionBar.setVisible(!isSettingFragment)
-        binding.subActionbar.setVisible(isSettingFragment)
+        binding.homeActionBar.setVisible(!isSettingFragment && !isAppProxyFragment)
+        binding.cbSelectAll.setVisible(false)
+        binding.subActionbar.setVisible(isSettingFragment || isAppProxyFragment)
+    }
+
+    fun showAppProxy() {
+//        mainViewModel.getInstalledAppsWithInternetPermission(baseContext)
+        showFragment(mAppProxyFragment)
+        mAppProxyFragment.loadData()
     }
 }

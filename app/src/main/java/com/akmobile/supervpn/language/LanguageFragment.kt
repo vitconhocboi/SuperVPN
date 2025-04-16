@@ -7,8 +7,8 @@ import androidx.fragment.app.viewModels
 import com.common.baseui.BaseAppConfig
 import com.common.baseui.extension.setOnClickNoDoubleClick
 import com.common.baseui.lingver.Lingver
-import com.akmobile.supervpn.LanguageActivity
-import com.akmobile.supervpn.ProductFragment
+import com.akmobile.supervpn.language.LanguageActivity
+import com.akmobile.supervpn.base.ProductFragment
 import com.akmobile.supervpn.databinding.FragmentLanguageBinding
 import com.akmobile.supervpn.R
 import com.akmobile.supervpn.utils.Navigator

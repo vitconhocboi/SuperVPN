@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/size15"
-            android:visibility="visible"
+            android:visibility="gone"
             android:gravity="bottom">
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -69,7 +69,7 @@
             android:paddingHorizontal="@dimen/margin_16"
             android:background="@color/gray_3"
             android:gravity="center"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ic_back"
@@ -91,6 +91,14 @@
                 android:text="@string/setting"
                 android:textColor="@color/white" />
 
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/cb_select_all"
+                android:layout_width="@dimen/margin_20"
+                android:layout_height="@dimen/margin_20"
+                android:background="@drawable/ip_list_checkbox1"
+                android:button="@null"
+                android:checked="false"
+                android:layout_marginEnd="@dimen/margin_big" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -104,4 +112,16 @@
         app:layout_constraintVertical_bias="0.0"
         app:layout_constraintVertical_weight="1"
         tools:layout_editor_absoluteX="-138dp" />
+
+<!--    <ProgressBar-->
+<!--        android:id="@+id/progress"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:indeterminateTint="@color/white"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:visibility="invisible"-->
+<!--        />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,8 +2,8 @@ package com.akmobile.supervpn.premium
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.akmobile.supervpn.LanguageActivity
-import com.akmobile.supervpn.ProductFragment
+import com.akmobile.supervpn.language.LanguageActivity
+import com.akmobile.supervpn.base.ProductFragment
 import com.akmobile.supervpn.databinding.FragmentPremiumBinding
 import com.akmobile.supervpn.utils.Navigator
 

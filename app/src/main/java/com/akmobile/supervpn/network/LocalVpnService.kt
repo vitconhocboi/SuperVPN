@@ -18,7 +18,7 @@ import android.os.ParcelFileDescriptor
 import android.util.Log
 import androidx.core.app.NotificationCompat
 import com.common.baseui.BaseAppConfig
-import com.akmobile.supervpn.MainActivity
+import com.akmobile.supervpn.main.MainActivity
 import com.akmobile.supervpn.home.HomeFragment
 import com.akmobile.supervpn.network.dns.DnsPacket
 import com.akmobile.supervpn.network.tcpip.CommonMethods
@@ -129,7 +129,7 @@ class LocalVpnService : VpnService(), Runnable {
             }
         }
 
-//        startForeground(1, createNotification())
+        startForeground(1, createNotification())
 
         return START_NOT_STICKY
     }
@@ -187,7 +187,6 @@ class LocalVpnService : VpnService(), Runnable {
     }
 
     fun SetProxyServer(addr: String) {
-        Log.d("LongLD", "SetProxyServer: $addr")
         val preferences: SharedPreferences = getSharedPreferences(Constant.TAG, MODE_PRIVATE)
         val editor: SharedPreferences.Editor = preferences.edit()
         editor.putString("ProxyAddress", addr)
@@ -346,7 +345,6 @@ class LocalVpnService : VpnService(), Runnable {
 
         val builder: Builder = Builder()
         builder.setMtu(ProxyConfig.Instance.mTU)
-        //longld set current proxy to reference
 //        val proxyAddress: String = BaseAppConfig.proxyHost
 //        if (proxyAddress.isNotEmpty()) {
 //            this.SetProxyServer(proxyAddress)

@@ -197,7 +197,7 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/upload"
+                    android:text="@string/download"
                     android:textColor="@color/white"
                     android:textSize="@dimen/size12" />
 
@@ -224,7 +224,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/subActionBar"
+            android:id="@+id/pn_select_proxy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_setting_pro"
@@ -257,7 +257,7 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/subActionBar2"
+            android:id="@+id/pn_proxy_selected"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_setting_pro2"
@@ -308,15 +308,16 @@
             </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvSelectProxy"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/size48"
-                android:gravity="center"
-                android:text="@string/select_connection_area"
-                android:textColor="@color/topBarColor"
-                android:textSize="@dimen/size14"
-                android:visibility="gone" />
+<!--            <androidx.appcompat.widget.AppCompatTextView-->
+<!--                android:id="@+id/tvSelectProxy"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/size48"-->
+<!--                android:gravity="center"-->
+<!--                android:text="@string/select_connection_area"-->
+<!--                android:textColor="@color/topBarColor"-->
+<!--                android:textSize="@dimen/size14"-->
+<!--                android:visibility="gone" />-->
         </androidx.appcompat.widget.LinearLayoutCompat>
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.constraintlayout.widget.ConstraintLayout>

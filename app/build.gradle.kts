@@ -121,6 +121,9 @@ dependencies {
     implementation(libs.androidx.multidex)
     // Add zlib dependency for compression functionality
     implementation("com.jcraft:jzlib:1.1.3")
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.crashlytics.ktx)
+    implementation(libs.firebase.firestore.ktx)
 }
 
 // Allow references to generated code

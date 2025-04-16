@@ -45,7 +45,7 @@
     <string name="home_settime">Choose time connection</string>
     <string name="home_settime_1">After one hour</string>
     <string name="btn_ok">OK</string>
-    <string name="btn_apply">Apply</string>
+    <string name="btn_save">Save</string>
     <string name="btn_cancel">Cancel</string>
     <string name="auto">Auto</string>
     <string name="min_60">60 Minutes</string>

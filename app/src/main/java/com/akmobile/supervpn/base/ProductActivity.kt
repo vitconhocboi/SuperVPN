@@ -1,6 +1,7 @@
-package com.akmobile.supervpn
+package com.akmobile.supervpn.base
 
 import androidx.viewbinding.ViewBinding
+import com.akmobile.supervpn.R
 import com.common.baseui.BindingActivity
 import com.simple.libads.AdsApplication
 
@@ -8,8 +9,8 @@ abstract class ProductActivity<T : ViewBinding> : BindingActivity<T>() {
 
     override fun onResume() {
         super.onResume()
-        AdsApplication.dialogLoadingBuilder.setMessageInter(getString(R.string.ads_message_inter))
-        AdsApplication.dialogLoadingBuilder.setMessageOpen(getString(R.string.ads_message_open))
+        AdsApplication.Companion.dialogLoadingBuilder.setMessageInter(getString(R.string.ads_message_inter))
+        AdsApplication.Companion.dialogLoadingBuilder.setMessageOpen(getString(R.string.ads_message_open))
     }
 
     override fun isBuyApp(): Boolean {

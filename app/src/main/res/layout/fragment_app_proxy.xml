@@ -40,11 +40,23 @@
         android:layout_height="wrap_content"
         android:paddingStart="@dimen/margin_24"
         android:paddingEnd="@dimen/margin_24"
-        android:text="@string/btn_apply"
+        android:text="@string/btn_save"
         android:textColor="@color/successColor"
         android:textAppearance="@style/App_TextAppearanceButton1"
         app:layout_constraintStart_toEndOf="@+id/btn_cancel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btn_cancel" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:indeterminateTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="visible"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

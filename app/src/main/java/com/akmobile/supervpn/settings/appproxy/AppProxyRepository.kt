@@ -24,4 +24,18 @@ class AppProxyRepository @Inject constructor(private val database: VpnDatabase) 
             emit(ResultData.success(true))
         }
     }
+
+    override fun setAllowApps(items: ArrayList<AppProxyUI>): Flow<ResultData<Boolean>> {
+        val allowedApps = items.filter { it.allowed }
+        if (allowedApps.isNotEmpty()) {
+            database.appVpnDao().deleteAll()
+            val listDb = allowedApps.map {
+                VpnAppItemDB(it.packageName, it.packageName)
+            }
+            database.appVpnDao().insertAll(listDb)
+        }
+        return flow {
+            emit(ResultData.success(true))
+        }
+    }
 }

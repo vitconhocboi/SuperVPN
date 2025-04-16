@@ -1,4 +1,4 @@
-package com.akmobile.supervpn
+package com.akmobile.supervpn.base
 
 import android.graphics.Rect
 import android.os.Build
@@ -6,9 +6,9 @@ import android.view.View
 import android.view.WindowInsets
 import androidx.core.view.ViewCompat
 import androidx.viewbinding.ViewBinding
+import com.akmobile.supervpn.R
 import com.common.baseui.BindingFragment
 import com.common.baseui.toast.Toasty
-
 
 abstract class ProductFragment<T : ViewBinding>: BindingFragment<T>() {
     fun showError() {

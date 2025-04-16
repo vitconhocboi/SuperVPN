@@ -19,12 +19,12 @@ class SettingViewModel @Inject constructor(private val database: VpnDatabase) : 
     val loadingApps = MutableLiveData(false)
 
     fun loadingApp() {
-        getAllVpnedApp()
-        loadingApps.postValue(true)
+//        getAllVpnedApp()
+        loadingApps.value = true
     }
 
     fun loadingAppDone() {
-        loadingApps.postValue(false)
+        loadingApps.value = false
     }
 
     fun getAllVpnedApp() {

@@ -8,4 +8,6 @@ interface AppProxyInterface {
     fun getAllowApp(): Flow<ResultData<List<VpnAppItemDB>>>
 
     fun setAllowApp(item: AppProxyUI): Flow<ResultData<Boolean>>
+
+    fun setAllowApps(item: ArrayList<AppProxyUI>): Flow<ResultData<Boolean>>
 }

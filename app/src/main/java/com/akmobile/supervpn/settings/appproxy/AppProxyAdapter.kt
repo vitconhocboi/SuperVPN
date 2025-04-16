@@ -2,6 +2,7 @@ package com.akmobile.supervpn.settings.appproxy
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.widget.AppCompatCheckBox
 import com.akmobile.supervpn.databinding.AppProxyItemBinding
 import com.common.baseui.adapter.BaseAdapter
 import com.common.baseui.adapter.BaseViewHolder
@@ -27,12 +28,19 @@ class AppProxyAdapter @Inject constructor() :
                 appName.text = data.appName
                 appIcon.setImageDrawable(data.image)
                 checkboxProxy.isChecked = data.allowed
+                checkboxProxy.setOnClickListener {
+                    onClickItem(data, checkboxProxy)
+                }
                 root.setOnClickListener {
-                    data.allowed = !data.allowed
-                    checkboxProxy.isChecked = data.allowed
-                    onItemClick?.invoke(position, data)
+                    onClickItem(data, checkboxProxy)
                 }
             }
+        }
+
+        fun onClickItem(data: AppProxyUI, checkboxProxy: AppCompatCheckBox) {
+            data.allowed = !data.allowed
+            checkboxProxy.isChecked = data.allowed
+            onItemClick?.invoke(position, data)
         }
     }
 }

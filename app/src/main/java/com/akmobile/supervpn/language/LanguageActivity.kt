@@ -1,8 +1,9 @@
-package com.akmobile.supervpn
+package com.akmobile.supervpn.language
 
 import android.view.LayoutInflater
+import com.akmobile.supervpn.base.ProductActivity
+import com.akmobile.supervpn.R
 import com.akmobile.supervpn.databinding.ActivityLanguageBinding
-import com.akmobile.supervpn.language.LanguageFragment
 
 class LanguageActivity : ProductActivity<ActivityLanguageBinding>() {
     override fun bindingProvider(inflater: LayoutInflater): ActivityLanguageBinding {
