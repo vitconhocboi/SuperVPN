@@ -1,8 +1,13 @@
 package com.akmobile.supervpn.home
 
 import android.app.Activity
+import android.app.ActivityManager
+import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.net.VpnService
 import android.os.Handler
 import android.os.Looper
@@ -12,6 +17,7 @@ import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+
 import com.akmobile.supervpn.base.ProductFragment
 import com.akmobile.supervpn.databinding.FragmentHomeBinding
 import com.akmobile.supervpn.network.LocalVpnService
@@ -62,13 +68,6 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
             }
         }
 
-//    private val vpnStatusReceiver = object : BroadcastReceiver() {
-//        override fun onReceive(context: Context?, intent: Intent?) {
-//            val status = intent?.getStringExtra(SupperVpnService.EXTRA_VPN_STATUS)
-//            updateUI(status)
-//        }
-//    }
-
     private fun updateUI(status: String?) {
         when (status) {
             CONNECTING -> {
@@ -118,6 +117,31 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         inflater: LayoutInflater, container: ViewGroup?
     ): FragmentHomeBinding {
         return FragmentHomeBinding.inflate(inflater, container, false)
+    }
+
+    private fun isVpnActive(context: Context): Boolean {
+        val connectivityManager =
+            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val network = connectivityManager.activeNetwork ?: return false
+        val capabilities = connectivityManager.getNetworkCapabilities(network) ?: return false
+        return capabilities.hasTransport(NetworkCapabilities.TRANSPORT_VPN)
+    }
+
+    private fun isLocalVpnServiceRunning(context: Context) {
+        if (!isVpnActive(context)) {
+            proxyViewModel.updateUI(DISCONNECTED)
+            proxyViewModel.stopProxy(context)
+            return
+        }
+        val activityManager = context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+        for (service in activityManager.getRunningServices(Int.MAX_VALUE)) {
+            if (service.service.className == LocalVpnService::class.java.name && LocalVpnService.Instance.getStatus()) {
+                proxyViewModel.updateUI(CONNECTED)
+                return
+            }
+        }
+        proxyViewModel.updateUI(DISCONNECTED)
+        proxyViewModel.stopProxy(context)
     }
 
     private val updateRunnable = object : Runnable {
@@ -172,12 +196,8 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 
     override fun initView() {
         super.initView()
+        isLocalVpnServiceRunning(requireContext())
         // Đăng ký BroadcastReceiver
-//        context?.let {
-//            LocalBroadcastManager.getInstance(it).registerReceiver(
-//                vpnStatusReceiver, IntentFilter(LocalVpnService.ACTION_VPN_STATUS)
-//            )
-//        }
         with(binding) {
 //            proxyViewModel.getActiveProxy()
 //            bindFlowCreate(proxyViewModel.activeProxy) {
@@ -278,6 +298,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     override fun onStart() {
         super.onStart()
         handler.post(updateRunnable)
+        isLocalVpnServiceRunning(requireContext())
     }
 
     override fun onStop() {

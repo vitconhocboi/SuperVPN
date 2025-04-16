@@ -3985,19 +3985,19 @@ static void listen_loop(void) {
     unload_current_trust_file();
 #endif
 
-    if (config->multi_threaded) {
-        int i = 60;
-        do {
-            sleep(1);
-            sweep();
-        } while ((clients->next != NULL) && (--i > 0));
-
-        if (i <= 0) {
-            log_error(LOG_LEVEL_ERROR,
-                      "Graceful termination failed - still some live clients after 1 minute wait.");
-        }
-    }
-    sweep();
+//    if (config->multi_threaded) {
+//        int i = 60;
+//        do {
+//            sleep(1);
+//            sweep();
+//        } while ((clients->next != NULL) && (--i > 0));
+//
+//        if (i <= 0) {
+//            log_error(LOG_LEVEL_ERROR,
+//                      "Graceful termination failed - still some live clients after 1 minute wait.");
+//        }
+//    }
+//    sweep();
     sweep();
 
 #if defined(unix)
