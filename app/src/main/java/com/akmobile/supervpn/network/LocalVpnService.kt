@@ -1,39 +1,25 @@
 package com.akmobile.supervpn.network
 
-import android.app.Notification
-import android.app.NotificationChannel
-import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.net.ProxyInfo
 import android.net.VpnService
 import android.os.Binder
 import android.os.Build
-import android.os.Handler
 import android.os.IBinder
 import android.os.ParcelFileDescriptor
 import android.util.Log
-import androidx.core.app.NotificationCompat
-import com.akmobile.supervpn.MainActivity
+import com.akmobile.supervpn.main.MainActivity
 import com.akmobile.supervpn.home.HomeFragment
-import com.akmobile.supervpn.network.dns.DnsPacket
 import com.akmobile.supervpn.network.tcpip.CommonMethods
 import com.akmobile.supervpn.network.tcpip.IPHeader
-import com.akmobile.supervpn.network.tcpip.TCPHeader
-import com.akmobile.supervpn.network.tcpip.UDPHeader
 import com.akmobile.supervpn.proxy.ProxyConnection
 import com.akmobile.supervpn.utils.Constant
 import com.common.baseui.BaseAppConfig
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
-import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
-import java.io.IOException
-import java.nio.ByteBuffer
-import java.util.concurrent.ConcurrentHashMap
 import javax.inject.Inject
 
 @AndroidEntryPoint
