@@ -238,7 +238,7 @@ class LocalVpnService : VpnService(), Runnable {
             }
         }
 
-        builder.addRoute(CommonMethods.ipIntToString(ProxyConfig.FAKE_NETWORK_IP), 16)
+        builder.addDisallowedApplication(packageName)
 
         val intent = Intent(this, MainActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_MUTABLE)
