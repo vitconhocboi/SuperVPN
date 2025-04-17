@@ -168,7 +168,7 @@ class LocalVpnService : VpnService(), Runnable {
     }
 
     override fun onRevoke() {
-        Log.d(Constant.TAG, "VPN has been revoked (likely by another VPN)")
+        Timber.d("${Constant.TAG} VPN has been revoked (likely by another VPN)")
         stopSelf()
     }
 
@@ -200,14 +200,14 @@ class LocalVpnService : VpnService(), Runnable {
     @Synchronized
     override fun run() {
         try {
-            Log.d(Constant.TAG, "VPNService work thread is running... $ID")
+            Timber.d("${Constant.TAG} VPNService work thread is running... $ID")
             ProxyConfig.Instance.AppInstallID = BaseAppConfig.appInstallID
             writeLog("Android version: %s", Build.VERSION.RELEASE)
 
             waitUntilPreapred()
             runVPN()
         } catch (e: InterruptedException) {
-            Log.e(Constant.TAG, "Exception", e)
+            Timber.e("${Constant.TAG} Exception $e")
         } catch (e: Exception) {
             e.printStackTrace()
             writeLog("Fatal error: %s", e.toString())
@@ -235,7 +235,7 @@ class LocalVpnService : VpnService(), Runnable {
                         onIPPacketReceived(m_IPHeader, size)
                         idle = false
                     } catch (ex: IOException) {
-                        Log.e(Constant.TAG, "IOException when processing IP packet", ex)
+                        Timber.d("${Constant.TAG} IOException when processing IP packet ${ex.printStackTrace()}" )
                     }
                 }
                 if (idle) {
@@ -260,7 +260,7 @@ class LocalVpnService : VpnService(), Runnable {
                     if (tcpHeader.sourcePort === m_TcpProxyServer?.Port) {
                         val session =
                             NatSessionManager.getSession(tcpHeader.destinationPort.toInt())
-                        if (session != null) {
+//                        if (session != null) {
                             ipHeader.sourceIP = ipHeader.destinationIP
                             tcpHeader.sourcePort = session.RemotePort
                             ipHeader.destinationIP = LOCAL_IP
@@ -268,16 +268,14 @@ class LocalVpnService : VpnService(), Runnable {
                             CommonMethods.ComputeTCPChecksum(ipHeader, tcpHeader)
                             m_VPNOutputStream!!.write(ipHeader.m_Data, ipHeader.m_Offset, size)
                             m_ReceivedBytes += size.toLong()
-                        } else {
-                            if (ProxyConfig.IS_DEBUG) Log.d(
-                                Constant.TAG,
-                                ("NoSession: " + ipHeader.toString()).toString() + " " + tcpHeader.toString()
-                            )
-                        }
+//                        } else {
+//                            if (ProxyConfig.IS_DEBUG)
+//                                Timber.d("${Constant.TAG} NoSession: $ipHeader  $tcpHeader")
+//                        }
                     } else {
                         val portKey = tcpHeader.sourcePort
                         var session = NatSessionManager.getSession(portKey.toInt())
-                        if (session == null || session.RemoteIP != ipHeader.destinationIP || session.RemotePort != tcpHeader.destinationPort) {
+                        if (session.RemoteIP != ipHeader.destinationIP || session.RemotePort != tcpHeader.destinationPort) {
                             session = NatSessionManager.createSession(
                                 portKey.toInt(), ipHeader.destinationIP, tcpHeader.destinationPort
                             )
@@ -356,11 +354,7 @@ class LocalVpnService : VpnService(), Runnable {
         LOCAL_IP = CommonMethods.ipStringToInt(ipAddress.Address)
 
         builder.addAddress(ipAddress.Address, ipAddress.PrefixLength)
-        if (ProxyConfig.IS_DEBUG) Timber.tag(Constant.TAG).d(
-            java.lang.String.format(
-                "addAddress: %s/%d\n", ipAddress.Address, ipAddress.PrefixLength
-            )
-        )
+        Timber.d("${Constant.TAG} addAddress: ${ipAddress.Address}/${ipAddress.PrefixLength}")
 
         for (dns in ProxyConfig.Instance.dnsList) {
             builder.addDnsServer(dns.Address)
@@ -450,7 +444,7 @@ class LocalVpnService : VpnService(), Runnable {
     }
 
     override fun onDestroy() {
-        Log.d(Constant.TAG, "VPNService(%s) destroyed: " + ID)
+        Timber.d("${Constant.TAG} VPNService($ID) destroyed:")
         if (IsRunning) dispose()
         try {
             // ֹͣTcpServer
