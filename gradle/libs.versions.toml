@@ -11,7 +11,7 @@ gpuimage = "2.1.0"
 gson = "2.11.0"
 guava = "33.2.1-android"
 hiltAndroid = "2.52"
-kotlin = "1.9.23"
+kotlin = "1.9.24"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -73,6 +73,7 @@ firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx"
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
 firebase-config = { module = "com.google.firebase:firebase-config" }
 firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-ktx" }
+firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx" }
 flexbox = { module = "com.google.android.flexbox:flexbox", version.ref = "flexbox" }
 github-glide = { module = "com.github.bumptech.glide:glide", version.ref = "glideVersion" }
 gpuimage = { module = "jp.co.cyberagent.android:gpuimage", version.ref = "gpuimage" }

@@ -2,7 +2,7 @@ package com.akmobile.supervpn.premium
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
-import com.akmobile.supervpn.ProductActivity
+import com.akmobile.supervpn.base.ProductActivity
 import com.akmobile.supervpn.databinding.ActivityPremiumBinding
 import dagger.hilt.android.AndroidEntryPoint
 

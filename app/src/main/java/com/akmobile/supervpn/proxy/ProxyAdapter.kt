@@ -26,7 +26,13 @@ class ProxyAdapter @Inject constructor() : BaseAdapter<ProxyUI, BaseViewHolder<P
             mViewBinding.apply {
                 tvTitle.text = data.name
                 tvProxyIp.text = data.host
-                connectingState.setVisible(data.active)
+                checkbox.isChecked = data.active
+
+                checkbox.setOnClickListener {
+                    onItemClick?.invoke(position, data)
+                }
+
+//                connectingState.setVisible(data.active)
                 root.setOnClickNoDoubleClick {
                     onItemClick?.invoke(position, data)
                 }

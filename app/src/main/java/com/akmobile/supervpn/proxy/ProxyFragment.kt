@@ -3,13 +3,14 @@ package com.akmobile.supervpn.proxy
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.akmobile.supervpn.ProductFragment
+import com.akmobile.supervpn.base.ProductFragment
 import com.akmobile.supervpn.databinding.FragmentProxyBinding
 import com.akmobile.supervpn.db.VpnAppItemDB
 import com.akmobile.supervpn.settings.appproxy.AppProxyViewModel
 import com.akmobile.supervpn.utils.Navigator
 import com.common.baseui.extension.bindFlowCreate
 import com.common.baseui.extension.processResultData
+import com.common.baseui.extension.setVisible
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -38,15 +39,23 @@ class ProxyFragment : ProductFragment<FragmentProxyBinding>() {
 
             }
             rcvGroupProxy.adapter = mPagerAdapter
-            mProxyViewModel.getAllProxy()
-            bindFlowCreate(mProxyViewModel.allProxy) { result ->
-                processResultData(result, onSuccess = {
+            mProxyViewModel.getAllProxy(requireContext())
+//            bindFlowCreate(mProxyViewModel.allProxy) { result ->
+//                processResultData(result, onSuccess = {
+//                    mPagerAdapter.updateData(it)
+//                })
+//            }
+
+            mProxyViewModel.allProxy.observe(viewLifecycleOwner) { it ->
+                if (it.isNotEmpty()) {
                     mPagerAdapter.updateData(it)
-                })
+                }
+                progress.setVisible(false)
             }
 
             mPagerAdapter.onProxyClick = { position, item ->
-                mProxyViewModel.setActiveProxy(item.id)
+                mProxyViewModel.setActiveProxy(item)
+                mPagerAdapter.notifyDataSetChanged()
                 Navigator.startMainActivity(requireContext(), item.id)
             }
         }

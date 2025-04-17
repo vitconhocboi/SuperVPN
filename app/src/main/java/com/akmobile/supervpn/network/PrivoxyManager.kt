@@ -138,6 +138,8 @@ pix.pubpowerplatform.io
 *.pubmatic.com
 *.richaudience.com
 *.aralego.com
+*.googleadservices.com
+.googleadservices.com
 prebid.*
                 """.replaceIndent()
             )

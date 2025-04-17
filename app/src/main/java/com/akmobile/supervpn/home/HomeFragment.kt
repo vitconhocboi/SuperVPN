@@ -17,8 +17,8 @@ import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import com.akmobile.supervpn.ProductFragment
+
+import com.akmobile.supervpn.base.ProductFragment
 import com.akmobile.supervpn.databinding.FragmentHomeBinding
 import com.akmobile.supervpn.network.LocalVpnService
 import com.akmobile.supervpn.proxy.ProxyViewModel
@@ -36,6 +36,8 @@ import com.akmobile.supervpn.R
 import com.akmobile.supervpn.db.VpnAppItemDB
 import com.akmobile.supervpn.scheduler.StopProxyScheduler
 import com.akmobile.supervpn.settings.appproxy.AppProxyViewModel
+import com.common.baseui.extension.context
+import com.simple.libads.setVisible
 
 @AndroidEntryPoint
 class HomeFragment : ProductFragment<FragmentHomeBinding>() {
@@ -199,22 +201,31 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 //        isLocalVpnServiceRunning(requireContext())
         // Đăng ký BroadcastReceiver
         with(binding) {
-            proxyViewModel.getActiveProxy()
-            bindFlowCreate(proxyViewModel.activeProxy) {
-                processResultData(it, onSuccess = { it ->
-                    if (it != null) {
+//            proxyViewModel.getActiveProxy()
+//            bindFlowCreate(proxyViewModel.activeProxy) {
+//                processResultData(it, onSuccess = { it ->
+//                    if (it != null) {
+                    if (BaseAppConfig.proxyHost.isNotEmpty()) {
                         //set to pref
-                        BaseAppConfig.proxyType = it.type
-                        BaseAppConfig.proxyHost = it.host
-                        BaseAppConfig.proxyPort = it.port
-                        BaseAppConfig.proxyUser = it.username
-                        BaseAppConfig.proxyPass = it.password
+//                        BaseAppConfig.proxyType = it.type
+//                        BaseAppConfig.proxyHost = it.host
+//                        BaseAppConfig.proxyPort = it.port
+//                        BaseAppConfig.proxyUser = it.username
+//                        BaseAppConfig.proxyPass = it.password
                         //update UI
-                        ivFlag.setImageResource(Utils.getFlag(it.country))
-                        tvProxyLocation.text = it.name
-                        tvProxyIp.text = it.host
+                        ivFlag.setImageResource(Utils.getFlag(BaseAppConfig.proxyCountry))
+                        tvProxyLocation.text = requireContext().getString(
+                            context.resources.getIdentifier(
+                                BaseAppConfig.proxyCountry,
+                                "string",
+                                requireContext().packageName
+                            )
+                        )
+                        tvProxyIp.text = BaseAppConfig.proxyHost
                         pnProxyInfo.visible()
-                        tvSelectProxy.invisible()
+                        pnProxySelected.setVisible(true)
+                        pnSelectProxy.setVisible(false)
+//                        tvSelectProxy.invisible()
                     } else {
                         BaseAppConfig.proxyType = ""
                         BaseAppConfig.proxyHost = ""
@@ -223,10 +234,12 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                         BaseAppConfig.proxyPass = ""
 
                         pnProxyInfo.invisible()
-                        tvSelectProxy.visible()
+                        pnProxySelected.setVisible(false)
+                        pnSelectProxy.setVisible(true)
+//                        tvSelectProxy.visible()
                     }
-                })
-            }
+//                })
+//            }
 
             allowAppViewModel.getAllowApp()
 
