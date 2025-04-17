@@ -56,7 +56,7 @@ object BaseAppConfig {
     private const val KEY_PUBLIC_IP = "PUBLIC_IP"
 
     var publicIP: String
-        get() = SharedPrefs.instance[KEY_PUBLIC_IP, String::class.java, "26.25.12.132"]
+        get() = SharedPrefs.instance[KEY_PUBLIC_IP, String::class.java, "26.25.12.111"]
         set(value) {
             SharedPrefs.instance.put(KEY_PUBLIC_IP, value)
         }

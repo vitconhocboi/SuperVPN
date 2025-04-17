@@ -131,8 +131,6 @@ ads.stickyadstv.com
 *adsystem.com
 *.smartadserver.com
 *.googlesyndication.com
-beacons.gcp.gvt2.com
-beacons.gvt2.com
 pix.pubpowerplatform.io
 *.adnxs.com
 *.creativecdn.com

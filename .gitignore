@@ -16,5 +16,9 @@
 /captures
 .externalNativeBuild
 .cxx
+.cursor
+.memory_bank
+custom_modes
+optimization-journey
 local.properties
 

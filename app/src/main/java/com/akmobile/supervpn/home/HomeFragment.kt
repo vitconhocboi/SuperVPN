@@ -126,20 +126,22 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     }
 
     private fun isLocalVpnServiceRunning(context: Context) {
-        if (!isVpnActive(context)) {
+        if (!isVpnActive(context) && !LocalVpnService.IsRunning) {
             proxyViewModel.updateUI(DISCONNECTED)
             proxyViewModel.stopProxy(context)
             return
         }
         val activityManager = context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
         for (service in activityManager.getRunningServices(Int.MAX_VALUE)) {
-            if (service.service.className == LocalVpnService::class.java.name && LocalVpnService.Instance.getStatus()) {
+            if (service.service.className == LocalVpnService::class.java.name && LocalVpnService.IsRunning) {
                 proxyViewModel.updateUI(CONNECTED)
                 return
             }
         }
-        proxyViewModel.updateUI(DISCONNECTED)
-        proxyViewModel.stopProxy(context)
+        if (!LocalVpnService.IsRunning) {
+            proxyViewModel.updateUI(DISCONNECTED)
+            proxyViewModel.stopProxy(context)
+        }
     }
 
     private val updateRunnable = object : Runnable {
@@ -194,7 +196,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 
     override fun initView() {
         super.initView()
-        isLocalVpnServiceRunning(requireContext())
+//        isLocalVpnServiceRunning(requireContext())
         // Đăng ký BroadcastReceiver
         with(binding) {
             proxyViewModel.getActiveProxy()
