@@ -17,7 +17,8 @@
 .externalNativeBuild
 .cxx
 .cursor
-.memory_bank
+.memory_bank/
+memory-bank/
 custom_modes
 optimization-journey
 local.properties

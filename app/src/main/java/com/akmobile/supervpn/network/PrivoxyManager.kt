@@ -3,6 +3,7 @@ package com.akmobile.supervpn.network
 import android.content.Context
 import android.util.Base64
 import android.util.Log
+import com.akmobile.supervpn.utils.Constant
 import com.common.baseui.BaseAppConfig
 import timber.log.Timber
 import java.io.File
@@ -105,23 +106,11 @@ class PrivoxyManager(private val context: Context) {
 
     private fun createConfigFile(privoxyDir: File): String {
         val actionFile = File(privoxyDir, "default.action")
+        Log.d(Constant.TAG, "createConfigFile: $actionFile")
         val proxyType = BaseAppConfig.proxyType
 
-        if (proxyType.lowercase() == "http") {
-            val proxyUser = BaseAppConfig.proxyUser
-            val proxyPass = BaseAppConfig.proxyPass
-            actionFile.writeText(
-                """
-{+add-header{proxy-authorization: Basic ${
-                    Base64.encodeToString(
-                        "$proxyUser:$proxyPass".toByteArray(), Base64.NO_WRAP
-                    )
-                }}}
-/
-
-{+block{No nasty stuff for you.}}
-.nasty-stuff.example.com
-
+        actionFile.writeText(
+            """
 {+block{Doubleclick banners.} +handle-as-image}
 *.doubleclick.net
 .doubleclick.net
@@ -141,9 +130,24 @@ pix.pubpowerplatform.io
 *.googleadservices.com
 .googleadservices.com
 prebid.*
+""".replaceIndent()
+        )
+
+        if (proxyType.lowercase() == "http") {
+            val proxyUser = BaseAppConfig.proxyUser
+            val proxyPass = BaseAppConfig.proxyPass
+            actionFile.appendText(
+                """
+{+add-header{proxy-authorization: Basic ${
+                    Base64.encodeToString(
+                        "$proxyUser:$proxyPass".toByteArray(), Base64.NO_WRAP
+                    )
+                }}}
+/
                 """.replaceIndent()
             )
         }
+
         val configFile = File(privoxyDir, "config")
         configFile.writeText(
             """listen-address 127.0.0.1:$port

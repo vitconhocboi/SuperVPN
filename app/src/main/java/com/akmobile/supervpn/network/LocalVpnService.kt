@@ -158,14 +158,14 @@ class LocalVpnService : VpnService(), Runnable {
         key.device = "fd://" + pfdDescriptor?.fd
         key.logLevel = "debug"
         val proxyType = BaseAppConfig.proxyType
-        if (proxyType.lowercase() == "http") {
-            key.proxy = "http://localhost:8118"
-        } else {
+        if (proxyType.lowercase() == "socks5") {
             val proxyHost = BaseAppConfig.proxyHost
             val proxyPort = BaseAppConfig.proxyPort
             val proxyUser = BaseAppConfig.proxyUser
             val proxyPass = BaseAppConfig.proxyPass
             key.proxy = "socks5://$proxyUser:$proxyPass@$proxyHost:$proxyPort"
+        } else {
+            key.proxy = "http://localhost:8118"
         }
         engine.Engine.insert(key)
         engine.Engine.start()
