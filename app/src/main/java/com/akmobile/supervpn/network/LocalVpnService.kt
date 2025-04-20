@@ -157,8 +157,16 @@ class LocalVpnService : VpnService(), Runnable {
         key.mtu = ProxyConfig.Instance.mTU.toLong()
         key.device = "fd://" + pfdDescriptor?.fd
         key.logLevel = "debug"
-        key.proxy = "http://127.0.0.1:8118"
-
+        val proxyType = BaseAppConfig.proxyType
+        if (proxyType.lowercase() == "http") {
+            key.proxy = "http://localhost:8118"
+        } else {
+            val proxyHost = BaseAppConfig.proxyHost
+            val proxyPort = BaseAppConfig.proxyPort
+            val proxyUser = BaseAppConfig.proxyUser
+            val proxyPass = BaseAppConfig.proxyPass
+            key.proxy = "socks5://$proxyUser:$proxyPass@$proxyHost:$proxyPort"
+        }
         engine.Engine.insert(key)
         engine.Engine.start()
         Log.d(Constant.TAG, "Started stun to socks")
