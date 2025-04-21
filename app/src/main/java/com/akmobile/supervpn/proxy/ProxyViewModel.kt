@@ -60,14 +60,14 @@ class ProxyViewModel @Inject constructor(
                     val proxyConfig = value.toString().split(":")
                     if (proxyConfig.size >= 4) {
                         val proxy = ProxyUI(
-                            name = proxyConfig[0],
-                            id = proxyConfig[0],
-                            host = proxyConfig[0],
+                            type = proxyConfig[0],
+                            name = proxyConfig[1],
+                            id = proxyConfig[1],
+                            host = proxyConfig[1],
                             country = document.id,
-                            port = proxyConfig[1],
-                            type = "http",
-                            username = proxyConfig[2],
-                            password = proxyConfig[3],
+                            port = proxyConfig[2],
+                            username = proxyConfig[3],
+                            password = proxyConfig[4],
                             active = false
                         )
                         if (proxy.host == BaseAppConfig.proxyHost) {
