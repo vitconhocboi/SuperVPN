@@ -58,7 +58,7 @@ class ProxyViewModel @Inject constructor(
                 val listIps = ArrayList<ProxyUI>()
                 for ((field, value) in document.data) {
                     val proxyConfig = value.toString().split(":")
-                    if (proxyConfig.size >= 4) {
+                    if (proxyConfig.size >= 5) {
                         val proxy = ProxyUI(
                             type = proxyConfig[0],
                             name = proxyConfig[1],
