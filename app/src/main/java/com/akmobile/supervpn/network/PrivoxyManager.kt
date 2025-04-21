@@ -130,6 +130,8 @@ pix.pubpowerplatform.io
 *.googleadservices.com
 .googleadservices.com
 prebid.*
+
+
 """.replaceIndent()
         )
 
