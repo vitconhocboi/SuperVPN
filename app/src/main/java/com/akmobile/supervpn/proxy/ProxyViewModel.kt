@@ -107,7 +107,7 @@ class ProxyViewModel @Inject constructor(
         BaseAppConfig.proxyPort = item.port
         BaseAppConfig.proxyUser = item.username
         BaseAppConfig.proxyPass = item.password
-        BaseAppConfig.proxyType = "http"
+        BaseAppConfig.proxyType = item.type
         BaseAppConfig.proxyCountry = item.country
 //        viewModelScope.launch(Dispatchers.IO) {
 //            proxyUseCase.setActiveProxy(id)
