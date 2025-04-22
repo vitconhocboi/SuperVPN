@@ -156,7 +156,7 @@ class LocalVpnService : VpnService(), Runnable {
         key.mark = 0
         key.mtu = ProxyConfig.Instance.mTU.toLong()
         key.device = "fd://" + pfdDescriptor?.fd
-        key.logLevel = "debug"
+        key.logLevel = "silent"
         val proxyType = BaseAppConfig.proxyType
         if (proxyType.lowercase() == "socks5") {
             val proxyHost = BaseAppConfig.proxyHost
