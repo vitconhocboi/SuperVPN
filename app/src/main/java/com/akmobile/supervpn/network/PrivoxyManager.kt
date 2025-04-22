@@ -169,6 +169,7 @@ ${getForwardSettings()}
         val proxyPort = BaseAppConfig.proxyPort
         val proxyUser = BaseAppConfig.proxyUser
         val proxyPass = BaseAppConfig.proxyPass
+        Log.d(Constant.TAG, "upstream to proxy: $proxyType://$proxyUser:$proxyPass@$proxyHost:$proxyPort")
 
         if (proxyType.isNotEmpty() && proxyHost.isNotEmpty() && proxyPort.isNotEmpty()) {
             if (proxyType.lowercase() == "http") {
