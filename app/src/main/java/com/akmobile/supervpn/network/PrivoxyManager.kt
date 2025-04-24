@@ -157,7 +157,7 @@ prebid.*
         val configFile = File(privoxyDir, "config")
         configFile.writeText(
             """listen-address 127.0.0.1:$port
-                debug 66048
+debug 514
 actionsfile ${actionFile.absolutePath}
 ${getForwardSettings()}
 """.replaceIndent()
@@ -173,6 +173,7 @@ ${getForwardSettings()}
         val proxyPort = BaseAppConfig.proxyPort
         val proxyUser = BaseAppConfig.proxyUser
         val proxyPass = BaseAppConfig.proxyPass
+        Log.d(Constant.TAG, "upstream to proxy: $proxyType://$proxyUser:$proxyPass@$proxyHost:$proxyPort")
 
         if (proxyType.isNotEmpty() && proxyHost.isNotEmpty() && proxyPort.isNotEmpty()) {
             if (proxyType.lowercase() == "http") {
