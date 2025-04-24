@@ -3709,12 +3709,12 @@ static void listen_loop(void) {
         }
         csp = &csp_list->csp;
 
-        log_error(LOG_LEVEL_CONNECT,
-                  "Waiting for the next client connection. Currently active threads: %d",
-                  active_threads);
+//        log_error(LOG_LEVEL_CONNECT,
+//                  "Waiting for the next client connection. Currently active threads: %d",
+//                  active_threads);
 
         if (!accept_connection(csp, bfds)) {
-            log_error(LOG_LEVEL_CONNECT, "accept failed: %E");
+//            log_error(LOG_LEVEL_CONNECT, "accept failed: %E");
 
 #ifdef AMIGA
             if (!childs)
