@@ -1,5 +1,6 @@
 package com.akmobile.supervpn.network
 
+import android.annotation.SuppressLint
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
@@ -9,15 +10,16 @@ import android.os.Binder
 import android.os.Build
 import android.os.IBinder
 import android.os.ParcelFileDescriptor
-import android.util.Log
 import com.akmobile.supervpn.main.MainActivity
 import com.akmobile.supervpn.home.HomeFragment
-import com.akmobile.supervpn.network.tcpip.CommonMethods
 import com.akmobile.supervpn.network.tcpip.IPHeader
 import com.akmobile.supervpn.proxy.ProxyConnection
 import com.akmobile.supervpn.utils.Constant
 import com.common.baseui.BaseAppConfig
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.FlowPreview
+import timber.log.Timber
 import java.io.FileInputStream
 import java.io.FileOutputStream
 import javax.inject.Inject
@@ -25,6 +27,7 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class LocalVpnService : VpnService(), Runnable {
 
+    @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
     @Inject
     lateinit var proxyConnection: ProxyConnection
 
@@ -47,14 +50,15 @@ class LocalVpnService : VpnService(), Runnable {
 
     override fun onCreate() {
         try {
-            writeLog("LocalTcpServer started.")
+            Timber.tag(Constant.TAG).d("LocalTcpServer started.")
         } catch (e: Exception) {
-            writeLog("Failed to start TCP/DNS Proxy")
+            Timber.tag(Constant.TAG).d("Failed to start TCP/DNS Proxy")
         }
 
         super.onCreate()
     }
 
+    @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
         super.onStartCommand(intent, flags, startId)
         if (intent.getStringArrayListExtra("allowApp")?.isNotEmpty() == true) {
@@ -70,16 +74,16 @@ class LocalVpnService : VpnService(), Runnable {
 
                 m_PrivoxyManager = PrivoxyManager(this)
                 if (m_PrivoxyManager!!.initialize() && m_PrivoxyManager!!.start()) {
-                    writeLog("Privoxy started on: " + m_PrivoxyManager!!.getProxyAddress())
+                    Timber.tag(Constant.TAG).d("Privoxy started on: ${m_PrivoxyManager!!.getProxyAddress()}", )
                     proxyConnection.updateUI(HomeFragment.CONNECTED)
                 } else {
-                    writeLog("Failed to start Privoxy")
+                    Timber.tag(Constant.TAG).d("Failed to start Privoxy")
                     proxyConnection.updateUI(HomeFragment.DISCONNECTED)
                 }
             }
 
             ACTION_STOP -> {
-                Log.d(Constant.TAG, "Stop super vpn service")
+                Timber.tag(Constant.TAG).d("Stop super vpn service")
                 if (IsRunning) {
                     IsRunning = false
                     // First stop the VPN thread to prevent new operations
@@ -88,7 +92,7 @@ class LocalVpnService : VpnService(), Runnable {
                         try {
                             m_VPNThread!!.join(1000) // Wait up to 1 second for thread to finish
                         } catch (e: InterruptedException) {
-                            Log.e(Constant.TAG, "VPN thread interrupt error", e)
+                            Timber.tag(Constant.TAG).d("VPN thread interrupt error")
                         }
                         m_VPNThread = null
                     }
@@ -101,9 +105,9 @@ class LocalVpnService : VpnService(), Runnable {
                     if (m_VPNInterface != null) {
                         try {
                             val fd = m_VPNInterface!!.detachFd()
-                            Log.d(Constant.TAG, "Successfully detached fd: $fd")
+                            Timber.tag(Constant.TAG).d("Successfully detached fd: $fd")
                         } catch (e: Exception) {
-                            Log.e(Constant.TAG, "Error detaching VPN interface fd", e)
+                            Timber.tag(Constant.TAG).d("Error detaching VPN interface fd ${e.printStackTrace()}")
                         }
                         m_VPNInterface = null
                     }
@@ -135,7 +139,7 @@ class LocalVpnService : VpnService(), Runnable {
                 stopProxy(this)
             }
         } catch (e: Exception) {
-            Log.e(Constant.TAG, "Error during service unbind", e)
+            Timber.tag(Constant.TAG).e("Error during service unbind ${e.printStackTrace()}")
         }
         return false
     }
@@ -143,12 +147,8 @@ class LocalVpnService : VpnService(), Runnable {
     class LocalBinder(val service: LocalVpnService) : Binder()
 
     override fun onRevoke() {
-        Log.d(Constant.TAG, "VPN has been revoked (likely by another VPN)")
+        Timber.tag(Constant.TAG).e("VPN has been revoked (likely by another VPN)")
         stopSelf()
-    }
-
-    fun writeLog(format: String?, vararg args: Any?) {
-        val logString = String.format(format!!, *args)
     }
 
     private fun startTunToSock(pfdDescriptor: ParcelFileDescriptor? = null) {
@@ -169,25 +169,25 @@ class LocalVpnService : VpnService(), Runnable {
         }
         engine.Engine.insert(key)
         engine.Engine.start()
-        Log.d(Constant.TAG, "Started stun to socks")
+        Timber.tag(Constant.TAG).d("Started stun to socks")
     }
 
     @Synchronized
     override fun run() {
         try {
-            Log.d(Constant.TAG, "VPNService work thread is running... $ID")
+            Timber.tag(Constant.TAG).d("VPNService work thread is running... $ID")
             ProxyConfig.Instance.AppInstallID = BaseAppConfig.appInstallID
-            writeLog("Android version: %s", Build.VERSION.RELEASE)
+            Timber.tag(Constant.TAG).d("Android version: %s", Build.VERSION.RELEASE)
             waitUntilPreapred()
             runVPN()
         } catch (e: InterruptedException) {
-            Log.e(Constant.TAG, "Exception", e)
+            Timber.tag(Constant.TAG).d("Exception ${e.printStackTrace()}")
         } catch (e: Exception) {
             e.printStackTrace()
-            writeLog("Fatal error: %s", e.toString())
+            Timber.tag(Constant.TAG).d("Fatal error: %s", e.toString())
         }
 
-        writeLog("VpnProxy terminated.")
+        Timber.tag(Constant.TAG).d("VpnProxy terminated.")
     }
 
     @Throws(Exception::class)
@@ -258,8 +258,9 @@ class LocalVpnService : VpnService(), Runnable {
     }
 
 
+    @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
     override fun onDestroy() {
-        Log.d(Constant.TAG, "VPNService($ID) destroyed")
+        Timber.tag(Constant.TAG).d("VPNService($ID) destroyed")
         proxyConnection.updateUI(HomeFragment.DISCONNECTED)
         super.onDestroy()
     }
