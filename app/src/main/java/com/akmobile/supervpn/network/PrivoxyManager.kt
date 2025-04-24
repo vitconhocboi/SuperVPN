@@ -7,6 +7,7 @@ import com.akmobile.supervpn.utils.Constant
 import com.common.baseui.BaseAppConfig
 import timber.log.Timber
 import java.io.File
+import androidx.core.content.edit
 
 class PrivoxyManager(private val context: Context) {
     private var isRunning = false
@@ -69,12 +70,15 @@ class PrivoxyManager(private val context: Context) {
         val success = nativeStartPrivoxy(configPath, this@PrivoxyManager)
         if (success) {
             isRunning = true
-            context.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE).edit()
-                .putInt("upload", 0).apply()
-            context.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE).edit()
-                .putInt("download", 0).apply()
-            context.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE).edit()
-                .putInt("start", System.currentTimeMillis().toInt() / 1000).apply()
+            context.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE).edit() {
+                putInt("upload", 0)
+            }
+            context.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE).edit() {
+                putInt("download", 0)
+            }
+            context.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE).edit() {
+                putInt("start", System.currentTimeMillis().toInt() / 1000)
+            }
             Timber.tag("PrivoxyManager").d("Privoxy started successfully")
         } else {
             Timber.tag("PrivoxyManager").e("Failed to start Privoxy")
@@ -106,7 +110,7 @@ class PrivoxyManager(private val context: Context) {
 
     private fun createConfigFile(privoxyDir: File): String {
         val actionFile = File(privoxyDir, "default.action")
-        Log.d(Constant.TAG, "createConfigFile: $actionFile")
+        Timber.tag(Constant.TAG).d("createConfigFile: $actionFile")
         val proxyType = BaseAppConfig.proxyType
 
         actionFile.writeText(

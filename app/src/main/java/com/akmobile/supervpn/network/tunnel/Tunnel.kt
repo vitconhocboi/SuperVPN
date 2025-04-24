@@ -3,6 +3,7 @@ package com.akmobile.supervpn.network.tunnel
 import android.annotation.SuppressLint
 import android.util.Log
 import com.akmobile.supervpn.network.LocalVpnService
+import timber.log.Timber
 import java.net.InetSocketAddress
 import java.nio.ByteBuffer
 import java.nio.channels.SelectionKey
@@ -111,11 +112,11 @@ abstract class Tunnel {
             if (m_InnerChannel!!.finishConnect()) {
                 onConnected(ByteBuffer.allocate(2048))
             } else {
-                LocalVpnService.Instance.writeLog("Error: connect to %s failed.", m_ServerEP)
+                Timber.d("Error: connect to %s failed. ${m_ServerEP.toString()}")
                 this.dispose()
             }
         } catch (e: Exception) {
-            LocalVpnService.Instance.writeLog("Error: connect to %s failed: %s", m_ServerEP, e)
+            Timber.d("Error: connect to ${m_ServerEP.toString()} failed: ${e.printStackTrace()}")
             this.dispose()
         }
     }
