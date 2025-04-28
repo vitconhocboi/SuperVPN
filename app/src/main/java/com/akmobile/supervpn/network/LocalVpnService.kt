@@ -1,6 +1,5 @@
 package com.akmobile.supervpn.network
 
-import android.annotation.SuppressLint
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
@@ -10,9 +9,13 @@ import android.os.Binder
 import android.os.Build
 import android.os.IBinder
 import android.os.ParcelFileDescriptor
-import com.akmobile.supervpn.main.MainActivity
 import com.akmobile.supervpn.home.HomeFragment
+import com.akmobile.supervpn.main.MainActivity
+import com.akmobile.supervpn.network.dns.DnsPacket
+import com.akmobile.supervpn.network.tcpip.CommonMethods
 import com.akmobile.supervpn.network.tcpip.IPHeader
+import com.akmobile.supervpn.network.tcpip.TCPHeader
+import com.akmobile.supervpn.network.tcpip.UDPHeader
 import com.akmobile.supervpn.proxy.ProxyConnection
 import com.akmobile.supervpn.utils.Constant
 import com.common.baseui.BaseAppConfig
@@ -74,7 +77,8 @@ class LocalVpnService : VpnService(), Runnable {
 
                 m_PrivoxyManager = PrivoxyManager(this)
                 if (m_PrivoxyManager!!.initialize() && m_PrivoxyManager!!.start()) {
-                    Timber.tag(Constant.TAG).d("Privoxy started on: ${m_PrivoxyManager!!.getProxyAddress()}", )
+                    Timber.tag(Constant.TAG)
+                        .d("Privoxy started on: ${m_PrivoxyManager!!.getProxyAddress()}")
                     proxyConnection.updateUI(HomeFragment.CONNECTED)
                 } else {
                     Timber.tag(Constant.TAG).d("Failed to start Privoxy")
@@ -107,7 +111,8 @@ class LocalVpnService : VpnService(), Runnable {
                             val fd = m_VPNInterface!!.detachFd()
                             Timber.tag(Constant.TAG).d("Successfully detached fd: $fd")
                         } catch (e: Exception) {
-                            Timber.tag(Constant.TAG).d("Error detaching VPN interface fd ${e.printStackTrace()}")
+                            Timber.tag(Constant.TAG)
+                                .d("Error detaching VPN interface fd ${e.printStackTrace()}")
                         }
                         m_VPNInterface = null
                     }
@@ -156,7 +161,7 @@ class LocalVpnService : VpnService(), Runnable {
         key.mark = 0
         key.mtu = ProxyConfig.Instance.mTU.toLong()
         key.device = "fd://" + pfdDescriptor?.fd
-        key.logLevel = "silent"
+        key.logLevel = "debug"
         val proxyType = BaseAppConfig.proxyType
         if (proxyType.lowercase() == "socks5") {
             val proxyHost = BaseAppConfig.proxyHost
@@ -165,7 +170,7 @@ class LocalVpnService : VpnService(), Runnable {
             val proxyPass = BaseAppConfig.proxyPass
             key.proxy = "socks5://$proxyUser:$proxyPass@$proxyHost:$proxyPort"
         } else {
-            key.proxy = "http://localhost:8118"
+            key.proxy = "http://127.0.0.1:8118"
         }
         engine.Engine.insert(key)
         engine.Engine.start()
@@ -231,11 +236,15 @@ class LocalVpnService : VpnService(), Runnable {
         val builder: Builder = Builder()
         builder.setMtu(ProxyConfig.Instance.mTU)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            builder.setHttpProxy(ProxyInfo.buildDirectProxy("localhost", 8118))
+            builder.setHttpProxy(ProxyInfo.buildDirectProxy("127.0.0.1", 8118))
         }
 
         builder.addAddress("10.0.0.2", 32)
-//            .addRoute("0.0.0.0", 32)
+        if (BaseAppConfig.proxyType.lowercase() == "socks5") {
+            builder.addRoute("0.0.0.0", 1)
+        } else {
+            builder.addRoute("128.0.0.0", 1)
+        }
 
         for (dns in ProxyConfig.Instance.dnsList) {
             builder.addDnsServer(dns.Address)

@@ -157,7 +157,7 @@ prebid.*
         val configFile = File(privoxyDir, "config")
         configFile.writeText(
             """listen-address 127.0.0.1:$port
-debug 514
+debug 1538
 actionsfile ${actionFile.absolutePath}
 ${getForwardSettings()}
 """.replaceIndent()
