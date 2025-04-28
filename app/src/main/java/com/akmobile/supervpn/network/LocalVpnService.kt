@@ -194,25 +194,26 @@ class LocalVpnService : VpnService(), Runnable {
     private fun runVPN() {
         this.m_VPNInterface = establishVPN()!!
         startTunToSock(m_VPNInterface)
-        this.m_VPNOutputStream = FileOutputStream(m_VPNInterface!!.getFileDescriptor())
-        val input = FileInputStream(m_VPNInterface!!.getFileDescriptor())
-        try {
-            while (IsRunning) {
-                var idle = true
-                val size = input.read(m_Packet)
-                if (size > 0) {
-                    m_VPNOutputStream!!.write(m_IPHeader.m_Data, m_IPHeader.m_Offset, size)
-                    idle = false
-                }
-                if (idle) {
-                    Thread.sleep(100)
-                }
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
-        } finally {
-            input.close()
-        }
+        protect(m_VPNInterface!!.detachFd())
+//        this.m_VPNOutputStream = FileOutputStream(m_VPNInterface!!.getFileDescriptor())
+//        val input = FileInputStream(m_VPNInterface!!.getFileDescriptor())
+//        try {
+//            while (IsRunning) {
+//                var idle = true
+//                val size = input.read(m_Packet)
+//                if (size > 0) {
+//                    m_VPNOutputStream!!.write(m_IPHeader.m_Data, m_IPHeader.m_Offset, size)
+//                    idle = false
+//                }
+//                if (idle) {
+//                    Thread.sleep(100)
+//                }
+//            }
+//        } catch (e: Exception) {
+//            e.printStackTrace()
+//        } finally {
+//            input.close()
+//        }
     }
 
     private fun waitUntilPreapred() {
@@ -233,20 +234,20 @@ class LocalVpnService : VpnService(), Runnable {
             builder.setHttpProxy(ProxyInfo.buildDirectProxy("localhost", 8118))
         }
 
-        builder.addAddress("192.168.1.2", 32)
-            .addRoute("0.0.0.0", 0)
+        builder.addAddress("10.0.0.2", 32)
+//            .addRoute("0.0.0.0", 32)
 
         for (dns in ProxyConfig.Instance.dnsList) {
             builder.addDnsServer(dns.Address)
         }
 
-        if (allowApp?.isNotEmpty() == true) {
-            for (app in allowApp!!) {
-                builder.addAllowedApplication(app)
-            }
-        }
+//        if (allowApp?.isNotEmpty() == true) {
+//            for (app in allowApp!!) {
+//                builder.addAllowedApplication(app)
+//            }
+//        }
 
-        builder.addDisallowedApplication(packageName)
+//        builder.addDisallowedApplication(packageName)
 
         val intent = Intent(this, MainActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_MUTABLE)
