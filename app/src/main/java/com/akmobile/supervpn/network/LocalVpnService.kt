@@ -240,9 +240,7 @@ class LocalVpnService : VpnService(), Runnable {
         }
 
         builder.addAddress("10.0.0.2", 32)
-        if (BaseAppConfig.proxyType.lowercase() == "socks5") {
-            builder.addRoute("0.0.0.0", 1)
-        }
+        builder.addRoute("0.0.0.0", 0)
 
         for (dns in ProxyConfig.Instance.dnsList) {
             builder.addDnsServer(dns.Address)
@@ -254,7 +252,7 @@ class LocalVpnService : VpnService(), Runnable {
 //            }
 //        }
 
-//        builder.addDisallowedApplication(packageName)
+        builder.addDisallowedApplication(packageName)
 
         val intent = Intent(this, MainActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_MUTABLE)
