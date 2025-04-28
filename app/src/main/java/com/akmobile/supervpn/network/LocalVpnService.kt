@@ -242,8 +242,6 @@ class LocalVpnService : VpnService(), Runnable {
         builder.addAddress("10.0.0.2", 32)
         if (BaseAppConfig.proxyType.lowercase() == "socks5") {
             builder.addRoute("0.0.0.0", 1)
-        } else {
-            builder.addRoute("128.0.0.0", 1)
         }
 
         for (dns in ProxyConfig.Instance.dnsList) {
