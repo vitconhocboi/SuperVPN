@@ -125,6 +125,7 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.crashlytics.ktx)
     implementation(libs.firebase.firestore.ktx)
+    implementation(libs.okhttp)
 }
 
 // Allow references to generated code

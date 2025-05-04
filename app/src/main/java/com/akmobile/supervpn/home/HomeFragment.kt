@@ -34,6 +34,7 @@ import com.simple.libads.gone
 import dagger.hilt.android.AndroidEntryPoint
 import com.akmobile.supervpn.R
 import com.akmobile.supervpn.db.VpnAppItemDB
+import com.akmobile.supervpn.network.ProxySpeedTest
 import com.akmobile.supervpn.scheduler.StopProxyScheduler
 import com.akmobile.supervpn.settings.appproxy.AppProxyViewModel
 import com.common.baseui.extension.context
@@ -148,23 +149,23 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 
     private val updateRunnable = object : Runnable {
         override fun run() {
-            val trafficDownload =
-                context?.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE)
-                    ?.getInt("download", 0)
-            if (trafficDownload != null && trafficDownload > 0) {
-                binding.tvTrafficDownload.text = formatBytes(trafficDownload)
-            } else {
-                binding.tvTrafficDownload.text = "--"
-            }
-
-            val trafficUpload =
-                context?.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE)
-                    ?.getInt("upload", 0)
-            if (trafficUpload != null && trafficUpload > 0) {
-                binding.tvTrafficUpload.text = formatBytes(trafficUpload)
-            } else {
-                binding.tvTrafficUpload.text = "--"
-            }
+//            val trafficDownload =
+//                context?.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE)
+//                    ?.getInt("download", 0)
+//            if (trafficDownload != null && trafficDownload > 0) {
+//                binding.tvTrafficDownload.text = formatBytes(trafficDownload)
+//            } else {
+//                binding.tvTrafficDownload.text = "--"
+//            }
+//
+//            val trafficUpload =
+//                context?.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE)
+//                    ?.getInt("upload", 0)
+//            if (trafficUpload != null && trafficUpload > 0) {
+//                binding.tvTrafficUpload.text = formatBytes(trafficUpload)
+//            } else {
+//                binding.tvTrafficUpload.text = "--"
+//            }
             val start =
                 context?.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE)
                     ?.getInt("start", 0)
@@ -225,6 +226,21 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                         pnProxyInfo.visible()
                         pnProxySelected.setVisible(true)
                         pnSelectProxy.setVisible(false)
+
+                        val testProxy = ProxySpeedTest.ProxyConfig(
+                            host = BaseAppConfig.proxyHost,
+                            port = BaseAppConfig.proxyPort.toInt(),
+                            username = BaseAppConfig.proxyUser,
+                            password = BaseAppConfig.proxyPass,
+                            type = BaseAppConfig.proxyType
+                        )
+                        ProxySpeedTest().testProxy(testProxy,
+                            callback = {download, upload ->
+                                binding.tvTrafficDownload.text = download
+                                binding.tvTrafficUpload.text = upload
+                            }
+                        )
+
 //                        tvSelectProxy.invisible()
                     } else {
                         BaseAppConfig.proxyType = ""
