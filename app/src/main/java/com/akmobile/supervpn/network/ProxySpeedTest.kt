@@ -21,7 +21,8 @@ class ProxySpeedTest {
         private const val TAG = "Socks5SpeedTest"
         private const val DOWNLOAD_URL =
             "https://speed.cloudflare.com/__down?bytes=1000000" // 1MB test file
-        private const val UPLOAD_URL = "https://httpbin.org/post" // Test server for upload
+        private const val UPLOAD_URL =
+            "https://speed.cloudflare.com/__up" // Test server for upload
         private const val UPLOAD_SIZE_BYTES = 1024 * 1024 // 1MB payload for upload
     }
 

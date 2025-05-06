@@ -29,25 +29,16 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class LocalVpnService : VpnService(), Runnable {
+//    private val m_Packet: ByteArray
+//    private val m_IPHeader: IPHeader
 
     @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
     @Inject
     lateinit var proxyConnection: ProxyConnection
-
-    private var m_VPNThread: Thread? = null
-    private var m_VPNInterface: ParcelFileDescriptor? = null
-    private var m_VPNOutputStream: FileOutputStream? = null
-
-    private val m_Packet: ByteArray
-    private val m_IPHeader: IPHeader
-
-    private var m_PrivoxyManager: PrivoxyManager? = null
-    private var allowApp: List<String>? = null
-
     init {
         ID++
-        m_Packet = ByteArray(20000)
-        m_IPHeader = IPHeader(m_Packet, 0)
+//        m_Packet = ByteArray(20000)
+//        m_IPHeader = IPHeader(m_Packet, 0)
         Instance = this
     }
 
@@ -102,13 +93,13 @@ class LocalVpnService : VpnService(), Runnable {
                     }
 
                     // Close streams first
-                    m_VPNOutputStream?.close()
-                    m_VPNOutputStream = null
+//                    m_VPNOutputStream?.close()
+//                    m_VPNOutputStream = null
 
                     // Detach file descriptor before stopping engine
                     if (m_VPNInterface != null) {
                         try {
-                            val fd = m_VPNInterface!!.detachFd()
+                            val fd = m_VPNInterface!!.close()
                             Timber.tag(Constant.TAG).d("Successfully detached fd: $fd")
                         } catch (e: Exception) {
                             Timber.tag(Constant.TAG)
@@ -118,13 +109,18 @@ class LocalVpnService : VpnService(), Runnable {
                     }
 
                     // Now stop engine after fd is detached
-                    engine.Engine.stop()
-
+                    if (BaseAppConfig.proxyHost.isNotEmpty()) {
+                        engine.Engine.stop()
+                    }
                     // Stop other components
                     m_PrivoxyManager?.stop()
                     m_PrivoxyManager = null
 
                     stopSelf() // Stop the service after cleanup
+                    stopForeground(true)
+
+                    proxyConnection.updateUI(HomeFragment.DISCONNECTED)
+                    Timber.tag(Constant.TAG).d("VPNService stopped.")
                 }
             }
         }
@@ -197,11 +193,11 @@ class LocalVpnService : VpnService(), Runnable {
 
     @Throws(Exception::class)
     private fun runVPN() {
-        this.m_VPNInterface = establishVPN()!!
+        m_VPNInterface = establishVPN()!!
         if (BaseAppConfig.proxyHost.isNotEmpty()) {
             startTunToSock(m_VPNInterface)
         }
-        protect(m_VPNInterface!!.detachFd())
+//        protect(m_VPNInterface!!.detachFd())
 //        this.m_VPNOutputStream = FileOutputStream(m_VPNInterface!!.getFileDescriptor())
 //        val input = FileInputStream(m_VPNInterface!!.getFileDescriptor())
 //        try {
@@ -276,7 +272,12 @@ class LocalVpnService : VpnService(), Runnable {
     }
 
     companion object {
+        private var m_VPNThread: Thread? = null
+        private var m_VPNInterface: ParcelFileDescriptor? = null
+//        private var m_VPNOutputStream: FileOutputStream? = null
 
+        private var m_PrivoxyManager: PrivoxyManager? = null
+        private var allowApp: List<String>? = null
         private const val ACTION_START = "ACTION_START"
         private const val ACTION_STOP = "ACTION_STOP"
 

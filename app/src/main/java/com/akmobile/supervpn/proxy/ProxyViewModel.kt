@@ -120,6 +120,7 @@ class ProxyViewModel @Inject constructor(
     }
 
     fun stopProxy(context: Context?) {
+        proxyUpdate.setProxyUpdate(this)
         LocalVpnService.stopProxy(context!!)
     }
 
