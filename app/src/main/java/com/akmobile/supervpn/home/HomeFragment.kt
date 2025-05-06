@@ -149,30 +149,41 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 
     private val updateRunnable = object : Runnable {
         override fun run() {
-//            val trafficDownload =
-//                context?.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE)
-//                    ?.getInt("download", 0)
-//            if (trafficDownload != null && trafficDownload > 0) {
-//                binding.tvTrafficDownload.text = formatBytes(trafficDownload)
-//            } else {
-//                binding.tvTrafficDownload.text = "--"
-//            }
-//
-//            val trafficUpload =
-//                context?.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE)
-//                    ?.getInt("upload", 0)
-//            if (trafficUpload != null && trafficUpload > 0) {
-//                binding.tvTrafficUpload.text = formatBytes(trafficUpload)
-//            } else {
-//                binding.tvTrafficUpload.text = "--"
-//            }
             val start =
                 context?.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE)
                     ?.getInt("start", 0)
             val diff = System.currentTimeMillis().toInt() / 1000 - start!!
-
             binding.tvTime.text = formatSecondsToTime(diff)
             handler.postDelayed(this, interval)
+        }
+    }
+
+    private val speedTestRunnable = object : Runnable {
+        override fun run() {
+            if (BaseAppConfig.proxyHost.isNotEmpty()) {
+                //update UI
+                val testProxy = ProxySpeedTest.ProxyConfig(
+                    host = BaseAppConfig.proxyHost,
+                    port = BaseAppConfig.proxyPort.toInt(),
+                    username = BaseAppConfig.proxyUser,
+                    password = BaseAppConfig.proxyPass,
+                    type = BaseAppConfig.proxyType
+                )
+                ProxySpeedTest().testProxy(testProxy,
+                    callback = { download, upload ->
+                        binding.tvTrafficDownload.text = download
+                        binding.tvTrafficUpload.text = upload
+                    }
+                )
+            } else {
+                ProxySpeedTest().testProxy(null,
+                    callback = { download, upload ->
+                        binding.tvTrafficDownload.text = download
+                        binding.tvTrafficUpload.text = upload
+                    }
+                )
+            }
+            handler.postDelayed(this, 10000)
         }
     }
 
@@ -202,60 +213,31 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 //        isLocalVpnServiceRunning(requireContext())
         // Đăng ký BroadcastReceiver
         with(binding) {
-//            proxyViewModel.getActiveProxy()
-//            bindFlowCreate(proxyViewModel.activeProxy) {
-//                processResultData(it, onSuccess = { it ->
-//                    if (it != null) {
-                    if (BaseAppConfig.proxyHost.isNotEmpty()) {
-                        //set to pref
-//                        BaseAppConfig.proxyType = it.type
-//                        BaseAppConfig.proxyHost = it.host
-//                        BaseAppConfig.proxyPort = it.port
-//                        BaseAppConfig.proxyUser = it.username
-//                        BaseAppConfig.proxyPass = it.password
-                        //update UI
-                        ivFlag.setImageResource(Utils.getFlag(BaseAppConfig.proxyCountry))
-                        tvProxyLocation.text = requireContext().getString(
-                            context.resources.getIdentifier(
-                                BaseAppConfig.proxyCountry,
-                                "string",
-                                requireContext().packageName
-                            )
-                        )
-                        tvProxyIp.text = BaseAppConfig.proxyHost
-                        pnProxyInfo.visible()
-                        pnProxySelected.setVisible(true)
-                        pnSelectProxy.setVisible(false)
+            if (BaseAppConfig.proxyHost.isNotEmpty()) {
+                //update UI
+                ivFlag.setImageResource(Utils.getFlag(BaseAppConfig.proxyCountry))
+                tvProxyLocation.text = requireContext().getString(
+                    context.resources.getIdentifier(
+                        BaseAppConfig.proxyCountry,
+                        "string",
+                        requireContext().packageName
+                    )
+                )
+                tvProxyIp.text = BaseAppConfig.proxyHost
+                pnProxyInfo.visible()
+                pnProxySelected.setVisible(true)
+                pnSelectProxy.setVisible(false)
+            } else {
+                BaseAppConfig.proxyType = ""
+                BaseAppConfig.proxyHost = ""
+                BaseAppConfig.proxyPort = ""
+                BaseAppConfig.proxyUser = ""
+                BaseAppConfig.proxyPass = ""
 
-                        val testProxy = ProxySpeedTest.ProxyConfig(
-                            host = BaseAppConfig.proxyHost,
-                            port = BaseAppConfig.proxyPort.toInt(),
-                            username = BaseAppConfig.proxyUser,
-                            password = BaseAppConfig.proxyPass,
-                            type = BaseAppConfig.proxyType
-                        )
-                        ProxySpeedTest().testProxy(testProxy,
-                            callback = {download, upload ->
-                                binding.tvTrafficDownload.text = download
-                                binding.tvTrafficUpload.text = upload
-                            }
-                        )
-
-//                        tvSelectProxy.invisible()
-                    } else {
-                        BaseAppConfig.proxyType = ""
-                        BaseAppConfig.proxyHost = ""
-                        BaseAppConfig.proxyPort = ""
-                        BaseAppConfig.proxyUser = ""
-                        BaseAppConfig.proxyPass = ""
-
-                        pnProxyInfo.invisible()
-                        pnProxySelected.setVisible(false)
-                        pnSelectProxy.setVisible(true)
-//                        tvSelectProxy.visible()
-                    }
-//                })
-//            }
+                pnProxyInfo.invisible()
+                pnProxySelected.setVisible(false)
+                pnSelectProxy.setVisible(true)
+            }
 
             allowAppViewModel.getAllowApp()
 
@@ -264,10 +246,6 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                     allowApp = it
                 })
             }
-
-            tvTrafficDownload.text =
-                context?.getSharedPreferences("PRIVOXY_TRAFFIC", Context.MODE_PRIVATE)
-                    ?.getInt("DOWNLOAD", 0).toString()
 
             ivConnect.setOnClickListener {
 //                if (isConnected) {
@@ -316,12 +294,14 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     override fun onStart() {
         super.onStart()
         handler.post(updateRunnable)
+        handler.post(speedTestRunnable)
         isLocalVpnServiceRunning(requireContext())
     }
 
     override fun onStop() {
         super.onStop()
         handler.removeCallbacks(updateRunnable)
+        handler.removeCallbacks(speedTestRunnable)
     }
 
     private fun startVpnService() {

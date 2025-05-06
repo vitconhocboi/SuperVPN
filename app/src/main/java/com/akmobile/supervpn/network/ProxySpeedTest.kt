@@ -35,20 +35,20 @@ class ProxySpeedTest {
     )
 
     // Test SOCKS5 proxy download and upload speeds
-    fun testProxy(proxyConfig: ProxyConfig, callback: (downlaod: String, upload: String) -> Unit) {
+    fun testProxy(proxyConfig: ProxyConfig?, callback: (downlaod: String, upload: String) -> Unit) {
         TestProxyTask(proxyConfig, callback).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR)
     }
 
     private class TestProxyTask(
-        private val proxyConfig: ProxyConfig,
+        private val proxyConfig: ProxyConfig?,
         private val callback: (downlaod: String, upload: String) -> Unit
     ) : AsyncTask<Void, Void, Pair<String, String>>() {
 
         override fun onPreExecute() {
-            Log.d(TAG, "Starting SOCKS5 proxy test for ${proxyConfig.host}:${proxyConfig.port}")
+            Log.d(TAG, "Starting SOCKS5 proxy test for ${proxyConfig}")
         }
 
-        override fun doInBackground(vararg params: Void?):  Pair<String, String> {
+        override fun doInBackground(vararg params: Void?): Pair<String, String> {
             Log.d(TAG, "doInBackground started")
             try {
                 val client = buildOkHttpClient(proxyConfig)
@@ -83,32 +83,24 @@ class ProxySpeedTest {
             callback("-", "-")
         }
 
-        private fun buildOkHttpClient(proxyConfig: ProxyConfig): OkHttpClient {
-            val proxy = Proxy(
-                when (proxyConfig.type.uppercase()) {
-                    "SOCKS5" -> Proxy.Type.SOCKS
-                    "HTTP" -> Proxy.Type.HTTP
-                    else -> throw IllegalArgumentException("Unsupported proxy type: ${proxyConfig.type}")
-                },
-                InetSocketAddress(proxyConfig.host, proxyConfig.port)
-            )
-            if (proxyConfig.type.uppercase() == "SOCKS5") {
-                Authenticator.setDefault(object : Authenticator() {
-                    override fun getPasswordAuthentication(): PasswordAuthentication {
-                        return PasswordAuthentication(
-                            proxyConfig.username,
-                            proxyConfig.password.toCharArray()
-                        )
-                    }
-                })
-            }
-
-            return OkHttpClient.Builder()
-                .proxy(proxy)
+        private fun buildOkHttpClient(proxyConfig: ProxyConfig?): OkHttpClient {
+            val builder = OkHttpClient.Builder()
                 .connectTimeout(15, TimeUnit.SECONDS)
                 .readTimeout(15, TimeUnit.SECONDS)
                 .writeTimeout(15, TimeUnit.SECONDS)
-                .proxyAuthenticator(object : okhttp3.Authenticator {
+            if (proxyConfig != null) {
+                val proxy = Proxy(
+                    when (proxyConfig.type.uppercase()) {
+                        "SOCKS5" -> Proxy.Type.SOCKS
+                        "HTTP" -> Proxy.Type.HTTP
+                        else -> throw IllegalArgumentException("Unsupported proxy type: ${proxyConfig.type}")
+                    },
+                    InetSocketAddress(proxyConfig.host, proxyConfig.port)
+                )
+                builder.proxy(proxy)
+            }
+            if (proxyConfig?.type?.uppercase() == "HTTP") {
+                builder.proxyAuthenticator(object : okhttp3.Authenticator {
                     override fun authenticate(route: Route?, response: Response): Request? {
                         val credential = Credentials.basic(
                             proxyConfig.username,
@@ -119,7 +111,17 @@ class ProxySpeedTest {
                             .build()
                     }
                 })
-                .build()
+            } else if (proxyConfig?.type?.uppercase() == "SOCKS5") {
+                Authenticator.setDefault(object : Authenticator() {
+                    override fun getPasswordAuthentication(): PasswordAuthentication {
+                        return PasswordAuthentication(
+                            proxyConfig.username,
+                            proxyConfig.password.toCharArray()
+                        )
+                    }
+                })
+            }
+            return builder.build()
         }
 
         private fun measureDownloadSpeed(client: OkHttpClient): Double {
@@ -130,7 +132,7 @@ class ProxySpeedTest {
                 if (!response.isSuccessful) {
                     throw Exception("Download test failed with HTTP ${response.code}")
                 }
-                val body = response.body?.byteStream() ?: throw Exception("No response body")
+                val body = response.body.byteStream() ?: throw Exception("No response body")
                 var bytesRead = 0L
                 val buffer = ByteArray(1024)
                 while (body.read(buffer).also { if (it != -1) bytesRead += it } != -1) {

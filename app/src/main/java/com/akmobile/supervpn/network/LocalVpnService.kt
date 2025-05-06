@@ -198,7 +198,9 @@ class LocalVpnService : VpnService(), Runnable {
     @Throws(Exception::class)
     private fun runVPN() {
         this.m_VPNInterface = establishVPN()!!
-        startTunToSock(m_VPNInterface)
+        if (BaseAppConfig.proxyHost.isNotEmpty()) {
+            startTunToSock(m_VPNInterface)
+        }
         protect(m_VPNInterface!!.detachFd())
 //        this.m_VPNOutputStream = FileOutputStream(m_VPNInterface!!.getFileDescriptor())
 //        val input = FileInputStream(m_VPNInterface!!.getFileDescriptor())
@@ -235,12 +237,14 @@ class LocalVpnService : VpnService(), Runnable {
     private fun establishVPN(): ParcelFileDescriptor? {
         val builder: Builder = Builder()
         builder.setMtu(ProxyConfig.Instance.mTU)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q && BaseAppConfig.proxyHost.isNotEmpty()) {
             builder.setHttpProxy(ProxyInfo.buildDirectProxy("127.0.0.1", 8118))
         }
 
         builder.addAddress("10.0.0.2", 32)
-        builder.addRoute("0.0.0.0", 0)
+        if(BaseAppConfig.proxyHost.isNotEmpty()) {
+            builder.addRoute("0.0.0.0", 0)
+        }
 
         for (dns in ProxyConfig.Instance.dnsList) {
             builder.addDnsServer(dns.Address)

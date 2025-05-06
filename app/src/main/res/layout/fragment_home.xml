@@ -10,7 +10,7 @@
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/bg_earth"
         android:gravity="center"
         android:orientation="vertical"
@@ -147,7 +147,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/size44"
+            android:layout_marginHorizontal="@dimen/size40"
             android:layout_marginTop="@dimen/margin_68">
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -198,6 +198,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/download"
+                    android:layout_marginRight="@dimen/size16"
                     android:textColor="@color/white"
                     android:textSize="@dimen/size12" />
 

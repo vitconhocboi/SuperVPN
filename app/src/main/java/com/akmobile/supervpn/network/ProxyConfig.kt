@@ -16,7 +16,7 @@ class ProxyConfig {
 
     init {
         dnsList = ArrayList()
-        dnsList.add(IPAddress("8.8.8.8"))
+        dnsList.add(IPAddress("1.1.1.1"))
     }
 
     inner class IPAddress {
