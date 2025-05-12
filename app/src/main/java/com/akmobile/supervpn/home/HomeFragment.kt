@@ -15,6 +15,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 
@@ -223,20 +224,20 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                         requireContext().packageName
                     )
                 )
-                tvProxyIp.text = BaseAppConfig.proxyHost
-                pnProxyInfo.visible()
-                pnProxySelected.setVisible(true)
-                pnSelectProxy.setVisible(false)
+                val typeface = ResourcesCompat.getFont(context, R.font.inter_bold)
+                tvProxyLocation.typeface = typeface
+                tvProxyLocation.setTextColor(resources.getColor(R.color.language_item_text_color))
             } else {
+                ivFlag.setImageResource(R.drawable.ic_earth)
                 BaseAppConfig.proxyType = ""
                 BaseAppConfig.proxyHost = ""
                 BaseAppConfig.proxyPort = ""
                 BaseAppConfig.proxyUser = ""
                 BaseAppConfig.proxyPass = ""
-
-                pnProxyInfo.invisible()
-                pnProxySelected.setVisible(false)
-                pnSelectProxy.setVisible(true)
+                tvProxyLocation.text = getString(R.string.ip_proxy)
+                val typeface = ResourcesCompat.getFont(context, R.font.inter_normal)
+                tvProxyLocation.typeface = typeface
+                tvProxyLocation.setTextColor(resources.getColor(R.color.green_1))
             }
 
             allowAppViewModel.getAllowApp()

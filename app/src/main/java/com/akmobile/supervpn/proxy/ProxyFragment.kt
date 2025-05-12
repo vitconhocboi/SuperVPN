@@ -53,8 +53,12 @@ class ProxyFragment : ProductFragment<FragmentProxyBinding>() {
                 progress.setVisible(false)
             }
 
-            mPagerAdapter.onProxyClick = { position, item ->
-                mProxyViewModel.setActiveProxy(item)
+            mPagerAdapter.onItemClick = { position, item ->
+                if (item.active) {
+                    mProxyViewModel.setActiveProxy(item)
+                } else {
+                    mProxyViewModel.setActiveProxy(null)
+                }
                 mPagerAdapter.notifyDataSetChanged()
                 Navigator.startMainActivity(requireContext(), item.id)
             }

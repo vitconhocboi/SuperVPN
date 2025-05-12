@@ -13,6 +13,7 @@ import com.akmobile.supervpn.databinding.ActivityMainBinding
 import com.akmobile.supervpn.home.HomeFragment
 import com.akmobile.supervpn.settings.SettingFragment
 import com.akmobile.supervpn.settings.appproxy.AppProxyFragment
+import com.akmobile.supervpn.settings.dns.DNSFragment
 import com.google.firebase.FirebaseApp
 import com.google.firebase.firestore.FirebaseFirestore
 import com.simple.libads.setVisible
@@ -25,7 +26,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
     var isSettingFragment = false
     var isAppProxyFragment = false
 
-    private val mainViewModel : MainViewModel by viewModels()
+    private val mainViewModel: MainViewModel by viewModels()
 
     private val mHomeFragment by lazy {
         HomeFragment()
@@ -35,10 +36,19 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
         AppProxyFragment()
     }
 
+    private val mDnsFragment by lazy {
+        DNSFragment()
+    }
+
     private val mSettingFragment by lazy {
-        SettingFragment {
-            showAppProxy()
-        }
+        SettingFragment(
+            showAppProxy = {
+                showAppProxy()
+            },
+            showDns = {
+                showDns()
+            }
+        )
     }
 
     override fun bindingProvider(inflater: LayoutInflater): ActivityMainBinding {
@@ -49,6 +59,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
         mListFragment.add(mHomeFragment)
         mListFragment.add(mSettingFragment)
         mListFragment.add(mAppProxyFragment)
+        mListFragment.add(mDnsFragment)
 
         showFragment(mHomeFragment)
 //        binding.progress.setVisible(true)
@@ -61,6 +72,10 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                 onBackPressedDispatcher.onBackPressed()
             }
 
+            ivBack.setOnClickListener {
+                showFragment(mSettingFragment)
+            }
+
             cbSelectAll.setOnClickListener {
 
             }
@@ -70,14 +85,14 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
             this@MainActivity,
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
-                        if (isSettingFragment) {
-                            showFragment(mHomeFragment)
-                        } else if (isAppProxyFragment) {
-                            showFragment(mSettingFragment)
-                        } else {
-                            this@MainActivity.finish()
-                        }
+                    if (isSettingFragment) {
+                        showFragment(mHomeFragment)
+                    } else if (isAppProxyFragment) {
+                        showFragment(mSettingFragment)
+                    } else {
+                        this@MainActivity.finish()
                     }
+                }
 
             })
     }
@@ -108,16 +123,46 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
 
         fragmentTransaction.commitNow()
 
-        isSettingFragment = fragment is SettingFragment
+        when (fragment) {
+            is AppProxyFragment -> {
+                binding.homeActionBar.setVisible(false)
+                binding.subActionbar.setVisible(true)
+                binding.dnsActionBar.setVisible(false)
+            }
 
-        binding.homeActionBar.setVisible(!isSettingFragment && !isAppProxyFragment)
-        binding.cbSelectAll.setVisible(false)
-        binding.subActionbar.setVisible(isSettingFragment || isAppProxyFragment)
+            is SettingFragment -> {
+                binding.homeActionBar.setVisible(false)
+                binding.subActionbar.setVisible(true)
+                binding.dnsActionBar.setVisible(false)
+            }
+
+            is DNSFragment -> {
+                binding.homeActionBar.setVisible(false)
+                binding.subActionbar.setVisible(false)
+                binding.dnsActionBar.setVisible(true)
+            }
+
+            else -> {
+                binding.homeActionBar.setVisible(true)
+                binding.subActionbar.setVisible(false)
+                binding.dnsActionBar.setVisible(false)
+            }
+        }
+        isSettingFragment = fragment is SettingFragment
+//
+//        binding.homeActionBar.setVisible(!isSettingFragment && !isAppProxyFragment)
+//        binding.cbSelectAll.setVisible(false)
+//        binding.subActionbar.setVisible(isSettingFragment || isAppProxyFragment)
+//        binding.dnsActionBar.setVisible(fragment is DNSFragment)
     }
 
     fun showAppProxy() {
 //        mainViewModel.getInstalledAppsWithInternetPermission(baseContext)
         showFragment(mAppProxyFragment)
         mAppProxyFragment.loadData()
+    }
+
+    fun showDns() {
+        showFragment(mDnsFragment)
     }
 }

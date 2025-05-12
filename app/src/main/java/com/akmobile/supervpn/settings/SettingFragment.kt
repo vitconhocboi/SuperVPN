@@ -23,7 +23,8 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class SettingFragment(
-    val showAppProxy: () -> Unit
+    val showAppProxy: () -> Unit,
+    val showDns: () -> Unit = {}
 ) : ProductFragment<FragmentSettingBinding>() {
 
     private val mViewModel: SettingViewModel by viewModels()
@@ -50,6 +51,9 @@ class SettingFragment(
 
             rowAppProxy.setOnClickListener {
                 fetchInstalledApps()
+            }
+            rowDns.setOnClickListener() {
+                showDns()
             }
 
             btnPro.setOnClickListener {

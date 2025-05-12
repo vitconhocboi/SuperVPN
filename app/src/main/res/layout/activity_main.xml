@@ -69,7 +69,7 @@
             android:paddingHorizontal="@dimen/margin_16"
             android:background="@color/gray_3"
             android:gravity="center"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ic_back"
@@ -99,6 +99,40 @@
                 android:button="@null"
                 android:checked="false"
                 android:layout_marginEnd="@dimen/margin_big" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/dnsActionBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/size16"
+            android:gravity="center_vertical"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/size16"
+                android:src="@drawable/ic_arrow_left" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size16"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/setting_dns_default"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/text_large" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivReload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/size16"
+                android:src="@drawable/ic_button_switch" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.appcompat.widget.LinearLayoutCompat>

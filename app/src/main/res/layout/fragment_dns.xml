@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor2"
+    android:orientation="vertical"
+    tools:context=".proxy.ProxyFragment">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_dns_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/margin_20"
+        android:layout_marginStart="@dimen/margin_16"
+        android:text="@string/dns_desc"
+        android:textStyle="normal"
+        android:fontFamily="@font/inter_normal"
+        android:textSize="@dimen/text_medium"
+        android:textColor="#767C8A"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/pnDns"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintTop_toBottomOf="@id/tv_dns_desc"
+        app:layout_constraintBottom_toTopOf="@id/btn_save">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvDns"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:listitem="@layout/adapter_proxy_group" />
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/size16"
+        android:background="@drawable/bg_btn_save"
+        android:padding="@dimen/margin_12"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/pnDns"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Save"/>
+
+
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:indeterminateTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="visible"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,12 +12,10 @@ import com.common.baseui.extension.setOnClickNoDoubleClick
 import com.common.baseui.extension.setVisible
 import javax.inject.Inject
 
-class ProxyGroupAdapter @Inject constructor() :
-    BaseAdapter<ProxyGroupUI, BaseViewHolder<ProxyGroupUI>>() {
+class ProxyGroupAdapter @Inject constructor() : BaseAdapter<ProxyUI, BaseViewHolder<ProxyUI>>() {
     override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): BaseViewHolder<ProxyGroupUI> {
+        parent: ViewGroup, viewType: Int
+    ): BaseViewHolder<ProxyUI> {
         return ProxyGroupViewHolder(
             AdapterProxyGroupBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
@@ -25,42 +23,49 @@ class ProxyGroupAdapter @Inject constructor() :
         )
     }
 
-    var onProxyClick: ((position: Int, item: ProxyUI) -> Unit)? = null
+//    var onProxyClick: ((position: Int, item: ProxyUI) -> Unit)? = null
 
     inner class ProxyGroupViewHolder(private val mViewBinding: AdapterProxyGroupBinding) :
-        BaseViewHolder<ProxyGroupUI>(mViewBinding.root) {
-        override fun bindData(position: Int, data: ProxyGroupUI) {
+        BaseViewHolder<ProxyUI>(mViewBinding.root) {
+        override fun bindData(position: Int, data: ProxyUI) {
             mViewBinding.apply {
                 ivFlag.setImageResource(Utils.getFlag(data.country))
                 tvTitle.setText(
                     context.getString(
                         context.resources.getIdentifier(
-                            data.country,
-                            "string",
-                            context.packageName
+                            data.country, "string", context.packageName
                         )
                     )
                 )
 
-                ivCollapse.setImageResource(if (data.collapsed) R.drawable.ic_arrow_down else R.drawable.ic_next_arrow)
+                tvProxyIp.text = data.host
 
-                var mDailyAdapter = ProxyAdapter().apply {
-                    updateData(data.list)
+                lnMain.isSelected = data.active
+
+                lnMain.setOnClickNoDoubleClick {
+                    data.active = !data.active
+                    onItemClick?.invoke(position, data)
                 }
 
-                mDailyAdapter.onItemClick = { position, item ->
-                    onProxyClick?.invoke(position, item)
-                }
-                rcvProxyItems.adapter = mDailyAdapter
-                rcvProxyItems.setVisible(data.collapsed)
 
-                pnGroupProxy.setOnClickNoDoubleClick {
-                    data.collapsed = !data.collapsed
-                    ivCollapse.setImageResource(if (data.collapsed) R.drawable.ic_arrow_down else R.drawable.ic_next_arrow)
-                    rcvProxyItems.setVisible(data.collapsed)
-                }
+//                ivCollapse.setImageResource(if (data.collapsed) R.drawable.ic_arrow_down else R.drawable.ic_next_arrow)
+
+//                var mDailyAdapter = ProxyAdapter().apply {
+//                    updateData(data.list)
+//                }
+
+//                mDailyAdapter.onItemClick = { position, item ->
+//                    onProxyClick?.invoke(position, item)
+//                }
+//                rcvProxyItems.adapter = mDailyAdapter
+//                rcvProxyItems.setVisible(data.collapsed)
+//
+//                pnGroupProxy.setOnClickNoDoubleClick {
+//                    data.collapsed = !data.collapsed
+//                    ivCollapse.setImageResource(if (data.collapsed) R.drawable.ic_arrow_down else R.drawable.ic_next_arrow)
+//                    rcvProxyItems.setVisible(data.collapsed)
+//                }
             }
         }
-
     }
 }

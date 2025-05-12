@@ -10,11 +10,25 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/premium"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/size_172"
+        android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_16"
+        android:background="@drawable/bg_setting_description"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
+
+<!--        <androidx.appcompat.widget.AppCompatImageView-->
+<!--            android:id="@+id/backgroundImage"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:src="@drawable/bg_setting_desc"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            android:alpha="0.6"-->
+<!--            app:cornerRadius="@dimen/size80"-->
+<!--            android:scaleType="centerCrop"/>-->
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_pro"
@@ -25,6 +39,8 @@
             android:ellipsize="middle"
             android:text="@string/setting_vpn_fast_and_safe"
             android:textStyle="bold"
+            android:fontFamily="@font/inter_bold"
+            android:textSize="@dimen/size18"
             android:textColor="@color/white"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
@@ -49,6 +65,8 @@
             android:text="@string/setting_vpn_fast_and_safe_desc"
             android:maxLines="2"
             android:textStyle="bold"
+            android:fontFamily="@font/inter_normal"
+            android:textSize="@dimen/size14"
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +76,7 @@
             android:id="@+id/btn_pro"
             android:layout_width="match_parent"
             android:layout_height="@dimen/size42"
-            android:layout_marginTop="@dimen/margin_12"
+            android:layout_marginTop="@dimen/margin_20"
             android:layout_marginHorizontal="@dimen/margin_16"
             android:layout_marginBottom="@dimen/margin_20"
             android:ellipsize="middle"
@@ -67,7 +85,8 @@
             android:textStyle="bold"
             android:gravity="center"
             android:textColor="@color/gray_1"
-            app:layout_constraintStart_toStartOf="@+id/tv_pro_desc"
+            app:layout_constraintStart_toStartOf="@id/tv_pro_desc"
+            app:layout_constraintTop_toBottomOf="@id/tv_pro_desc"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -94,15 +113,129 @@
             android:ellipsize="middle"
             android:text="@string/setting_app_proxy"
             android:drawableStart="@drawable/ic_setting_app_proxy"
+            android:drawableEnd="@drawable/ic_setting_pre"
             android:drawablePadding="@dimen/margin_16"
             android:textStyle="bold"
             android:textColor="@color/white"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
-6
+
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/btn_action"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_16"
+            android:src="@drawable/ic_setting_right_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/row_ads_block"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:background="@drawable/bg_setting_items"
+        android:foreground="?selectableItemBackgroundBorderless"
+        app:layout_constraintTop_toBottomOf="@+id/row_app_proxy"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="10dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_ads_block"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16"
+            android:layout_marginStart="@dimen/margin_16"
+            android:ellipsize="middle"
+            android:text="@string/setting_ads_block"
+            android:drawableStart="@drawable/setting_ads_block"
+            android:drawableEnd="@drawable/ic_setting_pre"
+            android:drawablePadding="@dimen/margin_16"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_ads_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_16"
+            android:layout_marginStart="@dimen/size50"
+            android:ellipsize="middle"
+            android:text="@string/setting_ads_desc"
+            android:drawablePadding="@dimen/margin_16"
+            android:textStyle="bold"
+            android:textColor="#767C8A"
+            app:layout_constraintTop_toBottomOf="@id/tv_ads_block"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_ads_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_16"
+            android:src="@drawable/ic_button_switch"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/row_dns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:background="@drawable/bg_setting_items"
+        android:foreground="?selectableItemBackgroundBorderless"
+        app:layout_constraintTop_toBottomOf="@id/row_ads_block"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="10dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_dns"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/margin_16"
+            android:layout_marginStart="@dimen/margin_16"
+            android:ellipsize="middle"
+            android:text="@string/setting_dns_default"
+            android:drawableStart="@drawable/setting_dns_block"
+            android:drawablePadding="@dimen/margin_16"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_dns_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/margin_16"
+            android:layout_marginStart="@dimen/margin_16"
+            android:ellipsize="middle"
+            android:text="@string/status_off"
+            android:textSize="@dimen/size14"
+            android:drawablePadding="@dimen/margin_16"
+            android:textStyle="bold"
+            android:textColor="#767C8A"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_dns_action"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_dns_action"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:padding="@dimen/margin_small"
@@ -122,7 +255,7 @@
         android:background="@drawable/bg_setting_items"
         android:foreground="?selectableItemBackgroundBorderless"
         app:layout_goneMarginTop="@dimen/margin_big"
-        app:layout_constraintTop_toBottomOf="@+id/row_app_proxy"
+        app:layout_constraintTop_toBottomOf="@id/row_dns"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginHorizontal="10dp">

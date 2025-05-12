@@ -6,6 +6,7 @@ import com.akmobile.supervpn.language.LanguageActivity
 import com.akmobile.supervpn.main.MainActivity
 import com.akmobile.supervpn.proxy.ProxyActivity
 import com.akmobile.supervpn.premium.PremiumActivity
+import com.akmobile.supervpn.proxy.DNSActivity
 import com.akmobile.supervpn.proxy.ProxyFragment
 
 object Navigator {
@@ -28,5 +29,9 @@ object Navigator {
 
     fun startPremiumActivity(context: Context) {
         context.startActivity(Intent(context, PremiumActivity::class.java))
+    }
+
+    fun startDnsActivity(context: Context) {
+        context.startActivity(Intent(context, DNSActivity::class.java))
     }
 }

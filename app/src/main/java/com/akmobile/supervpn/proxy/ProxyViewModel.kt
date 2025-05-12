@@ -36,7 +36,7 @@ class ProxyViewModel @Inject constructor(
 ) : ViewModel(), ISuperVpnProxyUpdate {
 //    val allProxy = MutableStateFlow<ResultData<List<ProxyGroupUI>>>(ResultData.standby())
 
-    val allProxy = MutableLiveData<List<ProxyGroupUI>>()
+    val allProxy = MutableLiveData<List<ProxyUI>>()
 
     val isConnected = MutableLiveData(proxyUpdate.vpnState)
 
@@ -45,7 +45,7 @@ class ProxyViewModel @Inject constructor(
 //            proxyUseCase.getAllProxy().collect { allProxy.value = it }
             FirebaseApp.initializeApp(context)
 
-            val listProxies = ArrayList<ProxyGroupUI>()
+            val listProxies = ArrayList<ProxyUI>()
 
             val db = FirebaseFirestore.getInstance()
             val result = db.collection("Vpn")
@@ -55,7 +55,7 @@ class ProxyViewModel @Inject constructor(
             for (document in result) {
                 val proxyCountry = ProxyGroupUI(country = document.id)
                 Timber.d("Firestore Document ID: ${document.id}")
-                val listIps = ArrayList<ProxyUI>()
+//                val listIps = ArrayList<ProxyUI>()
                 for ((field, value) in document.data) {
                     val proxyConfig = value.toString().split(":")
                     if (proxyConfig.size >= 5) {
@@ -74,11 +74,11 @@ class ProxyViewModel @Inject constructor(
                             proxy.active = true
                         }
                         Timber.d("Firestore Field: $field = $value")
-                        listIps.add(proxy)
+                        listProxies.add(proxy)
                     }
                 }
-                proxyCountry.list = listIps
-                listProxies.add(proxyCountry)
+//                proxyCountry.list = listIps
+//                listProxies.add(proxyCountry)
             }
 
             allProxy.postValue(listProxies)
@@ -95,20 +95,30 @@ class ProxyViewModel @Inject constructor(
     }
 
     fun loadFirebase(context: Context) {
-        viewModelScope.launch(Dispatchers.IO
+        viewModelScope.launch(
+            Dispatchers.IO
         ) {
 
         }
 
     }
 
-    fun setActiveProxy(item: ProxyUI) {
-        BaseAppConfig.proxyHost = item.host
-        BaseAppConfig.proxyPort = item.port
-        BaseAppConfig.proxyUser = item.username
-        BaseAppConfig.proxyPass = item.password
-        BaseAppConfig.proxyType = item.type
-        BaseAppConfig.proxyCountry = item.country
+    fun setActiveProxy(item: ProxyUI?) {
+        if (item != null) {
+            BaseAppConfig.proxyHost = item.host
+            BaseAppConfig.proxyPort = item.port
+            BaseAppConfig.proxyUser = item.username
+            BaseAppConfig.proxyPass = item.password
+            BaseAppConfig.proxyType = item.type
+            BaseAppConfig.proxyCountry = item.country
+        } else {
+            BaseAppConfig.proxyHost = ""
+            BaseAppConfig.proxyPort = ""
+            BaseAppConfig.proxyUser = ""
+            BaseAppConfig.proxyPass = ""
+            BaseAppConfig.proxyType = ""
+            BaseAppConfig.proxyCountry = ""
+        }
 //        viewModelScope.launch(Dispatchers.IO) {
 //            proxyUseCase.setActiveProxy(id)
 //        }
