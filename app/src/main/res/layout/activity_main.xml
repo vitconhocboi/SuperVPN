@@ -69,7 +69,7 @@
             android:paddingHorizontal="@dimen/margin_16"
             android:background="@color/gray_3"
             android:gravity="center"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ic_back"
@@ -91,14 +91,14 @@
                 android:text="@string/setting"
                 android:textColor="@color/white" />
 
-            <androidx.appcompat.widget.AppCompatCheckBox
-                android:id="@+id/cb_select_all"
-                android:layout_width="@dimen/margin_20"
-                android:layout_height="@dimen/margin_20"
-                android:background="@drawable/ip_list_checkbox1"
-                android:button="@null"
-                android:checked="false"
-                android:layout_marginEnd="@dimen/margin_big" />
+<!--            <androidx.appcompat.widget.AppCompatCheckBox-->
+<!--                android:id="@+id/cb_select_all"-->
+<!--                android:layout_width="@dimen/margin_20"-->
+<!--                android:layout_height="@dimen/margin_20"-->
+<!--                android:background="@drawable/ip_list_checkbox1"-->
+<!--                android:button="@null"-->
+<!--                android:checked="false"-->
+<!--                android:layout_marginEnd="@dimen/margin_big" />-->
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -128,7 +128,7 @@
                 android:textSize="@dimen/text_large" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ivReload"
+                android:id="@+id/ivSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/size16"

@@ -81,4 +81,11 @@ object BaseAppConfig {
         set(value) {
             SharedPrefs.instance.put(KEY_DNS_SERVER, value)
         }
+
+    private const val KEY_ADS_BLOCK = "ADS_BLOCK"
+    var adsBlock: Boolean
+        get() = SharedPrefs.instance[KEY_ADS_BLOCK, Boolean::class.java, false]
+        set(value) {
+            SharedPrefs.instance.put(KEY_ADS_BLOCK, value)
+        }
 }

@@ -17,6 +17,7 @@ import com.akmobile.supervpn.settings.appproxy.AppProxyUI
 import com.akmobile.supervpn.settings.appproxy.AppProxyFragment
 import com.akmobile.supervpn.utils.Constant
 import com.akmobile.supervpn.utils.Navigator
+import com.common.baseui.BaseAppConfig
 import com.simple.libads.setVisible
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -58,6 +59,21 @@ class SettingFragment(
 
             btnPro.setOnClickListener {
                 Navigator.startPremiumActivity(requireContext())
+            }
+
+            rowAdsBlock.setOnClickListener {
+                rowAdsBlock.isSelected = !rowAdsBlock.isSelected
+                BaseAppConfig.adsBlock = rowAdsBlock.isSelected
+            }
+
+            if (BaseAppConfig.dnsServer.isNotEmpty()) {
+                tvDnsStatus.text = getString(R.string.status_on)
+            } else {
+                tvDnsStatus.text = getString(R.string.status_off)
+            }
+
+            rowLanguage.setOnClickListener {
+                Navigator.startLanguageActivity(requireContext())
             }
         }
     }

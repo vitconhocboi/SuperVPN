@@ -14,6 +14,7 @@ import com.akmobile.supervpn.home.HomeFragment
 import com.akmobile.supervpn.settings.SettingFragment
 import com.akmobile.supervpn.settings.appproxy.AppProxyFragment
 import com.akmobile.supervpn.settings.dns.DNSFragment
+import com.common.baseui.BaseAppConfig
 import com.google.firebase.FirebaseApp
 import com.google.firebase.firestore.FirebaseFirestore
 import com.simple.libads.setVisible
@@ -76,9 +77,9 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                 showFragment(mSettingFragment)
             }
 
-            cbSelectAll.setOnClickListener {
-
-            }
+//            cbSelectAll.setOnClickListener {
+//
+//            }
         }
 
         onBackPressedDispatcher.addCallback(
@@ -140,6 +141,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                 binding.homeActionBar.setVisible(false)
                 binding.subActionbar.setVisible(false)
                 binding.dnsActionBar.setVisible(true)
+                binding.ivSwitch.isSelected = BaseAppConfig.dnsServer.isNotEmpty()
             }
 
             else -> {
