@@ -2,6 +2,7 @@ package com.akmobile.supervpn.network
 
 import com.akmobile.supervpn.network.tcpip.CommonMethods
 import com.akmobile.supervpn.utils.Constant
+import com.common.baseui.BaseAppConfig
 import java.util.Locale
 
 class ProxyConfig {

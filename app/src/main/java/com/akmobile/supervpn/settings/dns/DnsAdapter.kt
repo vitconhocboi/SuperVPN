@@ -38,19 +38,8 @@ class DnsAdapter @Inject constructor() : BaseAdapter<DnsUI, BaseViewHolder<DnsUI
                 lnMain.isSelected = data.active
 
                 lnMain.setOnClickNoDoubleClick {
-                    activeProxy(data.id)
-                }
-            }
-        }
-
-        private fun activeProxy(activeId: String) {
-            datas.forEachIndexed { index, proxy ->
-                if (proxy?.id == activeId) {
-                    proxy.active = !proxy.active
-                    notifyItemChanged(index)
-                } else if (proxy?.id != activeId && proxy?.active == true) {
-                    proxy.active = false
-                    notifyItemChanged(index)
+                    data.active = !data.active
+                    notifyItemChanged(position)
                 }
             }
         }

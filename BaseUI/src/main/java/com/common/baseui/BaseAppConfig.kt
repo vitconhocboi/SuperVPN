@@ -74,4 +74,11 @@ object BaseAppConfig {
         set(value) {
             SharedPrefs.instance.put(KEY_APP_INSTALL_ID, value)
         }
+
+    private const val KEY_DNS_SERVER = "DNS_SERVER"
+    var dnsServer: String
+        get() = SharedPrefs.instance[KEY_DNS_SERVER, String::class.java, ""]
+        set(value) {
+            SharedPrefs.instance.put(KEY_DNS_SERVER, value)
+        }
 }

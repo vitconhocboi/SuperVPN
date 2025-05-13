@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.akmobile.supervpn.base.ProductFragment
 import com.akmobile.supervpn.databinding.FragmentDnsBinding
+import com.common.baseui.BaseAppConfig
 import com.common.baseui.extension.setVisible
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -33,6 +34,15 @@ class DNSFragment : ProductFragment<FragmentDnsBinding>() {
                     mPagerAdapter.updateData(it)
                 }
                 progress.setVisible(false)
+            }
+
+            btnSave.setOnClickListener {
+                val dns = mDnsModel.allDNS.value?.filter { it.active }?.map { it.server }
+                if (dns != null) {
+                    BaseAppConfig.dnsServer = dns.joinToString(",")
+                } else {
+                    BaseAppConfig.dnsServer = ""
+                }
             }
         }
     }
