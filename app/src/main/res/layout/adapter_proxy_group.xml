@@ -50,17 +50,17 @@
                 android:textSize="@dimen/text_normal"
                  />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvProxyIp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_bold"
-                android:gravity="center_vertical"
-                android:text="103.23.23.123"
-                android:textColor="@color/gray_2"
-                android:textSize="@dimen/text_normal"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+<!--            <androidx.appcompat.widget.AppCompatTextView-->
+<!--                android:id="@+id/tvProxyIp"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fontFamily="@font/inter_bold"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:text="103.23.23.123"-->
+<!--                android:textColor="@color/gray_2"-->
+<!--                android:textSize="@dimen/text_normal"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/tvTitle" />-->
         </LinearLayout>
         <!--        <androidx.appcompat.widget.AppCompatImageView-->
         <!--            android:id="@+id/ivCollapse"-->

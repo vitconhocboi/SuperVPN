@@ -1,8 +1,11 @@
 package com.akmobile.supervpn.proxy
 
+import android.annotation.SuppressLint
+import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.akmobile.supervpn.base.ProductFragment
 import com.akmobile.supervpn.databinding.FragmentProxyBinding
 import com.akmobile.supervpn.db.VpnAppItemDB
@@ -12,6 +15,7 @@ import com.common.baseui.extension.bindFlowCreate
 import com.common.baseui.extension.processResultData
 import com.common.baseui.extension.setVisible
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -29,6 +33,7 @@ class ProxyFragment : ProductFragment<FragmentProxyBinding>() {
         return FragmentProxyBinding.inflate(inflater, container, false)
     }
 
+    @SuppressLint("HardwareIds")
     override fun initView() {
         super.initView()
         with(binding) {
@@ -53,14 +58,19 @@ class ProxyFragment : ProductFragment<FragmentProxyBinding>() {
                 progress.setVisible(false)
             }
 
-            mPagerAdapter.onItemClick = { position, item ->
-                if (item.active) {
-                    mProxyViewModel.setActiveProxy(item)
-                } else {
-                    mProxyViewModel.setActiveProxy(null)
+            mPagerAdapter.onItemClick = { _, item ->
+                val deviceId = Settings.Secure.getString(
+                    requireContext().contentResolver, Settings.Secure.ANDROID_ID
+                )
+                lifecycleScope.launch {
+                    if (item.active) {
+                        mProxyViewModel.setActiveProxy(item, deviceId)
+                    } else {
+                        mProxyViewModel.setActiveProxy(null, deviceId)
+                    }
+                    mPagerAdapter.notifyDataSetChanged()
+                    Navigator.startMainActivity(requireContext(), "")
                 }
-                mPagerAdapter.notifyDataSetChanged()
-                Navigator.startMainActivity(requireContext(), item.id)
             }
         }
     }

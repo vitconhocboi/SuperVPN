@@ -82,12 +82,12 @@ class ProxyRepository @Inject constructor(private val database: VpnDatabase) : P
             ProxyGroupUI(it.key, it.value.find { it.active } != null, it.value.map { it.mapToUI() })
         }
 
-        val activeGroup = group.find(ProxyGroupUI::collapsed)
-        if (activeGroup != null) {
-            activeGroup.collapsed = true
-        } else {
-            group.first().collapsed = true
-        }
+//        val activeGroup = group.find(ProxyGroupUI::collapsed)
+//        if (activeGroup != null) {
+//            activeGroup.collapsed = true
+//        } else {
+//            group.first().collapsed = true
+//        }
 
         emit(ResultData.success(group))
     }

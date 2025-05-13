@@ -150,9 +150,8 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 
     private val updateRunnable = object : Runnable {
         override fun run() {
-            val start =
-                context?.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE)
-                    ?.getInt("start", 0)
+            val start = context?.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE)
+                ?.getInt("start", 0)
             val diff = System.currentTimeMillis().toInt() / 1000 - start!!
             binding.tvTime.text = formatSecondsToTime(diff)
             handler.postDelayed(this, interval)
@@ -170,19 +169,15 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                     password = BaseAppConfig.proxyPass,
                     type = BaseAppConfig.proxyType
                 )
-                ProxySpeedTest().testProxy(testProxy,
-                    callback = { download, upload ->
-                        binding.tvTrafficDownload.text = download
-                        binding.tvTrafficUpload.text = upload
-                    }
-                )
+                ProxySpeedTest().testProxy(testProxy, callback = { download, upload ->
+                    binding.tvTrafficDownload.text = download
+                    binding.tvTrafficUpload.text = upload
+                })
             } else {
-                ProxySpeedTest().testProxy(null,
-                    callback = { download, upload ->
-                        binding.tvTrafficDownload.text = download
-                        binding.tvTrafficUpload.text = upload
-                    }
-                )
+                ProxySpeedTest().testProxy(null, callback = { download, upload ->
+                    binding.tvTrafficDownload.text = download
+                    binding.tvTrafficUpload.text = upload
+                })
             }
             handler.postDelayed(this, 10000)
         }
@@ -219,11 +214,11 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 ivFlag.setImageResource(Utils.getFlag(BaseAppConfig.proxyCountry))
                 tvProxyLocation.text = requireContext().getString(
                     context.resources.getIdentifier(
-                        BaseAppConfig.proxyCountry,
-                        "string",
-                        requireContext().packageName
+                        BaseAppConfig.proxyCountry, "string", requireContext().packageName
                     )
                 )
+                tvProxyIp.setVisible(true)
+                tvProxyIp.text = BaseAppConfig.proxyHost
                 val typeface = ResourcesCompat.getFont(context, R.font.inter_bold)
                 tvProxyLocation.typeface = typeface
                 tvProxyLocation.setTextColor(resources.getColor(R.color.language_item_text_color))
@@ -235,6 +230,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 BaseAppConfig.proxyUser = ""
                 BaseAppConfig.proxyPass = ""
                 tvProxyLocation.text = getString(R.string.ip_proxy)
+                tvProxyIp.setVisible(false)
                 val typeface = ResourcesCompat.getFont(context, R.font.inter_normal)
                 tvProxyLocation.typeface = typeface
                 tvProxyLocation.setTextColor(resources.getColor(R.color.green_1))

@@ -22,12 +22,12 @@
             android:id="@+id/connectTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/size8"
             android:fontFamily="@font/inter_bold"
             android:text="@string/disconnected"
             android:textColor="@color/white"
-            android:layout_marginBottom="@dimen/size8"
             android:textSize="@dimen/size28"
-            android:visibility="visible"/>
+            android:visibility="visible" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvTime"
@@ -38,7 +38,7 @@
             android:text="01:30:00"
             android:textColor="@color/white"
             android:textSize="@dimen/size36"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <LinearLayout
             android:id="@+id/lnConnecting"
@@ -197,8 +197,8 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/download"
                     android:layout_marginRight="@dimen/size16"
+                    android:text="@string/download"
                     android:textColor="@color/white"
                     android:textSize="@dimen/size12" />
 
@@ -238,16 +238,36 @@
                 android:layout_height="@dimen/size32"
                 android:src="@drawable/flag_us" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvProxyLocation"
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/size8"
                 android:layout_weight="1"
-                android:text="United States"
-                android:fontFamily="@font/inter_bold"
-                android:textColor="@color/language_item_text_color"
-                android:textFontWeight="600" />
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvProxyLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size8"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="United States"
+                    android:textColor="@color/language_item_text_color"
+                    android:textFontWeight="600" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvProxyIp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size8"
+                    android:textFontWeight="600"
+                    android:fontFamily="@font/inter_normal"
+                    android:gravity="center_vertical"
+                    android:text="103.23.23.123"
+                    android:textColor="@color/gray_2"
+                    android:textSize="@dimen/text_normal"
+                    android:visibility="gone"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivSelectProxy"
@@ -259,46 +279,46 @@
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-<!--        <androidx.appcompat.widget.LinearLayoutCompat-->
-<!--            android:id="@+id/pn_proxy_selected"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="@drawable/bg_setting_pro2"-->
-<!--            android:orientation="horizontal"-->
-<!--            android:padding="@dimen/size16">-->
+        <!--        <androidx.appcompat.widget.LinearLayoutCompat-->
+        <!--            android:id="@+id/pn_proxy_selected"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:background="@drawable/bg_setting_pro2"-->
+        <!--            android:orientation="horizontal"-->
+        <!--            android:padding="@dimen/size16">-->
 
-<!--            <androidx.appcompat.widget.LinearLayoutCompat-->
-<!--                android:id="@+id/pnProxyInfo"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:visibility="visible">-->
+        <!--            <androidx.appcompat.widget.LinearLayoutCompat-->
+        <!--                android:id="@+id/pnProxyInfo"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="match_parent"-->
+        <!--                android:visibility="visible">-->
 
-<!--                <androidx.appcompat.widget.AppCompatImageView-->
-<!--                    android:id="@+id/ivFlag"-->
-<!--                    android:layout_width="@dimen/size48"-->
-<!--                    android:layout_height="@dimen/size48"-->
-<!--                    android:src="@drawable/flag_us" />-->
+        <!--                <androidx.appcompat.widget.AppCompatImageView-->
+        <!--                    android:id="@+id/ivFlag"-->
+        <!--                    android:layout_width="@dimen/size48"-->
+        <!--                    android:layout_height="@dimen/size48"-->
+        <!--                    android:src="@drawable/flag_us" />-->
 
-<!--                <androidx.appcompat.widget.LinearLayoutCompat-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:layout_marginLeft="@dimen/size16"-->
-<!--                    android:orientation="vertical">-->
+        <!--                <androidx.appcompat.widget.LinearLayoutCompat-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="match_parent"-->
+        <!--                    android:layout_marginLeft="@dimen/size16"-->
+        <!--                    android:orientation="vertical">-->
 
-<!--                    <androidx.appcompat.widget.AppCompatTextView-->
-<!--                        android:id="@+id/tvProxyLocation"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="match_parent"-->
-<!--                        android:textColor="@color/language_item_text_color"-->
-<!--                        android:text="United States - Newyork"-->
-<!--                        android:textSize="@dimen/size16"-->
-<!--                        android:textFontWeight="600"-->
-<!--                        android:fontFamily="@font/inter_bold"-->
-<!--                        android:gravity="center_vertical"-->
-<!--                        />-->
-<!--                </androidx.appcompat.widget.LinearLayoutCompat>-->
-<!--            </androidx.appcompat.widget.LinearLayoutCompat>-->
-<!--        </androidx.appcompat.widget.LinearLayoutCompat>-->
+        <!--                    <androidx.appcompat.widget.AppCompatTextView-->
+        <!--                        android:id="@+id/tvProxyLocation"-->
+        <!--                        android:layout_width="match_parent"-->
+        <!--                        android:layout_height="match_parent"-->
+        <!--                        android:textColor="@color/language_item_text_color"-->
+        <!--                        android:text="United States - Newyork"-->
+        <!--                        android:textSize="@dimen/size16"-->
+        <!--                        android:textFontWeight="600"-->
+        <!--                        android:fontFamily="@font/inter_bold"-->
+        <!--                        android:gravity="center_vertical"-->
+        <!--                        />-->
+        <!--                </androidx.appcompat.widget.LinearLayoutCompat>-->
+        <!--            </androidx.appcompat.widget.LinearLayoutCompat>-->
+        <!--        </androidx.appcompat.widget.LinearLayoutCompat>-->
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.constraintlayout.widget.ConstraintLayout>

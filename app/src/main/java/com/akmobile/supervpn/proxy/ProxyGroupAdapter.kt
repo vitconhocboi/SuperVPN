@@ -12,10 +12,10 @@ import com.common.baseui.extension.setOnClickNoDoubleClick
 import com.common.baseui.extension.setVisible
 import javax.inject.Inject
 
-class ProxyGroupAdapter @Inject constructor() : BaseAdapter<ProxyUI, BaseViewHolder<ProxyUI>>() {
+class ProxyGroupAdapter @Inject constructor() : BaseAdapter<ProxyGroupUI, BaseViewHolder<ProxyGroupUI>>() {
     override fun onCreateViewHolder(
         parent: ViewGroup, viewType: Int
-    ): BaseViewHolder<ProxyUI> {
+    ): BaseViewHolder<ProxyGroupUI> {
         return ProxyGroupViewHolder(
             AdapterProxyGroupBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
@@ -26,8 +26,8 @@ class ProxyGroupAdapter @Inject constructor() : BaseAdapter<ProxyUI, BaseViewHol
 //    var onProxyClick: ((position: Int, item: ProxyUI) -> Unit)? = null
 
     inner class ProxyGroupViewHolder(private val mViewBinding: AdapterProxyGroupBinding) :
-        BaseViewHolder<ProxyUI>(mViewBinding.root) {
-        override fun bindData(position: Int, data: ProxyUI) {
+        BaseViewHolder<ProxyGroupUI>(mViewBinding.root) {
+        override fun bindData(position: Int, data: ProxyGroupUI) {
             mViewBinding.apply {
                 ivFlag.setImageResource(Utils.getFlag(data.country))
                 tvTitle.setText(
@@ -38,12 +38,13 @@ class ProxyGroupAdapter @Inject constructor() : BaseAdapter<ProxyUI, BaseViewHol
                     )
                 )
 
-                tvProxyIp.text = data.host
+//                tvProxyIp.text = data.host
 
                 lnMain.isSelected = data.active
 
                 lnMain.setOnClickNoDoubleClick {
                     data.active = !data.active
+                    notifyItemChanged(position)
                     onItemClick?.invoke(position, data)
                 }
 
