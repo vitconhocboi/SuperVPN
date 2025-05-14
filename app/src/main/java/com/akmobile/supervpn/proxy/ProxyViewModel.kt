@@ -72,6 +72,7 @@ class ProxyViewModel @Inject constructor(
 
     suspend fun setActiveProxy(item: ProxyGroupUI?, deviceId: String) {
         if (item != null) {
+            BaseAppConfig.proxyCountry = item.country
             var result = FirebaseFirestore.getInstance().collection("proxies")
                 .whereArrayContains("devices", deviceId).get().await()
             var owned = false
@@ -116,7 +117,6 @@ class ProxyViewModel @Inject constructor(
                     )
                 ).await()
             }
-            BaseAppConfig.proxyCountry = item.country
         } else {
             var result = FirebaseFirestore.getInstance().collection("proxies")
                 .whereArrayContains("devices", deviceId).get().await()

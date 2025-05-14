@@ -112,11 +112,38 @@ class PrivoxyManager(private val context: Context) {
         val actionFile = File(privoxyDir, "default.action")
         Timber.tag(Constant.TAG).d("createConfigFile: $actionFile")
         val proxyType = BaseAppConfig.proxyType
+        if (BaseAppConfig.adsBlock) {
+            actionFile.writeText(
+                """
+{+block{Doubleclick banners.} +handle-as-image}
+*.doubleclick.net
+.doubleclick.net
+ads.pubmatic.com
+ads.betweendigital.com
+ads.stickyadstv.com
+*adsystem.com
+*.smartadserver.com
+*.googlesyndication.com
+pix.pubpowerplatform.io
+*.adnxs.com
+*.creativecdn.com
+*.unrulymedia.com
+*.pubmatic.com
+*.richaudience.com
+*.aralego.com
+*.googleadservices.com
+.googleadservices.com
+prebid.*
 
-        actionFile.writeText(
-            """
+
 """.replaceIndent()
-        )
+            )
+        } else {
+            actionFile.writeText(
+                """
+""".replaceIndent()
+            )
+        }
 
         if (proxyType.lowercase() == "http") {
             val proxyUser = BaseAppConfig.proxyUser
@@ -151,7 +178,10 @@ ${getForwardSettings()}
         val proxyPort = BaseAppConfig.proxyPort
         val proxyUser = BaseAppConfig.proxyUser
         val proxyPass = BaseAppConfig.proxyPass
-        Log.d(Constant.TAG, "upstream to proxy: $proxyType://$proxyUser:$proxyPass@$proxyHost:$proxyPort")
+        Log.d(
+            Constant.TAG,
+            "upstream to proxy: $proxyType://$proxyUser:$proxyPass@$proxyHost:$proxyPort"
+        )
 
         if (proxyType.isNotEmpty() && proxyHost.isNotEmpty() && proxyPort.isNotEmpty()) {
             if (proxyType.lowercase() == "http") {

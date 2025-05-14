@@ -1,5 +1,6 @@
 package com.akmobile.supervpn.splash
 
+import android.annotation.SuppressLint
 import android.content.res.Resources
 import android.view.LayoutInflater
 import androidx.lifecycle.lifecycleScope
@@ -12,6 +13,7 @@ import com.akmobile.supervpn.utils.NetworkUtils
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+@SuppressLint("CustomSplashScreen")
 class SplashActivity : ProductActivity<ActivitySplashBinding>() {
     override fun bindingProvider(inflater: LayoutInflater): ActivitySplashBinding {
         return ActivitySplashBinding.inflate(inflater)
