@@ -52,11 +52,17 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
         )
     }
 
+    companion object {
+        private const val ADVERTISING_ID_PERMISSION = 1001
+    }
+
     override fun bindingProvider(inflater: LayoutInflater): ActivityMainBinding {
         return ActivityMainBinding.inflate(inflater)
     }
 
     override fun initView() {
+        requestAdvertisingIdPermission()
+        
         mListFragment.add(mHomeFragment)
         mListFragment.add(mSettingFragment)
         mListFragment.add(mAppProxyFragment)
@@ -166,5 +172,33 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
 
     fun showDns() {
         showFragment(mDnsFragment)
+    }
+
+    private fun checkAdvertisingIdPermission(): Boolean {
+        return checkSelfPermission(android.Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED
+    }
+
+    private fun requestAdvertisingIdPermission() {
+        if (!checkAdvertisingIdPermission()) {
+            requestPermissions(
+                arrayOf(android.Manifest.permission.INTERNET),
+                ADVERTISING_ID_PERMISSION
+            )
+        }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        when (requestCode) {
+            ADVERTISING_ID_PERMISSION -> {
+                if (grantResults.isNotEmpty() && grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+                    Toast.makeText(this, "Permission denied. Some features may not work properly", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
     }
 }

@@ -4,6 +4,9 @@ import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.akmobile.supervpn.api.ApiService
+import com.akmobile.supervpn.api.DisconnectRequest
+import com.akmobile.supervpn.api.ProxyRequest
 import com.akmobile.supervpn.network.LocalVpnService
 import com.common.baseui.BaseAppConfig
 import com.common.baseui.ResultData
@@ -19,7 +22,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ProxyViewModel @Inject constructor(
-    private val proxyUseCase: ProxyInterface, private val proxyUpdate: ProxyConnection
+    private val proxyUseCase: ProxyInterface,
+    private val proxyUpdate: ProxyConnection,
+    private val apiService: ApiService  // Add API service injection
 ) : ViewModel(), ISuperVpnProxyUpdate {
 //    val allProxy = MutableStateFlow<ResultData<List<ProxyGroupUI>>>(ResultData.standby())
 
@@ -29,27 +34,23 @@ class ProxyViewModel @Inject constructor(
 
     fun getAllProxy(context: Context) {
         viewModelScope.launch(Dispatchers.IO) {
-//            proxyUseCase.getAllProxy().collect { allProxy.value = it }
-            FirebaseApp.initializeApp(context)
-
-            val listProxies = ArrayList<ProxyGroupUI>()
-
-            val db = FirebaseFirestore.getInstance()
-            val result = db.collection("proxies").get().await()
-
-            val countrySet = mutableSetOf<String>();
-            for (document in result) {
-                countrySet.add(document.data["country"] as String)
+            try {
+                val response = apiService.getCountries()
+                if (response.isSuccessful) {
+                    response.body()?.let { countriesResponse ->
+                        val listProxies = countriesResponse.countries.map { country ->
+                            ProxyGroupUI(
+                                country = country,
+                                active = country == BaseAppConfig.proxyCountry
+                            )
+                        }
+                        allProxy.postValue(listProxies)
+                    }
+                }
+            } catch (e: Exception) {
+                // Handle error case
+                allProxy.postValue(emptyList())
             }
-
-            for (country in countrySet) {
-                val proxyCountry =
-                    ProxyGroupUI(country = country, active = country == BaseAppConfig.proxyCountry)
-                listProxies.add(proxyCountry)
-            }
-
-            allProxy.postValue(listProxies)
-
         }
     }
 
@@ -70,76 +71,53 @@ class ProxyViewModel @Inject constructor(
 
     }
 
-    suspend fun setActiveProxy(item: ProxyGroupUI?, deviceId: String) {
-        if (item != null) {
+    suspend fun setActiveProxy(item: ProxyGroupUI?, deviceId: String?) {
+        if (item != null && deviceId != null) {
             BaseAppConfig.proxyCountry = item.country
-            var result = FirebaseFirestore.getInstance().collection("proxies")
-                .whereArrayContains("devices", deviceId).get().await()
-            var owned = false
-            for (proxy in result) {
-                if (proxy.get("country") != item.country || owned) {
-                    val devices = result.documents[0].data?.get("devices") as List<*>
-                    FirebaseFirestore.getInstance().collection("proxies").document(proxy.id)
-                        .update(
-                            mutableMapOf(
-                                "used_count" to (proxy.data?.get("used_count") as Long - 1),
-                                "devices" to devices.minus(deviceId)
-                            )
-                        ).await()
+            
+            // Call API to assign proxy
+            val request = ProxyRequest(user_id = deviceId, country = item.country)
+            val response = apiService.assignProxy(request)
+            
+            if (response.isSuccessful) {
+                val assignResponse = response.body()
+                if (assignResponse != null && assignResponse.proxy != null) {
+                    // Parse the proxy string (expected format: "ip:port:user:pass:type")
+                    val proxyParts = assignResponse.proxy.split(":")
+                    if (proxyParts.size == 5) {
+                        // Update proxy configuration from API response
+                        BaseAppConfig.apply {
+                            proxyHost = proxyParts[1]
+                            proxyPort = proxyParts[2]
+                            proxyUser = proxyParts[3]
+                            proxyPass = proxyParts[4]
+                            proxyType = proxyParts[0]
+                        }
+                    } else {
+                        throw Exception("Invalid proxy string format")
+                    }
                 } else {
-                    owned = true
-                    BaseAppConfig.proxyHost = proxy.get("host") as String
-                    BaseAppConfig.proxyPort = proxy.get("port") as String
-                    BaseAppConfig.proxyUser = proxy.get("user") as String
-                    BaseAppConfig.proxyPass = proxy.get("pass") as String
-                    BaseAppConfig.proxyType = proxy.get("type") as String
+                    throw Exception(assignResponse?.error ?: "Empty proxy response")
                 }
-            }
-
-            if (!owned) {
-                result = FirebaseFirestore.getInstance().collection("proxies")
-                    .orderBy("used_count", Query.Direction.ASCENDING).limit(1).get().await()
-                val proxy = result.documents[0]
-                BaseAppConfig.proxyHost = proxy.get("host") as String
-                BaseAppConfig.proxyPort = proxy.get("port") as String
-                BaseAppConfig.proxyUser = proxy.get("user") as String
-                BaseAppConfig.proxyPass = proxy.get("pass") as String
-                BaseAppConfig.proxyType = proxy.get("type") as String
-
-                val devices = proxy.data?.get("devices") as List<*>
-
-                FirebaseFirestore.getInstance().collection("proxies").document(proxy.id).update(
-                    mutableMapOf(
-                        "used_count" to (proxy.data?.get("used_count") as Long + 1),
-                        "devices" to devices.plus(
-                            deviceId
-                        )
-                    )
-                ).await()
+            } else {
+                throw Exception("Failed to assign proxy: ${response.code()}")
             }
         } else {
-            var result = FirebaseFirestore.getInstance().collection("proxies")
-                .whereArrayContains("devices", deviceId).get().await()
-            for (proxy in result) {
-                val devices = result.documents[0].data?.get("devices") as List<*>
-                FirebaseFirestore.getInstance().collection("proxies").document(proxy.id)
-                    .update(
-                        mutableMapOf(
-                            "used_count" to (proxy.data?.get("used_count") as Long - 1),
-                            "devices" to devices.minus(deviceId)
-                        )
-                    ).await()
+            // Reset proxy when item is null
+            BaseAppConfig.apply {
+                proxyHost = ""
+                proxyPort = ""
+                proxyUser = ""
+                proxyPass = ""
+                proxyType = ""
+                proxyCountry = ""
             }
-            BaseAppConfig.proxyHost = ""
-            BaseAppConfig.proxyPort = ""
-            BaseAppConfig.proxyUser = ""
-            BaseAppConfig.proxyPass = ""
-            BaseAppConfig.proxyType = ""
-            BaseAppConfig.proxyCountry = ""
+            
+            // Notify API about disconnection if we have a device ID
+            if (deviceId != null) {
+                apiService.disconnect(DisconnectRequest(user_id = deviceId))
+            }
         }
-//        viewModelScope.launch(Dispatchers.IO) {
-//            proxyUseCase.setActiveProxy(id)
-//        }
     }
 
     fun startProxy(context: Context?, allowApp: List<String>?) {

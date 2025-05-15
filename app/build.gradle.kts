@@ -127,6 +127,12 @@ dependencies {
     implementation(libs.firebase.crashlytics.ktx)
     implementation(libs.firebase.firestore.ktx)
     implementation(libs.okhttp)
+    implementation("com.google.android.gms:play-services-ads-identifier:18.2.0")
+    //retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation (libs.logging.interceptor)
+    implementation (libs.okhttp)
 }
 
 // Allow references to generated code

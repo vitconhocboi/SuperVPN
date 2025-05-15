@@ -14,4 +14,6 @@ object Utils {
             else -> R.drawable.ic_flag_default
         }
     }
+
+    const val BASE_URL = "http://173.212.215.54:5000/"
 }
