@@ -27,9 +27,7 @@ class SplashActivity : ProductActivity<ActivitySplashBinding>() {
                 progress += 5
                 binding.customProgressBar.progress = progress
             }
-            if (NetworkUtils.isInternetAvailable(this@SplashActivity)) {
-                nextScreen()
-            }
+            nextScreen()
         }
     }
 

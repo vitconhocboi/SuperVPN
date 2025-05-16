@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/backgroundColor"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/actionBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/black"
+        android:background="@color/backgroundColor"
         android:gravity="center_vertical"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -67,7 +67,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="@dimen/margin_16"
-            android:background="@color/gray_3"
             android:gravity="center"
             android:visibility="visible">
 

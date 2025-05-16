@@ -74,43 +74,60 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         when (status) {
             CONNECTING -> {
                 binding.connectTitle.invisible()
-                binding.tvTime.text = "00:00:00"
                 binding.tvTime.visible()
+                binding.lnDisconnecting.invisible()
                 binding.lnDisconnected.invisible()
                 binding.lnConnecting.visible()
                 binding.ivConnect.isEnabled = false
+                binding.lnConnected.invisible()
             }
 
             CONNECTED -> {
-                binding.ivConnect.isSelected = true
-                isConnected = true
+                binding.connectTitle.invisible()
+                binding.tvTime.visible()
+                binding.lnDisconnected.invisible()
+                binding.lnDisconnecting.invisible()
                 binding.lnConnecting.invisible()
-                binding.lnConnected.visible()
+                binding.ivConnect.isSelected = true
                 binding.ivConnect.isEnabled = true
+                isConnected = true
+                binding.lnConnected.visible()
             }
 
             DISCONNECTING -> {
-                binding.lnConnected.invisible()
+                binding.connectTitle.invisible()
+                binding.tvTime.visible()
+                binding.lnDisconnected.invisible()
                 binding.lnDisconnecting.visible()
+                binding.lnConnecting.invisible()
+                binding.ivConnect.isSelected = false
                 binding.ivConnect.isEnabled = false
+                isConnected = false
+                binding.lnConnected.invisible()
             }
 
             DISCONNECTED -> {
-                isConnected = false
-                binding.tvTime.invisible()
                 binding.connectTitle.visible()
-                binding.ivConnect.isSelected = false
-                binding.lnDisconnecting.invisible()
+                binding.tvTime.invisible()
                 binding.lnDisconnected.visible()
+                binding.lnDisconnecting.invisible()
+                binding.lnConnecting.invisible()
+                binding.ivConnect.isSelected = false
                 binding.ivConnect.isEnabled = true
+                binding.lnConnected.invisible()
+                isConnected = false
             }
 
             ERROR -> {
-                binding.ivConnect.isSelected = false
-                isConnected = false
-                binding.lnConnecting.invisible()
+                binding.connectTitle.visible()
+                binding.tvTime.invisible()
                 binding.lnDisconnected.visible()
-                binding.ivConnect.isEnabled = true
+                binding.lnDisconnecting.invisible()
+                binding.lnConnecting.invisible()
+                binding.ivConnect.isSelected = false
+                binding.ivConnect.isEnabled = false
+                binding.lnConnected.invisible()
+                isConnected = false
             }
         }
     }
@@ -148,15 +165,15 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         }
     }
 
-    private val updateRunnable = object : Runnable {
-        override fun run() {
-            val start = context?.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE)
-                ?.getInt("start", 0)
-            val diff = System.currentTimeMillis().toInt() / 1000 - start!!
-            binding.tvTime.text = formatSecondsToTime(diff)
-            handler.postDelayed(this, interval)
-        }
-    }
+//    private val updateRunnable = object : Runnable {
+//        override fun run() {
+//            val start = context?.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE)
+//                ?.getInt("start", 0)
+//            val diff = System.currentTimeMillis().toInt() / 1000 - start!!
+//            binding.tvTime.text = formatSecondsToTime(diff)
+//            handler.postDelayed(this, interval)
+//        }
+//    }
 
     private val speedTestRunnable = object : Runnable {
         override fun run() {
@@ -170,11 +187,6 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                     type = BaseAppConfig.proxyType
                 )
                 ProxySpeedTest().testProxy(testProxy, callback = { download, upload ->
-                    binding.tvTrafficDownload.text = download
-                    binding.tvTrafficUpload.text = upload
-                })
-            } else {
-                ProxySpeedTest().testProxy(null, callback = { download, upload ->
                     binding.tvTrafficDownload.text = download
                     binding.tvTrafficUpload.text = upload
                 })
@@ -260,7 +272,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 if (!isConnected) {
                     prepareVpn()
                 } else {
-                    handler.removeCallbacks(updateRunnable)
+//                    handler.removeCallbacks(updateRunnable)
                     vpnPermissionLauncher.unregister()
                     stopVpnService()
                 }
@@ -290,14 +302,14 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 
     override fun onStart() {
         super.onStart()
-        handler.post(updateRunnable)
+//        handler.post(updateRunnable)
         handler.post(speedTestRunnable)
         isLocalVpnServiceRunning(requireContext())
     }
 
     override fun onStop() {
         super.onStop()
-        handler.removeCallbacks(updateRunnable)
+//        handler.removeCallbacks(updateRunnable)
         handler.removeCallbacks(speedTestRunnable)
     }
 
@@ -311,6 +323,8 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         try {
             proxyViewModel.updateUI(DISCONNECTING)
             proxyViewModel.stopProxy(context)
+            binding.tvTrafficDownload.text = "--"
+            binding.tvTrafficUpload.text = "--"
 //            LocalVpnService.IsRunning = false
 //            isConnected = false
 //            binding.ivConnect.isSelected = false

@@ -1,6 +1,5 @@
 package com.akmobile.supervpn.main
 
-import android.Manifest
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.view.LayoutInflater
@@ -14,12 +13,10 @@ import com.akmobile.supervpn.home.HomeFragment
 import com.akmobile.supervpn.settings.SettingFragment
 import com.akmobile.supervpn.settings.appproxy.AppProxyFragment
 import com.akmobile.supervpn.settings.dns.DNSFragment
+import com.akmobile.supervpn.R
 import com.common.baseui.BaseAppConfig
-import com.google.firebase.FirebaseApp
-import com.google.firebase.firestore.FirebaseFirestore
 import com.simple.libads.setVisible
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 
 @AndroidEntryPoint
 class MainActivity : ProductActivity<ActivityMainBinding>() {
@@ -132,12 +129,14 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
 
         when (fragment) {
             is AppProxyFragment -> {
+                binding.lbSetting.text = getString(R.string.setting_app_proxy)
                 binding.homeActionBar.setVisible(false)
                 binding.subActionbar.setVisible(true)
                 binding.dnsActionBar.setVisible(false)
             }
 
             is SettingFragment -> {
+                binding.lbSetting.text = getString(R.string.setting)
                 binding.homeActionBar.setVisible(false)
                 binding.subActionbar.setVisible(true)
                 binding.dnsActionBar.setVisible(false)

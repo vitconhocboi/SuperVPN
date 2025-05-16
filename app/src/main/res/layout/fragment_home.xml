@@ -10,7 +10,7 @@
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="@drawable/bg_earth"
         android:gravity="center"
         android:orientation="vertical"
@@ -35,9 +35,9 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/size8"
             android:fontFamily="@font/inter_bold"
-            android:text="01:30:00"
+            android:text="@string/connected"
             android:textColor="@color/white"
-            android:textSize="@dimen/size36"
+            android:textSize="@dimen/size28"
             android:visibility="gone" />
 
         <LinearLayout
@@ -130,6 +130,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tap_to_connect"
+                android:fontFamily="@font/inter_normal"
                 android:textColor="@color/successColor"
                 android:textSize="@dimen/size14" />
         </LinearLayout>
@@ -165,6 +166,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/upload"
+                    android:fontFamily="@font/inter_normal"
                     android:textColor="@color/white"
                     android:textSize="@dimen/size12" />
 
@@ -199,6 +201,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="@dimen/size16"
                     android:text="@string/download"
+                    android:fontFamily="@font/inter_normal"
                     android:textColor="@color/white"
                     android:textSize="@dimen/size12" />
 

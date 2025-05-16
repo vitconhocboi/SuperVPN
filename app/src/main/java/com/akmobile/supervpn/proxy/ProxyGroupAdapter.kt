@@ -1,5 +1,6 @@
 package com.akmobile.supervpn.proxy
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.akmobile.supervpn.R
@@ -12,7 +13,8 @@ import com.common.baseui.extension.setOnClickNoDoubleClick
 import com.common.baseui.extension.setVisible
 import javax.inject.Inject
 
-class ProxyGroupAdapter @Inject constructor() : BaseAdapter<ProxyGroupUI, BaseViewHolder<ProxyGroupUI>>() {
+class ProxyGroupAdapter @Inject constructor() :
+    BaseAdapter<ProxyGroupUI, BaseViewHolder<ProxyGroupUI>>() {
     override fun onCreateViewHolder(
         parent: ViewGroup, viewType: Int
     ): BaseViewHolder<ProxyGroupUI> {
@@ -23,7 +25,11 @@ class ProxyGroupAdapter @Inject constructor() : BaseAdapter<ProxyGroupUI, BaseVi
         )
     }
 
-//    var onProxyClick: ((position: Int, item: ProxyUI) -> Unit)? = null
+    //    var onProxyClick: ((position: Int, item: ProxyUI) -> Unit)? = null
+    fun getStringSafely(context: Context, name: String): String? {
+        val resId = context.resources.getIdentifier(name, "string", context.packageName)
+        return if (resId != 0) context.getString(resId) else null
+    }
 
     inner class ProxyGroupViewHolder(private val mViewBinding: AdapterProxyGroupBinding) :
         BaseViewHolder<ProxyGroupUI>(mViewBinding.root) {
@@ -31,11 +37,7 @@ class ProxyGroupAdapter @Inject constructor() : BaseAdapter<ProxyGroupUI, BaseVi
             mViewBinding.apply {
                 ivFlag.setImageResource(Utils.getFlag(data.country))
                 tvTitle.setText(
-                    context.getString(
-                        context.resources.getIdentifier(
-                            data.country, "string", context.packageName
-                        )
-                    )
+                    getStringSafely(context = context, name = data.country) ?: "undefined"
                 )
 
 //                tvProxyIp.text = data.host
