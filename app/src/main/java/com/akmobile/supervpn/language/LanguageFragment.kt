@@ -39,6 +39,7 @@ class LanguageFragment : ProductFragment<FragmentLanguageBinding>() {
             }
         }
         mLangAdapter.updateData(datas)
+        mLangAdapter.focusToLang(BaseAppConfig.languageCode)
 
         binding.ivDone.setOnClickNoDoubleClick {
             BaseAppConfig.firstTimeSetup = false
