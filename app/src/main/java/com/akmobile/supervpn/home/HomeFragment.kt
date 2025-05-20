@@ -14,10 +14,13 @@ import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.app.ActivityCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import com.akmobile.supervpn.DialogVpnPermission
 
 import com.akmobile.supervpn.base.ProductFragment
 import com.akmobile.supervpn.databinding.FragmentHomeBinding
@@ -39,7 +42,9 @@ import com.akmobile.supervpn.network.ProxySpeedTest
 import com.akmobile.supervpn.scheduler.StopProxyScheduler
 import com.akmobile.supervpn.settings.appproxy.AppProxyViewModel
 import com.common.baseui.extension.context
+import com.simple.libads.NetworkUtils
 import com.simple.libads.setVisible
+import kotlin.system.exitProcess
 
 @AndroidEntryPoint
 class HomeFragment : ProductFragment<FragmentHomeBinding>() {
@@ -67,6 +72,10 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
                 startVpnService()
+            } else {
+                DialogVpnPermission().show(
+                    requireActivity().supportFragmentManager, "DialogVpnPermission"
+                )
             }
         }
 
@@ -292,11 +301,17 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     }
 
     private fun prepareVpn() {
-        val intent = VpnService.prepare(context)
-        if (intent != null) {
-            vpnPermissionLauncher.launch(intent)
+        if (NetworkUtils.isInternetAvailable(requireActivity())) {
+            val intent = VpnService.prepare(context)
+            if (intent != null) {
+                vpnPermissionLauncher.launch(intent)
+            } else {
+                startVpnService()
+            }
         } else {
-            startVpnService()
+            Toast.makeText(
+                requireContext(), "No internet connection", Toast.LENGTH_SHORT
+            ).show()
         }
     }
 

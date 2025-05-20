@@ -26,9 +26,7 @@ class ProxyViewModel @Inject constructor(
     private val proxyUpdate: ProxyConnection,
     private val apiService: ApiService  // Add API service injection
 ) : ViewModel(), ISuperVpnProxyUpdate {
-//    val allProxy = MutableStateFlow<ResultData<List<ProxyGroupUI>>>(ResultData.standby())
-
-    val allProxy = MutableLiveData<List<ProxyGroupUI>>()
+    val allProxy = MutableStateFlow<ResultData<List<ProxyGroupUI>>>(ResultData.standby())
 
     val isConnected = MutableLiveData(proxyUpdate.vpnState)
 
@@ -40,16 +38,15 @@ class ProxyViewModel @Inject constructor(
                     response.body()?.let { countriesResponse ->
                         val listProxies = countriesResponse.countries.map { country ->
                             ProxyGroupUI(
-                                country = country,
-                                active = country == BaseAppConfig.proxyCountry
+                                country = country, active = country == BaseAppConfig.proxyCountry
                             )
                         }
-                        allProxy.postValue(listProxies)
+                        allProxy.emit(ResultData.success(listProxies))
                     }
                 }
             } catch (e: Exception) {
                 // Handle error case
-                allProxy.postValue(emptyList())
+                allProxy.emit(ResultData.error(e))
             }
         }
     }
@@ -74,11 +71,11 @@ class ProxyViewModel @Inject constructor(
     suspend fun setActiveProxy(item: ProxyGroupUI?, deviceId: String?) {
         if (item != null && deviceId != null) {
             BaseAppConfig.proxyCountry = item.country
-            
+
             // Call API to assign proxy
             val request = ProxyRequest(user_id = deviceId, country = item.country)
             val response = apiService.assignProxy(request)
-            
+
             if (response.isSuccessful) {
                 val assignResponse = response.body()
                 if (assignResponse != null && assignResponse.proxy != null) {
@@ -112,7 +109,7 @@ class ProxyViewModel @Inject constructor(
                 proxyType = ""
                 proxyCountry = ""
             }
-            
+
             // Notify API about disconnection if we have a device ID
             if (deviceId != null) {
                 apiService.disconnect(DisconnectRequest(user_id = deviceId))
