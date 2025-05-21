@@ -49,6 +49,7 @@ import kotlin.system.exitProcess
 @AndroidEntryPoint
 class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     private val handler = Handler(Looper.getMainLooper())
+    private var state: String? = null
 
     companion object {
         public const val CONNECTING = "CONNECTING"
@@ -101,6 +102,10 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 binding.ivConnect.isEnabled = true
                 isConnected = true
                 binding.lnConnected.visible()
+                if (state == "RECONNECT") {
+                    state = "CONNECT"
+                    stopVpnService()
+                }
             }
 
             DISCONNECTING -> {
@@ -125,6 +130,10 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 binding.ivConnect.isEnabled = true
                 binding.lnConnected.invisible()
                 isConnected = false
+                if (state == "CONNECT") {
+                    state = ""
+                    startVpnService()
+                }
             }
 
             ERROR -> {
@@ -227,6 +236,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 
     override fun initView() {
         super.initView()
+        state = activity?.intent?.getStringExtra("RECONNECT")
 //        isLocalVpnServiceRunning(requireContext())
         // Đăng ký BroadcastReceiver
         with(binding) {

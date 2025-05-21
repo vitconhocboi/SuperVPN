@@ -45,7 +45,7 @@ class ProxyGroupAdapter @Inject constructor() :
                 lnMain.isSelected = data.active
 
                 lnMain.setOnClickNoDoubleClick {
-                    data.active = !data.active
+                    focusToProxy(position)
                     notifyItemChanged(position)
                     onItemClick?.invoke(position, data)
                 }
@@ -68,6 +68,18 @@ class ProxyGroupAdapter @Inject constructor() :
 //                    ivCollapse.setImageResource(if (data.collapsed) R.drawable.ic_arrow_down else R.drawable.ic_next_arrow)
 //                    rcvProxyItems.setVisible(data.collapsed)
 //                }
+            }
+        }
+    }
+
+    fun focusToProxy(position: Int) {
+        datas.forEachIndexed { index, item ->
+            if (position == index) {
+                item?.active = true
+                notifyItemChanged(index)
+            } else if (item?.active == true) {
+                item.active = false
+                notifyItemChanged(index)
             }
         }
     }

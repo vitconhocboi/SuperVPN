@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#00FFFFFF"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivEmotion"
+        android:layout_width="@dimen/size131"
+        android:layout_height="@dimen/size99"
+        android:layout_marginBottom="@dimen/size10"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/rate_content"
+        app:layout_constraintEnd_toEndOf="@id/rate_content"
+        app:layout_constraintStart_toStartOf="@id/rate_content" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rate_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:layout_marginBottom="@dimen/size10"
+        android:layout_marginHorizontal="@dimen/size10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size20"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/size30"
+            android:text="@string/text_rate_0"
+            android:textColor="#000000"
+            android:textFontWeight="400"
+            android:textSize="@dimen/text_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/tabLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size30"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            app:tabIndicatorHeight="0dp">
+
+            <LinearLayout
+                android:id="@+id/star1"
+                android:layout_width="@dimen/size60"
+                android:layout_height="@dimen/size60"
+                android:background="@drawable/bg_star_rate"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star_rate" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/star2"
+                android:layout_width="@dimen/size60"
+                android:layout_height="@dimen/size60"
+                android:background="@drawable/bg_star_rate"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star_rate" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/star3"
+                android:layout_width="@dimen/size60"
+                android:layout_height="@dimen/size60"
+                android:background="@drawable/bg_star_rate"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star_rate" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/star4"
+                android:layout_width="@dimen/size60"
+                android:layout_height="@dimen/size60"
+                android:background="@drawable/bg_star_rate"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star_rate" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/star_5"
+                android:layout_width="@dimen/size60"
+                android:layout_height="@dimen/size60"
+                android:background="@drawable/bg_star_rate"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star_rate" />
+            </LinearLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size6"
+            android:layout_marginRight="@dimen/size6"
+            android:src="@drawable/start_bright"
+            app:layout_constraintEnd_toEndOf="@+id/tabLayout"
+            app:layout_constraintTop_toTopOf="@+id/tabLayout" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linearLayoutCompat2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+            app:tabIndicatorHeight="0dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="@dimen/size215"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="right"
+                android:text="@string/text_rate_hint"
+                android:textColor="#1E90FF"
+                android:textFontWeight="400"
+                android:textSize="@dimen/text_medium" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size10"
+                android:src="@drawable/hand" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSubmit"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/size44"
+            android:layout_marginHorizontal="@dimen/size20"
+            android:layout_marginTop="@dimen/size40"
+            android:layout_marginBottom="@dimen/size20"
+            android:background="@drawable/bg_button_rate"
+            android:enabled="false"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center"
+            android:text="@string/text_rate"
+            android:textColor="#FFFFFF"
+            android:textFontWeight="500"
+            android:textSize="@dimen/size16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearLayoutCompat2"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    <androidx.appcompat.widget.LinearLayoutCompat-->
+    <!--        android:id="@+id/lnDislike"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="@dimen/size25"-->
+    <!--        android:background="@drawable/bg_transparent_ripple_media_shape"-->
+    <!--        android:gravity="center"-->
+    <!--        android:orientation="vertical"-->
+    <!--        android:padding="@dimen/size5"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/lnLike"-->
+    <!--        app:layout_constraintHorizontal_bias="0.5"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tvTitle">-->
+
+    <!--        <androidx.appcompat.widget.AppCompatImageView-->
+    <!--            android:layout_width="@dimen/size65"-->
+    <!--            android:layout_height="@dimen/size65"-->
+    <!--            android:src="@drawable/ic_dislike" />-->
+
+    <!--        <androidx.appcompat.widget.AppCompatTextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="@dimen/size8"-->
+    <!--            android:text="@string/dislike"-->
+    <!--            android:textColor="#666666"-->
+    <!--            android:textSize="@dimen/text_medium" />-->
+    <!--    </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+    <!--    <androidx.appcompat.widget.LinearLayoutCompat-->
+    <!--        android:id="@+id/lnLike"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="@dimen/size25"-->
+    <!--        android:background="@drawable/bg_transparent_ripple_media_shape"-->
+    <!--        android:gravity="center"-->
+    <!--        android:orientation="vertical"-->
+    <!--        android:padding="@dimen/size5"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.5"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/lnDislike"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tvTitle">-->
+
+    <!--        <androidx.appcompat.widget.AppCompatImageView-->
+    <!--            android:layout_width="@dimen/size65"-->
+    <!--            android:layout_height="@dimen/size65"-->
+    <!--            android:src="@drawable/ic_like" />-->
+
+    <!--        <androidx.appcompat.widget.AppCompatTextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="@dimen/size8"-->
+    <!--            android:text="@string/like"-->
+    <!--            android:textColor="@color/text_color_primary"-->
+    <!--            android:textSize="@dimen/text_medium" />-->
+    <!--    </androidx.appcompat.widget.LinearLayoutCompat>-->
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -9,12 +9,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.akmobile.supervpn.base.ProductFragment
 import com.akmobile.supervpn.databinding.FragmentProxyBinding
-import com.akmobile.supervpn.db.VpnAppItemDB
-import com.akmobile.supervpn.settings.appproxy.AppProxyViewModel
 import com.akmobile.supervpn.utils.Navigator
+import com.common.baseui.BaseAppConfig
 import com.common.baseui.ResultData
 import com.common.baseui.extension.bindFlowCreate
-import com.common.baseui.extension.processResultData
 import com.common.baseui.extension.setVisible
 import com.google.android.gms.ads.identifier.AdvertisingIdClient
 import dagger.hilt.android.AndroidEntryPoint
@@ -41,7 +39,7 @@ class ProxyFragment : ProductFragment<FragmentProxyBinding>() {
         super.initView()
         with(binding) {
             ivBack.setOnClickListener {
-                Navigator.startMainActivity(requireActivity(), null)
+                Navigator.startMainActivity(requireActivity())
             }
             ivReload.setOnClickListener {
 
@@ -85,6 +83,7 @@ class ProxyFragment : ProductFragment<FragmentProxyBinding>() {
             mPagerAdapter.onItemClick = { _, item ->
                 lifecycleScope.launch {
                     try {
+                        mPagerAdapter.notifyDataSetChanged()
                         val deviceId = try {
                             val adInfo = AdvertisingIdClient.getAdvertisingIdInfo(requireContext())
                             if (!adInfo.isLimitAdTrackingEnabled) {
@@ -102,14 +101,13 @@ class ProxyFragment : ProductFragment<FragmentProxyBinding>() {
                                 Settings.Secure.ANDROID_ID
                             )
                         }
-
+                        val reconnect = if (item.active && item.country != BaseAppConfig.proxyCountry) "RECONNECT" else ""
                         if (item.active) {
                             mProxyViewModel.setActiveProxy(item, deviceId)
                         } else {
                             mProxyViewModel.setActiveProxy(null, deviceId)
                         }
-                        mPagerAdapter.notifyDataSetChanged()
-                        Navigator.startMainActivity(requireContext(), "")
+                        Navigator.startMainActivity(requireContext(), reconnect)
                     } catch (e: Exception) {
                         Toast.makeText(
                             requireContext(),

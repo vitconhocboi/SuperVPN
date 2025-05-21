@@ -41,6 +41,11 @@ class LanguageFragment : ProductFragment<FragmentLanguageBinding>() {
         mLangAdapter.updateData(datas)
         mLangAdapter.focusToLang(BaseAppConfig.languageCode)
 
+        mLangAdapter.onItemClick = { position, item ->
+            languageCode = item.langCode
+            mLangAdapter.notifyItemChanged(position)
+        }
+
         binding.ivDone.setOnClickNoDoubleClick {
             BaseAppConfig.firstTimeSetup = false
             BaseAppConfig.languageCode = languageCode
@@ -51,7 +56,7 @@ class LanguageFragment : ProductFragment<FragmentLanguageBinding>() {
             }
 
             (activity as? LanguageActivity)?.apply {
-                Navigator.startMainActivity(this, null)
+                Navigator.startMainActivity(this)
                 finish()
             }
         }

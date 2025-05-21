@@ -49,7 +49,7 @@ class SplashActivity : ProductActivity<ActivitySplashBinding>() {
         if (BaseAppConfig.firstTimeSetup) {
             Navigator.startLanguageActivity(this)
         } else {
-            Navigator.startMainActivity(this, null)
+            Navigator.startMainActivity(this)
         }
         finish()
     }
