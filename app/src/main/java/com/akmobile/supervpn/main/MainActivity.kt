@@ -62,7 +62,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
 
     override fun initView() {
         requestAdvertisingIdPermission()
-        
+
         mListFragment.add(mHomeFragment)
         mListFragment.add(mSettingFragment)
         mListFragment.add(mAppProxyFragment)
@@ -101,7 +101,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                     } else if (isAppProxyFragment) {
                         showFragment(mSettingFragment)
                     } else {
-                        this@MainActivity.finish()
+                        finishAffinity()
                     }
                 }
 
@@ -134,8 +134,12 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
 
         fragmentTransaction.commitNow()
 
+        isAppProxyFragment = false
+        isSettingFragment = false
+
         when (fragment) {
             is AppProxyFragment -> {
+                isAppProxyFragment = true
                 binding.lbSetting.text = getString(R.string.setting_app_proxy)
                 binding.homeActionBar.setVisible(false)
                 binding.subActionbar.setVisible(true)
@@ -144,6 +148,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
             }
 
             is SettingFragment -> {
+                isSettingFragment = true
                 binding.lbSetting.text = getString(R.string.setting)
                 binding.homeActionBar.setVisible(false)
                 binding.subActionbar.setVisible(true)
@@ -152,6 +157,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
             }
 
             is DNSFragment -> {
+                isAppProxyFragment = true
                 binding.homeActionBar.setVisible(false)
                 binding.subActionbar.setVisible(false)
                 binding.dnsActionBar.setVisible(true)
@@ -167,12 +173,6 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                 binding.selectAll.setVisible(false)
             }
         }
-        isSettingFragment = fragment is SettingFragment
-//
-//        binding.homeActionBar.setVisible(!isSettingFragment && !isAppProxyFragment)
-//        binding.cbSelectAll.setVisible(false)
-//        binding.subActionbar.setVisible(isSettingFragment || isAppProxyFragment)
-//        binding.dnsActionBar.setVisible(fragment is DNSFragment)
     }
 
     fun showAppProxy() {
@@ -211,7 +211,11 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
         when (requestCode) {
             ADVERTISING_ID_PERMISSION -> {
                 if (grantResults.isNotEmpty() && grantResults[0] != PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(this, "Permission denied. Some features may not work properly", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this,
+                        "Permission denied. Some features may not work properly",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
         }

@@ -44,7 +44,7 @@ class DNSFragment : ProductFragment<FragmentDnsBinding>() {
                 } else {
                     BaseAppConfig.dnsServer = ""
                 }
-                Navigator.startMainActivity(requireContext(), "")
+                Navigator.startMainActivity(requireContext(), "RECONNECT")
             }
         }
     }

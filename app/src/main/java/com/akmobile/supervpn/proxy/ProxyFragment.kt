@@ -9,11 +9,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.akmobile.supervpn.base.ProductFragment
 import com.akmobile.supervpn.databinding.FragmentProxyBinding
-import com.akmobile.supervpn.db.VpnAppItemDB
-import com.akmobile.supervpn.settings.appproxy.AppProxyViewModel
 import com.akmobile.supervpn.utils.Navigator
+import com.common.baseui.BaseAppConfig
+import com.common.baseui.ResultData
 import com.common.baseui.extension.bindFlowCreate
-import com.common.baseui.extension.processResultData
 import com.common.baseui.extension.setVisible
 import com.google.android.gms.ads.identifier.AdvertisingIdClient
 import dagger.hilt.android.AndroidEntryPoint
@@ -40,7 +39,7 @@ class ProxyFragment : ProductFragment<FragmentProxyBinding>() {
         super.initView()
         with(binding) {
             ivBack.setOnClickListener {
-                Navigator.startMainActivity(requireActivity(), null)
+                Navigator.startMainActivity(requireActivity())
             }
             ivReload.setOnClickListener {
 
@@ -52,17 +51,39 @@ class ProxyFragment : ProductFragment<FragmentProxyBinding>() {
 //                    mPagerAdapter.updateData(it)
 //                })
 //            }
+            bindFlowCreate(mProxyViewModel.allProxy) { result ->
+                when (result.status) {
+                    ResultData.State.STANDBY -> {
 
-            mProxyViewModel.allProxy.observe(viewLifecycleOwner) { it ->
-                if (it.isNotEmpty()) {
-                    mPagerAdapter.updateData(it)
+                    }
+
+                    ResultData.State.LOADING -> {
+                        progress.setVisible(true)
+                    }
+
+                    ResultData.State.SUCCESS -> {
+                        val data = result.data ?: arrayListOf()
+                        if (data.isNotEmpty()) {
+                            mPagerAdapter.updateData(data)
+                            progress.setVisible(false)
+                        }
+                    }
+
+                    ResultData.State.ERROR -> {
+                        progress.setVisible(false)
+                        Toast.makeText(
+                            requireContext(),
+                            "Cannot get proxy",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
                 }
-                progress.setVisible(false)
             }
 
             mPagerAdapter.onItemClick = { _, item ->
                 lifecycleScope.launch {
                     try {
+                        mPagerAdapter.notifyDataSetChanged()
                         val deviceId = try {
                             val adInfo = AdvertisingIdClient.getAdvertisingIdInfo(requireContext())
                             if (!adInfo.isLimitAdTrackingEnabled) {
@@ -80,16 +101,19 @@ class ProxyFragment : ProductFragment<FragmentProxyBinding>() {
                                 Settings.Secure.ANDROID_ID
                             )
                         }
-
+                        val reconnect = if (item.active && item.country != BaseAppConfig.proxyCountry) "RECONNECT" else ""
                         if (item.active) {
                             mProxyViewModel.setActiveProxy(item, deviceId)
                         } else {
                             mProxyViewModel.setActiveProxy(null, deviceId)
                         }
-                        mPagerAdapter.notifyDataSetChanged()
-                        Navigator.startMainActivity(requireContext(), "")
+                        Navigator.startMainActivity(requireContext(), reconnect)
                     } catch (e: Exception) {
-                        Toast.makeText(requireContext(), "Cannot get proxy: ${e.message}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            requireContext(),
+                            "Cannot get proxy: ${e.message}",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                 }
             }

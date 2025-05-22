@@ -11,9 +11,9 @@ import com.akmobile.supervpn.proxy.ProxyFragment
 
 object Navigator {
 
-    fun startMainActivity(context: Context, proxyId: String?) {
+    fun startMainActivity(context: Context, reconnect: String = "") {
         context.startActivity(Intent(context, MainActivity::class.java).apply {
-            putExtra("ID", proxyId)
+            putExtra("state", reconnect)
         })
     }
 

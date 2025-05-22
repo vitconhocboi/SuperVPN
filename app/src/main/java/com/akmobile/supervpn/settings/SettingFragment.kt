@@ -1,39 +1,37 @@
 package com.akmobile.supervpn.settings
 
-import android.content.pm.ApplicationInfo
-import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
-import android.util.Log
+import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
-import com.akmobile.supervpn.base.ProductFragment
+import com.akmobile.pixelart.pixelcolor.dialog.DialogFeedback
+import com.akmobile.pixelart.pixelcolor.dialog.DialogRate
 import com.akmobile.supervpn.R
+import com.akmobile.supervpn.base.ProductFragment
 import com.akmobile.supervpn.databinding.FragmentSettingBinding
-import com.akmobile.supervpn.settings.appproxy.AppProxyUI
-import com.akmobile.supervpn.settings.appproxy.AppProxyFragment
-import com.akmobile.supervpn.utils.Constant
 import com.akmobile.supervpn.utils.Navigator
 import com.common.baseui.BaseAppConfig
-import com.simple.libads.setVisible
+import com.common.baseui.extension.setOnClickNoDoubleClick
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class SettingFragment(
-    val showAppProxy: () -> Unit,
-    val showDns: () -> Unit = {}
+    val showAppProxy: () -> Unit, val showDns: () -> Unit = {}
 ) : ProductFragment<FragmentSettingBinding>() {
 
     private val mViewModel: SettingViewModel by viewModels()
+
 
     override fun bindingProvider(
         inflater: LayoutInflater, container: ViewGroup?
     ): FragmentSettingBinding {
         return FragmentSettingBinding.inflate(inflater, container, false)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
     }
 
     override fun initView() {
@@ -74,6 +72,14 @@ class SettingFragment(
 
             rowLanguage.setOnClickListener {
                 Navigator.startLanguageActivity(requireContext())
+            }
+
+            rowRate.setOnClickNoDoubleClick {
+                DialogRate().show(childFragmentManager, "DialogRate")
+            }
+
+            rowFeedback.setOnClickNoDoubleClick {
+                DialogFeedback().show(childFragmentManager, "DialogFeedback")
             }
         }
     }
