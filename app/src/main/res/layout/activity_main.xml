@@ -59,7 +59,7 @@
                 android:background="@drawable/bg_ripple_transparent_oval"
                 android:foreground="?selectableItemBackgroundBorderless"
                 android:padding="@dimen/size3"
-                android:src="@drawable/ic_menu" />
+                android:src="@drawable/ic_setting" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -85,10 +85,17 @@
                 android:layout_marginStart="@dimen/margin_16"
                 android:layout_marginVertical="@dimen/margin_16"
                 android:layout_weight="1"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:gravity="bottom"
                 android:text="@string/setting"
                 android:textColor="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/selectAll"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginVertical="@dimen/size16"
+                android:src="@drawable/ic_select" />
 
 <!--            <androidx.appcompat.widget.AppCompatCheckBox-->
 <!--                android:id="@+id/cb_select_all"-->
@@ -98,6 +105,7 @@
 <!--                android:button="@null"-->
 <!--                android:checked="false"-->
 <!--                android:layout_marginEnd="@dimen/margin_big" />-->
+
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat

@@ -1,6 +1,7 @@
 package com.common.baseui
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -42,6 +43,7 @@ abstract class BindingActivity<T : ViewBinding> : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         if (::binding.isInitialized.not()) {
             binding = bindingProvider(layoutInflater)
             setContentView(binding.root)

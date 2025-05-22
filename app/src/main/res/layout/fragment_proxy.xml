@@ -38,6 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="@dimen/size16"
+            android:visibility="invisible"
             android:src="@drawable/ic_reload" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 

@@ -28,10 +28,12 @@
         <activity
             android:name=".proxy.ProxyActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.SuperVPN" />
         <activity
             android:name=".language.LanguageActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.SuperVPN" />
 
         <meta-data
@@ -41,6 +43,7 @@
         <activity
             android:name=".splash.SplashActivity"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.SuperVPN.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

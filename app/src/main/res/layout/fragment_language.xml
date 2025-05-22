@@ -21,13 +21,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_weight="1"
-            android:fontFamily="@font/pixeloid_sans_bold"
+            android:fontFamily="@font/inter_bold"
             android:gravity="start"
             android:includeFontPadding="false"
             android:text="@string/setting_language"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textFontWeight="1000"
             android:textSize="@dimen/text_huge"
             tools:ignore="SpUsage" />
 
