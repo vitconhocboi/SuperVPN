@@ -10,42 +10,61 @@
         android:id="@+id/recyclerViewApps"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_big"
+        android:layout_marginEnd="@dimen/margin_big"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/btn_cancel"
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/app_proxy_item" />
 
-    <androidx.appcompat.widget.AppCompatTextView
+
+    <LinearLayout
         android:id="@+id/btn_cancel"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="@dimen/margin_24"
+        android:layout_marginBottom="@dimen/margin_16"
         android:gravity="center"
-        android:paddingStart="@dimen/margin_medium"
-        android:paddingEnd="@dimen/margin_medium"
-        android:text="@string/btn_cancel"
-        android:textColor="@color/text_gray_2"
-        android:textAllCaps="true"
-        android:textAppearance="@style/App_TextAppearanceButton1"
+        android:weightSum="2"
+        android:layout_marginStart="@dimen/margin_big"
+        android:layout_marginEnd="@dimen/margin_big"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_ok"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerViewApps"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/btn_ok"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingStart="@dimen/margin_24"
-        android:paddingEnd="@dimen/margin_24"
-        android:text="@string/btn_save"
-        android:textColor="@color/successColor"
-        android:textAppearance="@style/App_TextAppearanceButton1"
-        app:layout_constraintStart_toEndOf="@+id/btn_cancel"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_cancel" />
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewApps"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_medium"
+            android:text="@string/btn_cancel"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:background="@drawable/bg_cancel_button"
+            android:textColor="@color/white"
+            android:textAppearance="@style/App_TextAppearanceButton2"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_ok"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:paddingStart="@dimen/margin_24"
+            android:paddingEnd="@dimen/margin_24"
+            android:text="@string/btn_save"
+            android:background="@drawable/bg_save_button"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:textColor="@color/white"
+            android:textAppearance="@style/App_TextAppearanceButton2" />
+
+    </LinearLayout>
+
+
+
+
 
     <ProgressBar
         android:id="@+id/progress"

@@ -14,7 +14,9 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class AppProxyFragment() :
+class AppProxyFragment(
+    val onSelect : () -> Unit
+) :
     ProductFragment<FragmentAppProxyBinding>() {
 
     @Inject
@@ -34,22 +36,22 @@ class AppProxyFragment() :
     override fun initView() {
         super.initView()
         appProxyAdapter = AppProxyAdapter()
-        bindFlowCreate(allowAppViewModel.allowApp) { allowApp ->
-            if (allowApp.data?.isEmpty() == true) {
-                val listMergeAllowApp = appProxyAdapter.datas.map { app ->
-                    app?.allowed = true
-                    app
-                }
-                appProxyAdapter.updateData(listMergeAllowApp)
-            } else {
-                val listMergeAllowApp = appProxyAdapter.datas.map { app ->
-                    app?.allowed =
-                        (allowApp.data?.find { allowed -> app?.packageName == allowed.packageName } != null)
-                    app
-                }
-                appProxyAdapter.updateData(listMergeAllowApp)
-            }
-        }
+//        bindFlowCreate(allowAppViewModel.allowApp) { allowApp ->
+//            if (allowApp.data?.isEmpty() == true) {
+//                val listMergeAllowApp = appProxyAdapter.datas.map { app ->
+//                    app?.allowed = true
+//                    app
+//                }
+//                appProxyAdapter.updateData(listMergeAllowApp)
+//            } else {
+//                val listMergeAllowApp = appProxyAdapter.datas.map { app ->
+//                    app?.allowed =
+//                        (allowApp.data?.find { allowed -> app?.packageName == allowed.packageName } != null)
+//                    app
+//                }
+//                appProxyAdapter.updateData(listMergeAllowApp)
+//            }
+//        }
         appProxyAdapter.onItemClick = { _, item ->
 //            allowAppViewModel.setAllowApp(item)
             selectedList.add(item)
@@ -60,7 +62,8 @@ class AppProxyFragment() :
             btnOk.setOnClickListener {
                 val listAllows = ArrayList<AppProxyUI>()
                 appProxyAdapter.datas.map { it ->
-                    listAllows.add(it!!)
+                    if (it!!.allowed == true)
+                        listAllows.add(it)
                 }
                 allowAppViewModel.setAllowApps(listAllows)
                 Toast.makeText(requireContext(), "Save successfully", Toast.LENGTH_SHORT).show()
@@ -80,11 +83,36 @@ class AppProxyFragment() :
             }
         }
 
-        allowAppViewModel.listApps.observe(this) { it ->
-            if (it != null && it.isNotEmpty()) {
-                appProxyAdapter.updateData(it)
-                allowAppViewModel.getAllowApp()
+        allowAppViewModel.loadAppsDone.observe(this) { it ->
+            if (it == true) {
+                if (allowAppViewModel.allowApp.value.data?.isEmpty() == true) {
+                    val listMergeAllowApp = appProxyAdapter.datas.map { app ->
+                        app?.allowed = true
+                        if (!selectedList.contains(app!!)) {
+                            selectedList.add(app)
+                        }
+                        app
+                    }
+                    appProxyAdapter.updateData(listMergeAllowApp)
+                } else {
+                    val listMergeAllowApp = appProxyAdapter.datas.map { app ->
+                        app?.allowed =
+                            (allowAppViewModel.allowApp.value.data?.find { allowed -> app?.packageName == allowed.packageName } != null)
+                        if (app?.allowed == true && !selectedList.contains(app)) {
+                            selectedList.add(app)
+                        }
+                        app
+                    }
+                    appProxyAdapter.updateData(listMergeAllowApp)
+                }
             }
+        }
+
+        allowAppViewModel.listApps.observe(this) { it ->
+//            if (it != null && it.isNotEmpty()) {
+            appProxyAdapter.updateData(it)
+            allowAppViewModel.getAllowApp()
+//            }
         }
 
 //        loadData()
@@ -99,7 +127,22 @@ class AppProxyFragment() :
         allowAppViewModel.getInstalledAppsWithInternetPermission(requireContext())
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun checkUncheckAll() {
-
+        if (selectedList.isNotEmpty() && selectedList.size != appProxyAdapter.datas.size) {
+            appProxyAdapter.datas.map {
+                if (!selectedList.contains(it)) selectedList.add(it!!)
+                it!!.allowed = true
+            }
+        } else if (selectedList.isNotEmpty()){
+            selectedList.clear()
+            appProxyAdapter.datas.map { it!!.allowed = false }
+        } else {
+            appProxyAdapter.datas.map {
+                selectedList.add(it!!)
+                it.allowed = true
+            }
+        }
+        appProxyAdapter.notifyDataSetChanged()
     }
 }

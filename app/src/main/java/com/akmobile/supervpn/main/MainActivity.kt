@@ -17,6 +17,7 @@ import com.akmobile.supervpn.R
 import com.common.baseui.BaseAppConfig
 import com.simple.libads.setVisible
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.selects.select
 
 @AndroidEntryPoint
 class MainActivity : ProductActivity<ActivityMainBinding>() {
@@ -31,7 +32,9 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
     }
 
     private val mAppProxyFragment by lazy {
-        AppProxyFragment()
+        AppProxyFragment(
+            onSelect = {}
+        )
     }
 
     private val mDnsFragment by lazy {
@@ -78,6 +81,10 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
 
             ivBack.setOnClickListener {
                 showFragment(mSettingFragment)
+            }
+
+            selectAll.setOnClickListener {
+                selectAll()
             }
 
 //            cbSelectAll.setOnClickListener {
@@ -137,6 +144,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                 binding.homeActionBar.setVisible(false)
                 binding.subActionbar.setVisible(true)
                 binding.dnsActionBar.setVisible(false)
+                binding.selectAll.setVisible(true)
             }
 
             is SettingFragment -> {
@@ -145,6 +153,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                 binding.homeActionBar.setVisible(false)
                 binding.subActionbar.setVisible(true)
                 binding.dnsActionBar.setVisible(false)
+                binding.selectAll.setVisible(false)
             }
 
             is DNSFragment -> {
@@ -152,13 +161,16 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                 binding.homeActionBar.setVisible(false)
                 binding.subActionbar.setVisible(false)
                 binding.dnsActionBar.setVisible(true)
-                binding.ivSwitch.isSelected = BaseAppConfig.dnsServer.isNotEmpty()
+                //binding.ivSwitch.isSelected = BaseAppConfig.dnsServer.isNotEmpty()
+                binding.ivSwitch.setVisible(false)
+                binding.selectAll.setVisible(false)
             }
 
             else -> {
                 binding.homeActionBar.setVisible(true)
                 binding.subActionbar.setVisible(false)
                 binding.dnsActionBar.setVisible(false)
+                binding.selectAll.setVisible(false)
             }
         }
     }
@@ -171,6 +183,10 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
 
     fun showDns() {
         showFragment(mDnsFragment)
+    }
+
+    fun selectAll() {
+        mAppProxyFragment.checkUncheckAll()
     }
 
     private fun checkAdvertisingIdPermission(): Boolean {

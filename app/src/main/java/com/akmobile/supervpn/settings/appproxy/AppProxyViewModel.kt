@@ -20,6 +20,7 @@ class AppProxyViewModel @Inject constructor(private val appProxyUseCase: AppProx
     val allowApp = MutableStateFlow<ResultData<List<VpnAppItemDB>>>(ResultData.standby())
 
     val isLoading = MutableLiveData<Boolean>()
+    val loadAppsDone = MutableLiveData<Boolean>(false)
     val listApps = MutableLiveData<ArrayList<AppProxyUI>>()
 
     fun getInstalledAppsWithInternetPermission(baseContext: Context) {
@@ -48,6 +49,7 @@ class AppProxyViewModel @Inject constructor(private val appProxyUseCase: AppProx
         viewModelScope.launch(Dispatchers.IO) {
             appProxyUseCase.getAllowApp().collect {
                 allowApp.value = it
+                loadAppsDone.postValue(true)
             }
         }
     }

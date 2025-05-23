@@ -33,6 +33,8 @@ class AppProxyRepository @Inject constructor(private val database: VpnDatabase) 
                 VpnAppItemDB(it.packageName, it.packageName)
             }
             database.appVpnDao().insertAll(listDb)
+        } else {
+            database.appVpnDao().deleteAll()
         }
         return flow {
             emit(ResultData.success(true))
