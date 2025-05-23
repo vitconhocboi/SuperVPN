@@ -11,18 +11,9 @@
         android:layout_height="@dimen/size24"
         android:layout_marginLeft="@dimen/size15"
         android:layout_marginTop="@dimen/size25"
-        android:src="@drawable/ic_arrow_left"
+        android:src="@drawable/arrow_left_black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/banner"
-        android:layout_width="@dimen/size100"
-        android:layout_height="@dimen/size65"
-        android:src="@drawable/mail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivBack" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/banner2"
