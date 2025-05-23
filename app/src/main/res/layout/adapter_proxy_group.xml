@@ -5,13 +5,16 @@
     android:id="@+id/lnMain"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginVertical="@dimen/size10"
+    android:layout_marginTop="@dimen/margin_medium"
+    android:background="@drawable/bg_line_premium"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/pnGroupProxy"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
         android:gravity="center_vertical">
 
         <com.common.baseui.view.roundimage.RoundedImageView

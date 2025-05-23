@@ -12,22 +12,20 @@
         android:id="@+id/actionBar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/size56"
-        android:background="@drawable/bg_setting_items"
         android:gravity="center_vertical">
 
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="@dimen/margin_24"
             android:layout_weight="1"
-            android:fontFamily="@font/inter_bold"
             android:gravity="start"
             android:includeFontPadding="false"
             android:text="@string/setting_language"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_huge"
+            android:textSize="@dimen/text_large"
             tools:ignore="SpUsage" />
 
         <FrameLayout
