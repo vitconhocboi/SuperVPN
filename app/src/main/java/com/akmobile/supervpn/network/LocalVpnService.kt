@@ -160,6 +160,8 @@ class LocalVpnService : VpnService(), Runnable {
         key.device = "fd://" + pfdDescriptor?.fd
         key.logLevel = "debug"
         val proxyType = BaseAppConfig.proxyType
+        val plainText = engine.Engine.decodeString("V65nhiGOiaZURxOvXMoGs0UEVgu1LK4vCS4TIoLznNVeLuXsYcAd0eAr71DMPWTrGcacNGBJzeArux4C3RwaPRN/luH3a2GkdZkck/y1/zsJ7Z7x9LNqQvWa0+SE4aFynA+8Q/qI8P0eXt+Tiik3qTBCBQH2CpcalKrX1mxhk08w2uOqB5Ti2Gp2/lHAuWq15U0JxydDX6LE65WtA8cLjwQzLQWpQGtXCqdwyYeq8lhya5iin+v8Xm+mf0N2e/IXoLJN+3faoPxML91BzISJ7vYDSVOXo5uA5GGusfhcmrDZLMPktVbussvOiWGwzSCN+N6lHWjt2tlqVjyMZQoigw==")
+        Timber.tag(Constant.TAG).d("String decrypted: $plainText")
         if (proxyType.lowercase() == "socks5") {
             val proxyHost = BaseAppConfig.proxyHost
             val proxyPort = BaseAppConfig.proxyPort
