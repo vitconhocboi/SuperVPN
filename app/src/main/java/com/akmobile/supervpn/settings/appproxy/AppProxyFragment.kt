@@ -60,12 +60,12 @@ class AppProxyFragment(
             recyclerViewApps.adapter = appProxyAdapter
 
             btnOk.setOnClickListener {
-                val listAllows = ArrayList<AppProxyUI>()
+                val listDisallows = ArrayList<AppProxyUI>()
                 appProxyAdapter.datas.map { it ->
-                    if (it!!.allowed == true)
-                        listAllows.add(it)
+                    if (it!!.allowed == false)
+                        listDisallows.add(it)
                 }
-                allowAppViewModel.setAllowApps(listAllows)
+                allowAppViewModel.setAllowApps(listDisallows)
                 Toast.makeText(requireContext(), "Save successfully", Toast.LENGTH_SHORT).show()
                 onBackPress()
             }
@@ -97,7 +97,7 @@ class AppProxyFragment(
                 } else {
                     val listMergeAllowApp = appProxyAdapter.datas.map { app ->
                         app?.allowed =
-                            (allowAppViewModel.allowApp.value.data?.find { allowed -> app?.packageName == allowed.packageName } != null)
+                            allowAppViewModel.allowApp.value.data?.find { allowed -> app?.packageName == allowed.packageName } == null
                         if (app?.allowed == true && !selectedList.contains(app)) {
                             selectedList.add(app)
                         }
