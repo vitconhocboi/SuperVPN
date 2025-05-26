@@ -15,6 +15,7 @@ class PrivoxyManager(private val context: Context) {
     private var port: Int = 8118 // Default Privoxy port
     private val UPLOAD: Int = 0
     private val DOWNLOAD: Int = 1
+    var currentProxy: ProxySpeedTest.ProxyConfig? = null
 
     companion object {
         init {
@@ -31,14 +32,14 @@ class PrivoxyManager(private val context: Context) {
         private external fun nativeIsRunning(): Boolean
     }
 
-    fun initialize(): Boolean {
+    fun initialize(proxy: ProxySpeedTest.ProxyConfig?): Boolean {
         try {
             // Create Privoxy configuration directory
             val privoxyDir = File(context.filesDir, "privoxy")
             if (!privoxyDir.exists()) {
                 privoxyDir.mkdirs()
             }
-
+            currentProxy = proxy
             // Create config file
             configPath = createConfigFile(privoxyDir)
             return true
@@ -111,7 +112,6 @@ class PrivoxyManager(private val context: Context) {
     private fun createConfigFile(privoxyDir: File): String {
         val actionFile = File(privoxyDir, "default.action")
         Timber.tag(Constant.TAG).d("createConfigFile: $actionFile")
-        val proxyType = BaseAppConfig.proxyType
         if (BaseAppConfig.adsBlock) {
             actionFile.writeText(
                 """
@@ -145,14 +145,13 @@ prebid.*
             )
         }
 
-        if (proxyType.lowercase() == "http") {
-            val proxyUser = BaseAppConfig.proxyUser
-            val proxyPass = BaseAppConfig.proxyPass
+        if (currentProxy?.type?.lowercase() == "http") {
             actionFile.appendText(
                 """
 {+add-header{proxy-authorization: Basic ${
                     Base64.encodeToString(
-                        "$proxyUser:$proxyPass".toByteArray(), Base64.NO_WRAP
+                        "${currentProxy!!.username}:${currentProxy!!.password}".toByteArray(),
+                        Base64.NO_WRAP
                     )
                 }}}
 /
@@ -173,23 +172,14 @@ ${getForwardSettings()}
 
     private fun getForwardSettings(): String {
         // Get proxy settings from your existing configuration
-        val proxyType = BaseAppConfig.proxyType
-        val proxyHost = BaseAppConfig.proxyHost
-        val proxyPort = BaseAppConfig.proxyPort
-        val proxyUser = BaseAppConfig.proxyUser
-        val proxyPass = BaseAppConfig.proxyPass
-        Log.d(
-            Constant.TAG,
-            "upstream to proxy: $proxyType://$proxyUser:$proxyPass@$proxyHost:$proxyPort"
-        )
 
-        if (proxyType.isNotEmpty() && proxyHost.isNotEmpty() && proxyPort.isNotEmpty()) {
-            if (proxyType.lowercase() == "http") {
-                return """forward / $proxyHost:$proxyPort
+        if (currentProxy != null) {
+            if (currentProxy?.type?.lowercase() == "http") {
+                return """forward / ${currentProxy!!.host}:${currentProxy!!.port}
 enable-proxy-authentication-forwarding 1
 """.replaceIndent("")
             } else {
-                return """forward-socks5 / $proxyUser:$proxyPass@$proxyHost:$proxyPort .
+                return """forward-socks5 / ${currentProxy!!.username}:${currentProxy!!.password}@${currentProxy!!.host}:${currentProxy!!.port} .
 """.trimMargin().replaceIndent("")
             }
         } else {

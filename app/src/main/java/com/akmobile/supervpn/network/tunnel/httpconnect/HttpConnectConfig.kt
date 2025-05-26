@@ -17,15 +17,4 @@ class HttpConnectConfig : Config() {
     override fun toString(): String {
         return java.lang.String.format("http://%s:%s@%s", UserName, Password, ServerAddress)
     }
-
-    companion object {
-        fun getProxyConfig(): HttpConnectConfig {
-            val config = HttpConnectConfig()
-            config.UserName = BaseAppConfig.proxyUser
-            config.Password = BaseAppConfig.proxyPass
-            config.ServerAddress =
-                InetSocketAddress(BaseAppConfig.proxyHost, BaseAppConfig.proxyPort.toInt())
-            return config
-        }
-    }
 }

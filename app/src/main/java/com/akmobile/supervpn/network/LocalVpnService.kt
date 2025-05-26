@@ -35,6 +35,7 @@ class LocalVpnService : VpnService(), Runnable {
     @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
     @Inject
     lateinit var proxyConnection: ProxyConnection
+    var currentProxy: ProxySpeedTest.ProxyConfig? = null
 
     init {
         ID++
@@ -67,8 +68,22 @@ class LocalVpnService : VpnService(), Runnable {
                 m_VPNThread = Thread(this, "VPNServiceThread")
                 m_VPNThread!!.start()
 
+                engine.Engine.decodeString(BaseAppConfig.proxy).split(":").let { parts ->
+                    if (parts.size >= 5) {
+                        currentProxy = ProxySpeedTest.ProxyConfig(
+                            host = parts[1],
+                            port = parts[2].toInt(),
+                            username = parts.getOrNull(3) ?: "",
+                            password = parts.getOrNull(4) ?: "",
+                            type = parts.getOrNull(0) ?: "http"
+                        )
+                    } else {
+                        currentProxy = null
+                    }
+                }
+
                 m_PrivoxyManager = PrivoxyManager(this)
-                if (m_PrivoxyManager!!.initialize() && m_PrivoxyManager!!.start()) {
+                if (m_PrivoxyManager!!.initialize(currentProxy) && m_PrivoxyManager!!.start()) {
                     Timber.tag(Constant.TAG)
                         .d("Privoxy started on: ${m_PrivoxyManager!!.getProxyAddress()}")
                     proxyConnection.updateUI(HomeFragment.CONNECTED)
@@ -110,12 +125,13 @@ class LocalVpnService : VpnService(), Runnable {
                     }
 
                     // Now stop engine after fd is detached
-                    if (BaseAppConfig.proxyHost.isNotEmpty()) {
+                    if (BaseAppConfig.proxy.isNotEmpty()) {
                         engine.Engine.stop()
                     }
                     // Stop other components
                     m_PrivoxyManager?.stop()
                     m_PrivoxyManager = null
+                    currentProxy = null
 
                     stopSelf() // Stop the service after cleanup
                     stopForeground(true)
@@ -159,15 +175,9 @@ class LocalVpnService : VpnService(), Runnable {
         key.mtu = ProxyConfig.Instance.mTU.toLong()
         key.device = "fd://" + pfdDescriptor?.fd
         key.logLevel = "debug"
-        val proxyType = BaseAppConfig.proxyType
-        val plainText = engine.Engine.decodeString("V65nhiGOiaZURxOvXMoGs0UEVgu1LK4vCS4TIoLznNVeLuXsYcAd0eAr71DMPWTrGcacNGBJzeArux4C3RwaPRN/luH3a2GkdZkck/y1/zsJ7Z7x9LNqQvWa0+SE4aFynA+8Q/qI8P0eXt+Tiik3qTBCBQH2CpcalKrX1mxhk08w2uOqB5Ti2Gp2/lHAuWq15U0JxydDX6LE65WtA8cLjwQzLQWpQGtXCqdwyYeq8lhya5iin+v8Xm+mf0N2e/IXoLJN+3faoPxML91BzISJ7vYDSVOXo5uA5GGusfhcmrDZLMPktVbussvOiWGwzSCN+N6lHWjt2tlqVjyMZQoigw==")
-        Timber.tag(Constant.TAG).d("String decrypted: $plainText")
-        if (proxyType.lowercase() == "socks5") {
-            val proxyHost = BaseAppConfig.proxyHost
-            val proxyPort = BaseAppConfig.proxyPort
-            val proxyUser = BaseAppConfig.proxyUser
-            val proxyPass = BaseAppConfig.proxyPass
-            key.proxy = "socks5://$proxyUser:$proxyPass@$proxyHost:$proxyPort"
+        if (currentProxy?.type?.lowercase() == "socks5") {
+            key.proxy =
+                "socks5://${currentProxy!!.username}:${currentProxy!!.password}@${currentProxy!!.host}:${currentProxy!!.port}"
         } else {
             key.proxy = "http://127.0.0.1:8118"
         }
@@ -197,7 +207,7 @@ class LocalVpnService : VpnService(), Runnable {
     @Throws(Exception::class)
     private fun runVPN() {
         m_VPNInterface = establishVPN()!!
-        if (BaseAppConfig.proxyHost.isNotEmpty()) {
+        if (BaseAppConfig.proxy.isNotEmpty()) {
             startTunToSock(m_VPNInterface)
         }
 //        protect(m_VPNInterface!!.detachFd())
@@ -236,12 +246,12 @@ class LocalVpnService : VpnService(), Runnable {
     private fun establishVPN(): ParcelFileDescriptor? {
         val builder: Builder = Builder()
         builder.setMtu(ProxyConfig.Instance.mTU)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q && BaseAppConfig.proxyHost.isNotEmpty()) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q && BaseAppConfig.proxy.isNotEmpty()) {
             builder.setHttpProxy(ProxyInfo.buildDirectProxy("127.0.0.1", 8118))
         }
 
         builder.addAddress("10.0.0.2", 32)
-        if (BaseAppConfig.proxyHost.isNotEmpty()) {
+        if (BaseAppConfig.proxy.isNotEmpty()) {
             builder.addRoute("0.0.0.0", 0)
         }
 
@@ -254,11 +264,11 @@ class LocalVpnService : VpnService(), Runnable {
             }
         }
 
-//        if (allowApp?.isNotEmpty() == true) {
-//            for (app in allowApp!!) {
-//                builder.addAllowedApplication(app)
-//            }
-//        }
+        if (allowApp?.isNotEmpty() == true) {
+            for (app in allowApp!!) {
+                builder.addAllowedApplication(app)
+            }
+        }
 
         builder.addDisallowedApplication(packageName)
 
