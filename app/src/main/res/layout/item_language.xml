@@ -30,12 +30,10 @@
             android:id="@+id/langNameLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="start"
             android:layout_marginStart="@dimen/size15"
-            android:fontFamily="@font/inter_bold"
-            android:gravity="left"
-            android:textFontWeight="500"
-            android:inputType="textCapSentences|textCapWords"
-            android:text="English"
+            android:layout_marginEnd="@dimen/size15"
+            android:text="@string/lang_en"
             android:textColor="@color/language_item_text_color"
             android:textSize="@dimen/text_medium" />
 
