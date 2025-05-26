@@ -2,10 +2,7 @@ package com.akmobile.supervpn.home
 
 import android.app.Activity
 import android.app.ActivityManager
-import android.content.BroadcastReceiver
 import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.net.VpnService
@@ -16,10 +13,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.app.ActivityCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import com.akmobile.supervpn.DialogVpnPermission
 
 import com.akmobile.supervpn.base.ProductFragment
@@ -30,21 +25,17 @@ import com.akmobile.supervpn.utils.Navigator
 import com.akmobile.supervpn.utils.Utils
 import com.common.baseui.BaseAppConfig
 import com.common.baseui.extension.bindFlowCreate
-import com.common.baseui.extension.gone
 import com.common.baseui.extension.invisible
 import com.common.baseui.extension.processResultData
 import com.common.baseui.extension.visible
-import com.simple.libads.gone
 import dagger.hilt.android.AndroidEntryPoint
 import com.akmobile.supervpn.R
 import com.akmobile.supervpn.db.VpnAppItemDB
 import com.akmobile.supervpn.network.ProxySpeedTest
-import com.akmobile.supervpn.scheduler.StopProxyScheduler
 import com.akmobile.supervpn.settings.appproxy.AppProxyViewModel
 import com.common.baseui.extension.context
 import com.simple.libads.NetworkUtils
 import com.simple.libads.setVisible
-import kotlin.system.exitProcess
 
 @AndroidEntryPoint
 class HomeFragment : ProductFragment<FragmentHomeBinding>() {
@@ -193,18 +184,20 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 //        }
 //    }
 
+    var currentProxy: ProxySpeedTest.ProxyConfig? = null
+
     private val speedTestRunnable = object : Runnable {
         override fun run() {
-            if (BaseAppConfig.proxyHost.isNotEmpty()) {
+            if (BaseAppConfig.proxy.isNotEmpty()) {
                 //update UI
-                val testProxy = ProxySpeedTest.ProxyConfig(
-                    host = BaseAppConfig.proxyHost,
-                    port = BaseAppConfig.proxyPort.toInt(),
-                    username = BaseAppConfig.proxyUser,
-                    password = BaseAppConfig.proxyPass,
-                    type = BaseAppConfig.proxyType
-                )
-                ProxySpeedTest().testProxy(testProxy, callback = { download, upload ->
+//                val testProxy = ProxySpeedTest.ProxyConfig(
+//                    host = BaseAppConfig.proxyHost,
+//                    port = BaseAppConfig.proxyPort.toInt(),
+//                    username = BaseAppConfig.proxyUser,
+//                    password = BaseAppConfig.proxyPass,
+//                    type = BaseAppConfig.proxyType
+//                )
+                ProxySpeedTest().testProxy(currentProxy, callback = { download, upload ->
                     binding.tvTrafficDownload.text = download
                     binding.tvTrafficUpload.text = upload
                 })
@@ -240,7 +233,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 //        isLocalVpnServiceRunning(requireContext())
         // Đăng ký BroadcastReceiver
         with(binding) {
-            if (BaseAppConfig.proxyHost.isNotEmpty()) {
+            if (BaseAppConfig.proxy.isNotEmpty()) {
                 //update UI
                 ivFlag.setImageResource(Utils.getFlag(BaseAppConfig.proxyCountry))
                 tvProxyLocation.text = requireContext().getString(
@@ -248,23 +241,34 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                         BaseAppConfig.proxyCountry, "string", requireContext().packageName
                     )
                 )
+                engine.Engine.decodeString(BaseAppConfig.proxy).split(":").let { parts ->
+                    if (parts.size >= 2) {
+                        currentProxy = ProxySpeedTest.ProxyConfig(
+                            host = parts[1],
+                            port = parts[2].toInt(),
+                            username = parts.getOrNull(3) ?: "",
+                            password = parts.getOrNull(4) ?: "",
+                            type = parts.getOrNull(0) ?: "http"
+                        )
+                    } else {
+                        currentProxy = null
+                    }
+                }
+
                 tvProxyIp.setVisible(true)
-                tvProxyIp.text = BaseAppConfig.proxyHost
+                tvProxyIp.text = currentProxy?.host
                 val typeface = ResourcesCompat.getFont(context, R.font.inter_bold)
                 tvProxyLocation.typeface = typeface
                 tvProxyLocation.setTextColor(resources.getColor(R.color.language_item_text_color))
             } else {
                 ivFlag.setImageResource(R.drawable.ic_earth)
-                BaseAppConfig.proxyType = ""
-                BaseAppConfig.proxyHost = ""
-                BaseAppConfig.proxyPort = ""
-                BaseAppConfig.proxyUser = ""
-                BaseAppConfig.proxyPass = ""
+                BaseAppConfig.proxy = ""
                 tvProxyLocation.text = getString(R.string.ip_proxy)
                 tvProxyIp.setVisible(false)
                 val typeface = ResourcesCompat.getFont(context, R.font.inter_normal)
                 tvProxyLocation.typeface = typeface
                 tvProxyLocation.setTextColor(resources.getColor(R.color.green_1))
+                currentProxy = null
             }
 
             allowAppViewModel.getAllowApp()

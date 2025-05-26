@@ -79,20 +79,21 @@ class ProxyViewModel @Inject constructor(
             if (response.isSuccessful) {
                 val assignResponse = response.body()
                 if (assignResponse != null && assignResponse.proxy != null) {
+                    BaseAppConfig.proxy = assignResponse.proxy
                     // Parse the proxy string (expected format: "ip:port:user:pass:type")
-                    val proxyParts = assignResponse.proxy.split(":")
-                    if (proxyParts.size == 5) {
-                        // Update proxy configuration from API response
-                        BaseAppConfig.apply {
-                            proxyHost = proxyParts[1]
-                            proxyPort = proxyParts[2]
-                            proxyUser = proxyParts[3]
-                            proxyPass = proxyParts[4]
-                            proxyType = proxyParts[0]
-                        }
-                    } else {
-                        throw Exception("Invalid proxy string format")
-                    }
+//                    val proxyParts = assignResponse.proxy.split(":")
+//                    if (proxyParts.size == 5) {
+//                        // Update proxy configuration from API response
+//                        BaseAppConfig.apply {
+//                            proxyHost = proxyParts[1]
+//                            proxyPort = proxyParts[2]
+//                            proxyUser = proxyParts[3]
+//                            proxyPass = proxyParts[4]
+//                            proxyType = proxyParts[0]
+//                        }
+//                    } else {
+//                        throw Exception("Invalid proxy string format")
+//                    }
                 } else {
                     throw Exception(assignResponse?.error ?: "Empty proxy response")
                 }
@@ -101,14 +102,16 @@ class ProxyViewModel @Inject constructor(
             }
         } else {
             // Reset proxy when item is null
-            BaseAppConfig.apply {
-                proxyHost = ""
-                proxyPort = ""
-                proxyUser = ""
-                proxyPass = ""
-                proxyType = ""
-                proxyCountry = ""
-            }
+//            BaseAppConfig.apply {
+//                proxyHost = ""
+//                proxyPort = ""
+//                proxyUser = ""
+//                proxyPass = ""
+//                proxyType = ""
+//                proxyCountry = ""
+//            }
+            BaseAppConfig.proxy = ""
+            BaseAppConfig.proxyCountry = ""
 
             // Notify API about disconnection if we have a device ID
             if (deviceId != null) {
