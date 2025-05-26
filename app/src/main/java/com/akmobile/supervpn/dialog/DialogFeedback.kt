@@ -61,14 +61,14 @@ class DialogFeedback : BindingSheetDialog<DialogRateFeedbackBinding>() {
             }
             ivBack.setOnClickNoDoubleClick {
                 dismiss()
-                DialogRateComplete().show(parentFragmentManager, "dialog_rate")
+//                DialogRateComplete().show(parentFragmentManager, "dialog_rate")
             }
 
             tvSend.setOnClickNoDoubleClick {
                 // Create an intent with action ACTION_SEND
                 sendMail(tvContent.text.toString())
                 dismiss()
-                DialogRateComplete().show(parentFragmentManager, "dialog_rate")
+//                DialogRateComplete().show(parentFragmentManager, "dialog_rate")
             }
         }
     }

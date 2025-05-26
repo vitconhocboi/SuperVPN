@@ -19,6 +19,7 @@ import com.common.baseui.extension.setOnClickNoDoubleClick
 import com.common.baseui.extension.setVisible
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import androidx.core.net.toUri
 
 class DialogRate : BottomSheetDialogFragment() {
     var onDislike: () -> Unit = {}
@@ -159,10 +160,10 @@ class DialogRate : BottomSheetDialogFragment() {
 
     fun openAppInStore(context: Context) {
         val uri =
-            Uri.parse("market://details?id=" + context.packageName)
+            ("market://details?id=" + context.packageName).toUri()
         val myAppLinkToMarket = Intent(Intent.ACTION_VIEW, uri)
         val webUri =
-            Uri.parse("https://play.google.com/store/apps/details?id=${context.packageName}")
+            "https://play.google.com/store/apps/details?id=${context.packageName}".toUri()
         try {
             startActivity(myAppLinkToMarket.apply { setPackage("com.android.vending") })
         } catch (e: ActivityNotFoundException) {
