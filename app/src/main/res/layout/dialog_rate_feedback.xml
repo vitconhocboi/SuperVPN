@@ -9,7 +9,7 @@
         android:id="@+id/ivBack"
         android:layout_width="@dimen/size24"
         android:layout_height="@dimen/size24"
-        android:layout_marginLeft="@dimen/size15"
+        android:layout_marginStart="@dimen/size15"
         android:layout_marginTop="@dimen/size25"
         android:src="@drawable/arrow_left_black"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,9 +18,9 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/banner2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/size100"
         android:layout_marginHorizontal="@dimen/size35"
-        android:src="@drawable/plane"
+        android:src="@drawable/img_feedback"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivBack" />
@@ -32,7 +32,8 @@
         android:layout_marginHorizontal="@dimen/size20"
         android:gravity="center"
         android:text="@string/text_feedback_problem"
-        android:textSize="@dimen/size20"
+        android:textSize="18sp"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/banner2" />
 
@@ -41,10 +42,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/size16"
+        android:layout_marginTop="@dimen/size10"
+        android:layout_marginBottom="@dimen/size20"
         android:text="@string/text_type"
         android:textColor="#969696"
-        android:textFontWeight="400"
-        android:textSize="@dimen/size15"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
@@ -66,9 +68,8 @@
             android:paddingHorizontal="@dimen/size12"
             android:paddingVertical="@dimen/size6"
             android:text="@string/text_type_feature"
-            android:textColor="#474747"
-            android:textFontWeight="400"
-            android:textSize="@dimen/size15"
+            android:textColor="#000000"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
@@ -76,14 +77,13 @@
             android:id="@+id/tvCrash"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/size8"
+            android:layout_marginStart="@dimen/size8"
             android:background="@drawable/bg_type_feedback_button"
             android:paddingHorizontal="@dimen/size12"
             android:paddingVertical="@dimen/size6"
             android:text="@string/text_type_crash"
-            android:textColor="#474747"
-            android:textFontWeight="400"
-            android:textSize="@dimen/size15"
+            android:textColor="#000000"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
@@ -91,14 +91,13 @@
             android:id="@+id/tvBug"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/size8"
+            android:layout_marginStart="@dimen/size8"
             android:background="@drawable/bg_type_feedback_button"
             android:paddingHorizontal="@dimen/size12"
             android:paddingVertical="@dimen/size6"
             android:text="@string/text_type_bug"
-            android:textColor="#474747"
-            android:textFontWeight="400"
-            android:textSize="@dimen/size15"
+            android:textColor="#000000"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
@@ -106,14 +105,13 @@
             android:id="@+id/tvOther"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/size8"
+            android:layout_marginStart="@dimen/size8"
             android:background="@drawable/bg_type_feedback_button"
             android:paddingHorizontal="@dimen/size12"
             android:paddingVertical="@dimen/size6"
             android:text="@string/text_type_other"
-            android:textColor="#474747"
-            android:textFontWeight="400"
-            android:textSize="@dimen/size15"
+            android:textColor="#000000"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvTitle" />
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -127,14 +125,14 @@
         android:layout_marginTop="@dimen/size35"
         android:layout_marginHorizontal="@dimen/size16"
         android:layout_marginBottom="@dimen/size16"
+        android:paddingBottom="@dimen/size30"
         android:hint="@string/text_feedback_hint"
         android:textColorHint="#888888"
         android:textColor="#474747"
-        android:textFontWeight="400"
-        android:textSize="@dimen/size15"
-        android:gravity="top|left"
+        android:textSize="16sp"
+        android:gravity="top|start"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvSend"
         app:layout_constraintTop_toBottomOf="@id/lnType" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -142,16 +140,16 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/size16"
-        android:layout_marginBottom="@dimen/size16"
+        android:layout_marginBottom="@dimen/size24"
         android:paddingVertical="@dimen/size10"
         android:text="@string/text_send"
         android:textColor="#FFFFFF"
-        android:textFontWeight="400"
-        android:textSize="@dimen/size15"
+        android:textSize="16sp"
         android:background="@drawable/bg_button_rate"
         android:gravity="center"
         app:layout_constraintStart_toStartOf="@id/tvContent"
         app:layout_constraintEnd_toEndOf="@id/tvContent"
-        app:layout_constraintBottom_toBottomOf="@id/tvContent" />
+        app:layout_constraintTop_toBottomOf="@id/tvContent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
