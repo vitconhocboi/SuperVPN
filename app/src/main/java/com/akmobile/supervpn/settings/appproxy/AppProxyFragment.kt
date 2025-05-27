@@ -72,6 +72,7 @@ class AppProxyFragment(
 
             btnCancel.setOnClickListener {
                 loadData()
+                activity?.onBackPressedDispatcher?.onBackPressed()
             }
         }
 
@@ -109,13 +110,9 @@ class AppProxyFragment(
         }
 
         allowAppViewModel.listApps.observe(this) { it ->
-//            if (it != null && it.isNotEmpty()) {
             appProxyAdapter.updateData(it)
             allowAppViewModel.getAllowApp()
-//            }
         }
-
-//        loadData()
     }
 
     override fun onResume() {

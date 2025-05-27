@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/size10"
         android:layout_marginBottom="@dimen/size10"
-        android:background="#FFFFFF"
+        android:background="@drawable/bg_popup_rate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +39,6 @@
             android:paddingHorizontal="@dimen/size30"
             android:text="@string/text_rate_0"
             android:textColor="#000000"
-            android:textFontWeight="400"
             android:textSize="@dimen/text_normal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -181,7 +180,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/size6"
-            android:layout_marginRight="@dimen/size6"
+            android:layout_marginEnd="@dimen/size6"
             android:src="@drawable/start_bright"
             app:layout_constraintEnd_toEndOf="@+id/tabLayout"
             app:layout_constraintTop_toTopOf="@+id/tabLayout" />
@@ -201,16 +200,15 @@
                 android:layout_width="@dimen/size215"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_regular"
-                android:gravity="right"
+                android:gravity="end"
                 android:text="@string/text_rate_hint"
-                android:textColor="#1E90FF"
-                android:textFontWeight="400"
+                android:textColor="@color/green_rate_select"
                 android:textSize="@dimen/text_medium" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/size10"
+                android:layout_marginStart="@dimen/size10"
                 android:src="@drawable/hand" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -227,8 +225,7 @@
             android:gravity="center"
             android:text="@string/text_rate"
             android:textColor="#FFFFFF"
-            android:textFontWeight="500"
-            android:textSize="@dimen/size16"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

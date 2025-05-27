@@ -9,7 +9,10 @@
     <color name="gray_2">#767C8A</color>
     <color name="gray_3">#232836</color>
     <color name="green_1">#03C343</color>
+    <color name="green_rate_select">#0FDD54</color>
+    <color name="green_rate_unselect">#800FDD54</color>
     <color name="language_item_text_color">#ECEFF5</color>
+    <color name="white_background_popup">#FFFFFF</color>
 
     <color name="text_gray_1">#E6E9F0</color>
     <color name="text_gray_2">#767C8A</color>

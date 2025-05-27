@@ -71,7 +71,7 @@ class SettingFragment(
             }
 
             rowLanguage.setOnClickListener {
-                Navigator.startLanguageActivity(requireContext())
+                Navigator.startLanguageActivity(requireContext(), fromSetting = true)
             }
 
             rowRate.setOnClickNoDoubleClick {

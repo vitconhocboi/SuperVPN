@@ -92,8 +92,9 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/selectAll"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="5dp"
                 android:layout_marginVertical="@dimen/size16"
                 android:src="@drawable/ic_select" />
 

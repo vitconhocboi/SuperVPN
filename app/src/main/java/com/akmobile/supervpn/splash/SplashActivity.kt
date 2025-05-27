@@ -47,7 +47,7 @@ class SplashActivity : ProductActivity<ActivitySplashBinding>() {
 
     private fun nextScreen() {
         if (BaseAppConfig.firstTimeSetup) {
-            Navigator.startLanguageActivity(this)
+            Navigator.startLanguageActivity(this, fromSetting = false)
         } else {
             Navigator.startMainActivity(this)
         }

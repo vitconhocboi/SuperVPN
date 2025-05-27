@@ -11,8 +11,9 @@ class LanguageActivity : ProductActivity<ActivityLanguageBinding>() {
     }
 
     override fun initView() {
+        val isFromSetting = intent.getBooleanExtra("fromSetting", false)
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, LanguageFragment())
+            .replace(R.id.fragment_container, LanguageFragment(fromSetting = isFromSetting))
             .commit()
     }
 

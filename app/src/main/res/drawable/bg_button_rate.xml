@@ -1,19 +1,19 @@
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_selected="true">
+<selector xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true" tools:ignore="StateListReachable">
         <shape android:shape="rectangle">
-            <solid android:color="#1E90FF" />
+            <solid android:color="@color/green_rate_select" />
             <corners android:radius="@dimen/size8" />
         </shape>
     </item>
     <item android:state_selected="false">
         <shape android:shape="rectangle">
-            <solid android:color="#801E90FF" />
+            <solid android:color="@color/green_rate_unselect" />
             <corners android:radius="@dimen/size8" />
         </shape>
     </item>
     <item android:state_selected="true">
         <shape android:shape="rectangle">
-            <solid android:color="#801E90FF" />
+            <solid android:color="@color/green_rate_unselect" />
             <corners android:radius="@dimen/size8" />
         </shape>
     </item>

@@ -17,8 +17,10 @@ object Navigator {
         })
     }
 
-    fun startLanguageActivity(context: Context) {
-        context.startActivity(Intent(context, LanguageActivity::class.java))
+    fun startLanguageActivity(context: Context, fromSetting : Boolean = false) {
+        context.startActivity(Intent(context, LanguageActivity::class.java).apply {
+            putExtra("fromSetting", fromSetting)
+        })
     }
 
     fun startProxyActivity(context: Context, proxyId: String?) {

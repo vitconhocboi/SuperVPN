@@ -2,6 +2,7 @@ package com.akmobile.supervpn.language
 
 import android.content.res.Resources
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.common.baseui.BaseAppConfig
@@ -15,7 +16,9 @@ import com.akmobile.supervpn.utils.Navigator
 import java.util.Locale
 
 
-class LanguageFragment : ProductFragment<FragmentLanguageBinding>() {
+class LanguageFragment (
+    val fromSetting : Boolean = false
+) : ProductFragment<FragmentLanguageBinding>() {
     private val mViewModel: LanguageViewModel by viewModels()
     private val mLangAdapter = LanguageAdapter()
     var languageCode = ""
@@ -29,6 +32,15 @@ class LanguageFragment : ProductFragment<FragmentLanguageBinding>() {
     override fun initView() {
         super.initView()
         mViewModel.init()
+
+        if (fromSetting) {
+            binding.icBack.visibility = View.VISIBLE
+            binding.icBack.setOnClickListener {
+                activity?.onBackPressedDispatcher?.onBackPressed()
+            }
+        } else {
+            binding.icBack.visibility = View.GONE
+        }
         binding.rcvLanguage.adapter = mLangAdapter
         val datas = ArrayList<LangDataModel>()
         for (lang in LangType.values()) {
