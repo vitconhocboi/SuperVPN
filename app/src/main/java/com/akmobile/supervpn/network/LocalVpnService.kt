@@ -266,7 +266,7 @@ class LocalVpnService : VpnService(), Runnable {
 
         if (allowApp?.isNotEmpty() == true) {
             for (app in allowApp!!) {
-                builder.addAllowedApplication(app)
+                builder.addDisallowedApplication(app)
             }
         }
 
