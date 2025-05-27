@@ -264,6 +264,7 @@ class LocalVpnService : VpnService(), Runnable {
             }
         }
 
+        Timber.tag(Constant.TAG).d("VpnProxy add disallowed applications: %s", allowApp)
         if (allowApp?.isNotEmpty() == true) {
             for (app in allowApp!!) {
                 builder.addDisallowedApplication(app)

@@ -345,7 +345,14 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     private fun startVpnService() {
         proxyViewModel.updateUI(CONNECTING)
         isConnected = true
-        proxyViewModel.startProxy(context, allowApp = allowApp?.map { it.packageName })
+        allowAppViewModel.getAllowApp()
+
+        bindFlowCreate(allowAppViewModel.allowApp) { result ->
+            processResultData(result, onSuccess = { rs ->
+                proxyViewModel.startProxy(context, allowApp = rs.map { it.packageName })
+            })
+        }
+
     }
 
     private fun stopVpnService() {
