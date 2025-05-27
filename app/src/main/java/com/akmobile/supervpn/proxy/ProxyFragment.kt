@@ -38,6 +38,16 @@ class ProxyFragment : ProductFragment<FragmentProxyBinding>() {
     override fun initView() {
         super.initView()
         with(binding) {
+            tvFree.isSelected = true
+            tvFree.setOnClickListener {
+                tvPremium.isSelected = false
+                tvFree.isSelected = true
+            }
+
+            tvPremium.setOnClickListener {
+                tvFree.isSelected = false
+                tvPremium.isSelected = true
+            }
             ivBack.setOnClickListener {
                 Navigator.startMainActivity(requireActivity())
             }
@@ -101,7 +111,8 @@ class ProxyFragment : ProductFragment<FragmentProxyBinding>() {
                                 Settings.Secure.ANDROID_ID
                             )
                         }
-                        val reconnect = if (item.active && item.country != BaseAppConfig.proxyCountry) "RECONNECT" else ""
+                        val reconnect =
+                            if (item.active && item.country != BaseAppConfig.proxyCountry) "RECONNECT" else ""
                         if (item.active) {
                             mProxyViewModel.setActiveProxy(item, deviceId)
                         } else {

@@ -38,19 +38,61 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="@dimen/size16"
-            android:visibility="invisible"
-            android:src="@drawable/ic_reload" />
+            android:src="@drawable/ic_reload"
+            android:visibility="invisible" />
     </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <LinearLayout
+        android:id="@+id/llProxyGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="9dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/proxyActionBar">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvFree"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_pre_tab"
+            android:layout_weight="1"
+            android:paddingVertical="9dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/free"
+            android:textAlignment="center"
+            android:textColor="@drawable/select_color_pre_text"
+            android:textSize="@dimen/text_normal" />
+
+        <LinearLayout
+            android:layout_marginVertical="4dp"
+            android:layout_width="2dp"
+            android:background="#383E4F"
+            android:layout_height="match_parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPremium"
+            android:layout_width="0dp"
+            android:background="@drawable/bg_pre_tab"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/inter_bold"
+            android:paddingVertical="9dp"
+            android:text="@string/premium"
+            android:textColor="@drawable/select_color_pre_text"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_normal" />
+    </LinearLayout>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
         android:layout_marginStart="@dimen/margin_big"
         android:layout_marginEnd="@dimen/margin_big"
+        android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        app:layout_constraintTop_toBottomOf="@id/proxyActionBar"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llProxyGroup">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcvGroupProxy"
@@ -67,13 +109,12 @@
         android:id="@+id/progress"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:indeterminateTint="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:visibility="visible"
-        />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
