@@ -1,12 +1,17 @@
-package com.akmobile.pixelart.pixelcolor.dialog
+package com.akmobile.supervpn.dialog
 
+import android.app.Activity
+import android.content.DialogInterface
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.widget.doOnTextChanged
 import com.akmobile.supervpn.databinding.DialogRateFeedbackBinding
+import com.akmobile.supervpn.utils.Constant
 import com.common.baseui.BindingSheetDialog
 import com.common.baseui.extension.setOnClickNoDoubleClick
+import timber.log.Timber
 
 class DialogFeedback : BindingSheetDialog<DialogRateFeedbackBinding>() {
     var isFeature: Boolean = false
@@ -31,6 +36,11 @@ class DialogFeedback : BindingSheetDialog<DialogRateFeedbackBinding>() {
             setLayout(width, height)
             setBackgroundDrawableResource(android.R.color.transparent)
         }
+    }
+
+    override fun onDismiss(dialog: DialogInterface) {
+        super.onDismiss(dialog)
+        DialogRateComplete().show(parentFragmentManager, "dialog_rate")
     }
 
     override fun initView() {

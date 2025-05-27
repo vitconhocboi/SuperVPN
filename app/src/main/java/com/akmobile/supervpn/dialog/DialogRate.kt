@@ -1,11 +1,10 @@
-package com.akmobile.pixelart.pixelcolor.dialog
+package com.akmobile.supervpn.dialog
 
 import android.app.Dialog
 import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +13,6 @@ import android.view.WindowManager
 import android.widget.Toast
 import com.akmobile.supervpn.R
 import com.akmobile.supervpn.databinding.DialogRateBinding
-import com.common.baseui.BindingSheetDialog
 import com.common.baseui.extension.setOnClickNoDoubleClick
 import com.common.baseui.extension.setVisible
 import com.google.android.material.bottomsheet.BottomSheetDialog

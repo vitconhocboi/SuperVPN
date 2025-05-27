@@ -85,7 +85,7 @@ object BaseAppConfig {
 
     private const val KEY_DNS_SERVER = "DNS_SERVER"
     var dnsServer: String
-        get() = SharedPrefs.instance[KEY_DNS_SERVER, String::class.java, ""]
+        get() = SharedPrefs.instance[KEY_DNS_SERVER, String::class.java, "1.1.1.1"]
         set(value) {
             SharedPrefs.instance.put(KEY_DNS_SERVER, value)
         }
@@ -95,5 +95,12 @@ object BaseAppConfig {
         get() = SharedPrefs.instance[KEY_ADS_BLOCK, Boolean::class.java, false]
         set(value) {
             SharedPrefs.instance.put(KEY_ADS_BLOCK, value)
+        }
+
+    private const val KEY_FEEDBACK = "FEEDBACK"
+    var isFeedback: Boolean
+        get() = SharedPrefs.instance[KEY_FEEDBACK, Boolean::class.java, false]
+        set(value) {
+            SharedPrefs.instance.put(KEY_FEEDBACK, value)
         }
 }

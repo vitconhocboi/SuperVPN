@@ -116,40 +116,46 @@
             app:layout_constraintTop_toBottomOf="@id/tvTitle" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/tvContent"
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:padding="@dimen/size16"
         android:layout_height="0dp"
-        android:background="@drawable/bg_editor_feedback"
+        android:layout_marginHorizontal="@dimen/size16"
         android:layout_marginTop="@dimen/size35"
-        android:layout_marginHorizontal="@dimen/size16"
         android:layout_marginBottom="@dimen/size16"
-        android:paddingBottom="@dimen/size30"
-        android:hint="@string/text_feedback_hint"
-        android:textColorHint="#888888"
-        android:textColor="#474747"
-        android:textSize="16sp"
-        android:gravity="top|start"
+        android:background="@drawable/bg_editor_feedback"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/tvSend"
-        app:layout_constraintTop_toBottomOf="@id/lnType" />
+        app:layout_constraintTop_toBottomOf="@id/lnType"
+        app:layout_constraintVertical_bias="1.0">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvSend"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/size16"
-        android:layout_marginBottom="@dimen/size24"
-        android:paddingVertical="@dimen/size10"
-        android:text="@string/text_send"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:background="@drawable/bg_button_rate"
-        android:gravity="center"
-        app:layout_constraintStart_toStartOf="@id/tvContent"
-        app:layout_constraintEnd_toEndOf="@id/tvContent"
-        app:layout_constraintTop_toBottomOf="@id/tvContent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/tvContent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#00ffffff"
+            android:layout_weight="1"
+            android:gravity="top|left"
+            android:hint="@string/text_feedback_hint"
+            android:padding="@dimen/size16"
+            android:textColor="#474747"
+            android:textColorHint="#888888"
+            android:textFontWeight="400"
+            android:textSize="@dimen/size15" />
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/size16"
+            android:layout_marginBottom="@dimen/size16"
+            android:background="@drawable/bg_button_rate"
+            android:gravity="center"
+            android:paddingVertical="@dimen/size10"
+            android:text="@string/text_send"
+            android:textColor="#FFFFFF"
+            android:textFontWeight="400"
+            android:textSize="@dimen/size15" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import androidx.fragment.app.viewModels
-import com.akmobile.pixelart.pixelcolor.dialog.DialogFeedback
-import com.akmobile.pixelart.pixelcolor.dialog.DialogRate
+import com.akmobile.supervpn.dialog.DialogFeedback
+import com.akmobile.supervpn.dialog.DialogRate
 import com.akmobile.supervpn.R
 import com.akmobile.supervpn.base.ProductFragment
 import com.akmobile.supervpn.databinding.FragmentSettingBinding

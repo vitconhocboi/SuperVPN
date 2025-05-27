@@ -27,6 +27,10 @@ class ProxyFragment : ProductFragment<FragmentProxyBinding>() {
 
     private val mProxyViewModel: ProxyViewModel by viewModels()
 
+    companion object {
+        private var selected = false
+    }
+
 
     override fun bindingProvider(
         inflater: LayoutInflater, container: ViewGroup?
@@ -93,32 +97,43 @@ class ProxyFragment : ProductFragment<FragmentProxyBinding>() {
             mPagerAdapter.onItemClick = { _, item ->
                 lifecycleScope.launch {
                     try {
-                        mPagerAdapter.notifyDataSetChanged()
-                        val deviceId = try {
-                            val adInfo = AdvertisingIdClient.getAdvertisingIdInfo(requireContext())
-                            if (!adInfo.isLimitAdTrackingEnabled) {
-                                adInfo.id
-                            } else {
+                        if (!selected) {
+                            selected = true
+                            mPagerAdapter.notifyDataSetChanged()
+                            val deviceId = try {
+                                val adInfo =
+                                    AdvertisingIdClient.getAdvertisingIdInfo(requireContext())
+                                if (!adInfo.isLimitAdTrackingEnabled) {
+                                    adInfo.id
+                                } else {
+                                    Settings.Secure.getString(
+                                        requireContext().contentResolver,
+                                        Settings.Secure.ANDROID_ID
+                                    )
+                                }
+                            } catch (e: Exception) {
+                                // Fallback to Android ID if advertising ID is not available
                                 Settings.Secure.getString(
                                     requireContext().contentResolver,
                                     Settings.Secure.ANDROID_ID
                                 )
                             }
-                        } catch (e: Exception) {
-                            // Fallback to Android ID if advertising ID is not available
-                            Settings.Secure.getString(
-                                requireContext().contentResolver,
-                                Settings.Secure.ANDROID_ID
-                            )
-                        }
-                        val reconnect =
-                            if (item.active && item.country != BaseAppConfig.proxyCountry) "RECONNECT" else ""
-                        if (item.active) {
-                            mProxyViewModel.setActiveProxy(item, deviceId)
+                            val reconnect =
+                                if (item.country != BaseAppConfig.proxyCountry || !item.active) "RECONNECT" else ""
+                            if (item.country == BaseAppConfig.proxyCountry) {
+                                item.active = false
+                            }
+                            if (item.active) {
+                                mProxyViewModel.setActiveProxy(item, deviceId)
+                            } else {
+                                mProxyViewModel.setActiveProxy(null, deviceId)
+                            }
+                            requireActivity().finish()
+                            Navigator.startMainActivity(requireContext(), reconnect)
+                            selected = false
                         } else {
-                            mProxyViewModel.setActiveProxy(null, deviceId)
+                            item.active = false
                         }
-                        Navigator.startMainActivity(requireContext(), reconnect)
                     } catch (e: Exception) {
                         Toast.makeText(
                             requireContext(),

@@ -16,26 +16,25 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.viewModels
 import com.akmobile.supervpn.DialogVpnPermission
-
+import com.akmobile.supervpn.R
 import com.akmobile.supervpn.base.ProductFragment
 import com.akmobile.supervpn.databinding.FragmentHomeBinding
+import com.akmobile.supervpn.db.VpnAppItemDB
 import com.akmobile.supervpn.network.LocalVpnService
+import com.akmobile.supervpn.network.ProxySpeedTest
 import com.akmobile.supervpn.proxy.ProxyViewModel
+import com.akmobile.supervpn.settings.appproxy.AppProxyViewModel
 import com.akmobile.supervpn.utils.Navigator
 import com.akmobile.supervpn.utils.Utils
 import com.common.baseui.BaseAppConfig
 import com.common.baseui.extension.bindFlowCreate
+import com.common.baseui.extension.context
 import com.common.baseui.extension.invisible
 import com.common.baseui.extension.processResultData
 import com.common.baseui.extension.visible
-import dagger.hilt.android.AndroidEntryPoint
-import com.akmobile.supervpn.R
-import com.akmobile.supervpn.db.VpnAppItemDB
-import com.akmobile.supervpn.network.ProxySpeedTest
-import com.akmobile.supervpn.settings.appproxy.AppProxyViewModel
-import com.common.baseui.extension.context
 import com.simple.libads.NetworkUtils
 import com.simple.libads.setVisible
+import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeFragment : ProductFragment<FragmentHomeBinding>() {

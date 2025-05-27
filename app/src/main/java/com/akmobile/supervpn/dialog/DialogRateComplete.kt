@@ -1,4 +1,4 @@
-package com.akmobile.pixelart.pixelcolor.dialog
+package com.akmobile.supervpn.dialog
 
 import android.os.Bundle
 import android.view.LayoutInflater
