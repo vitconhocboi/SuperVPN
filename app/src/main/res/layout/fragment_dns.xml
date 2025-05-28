@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundColor2"
     android:orientation="vertical"
-    tools:context=".proxy.ProxyFragment">
+    tools:context=".proxy.FreeProxyFragment">
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_dns_desc"
         android:layout_width="wrap_content"

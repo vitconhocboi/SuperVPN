@@ -12,6 +12,7 @@ import com.akmobile.supervpn.R
 import com.akmobile.supervpn.base.ProductFragment
 import com.akmobile.supervpn.databinding.FragmentSettingBinding
 import com.akmobile.supervpn.utils.Navigator
+import com.akmobile.supervpn.utils.shareApp
 import com.common.baseui.BaseAppConfig
 import com.common.baseui.extension.setOnClickNoDoubleClick
 import dagger.hilt.android.AndroidEntryPoint
@@ -76,6 +77,10 @@ class SettingFragment(
 
             rowRate.setOnClickNoDoubleClick {
                 DialogRate().show(childFragmentManager, "DialogRate")
+            }
+
+            rowShare.setOnClickNoDoubleClick {
+                requireActivity().shareApp()
             }
 
             rowFeedback.setOnClickNoDoubleClick {

@@ -100,6 +100,9 @@
     <string name="text_thanks_feedback">Thanks for your feedback</string>
     <string name="text_feedback_content">We will fix this issue in a future version. Sorry for the inconvenience.</string>
 
+    <string name="msg_device_does_not_support_this_feature">This feature is not supported for this device!</string>
+    <string name="search_app">search app..</string>
+
     <string name="free">Free</string>
     <string name="premium">Premium</string>
 </resources>

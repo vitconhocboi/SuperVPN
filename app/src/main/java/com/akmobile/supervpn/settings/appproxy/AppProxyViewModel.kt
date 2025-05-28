@@ -60,7 +60,7 @@ class AppProxyViewModel @Inject constructor(private val appProxyUseCase: AppProx
         }
     }
 
-    fun setAllowApps(items: ArrayList<AppProxyUI>) {
+    fun setDisallowApps(items: ArrayList<AppProxyUI>) {
         viewModelScope.launch(Dispatchers.IO) {
             appProxyUseCase.setAllowApps(items)
         }
