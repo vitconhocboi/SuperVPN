@@ -84,6 +84,7 @@
             android:layout_centerVertical="true"
             android:layout_marginEnd="@dimen/size16"
             android:background="@drawable/ic_select_item"
+            android:foreground="?selectableItemBackgroundBorderless"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

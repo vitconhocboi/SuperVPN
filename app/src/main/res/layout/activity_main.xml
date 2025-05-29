@@ -11,7 +11,7 @@
         android:id="@+id/actionBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/backgroundColor"
+        android:background="@color/gray_3"
         android:gravity="center_vertical"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -32,7 +32,6 @@
                 android:text="@string/vpn"
                 android:textAlignment="center"
                 android:textColor="@color/green_1"
-                android:textFontWeight="600"
                 android:textSize="@dimen/size50" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -47,7 +46,6 @@
                 android:paddingVertical="@dimen/size3"
                 android:text="@string/fast_and_safe"
                 android:textColor="@color/white"
-                android:textFontWeight="500"
                 android:textSize="@dimen/size20" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -96,7 +94,8 @@
                 android:layout_height="30dp"
                 android:padding="5dp"
                 android:layout_marginVertical="@dimen/size16"
-                android:src="@drawable/ic_select" />
+                android:src="@drawable/ic_select"
+                android:foreground="?selectableItemBackgroundBorderless"/>
 
 <!--            <androidx.appcompat.widget.AppCompatCheckBox-->
 <!--                android:id="@+id/cb_select_all"-->
@@ -123,12 +122,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/size16"
-                android:src="@drawable/ic_arrow_left" />
+                android:src="@drawable/ic_arrow_left"
+                android:foreground="?selectableItemBackgroundBorderless"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/size16"
+                android:layout_marginStart="@dimen/size16"
                 android:layout_weight="1"
                 android:fontFamily="@font/inter_bold"
                 android:text="@string/setting_dns_default"
@@ -140,7 +140,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/size16"
-                android:src="@drawable/ic_button_switch" />
+                android:src="@drawable/ic_button_switch"
+                android:foreground="?selectableItemBackgroundBorderless"/>
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.appcompat.widget.LinearLayoutCompat>

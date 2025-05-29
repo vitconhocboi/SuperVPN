@@ -2,6 +2,7 @@ package com.akmobile.supervpn.settings.appproxy
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
@@ -68,8 +69,8 @@ class AppProxyFragment(
                 listDisallows.addAll(listFromBaseList as Collection<out AppProxyUI>)
                 allowAppViewModel.setDisallowApps(listDisallows)
                 Toast.makeText(requireContext(), "Save successfully", Toast.LENGTH_SHORT).show()
-                requireActivity().finish()
-                Navigator.startMainActivity(requireContext(), "RECONNECT")
+//                requireActivity().finish()
+//                Navigator.startMainActivity(requireContext(), "RECONNECT")
             }
 
             btnCancel.setOnClickListener {
@@ -87,8 +88,10 @@ class AppProxyFragment(
 
         allowAppViewModel.isLoading.observe(this) { it ->
             if (it == true) {
+                binding.edtSearch.visibility = View.GONE
                 binding.progress.setVisible(true)
             } else {
+                binding.edtSearch.visibility = View.VISIBLE
                 binding.progress.setVisible(false)
             }
         }

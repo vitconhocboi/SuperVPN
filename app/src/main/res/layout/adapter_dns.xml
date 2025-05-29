@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:layout_marginLeft="@dimen/size16"
+            android:layout_marginStart="@dimen/size16"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/ivFlag"
             app:layout_constraintTop_toTopOf="parent">
@@ -44,7 +44,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvTitle"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/inter_bold"
                 android:gravity="center_vertical"
@@ -84,6 +84,7 @@
             android:layout_centerVertical="true"
             android:layout_marginEnd="@dimen/size16"
             android:background="@drawable/ic_select_item"
+            android:foreground="?selectableItemBackgroundBorderless"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -10,7 +10,8 @@
         android:id="@+id/proxyActionBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/size16"
+        android:paddingHorizontal="@dimen/size16"
+        android:background="@color/gray_3"
         android:gravity="center_vertical"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/content">
@@ -20,25 +21,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="@dimen/size16"
-            android:src="@drawable/ic_arrow_left" />
+            android:src="@drawable/ic_arrow_left"
+            android:foreground="?selectableItemBackgroundBorderless" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/size16"
+            android:layout_marginStart="@dimen/size16"
             android:layout_weight="1"
             android:fontFamily="@font/inter_bold"
             android:text="@string/ip_proxy"
             android:textColor="@color/textColor"
             android:textSize="@dimen/text_medium" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivReload"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/size16"
-            android:src="@drawable/ic_reload"
-            android:visibility="invisible" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -69,6 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical"
+                android:foreground="?selectableItemBackgroundBorderless"
                 android:gravity="center">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -77,13 +73,14 @@
                     android:layout_height="wrap_content"
                     android:padding="@dimen/size6"
                     android:fontFamily="@font/inter_normal"
+                    android:foreground="?selectableItemBackgroundBorderless"
                     android:background="@color/black"
                     android:textColor="@color/white"
                     android:text="@string/free" />
 
                 <View
                     android:id="@+id/ln_free"
-                    android:layout_width="25dp"
+                    android:layout_width="20dp"
                     android:layout_height="2dp"
                     android:layout_marginTop="@dimen/size4"
                     android:background="@color/successColor"
@@ -100,6 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical"
+                android:foreground="?selectableItemBackgroundBorderless"
                 android:gravity="center">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -110,6 +108,7 @@
                     android:textColor="@color/white"
                     android:padding="@dimen/size6"
                     android:drawableEnd="@drawable/ic_setting_pre"
+                    android:foreground="?selectableItemBackgroundBorderless"
                     android:drawablePadding="@dimen/margin_16"
                     android:maxLines="1"
                     android:ellipsize="end"
@@ -118,7 +117,7 @@
 
                 <View
                     android:id="@+id/ln_premium"
-                    android:layout_width="25dp"
+                    android:layout_width="20dp"
                     android:layout_height="2dp"
                     android:layout_marginTop="@dimen/size4"
                     android:background="@color/successColor"

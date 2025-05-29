@@ -98,6 +98,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/inter_bold"
                 android:text="@string/btn_cancel"
+                android:foreground="?selectableItemBackgroundBorderless"
                 android:textAlignment="center"
                 android:textColor="#0B70CA"
                 android:textSize="@dimen/text_medium" />
@@ -109,6 +110,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/inter_bold"
                 android:text="@string/btn_ok"
+                android:foreground="?selectableItemBackgroundBorderless"
                 android:textAlignment="center"
                 android:textColor="#0B70CA"
                 android:textSize="@dimen/text_medium" />

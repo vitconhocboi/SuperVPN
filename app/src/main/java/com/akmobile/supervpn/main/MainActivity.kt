@@ -143,37 +143,49 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
         when (fragment) {
             is AppProxyFragment -> {
                 isAppProxyFragment = true
-                binding.lbSetting.text = getString(R.string.setting_app_proxy)
-                binding.homeActionBar.setVisible(false)
-                binding.subActionbar.setVisible(true)
-                binding.dnsActionBar.setVisible(false)
-                binding.selectAll.setVisible(true)
+                with(binding) {
+                    lbSetting.text = getString(R.string.setting_app_proxy)
+                    homeActionBar.setVisible(false)
+                    subActionbar.setVisible(true)
+                    dnsActionBar.setVisible(false)
+                    selectAll.setVisible(true)
+                    actionBar.setBackgroundColor(resources.getColor(R.color.gray_3))
+                }
             }
 
             is SettingFragment -> {
                 isSettingFragment = true
-                binding.lbSetting.text = getString(R.string.setting)
-                binding.homeActionBar.setVisible(false)
-                binding.subActionbar.setVisible(true)
-                binding.dnsActionBar.setVisible(false)
-                binding.selectAll.setVisible(false)
+                with(binding) {
+                    lbSetting.text = getString(R.string.setting)
+                    homeActionBar.setVisible(false)
+                    subActionbar.setVisible(true)
+                    dnsActionBar.setVisible(false)
+                    selectAll.setVisible(false)
+                    actionBar.setBackgroundColor(resources.getColor(R.color.gray_3))
+                }
             }
 
             is DNSFragment -> {
                 isAppProxyFragment = true
-                binding.homeActionBar.setVisible(false)
-                binding.subActionbar.setVisible(false)
-                binding.dnsActionBar.setVisible(true)
-                //binding.ivSwitch.isSelected = BaseAppConfig.dnsServer.isNotEmpty()
-                binding.ivSwitch.setVisible(false)
-                binding.selectAll.setVisible(false)
+                with(binding) {
+                    homeActionBar.setVisible(false)
+                    subActionbar.setVisible(false)
+                    dnsActionBar.setVisible(true)
+                    //ivSwitch.isSelected = BaseAppConfig.dnsServer.isNotEmpty()
+                    ivSwitch.setVisible(false)
+                    selectAll.setVisible(false)
+                    actionBar.setBackgroundColor(resources.getColor(R.color.gray_3))
+                }
             }
 
             else -> {
-                binding.homeActionBar.setVisible(true)
-                binding.subActionbar.setVisible(false)
-                binding.dnsActionBar.setVisible(false)
-                binding.selectAll.setVisible(false)
+                with(binding) {
+                    homeActionBar.setVisible(true)
+                    subActionbar.setVisible(false)
+                    dnsActionBar.setVisible(false)
+                    selectAll.setVisible(false)
+                    actionBar.setBackgroundColor(resources.getColor(R.color.backgroundColor))
+                }
             }
         }
     }

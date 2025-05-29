@@ -46,6 +46,7 @@
         android:layout_centerVertical="true"
         android:scaleType="centerCrop"
         android:background="@drawable/ic_select_item"
+        android:foreground="?selectableItemBackgroundBorderless"
         app:riv_oval="true" />
 
 

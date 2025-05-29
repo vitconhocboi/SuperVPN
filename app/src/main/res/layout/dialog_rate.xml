@@ -76,7 +76,8 @@
                     <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/star_rate" />
+                        android:src="@drawable/star_rate"
+                        android:foreground="?selectableItemBackgroundBorderless"/>
                 </LinearLayout>
 
 
@@ -101,7 +102,8 @@
                     <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/star_rate" />
+                        android:src="@drawable/star_rate"
+                        android:foreground="?selectableItemBackgroundBorderless"/>
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -124,7 +126,8 @@
                     <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/star_rate" />
+                        android:src="@drawable/star_rate"
+                        android:foreground="?selectableItemBackgroundBorderless"/>
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -147,7 +150,8 @@
                     <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/star_rate" />
+                        android:src="@drawable/star_rate"
+                        android:foreground="?selectableItemBackgroundBorderless"/>
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -170,7 +174,8 @@
                     <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/star_rate" />
+                        android:src="@drawable/star_rate"
+                        android:foreground="?selectableItemBackgroundBorderless"/>
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -220,6 +225,7 @@
             android:layout_marginTop="@dimen/size40"
             android:layout_marginBottom="@dimen/size20"
             android:background="@drawable/bg_button_rate"
+            android:foreground="?selectableItemBackgroundBorderless"
             android:enabled="false"
             android:fontFamily="@font/roboto_regular"
             android:gravity="center"

@@ -26,7 +26,7 @@
             android:fontFamily="@font/inter_normal"
             android:text="@string/disconnected"
             android:textColor="@color/white"
-            android:textSize="@dimen/size28"
+            android:textSize="34sp"
             android:visibility="visible" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -54,7 +54,6 @@
                 android:layout_height="@dimen/size16"
                 android:layout_marginBottom="@dimen/size14"
                 android:background="@color/transparent"
-                android:clipToOutline="true"
                 android:indeterminate="false"
                 android:indeterminateTint="@color/green_1"
                 android:max="100"
@@ -64,11 +63,11 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/size8"
+                android:layout_marginStart="@dimen/size8"
                 android:fontFamily="@font/inter_normal"
                 android:text="@string/connecting"
                 android:textColor="@color/greyColor"
-                android:textSize="@dimen/size12" />
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -87,11 +86,11 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/size8"
+                android:layout_marginStart="@dimen/size8"
                 android:fontFamily="@font/inter_normal"
                 android:text="@string/private_internet"
                 android:textColor="@color/successColor"
-                android:textSize="@dimen/size12" />
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -106,7 +105,7 @@
                 android:id="@+id/progressLoadAds"
                 android:layout_width="@dimen/size16"
                 android:layout_height="@dimen/size16"
-                android:layout_marginRight="@dimen/size3"
+                android:layout_marginStart="@dimen/size3"
                 android:indeterminateTint="@color/green_1"
                 android:secondaryProgressTint="@color/green_1" />
 
@@ -115,7 +114,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/disconnecting"
                 android:textColor="#C4C9D9"
-                android:textSize="@dimen/size14" />
+                android:textSize="14sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -132,7 +131,7 @@
                 android:text="@string/tap_to_connect"
                 android:fontFamily="@font/inter_normal"
                 android:textColor="@color/successColor"
-                android:textSize="@dimen/size14" />
+                android:textSize="14sp" />
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -140,6 +139,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_status_connection"
+            android:foreground="?selectableItemBackgroundBorderless"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -159,7 +159,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/size14"
+                android:layout_marginStart="@dimen/size14"
                 android:orientation="vertical">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -168,7 +168,7 @@
                     android:text="@string/upload"
                     android:fontFamily="@font/inter_normal"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/size12" />
+                    android:textSize="12sp" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvTrafficUpload"
@@ -176,7 +176,7 @@
                     android:layout_height="wrap_content"
                     android:text="--"
                     android:textColor="@color/warningColor"
-                    android:textSize="@dimen/size16" />
+                    android:textSize="16sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -192,18 +192,18 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/size14"
-                android:gravity="left"
+                android:layout_marginStart="@dimen/size14"
+                android:gravity="start"
                 android:orientation="vertical">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/size16"
+                    android:layout_marginEnd="@dimen/size16"
                     android:text="@string/download"
                     android:fontFamily="@font/inter_normal"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/size12" />
+                    android:textSize="12sp" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvTrafficDownload"
@@ -211,7 +211,7 @@
                     android:layout_height="wrap_content"
                     android:text="--"
                     android:textColor="@color/infoColor"
-                    android:textSize="@dimen/size16" />
+                    android:textSize="16sp" />
             </LinearLayout>
         </LinearLayout>
 
@@ -231,6 +231,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_setting_pro2"
+            android:foreground="?selectableItemBackgroundBorderless"
             android:gravity="center"
             android:orientation="horizontal"
             android:padding="@dimen/size12">
@@ -254,15 +255,13 @@
                     android:layout_marginStart="@dimen/size8"
                     android:fontFamily="@font/inter_bold"
                     android:text="United States"
-                    android:textColor="@color/language_item_text_color"
-                    android:textFontWeight="600" />
+                    android:textColor="@color/language_item_text_color"/>
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvProxyIp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/size8"
-                    android:textFontWeight="600"
                     android:fontFamily="@font/inter_normal"
                     android:gravity="center_vertical"
                     android:text="103.23.23.123"

@@ -70,7 +70,7 @@
                 android:maxLines="2"
                 android:text="@string/setting_vpn_fast_and_safe_desc"
                 android:textColor="@color/white"
-                android:textSize="@dimen/size14"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

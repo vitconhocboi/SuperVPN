@@ -13,15 +13,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_24"
         android:layout_marginEnd="@dimen/margin_24"
+        android:layout_marginTop="@dimen/margin_16"
         android:background="@drawable/bg_text_search"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="@dimen/margin_medium"
         android:hint="@string/search_app"
         android:textSize="14sp"
-        android:paddingStart="@dimen/margin_16"
-        android:paddingEnd="@dimen/margin_16"
-        android:paddingTop="@dimen/margin_16"
-        android:paddingBottom="@dimen/margin_16"
+        android:padding="@dimen/margin_16"
         android:textAppearance="?textAppearanceBody2"
         android:textColor="@color/white"
+        android:visibility="visible"
         android:textColorHint="@color/text_gray_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,6 +69,7 @@
             android:background="@drawable/bg_cancel_button"
             android:textColor="@color/white"
             android:textAppearance="@style/App_TextAppearanceButton2"
+            android:foreground="?selectableItemBackgroundBorderless"
             />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -81,7 +83,8 @@
             android:background="@drawable/bg_save_button"
             android:layout_marginStart="@dimen/margin_medium"
             android:textColor="@color/white"
-            android:textAppearance="@style/App_TextAppearanceButton2" />
+            android:textAppearance="@style/App_TextAppearanceButton2"
+            android:foreground="?selectableItemBackgroundBorderless"/>
 
     </LinearLayout>
 
