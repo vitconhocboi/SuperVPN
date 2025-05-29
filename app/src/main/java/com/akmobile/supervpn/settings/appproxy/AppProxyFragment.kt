@@ -8,6 +8,7 @@ import androidx.fragment.app.viewModels
 import com.akmobile.supervpn.base.ProductFragment
 import com.akmobile.supervpn.databinding.FragmentAppProxyBinding
 import com.akmobile.supervpn.proxy.ProxyUI
+import com.akmobile.supervpn.utils.Navigator
 import com.common.baseui.extension.bindFlowCreate
 import com.common.baseui.extension.setVisible
 import dagger.hilt.android.AndroidEntryPoint
@@ -61,13 +62,14 @@ class AppProxyFragment(
 
             btnOk.setOnClickListener {
                 val listDisallows = ArrayList<AppProxyUI>()
-                appProxyAdapter.datas.map { it ->
-                    if (it!!.allowed == false)
+                appProxyAdapter.datas.map {
+                    if (!it!!.allowed)
                         listDisallows.add(it)
                 }
                 allowAppViewModel.setAllowApps(listDisallows)
                 Toast.makeText(requireContext(), "Save successfully", Toast.LENGTH_SHORT).show()
-                onBackPress()
+                requireActivity().finish()
+                Navigator.startMainActivity(requireContext(), "RECONNECT")
             }
 
             btnCancel.setOnClickListener {
