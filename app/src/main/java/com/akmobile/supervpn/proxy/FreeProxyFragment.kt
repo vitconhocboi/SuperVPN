@@ -114,6 +114,7 @@ class FreeProxyFragment : ProductFragment<FragmentProxyBinding>() {
                             item.active = false
                         }
                     } catch (e: Exception) {
+                        selected = false
                         Toast.makeText(
                             requireContext(),
                             "Cannot get proxy: ${e.message}",

@@ -187,7 +187,7 @@
 /*
  * Enables statistics function.
  */
-#define FEATURE_STATISTICS 1
+#define FEATURE_STATISTICS 0
 
 /*
  * Enable strptime() sanity checks.
