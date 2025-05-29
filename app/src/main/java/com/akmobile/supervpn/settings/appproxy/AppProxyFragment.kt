@@ -11,6 +11,7 @@ import com.akmobile.supervpn.databinding.FragmentAppProxyBinding
 import com.akmobile.supervpn.proxy.ProxyUI
 import com.akmobile.supervpn.utils.hideKeyboard
 import com.akmobile.supervpn.utils.textChanges
+import com.akmobile.supervpn.utils.Navigator
 import com.common.baseui.extension.bindFlowCreate
 import com.common.baseui.extension.hideKeyBoard
 import com.common.baseui.extension.setVisible
@@ -67,7 +68,8 @@ class AppProxyFragment(
                 listDisallows.addAll(listFromBaseList as Collection<out AppProxyUI>)
                 allowAppViewModel.setDisallowApps(listDisallows)
                 Toast.makeText(requireContext(), "Save successfully", Toast.LENGTH_SHORT).show()
-                onBackPress()
+                requireActivity().finish()
+                Navigator.startMainActivity(requireContext(), "RECONNECT")
             }
 
             btnCancel.setOnClickListener {
