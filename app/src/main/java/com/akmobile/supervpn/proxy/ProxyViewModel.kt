@@ -30,10 +30,10 @@ class ProxyViewModel @Inject constructor(
 
     val isConnected = MutableLiveData(proxyUpdate.vpnState)
 
-    fun getAllProxy(context: Context) {
+    fun getAllProxy(context: Context, type: String) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val response = apiService.getCountries()
+                val response = apiService.getCountries(type)
                 if (response.isSuccessful) {
                     response.body()?.let { countriesResponse ->
                         val listProxies = countriesResponse.countries.map { country ->
@@ -68,12 +68,12 @@ class ProxyViewModel @Inject constructor(
 
     }
 
-    suspend fun setActiveProxy(item: ProxyGroupUI?, deviceId: String?) {
+    suspend fun setActiveProxy(item: ProxyGroupUI?, deviceId: String?, type: String) {
         if (item != null && deviceId != null) {
             BaseAppConfig.proxyCountry = item.country
 
             // Call API to assign proxy
-            val request = ProxyRequest(user_id = deviceId, country = item.country)
+            val request = ProxyRequest(user_id = deviceId, country = item.country, type = type)
             val response = apiService.assignProxy(request)
 
             if (response.isSuccessful) {

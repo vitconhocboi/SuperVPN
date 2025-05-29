@@ -10,6 +10,9 @@ import javax.inject.Inject
 
 class AppProxyAdapter @Inject constructor() :
     BaseAdapter<AppProxyUI, BaseViewHolder<AppProxyUI>>() {
+
+    var listRecord: ArrayList<AppProxyUI?> = arrayListOf()
+
     override fun onCreateViewHolder(
         parent: ViewGroup, viewType: Int
     ): BaseViewHolder<AppProxyUI> {
@@ -42,5 +45,17 @@ class AppProxyAdapter @Inject constructor() :
             checkboxProxy.isChecked = data.allowed
             onItemClick?.invoke(position, data)
         }
+    }
+
+    fun setData(list: List<AppProxyUI?>) {
+        listRecord.clear()
+        listRecord.addAll(list)
+    }
+
+    fun filter(textChange: String) {
+        val filteredList = listRecord.filter {
+            it?.appName?.lowercase()?.contains(textChange.lowercase()) == true
+        }
+        updateData(filteredList)
     }
 }

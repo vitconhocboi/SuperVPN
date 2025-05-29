@@ -5,13 +5,18 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.akmobile.supervpn.base.ProductFragment
 import com.akmobile.supervpn.databinding.FragmentAppProxyBinding
 import com.akmobile.supervpn.proxy.ProxyUI
+import com.akmobile.supervpn.utils.hideKeyboard
+import com.akmobile.supervpn.utils.textChanges
 import com.akmobile.supervpn.utils.Navigator
 import com.common.baseui.extension.bindFlowCreate
+import com.common.baseui.extension.hideKeyBoard
 import com.common.baseui.extension.setVisible
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -33,48 +38,50 @@ class AppProxyFragment(
         return FragmentAppProxyBinding.inflate(inflater, container, false)
     }
 
+    @OptIn(ExperimentalCoroutinesApi::class)
     @SuppressLint("NotifyDataSetChanged")
     override fun initView() {
         super.initView()
+
+        binding.edtSearch.clearFocus()
+        binding.edtSearch.hideKeyboard()
+
         appProxyAdapter = AppProxyAdapter()
-//        bindFlowCreate(allowAppViewModel.allowApp) { allowApp ->
-//            if (allowApp.data?.isEmpty() == true) {
-//                val listMergeAllowApp = appProxyAdapter.datas.map { app ->
-//                    app?.allowed = true
-//                    app
-//                }
-//                appProxyAdapter.updateData(listMergeAllowApp)
-//            } else {
-//                val listMergeAllowApp = appProxyAdapter.datas.map { app ->
-//                    app?.allowed =
-//                        (allowApp.data?.find { allowed -> app?.packageName == allowed.packageName } != null)
-//                    app
-//                }
-//                appProxyAdapter.updateData(listMergeAllowApp)
-//            }
-//        }
         appProxyAdapter.onItemClick = { _, item ->
-//            allowAppViewModel.setAllowApp(item)
-            selectedList.add(item)
+            if (item.allowed) {
+                if (!selectedList.contains(item)) {
+                    selectedList.add(item)
+                }
+            } else {
+                if (selectedList.contains(item)) {
+                    selectedList.remove(item)
+                }
+            }
         }
         binding.apply {
             recyclerViewApps.adapter = appProxyAdapter
 
             btnOk.setOnClickListener {
+                edtSearch.hideKeyboard()
                 val listDisallows = ArrayList<AppProxyUI>()
-                appProxyAdapter.datas.map {
-                    if (!it!!.allowed)
-                        listDisallows.add(it)
-                }
-                allowAppViewModel.setAllowApps(listDisallows)
+                val listFromBaseList = appProxyAdapter.listRecord.filter { !selectedList.contains(it)}
+                listDisallows.addAll(listFromBaseList as Collection<out AppProxyUI>)
+                allowAppViewModel.setDisallowApps(listDisallows)
                 Toast.makeText(requireContext(), "Save successfully", Toast.LENGTH_SHORT).show()
                 requireActivity().finish()
                 Navigator.startMainActivity(requireContext(), "RECONNECT")
             }
 
             btnCancel.setOnClickListener {
+                edtSearch.hideKeyboard()
                 loadData()
                 activity?.onBackPressedDispatcher?.onBackPressed()
+            }
+
+            edtSearch.textChanges (lifecycleScope) {
+                if (appProxyAdapter.listRecord.isNotEmpty()) {
+                    appProxyAdapter.filter(it)
+                }
             }
         }
 
@@ -96,7 +103,9 @@ class AppProxyFragment(
                         }
                         app
                     }
-                    appProxyAdapter.updateData(listMergeAllowApp)
+                    updateAdapter(listMergeAllowApp)
+//                    appProxyAdapter.setData(listMergeAllowApp)
+//                    appProxyAdapter.updateData(listMergeAllowApp)
                 } else {
                     val listMergeAllowApp = appProxyAdapter.datas.map { app ->
                         app?.allowed =
@@ -106,19 +115,29 @@ class AppProxyFragment(
                         }
                         app
                     }
-                    appProxyAdapter.updateData(listMergeAllowApp)
+                    updateAdapter(listMergeAllowApp)
+//                    appProxyAdapter.setData(listMergeAllowApp)
+//                    appProxyAdapter.updateData(listMergeAllowApp)
                 }
             }
         }
 
         allowAppViewModel.listApps.observe(this) { it ->
-            appProxyAdapter.updateData(it)
+//            appProxyAdapter.setData(it)
+//            appProxyAdapter.updateData(it)
+            updateAdapter(it)
             allowAppViewModel.getAllowApp()
         }
     }
 
+    fun updateAdapter(list: List<AppProxyUI?>) {
+        appProxyAdapter.setData(list)
+        appProxyAdapter.updateData(list)
+    }
+
     override fun onResume() {
         super.onResume()
+        binding.edtSearch.setText("")
     }
 
     fun loadData() {
@@ -142,6 +161,15 @@ class AppProxyFragment(
                 it.allowed = true
             }
         }
+        appProxyAdapter.setData(appProxyAdapter.datas)
         appProxyAdapter.notifyDataSetChanged()
+    }
+
+    fun hideKeyboard() {
+        binding.edtSearch.hideKeyboard()
+    }
+
+    fun clearUI() {
+        binding.edtSearch.setText("")
     }
 }

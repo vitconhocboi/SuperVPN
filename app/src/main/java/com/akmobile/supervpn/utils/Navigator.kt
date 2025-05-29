@@ -7,7 +7,6 @@ import com.akmobile.supervpn.main.MainActivity
 import com.akmobile.supervpn.proxy.ProxyActivity
 import com.akmobile.supervpn.premium.PremiumActivity
 import com.akmobile.supervpn.proxy.DNSActivity
-import com.akmobile.supervpn.proxy.ProxyFragment
 
 object Navigator {
 

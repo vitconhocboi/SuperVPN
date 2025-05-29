@@ -20,7 +20,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class ProxyFragment : ProductFragment<FragmentProxyBinding>() {
+class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
 
     @Inject
     lateinit var mPagerAdapter: ProxyGroupAdapter
@@ -29,6 +29,7 @@ class ProxyFragment : ProductFragment<FragmentProxyBinding>() {
 
     companion object {
         private var selected = false
+        private const val TYPE = "premium"
     }
 
 
@@ -38,28 +39,28 @@ class ProxyFragment : ProductFragment<FragmentProxyBinding>() {
         return FragmentProxyBinding.inflate(inflater, container, false)
     }
 
-    @SuppressLint("HardwareIds")
+    @SuppressLint("HardwareIds", "NotifyDataSetChanged")
     override fun initView() {
         super.initView()
         with(binding) {
-            tvFree.isSelected = true
-            tvFree.setOnClickListener {
-                tvPremium.isSelected = false
-                tvFree.isSelected = true
-            }
-
-            tvPremium.setOnClickListener {
-                tvFree.isSelected = false
-                tvPremium.isSelected = true
-            }
-            ivBack.setOnClickListener {
-                Navigator.startMainActivity(requireActivity())
-            }
-            ivReload.setOnClickListener {
-
-            }
+//            tvFree.isSelected = true
+//            tvFree.setOnClickListener {
+//                tvPremium.isSelected = false
+//                tvFree.isSelected = true
+//            }
+//
+//            tvPremium.setOnClickListener {
+//                tvFree.isSelected = false
+//                tvPremium.isSelected = true
+//            }
+//            ivBack.setOnClickListener {
+//                Navigator.startMainActivity(requireActivity())
+//            }
+//            ivReload.setOnClickListener {
+//
+//            }
             rcvGroupProxy.adapter = mPagerAdapter
-            mProxyViewModel.getAllProxy(requireContext())
+            mProxyViewModel.getAllProxy(requireContext(), TYPE)
 //            bindFlowCreate(mProxyViewModel.allProxy) { result ->
 //                processResultData(result, onSuccess = {
 //                    mPagerAdapter.updateData(it)
@@ -124,9 +125,9 @@ class ProxyFragment : ProductFragment<FragmentProxyBinding>() {
                                 item.active = false
                             }
                             if (item.active) {
-                                mProxyViewModel.setActiveProxy(item, deviceId)
+                                mProxyViewModel.setActiveProxy(item, deviceId, TYPE)
                             } else {
-                                mProxyViewModel.setActiveProxy(null, deviceId)
+                                mProxyViewModel.setActiveProxy(null, deviceId, TYPE)
                             }
                             requireActivity().finish()
                             Navigator.startMainActivity(requireContext(), reconnect)

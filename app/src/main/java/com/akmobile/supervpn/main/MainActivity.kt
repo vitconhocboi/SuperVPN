@@ -14,7 +14,9 @@ import com.akmobile.supervpn.settings.SettingFragment
 import com.akmobile.supervpn.settings.appproxy.AppProxyFragment
 import com.akmobile.supervpn.settings.dns.DNSFragment
 import com.akmobile.supervpn.R
+import com.akmobile.supervpn.utils.hideKeyboard
 import com.common.baseui.BaseAppConfig
+import com.common.baseui.extension.hideKeyBoard
 import com.simple.libads.setVisible
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.selects.select
@@ -99,6 +101,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                     if (isSettingFragment) {
                         showFragment(mHomeFragment)
                     } else if (isAppProxyFragment) {
+                        mAppProxyFragment.hideKeyboard()
                         showFragment(mSettingFragment)
                     } else {
                         finishAffinity()
@@ -179,6 +182,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
 //        mainViewModel.getInstalledAppsWithInternetPermission(baseContext)
         showFragment(mAppProxyFragment)
         mAppProxyFragment.loadData()
+        mAppProxyFragment.clearUI()
     }
 
     fun showDns() {

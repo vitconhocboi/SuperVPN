@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/black"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/proxyActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size16"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/size16"
+            android:src="@drawable/ic_arrow_left" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/size16"
+            android:layout_weight="1"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/ip_proxy"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/text_medium" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivReload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/size16"
+            android:src="@drawable/ic_reload"
+            android:visibility="invisible" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        app:layout_constraintTop_toBottomOf="@+id/proxyActionBar"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <View
+            android:id="@+id/viewDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1px" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size10"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/size8"
+            app:tabIndicatorHeight="0dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tabFree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/size6"
+                    android:fontFamily="@font/inter_normal"
+                    android:background="@color/black"
+                    android:textColor="@color/white"
+                    android:text="@string/free" />
+
+                <View
+                    android:id="@+id/ln_free"
+                    android:layout_width="25dp"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="@dimen/size4"
+                    android:background="@color/successColor"
+                    android:visibility="invisible"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tabPremium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/black"
+                    android:textColor="@color/white"
+                    android:padding="@dimen/size6"
+                    android:drawableEnd="@drawable/ic_setting_pre"
+                    android:drawablePadding="@dimen/margin_16"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/inter_normal"
+                    android:text="@string/premium" />
+
+                <View
+                    android:id="@+id/ln_premium"
+                    android:layout_width="25dp"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="@dimen/size4"
+                    android:background="@color/successColor"
+                    android:visibility="invisible"/>
+            </LinearLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vpProxies"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_16"
+            android:background="@color/black"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

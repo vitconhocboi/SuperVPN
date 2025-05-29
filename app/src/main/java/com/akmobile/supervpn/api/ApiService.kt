@@ -4,6 +4,7 @@ import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 interface ApiService {
     @POST("assign-proxy")
@@ -13,12 +14,15 @@ interface ApiService {
     suspend fun disconnect(@Body request: DisconnectRequest): Response<DisconnectResponse>
 
     @GET("get-countries")
-    suspend fun getCountries(): Response<CountriesResponse>
+    suspend fun getCountries(
+        @Query("type") type: String
+    ): Response<CountriesResponse>
 }
 
 data class ProxyRequest(
     val user_id: String,
-    val country: String
+    val country: String,
+    val type: String
 )
 
 data class AssignProxyResponse(
