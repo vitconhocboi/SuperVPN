@@ -226,6 +226,11 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         return String.format("%02d:%02d:%02d", hours, minutes, secs)
     }
 
+    fun Context.safeGetString(resourceName: String): String? {
+        val resId = resources.getIdentifier(resourceName, "string", packageName)
+        return if (resId != 0) getString(resId) else null
+    }
+
     override fun initView() {
         super.initView()
         state = activity?.intent?.getStringExtra("RECONNECT")
@@ -235,11 +240,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
             if (BaseAppConfig.proxy.isNotEmpty()) {
                 //update UI
                 ivFlag.setImageResource(Utils.getFlag(BaseAppConfig.proxyCountry))
-                tvProxyLocation.text = requireContext().getString(
-                    context.resources.getIdentifier(
-                        BaseAppConfig.proxyCountry, "string", requireContext().packageName
-                    )
-                )
+                tvProxyLocation.text = requireContext().safeGetString(BaseAppConfig.proxyCountry)
                 engine.Engine.decodeString(BaseAppConfig.proxy).split(":").let { parts ->
                     if (parts.size >= 2) {
                         currentProxy = ProxySpeedTest.ProxyConfig(
