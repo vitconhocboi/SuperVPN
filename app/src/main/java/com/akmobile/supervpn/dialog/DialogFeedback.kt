@@ -40,7 +40,7 @@ class DialogFeedback : BindingSheetDialog<DialogRateFeedbackBinding>() {
 
     override fun onDismiss(dialog: DialogInterface) {
         super.onDismiss(dialog)
-        DialogRateComplete().show(parentFragmentManager, "dialog_rate")
+//        DialogRateComplete().show(parentFragmentManager, "dialog_rate")
     }
 
     override fun initView() {

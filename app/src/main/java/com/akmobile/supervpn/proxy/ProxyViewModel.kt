@@ -26,11 +26,13 @@ class ProxyViewModel @Inject constructor(
     private val proxyUpdate: ProxyConnection,
     private val apiService: ApiService  // Add API service injection
 ) : ViewModel(), ISuperVpnProxyUpdate {
-    val allProxy = MutableStateFlow<ResultData<List<ProxyGroupUI>>>(ResultData.standby())
+    val allFreeProxy = MutableStateFlow<ResultData<List<ProxyGroupUI>>>(ResultData.standby())
+
+    val allPremiumProxy = MutableStateFlow<ResultData<List<ProxyGroupUI>>>(ResultData.standby())
 
     val isConnected = MutableLiveData(proxyUpdate.vpnState)
 
-    fun getAllProxy(context: Context, type: String) {
+    fun getAllFreeProxy(context: Context, type: String) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val response = apiService.getCountries(type)
@@ -41,12 +43,33 @@ class ProxyViewModel @Inject constructor(
                                 country = country, active = country == BaseAppConfig.proxyCountry
                             )
                         }
-                        allProxy.emit(ResultData.success(listProxies))
+                        allFreeProxy.emit(ResultData.success(listProxies))
                     }
                 }
             } catch (e: Exception) {
                 // Handle error case
-                allProxy.emit(ResultData.error(e))
+                allFreeProxy.emit(ResultData.error(e))
+            }
+        }
+    }
+
+    fun getAllPremiumProxy(context: Context, type: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                val response = apiService.getCountries(type)
+                if (response.isSuccessful) {
+                    response.body()?.let { countriesResponse ->
+                        val listProxies = countriesResponse.countries.map { country ->
+                            ProxyGroupUI(
+                                country = country, active = country == BaseAppConfig.proxyCountry
+                            )
+                        }
+                        allPremiumProxy.emit(ResultData.success(listProxies))
+                    }
+                }
+            } catch (e: Exception) {
+                // Handle error case
+                allPremiumProxy.emit(ResultData.error(e))
             }
         }
     }

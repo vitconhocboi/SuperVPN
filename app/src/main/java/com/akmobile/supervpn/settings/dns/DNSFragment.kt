@@ -37,15 +37,15 @@ class DNSFragment : ProductFragment<FragmentDnsBinding>() {
                 progress.setVisible(false)
             }
 
-            btnSave.setOnClickListener {
-                val dns = mDnsModel.allDNS.value?.filter { it.active }?.map { it.server }
-                if (dns?.isNotEmpty() == true) {
-                    BaseAppConfig.dnsServer = dns.joinToString(",")
-                } else {
-                    BaseAppConfig.dnsServer = ""
-                }
-                Navigator.startMainActivity(requireContext(), "RECONNECT")
-            }
+//            btnSave.setOnClickListener {
+//                val dns = mDnsModel.allDNS.value?.filter { it.active }?.map { it.server }
+//                if (dns?.isNotEmpty() == true) {
+//                    BaseAppConfig.dnsServer = dns.joinToString(",")
+//                } else {
+//                    BaseAppConfig.dnsServer = ""
+//                }
+//                Navigator.startMainActivity(requireContext(), "RECONNECT")
+//            }
         }
     }
 }

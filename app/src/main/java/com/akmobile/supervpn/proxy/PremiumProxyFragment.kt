@@ -29,7 +29,7 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
 
     companion object {
         private var selected = false
-        private const val TYPE = "premium"
+        private const val PREMIUM = "premium"
     }
 
 
@@ -43,30 +43,9 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
     override fun initView() {
         super.initView()
         with(binding) {
-//            tvFree.isSelected = true
-//            tvFree.setOnClickListener {
-//                tvPremium.isSelected = false
-//                tvFree.isSelected = true
-//            }
-//
-//            tvPremium.setOnClickListener {
-//                tvFree.isSelected = false
-//                tvPremium.isSelected = true
-//            }
-//            ivBack.setOnClickListener {
-//                Navigator.startMainActivity(requireActivity())
-//            }
-//            ivReload.setOnClickListener {
-//
-//            }
             rcvGroupProxy.adapter = mPagerAdapter
-            mProxyViewModel.getAllProxy(requireContext(), TYPE)
-//            bindFlowCreate(mProxyViewModel.allProxy) { result ->
-//                processResultData(result, onSuccess = {
-//                    mPagerAdapter.updateData(it)
-//                })
-//            }
-            bindFlowCreate(mProxyViewModel.allProxy) { result ->
+            mProxyViewModel.getAllPremiumProxy(requireContext(), PREMIUM)
+            bindFlowCreate(mProxyViewModel.allPremiumProxy) { result ->
                 when (result.status) {
                     ResultData.State.STANDBY -> {
 
@@ -113,7 +92,6 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
                                     )
                                 }
                             } catch (e: Exception) {
-                                // Fallback to Android ID if advertising ID is not available
                                 Settings.Secure.getString(
                                     requireContext().contentResolver,
                                     Settings.Secure.ANDROID_ID
@@ -125,9 +103,9 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
                                 item.active = false
                             }
                             if (item.active) {
-                                mProxyViewModel.setActiveProxy(item, deviceId, TYPE)
+                                mProxyViewModel.setActiveProxy(item, deviceId, PREMIUM)
                             } else {
-                                mProxyViewModel.setActiveProxy(null, deviceId, TYPE)
+                                mProxyViewModel.setActiveProxy(null, deviceId, PREMIUM)
                             }
                             requireActivity().finish()
                             Navigator.startMainActivity(requireContext(), reconnect)

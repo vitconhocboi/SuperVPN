@@ -29,7 +29,7 @@ class FreeProxyFragment : ProductFragment<FragmentProxyBinding>() {
 
     companion object {
         private var selected = false
-        private const val TYPE = "free"
+        private const val FREE = "free"
     }
 
 
@@ -39,34 +39,13 @@ class FreeProxyFragment : ProductFragment<FragmentProxyBinding>() {
         return FragmentProxyBinding.inflate(inflater, container, false)
     }
 
-    @SuppressLint("HardwareIds")
+    @SuppressLint("HardwareIds", "NotifyDataSetChanged")
     override fun initView() {
         super.initView()
         with(binding) {
-//            tvFree.isSelected = true
-//            tvFree.setOnClickListener {
-//                tvPremium.isSelected = false
-//                tvFree.isSelected = true
-//            }
-//
-//            tvPremium.setOnClickListener {
-//                tvFree.isSelected = false
-//                tvPremium.isSelected = true
-//            }
-//            ivBack.setOnClickListener {
-//                Navigator.startMainActivity(requireActivity())
-//            }
-//            ivReload.setOnClickListener {
-//
-//            }
             rcvGroupProxy.adapter = mPagerAdapter
-            mProxyViewModel.getAllProxy(requireContext(), TYPE)
-//            bindFlowCreate(mProxyViewModel.allProxy) { result ->
-//                processResultData(result, onSuccess = {
-//                    mPagerAdapter.updateData(it)
-//                })
-//            }
-            bindFlowCreate(mProxyViewModel.allProxy) { result ->
+            mProxyViewModel.getAllFreeProxy(requireContext(), FREE)
+            bindFlowCreate(mProxyViewModel.allFreeProxy) { result ->
                 when (result.status) {
                     ResultData.State.STANDBY -> {
 
@@ -113,7 +92,6 @@ class FreeProxyFragment : ProductFragment<FragmentProxyBinding>() {
                                     )
                                 }
                             } catch (e: Exception) {
-                                // Fallback to Android ID if advertising ID is not available
                                 Settings.Secure.getString(
                                     requireContext().contentResolver,
                                     Settings.Secure.ANDROID_ID
@@ -125,9 +103,9 @@ class FreeProxyFragment : ProductFragment<FragmentProxyBinding>() {
                                 item.active = false
                             }
                             if (item.active) {
-                                mProxyViewModel.setActiveProxy(item, deviceId, TYPE)
+                                mProxyViewModel.setActiveProxy(item, deviceId, FREE)
                             } else {
-                                mProxyViewModel.setActiveProxy(null, deviceId, TYPE)
+                                mProxyViewModel.setActiveProxy(null, deviceId, FREE)
                             }
                             requireActivity().finish()
                             Navigator.startMainActivity(requireContext(), reconnect)
