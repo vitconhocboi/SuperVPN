@@ -53,7 +53,7 @@ abstract class Tunnel {
 
     @Throws(Exception::class)
     fun connect(destAddress: InetSocketAddress?) {
-        if (LocalVpnService.Instance.protect(m_InnerChannel!!.socket())) {
+        if (LocalVpnService.Instance!!.protect(m_InnerChannel!!.socket())) {
             m_DestAddress = destAddress
             m_InnerChannel!!.register(m_Selector, SelectionKey.OP_CONNECT, this)
             m_Selector?.wakeup()

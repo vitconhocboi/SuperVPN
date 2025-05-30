@@ -7,6 +7,7 @@ import android.net.ProxyInfo
 import android.net.VpnService
 import android.os.Binder
 import android.os.Build
+import android.os.DeadObjectException
 import android.os.IBinder
 import android.os.ParcelFileDescriptor
 import com.akmobile.supervpn.home.HomeFragment
@@ -39,9 +40,9 @@ class LocalVpnService : VpnService(), Runnable {
 
     init {
         ID++
-//        m_Packet = ByteArray(20000)
-//        m_IPHeader = IPHeader(m_Packet, 0)
-        Instance = this
+        if (Instance == null) {
+            Instance = this
+        }
     }
 
     override fun onCreate() {
@@ -133,8 +134,9 @@ class LocalVpnService : VpnService(), Runnable {
                     m_PrivoxyManager = null
                     currentProxy = null
 
-                    stopForeground(true)
-                    stopSelf() // Stop the service after cleanup
+                    Instance!!.stopForeground(true)
+                    Instance!!.stopSelf() // Stop the service after cleanup
+                    Instance = null // Clear the instance reference
 
                     proxyConnection.updateUI(HomeFragment.DISCONNECTED)
                     Timber.tag(Constant.TAG).d("VPNService stopped.")
@@ -156,7 +158,7 @@ class LocalVpnService : VpnService(), Runnable {
                 // If still running, initiate cleanup
                 stopProxy(this)
             }
-        } catch (e: Exception) {
+        } catch (e: DeadObjectException) {
             Timber.tag(Constant.TAG).e("Error during service unbind ${e.printStackTrace()}")
         }
         return false
@@ -200,8 +202,8 @@ class LocalVpnService : VpnService(), Runnable {
             m_PrivoxyManager = null
             currentProxy = null
 
-            stopForeground(true)
-            stopSelf() // Stop the service after cleanup
+            Instance!!.stopForeground(true)
+            Instance!!.stopSelf() // Stop the service after cleanup
 
             proxyConnection.updateUI(HomeFragment.DISCONNECTED)
             Timber.tag(Constant.TAG).d("VPNService stopped.")
@@ -339,7 +341,7 @@ class LocalVpnService : VpnService(), Runnable {
         private const val ACTION_START = "ACTION_START"
         private const val ACTION_STOP = "ACTION_STOP"
 
-        lateinit var Instance: LocalVpnService
+        var Instance: LocalVpnService? = null
         var IsRunning: Boolean = false
         var version_bypass: String = "1.0.1"
         private var ID = 0

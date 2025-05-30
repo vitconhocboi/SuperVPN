@@ -197,8 +197,11 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 //                    type = BaseAppConfig.proxyType
 //                )
                 ProxySpeedTest().testProxy(currentProxy, callback = { download, upload ->
-                    binding.tvTrafficDownload.text = download
-                    binding.tvTrafficUpload.text = upload
+                    try {
+                        binding.tvTrafficDownload.text = download
+                        binding.tvTrafficUpload.text = upload
+                    } catch (e: Exception) {
+                    }
                 })
             }
             handler.postDelayed(this, 10000)
@@ -339,6 +342,11 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     override fun onStop() {
         super.onStop()
 //        handler.removeCallbacks(updateRunnable)
+        handler.removeCallbacks(speedTestRunnable)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
         handler.removeCallbacks(speedTestRunnable)
     }
 
