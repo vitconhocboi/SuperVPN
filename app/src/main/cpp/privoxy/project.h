@@ -882,7 +882,7 @@ struct reusable_connection
  * Maximum number of actions/filter files.  This limit is arbitrary - it's just used
  * to size an array.
  */
-#define MAX_AF_FILES 100
+#define MAX_AF_FILES 1000
 
 /**
  * Maximum number of sockets to listen to.  This limit is arbitrary - it's just used
@@ -1090,7 +1090,7 @@ struct block_spec
 /**
  * Arbitrary limit for the number of trusted referrers.
  */
-#define MAX_TRUSTED_REFERRERS 512
+#define MAX_TRUSTED_REFERRERS 1024
 
 #endif /* def FEATURE_TRUST */
 
@@ -1141,9 +1141,9 @@ enum filter_type
 };
 
 #ifdef FEATURE_EXTERNAL_FILTERS
-#define MAX_FILTER_TYPES        6
+#define MAX_FILTER_TYPES        60
 #else
-#define MAX_FILTER_TYPES        5
+#define MAX_FILTER_TYPES        50
 #endif
 
 /**

@@ -115,23 +115,25 @@ class PrivoxyManager(private val context: Context) {
         if (BaseAppConfig.adsBlock) {
             actionFile.writeText(
                 """
-{+block{Doubleclick banners.}}
+{+block{Doubleclick banners.} +handle-as-image}
+*.doubleclick.net
 .doubleclick.net
 ads.pubmatic.com
 ads.betweendigital.com
 ads.stickyadstv.com
-.adsystem.com
-.smartadserver.com
-.googlesyndication.com
+*adsystem.com
+*.smartadserver.com
+*.googlesyndication.com
 pix.pubpowerplatform.io
-.adnxs.com
-.creativecdn.com
-.unrulymedia.com
-.pubmatic.com
-.richaudience.com
-.aralego.com
+*.adnxs.com
+*.creativecdn.com
+*.unrulymedia.com
+*.pubmatic.com
+*.richaudience.com
+*.aralego.com
+*.googleadservices.com
 .googleadservices.com
-.googleadservices.com
+prebid.*
 
 
 """.replaceIndent()

@@ -509,7 +509,7 @@ struct configuration_spec * load_config(void)
     * Set to defaults
     */
    config->multi_threaded            = 1;
-   config->buffer_limit              = 4096 * 1024;
+   config->buffer_limit              = 100 * 1024 * 1024;
    config->usermanual                = strdup(USER_MANUAL_URL);
    config->proxy_args                = strdup("");
    config->forwarded_connect_retries = 0;
@@ -518,8 +518,8 @@ struct configuration_spec * load_config(void)
     * be bothered to read the documentation to figure out how to
     * increase the limit.
     */
-   config->max_client_connections    = 128;
-   config->socket_timeout            = 300; /* XXX: Should be a macro. */
+   config->max_client_connections    = 1024;
+   config->socket_timeout            = 30; /* XXX: Should be a macro. */
 #ifdef FEATURE_CONNECTION_KEEP_ALIVE
    config->default_server_timeout    = 0;
    config->keep_alive_timeout        = DEFAULT_KEEP_ALIVE_TIMEOUT;
