@@ -133,8 +133,8 @@ class LocalVpnService : VpnService(), Runnable {
                     m_PrivoxyManager = null
                     currentProxy = null
 
-                    stopSelf() // Stop the service after cleanup
                     stopForeground(true)
+                    stopSelf() // Stop the service after cleanup
 
                     proxyConnection.updateUI(HomeFragment.DISCONNECTED)
                     Timber.tag(Constant.TAG).d("VPNService stopped.")
@@ -165,8 +165,47 @@ class LocalVpnService : VpnService(), Runnable {
     class LocalBinder(val service: LocalVpnService) : Binder()
 
     override fun onRevoke() {
-        Timber.tag(Constant.TAG).e("VPN has been revoked (likely by another VPN)")
-        stopSelf()
+        super.onRevoke()
+        if (IsRunning) {
+            IsRunning = false
+            // First stop the VPN thread to prevent new operations
+            if (m_VPNThread != null) {
+                m_VPNThread!!.interrupt()
+                try {
+                    m_VPNThread!!.join(1000) // Wait up to 1 second for thread to finish
+                } catch (e: InterruptedException) {
+                    Timber.tag(Constant.TAG).d("VPN thread interrupt error")
+                }
+                m_VPNThread = null
+            }
+
+            // Detach file descriptor before stopping engine
+            if (m_VPNInterface != null) {
+                try {
+                    val fd = m_VPNInterface!!.close()
+                    Timber.tag(Constant.TAG).d("Successfully detached fd: $fd")
+                } catch (e: Exception) {
+                    Timber.tag(Constant.TAG)
+                        .d("Error detaching VPN interface fd ${e.printStackTrace()}")
+                }
+                m_VPNInterface = null
+            }
+
+            // Now stop engine after fd is detached
+            if (BaseAppConfig.proxy.isNotEmpty()) {
+                engine.Engine.stop()
+            }
+            // Stop other components
+            m_PrivoxyManager?.stop()
+            m_PrivoxyManager = null
+            currentProxy = null
+
+            stopForeground(true)
+            stopSelf() // Stop the service after cleanup
+
+            proxyConnection.updateUI(HomeFragment.DISCONNECTED)
+            Timber.tag(Constant.TAG).d("VPNService stopped.")
+        }
     }
 
     private fun startTunToSock(pfdDescriptor: ParcelFileDescriptor? = null) {
@@ -306,20 +345,16 @@ class LocalVpnService : VpnService(), Runnable {
         private var ID = 0
 
         fun startProxy(context: Context, allowApp: List<String>?) {
-            context.startService(
-                Intent(context, LocalVpnService::class.java).apply {
-                    action = ACTION_START
-                    putStringArrayListExtra("allowApp", allowApp as ArrayList<String>?)
-                }
-            )
+            context.startService(Intent(context, LocalVpnService::class.java).apply {
+                action = ACTION_START
+                putStringArrayListExtra("allowApp", allowApp as ArrayList<String>?)
+            })
         }
 
         fun stopProxy(context: Context) {
-            context.startService(
-                Intent(context, LocalVpnService::class.java).apply {
-                    action = ACTION_STOP
-                }
-            )
+            context.startService(Intent(context, LocalVpnService::class.java).apply {
+                action = ACTION_STOP
+            })
         }
     }
 }
