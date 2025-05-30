@@ -76,7 +76,7 @@ class AppProxyFragment(
             btnCancel.setOnClickListener {
                 edtSearch.hideKeyboard()
                 loadData()
-                activity?.onBackPressedDispatcher?.onBackPressed()
+//                activity?.onBackPressedDispatcher?.onBackPressed()
             }
 
             edtSearch.textChanges (lifecycleScope) {
@@ -145,6 +145,7 @@ class AppProxyFragment(
 
     fun loadData() {
         selectedList.clear()
+        binding.edtSearch.setText("")
         allowAppViewModel.getInstalledAppsWithInternetPermission(requireContext())
     }
 

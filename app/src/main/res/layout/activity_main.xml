@@ -95,7 +95,9 @@
                 android:padding="5dp"
                 android:layout_marginVertical="@dimen/size16"
                 android:src="@drawable/ic_select"
-                android:foreground="?selectableItemBackgroundBorderless"/>
+                android:foreground="?selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true" />
 
 <!--            <androidx.appcompat.widget.AppCompatCheckBox-->
 <!--                android:id="@+id/cb_select_all"-->
@@ -123,7 +125,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/size16"
                 android:src="@drawable/ic_arrow_left"
-                android:foreground="?selectableItemBackgroundBorderless"/>
+                android:foreground="?selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="0dp"

@@ -53,6 +53,7 @@
     <string name="common_ok">Ok</string>
     <string name="btn_save">Save</string>
     <string name="btn_cancel">Cancel</string>
+    <string name="btn_reset">Reset</string>
     <string name="auto">Auto</string>
     <string name="min_60">60 Minutes</string>
     <string name="min_90">90 Minutes</string>
