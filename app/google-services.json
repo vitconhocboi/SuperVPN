@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:935888791652:android:64b3f93688d351a3095771",
+        "mobilesdk_app_id": "1:935888791652:android:a109ea8c248ee7f5095771",
         "android_client_info": {
-          "package_name": "com.akmobile.supervpn"
+          "package_name": "com.highsecure.vpn.proxy.master"
         }
       },
       "oauth_client": [],

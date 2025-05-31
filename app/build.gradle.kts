@@ -9,11 +9,11 @@ plugins {
 }
 
 android {
-    namespace = "com.akmobile.supervpn"
+    namespace = "com.highsecure.vpn.proxy.master"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.akmobile.supervpn"
+        applicationId = "com.highsecure.vpn.proxy.master"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -125,6 +125,7 @@ dependencies {
     implementation(group = ":tun2socks", name="tun2socks", ext = "aar")
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.crashlytics.ktx)
+    implementation(libs.firebase.analytics.ktx)
     implementation(libs.firebase.firestore.ktx)
     implementation(libs.okhttp)
     implementation("com.google.android.gms:play-services-ads-identifier:18.2.0")
