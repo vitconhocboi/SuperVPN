@@ -176,7 +176,7 @@ class LocalVpnService : VpnService(), Runnable {
         try {
             if (IsRunning) {
                 // If still running, initiate cleanup
-                stopProxy(this)
+                stopVPN()
             }
         } catch (e: DeadObjectException) {
             Timber.tag(Constant.TAG).e("Error during service unbind ${e.printStackTrace()}")
@@ -343,10 +343,10 @@ class LocalVpnService : VpnService(), Runnable {
         return pfdDescriptor
     }
 
-    override fun onTaskRemoved(rootIntent: Intent?) {
-        stopVPN()
-        super.onTaskRemoved(rootIntent)
-    }
+//    override fun onTaskRemoved(rootIntent: Intent?) {
+//        stopVPN()
+//        super.onTaskRemoved(rootIntent)
+//    }
 
     @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
     override fun onDestroy() {
@@ -362,32 +362,12 @@ class LocalVpnService : VpnService(), Runnable {
 
         private var m_PrivoxyManager: PrivoxyManager? = null
         private var allowApp: List<String>? = null
-        private const val ACTION_START = "ACTION_START"
-        private const val ACTION_STOP = "ACTION_STOP"
+        const val ACTION_START = "ACTION_START"
+        const val ACTION_STOP = "ACTION_STOP"
 
         var Instance: LocalVpnService? = null
         var IsRunning: Boolean = false
         var version_bypass: String = "1.0.1"
         private var ID = 0
-
-        fun startProxy(context: Context, allowApp: List<String>?) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                context.startForegroundService(Intent(context, LocalVpnService::class.java).apply {
-                    action = ACTION_START
-                    putStringArrayListExtra("allowApp", allowApp as ArrayList<String>?)
-                })
-            } else {
-                context.startService(Intent(context, LocalVpnService::class.java).apply {
-                    action = ACTION_START
-                    putStringArrayListExtra("allowApp", allowApp as ArrayList<String>?)
-                })
-            }
-        }
-
-        fun stopProxy(context: Context) {
-            context.startService(Intent(context, LocalVpnService::class.java).apply {
-                action = ACTION_STOP
-            })
-        }
     }
 }

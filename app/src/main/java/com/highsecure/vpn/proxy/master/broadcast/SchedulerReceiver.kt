@@ -17,7 +17,7 @@ class SchedulerReceiver : BroadcastReceiver() {
         when (intent?.action) {
             STOP_PROXY -> {
                 Timber.i("receive call stopProxy")
-                LocalVpnService.stopProxy(context!!)
+//                LocalVpnService.stopProxy(context!!)
             }
         }
     }

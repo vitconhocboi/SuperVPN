@@ -1,6 +1,8 @@
 package com.highsecure.vpn.proxy.master.proxy
 
 import android.content.Context
+import android.content.Intent
+import android.os.Build
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -10,6 +12,8 @@ import com.highsecure.vpn.proxy.master.api.ApiService
 import com.highsecure.vpn.proxy.master.api.DisconnectRequest
 import com.highsecure.vpn.proxy.master.api.ProxyRequest
 import com.highsecure.vpn.proxy.master.network.LocalVpnService
+import com.highsecure.vpn.proxy.master.network.LocalVpnService.Companion.ACTION_START
+import com.highsecure.vpn.proxy.master.network.LocalVpnService.Companion.ACTION_STOP
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -145,13 +149,26 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
     }
 
     fun startProxy(context: Context?, allowApp: List<String>?) {
-        LocalVpnService.startProxy(context!!, allowApp)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            context!!.startForegroundService(Intent(context, LocalVpnService::class.java).apply {
+                action = ACTION_START
+                putStringArrayListExtra("allowApp", allowApp as ArrayList<String>?)
+            })
+        } else {
+            context!!.startService(Intent(context, LocalVpnService::class.java).apply {
+                action = ACTION_START
+                putStringArrayListExtra("allowApp", allowApp as ArrayList<String>?)
+            })
+        }
+
         proxyUpdate.setProxyUpdate(this)
     }
 
     fun stopProxy(context: Context?) {
         proxyUpdate.setProxyUpdate(this)
-        LocalVpnService.stopProxy(context!!)
+        context!!.startService(Intent(context, LocalVpnService::class.java).apply {
+            action = ACTION_STOP
+        })
     }
 
     override fun updateUI(status: String) {
