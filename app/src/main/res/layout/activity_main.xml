@@ -154,11 +154,18 @@
         android:id="@+id/frameContainer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/frameBanner"
         app:layout_constraintTop_toBottomOf="@id/actionBar"
         app:layout_constraintVertical_bias="0.0"
         app:layout_constraintVertical_weight="1"
         tools:layout_editor_absoluteX="-138dp" />
+
+
+    <com.simple.libads.FrameAds
+        android:id="@+id/frameBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 <!--    <ProgressBar-->
 <!--        android:id="@+id/progress"-->

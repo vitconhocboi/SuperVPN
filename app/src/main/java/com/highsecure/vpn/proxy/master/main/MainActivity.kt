@@ -14,6 +14,13 @@ import com.highsecure.vpn.proxy.master.settings.SettingFragment
 import com.highsecure.vpn.proxy.master.settings.appproxy.AppProxyFragment
 import com.highsecure.vpn.proxy.master.settings.dns.DNSFragment
 import com.highsecure.vpn.proxy.master.R
+import com.highsecure.vpn.proxy.master.remoteconfig.AdPlacementId
+import com.highsecure.vpn.proxy.master.remoteconfig.FirebaseConfigManager
+import com.simple.libads.AdNetworkType
+import com.simple.libads.AdsActivity
+import com.simple.libads.base.bannerads.BannerLoader
+import com.simple.libads.config.InterConfig
+import com.simple.libads.manager.BannerManager
 import com.simple.libads.setVisible
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -22,6 +29,8 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
 
     var isSettingFragment = false
     var isAppProxyFragment = false
+
+    var configAd: FirebaseConfigManager = FirebaseConfigManager.get()
 
     private val mainViewModel: MainViewModel by viewModels()
 
@@ -58,6 +67,8 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
         return ActivityMainBinding.inflate(inflater)
     }
 
+    private var mBannerLoader: BannerLoader? = null
+
     override fun initView() {
         requestAdvertisingIdPermission()
 
@@ -85,9 +96,13 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                 selectAll()
             }
 
-//            cbSelectAll.setOnClickListener {
-//
-//            }
+            configAd.adBanner.find { it.placementId == AdPlacementId.BANNER_HOME }?.let {
+                mBannerLoader = BannerManager.createLoader(adNetwork = it.adNetwork, bannerId = it.adId)
+                mBannerLoader?.canRequest = true
+                mBannerLoader?.loadAds(
+                    context = this@MainActivity, bannerType = it.adType, parent = frameBanner
+                )
+            }
         }
 
         onBackPressedDispatcher.addCallback(
@@ -230,6 +245,16 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                     ).show()
                 }
             }
+        }
+    }
+
+    override fun interConfigs(): List<InterConfig>? {
+        return configAd.adWithoutVideoPlacement.placementIds.map {
+            InterConfig(
+                adid = configAd.adWithVideo.adId,
+                adnetwork = AdNetworkType.ADMOB,
+                placement_id = it
+            )
         }
     }
 }

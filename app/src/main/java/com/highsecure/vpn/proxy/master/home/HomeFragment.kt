@@ -32,9 +32,14 @@ import com.common.baseui.extension.context
 import com.common.baseui.extension.invisible
 import com.common.baseui.extension.processResultData
 import com.common.baseui.extension.visible
+import com.highsecure.vpn.proxy.master.remoteconfig.AdPlacementId
+import com.highsecure.vpn.proxy.master.remoteconfig.FirebaseConfigManager
 import com.simple.libads.NetworkUtils
+import com.simple.libads.base.bannerads.BannerLoader
+import com.simple.libads.manager.BannerManager
 import com.simple.libads.setVisible
 import dagger.hilt.android.AndroidEntryPoint
+import kotlin.text.get
 
 @AndroidEntryPoint
 class HomeFragment : ProductFragment<FragmentHomeBinding>() {
@@ -305,7 +310,12 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
             }
 
             pnProxy.setOnClickListener {
-                Navigator.startProxyActivity(requireContext(), null)
+                showInterAds(placementId = AdPlacementId.INTER_ART_HOME,
+                    impressedCallBack = {},
+                    showCallBack = {
+                        Navigator.startProxyActivity(requireContext(), null)
+                    })
+//                Navigator.startProxyActivity(requireContext(), null)
             }
 
             proxyId = arguments?.getString("id", null)
