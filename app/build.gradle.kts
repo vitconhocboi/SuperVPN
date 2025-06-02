@@ -41,6 +41,15 @@ android {
             isMinifyEnabled = false
             buildConfigField("boolean", "ADS_ON", "true")
             buildConfigField("boolean", "FIREBASE_DEBUG", "false")
+
+            buildConfigField("String", "app_ads_id_new", "\"ca-app-pub-4253116256630907~6076109717\"")
+            buildConfigField("String", "ads_native_id_new", "\"ca-app-pub-4253116256630907/4890887109\"")
+            buildConfigField("String", "ads_banner_id_new", "\"ca-app-pub-4253116256630907/1536931615\"")
+            buildConfigField("String", "ads_full_without_video_new", "\"ca-app-pub-4253116256630907/2192705023\"")
+            buildConfigField("String", "ads_full_with_video_new", "\"ca-app-pub-4253116256630907/2192705023\"")
+            buildConfigField("String", "app_ads_open_resume_id_new", "\"ca-app-pub-4253116256630907/9879623352\"")
+            buildConfigField("String", "ads_reward_id_new", "\"ca-app-pub-4253116256630907/6423594072\"")
+
             isShrinkResources = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -52,6 +61,15 @@ android {
             isMinifyEnabled = true
             buildConfigField("boolean", "ADS_ON", "true")
             buildConfigField("boolean", "FIREBASE_DEBUG", "false")
+
+            buildConfigField("String", "app_ads_id_new", "\"ca-app-pub-4253116256630907~6076109717\"")
+            buildConfigField("String", "ads_native_id_new", "\"ca-app-pub-4253116256630907/4890887109\"")
+            buildConfigField("String", "ads_banner_id_new", "\"ca-app-pub-4253116256630907/1536931615\"")
+            buildConfigField("String", "ads_full_without_video_new", "\"ca-app-pub-4253116256630907/2192705023\"")
+            buildConfigField("String", "ads_full_with_video_new", "\"ca-app-pub-4253116256630907/2192705023\"")
+            buildConfigField("String", "app_ads_open_resume_id_new", "\"ca-app-pub-4253116256630907/9879623352\"")
+            buildConfigField("String", "ads_reward_id_new", "\"ca-app-pub-4253116256630907/6423594072\"")
+
             isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -118,6 +136,7 @@ dependencies {
     kapt("androidx.room:room-compiler:2.6.1")
     implementation(libs.androidx.room.ktx)
     implementation(libs.hilt.android)
+    implementation (libs.play.services.ads)
     kapt(libs.hilt.android.compiler)
     implementation(libs.androidx.multidex)
     // Add zlib dependency for compression functionality
@@ -129,6 +148,7 @@ dependencies {
     implementation(libs.firebase.firestore.ktx)
     implementation(libs.okhttp)
     implementation("com.google.android.gms:play-services-ads-identifier:18.2.0")
+    implementation("com.google.android.ump:user-messaging-platform:3.2.0")
     //retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
