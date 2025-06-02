@@ -1,5 +1,8 @@
 package com.highsecure.vpn.proxy.master.network
 
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
@@ -10,6 +13,8 @@ import android.os.Build
 import android.os.DeadObjectException
 import android.os.IBinder
 import android.os.ParcelFileDescriptor
+import androidx.core.app.NotificationCompat
+import com.highsecure.vpn.proxy.master.R
 import com.highsecure.vpn.proxy.master.home.HomeFragment
 import com.highsecure.vpn.proxy.master.main.MainActivity
 import com.highsecure.vpn.proxy.master.proxy.ProxyConnection
@@ -48,6 +53,27 @@ class LocalVpnService : VpnService(), Runnable {
         super.onCreate()
     }
 
+    fun buildNotification(): Notification {
+        val notificationChannelId = "vpn_channel"
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(
+                notificationChannelId,
+                "VPN Service",
+                NotificationManager.IMPORTANCE_LOW
+            )
+            val manager = getSystemService(NotificationManager::class.java)
+            manager.createNotificationChannel(channel)
+        }
+
+        val notificationBuilder = NotificationCompat.Builder(this, notificationChannelId)
+            .setContentTitle("VPN is active")
+            .setSmallIcon(R.drawable.ic_wifi)
+            .setPriority(NotificationCompat.PRIORITY_LOW)
+            .setCategory(Notification.CATEGORY_SERVICE)
+
+        return notificationBuilder.build()
+    }
+
     @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
         super.onStartCommand(intent, flags, startId)
@@ -58,6 +84,7 @@ class LocalVpnService : VpnService(), Runnable {
         when (intent.action) {
             ACTION_START -> {
                 IsRunning = true
+                startForeground(1, buildNotification())
                 // Start a new session by creating a new thread.
                 m_VPNThread = Thread(this, "VPNServiceThread")
                 m_VPNThread!!.start()
@@ -89,55 +116,55 @@ class LocalVpnService : VpnService(), Runnable {
 
             ACTION_STOP -> {
                 Timber.tag(Constant.TAG).d("Stop super vpn service")
-                if (IsRunning) {
-                    IsRunning = false
-                    // First stop the VPN thread to prevent new operations
-                    if (m_VPNThread != null) {
-                        m_VPNThread!!.interrupt()
-                        try {
-                            m_VPNThread!!.join(1000) // Wait up to 1 second for thread to finish
-                        } catch (e: InterruptedException) {
-                            Timber.tag(Constant.TAG).d("VPN thread interrupt error")
-                        }
-                        m_VPNThread = null
-                    }
-
-                    // Close streams first
-//                    m_VPNOutputStream?.close()
-//                    m_VPNOutputStream = null
-
-                    // Detach file descriptor before stopping engine
-                    if (m_VPNInterface != null) {
-                        try {
-                            val fd = m_VPNInterface!!.close()
-                            Timber.tag(Constant.TAG).d("Successfully detached fd: $fd")
-                        } catch (e: Exception) {
-                            Timber.tag(Constant.TAG)
-                                .d("Error detaching VPN interface fd ${e.printStackTrace()}")
-                        }
-                        m_VPNInterface = null
-                    }
-
-                    // Now stop engine after fd is detached
-                    if (BaseAppConfig.proxy.isNotEmpty()) {
-                        engine.Engine.stop()
-                    }
-                    // Stop other components
-                    m_PrivoxyManager?.stop()
-                    m_PrivoxyManager = null
-                    currentProxy = null
-
-                    Instance!!.stopForeground(true)
-                    Instance!!.stopSelf() // Stop the service after cleanup
-                    Instance = null // Clear the instance reference
-
-                    proxyConnection.updateUI(HomeFragment.DISCONNECTED)
-                    Timber.tag(Constant.TAG).d("VPNService stopped.")
-                }
+                stopVPN()
             }
         }
 
         return START_NOT_STICKY
+    }
+
+    fun stopVPN() {
+        if (IsRunning) {
+            IsRunning = false
+            // First stop the VPN thread to prevent new operations
+            if (m_VPNThread != null) {
+                m_VPNThread!!.interrupt()
+                try {
+                    m_VPNThread!!.join(1000) // Wait up to 1 second for thread to finish
+                } catch (e: InterruptedException) {
+                    Timber.tag(Constant.TAG).d("VPN thread interrupt error")
+                }
+                m_VPNThread = null
+            }
+
+            // Detach file descriptor before stopping engine
+            if (m_VPNInterface != null) {
+                try {
+                    val fd = m_VPNInterface!!.close()
+                    Timber.tag(Constant.TAG).d("Successfully detached fd: $fd")
+                } catch (e: Exception) {
+                    Timber.tag(Constant.TAG)
+                        .d("Error detaching VPN interface fd ${e.printStackTrace()}")
+                }
+                m_VPNInterface = null
+            }
+
+            // Now stop engine after fd is detached
+            if (BaseAppConfig.proxy.isNotEmpty()) {
+                engine.Engine.stop()
+            }
+            // Stop other components
+            m_PrivoxyManager?.stop()
+            m_PrivoxyManager = null
+            currentProxy = null
+
+            Instance!!.stopForeground(true)
+            Instance!!.stopSelf() // Stop the service after cleanup
+            Instance = null // Clear the instance reference
+
+            proxyConnection.updateUI(HomeFragment.DISCONNECTED)
+            Timber.tag(Constant.TAG).d("VPNService stopped.")
+        }
     }
 
     override fun onBind(intent: Intent): IBinder? {
@@ -316,6 +343,10 @@ class LocalVpnService : VpnService(), Runnable {
         return pfdDescriptor
     }
 
+    override fun onTaskRemoved(rootIntent: Intent?) {
+        stopVPN()
+        super.onTaskRemoved(rootIntent)
+    }
 
     @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
     override fun onDestroy() {
@@ -340,10 +371,17 @@ class LocalVpnService : VpnService(), Runnable {
         private var ID = 0
 
         fun startProxy(context: Context, allowApp: List<String>?) {
-            context.startService(Intent(context, LocalVpnService::class.java).apply {
-                action = ACTION_START
-                putStringArrayListExtra("allowApp", allowApp as ArrayList<String>?)
-            })
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                context.startForegroundService(Intent(context, LocalVpnService::class.java).apply {
+                    action = ACTION_START
+                    putStringArrayListExtra("allowApp", allowApp as ArrayList<String>?)
+                })
+            } else {
+                context.startService(Intent(context, LocalVpnService::class.java).apply {
+                    action = ACTION_START
+                    putStringArrayListExtra("allowApp", allowApp as ArrayList<String>?)
+                })
+            }
         }
 
         fun stopProxy(context: Context) {
