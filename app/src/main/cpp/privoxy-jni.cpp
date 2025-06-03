@@ -11,7 +11,7 @@ extern "C" int stop_privoxy();
 #include <unistd.h>
 
 // Define the log tag
-#define LOG_TAG "PrivoxyJNI"
+#define LOG_TAG "SupperVPN"
 #define LOGI(...) __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)
 #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
 
