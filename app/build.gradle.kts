@@ -42,13 +42,13 @@ android {
             buildConfigField("boolean", "ADS_ON", "true")
             buildConfigField("boolean", "FIREBASE_DEBUG", "false")
 
-            buildConfigField("String", "app_ads_id_new", "\"ca-app-pub-4253116256630907~6076109717\"")
-            buildConfigField("String", "ads_native_id_new", "\"ca-app-pub-4253116256630907/4890887109\"")
-            buildConfigField("String", "ads_banner_id_new", "\"ca-app-pub-4253116256630907/1536931615\"")
-            buildConfigField("String", "ads_full_without_video_new", "\"ca-app-pub-4253116256630907/2192705023\"")
-            buildConfigField("String", "ads_full_with_video_new", "\"ca-app-pub-4253116256630907/2192705023\"")
-            buildConfigField("String", "app_ads_open_resume_id_new", "\"ca-app-pub-4253116256630907/9879623352\"")
-            buildConfigField("String", "ads_reward_id_new", "\"ca-app-pub-4253116256630907/6423594072\"")
+            buildConfigField("String", "app_ads_id_new", "\"ca-app-pub-3940256099942544~3347511713\"")
+            buildConfigField("String", "ads_native_id_new", "\"ca-app-pub-3940256099942544/2247696110\"")
+            buildConfigField("String", "ads_banner_id_new", "\"ca-app-pub-3940256099942544/6300978111\"")
+            buildConfigField("String", "ads_full_without_video_new", "\"ca-app-pub-3940256099942544/1033173712\"")
+            buildConfigField("String", "ads_full_with_video_new", "\"ca-app-pub-3940256099942544/1033173712\"")
+            buildConfigField("String", "app_ads_open_resume_id_new", "\"ca-app-pub-3940256099942544/9257395921\"")
+            buildConfigField("String", "ads_reward_id_new", "\"ca-app-pub-3940256099942544/5224354917\"")
 
             isShrinkResources = false
             proguardFiles(

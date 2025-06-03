@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.simple.libads.config.InterConfig
 import com.simple.libads.manager.InterManager
 import com.simple.libads.manager.RewardManager
+import timber.log.Timber
 
 abstract class AdsActivity : AppCompatActivity() {
 

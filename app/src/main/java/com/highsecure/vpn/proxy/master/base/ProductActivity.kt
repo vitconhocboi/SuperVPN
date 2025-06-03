@@ -14,7 +14,7 @@ abstract class ProductActivity<T : ViewBinding> : BindingActivity<T>() {
     }
 
     override fun isBuyApp(): Boolean {
-        return true
+        return false
     }
 
     override fun onRequiredOpenSettingPermission(id: Int) {
