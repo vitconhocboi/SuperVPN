@@ -6,6 +6,7 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.content.pm.ServiceInfo
 import android.net.ProxyInfo
 import android.net.VpnService
 import android.os.Binder
@@ -24,6 +25,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import timber.log.Timber
+import java.util.concurrent.atomic.AtomicReference
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -35,6 +37,7 @@ class LocalVpnService : VpnService(), Runnable {
     @Inject
     lateinit var proxyConnection: ProxyConnection
     var currentProxy: ProxySpeedTest.ProxyConfig? = null
+    private val vpnInterface = AtomicReference<ParcelFileDescriptor?>(null)
 
     init {
         ID++
@@ -74,6 +77,20 @@ class LocalVpnService : VpnService(), Runnable {
         return notificationBuilder.build()
     }
 
+    private fun createNotificationChannel() {
+        val channel = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel(
+                "VPN_CHANNEL",
+                "VPN Service",
+                NotificationManager.IMPORTANCE_DEFAULT
+            )
+        } else {
+            TODO("VERSION.SDK_INT < O")
+        }
+        val manager = getSystemService(NotificationManager::class.java)
+        manager.createNotificationChannel(channel)
+    }
+
     @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
         super.onStartCommand(intent, flags, startId)
@@ -84,7 +101,10 @@ class LocalVpnService : VpnService(), Runnable {
         when (intent.action) {
             ACTION_START -> {
                 IsRunning = true
-                startForeground(1, buildNotification())
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                    createNotificationChannel()
+                    startForeground(1, buildNotification(), ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE)
+                }
                 // Start a new session by creating a new thread.
                 m_VPNThread = Thread(this, "VPNServiceThread")
                 m_VPNThread!!.start()
@@ -140,7 +160,7 @@ class LocalVpnService : VpnService(), Runnable {
             // Detach file descriptor before stopping engine
             if (m_VPNInterface != null) {
                 try {
-                    val fd = m_VPNInterface!!.close()
+                    val fd = vpnInterface.getAndSet(null)?.close()
                     Timber.tag(Constant.TAG).d("Successfully detached fd: $fd")
                 } catch (e: Exception) {
                     Timber.tag(Constant.TAG)
@@ -204,7 +224,7 @@ class LocalVpnService : VpnService(), Runnable {
             // Detach file descriptor before stopping engine
             if (m_VPNInterface != null) {
                 try {
-                    val fd = m_VPNInterface!!.close()
+                    val fd = vpnInterface.getAndSet(null)?.close()
                     Timber.tag(Constant.TAG).d("Successfully detached fd: $fd")
                 } catch (e: Exception) {
                     Timber.tag(Constant.TAG)
@@ -268,6 +288,7 @@ class LocalVpnService : VpnService(), Runnable {
     @Throws(Exception::class)
     private fun runVPN() {
         m_VPNInterface = establishVPN()!!
+        vpnInterface.set(m_VPNInterface)
         if (BaseAppConfig.proxy.isNotEmpty()) {
             startTunToSock(m_VPNInterface)
         }
