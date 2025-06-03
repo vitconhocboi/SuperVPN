@@ -16,6 +16,7 @@ import com.common.baseui.extension.bindFlowCreate
 import com.common.baseui.extension.setVisible
 import com.google.android.gms.ads.identifier.AdvertisingIdClient
 import com.highsecure.vpn.proxy.master.proxy.ProxyViewModel
+import com.highsecure.vpn.proxy.master.remoteconfig.AdPlacementId
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -76,53 +77,63 @@ class FreeProxyFragment : ProductFragment<FragmentProxyBinding>() {
             }
 
             mPagerAdapter.onItemClick = { _, item ->
-                lifecycleScope.launch {
-                    try {
-                        if (!selected) {
-                            selected = true
-                            mPagerAdapter.notifyDataSetChanged()
-                            val deviceId = try {
-                                val adInfo =
-                                    AdvertisingIdClient.getAdvertisingIdInfo(requireContext())
-                                if (!adInfo.isLimitAdTrackingEnabled) {
-                                    adInfo.id
-                                } else {
-                                    Settings.Secure.getString(
-                                        requireContext().contentResolver,
-                                        Settings.Secure.ANDROID_ID
-                                    )
-                                }
-                            } catch (e: Exception) {
-                                Settings.Secure.getString(
-                                    requireContext().contentResolver,
-                                    Settings.Secure.ANDROID_ID
-                                )
-                            }
-                            val reconnect =
-                                if (item.country != BaseAppConfig.proxyCountry || !item.active) "RECONNECT" else ""
-                            if (item.country == BaseAppConfig.proxyCountry) {
-                                item.active = false
-                            }
-                            if (item.active) {
-                                mProxyViewModel.setActiveProxy(item, deviceId, FREE)
-                            } else {
-                                mProxyViewModel.setActiveProxy(null, deviceId, FREE)
-                            }
-                            requireActivity().finish()
-                            Navigator.startMainActivity(requireContext(), reconnect)
-                            selected = false
+                showInterAds(placementId = AdPlacementId.INTER_ART_PAINTED,
+                    impressedCallBack = {},
+                    showCallBack = {
+                        itemClick(item)
+                    })
+//                itemClick(item)
+            }
+        }
+    }
+
+    @SuppressLint("HardwareIds", "NotifyDataSetChanged")
+    fun itemClick(item: ProxyGroupUI) {
+        lifecycleScope.launch {
+            try {
+                if (!selected) {
+                    selected = true
+                    mPagerAdapter.notifyDataSetChanged()
+                    val deviceId = try {
+                        val adInfo =
+                            AdvertisingIdClient.getAdvertisingIdInfo(requireContext())
+                        if (!adInfo.isLimitAdTrackingEnabled) {
+                            adInfo.id
                         } else {
-                            item.active = false
+                            Settings.Secure.getString(
+                                requireContext().contentResolver,
+                                Settings.Secure.ANDROID_ID
+                            )
                         }
                     } catch (e: Exception) {
-                        selected = false
-                        Toast.makeText(
-                            requireContext(),
-                            "Cannot get proxy: ${e.message}",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        Settings.Secure.getString(
+                            requireContext().contentResolver,
+                            Settings.Secure.ANDROID_ID
+                        )
                     }
+                    val reconnect =
+                        if (item.country != BaseAppConfig.proxyCountry || !item.active) "RECONNECT" else ""
+                    if (item.country == BaseAppConfig.proxyCountry) {
+                        item.active = false
+                    }
+                    if (item.active) {
+                        mProxyViewModel.setActiveProxy(item, deviceId, FREE)
+                    } else {
+                        mProxyViewModel.setActiveProxy(null, deviceId, FREE)
+                    }
+                    requireActivity().finish()
+                    Navigator.startMainActivity(requireContext(), reconnect)
+                    selected = false
+                } else {
+                    item.active = false
                 }
+            } catch (e: Exception) {
+                selected = false
+                Toast.makeText(
+                    requireContext(),
+                    "Cannot get proxy: ${e.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }
