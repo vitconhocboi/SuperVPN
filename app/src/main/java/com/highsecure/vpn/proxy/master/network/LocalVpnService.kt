@@ -14,6 +14,7 @@ import android.os.Build
 import android.os.DeadObjectException
 import android.os.IBinder
 import android.os.ParcelFileDescriptor
+import android.system.Os
 import androidx.core.app.NotificationCompat
 import com.highsecure.vpn.proxy.master.R
 import com.highsecure.vpn.proxy.master.home.HomeFragment
@@ -25,6 +26,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import timber.log.Timber
+import java.io.FileDescriptor
 import java.util.concurrent.atomic.AtomicReference
 import javax.inject.Inject
 
@@ -32,12 +34,15 @@ import javax.inject.Inject
 class LocalVpnService : VpnService(), Runnable {
 //    private val m_Packet: ByteArray
 //    private val m_IPHeader: IPHeader
+    private var m_VPNThread: Thread? = null
+    private var m_VPNInterface: ParcelFileDescriptor? = null
+    private var m_PrivoxyManager: PrivoxyManager? = null
 
     @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
     @Inject
     lateinit var proxyConnection: ProxyConnection
     var currentProxy: ProxySpeedTest.ProxyConfig? = null
-    private val vpnInterface = AtomicReference<ParcelFileDescriptor?>(null)
+    private val vpnInterface = AtomicReference<FileDescriptor?>(null)
 
     init {
         ID++
@@ -160,8 +165,8 @@ class LocalVpnService : VpnService(), Runnable {
             // Detach file descriptor before stopping engine
             if (m_VPNInterface != null) {
                 try {
-                    val fd = vpnInterface.getAndSet(null)?.close()
-                    Timber.tag(Constant.TAG).d("Successfully detached fd: $fd")
+                    m_VPNInterface!!.close()
+                    Timber.tag(Constant.TAG).d("Successfully detached fd:")
                 } catch (e: Exception) {
                     Timber.tag(Constant.TAG)
                         .d("Error detaching VPN interface fd ${e.printStackTrace()}")
@@ -171,7 +176,7 @@ class LocalVpnService : VpnService(), Runnable {
 
             // Now stop engine after fd is detached
             if (BaseAppConfig.proxy.isNotEmpty()) {
-                engine.Engine.stop()
+//                engine.Engine.stop()
             }
             // Stop other components
             m_PrivoxyManager?.stop()
@@ -182,7 +187,6 @@ class LocalVpnService : VpnService(), Runnable {
             Instance!!.stopSelf() // Stop the service after cleanup
             Instance = null // Clear the instance reference
 
-            proxyConnection.updateUI(HomeFragment.DISCONNECTED)
             Timber.tag(Constant.TAG).d("VPNService stopped.")
         }
     }
@@ -224,8 +228,8 @@ class LocalVpnService : VpnService(), Runnable {
             // Detach file descriptor before stopping engine
             if (m_VPNInterface != null) {
                 try {
-                    val fd = vpnInterface.getAndSet(null)?.close()
-                    Timber.tag(Constant.TAG).d("Successfully detached fd: $fd")
+                    m_VPNInterface!!.close()
+                    Timber.tag(Constant.TAG).d("Successfully detached fd:")
                 } catch (e: Exception) {
                     Timber.tag(Constant.TAG)
                         .d("Error detaching VPN interface fd ${e.printStackTrace()}")
@@ -235,7 +239,7 @@ class LocalVpnService : VpnService(), Runnable {
 
             // Now stop engine after fd is detached
             if (BaseAppConfig.proxy.isNotEmpty()) {
-                engine.Engine.stop()
+//                engine.Engine.stop()
             }
             // Stop other components
             m_PrivoxyManager?.stop()
@@ -245,7 +249,6 @@ class LocalVpnService : VpnService(), Runnable {
             Instance!!.stopForeground(true)
             Instance!!.stopSelf() // Stop the service after cleanup
 
-            proxyConnection.updateUI(HomeFragment.DISCONNECTED)
             Timber.tag(Constant.TAG).d("VPNService stopped.")
         }
     }
@@ -288,7 +291,8 @@ class LocalVpnService : VpnService(), Runnable {
     @Throws(Exception::class)
     private fun runVPN() {
         m_VPNInterface = establishVPN()!!
-        vpnInterface.set(m_VPNInterface)
+//        val duplicatedFd  = Os.dup(m_VPNInterface!!.fileDescriptor)
+//        vpnInterface.set(duplicatedFd)
         if (BaseAppConfig.proxy.isNotEmpty()) {
             startTunToSock(m_VPNInterface)
         }
@@ -377,11 +381,6 @@ class LocalVpnService : VpnService(), Runnable {
     }
 
     companion object {
-        private var m_VPNThread: Thread? = null
-        private var m_VPNInterface: ParcelFileDescriptor? = null
-//        private var m_VPNOutputStream: FileOutputStream? = null
-
-        private var m_PrivoxyManager: PrivoxyManager? = null
         private var allowApp: List<String>? = null
         const val ACTION_START = "ACTION_START"
         const val ACTION_STOP = "ACTION_STOP"
