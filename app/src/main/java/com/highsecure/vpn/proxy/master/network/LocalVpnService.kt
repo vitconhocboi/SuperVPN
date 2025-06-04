@@ -176,7 +176,7 @@ class LocalVpnService : VpnService(), Runnable {
 
             // Now stop engine after fd is detached
             if (BaseAppConfig.proxy.isNotEmpty()) {
-//                engine.Engine.stop()
+                engine.Engine.stop()
             }
             // Stop other components
             m_PrivoxyManager?.stop()
@@ -212,45 +212,7 @@ class LocalVpnService : VpnService(), Runnable {
 
     override fun onRevoke() {
         super.onRevoke()
-        if (IsRunning) {
-            IsRunning = false
-            // First stop the VPN thread to prevent new operations
-            if (m_VPNThread != null) {
-                m_VPNThread!!.interrupt()
-                try {
-                    m_VPNThread!!.join(1000) // Wait up to 1 second for thread to finish
-                } catch (e: InterruptedException) {
-                    Timber.tag(Constant.TAG).d("VPN thread interrupt error")
-                }
-                m_VPNThread = null
-            }
-
-            // Detach file descriptor before stopping engine
-            if (m_VPNInterface != null) {
-                try {
-                    m_VPNInterface!!.close()
-                    Timber.tag(Constant.TAG).d("Successfully detached fd:")
-                } catch (e: Exception) {
-                    Timber.tag(Constant.TAG)
-                        .d("Error detaching VPN interface fd ${e.printStackTrace()}")
-                }
-                m_VPNInterface = null
-            }
-
-            // Now stop engine after fd is detached
-            if (BaseAppConfig.proxy.isNotEmpty()) {
-//                engine.Engine.stop()
-            }
-            // Stop other components
-            m_PrivoxyManager?.stop()
-            m_PrivoxyManager = null
-            currentProxy = null
-
-            Instance!!.stopForeground(true)
-            Instance!!.stopSelf() // Stop the service after cleanup
-
-            Timber.tag(Constant.TAG).d("VPNService stopped.")
-        }
+        stopVPN()
     }
 
     private fun startTunToSock(pfdDescriptor: ParcelFileDescriptor? = null) {
