@@ -17,6 +17,9 @@ interface ApiService {
     suspend fun getCountries(
         @Query("type") type: String
     ): Response<CountriesResponse>
+
+    @GET("get-dns")
+    suspend fun getDns(): Response<DnsResponse>
 }
 
 data class ProxyRequest(
@@ -40,5 +43,15 @@ data class DisconnectResponse(
 
 data class CountriesResponse(
     val countries: List<String>,
+    val error: String?
+)
+
+data class DnsDB(
+    val name: String,
+    val ip_address: String
+)
+
+data class DnsResponse(
+    val dns: List<DnsDB>,
     val error: String?
 )
