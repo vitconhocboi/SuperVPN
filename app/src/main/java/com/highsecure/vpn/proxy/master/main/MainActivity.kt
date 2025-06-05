@@ -177,7 +177,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
             }
 
             is DNSFragment -> {
-                isAppProxyFragment = true
+                isAppProxyFragment = false
                 with(binding) {
                     homeActionBar.setVisible(false)
                     subActionbar.setVisible(false)

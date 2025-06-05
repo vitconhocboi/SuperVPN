@@ -1,13 +1,18 @@
 package com.highsecure.vpn.proxy.master.dialog
 
+import android.content.ActivityNotFoundException
 import android.content.DialogInterface
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import com.highsecure.vpn.proxy.master.databinding.DialogRateFeedbackBinding
 import com.common.baseui.BindingSheetDialog
 import com.common.baseui.extension.setOnClickNoDoubleClick
+import androidx.core.net.toUri
 
 class DialogFeedback : BindingSheetDialog<DialogRateFeedbackBinding>() {
     var isFeature: Boolean = false
@@ -67,28 +72,31 @@ class DialogFeedback : BindingSheetDialog<DialogRateFeedbackBinding>() {
             }
             ivBack.setOnClickNoDoubleClick {
                 dismiss()
-//                DialogRateComplete().show(parentFragmentManager, "dialog_rate")
+                DialogRateComplete().show(parentFragmentManager, "dialog_rate")
             }
 
             tvSend.setOnClickNoDoubleClick {
                 // Create an intent with action ACTION_SEND
                 sendMail(tvContent.text.toString())
                 dismiss()
-//                DialogRateComplete().show(parentFragmentManager, "dialog_rate")
+                DialogRateComplete().show(parentFragmentManager, "dialog_rate")
             }
         }
     }
 
     fun sendMail(content: String) {
-        val emailIntent = Intent(Intent.ACTION_SEND).apply {
-            type = "message/rfc822" // MIME type for email
-            putExtra(Intent.EXTRA_EMAIL, arrayOf("recipient@example.com")) // Recipients
-            putExtra(Intent.EXTRA_SUBJECT, "Subject of the email") // Subject
-            putExtra(Intent.EXTRA_TEXT, content) // Body
+        val intent = Intent(Intent.ACTION_VIEW).apply {
+            data = "mailto:recipient@example.com".toUri()
+            putExtra(Intent.EXTRA_SUBJECT, "Subject of the email")
+            putExtra(Intent.EXTRA_TEXT, content)
+            setClassName("com.google.android.gm", "com.google.android.gm.ComposeActivityGmailExternal")
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         }
 
-        if (activity?.packageManager?.let { emailIntent.resolveActivity(it) } != null) {
-            startActivity(Intent.createChooser(emailIntent, "Send mail using..."))
+        try {
+            context?.startActivity(intent)
+        } catch (e: ActivityNotFoundException) {
+            Toast.makeText(context, "Gmail app is not installed.", Toast.LENGTH_SHORT).show()
         }
     }
 }
