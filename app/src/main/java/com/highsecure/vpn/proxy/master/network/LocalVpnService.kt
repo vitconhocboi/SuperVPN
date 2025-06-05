@@ -238,7 +238,7 @@ class LocalVpnService : VpnService(), Runnable {
             Timber.tag(Constant.TAG).d("VPNService work thread is running... $ID")
             ProxyConfig.Instance.AppInstallID = BaseAppConfig.appInstallID
             Timber.tag(Constant.TAG).d("Android version: %s", Build.VERSION.RELEASE)
-            waitUntilPreapred()
+            waitUntilPrepared()
             runVPN()
         } catch (e: InterruptedException) {
             Timber.tag(Constant.TAG).d("Exception ${e.printStackTrace()}")
@@ -280,7 +280,7 @@ class LocalVpnService : VpnService(), Runnable {
 //        }
     }
 
-    private fun waitUntilPreapred() {
+    private fun waitUntilPrepared() {
         while (prepare(this) != null) {
             try {
                 Thread.sleep(100)

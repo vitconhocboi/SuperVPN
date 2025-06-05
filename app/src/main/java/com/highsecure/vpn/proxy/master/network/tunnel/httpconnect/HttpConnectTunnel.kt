@@ -5,6 +5,7 @@ import android.util.Base64
 import android.util.Log
 import com.highsecure.vpn.proxy.master.network.ProxyConfig
 import com.highsecure.vpn.proxy.master.network.tunnel.Tunnel
+import timber.log.Timber
 import java.nio.ByteBuffer
 import java.nio.channels.Selector
 import java.util.Locale
@@ -61,7 +62,7 @@ class HttpConnectTunnel(config: HttpConnectConfig, selector: Selector?) :
                 ProxyConfig.Instance.AppInstallID
             )
         }
-        Log.i(TAG, "onConnected: $request")
+        Timber.i("$TAG onConnected: $request")
         buffer!!.clear()
         buffer.put(request.toByteArray())
         buffer.flip()
@@ -78,10 +79,10 @@ class HttpConnectTunnel(config: HttpConnectConfig, selector: Selector?) :
     }
 
     @Throws(Exception::class)
-    protected override fun afterReceived(buffer: ByteBuffer?) {
+    override fun afterReceived(buffer: ByteBuffer?) {
         if (!m_TunnelEstablished) {
             val response = String(buffer!!.array(), buffer.position(), 12)
-            Log.i(TAG, "afterReceived: $response")
+            Timber.i("$TAG afterReceived: $response")
             if (response.matches("^HTTP/1.[01] 200$".toRegex())) {
                 buffer.limit(buffer.position())
             } else {
@@ -118,16 +119,16 @@ class HttpConnectTunnel(config: HttpConnectConfig, selector: Selector?) :
     }
 
     @Throws(Exception::class)
-    protected override fun beforeSend(buffer: ByteBuffer?) {
+    override fun beforeSend(buffer: ByteBuffer?) {
         // Nothing
     }
 
-    protected override fun onDispose() {
+    override fun onDispose() {
         m_Config = null
     }
 
 
     companion object {
-        private const val TAG = "HttpConnectTunnel"
+        private const val TAG = "SuperVPN HttpConnect"
     }
 }

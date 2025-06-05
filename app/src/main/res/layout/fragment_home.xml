@@ -24,7 +24,7 @@
             android:fontFamily="@font/inter_normal"
             android:text="@string/disconnected"
             android:textColor="@color/white"
-            android:textSize="34sp"
+            android:textSize="28sp"
             android:visibility="visible" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -35,7 +35,7 @@
             android:fontFamily="@font/inter_normal"
             android:text="@string/connected"
             android:textColor="@color/white"
-            android:textSize="@dimen/size28"
+            android:textSize="28sp"
             android:visibility="gone" />
 
         <LinearLayout
@@ -112,7 +112,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/disconnecting"
                 android:textColor="#C4C9D9"
-                android:textSize="14sp" />
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -129,7 +129,7 @@
                 android:text="@string/tap_to_connect"
                 android:fontFamily="@font/inter_normal"
                 android:textColor="@color/successColor"
-                android:textSize="14sp" />
+                android:textSize="12sp" />
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatImageView

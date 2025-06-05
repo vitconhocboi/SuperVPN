@@ -12,8 +12,8 @@
     <string name="fast_and_safe">Fast &amp; Safe</string>
 
     <string name="setting_vpn_fast_and_safe">VPN Fast and Safe</string>
-    <string name="setting_vpn_fast_and_safe_desc">Mở khóa tất cả các tính năng và không quảng cáo</string>
-    <string name="setting_trial">Dùng thử miễn phí 3 ngày</string>
+    <string name="setting_vpn_fast_and_safe_desc">Get unlimited access to all features, ad-free.</string>
+    <string name="setting_trial">Free trial 3 days</string>
     <string name="ip_proxy">IP Proxy</string>
     <string name="setting_app_proxy">App Proxy</string>
     <string name="setting_ads_block">Ads block</string>
@@ -68,7 +68,7 @@
     <string name="premium_weekly">Weekly</string>
     <string name="premium_monthly">Monthly</string>
     <string name="premium_yearly">Yearly</string>
-    <string name="premium_desc">First 7 day free,  then the plan auto-renews yearly</string>
+    <string name="premium_desc">First 7 days free,  then the plan auto-renews yearly</string>
     <string name="premium_start_trial">Start trial</string>
     <string name="premium_trial_desc">Recurring billing. Cancel anytime on Google Play Store.</string>
 

@@ -1,5 +1,6 @@
 package com.highsecure.vpn.proxy.master.home
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.ActivityManager
 import android.content.Context
@@ -39,22 +40,23 @@ import com.simple.libads.base.bannerads.BannerLoader
 import com.simple.libads.manager.BannerManager
 import com.simple.libads.setVisible
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 import kotlin.text.get
 
 @AndroidEntryPoint
 class HomeFragment : ProductFragment<FragmentHomeBinding>() {
+
     private val handler = Handler(Looper.getMainLooper())
     private var state: String? = null
 
     companion object {
-        public const val CONNECTING = "CONNECTING"
-        public const val CONNECTED = "CONNECTED"
-        public const val DISCONNECTING = "DISCONNECTING"
-        public const val DISCONNECTED = "DISCONNECTED"
-        public const val ERROR = "ERROR"
+        const val CONNECTING = "CONNECTING"
+        const val CONNECTED = "CONNECTED"
+        const val DISCONNECTING = "DISCONNECTING"
+        const val DISCONNECTED = "DISCONNECTED"
+        const val ERROR = "ERROR"
+        const val INTERVAL = 10000L
     }
-
-    private val interval = 1000L
 
     private var isConnected = false
     private var proxyId: String? = ""
@@ -178,30 +180,12 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         }
     }
 
-//    private val updateRunnable = object : Runnable {
-//        override fun run() {
-//            val start = context?.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE)
-//                ?.getInt("start", 0)
-//            val diff = System.currentTimeMillis().toInt() / 1000 - start!!
-//            binding.tvTime.text = formatSecondsToTime(diff)
-//            handler.postDelayed(this, interval)
-//        }
-//    }
-
     var currentProxy: ProxySpeedTest.ProxyConfig? = null
 
     private val speedTestRunnable = object : Runnable {
         override fun run() {
             if (BaseAppConfig.proxy.isNotEmpty()) {
-                //update UI
-//                val testProxy = ProxySpeedTest.ProxyConfig(
-//                    host = BaseAppConfig.proxyHost,
-//                    port = BaseAppConfig.proxyPort.toInt(),
-//                    username = BaseAppConfig.proxyUser,
-//                    password = BaseAppConfig.proxyPass,
-//                    type = BaseAppConfig.proxyType
-//                )
-                ProxySpeedTest().testProxy(currentProxy, callback = { download, upload ->
+                ProxySpeedTest.Instance.startSpeedTest(currentProxy, callback = { download, upload ->
                     try {
                         binding.tvTrafficDownload.text = download
                         binding.tvTrafficUpload.text = upload
@@ -209,10 +193,11 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                     }
                 })
             }
-            handler.postDelayed(this, 10000)
+            handler.postDelayed(this, INTERVAL)
         }
     }
 
+    @SuppressLint("DefaultLocale")
     fun formatBytes(bytes: Int): String {
         if (bytes < 1024) return "$bytes B"
         val units = arrayOf("KB", "MB", "GB", "TB", "PB")
@@ -227,6 +212,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         return String.format("%.2f %s", value, units[index])
     }
 
+    @SuppressLint("DefaultLocale")
     fun formatSecondsToTime(seconds: Int): String {
         val hours = seconds / 3600
         val minutes = (seconds % 3600) / 60
@@ -243,7 +229,6 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         super.initView()
         state = activity?.intent?.getStringExtra("RECONNECT")
 //        isLocalVpnServiceRunning(requireContext())
-        // Đăng ký BroadcastReceiver
         with(binding) {
             if (BaseAppConfig.proxy.isNotEmpty()) {
                 //update UI
@@ -288,24 +273,10 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
             }
 
             ivConnect.setOnClickListener {
-//                if (isConnected) {
-//                    stopVpnService()
-//                } else {
-//                    ChooseTimeDialog(
-//                        requireActivity(),
-//                        onSelect = { min ->
-//                            StopProxyScheduler.runProxy(requireContext(), min) {
-//                                prepareVpn()
-//                            }
-//                        }
-//                    ).show()
-//                }
                 if (!isConnected) {
                     prepareVpn()
                 } else {
-//                    handler.removeCallbacks(updateRunnable)
-                    tvTrafficDownload.text = "--"
-                    tvTrafficUpload.text = "--"
+                    stopSpeedTest()
                     vpnPermissionLauncher.unregister()
                     stopVpnService()
                 }
@@ -317,7 +288,6 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                     showCallBack = {
                         Navigator.startProxyActivity(requireContext(), null)
                     })
-//                Navigator.startProxyActivity(requireContext(), null)
             }
 
             proxyId = arguments?.getString("id", null)
@@ -336,6 +306,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 vpnPermissionLauncher.launch(intent)
             } else {
                 startVpnService()
+                handler.post(speedTestRunnable)
             }
         } else {
             Toast.makeText(
@@ -346,14 +317,14 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 
     override fun onStart() {
         super.onStart()
-//        handler.post(updateRunnable)
-        handler.post(speedTestRunnable)
+        if (LocalVpnService.IsRunning) {
+            handler.post(speedTestRunnable)
+        }
         isLocalVpnServiceRunning(requireContext())
     }
 
     override fun onStop() {
         super.onStop()
-//        handler.removeCallbacks(updateRunnable)
         handler.removeCallbacks(speedTestRunnable)
     }
 
@@ -362,11 +333,17 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         handler.removeCallbacks(speedTestRunnable)
     }
 
+    fun stopSpeedTest() {
+        binding.tvTrafficDownload.text = "--"
+        binding.tvTrafficUpload.text = "--"
+        handler.removeCallbacks(speedTestRunnable)
+        ProxySpeedTest.Instance.stopProxyTest()
+    }
+
     private fun startVpnService() {
         proxyViewModel.updateUI(CONNECTING)
         isConnected = true
         allowAppViewModel.getAllowApp()
-
         bindFlowCreate(allowAppViewModel.allowApp) { result ->
             processResultData(result, onSuccess = { rs ->
                 proxyViewModel.startProxy(context, allowApp = rs.map { it.packageName })
@@ -381,12 +358,8 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
             proxyViewModel.stopProxy(context)
             binding.tvTrafficDownload.text = "--"
             binding.tvTrafficUpload.text = "--"
-//            LocalVpnService.IsRunning = false
-//            isConnected = false
-//            binding.ivConnect.isSelected = false
-//            binding.tvStatus.text = activity?.resources?.getString(R.string.disconnecting)
         } catch (e: Exception) {
-            Log.e("VPN", "Error stopping VPN service", e)
+            Timber.e(e, "VPN Error stopping VPN service")
         }
     }
 }
