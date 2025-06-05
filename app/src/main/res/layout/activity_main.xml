@@ -124,7 +124,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/size16"
-                android:src="@drawable/ic_arrow_left"
+                android:src="@drawable/back"
                 android:foreground="?selectableItemBackgroundBorderless"
                 android:clickable="true"
                 android:focusable="true" />

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="@dimen/margin_24"
+    android:layout_marginBottom="@dimen/size48"
     android:background="@color/backgroundColor2">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,19 +21,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <!--        <androidx.appcompat.widget.AppCompatImageView-->
-            <!--            android:id="@+id/backgroundImage"-->
-            <!--            android:layout_width="match_parent"-->
-            <!--            android:layout_height="0dp"-->
-            <!--            android:src="@drawable/bg_setting_desc"-->
-            <!--            app:layout_constraintTop_toTopOf="parent"-->
-            <!--            app:layout_constraintStart_toStartOf="parent"-->
-            <!--            app:layout_constraintEnd_toEndOf="parent"-->
-            <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-            <!--            android:alpha="0.6"-->
-            <!--            app:cornerRadius="@dimen/size80"-->
-            <!--            android:scaleType="centerCrop"/>-->
-
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_pro"
                 android:layout_width="wrap_content"
@@ -44,7 +31,7 @@
                 android:fontFamily="@font/inter_bold"
                 android:text="@string/setting_vpn_fast_and_safe"
                 android:textColor="@color/white"
-                android:textSize="@dimen/size18"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -232,7 +219,7 @@
                 android:ellipsize="middle"
                 android:text="@string/status_off"
                 android:textColor="#767C8A"
-                android:textSize="@dimen/size14"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/btn_dns_action"

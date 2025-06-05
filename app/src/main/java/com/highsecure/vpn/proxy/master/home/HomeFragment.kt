@@ -304,6 +304,8 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                     prepareVpn()
                 } else {
 //                    handler.removeCallbacks(updateRunnable)
+                    tvTrafficDownload.text = "--"
+                    tvTrafficUpload.text = "--"
                     vpnPermissionLauncher.unregister()
                     stopVpnService()
                 }
