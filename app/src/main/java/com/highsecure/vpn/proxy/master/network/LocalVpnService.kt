@@ -220,7 +220,7 @@ class LocalVpnService : VpnService(), Runnable {
         key.mark = 0
         key.mtu = ProxyConfig.Instance.mTU.toLong()
         key.device = "fd://" + pfdDescriptor?.fd
-        key.logLevel = "silent"
+        key.logLevel = "debug"
         if (currentProxy?.type?.lowercase() == "socks5") {
             key.proxy =
                 "socks5://${currentProxy!!.username}:${currentProxy!!.password}@${currentProxy!!.host}:${currentProxy!!.port}"
