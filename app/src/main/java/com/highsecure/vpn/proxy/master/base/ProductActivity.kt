@@ -1,6 +1,7 @@
 package com.highsecure.vpn.proxy.master.base
 
 import androidx.viewbinding.ViewBinding
+import com.common.baseui.BaseAppConfig
 import com.highsecure.vpn.proxy.master.R
 import com.common.baseui.BindingActivity
 import com.simple.libads.AdsApplication
@@ -14,7 +15,7 @@ abstract class ProductActivity<T : ViewBinding> : BindingActivity<T>() {
     }
 
     override fun isBuyApp(): Boolean {
-        return false
+        return BaseAppConfig.isSub
     }
 
     override fun onRequiredOpenSettingPermission(id: Int) {

@@ -107,108 +107,18 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_sub3"
         app:layout_constraintStart_toStartOf="@+id/tv_sub2"/>
 
-    <LinearLayout
-        android:id="@+id/ln_weekly"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvSkus"
         android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:paddingHorizontal="@dimen/margin_16"
-        android:layout_marginTop="@dimen/margin_32"
-        android:layout_marginHorizontal="@dimen/margin_16"
-        android:gravity="center"
-        android:background="@drawable/bg_line_premium"
-        android:foreground="?selectableItemBackgroundBorderless"
-        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintTop_toBottomOf="@+id/tv_sub4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tv_weekly"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ellipsize="middle"
-            android:text="@string/premium_weekly"
-            android:textColor="@color/text_gray_1"/>
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/price_weekly"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ellipsize="middle"
-            android:text="@string/premium_weekly"
-            android:textColor="@color/text_gray_1"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ln_monthly"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:paddingHorizontal="@dimen/margin_16"
-        android:layout_marginTop="@dimen/margin_12"
-        android:layout_marginHorizontal="@dimen/margin_16"
-        android:gravity="center"
-        android:background="@drawable/bg_line_premium"
-        android:foreground="?selectableItemBackgroundBorderless"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/ln_weekly"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tv_monthly"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ellipsize="middle"
-            android:text="@string/premium_monthly"
-            android:textColor="@color/text_gray_1"/>
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/price_monthly"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ellipsize="middle"
-            android:text="@string/premium_monthly"
-            android:textColor="@color/text_gray_1"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ln_yearly"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:paddingHorizontal="@dimen/margin_16"
-        android:layout_marginTop="@dimen/margin_12"
-        android:layout_marginHorizontal="@dimen/margin_16"
-        android:gravity="center"
-        android:background="@drawable/bg_line_premium"
-        android:foreground="?selectableItemBackgroundBorderless"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/ln_monthly"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tv_yearly"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ellipsize="middle"
-            android:text="@string/premium_yearly"
-            android:textColor="@color/text_gray_1"/>
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/price_yearly"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ellipsize="middle"
-            android:text="@string/premium_weekly"
-            android:textColor="@color/text_gray_1"/>
-    </LinearLayout>
-
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/adapter_sku_item" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_desc"
@@ -218,7 +128,7 @@
         android:ellipsize="middle"
         android:text="@string/premium_desc"
         android:textColor="@color/text_gray_2"
-        app:layout_constraintTop_toBottomOf="@+id/ln_yearly"
+        app:layout_constraintTop_toBottomOf="@+id/rcvSkus"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -250,6 +160,7 @@
     </LinearLayout>
 
     <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvMsg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_32"

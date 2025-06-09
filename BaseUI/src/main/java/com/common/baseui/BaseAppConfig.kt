@@ -103,4 +103,11 @@ object BaseAppConfig {
         set(value) {
             SharedPrefs.instance.put(KEY_FEEDBACK, value)
         }
+
+    private const val KEY_IS_SUBSCRIPTION = "IS_SUBSCRIPTION"
+    var isSub: Boolean
+        get() = SharedPrefs.instance[KEY_IS_SUBSCRIPTION, Boolean::class.java, false]
+        set(value) {
+            SharedPrefs.instance.put(KEY_IS_SUBSCRIPTION, value)
+        }
 }

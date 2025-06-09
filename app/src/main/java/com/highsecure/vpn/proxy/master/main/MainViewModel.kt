@@ -1,10 +1,104 @@
 package com.highsecure.vpn.proxy.master.main
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.android.billingclient.api.*
+import com.common.baseui.BaseAppConfig
+import com.highsecure.vpn.proxy.master.billing.BillingManager
+import com.highsecure.vpn.proxy.master.billing.BillingManager.billingClient
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.suspendCancellableCoroutine
+import kotlinx.coroutines.withContext
+import timber.log.Timber
 import javax.inject.Inject
+import kotlin.coroutines.resume
 
 @HiltViewModel
-class MainViewModel @Inject constructor() : ViewModel() {
+class MainViewModel @Inject constructor() : ViewModel(), PurchasesUpdatedListener {
 
+    fun checkActiveSubscriptions(context: Context, onResult: (Boolean) -> Unit) {
+        viewModelScope.launch {
+            if (!BillingManager.isBillingInit()) {
+                BillingManager.init(context, this@MainViewModel)
+            }
+
+            val isSubscribed = withContext(Dispatchers.IO) {
+                startBillingConnectionAndQueryPurchases()
+            }
+            BaseAppConfig.isSub = isSubscribed
+            onResult(isSubscribed)
+        }
+    }
+
+    private suspend fun startBillingConnectionAndQueryPurchases(): Boolean =
+        suspendCancellableCoroutine { cont ->
+            billingClient.startConnection(object : BillingClientStateListener {
+                override fun onBillingSetupFinished(billingResult: BillingResult) {
+                    if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
+                        val params = QueryPurchasesParams.newBuilder()
+                            .setProductType(BillingClient.ProductType.SUBS)
+                            .build()
+
+                        billingClient.queryPurchasesAsync(params) { result, purchasesList ->
+                            if (result.responseCode == BillingClient.BillingResponseCode.OK) {
+                                val isSubscribed = purchasesList.any { purchase ->
+                                    purchase.purchaseState == Purchase.PurchaseState.PURCHASED &&
+                                            purchase.isAcknowledged
+                                }
+                                cont.resume(isSubscribed)
+                            } else {
+                                cont.resume(false)
+                            }
+                            // Important: don't call endConnection here, since you might want to keep billingClient alive.
+                        }
+                    } else {
+                        cont.resume(false)
+                    }
+                }
+
+                override fun onBillingServiceDisconnected() {
+                    cont.resume(false)
+                }
+            })
+        }
+
+    override fun onPurchasesUpdated(
+        billingResult: BillingResult,
+        purchases: MutableList<Purchase>?
+    ) {
+        if (billingResult.responseCode == BillingClient.BillingResponseCode.OK && purchases != null) {
+            for (purchase in purchases) {
+                if (purchase.purchaseState == Purchase.PurchaseState.PURCHASED) {
+                    if (!purchase.isAcknowledged) {
+                        acknowledgePurchase(purchase)
+                    } else {
+                        // Already acknowledged, unlock content if needed
+                        Timber.d("Purchase already acknowledged: ${purchase.orderId}")
+                    }
+                }
+            }
+        } else if (billingResult.responseCode == BillingClient.BillingResponseCode.USER_CANCELED) {
+            Timber.i("User canceled the purchase flow.")
+        } else {
+            Timber.e("Purchase failed with code: ${billingResult.responseCode}, message: ${billingResult.debugMessage}")
+        }
+    }
+
+    private fun acknowledgePurchase(purchase: Purchase) {
+        val acknowledgePurchaseParams = AcknowledgePurchaseParams.newBuilder()
+            .setPurchaseToken(purchase.purchaseToken)
+            .build()
+
+        billingClient.acknowledgePurchase(acknowledgePurchaseParams) { ackResult ->
+            if (ackResult.responseCode == BillingClient.BillingResponseCode.OK) {
+                Timber.d("Purchase acknowledged successfully: ${purchase.orderId}")
+                // Unlock premium features or subscriptions here
+            } else {
+                Timber.e("Failed to acknowledge purchase: ${ackResult.debugMessage}")
+            }
+        }
+    }
 }

@@ -1,6 +1,8 @@
 package com.highsecure.vpn.proxy.master.proxy
 
 import android.view.LayoutInflater
+import android.view.View
+import com.common.baseui.BaseAppConfig
 import com.highsecure.vpn.proxy.master.R
 import com.highsecure.vpn.proxy.master.base.ProductActivity
 import com.highsecure.vpn.proxy.master.databinding.ActivityProxyBinding
@@ -27,12 +29,19 @@ class ProxyActivity : ProductActivity<ActivityProxyBinding>() {
         )
             .commit()
 
-        configAd.adBanner.find { it.placementId == AdPlacementId.BANNER_HOME }?.let {
-            mBannerLoader = BannerManager.createLoader(adNetwork = it.adNetwork, bannerId = it.adId)
-            mBannerLoader?.canRequest = true
-            mBannerLoader?.loadAds(
-                context = this@ProxyActivity, bannerType = it.adType, parent = binding.frameBanner
-            )
+        if (isBuyApp()) {
+            binding.frameBanner.visibility = View.GONE
+        } else {
+            configAd.adBanner.find { it.placementId == AdPlacementId.BANNER_HOME }?.let {
+                mBannerLoader =
+                    BannerManager.createLoader(adNetwork = it.adNetwork, bannerId = it.adId)
+                mBannerLoader?.canRequest = true
+                mBannerLoader?.loadAds(
+                    context = this@ProxyActivity,
+                    bannerType = it.adType,
+                    parent = binding.frameBanner
+                )
+            }
         }
     }
 

@@ -33,9 +33,9 @@ abstract class BindingActivity<T : ViewBinding> : BaseActivity() {
         return null
     }
 
-    override fun isBuyApp(): Boolean {
-        return false
-    }
+//    override fun isBuyApp(): Boolean {
+//        return false
+//    }
 
     override fun toastNetworkError() {
         
@@ -53,11 +53,11 @@ abstract class BindingActivity<T : ViewBinding> : BaseActivity() {
         }
     }
 
-    fun updateStatusBarColor(color: String?) {
-        val window = window
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-        window.statusBarColor = Color.parseColor(color)
-    }
+//    fun updateStatusBarColor(color: String?) {
+//        val window = window
+//        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+//        window.statusBarColor = Color.parseColor(color)
+//    }
 
     fun updateStatusBarColor(@ColorRes resColor: Int ) {
         val window = window

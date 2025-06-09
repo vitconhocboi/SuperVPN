@@ -187,8 +187,8 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
             if (BaseAppConfig.proxy.isNotEmpty()) {
                 ProxySpeedTest.Instance.startSpeedTest(currentProxy, callback = { download, upload ->
                     try {
-                        binding.tvTrafficDownload.text = download
-                        binding.tvTrafficUpload.text = upload
+                        if (ProxySpeedTest.FAILED != download) binding.tvTrafficDownload.text = download
+                        if (ProxySpeedTest.FAILED != upload) binding.tvTrafficUpload.text = upload
                     } catch (e: Exception) {
                     }
                 })
@@ -197,28 +197,28 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         }
     }
 
-    @SuppressLint("DefaultLocale")
-    fun formatBytes(bytes: Int): String {
-        if (bytes < 1024) return "$bytes B"
-        val units = arrayOf("KB", "MB", "GB", "TB", "PB")
-        var value = bytes.toDouble()
-        var index = 0
-
-        while (value >= 1024 && index < units.lastIndex) {
-            value /= 1024
-            index++
-        }
-
-        return String.format("%.2f %s", value, units[index])
-    }
-
-    @SuppressLint("DefaultLocale")
-    fun formatSecondsToTime(seconds: Int): String {
-        val hours = seconds / 3600
-        val minutes = (seconds % 3600) / 60
-        val secs = seconds % 60
-        return String.format("%02d:%02d:%02d", hours, minutes, secs)
-    }
+//    @SuppressLint("DefaultLocale")
+//    fun formatBytes(bytes: Int): String {
+//        if (bytes < 1024) return "$bytes B"
+//        val units = arrayOf("KB", "MB", "GB", "TB", "PB")
+//        var value = bytes.toDouble()
+//        var index = 0
+//
+//        while (value >= 1024 && index < units.lastIndex) {
+//            value /= 1024
+//            index++
+//        }
+//
+//        return String.format("%.2f %s", value, units[index])
+//    }
+//
+//    @SuppressLint("DefaultLocale")
+//    fun formatSecondsToTime(seconds: Int): String {
+//        val hours = seconds / 3600
+//        val minutes = (seconds % 3600) / 60
+//        val secs = seconds % 60
+//        return String.format("%02d:%02d:%02d", hours, minutes, secs)
+//    }
 
     fun Context.safeGetString(resourceName: String): String? {
         val resId = resources.getIdentifier(resourceName, "string", packageName)

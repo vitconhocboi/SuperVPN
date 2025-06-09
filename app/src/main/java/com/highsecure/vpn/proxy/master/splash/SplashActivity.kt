@@ -70,7 +70,9 @@ class SplashActivity : ProductActivity<ActivitySplashBinding>() {
     override fun initView() {
         checkLanguage()
         simulateProgress()
-        initAdmob()
+        if (!BaseAppConfig.isSub) {
+            initAdmob()
+        }
     }
 
     private fun initAdmob() {

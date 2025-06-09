@@ -3,6 +3,7 @@ package com.highsecure.vpn.proxy.master.main
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
@@ -14,6 +15,7 @@ import com.highsecure.vpn.proxy.master.settings.SettingFragment
 import com.highsecure.vpn.proxy.master.settings.appproxy.AppProxyFragment
 import com.highsecure.vpn.proxy.master.settings.dns.DNSFragment
 import com.highsecure.vpn.proxy.master.R
+import com.highsecure.vpn.proxy.master.billing.BillingManager
 import com.highsecure.vpn.proxy.master.remoteconfig.AdPlacementId
 import com.highsecure.vpn.proxy.master.remoteconfig.FirebaseConfigManager
 import com.simple.libads.AdNetworkType
@@ -23,6 +25,7 @@ import com.simple.libads.config.InterConfig
 import com.simple.libads.manager.BannerManager
 import com.simple.libads.setVisible
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 @AndroidEntryPoint
 class MainActivity : ProductActivity<ActivityMainBinding>() {
@@ -71,6 +74,13 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
 
     override fun initView() {
         requestAdvertisingIdPermission()
+
+        mainViewModel.checkActiveSubscriptions(applicationContext) { it ->
+            Timber.d("checkActiveSubscriptions $it")
+            if (it == true) {
+                binding.frameBanner.visibility = View.GONE
+            }
+        }
 
         mListFragment.add(mHomeFragment)
         mListFragment.add(mSettingFragment)

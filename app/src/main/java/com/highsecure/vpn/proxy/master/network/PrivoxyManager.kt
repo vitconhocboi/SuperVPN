@@ -53,14 +53,16 @@ class PrivoxyManager(private val context: Context) {
             var totalDownload =
                 context.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE)
                     .getInt("download", 0)
-            context.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE).edit()
-                .putInt("download", totalDownload + value).apply()
+            context.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE).edit() {
+                putInt("download", totalDownload + value)
+            }
         } else {
             var totalDownload =
                 context.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE)
                     .getInt("upload", 0)
-            context.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE).edit()
-                .putInt("upload", totalDownload + value).apply()
+            context.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE).edit() {
+                putInt("upload", totalDownload + value)
+            }
         }
     }
 

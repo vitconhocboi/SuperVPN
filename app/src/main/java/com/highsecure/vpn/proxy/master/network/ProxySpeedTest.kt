@@ -29,11 +29,10 @@ class ProxySpeedTest {
         private const val UPLOAD_URL =
             "https://speed.cloudflare.com/__up" // Test server for upload
         private const val UPLOAD_SIZE_BYTES = 1024 * 1024 // 1MB payload for upload
+        const val FAILED = "Failed"
     }
 
     private var testProxyTask: TestProxyTask? = null
-
-    private var isStopped = false
 
     // SOCKS5 proxy configuration with authentication
     data class ProxyConfig (
@@ -48,12 +47,10 @@ class ProxySpeedTest {
     fun startSpeedTest(proxyConfig: ProxyConfig?, callback: (download: String, upload: String) -> Unit) {
         testProxyTask = TestProxyTask(proxyConfig, callback)
         testProxyTask?.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR)
-        isStopped = false
     }
 
     fun stopProxyTest() {
         testProxyTask?.cancel(true)
-        isStopped = true
     }
 
     private class TestProxyTask(
@@ -189,7 +186,7 @@ class ProxySpeedTest {
 
         @SuppressLint("DefaultLocale")
         private fun formatSpeed(speedKBps: Double): String {
-            if (speedKBps < 0) return "Failed"
+            if (speedKBps < 0) return FAILED
             // Convert KB/s (kilobytes/sec) to Kb/s (kilobits/sec)
             val speedKbps = speedKBps * 8
             // Round to 2 decimal places

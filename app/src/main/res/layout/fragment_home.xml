@@ -110,6 +110,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size8"
                 android:text="@string/disconnecting"
                 android:textColor="#C4C9D9"
                 android:textSize="12sp" />
