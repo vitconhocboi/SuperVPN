@@ -1,6 +1,7 @@
 package com.highsecure.vpn.proxy.master.main
 
 import android.content.Context
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.android.billingclient.api.*
@@ -19,6 +20,16 @@ import kotlin.coroutines.resume
 @HiltViewModel
 class MainViewModel @Inject constructor() : ViewModel(), PurchasesUpdatedListener {
 
+//    val isSub = MutableLiveData(false)
+
+    fun setIsSub(sub: Boolean) {
+        SharedData.isSub.postValue(sub)
+    }
+
+    fun isSub() : Boolean {
+        return BaseAppConfig.isSub
+    }
+
     fun checkActiveSubscriptions(context: Context, onResult: (Boolean) -> Unit) {
         viewModelScope.launch {
             if (!BillingManager.isBillingInit()) {
@@ -28,8 +39,8 @@ class MainViewModel @Inject constructor() : ViewModel(), PurchasesUpdatedListene
             val isSubscribed = withContext(Dispatchers.IO) {
                 startBillingConnectionAndQueryPurchases()
             }
-            BaseAppConfig.isSub = isSubscribed
-            onResult(isSubscribed)
+//            BaseAppConfig.isSub = isSubscribed
+            onResult(BaseAppConfig.isSub)
         }
     }
 
@@ -77,6 +88,8 @@ class MainViewModel @Inject constructor() : ViewModel(), PurchasesUpdatedListene
                     } else {
                         // Already acknowledged, unlock content if needed
                         Timber.d("Purchase already acknowledged: ${purchase.orderId}")
+                        SharedData.isSub.postValue(true)
+                        break
                     }
                 }
             }
@@ -94,9 +107,11 @@ class MainViewModel @Inject constructor() : ViewModel(), PurchasesUpdatedListene
 
         billingClient.acknowledgePurchase(acknowledgePurchaseParams) { ackResult ->
             if (ackResult.responseCode == BillingClient.BillingResponseCode.OK) {
+                SharedData.isSub.postValue(true)
                 Timber.d("Purchase acknowledged successfully: ${purchase.orderId}")
                 // Unlock premium features or subscriptions here
             } else {
+                SharedData.isSub.postValue(false)
                 Timber.e("Failed to acknowledge purchase: ${ackResult.debugMessage}")
             }
         }

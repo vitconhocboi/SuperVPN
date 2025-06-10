@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColor2"
-    tools:context=".proxy.FreeProxyFragment">
+    tools:context=".proxy.PremiumProxyFragment">
 
 <!--    <androidx.appcompat.widget.LinearLayoutCompat-->
 <!--        android:id="@+id/proxyActionBar"-->
@@ -84,16 +84,49 @@
 <!--            android:textSize="@dimen/text_normal" />-->
 <!--    </LinearLayout>-->
 
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/proxyActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/size16"
+        android:background="@color/black"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/size16"
+            android:src="@drawable/back"
+            android:foreground="?selectableItemBackgroundBorderless" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size16"
+            android:layout_weight="1"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/ip_proxy"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/text_medium" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/margin_big"
         android:layout_marginEnd="@dimen/margin_big"
+        android:layout_marginTop="@dimen/margin_big"
         android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/proxyActionBar">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcvGroupProxy"

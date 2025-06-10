@@ -1,4 +1,4 @@
-package com.highsecure.vpn.proxy.master.proxy.fragments
+package com.highsecure.vpn.proxy.master.proxy
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -13,6 +13,7 @@ import com.highsecure.vpn.proxy.master.utils.Navigator
 import com.common.baseui.view.RadioGroupManager
 import com.highsecure.vpn.proxy.master.R
 import com.highsecure.vpn.proxy.master.proxy.PremiumProxyFragment
+import com.highsecure.vpn.proxy.master.proxy.fragments.ProxyPageAdapter
 
 class TabProxyFragment : ProductFragment<TabProxyFragmentBinding>() {
 

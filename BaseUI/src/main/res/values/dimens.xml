@@ -6,6 +6,7 @@
     <dimen name="text_medium">16sp</dimen>
     <dimen name="text_large">18sp</dimen>
     <dimen name="text_huge">20sp</dimen>
+    <dimen name="text_super_huge">28sp</dimen>
     <dimen name="text_gigatic">24dp</dimen>
     <dimen name="text_title">18dp</dimen>
     <dimen name="size0">0dp</dimen>

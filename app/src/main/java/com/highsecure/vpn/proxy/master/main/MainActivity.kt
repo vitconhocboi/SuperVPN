@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.highsecure.vpn.proxy.master.base.ProductActivity
 import com.highsecure.vpn.proxy.master.databinding.ActivityMainBinding
 import com.highsecure.vpn.proxy.master.home.HomeFragment
@@ -16,6 +17,7 @@ import com.highsecure.vpn.proxy.master.settings.appproxy.AppProxyFragment
 import com.highsecure.vpn.proxy.master.settings.dns.DNSFragment
 import com.highsecure.vpn.proxy.master.R
 import com.highsecure.vpn.proxy.master.billing.BillingManager
+import com.highsecure.vpn.proxy.master.dialog.SettingSuccessDialog
 import com.highsecure.vpn.proxy.master.remoteconfig.AdPlacementId
 import com.highsecure.vpn.proxy.master.remoteconfig.FirebaseConfigManager
 import com.simple.libads.AdNetworkType
@@ -32,6 +34,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
 
     var isSettingFragment = false
     var isAppProxyFragment = false
+    var isDnsFragment = false
 
     var configAd: FirebaseConfigManager = FirebaseConfigManager.get()
 
@@ -75,6 +78,12 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
     override fun initView() {
         requestAdvertisingIdPermission()
 
+        val reconnect = intent.getStringExtra("state")
+        if (reconnect != null && reconnect == "POPUP") {
+            SettingSuccessDialog(R.string.setting_choose_proxy, R.string.home_reconnect_to_take_effect)
+                .show(supportFragmentManager, "SettingSuccessDialog")
+        }
+
         mainViewModel.checkActiveSubscriptions(applicationContext) { it ->
             Timber.d("checkActiveSubscriptions $it")
             if (it == true) {
@@ -115,6 +124,12 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
             }
         }
 
+        SharedData.isSub.observe(this) { it ->
+            if (it == true) {
+                binding.frameBanner.visibility = View.GONE
+            }
+        }
+
         onBackPressedDispatcher.addCallback(
             this@MainActivity,
             object : OnBackPressedCallback(true) {
@@ -124,11 +139,12 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                     } else if (isAppProxyFragment) {
                         mAppProxyFragment.hideKeyboard()
                         showFragment(mSettingFragment)
+                    } else if (isDnsFragment) {
+                        showFragment(mSettingFragment)
                     } else {
                         finishAffinity()
                     }
                 }
-
             })
     }
 
@@ -164,6 +180,8 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
         when (fragment) {
             is AppProxyFragment -> {
                 isAppProxyFragment = true
+                isSettingFragment = false
+                isDnsFragment = false
                 with(binding) {
                     lbSetting.text = getString(R.string.setting_app_proxy)
                     homeActionBar.setVisible(false)
@@ -176,6 +194,8 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
 
             is SettingFragment -> {
                 isSettingFragment = true
+                isAppProxyFragment = false
+                isDnsFragment = false
                 with(binding) {
                     lbSetting.text = getString(R.string.setting)
                     homeActionBar.setVisible(false)
@@ -188,6 +208,8 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
 
             is DNSFragment -> {
                 isAppProxyFragment = false
+                isDnsFragment = true
+                isSettingFragment = false
                 with(binding) {
                     homeActionBar.setVisible(false)
                     subActionbar.setVisible(false)

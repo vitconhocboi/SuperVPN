@@ -183,9 +183,11 @@ class LocalVpnService : VpnService(), Runnable {
             m_PrivoxyManager = null
             currentProxy = null
 
-            Instance!!.stopForeground(true)
-            Instance!!.stopSelf() // Stop the service after cleanup
-            Instance = null // Clear the instance reference
+            if (Instance != null) {
+                Instance!!.stopForeground(true)
+                Instance!!.stopSelf() // Stop the service after cleanup
+                Instance = null // Clear the instance reference
+            }
 
             Timber.tag(Constant.TAG).d("VPNService stopped.")
         }
@@ -220,7 +222,7 @@ class LocalVpnService : VpnService(), Runnable {
         key.mark = 0
         key.mtu = ProxyConfig.Instance.mTU.toLong()
         key.device = "fd://" + pfdDescriptor?.fd
-        key.logLevel = "debug"
+        key.logLevel = "silent"
         if (currentProxy?.type?.lowercase() == "socks5") {
             key.proxy =
                 "socks5://${currentProxy!!.username}:${currentProxy!!.password}@${currentProxy!!.host}:${currentProxy!!.port}"

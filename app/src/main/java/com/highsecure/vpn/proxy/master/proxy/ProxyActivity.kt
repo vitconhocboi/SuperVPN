@@ -7,7 +7,8 @@ import com.highsecure.vpn.proxy.master.R
 import com.highsecure.vpn.proxy.master.base.ProductActivity
 import com.highsecure.vpn.proxy.master.databinding.ActivityProxyBinding
 import com.highsecure.vpn.proxy.master.main.MainActivity
-import com.highsecure.vpn.proxy.master.proxy.fragments.TabProxyFragment
+import com.highsecure.vpn.proxy.master.main.SharedData
+import com.highsecure.vpn.proxy.master.proxy.TabProxyFragment
 import com.highsecure.vpn.proxy.master.remoteconfig.AdPlacementId
 import com.highsecure.vpn.proxy.master.remoteconfig.FirebaseConfigManager
 import com.simple.libads.AdNetworkType
@@ -25,7 +26,7 @@ class ProxyActivity : ProductActivity<ActivityProxyBinding>() {
 
     override fun initView() {
         supportFragmentManager.beginTransaction().replace(R.id.fragment_container,
-            TabProxyFragment()
+            PremiumProxyFragment()
         )
             .commit()
 
@@ -42,6 +43,10 @@ class ProxyActivity : ProductActivity<ActivityProxyBinding>() {
                     parent = binding.frameBanner
                 )
             }
+        }
+
+        SharedData.isSub.observe (this) {
+            binding.frameBanner.visibility = View.GONE
         }
     }
 

@@ -21,11 +21,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_premium"
-            android:rotation="45"
             android:scaleType="centerInside"
             />
 
     </FrameLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bgImg"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_earth"
+        android:foreground="?selectableItemBackgroundBorderless"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -47,7 +59,7 @@
         android:layout_marginTop="@dimen/margin_68"
         android:ellipsize="middle"
         android:text="@string/premium_title"
-        android:textSize="30sp"
+        android:textSize="@dimen/text_super_huge"
         android:textAppearance="@style/App_TextAppearanceTitle1"
         android:textColor="@color/successColor"
         app:layout_constraintTop_toTopOf="parent"
@@ -62,6 +74,7 @@
         android:ellipsize="middle"
         android:text="@string/premium_sub1"
         android:textColor="@color/text_gray_1"
+        android:textSize="@dimen/text_normal"
         android:drawableStart="@drawable/ic_pre"
         android:drawablePadding="@dimen/size10"
         app:layout_constraintTop_toBottomOf="@+id/tv_title"
@@ -75,6 +88,7 @@
         android:ellipsize="middle"
         android:text="@string/premium_sub2"
         android:textColor="@color/text_gray_1"
+        android:textSize="@dimen/text_normal"
         android:drawableStart="@drawable/ic_pre"
         android:drawablePadding="@dimen/size10"
         app:layout_constraintTop_toBottomOf="@+id/tv_sub1"
@@ -89,6 +103,7 @@
         android:ellipsize="middle"
         android:text="@string/premium_sub3"
         android:textColor="@color/text_gray_1"
+        android:textSize="@dimen/text_normal"
         android:drawableStart="@drawable/ic_pre"
         android:drawablePadding="@dimen/size10"
         app:layout_constraintTop_toBottomOf="@+id/tv_sub2"
@@ -102,6 +117,7 @@
         android:ellipsize="middle"
         android:text="@string/premium_sub4"
         android:textColor="@color/text_gray_1"
+        android:textSize="@dimen/text_normal"
         android:drawableStart="@drawable/ic_pre"
         android:drawablePadding="@dimen/size10"
         app:layout_constraintTop_toBottomOf="@+id/tv_sub3"
@@ -128,6 +144,7 @@
         android:ellipsize="middle"
         android:text="@string/premium_desc"
         android:textColor="@color/text_gray_2"
+        android:textSize="@dimen/text_normal"
         app:layout_constraintTop_toBottomOf="@+id/rcvSkus"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -168,9 +185,22 @@
         android:text="@string/premium_trial_desc"
         android:maxLines="2"
         android:textColor="@color/text_gray_2"
+        android:textSize="@dimen/text_normal"
         app:layout_constraintTop_toBottomOf="@+id/start_trial"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:indeterminateTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="invisible"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

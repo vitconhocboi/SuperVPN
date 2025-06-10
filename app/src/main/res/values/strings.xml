@@ -14,6 +14,7 @@
     <string name="setting_vpn_fast_and_safe">VPN Fast and Safe</string>
     <string name="setting_vpn_fast_and_safe_desc">Get unlimited access to all features, ad-free.</string>
     <string name="setting_trial">Free trial 3 days</string>
+    <string name="setting_upgrade">Upgrade</string>
     <string name="ip_proxy">IP Proxy</string>
     <string name="setting_app_proxy">App Proxy</string>
     <string name="setting_ads_block">Ads block</string>
@@ -59,6 +60,14 @@
     <string name="min_90">90 Minutes</string>
     <string name="min_120">120 Minutes</string>
     <string name="setting">Setting</string>
+    <string name="close">Close</string>
+    <string name="setting_app_proxy_success">App Proxy is set</string>
+    <string name="setting_ads_limit">Ads limit is set</string>
+    <string name="setting_choose_proxy">VPN Server is set</string>
+    <string name="reconnect_to_take_effect">Please return to the home screen and reset the proxy for the settings to take effect</string>
+    <string name="home_reconnect_to_take_effect">Please reset the proxy for the settings to take effect</string>
+    <string name="premium_select_sku">Please select one period</string>
+    <string name="premium_purchase_success">Purchase successfully</string>
 
     <string name="premium_title">VPN Fast &amp; Safe Pro</string>
     <string name="premium_sub1">No ads</string>
@@ -68,7 +77,7 @@
     <string name="premium_weekly">Weekly</string>
     <string name="premium_monthly">Monthly</string>
     <string name="premium_yearly">Yearly</string>
-    <string name="premium_desc">First 7 days free,  then the plan auto-renews yearly</string>
+    <string name="premium_desc">First 3 days free,  then the plan auto-renews yearly</string>
     <string name="premium_start_trial">Start trial</string>
     <string name="premium_trial_desc">Recurring billing. Cancel anytime on Google Play Store.</string>
 
@@ -81,7 +90,7 @@
     <string name="vpn_des2">An icon will be shown at the top of your screen while the VPN is in use. Allow?</string>
     <string name="vpn_reason">Why is VPN permission needed?</string>
     <string name="vpn_reason_des">The app requires VPN permission to establish a secure and encrypted connection between your device and the server. Granting this permission allows the app to protect your privacy and encrypt your data, especially when using public networks.</string>
-    <string name="got_it">Ok,got it.</string>
+    <string name="got_it">Got it</string>
 
     <string name="text_rate_hint">The best rank we could get :)</string>
     <string name="text_rate_0">If you can rate us, we will be very grateful and continue to work hard to bring you a better experience.</string>

@@ -31,6 +31,7 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
     companion object {
         private var selected = false
         private const val PREMIUM = "premium"
+//        private const val FREE = "free"
     }
 
 
@@ -109,7 +110,7 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
                                 mProxyViewModel.setActiveProxy(null, deviceId, PREMIUM)
                             }
                             requireActivity().finish()
-                            Navigator.startMainActivity(requireContext(), reconnect)
+                            Navigator.startMainActivity(requireContext(), "POPUP")
                             selected = false
                         } else {
                             item.active = false
@@ -122,6 +123,10 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
                         ).show()
                     }
                 }
+            }
+
+            ivBack.setOnClickListener {
+                Navigator.startMainActivity(requireActivity())
             }
         }
     }

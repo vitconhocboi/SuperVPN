@@ -1,177 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center_horizontal"
-    android:background="@drawable/bg_dialog_vpn"
-    android:orientation="vertical"
-    tools:context=".DialogVpnPermission">
+    android:layout_height="wrap_content">
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/margin_24"
-        android:layout_marginTop="@dimen/margin_24"
-        android:fontFamily="@font/inter_bold"
-        android:text="@string/dg_vpn_permission_title"
-        android:textColor="@color/black"
-        android:textSize="@dimen/text_medium" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/margin_24"
-        android:layout_marginTop="@dimen/margin_12"
-        android:fontFamily="@font/inter_normal"
-        android:text="@string/dg_vpn_permission_guide"
-        android:textColor="#2F2F2F"
-        android:textSize="@dimen/text_normal" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/margin_24"
-        android:layout_marginTop="@dimen/margin_12"
-        android:background="@drawable/bg_dialog_vpn_permission">
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bg_dialog_vpn"
+        android:orientation="vertical"
+        tools:context=".DialogVpnPermission">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_24"
+            android:layout_marginHorizontal="@dimen/margin_24"
             android:layout_marginTop="@dimen/margin_24"
-            android:layout_marginEnd="@dimen/margin_3x"
             android:fontFamily="@font/inter_bold"
-            android:text="@string/connection_request"
+            android:text="@string/dg_vpn_permission_title"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_large"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="@dimen/text_medium" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvDes1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_24"
-            android:layout_marginTop="@dimen/margin_24"
-            android:layout_marginEnd="@dimen/margin_3x"
+            android:layout_marginHorizontal="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_12"
             android:fontFamily="@font/inter_normal"
-            android:text="@string/vpn_des1"
-            android:textColor="#737373"
-            android:textSize="@dimen/text_normal"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+            android:text="@string/dg_vpn_permission_guide"
+            android:textColor="#2F2F2F"
+            android:textSize="@dimen/text_normal" />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_12"
+            android:background="@drawable/bg_dialog_vpn_permission">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_3x"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/connection_request"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_large"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDes1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_3x"
+                android:fontFamily="@font/inter_normal"
+                android:text="@string/vpn_des1"
+                android:textColor="#737373"
+                android:textSize="@dimen/text_normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDes2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_3x"
+                android:fontFamily="@font/inter_normal"
+                android:text="@string/vpn_des2"
+                android:textColor="#737373"
+                android:textSize="@dimen/text_normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDes1" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/lnButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_3x"
+                android:layout_marginBottom="@dimen/margin_24"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDes2">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tcCancel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/btn_cancel"
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:textAlignment="center"
+                    android:textColor="#0B70CA"
+                    android:textSize="@dimen/text_medium" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tcOK"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/btn_ok"
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:textAlignment="center"
+                    android:textColor="#0B70CA"
+                    android:textSize="@dimen/text_medium" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_3x"
+                android:gravity="center"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@id/lnButton">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/size30"
+                    android:layout_height="@dimen/size30"
+                    android:layout_marginTop="@dimen/size4"
+                    android:rotation="-36"
+                    android:src="@drawable/ic_left_click" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvDes2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_24"
-            android:layout_marginTop="@dimen/margin_24"
-            android:layout_marginEnd="@dimen/margin_3x"
+            android:layout_marginHorizontal="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_16"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/vpn_reason"
+            android:textColor="#2F2F2F"
+            android:textSize="@dimen/text_normal" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_16"
             android:fontFamily="@font/inter_normal"
-            android:text="@string/vpn_des2"
-            android:textColor="#737373"
-            android:textSize="@dimen/text_normal"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvDes1" />
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/lnButton"
+            android:text="@string/vpn_reason_des"
+            android:textColor="#2F2F2F"
+            android:textSize="@dimen/text_normal" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvGotIt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_24"
-            android:layout_marginTop="@dimen/margin_24"
-            android:layout_marginEnd="@dimen/margin_3x"
+            android:layout_marginHorizontal="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_20"
             android:layout_marginBottom="@dimen/margin_24"
-            android:gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvDes2">
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tcCancel"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/inter_bold"
-                android:text="@string/btn_cancel"
-                android:foreground="?selectableItemBackgroundBorderless"
-                android:textAlignment="center"
-                android:textColor="#0B70CA"
-                android:textSize="@dimen/text_medium" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tcOK"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/inter_bold"
-                android:text="@string/btn_ok"
-                android:foreground="?selectableItemBackgroundBorderless"
-                android:textAlignment="center"
-                android:textColor="#0B70CA"
-                android:textSize="@dimen/text_medium" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_24"
-            android:layout_marginEnd="@dimen/margin_3x"
-            android:gravity="center"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="@id/lnButton">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="6" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/size30"
-                android:layout_height="@dimen/size30"
-                android:layout_marginTop="@dimen/size4"
-                android:rotation="-36"
-                android:src="@drawable/ic_left_click" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/margin_24"
-        android:layout_marginTop="@dimen/margin_16"
-        android:fontFamily="@font/inter_bold"
-        android:text="@string/vpn_reason"
-        android:textColor="#2F2F2F"
-        android:textSize="@dimen/text_normal" />
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/margin_24"
-        android:layout_marginTop="@dimen/margin_16"
-        android:fontFamily="@font/inter_normal"
-        android:text="@string/vpn_reason_des"
-        android:textColor="#2F2F2F"
-        android:textSize="@dimen/text_normal" />
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvGotIt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/margin_24"
-        android:layout_marginTop="@dimen/margin_20"
-        android:layout_marginBottom="@dimen/margin_24"
-        android:fontFamily="@font/inter_bold"
-        android:text="@string/got_it"
-        android:textColor="#0EB245"
-        android:textAlignment="textEnd"
-        android:textSize="@dimen/text_medium" />
-</androidx.appcompat.widget.LinearLayoutCompat>
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/got_it"
+            android:textColor="#0EB245"
+            android:textAlignment="textEnd"
+            android:textSize="@dimen/text_medium" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</ScrollView>

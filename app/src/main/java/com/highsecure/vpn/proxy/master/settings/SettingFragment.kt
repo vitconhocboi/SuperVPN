@@ -3,6 +3,7 @@ package com.highsecure.vpn.proxy.master.settings
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import androidx.fragment.app.viewModels
@@ -15,6 +16,8 @@ import com.highsecure.vpn.proxy.master.utils.Navigator
 import com.highsecure.vpn.proxy.master.utils.shareApp
 import com.common.baseui.BaseAppConfig
 import com.common.baseui.extension.setOnClickNoDoubleClick
+import com.highsecure.vpn.proxy.master.dialog.SettingSuccessDialog
+import com.highsecure.vpn.proxy.master.main.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,6 +26,7 @@ class SettingFragment(
 ) : ProductFragment<FragmentSettingBinding>() {
 
     private val mViewModel: SettingViewModel by viewModels()
+    private val mainViewModel: MainViewModel by viewModels()
 
 
     override fun bindingProvider(
@@ -47,10 +51,18 @@ class SettingFragment(
 
         binding.apply {
 
+//            if (mainViewModel.isSub()) {
+//                premium.visibility = View.GONE
+//            } else {
             premium.background = roundedDrawable
+//            }
 
             rowAppProxy.setOnClickListener {
-                fetchInstalledApps()
+                if (mainViewModel.isSub()) {
+                    fetchInstalledApps()
+                } else {
+                    Navigator.startPremiumActivity(requireContext())
+                }
             }
             rowDns.setOnClickListener() {
                 showDns()
@@ -61,8 +73,16 @@ class SettingFragment(
             }
 
             rowAdsBlock.setOnClickListener {
-                rowAdsBlock.isSelected = !rowAdsBlock.isSelected
-                BaseAppConfig.adsBlock = rowAdsBlock.isSelected
+                if (mainViewModel.isSub()) {
+                    rowAdsBlock.isSelected = !rowAdsBlock.isSelected
+                    BaseAppConfig.adsBlock = rowAdsBlock.isSelected
+                    SettingSuccessDialog(R.string.setting_ads_limit).show(
+                        childFragmentManager,
+                        "SettingSuccessDialog"
+                    )
+                } else {
+                    Navigator.startPremiumActivity(requireContext())
+                }
             }
 
             if (BaseAppConfig.dnsServer.isNotEmpty()) {

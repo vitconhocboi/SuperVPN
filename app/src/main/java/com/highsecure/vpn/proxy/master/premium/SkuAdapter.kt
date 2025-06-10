@@ -12,8 +12,7 @@ import javax.inject.Inject
 
 class SkuAdapter @Inject constructor() :
     BaseAdapter<Sku, BaseViewHolder<Sku>>() {
-
-    var listRecord: ArrayList<Sku?> = arrayListOf()
+    var selected : Int = -1
 
     override fun onCreateViewHolder(
         parent: ViewGroup, viewType: Int
@@ -34,22 +33,28 @@ class SkuAdapter @Inject constructor() :
                 val resId = context.resources.getIdentifier(data.productName, "string", context.packageName)
                 skuName.text = context.getString(resId)
                 skuPrice.text = data.productPrice
+                root.isSelected = position == selected
+//                checkboxSku.isChecked = position == selected
+//                root.setOnClickListener {
+//                    selected = position
+//                    checkboxSku.isChecked = position == selected
+//                    root.isSelected = position == selected
+//                    onClickItem(data)
+//                }
+
                 sku.setOnClickListener {
+                    selected = position
+                    root.isSelected = position == selected
                     onClickItem(data)
                 }
-                root.setOnClickListener {
-                    onClickItem(data)
-                }
+//                root.setOnClickListener {
+//                    onClickItem(data)
+//                }
             }
         }
 
         fun onClickItem(data: Sku) {
             onItemClick?.invoke(position, data)
         }
-    }
-
-    fun setData(list: List<Sku?>) {
-        listRecord.clear()
-        listRecord.addAll(list)
     }
 }

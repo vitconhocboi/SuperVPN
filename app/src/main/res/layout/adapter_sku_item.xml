@@ -7,8 +7,7 @@
     android:paddingHorizontal="@dimen/margin_16"
     android:layout_marginTop="@dimen/margin_16"
     android:layout_marginHorizontal="@dimen/margin_16"
-    android:background="@drawable/bg_line_premium"
-    >
+    android:background="@drawable/bg_pre_line">
 
     <LinearLayout
         android:id="@+id/sku"
@@ -42,6 +41,19 @@
             android:ellipsize="middle"
             android:text="@string/premium_monthly"
             android:textColor="@color/text_gray_1" />
+
+<!--        <androidx.appcompat.widget.AppCompatCheckBox-->
+<!--            android:id="@+id/checkboxSku"-->
+<!--            android:layout_width="20dp"-->
+<!--            android:layout_height="20dp"-->
+<!--            android:layout_marginStart="@dimen/margin_big"-->
+<!--            android:background="@drawable/app_proxy_checkbox1"-->
+<!--            android:foreground="?selectableItemBackgroundBorderless"-->
+<!--            android:button="@null"-->
+<!--            android:checked="false"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

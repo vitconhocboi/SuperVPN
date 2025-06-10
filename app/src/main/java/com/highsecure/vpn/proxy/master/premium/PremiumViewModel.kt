@@ -21,8 +21,13 @@ class PremiumViewModel @Inject constructor() : ViewModel() {
 
     val skus = MutableLiveData<ArrayList<Sku>>()
 
+    val products = HashMap<String, ProductDetails>()
+
+    val isLoading = MutableLiveData<Boolean>()
+
     fun loadData() {
         viewModelScope.launch {
+            isLoading.postValue(true)
             val productDetailsList = withContext(Dispatchers.IO) {
                 queryAvailableSubscriptions(
                     listOf("weekly", "monthly", "yearly")
@@ -31,12 +36,14 @@ class PremiumViewModel @Inject constructor() : ViewModel() {
 
             // Back on Main thread to interact with UI or log
             val listSkus = ArrayList<Sku>()
+            products.clear()
             for (product in productDetailsList) {
                 Timber.d("Billing Found subscription: ${product.name} - ${product.oneTimePurchaseOfferDetails?.priceCurrencyCode}")
                 val offer = product.subscriptionOfferDetails?.firstOrNull()
                 val pricingPhase = offer?.pricingPhases?.pricingPhaseList?.firstOrNull()
                 val formattedPrice = pricingPhase?.formattedPrice ?: "N/A"
                 listSkus.add(Sku(product.name, formattedPrice))
+                products.put(product.name, product)
                 Timber.d("Formatted Price: $formattedPrice")
             }
             if (listSkus.isEmpty()) {
@@ -47,6 +54,7 @@ class PremiumViewModel @Inject constructor() : ViewModel() {
             } else {
                 skus.postValue(listSkus)
             }
+            isLoading.postValue(false)
         }
     }
 
@@ -78,13 +86,16 @@ class PremiumViewModel @Inject constructor() : ViewModel() {
         }
     }
 
-    fun launchSubscription(activity: Activity, productDetails: ProductDetails) {
-        val offerDetails = productDetails.subscriptionOfferDetails?.firstOrNull()
+    fun launchSubscription(activity: Activity, productName: String) {
+        isLoading.postValue(true)
+        val productDetail = products.get(productName)
+        if (productDetail == null) return
+        val offerDetails = productDetail.subscriptionOfferDetails?.firstOrNull()
         val billingFlowParams = BillingFlowParams.newBuilder()
             .setProductDetailsParamsList(
                 listOf(
                     BillingFlowParams.ProductDetailsParams.newBuilder()
-                        .setProductDetails(productDetails)
+                        .setProductDetails(productDetail)
                         .setOfferToken(offerDetails?.offerToken ?: "")
                         .build()
                 )
@@ -96,5 +107,6 @@ class PremiumViewModel @Inject constructor() : ViewModel() {
         if (billingResult.responseCode != BillingClient.BillingResponseCode.OK) {
             Timber.i("Billing Error launching billing flow: ${billingResult.debugMessage}")
         }
+        isLoading.postValue(false)
     }
 }

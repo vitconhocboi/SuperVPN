@@ -12,6 +12,8 @@ import com.highsecure.vpn.proxy.master.databinding.FragmentAppProxyBinding
 import com.highsecure.vpn.proxy.master.utils.hideKeyboard
 import com.highsecure.vpn.proxy.master.utils.textChanges
 import com.common.baseui.extension.setVisible
+import com.highsecure.vpn.proxy.master.R
+import com.highsecure.vpn.proxy.master.dialog.SettingSuccessDialog
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import javax.inject.Inject
@@ -22,7 +24,6 @@ class AppProxyFragment(
 ) :
     ProductFragment<FragmentAppProxyBinding>() {
 
-    @Inject
     lateinit var appProxyAdapter: AppProxyAdapter
 
     private val allowAppViewModel: AppProxyViewModel by viewModels()
@@ -64,7 +65,8 @@ class AppProxyFragment(
                 val listFromBaseList = appProxyAdapter.listRecord.filter { !selectedList.contains(it)}
                 listDisallows.addAll(listFromBaseList as Collection<out AppProxyUI>)
                 allowAppViewModel.setDisallowApps(listDisallows)
-                Toast.makeText(requireContext(), "Save successfully", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(requireContext(), "Save successfully", Toast.LENGTH_SHORT).show()
+                SettingSuccessDialog(R.string.setting_app_proxy_success).show(childFragmentManager, "SettingSuccessDialog")
 //                requireActivity().finish()
 //                Navigator.startMainActivity(requireContext(), "RECONNECT")
             }
