@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/size15"
-            android:visibility="gone"
+            android:visibility="visible"
             android:gravity="bottom">
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -44,9 +44,29 @@
                 android:gravity="bottom"
                 android:paddingHorizontal="@dimen/size3"
                 android:paddingVertical="@dimen/size3"
+                android:maxLines="1"
                 android:text="@string/fast_and_safe"
                 android:textColor="@color/white"
-                android:textSize="@dimen/size20" />
+                android:textSize="@dimen/size20"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeMaxTextSize="@dimen/size20"
+                android:autoSizeStepGranularity="2sp"/>
+<!--            <TextView-->
+<!--                android:id="@+id/ivVipReady"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="@dimen/size5"-->
+<!--                android:layout_weight="1"-->
+<!--                android:fontFamily="@font/teko"-->
+<!--                android:gravity="bottom"-->
+<!--                android:paddingHorizontal="@dimen/size3"-->
+<!--                android:paddingVertical="@dimen/size3"-->
+<!--                android:maxLines="1"-->
+<!--                android:text="@string/fast_and_safe"-->
+<!--                android:textColor="@color/white"-->
+<!--                -->
+<!--                />-->
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/lnSetting"
@@ -66,7 +86,7 @@
             android:layout_height="wrap_content"
             android:paddingHorizontal="@dimen/margin_16"
             android:gravity="center"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ic_back"

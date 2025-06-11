@@ -9,7 +9,7 @@
   <string name="lang_default">Mặc định</string>
   <string name="text_error">Đã xảy ra lỗi</string>
   <string name="setting_language">Ngôn ngữ</string>
-  <string name="vpn">Mạng riêng ảo VPN</string>
+  <string name="vpn">VPN</string>
   <string name="fast_and_safe">Nhanh chóng &amp; An toàn</string>
   <string name="setting_vpn_fast_and_safe">VPN Nhanh và An toàn</string>
   <string name="setting_vpn_fast_and_safe_desc">Truy cập không giới hạn vào tất cả các tính năng, không có quảng cáo.</string>
