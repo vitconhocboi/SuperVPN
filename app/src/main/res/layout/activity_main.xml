@@ -25,7 +25,8 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvTitle"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/teko"
                 android:maxLines="1"
@@ -39,7 +40,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/size5"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:fontFamily="@font/teko"
                 android:gravity="bottom"
                 android:paddingHorizontal="@dimen/size3"
