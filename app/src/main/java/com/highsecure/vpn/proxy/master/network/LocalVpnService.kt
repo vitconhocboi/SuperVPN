@@ -183,6 +183,7 @@ class LocalVpnService : VpnService(), Runnable {
             m_PrivoxyManager = null
             currentProxy = null
 
+            proxyConnection.updateUI(HomeFragment.DISCONNECTED)
             if (Instance != null) {
                 Instance!!.stopForeground(true)
                 Instance!!.stopSelf() // Stop the service after cleanup
@@ -340,7 +341,6 @@ class LocalVpnService : VpnService(), Runnable {
     @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
     override fun onDestroy() {
         Timber.tag(Constant.TAG).d("VPNService($ID) destroyed")
-        proxyConnection.updateUI(HomeFragment.DISCONNECTED)
         super.onDestroy()
     }
 
