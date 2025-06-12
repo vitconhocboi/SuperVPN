@@ -19,6 +19,6 @@ class SuperVpnApplication : BaseApplication() {
 
 
     override fun isInitAds(): Boolean {
-        return currentActivity !is SplashActivity && !BaseAppConfig.firstTimeSetup
+        return currentActivity !is SplashActivity && !BaseAppConfig.firstTimeSetup && !BaseAppConfig.isSub
     }
 }

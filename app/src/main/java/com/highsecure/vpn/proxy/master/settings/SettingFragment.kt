@@ -51,11 +51,11 @@ class SettingFragment(
 
         binding.apply {
 
-//            if (mainViewModel.isSub()) {
-//                premium.visibility = View.GONE
-//            } else {
-            premium.background = roundedDrawable
-//            }
+            if (mainViewModel.isSub()) {
+                premium.visibility = View.GONE
+            } else {
+                premium.background = roundedDrawable
+            }
 
             rowAppProxy.setOnClickListener {
                 if (mainViewModel.isSub()) {

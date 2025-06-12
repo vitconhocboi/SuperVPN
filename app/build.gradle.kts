@@ -149,6 +149,7 @@ dependencies {
     implementation(libs.okhttp)
     implementation("com.google.android.gms:play-services-ads-identifier:18.2.0")
     implementation("com.google.android.ump:user-messaging-platform:3.2.0")
+    implementation("com.google.android.flexbox:flexbox:3.0.0")
     //retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)

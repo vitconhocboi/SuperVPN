@@ -54,10 +54,12 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_title"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_68"
+        android:layout_marginHorizontal="@dimen/margin_big"
         android:ellipsize="middle"
+        android:gravity="center"
         android:text="@string/premium_title"
         android:textSize="@dimen/text_super_huge"
         android:textAppearance="@style/App_TextAppearanceTitle1"
@@ -138,10 +140,13 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_desc"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_32"
-        android:ellipsize="middle"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="2"
+        android:layout_marginHorizontal="@dimen/margin_big"
         android:text="@string/premium_desc"
         android:textColor="@color/text_gray_2"
         android:textSize="@dimen/text_normal"
@@ -178,10 +183,12 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvMsg"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_32"
-        android:ellipsize="middle"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:layout_marginHorizontal="@dimen/margin_big"
         android:text="@string/premium_trial_desc"
         android:maxLines="2"
         android:textColor="@color/text_gray_2"

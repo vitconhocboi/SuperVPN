@@ -51,15 +51,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <com.google.android.flexbox.FlexboxLayout
         android:id="@+id/lnType"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/size16"
         android:layout_marginTop="@dimen/size8"
-        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvType">
+        app:layout_constraintTop_toBottomOf="@id/tvType"
+        app:dividerVertical="@drawable/divider_vertical"
+        app:showDividerVertical="middle"
+        app:flexWrap="wrap"
+        app:justifyContent="flex_start">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvFeature"
@@ -70,6 +73,7 @@
             android:paddingHorizontal="@dimen/size12"
             android:paddingVertical="@dimen/size6"
             android:text="@string/text_type_feature"
+            android:layout_marginVertical="@dimen/margin_small"
             android:textColor="#000000"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -83,6 +87,7 @@
             android:background="@drawable/bg_type_feedback_button"
             android:foreground="?selectableItemBackgroundBorderless"
             android:paddingHorizontal="@dimen/size12"
+            android:layout_marginVertical="@dimen/margin_small"
             android:paddingVertical="@dimen/size6"
             android:text="@string/text_type_crash"
             android:textColor="#000000"
@@ -99,6 +104,7 @@
             android:foreground="?selectableItemBackgroundBorderless"
             android:paddingHorizontal="@dimen/size12"
             android:paddingVertical="@dimen/size6"
+            android:layout_marginVertical="@dimen/margin_small"
             android:text="@string/text_type_bug"
             android:textColor="#000000"
             android:textSize="16sp"
@@ -112,6 +118,7 @@
             android:layout_marginStart="@dimen/size8"
             android:background="@drawable/bg_type_feedback_button"
             android:foreground="?selectableItemBackgroundBorderless"
+            android:layout_marginVertical="@dimen/margin_small"
             android:paddingHorizontal="@dimen/size12"
             android:paddingVertical="@dimen/size6"
             android:text="@string/text_type_other"
@@ -119,7 +126,7 @@
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvTitle" />
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </com.google.android.flexbox.FlexboxLayout>
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"

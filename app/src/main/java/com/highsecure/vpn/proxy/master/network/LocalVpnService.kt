@@ -148,6 +148,7 @@ class LocalVpnService : VpnService(), Runnable {
         return START_NOT_STICKY
     }
 
+    @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
     fun stopVPN() {
         if (IsRunning) {
             IsRunning = false
@@ -183,13 +184,12 @@ class LocalVpnService : VpnService(), Runnable {
             m_PrivoxyManager = null
             currentProxy = null
 
-            proxyConnection.updateUI(HomeFragment.DISCONNECTED)
             if (Instance != null) {
                 Instance!!.stopForeground(true)
                 Instance!!.stopSelf() // Stop the service after cleanup
                 Instance = null // Clear the instance reference
             }
-
+            proxyConnection.updateUI(HomeFragment.DISCONNECTED)
             Timber.tag(Constant.TAG).d("VPNService stopped.")
         }
     }

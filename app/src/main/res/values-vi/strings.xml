@@ -20,7 +20,7 @@
   <string name="setting_ads_desc">Hạn chế quảng cáo khi duyệt web</string>
   <string name="setting_dns_default">DNS mặc định</string>
   <string name="dns_desc">Chọn và lưu DNS Server làm mặc định cho lần sử dụng ứng dụng tiếp theo</string>
-  <string name="setting_rate">Tỷ lệ</string>
+  <string name="setting_rate">Đánh giá</string>
   <string name="setting_share">Chia sẻ</string>
   <string name="setting_feedback">Nhận xét</string>
   <string name="select_connection_area">Chọn vùng kết nối</string>
@@ -42,7 +42,7 @@
   <string name="connect_error">Kết nối không thành công</string>
   <string name="tap_to_connect">Tab để kết nối</string>
   <string name="upload">TẢI LÊN</string>
-  <string name="download">Tải về</string>
+  <string name="download">TẢI XUỐNG</string>
   <string name="home_settime">Chọn thời gian kết nối</string>
   <string name="home_settime_1">Sau một giờ</string>
   <string name="btn_ok">ĐƯỢC RỒI</string>
@@ -62,7 +62,7 @@
   <string name="reconnect_to_take_effect">Vui lòng quay lại màn hình chính và đặt lại proxy để các thiết lập có hiệu lực</string>
   <string name="home_reconnect_to_take_effect">Vui lòng đặt lại proxy để các thiết lập có hiệu lực</string>
   <string name="premium_select_sku">Vui lòng chọn một khoảng thời gian</string>
-  <string name="premium_title">VPN Nhanh &amp; An Toàn Pro</string>
+  <string name="premium_title">VPN Nhanh &amp; An Toàn</string>
   <string name="premium_sub1">Không có quảng cáo</string>
   <string name="premium_sub2">Tốc độ nhanh và ổn định</string>
   <string name="premium_sub3">Vị trí trên toàn thế giới</string>
@@ -91,17 +91,17 @@
   <string name="text_rate_app">Đánh giá trên Google Play</string>
   <string name="fb_common_unable_find_market">Không tìm thấy ứng dụng thị trường</string>
   <string name="text_feedback_problem">Hãy cho chúng tôi biết bạn gặp phải vấn đề gì.</string>
-  <string name="text_type">Kiểu:</string>
+  <string name="text_type">Loại:</string>
   <string name="text_type_feature">Chất lượng tính năng</string>
   <string name="text_type_crash">Tai nạn</string>
-  <string name="text_type_bug">Sâu bọ</string>
+  <string name="text_type_bug">Lỗi</string>
   <string name="text_type_other">Khác</string>
   <string name="text_send">Gửi</string>
   <string name="text_feedback_hint">Vui lòng cung cấp cho chúng tôi thêm thông tin chi tiết để chúng tôi có thể xác định và giải quyết vấn đề của bạn nhanh hơn (ít nhất 6 ký tự)</string>
   <string name="text_thanks_feedback">Cảm ơn phản hồi của bạn</string>
   <string name="text_feedback_content">Chúng tôi sẽ khắc phục sự cố này trong phiên bản sau. Xin lỗi vì sự bất tiện này.</string>
   <string name="msg_device_does_not_support_this_feature">Tính năng này không được hỗ trợ cho thiết bị này!</string>
-  <string name="search_app">ứng dụng tìm kiếm..</string>
+  <string name="search_app">Tìm kiếm..</string>
   <string name="free">Miễn phí</string>
-  <string name="premium">Phần thưởng</string>
+  <string name="premium">Trả phí</string>
 </resources>
