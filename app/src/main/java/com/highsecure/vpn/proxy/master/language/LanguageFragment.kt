@@ -31,7 +31,8 @@ class LanguageFragment (
     override fun initView() {
         super.initView()
         mViewModel.init()
-
+        val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
+        binding.icBack.scaleX = if (isRTL) -1f else 1f
         if (fromSetting) {
             binding.icBack.visibility = View.VISIBLE
             binding.icBack.setOnClickListener {

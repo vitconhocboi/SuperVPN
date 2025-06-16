@@ -1,5 +1,6 @@
 package com.highsecure.vpn.proxy.master
 
+import android.annotation.SuppressLint
 import com.common.baseui.BaseAppConfig
 import com.common.baseui.BaseApplication
 import com.highsecure.vpn.proxy.master.splash.SplashActivity

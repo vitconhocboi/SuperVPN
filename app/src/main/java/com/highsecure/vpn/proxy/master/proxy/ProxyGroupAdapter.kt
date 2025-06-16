@@ -3,6 +3,7 @@ package com.highsecure.vpn.proxy.master.proxy
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import com.common.baseui.BaseAppConfig
 import com.highsecure.vpn.proxy.master.databinding.AdapterProxyGroupBinding
 import com.highsecure.vpn.proxy.master.utils.Utils
 import com.common.baseui.adapter.BaseAdapter
@@ -13,6 +14,7 @@ import javax.inject.Inject
 
 class ProxyGroupAdapter @Inject constructor() :
     BaseAdapter<ProxyGroupUI, BaseViewHolder<ProxyGroupUI>>() {
+
     override fun onCreateViewHolder(
         parent: ViewGroup, viewType: Int
     ): BaseViewHolder<ProxyGroupUI> {
@@ -43,8 +45,10 @@ class ProxyGroupAdapter @Inject constructor() :
                 lnMain.isSelected = data.active
 
                 lnMain.setOnClickNoDoubleClick {
-                    focusToProxy(position)
-                    notifyItemChanged(position)
+                    if (BaseAppConfig.isSub) {
+                        focusToProxy(position)
+                        notifyItemChanged(position)
+                    }
                     onItemClick?.invoke(position, data)
                 }
 

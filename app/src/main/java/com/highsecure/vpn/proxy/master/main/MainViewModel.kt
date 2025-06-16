@@ -8,6 +8,7 @@ import com.android.billingclient.api.*
 import com.common.baseui.BaseAppConfig
 import com.highsecure.vpn.proxy.master.billing.BillingManager
 import com.highsecure.vpn.proxy.master.billing.BillingManager.billingClient
+import com.highsecure.vpn.proxy.master.network.ProxySpeedTest
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -22,11 +23,12 @@ class MainViewModel @Inject constructor() : ViewModel(), PurchasesUpdatedListene
 
 //    val isSub = MutableLiveData(false)
 
-    fun setIsSub(sub: Boolean) {
+    fun setSub(sub: Boolean) {
+        BaseAppConfig.isSub = sub
         SharedData.isSub.postValue(sub)
     }
 
-    fun isSub() : Boolean {
+    fun isSub(): Boolean {
         return BaseAppConfig.isSub
     }
 

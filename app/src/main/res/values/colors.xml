@@ -8,6 +8,7 @@
     <color name="line_header_proxy">#303A4E</color>
     <color name="gray_2">#767C8A</color>
     <color name="gray_3">#232836</color>
+    <color name="gray_bg_select_vpn">#383E4F</color>
     <color name="green_1">#03C343</color>
     <color name="green_rate_select">#0FDD54</color>
     <color name="green_rate_unselect">#800FDD54</color>

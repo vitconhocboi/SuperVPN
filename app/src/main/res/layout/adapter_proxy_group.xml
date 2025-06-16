@@ -24,6 +24,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/size16"
+            android:layout_marginEnd="@dimen/size16"
             android:scaleType="centerCrop"
             android:src="@drawable/flag_us"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -36,7 +37,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:layout_marginLeft="@dimen/size16"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/ivFlag"
             app:layout_constraintTop_toTopOf="parent">
@@ -44,7 +44,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvTitle"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/inter_bold"
                 android:gravity="center_vertical"
@@ -52,29 +52,7 @@
                 android:textColor="@color/textColor"
                 android:textSize="@dimen/text_normal"
                  />
-
-<!--            <androidx.appcompat.widget.AppCompatTextView-->
-<!--                android:id="@+id/tvProxyIp"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:fontFamily="@font/inter_bold"-->
-<!--                android:gravity="center_vertical"-->
-<!--                android:text="103.23.23.123"-->
-<!--                android:textColor="@color/gray_2"-->
-<!--                android:textSize="@dimen/text_normal"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@id/tvTitle" />-->
         </LinearLayout>
-        <!--        <androidx.appcompat.widget.AppCompatImageView-->
-        <!--            android:id="@+id/ivCollapse"-->
-        <!--            android:layout_width="@dimen/size20"-->
-        <!--            android:layout_height="@dimen/size20"-->
-        <!--            android:layout_marginEnd="@dimen/size16"-->
-        <!--            android:scaleType="centerCrop"-->
-        <!--            android:src="@drawable/ic_next_arrow"-->
-        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toTopOf="parent" />-->
 
         <com.common.baseui.view.roundimage.RoundedImageView
             android:id="@+id/ivSelect"
@@ -87,21 +65,10 @@
             android:foreground="?selectableItemBackgroundBorderless"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:riv_oval="true" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
-
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/rcvProxyItems"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:nestedScrollingEnabled="false"-->
-<!--        android:orientation="vertical"-->
-<!--        android:paddingHorizontal="@dimen/size8"-->
-<!--        android:visibility="gone"-->
-<!--        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
-<!--        tools:listitem="@layout/adapter_proxy_item" />-->
 
 </androidx.appcompat.widget.LinearLayoutCompat>

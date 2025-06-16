@@ -8,19 +8,20 @@
     <string name="lang_default">Default</string>
     <string name="text_error">An error occurred</string>
     <string name="setting_language">Language</string>
-    <string name="vpn">VPN</string>
+    <string name="vpn" translatable="false">VPN</string>
     <string name="fast_and_safe">Fast &amp; Safe</string>
 
     <string name="setting_vpn_fast_and_safe">VPN Fast and Safe</string>
     <string name="setting_vpn_fast_and_safe_desc">Get unlimited access to all features, ad-free.</string>
     <string name="setting_trial">Free trial 3 days</string>
     <string name="setting_upgrade">Upgrade</string>
-    <string name="ip_proxy">IP Proxy</string>
-    <string name="setting_app_proxy">App Proxy</string>
+    <string name="ip_proxy">Servers</string>
+    <string name="setting_app_proxy">App Filter</string>
+    <string name="setting_app_proxy_desc">Choose which apps will connect to the Internet through VPN</string>
     <string name="setting_ads_block">Ads block</string>
     <string name="setting_ads_desc">Limit ads while browsing the web</string>
     <string name="setting_dns_default">DNS default</string>
-    <string name="dns_desc">Select and save DNS Server as default for next time using the application</string>
+    <string name="dns_desc">Select and save a DNS server as the default for future use of the application.</string>
     <string name="setting_rate">Rate</string>
     <string name="setting_share">Share</string>
     <string name="setting_feedback">Feedback</string>
@@ -61,23 +62,29 @@
     <string name="min_120">120 Minutes</string>
     <string name="setting">Setting</string>
     <string name="close">Close</string>
-    <string name="setting_app_proxy_success">App Proxy is set</string>
+    <string name="setting_app_proxy_success">App VPN filter is set</string>
     <string name="setting_ads_limit">Ads limit is set</string>
+    <string name="setting_dns_set">DNS is set</string>
     <string name="setting_choose_proxy">VPN Server is set</string>
-    <string name="reconnect_to_take_effect">Please return to the home screen and reset the proxy for the settings to take effect</string>
-    <string name="home_reconnect_to_take_effect">Please reset the proxy for the settings to take effect</string>
+    <string name="reconnect_to_take_effect">Please return to the home screen and reset the VPN for the settings to take effect</string>
+    <string name="home_reconnect_to_take_effect">Please reset the VPN for the settings to take effect</string>
     <string name="premium_select_sku">Please select one period</string>
     <string name="premium_purchase_success">Purchase successfully</string>
+
+    <string name="select_vpn">Select VPN</string>
+    <string name="dns_only">DNS only</string>
+    <string name="confirm_dns">VPN Not Active</string>
+    <string name="confirm_dns_msg">You are currently using DNS only. For a more secure and private connection, please select a VPN server.</string>
 
     <string name="premium_title">VPN Fast &amp; Safe Pro</string>
     <string name="premium_sub1">No ads</string>
     <string name="premium_sub2">Fast and stable speed</string>
     <string name="premium_sub3">Worldwide location</string>
-    <string name="premium_sub4">App proxy</string>
+    <string name="premium_sub4">App Filter</string>
     <string name="premium_weekly">Weekly</string>
     <string name="premium_monthly">Monthly</string>
     <string name="premium_yearly">Yearly</string>
-    <string name="premium_desc">First 3 days free,  then the plan auto-renews yearly</string>
+    <string name="premium_desc">Enjoy the first 3 days free, then the plan auto-renews.</string>
     <string name="premium_start_trial">Start trial</string>
     <string name="premium_trial_desc">Recurring billing. Cancel anytime on Google Play Store.</string>
 

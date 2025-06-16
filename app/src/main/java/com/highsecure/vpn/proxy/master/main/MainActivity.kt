@@ -77,7 +77,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
 
     override fun initView() {
         requestAdvertisingIdPermission()
-
+        val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
         val reconnect = intent.getStringExtra("state")
         if (reconnect != null && reconnect == "POPUP") {
             SettingSuccessDialog(R.string.setting_choose_proxy, R.string.home_reconnect_to_take_effect)
@@ -99,6 +99,10 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
         showFragment(mHomeFragment)
 //        binding.progress.setVisible(true)
         with(binding) {
+
+            icBack.scaleX = if (isRTL) -1f else 1f
+            ivBack.scaleX = if (isRTL) -1f else 1f
+
             lnSetting.setOnClickListener {
                 showFragment(mSettingFragment)
             }
@@ -127,6 +131,8 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
         SharedData.isSub.observe(this) { it ->
             if (it == true) {
                 binding.frameBanner.visibility = View.GONE
+            } else {
+                binding.frameBanner.visibility = View.VISIBLE
             }
         }
 
@@ -241,6 +247,9 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
     }
 
     fun showDns() {
+        if (mDnsFragment.isNeedReload == true) {
+            mDnsFragment.loadData()
+        }
         showFragment(mDnsFragment)
     }
 

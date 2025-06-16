@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.highsecure.vpn.proxy.master.dialog.DialogFeedback
 import com.highsecure.vpn.proxy.master.dialog.DialogRate
 import com.highsecure.vpn.proxy.master.R
@@ -18,6 +19,7 @@ import com.common.baseui.BaseAppConfig
 import com.common.baseui.extension.setOnClickNoDoubleClick
 import com.highsecure.vpn.proxy.master.dialog.SettingSuccessDialog
 import com.highsecure.vpn.proxy.master.main.MainViewModel
+import com.highsecure.vpn.proxy.master.main.SharedData
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -49,7 +51,17 @@ class SettingFragment(
 //            binding.progress.visibility = if (it) View.VISIBLE else View.GONE
 //        }
 
+        val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
+
         binding.apply {
+
+            btnAction.scaleX = if (isRTL) -1f else 1f
+            btnDnsAction.scaleX = if (isRTL) -1f else 1f
+            btnLanguageAction.scaleX = if (isRTL) -1f else 1f
+            btnRateAction.scaleX = if (isRTL) -1f else 1f
+            btnShareAction.scaleX = if (isRTL) -1f else 1f
+            btnFeedbackAction.scaleX = if (isRTL) -1f else 1f
+            btnAdsAction.scaleX = if (isRTL) -1f else 1f
 
             if (mainViewModel.isSub()) {
                 premium.visibility = View.GONE
@@ -87,8 +99,10 @@ class SettingFragment(
 
             if (BaseAppConfig.dnsServer.isNotEmpty()) {
                 tvDnsStatus.text = getString(R.string.status_on)
+                tvDnsStatus.setTextColor(resources.getColor(com.common.baseui.R.color.successColor))
             } else {
                 tvDnsStatus.text = getString(R.string.status_off)
+                tvDnsStatus.setTextColor(resources.getColor(R.color.text_gray_2))
             }
 
             rowLanguage.setOnClickListener {
@@ -96,6 +110,8 @@ class SettingFragment(
             }
 
             rowRate.setOnClickNoDoubleClick {
+//                BaseAppConfig.isSub = false
+//                SharedData.isSub.postValue(false)
                 DialogRate().show(childFragmentManager, "DialogRate")
             }
 
@@ -105,6 +121,14 @@ class SettingFragment(
 
             rowFeedback.setOnClickNoDoubleClick {
                 DialogFeedback().show(childFragmentManager, "DialogFeedback")
+            }
+
+            SharedData.isSub.observe(requireActivity()) {
+                if (mainViewModel.isSub()) {
+                    premium.visibility = View.GONE
+                } else {
+                    premium.background = roundedDrawable
+                }
             }
         }
     }

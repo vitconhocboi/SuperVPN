@@ -46,7 +46,11 @@ class PremiumFragment : ProductFragment<FragmentPremiumBinding>() {
             skuAdapter.notifyDataSetChanged()
         }
 
+        val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
+
         binding.apply {
+
+            frameCorner.scaleX = if (isRTL) -1f else 1f
 
             rcvSkus.adapter = skuAdapter
 
@@ -59,8 +63,7 @@ class PremiumFragment : ProductFragment<FragmentPremiumBinding>() {
             startTrial.setOnClickListener {
                 if (selectedSku.productName.isNotEmpty()) {
 //                    premiumViewModel.launchSubscription(requireActivity(), selectedSku.productName)
-                    mainViewModel.setIsSub(true)
-                    BaseAppConfig.isSub = true
+                    mainViewModel.setSub(true)
                     requireActivity().finish()
                     //Navigator.startMainActivity(requireContext(), "")
                     Toast.makeText(requireContext(), com.highsecure.vpn.proxy.master.R.string.premium_purchase_success, Toast.LENGTH_SHORT).show()

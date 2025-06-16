@@ -3,6 +3,7 @@ package com.highsecure.vpn.proxy.master.splash
 import android.annotation.SuppressLint
 import android.content.res.Resources
 import android.view.LayoutInflater
+import android.view.View
 import androidx.lifecycle.lifecycleScope
 import com.common.baseui.BaseAppConfig
 import com.google.android.gms.ads.MobileAds
@@ -72,6 +73,9 @@ class SplashActivity : ProductActivity<ActivitySplashBinding>() {
         simulateProgress()
         if (!BaseAppConfig.isSub) {
             initAdmob()
+            binding.adsNotice.visibility = View.VISIBLE
+        } else {
+            binding.adsNotice.visibility = View.GONE
         }
     }
 

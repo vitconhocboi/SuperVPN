@@ -74,6 +74,8 @@ class DialogRate : BottomSheetDialogFragment() {
     }
 
     fun initView() {
+        val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
+        binding.fiveStarHint.scaleX = if (isRTL) -1f else 1f
         binding.apply {
             star1.setOnClickNoDoubleClick {
                 rate(1)

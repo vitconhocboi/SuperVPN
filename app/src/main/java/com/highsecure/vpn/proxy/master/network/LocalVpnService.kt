@@ -310,7 +310,7 @@ class LocalVpnService : VpnService(), Runnable {
             val dnsArray = BaseAppConfig.dnsServer.split(",")
             for (dns in dnsArray) {
                 if (dns.isNotEmpty()) {
-                    builder.addDnsServer(dns)
+                    builder.addDnsServer(dns.trim())
                 }
             }
         }

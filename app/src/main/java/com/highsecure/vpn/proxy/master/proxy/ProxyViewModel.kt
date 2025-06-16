@@ -14,6 +14,7 @@ import com.highsecure.vpn.proxy.master.api.ProxyRequest
 import com.highsecure.vpn.proxy.master.network.LocalVpnService
 import com.highsecure.vpn.proxy.master.network.LocalVpnService.Companion.ACTION_START
 import com.highsecure.vpn.proxy.master.network.LocalVpnService.Companion.ACTION_STOP
+import com.highsecure.vpn.proxy.master.network.ProxySpeedTest
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -36,6 +37,8 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
         MutableStateFlow<ResultData<List<ProxyGroupUI>>>(ResultData.Companion.standby())
 
     val isConnected = MutableLiveData(proxyUpdate.vpnState)
+
+    val currentProxy = MutableLiveData<ProxySpeedTest.ProxyConfig?>()
 
     fun getAllFreeProxy(context: Context, type: String) {
         viewModelScope.launch(Dispatchers.IO) {
@@ -173,5 +176,25 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
 
     override fun updateUI(status: String) {
         isConnected.postValue(status)
+    }
+
+    fun startProxyTest() {
+        viewModelScope.launch (Dispatchers.IO) {
+            engine.Engine.decodeString(BaseAppConfig.proxy).split(":").let { parts ->
+                if (parts.size >= 2) {
+                    currentProxy.postValue(
+                        ProxySpeedTest.ProxyConfig(
+                            host = parts[1],
+                            port = parts[2].toInt(),
+                            username = parts.getOrNull(3) ?: "",
+                            password = parts.getOrNull(4) ?: "",
+                            type = parts.getOrNull(0) ?: "http"
+                        )
+                    )
+                } else {
+                    currentProxy.postValue(null)
+                }
+            }
+        }
     }
 }

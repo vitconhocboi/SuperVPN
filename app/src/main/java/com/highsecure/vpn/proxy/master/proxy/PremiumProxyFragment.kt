@@ -3,6 +3,7 @@ package com.highsecure.vpn.proxy.master.proxy
 import android.annotation.SuppressLint
 import android.provider.Settings
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
@@ -15,6 +16,7 @@ import com.common.baseui.ResultData
 import com.common.baseui.extension.bindFlowCreate
 import com.common.baseui.extension.setVisible
 import com.google.android.gms.ads.identifier.AdvertisingIdClient
+import com.highsecure.vpn.proxy.master.main.MainViewModel
 import com.highsecure.vpn.proxy.master.proxy.ProxyViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -27,6 +29,7 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
     lateinit var mPagerAdapter: ProxyGroupAdapter
 
     private val mProxyViewModel: ProxyViewModel by viewModels()
+    private val mainViewModel: MainViewModel by viewModels()
 
     companion object {
         private var selected = false
@@ -44,7 +47,9 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
     @SuppressLint("HardwareIds", "NotifyDataSetChanged")
     override fun initView() {
         super.initView()
+        val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
         with(binding) {
+            ivBack.scaleX = if (isRTL) -1f else 1f
             rcvGroupProxy.adapter = mPagerAdapter
             mProxyViewModel.getAllPremiumProxy(requireContext(), PREMIUM)
             bindFlowCreate(mProxyViewModel.allPremiumProxy) { result ->
@@ -80,38 +85,42 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
                 lifecycleScope.launch {
                     try {
                         if (!selected) {
-                            selected = true
-                            mPagerAdapter.notifyDataSetChanged()
-                            val deviceId = try {
-                                val adInfo =
-                                    AdvertisingIdClient.getAdvertisingIdInfo(requireContext())
-                                if (!adInfo.isLimitAdTrackingEnabled) {
-                                    adInfo.id
-                                } else {
+                            if (mainViewModel.isSub()) {
+                                selected = true
+                                mPagerAdapter.notifyDataSetChanged()
+                                val deviceId = try {
+                                    val adInfo =
+                                        AdvertisingIdClient.getAdvertisingIdInfo(requireContext())
+                                    if (!adInfo.isLimitAdTrackingEnabled) {
+                                        adInfo.id
+                                    } else {
+                                        Settings.Secure.getString(
+                                            requireContext().contentResolver,
+                                            Settings.Secure.ANDROID_ID
+                                        )
+                                    }
+                                } catch (e: Exception) {
                                     Settings.Secure.getString(
                                         requireContext().contentResolver,
                                         Settings.Secure.ANDROID_ID
                                     )
                                 }
-                            } catch (e: Exception) {
-                                Settings.Secure.getString(
-                                    requireContext().contentResolver,
-                                    Settings.Secure.ANDROID_ID
-                                )
-                            }
-                            val reconnect =
-                                if (item.country != BaseAppConfig.proxyCountry || !item.active) "RECONNECT" else ""
-                            if (item.country == BaseAppConfig.proxyCountry) {
-                                item.active = false
-                            }
-                            if (item.active) {
-                                mProxyViewModel.setActiveProxy(item, deviceId, PREMIUM)
+                                val reconnect =
+                                    if (item.country != BaseAppConfig.proxyCountry || !item.active) "RECONNECT" else ""
+                                if (item.country == BaseAppConfig.proxyCountry) {
+                                    item.active = false
+                                }
+                                if (item.active) {
+                                    mProxyViewModel.setActiveProxy(item, deviceId, PREMIUM)
+                                } else {
+                                    mProxyViewModel.setActiveProxy(null, deviceId, PREMIUM)
+                                }
+                                requireActivity().finish()
+                                Navigator.startMainActivity(requireContext(), "POPUP")
+                                selected = false
                             } else {
-                                mProxyViewModel.setActiveProxy(null, deviceId, PREMIUM)
+                                Navigator.startPremiumActivity(requireContext())
                             }
-                            requireActivity().finish()
-                            Navigator.startMainActivity(requireContext(), "POPUP")
-                            selected = false
                         } else {
                             item.active = false
                         }

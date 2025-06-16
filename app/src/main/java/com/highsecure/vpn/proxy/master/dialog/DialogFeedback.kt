@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
@@ -45,7 +46,11 @@ class DialogFeedback : BindingSheetDialog<DialogRateFeedbackBinding>() {
     }
 
     override fun initView() {
+
+        val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
+
         binding.apply {
+            ivBack.scaleX = if (isRTL) -1f else 1f
             tvFeature.setOnClickNoDoubleClick {
                 isFeature = !isFeature
                 tvFeature.isSelected = !tvFeature.isSelected

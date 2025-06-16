@@ -45,8 +45,12 @@ class ProxyActivity : ProductActivity<ActivityProxyBinding>() {
             }
         }
 
-        SharedData.isSub.observe (this) {
-            binding.frameBanner.visibility = View.GONE
+        SharedData.isSub.observe (this) { it ->
+            if (it == true) {
+                binding.frameBanner.visibility = View.GONE
+            } else {
+                binding.frameBanner.visibility = View.VISIBLE
+            }
         }
     }
 

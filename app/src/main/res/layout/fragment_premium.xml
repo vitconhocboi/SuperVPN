@@ -12,7 +12,7 @@
         android:id="@+id/frame_corner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/rectangle_12"
+        android:background="@drawable/pre_corner"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -22,6 +22,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_premium"
             android:scaleType="centerInside"
+            android:visibility="invisible"
             />
 
     </FrameLayout>

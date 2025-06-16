@@ -1,11 +1,14 @@
 package com.highsecure.vpn.proxy.master.settings.dns
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.highsecure.vpn.proxy.master.base.ProductFragment
 import com.highsecure.vpn.proxy.master.databinding.FragmentDnsBinding
 import com.common.baseui.extension.setVisible
+import com.highsecure.vpn.proxy.master.R
+import com.highsecure.vpn.proxy.master.dialog.SettingSuccessDialog
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -22,6 +25,10 @@ class DNSFragment : ProductFragment<FragmentDnsBinding>() {
         return FragmentDnsBinding.inflate(inflater, container, false)
     }
 
+    var isChange : Boolean = false
+
+    var isNeedReload = false
+
     override fun initView() {
         super.initView()
         with(binding) {
@@ -35,6 +42,14 @@ class DNSFragment : ProductFragment<FragmentDnsBinding>() {
                 progress.setVisible(false)
             }
 
+            btnSave.setOnClickListener {
+                mDnsModel.saveDnsSetting(mPagerAdapter.datas)
+                SettingSuccessDialog(R.string.setting_dns_set).show(
+                    childFragmentManager,
+                    "SettingSuccessDialog"
+                )
+            }
+
 //            btnSave.setOnClickListener {
 //                val dns = mDnsModel.allDNS.value?.filter { it.active }?.map { it.server }
 //                if (dns?.isNotEmpty() == true) {
@@ -45,5 +60,23 @@ class DNSFragment : ProductFragment<FragmentDnsBinding>() {
 //                Navigator.startMainActivity(requireContext(), "RECONNECT")
 //            }
         }
+
+        mDnsModel.isLoading.observe(this) { it ->
+            if (it == true) {
+                binding.progress.setVisible(true)
+            } else {
+                binding.progress.setVisible(false)
+            }
+        }
+
+        isNeedReload = true
+    }
+
+    fun isDnsChanged() : Boolean {
+        return isChange
+    }
+
+    fun loadData() {
+        mDnsModel.getAllProxy(requireContext())
     }
 }

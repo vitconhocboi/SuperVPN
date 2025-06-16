@@ -11,6 +11,7 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -185,13 +186,17 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     private val speedTestRunnable = object : Runnable {
         override fun run() {
             if (BaseAppConfig.proxy.isNotEmpty()) {
-                ProxySpeedTest.Instance.startSpeedTest(currentProxy, callback = { download, upload ->
-                    try {
-                        if (ProxySpeedTest.FAILED != download) binding.tvTrafficDownload.text = download
-                        if (ProxySpeedTest.FAILED != upload) binding.tvTrafficUpload.text = upload
-                    } catch (e: Exception) {
-                    }
-                })
+                ProxySpeedTest.Instance.startSpeedTest(
+                    currentProxy,
+                    callback = { download, upload ->
+                        try {
+                            if (ProxySpeedTest.FAILED != download) binding.tvTrafficDownload.text =
+                                download
+                            if (ProxySpeedTest.FAILED != upload) binding.tvTrafficUpload.text =
+                                upload
+                        } catch (e: Exception) {
+                        }
+                    })
             }
             handler.postDelayed(this, INTERVAL)
         }
@@ -228,8 +233,10 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     override fun initView() {
         super.initView()
         state = activity?.intent?.getStringExtra("RECONNECT")
+        val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
 //        isLocalVpnServiceRunning(requireContext())
         with(binding) {
+            ivSelectProxy.scaleX = if (isRTL) -1f else 1f
             if (BaseAppConfig.proxy.isNotEmpty()) {
                 //update UI
                 ivFlag.setImageResource(Utils.getFlag(BaseAppConfig.proxyCountry))
@@ -272,9 +279,25 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 })
             }
 
+            proxyViewModel.currentProxy.observe(viewLifecycleOwner){
+
+            }
+
             ivConnect.setOnClickListener {
                 if (!isConnected) {
-                    prepareVpn()
+                    if (BaseAppConfig.proxy.isNotEmpty()) {
+                        prepareVpn()
+                    } else {
+                        ConfirmDnsDialog(
+                            requireActivity(),
+                            onContinue = {
+                                prepareVpn()
+                            },
+                            selectVpn = {
+                                Navigator.startProxyActivity(requireContext(), null)
+                            }
+                        ).show()
+                    }
                 } else {
                     stopSpeedTest()
                     vpnPermissionLauncher.unregister()
@@ -282,8 +305,19 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 }
             }
 
+//            proxyViewModel.currentProxy.observe(viewLifecycleOwner) { it ->
+//                if (it != null) {
+//                    tvProxyIp.setVisible(true)
+//                    tvProxyIp.text = it.host
+//                    val typeface = ResourcesCompat.getFont(context, R.font.inter_bold)
+//                    tvProxyLocation.typeface = typeface
+//                    tvProxyLocation.setTextColor(resources.getColor(R.color.language_item_text_color))
+//                }
+//            }
+
             pnProxy.setOnClickListener {
-                showInterAds(placementId = AdPlacementId.INTER_ART_HOME,
+                showInterAds(
+                    placementId = AdPlacementId.INTER_ART_HOME,
                     impressedCallBack = {},
                     showCallBack = {
                         Navigator.startProxyActivity(requireContext(), null)

@@ -16,8 +16,11 @@ class DNSViewModel @Inject constructor(private val apiService: ApiService) : Vie
 
     val allDNS = MutableLiveData<List<DnsUI>>()
 
+    val isLoading = MutableLiveData<Boolean>()
+
     fun getAllProxy(context: Context) {
         viewModelScope.launch(Dispatchers.IO) {
+            isLoading.postValue(true)
             val response = apiService.getDns()
             if (response.isSuccessful) {
                 response.body()?.let { dnsResponse ->
@@ -27,12 +30,22 @@ class DNSViewModel @Inject constructor(private val apiService: ApiService) : Vie
                             name = dns.name,
                             server = dns.ip_address,
                             icon = "",
-                            active = dns.ip_address == BaseAppConfig.dnsServer
+                            active = (BaseAppConfig.dnsServer.contains(dns.ip_address))
                         )
                     }
                     allDNS.postValue(listDNS)
                 }
             }
+            isLoading.postValue(false)
+        }
+    }
+
+    fun saveDnsSetting(dns : ArrayList<DnsUI?>) {
+        if (dns.isNotEmpty()) {
+            val savedItems = dns.filter { it?.active == true }.map { it?.server }
+            BaseAppConfig.dnsServer = savedItems.joinToString(", ")
+        } else {
+            BaseAppConfig.dnsServer = ""
         }
     }
 }
