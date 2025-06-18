@@ -11,6 +11,7 @@ import com.common.baseui.ResultData
 import com.highsecure.vpn.proxy.master.api.ApiService
 import com.highsecure.vpn.proxy.master.api.DisconnectRequest
 import com.highsecure.vpn.proxy.master.api.ProxyRequest
+import com.highsecure.vpn.proxy.master.api.Users
 import com.highsecure.vpn.proxy.master.network.LocalVpnService
 import com.highsecure.vpn.proxy.master.network.LocalVpnService.Companion.ACTION_START
 import com.highsecure.vpn.proxy.master.network.LocalVpnService.Companion.ACTION_STOP
@@ -142,6 +143,7 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
 //                proxyCountry = ""
 //            }
             BaseAppConfig.proxy = ""
+            BaseAppConfig.proxyHost = ""
             BaseAppConfig.proxyCountry = ""
 
             // Notify API about disconnection if we have a device ID
@@ -151,7 +153,7 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
         }
     }
 
-    fun startProxy(context: Context?, allowApp: List<String>?) {
+    fun startProxy(deviceId: String?, context: Context?, allowApp: List<String>?) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             context!!.startForegroundService(Intent(context, LocalVpnService::class.java).apply {
                 action = ACTION_START
@@ -164,14 +166,25 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
             })
         }
 
+        viewModelScope.launch (Dispatchers.IO) {
+            if (deviceId != null) {
+                apiService.connect(Users(user_id = deviceId, ip_address = BaseAppConfig.proxyHost))
+            }
+        }
+
         proxyUpdate.setProxyUpdate(this)
     }
 
-    fun stopProxy(context: Context?) {
+    fun stopProxy(deviceId: String?, context: Context?) {
         proxyUpdate.setProxyUpdate(this)
         context!!.startService(Intent(context, LocalVpnService::class.java).apply {
             action = ACTION_STOP
         })
+//        viewModelScope.launch(Dispatchers.IO) {
+//            if (deviceId != null) {
+//                apiService.disconnect(DisconnectRequest(user_id = deviceId))
+//            }
+//        }
     }
 
     override fun updateUI(status: String) {

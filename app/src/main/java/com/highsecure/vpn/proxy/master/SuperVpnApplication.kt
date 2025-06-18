@@ -5,6 +5,7 @@ import com.common.baseui.BaseAppConfig
 import com.common.baseui.BaseApplication
 import com.highsecure.vpn.proxy.master.splash.SplashActivity
 import dagger.hilt.android.HiltAndroidApp
+import timber.log.Timber
 
 @HiltAndroidApp
 class SuperVpnApplication : BaseApplication() {
@@ -16,6 +17,7 @@ class SuperVpnApplication : BaseApplication() {
     override fun onCreate() {
         super.onCreate()
         instance = this
+        Timber.d("check_open_splash 0 ${System.currentTimeMillis()}")
     }
 
 

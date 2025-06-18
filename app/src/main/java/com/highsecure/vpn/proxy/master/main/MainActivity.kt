@@ -9,6 +9,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import com.common.baseui.BaseAppConfig
 import com.highsecure.vpn.proxy.master.base.ProductActivity
 import com.highsecure.vpn.proxy.master.databinding.ActivityMainBinding
 import com.highsecure.vpn.proxy.master.home.HomeFragment
@@ -119,12 +120,16 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                 selectAll()
             }
 
-            configAd.adBanner.find { it.placementId == AdPlacementId.BANNER_HOME }?.let {
-                mBannerLoader = BannerManager.createLoader(adNetwork = it.adNetwork, bannerId = it.adId)
-                mBannerLoader?.canRequest = true
-                mBannerLoader?.loadAds(
-                    context = this@MainActivity, bannerType = it.adType, parent = frameBanner
-                )
+            if (!BaseAppConfig.isSub) {
+                configAd.adBanner.find { it.placementId == AdPlacementId.BANNER_HOME }?.let {
+                    mBannerLoader = BannerManager.createLoader(adNetwork = it.adNetwork, bannerId = it.adId)
+                    mBannerLoader?.canRequest = true
+                    try {
+                        mBannerLoader?.loadAds(
+                            context = this@MainActivity, bannerType = it.adType, parent = frameBanner
+                        )
+                    } catch (e: Exception) {}
+                }
             }
         }
 

@@ -34,6 +34,7 @@ import com.common.baseui.extension.context
 import com.common.baseui.extension.invisible
 import com.common.baseui.extension.processResultData
 import com.common.baseui.extension.visible
+import com.highsecure.vpn.proxy.master.main.MainViewModel
 import com.highsecure.vpn.proxy.master.remoteconfig.AdPlacementId
 import com.highsecure.vpn.proxy.master.remoteconfig.FirebaseConfigManager
 import com.simple.libads.NetworkUtils
@@ -64,6 +65,8 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     private val proxyViewModel: ProxyViewModel by viewModels()
 
     private val allowAppViewModel: AppProxyViewModel by viewModels()
+
+    private val mainViewModel: MainViewModel by viewModels()
 
     private var allowApp: List<VpnAppItemDB>? = null
 
@@ -165,7 +168,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     private fun isLocalVpnServiceRunning(context: Context) {
         if (!isVpnActive(context) && !LocalVpnService.IsRunning) {
             proxyViewModel.updateUI(DISCONNECTED)
-            proxyViewModel.stopProxy(context)
+            proxyViewModel.stopProxy(mainViewModel.getDeviceId(requireContext()), context)
             return
         }
         val activityManager = context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
@@ -177,7 +180,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         }
         if (!LocalVpnService.IsRunning) {
             proxyViewModel.updateUI(DISCONNECTED)
-            proxyViewModel.stopProxy(context)
+            proxyViewModel.stopProxy(mainViewModel.getDeviceId(requireContext()), context)
         }
     }
 
@@ -243,6 +246,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 tvProxyLocation.text = requireContext().safeGetString(BaseAppConfig.proxyCountry)
                 engine.Engine.decodeString(BaseAppConfig.proxy).split(":").let { parts ->
                     if (parts.size >= 2) {
+                        BaseAppConfig.proxyHost = parts[1]
                         currentProxy = ProxySpeedTest.ProxyConfig(
                             host = parts[1],
                             port = parts[2].toInt(),
@@ -263,6 +267,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
             } else {
                 ivFlag.setImageResource(R.drawable.ic_earth)
                 BaseAppConfig.proxy = ""
+                BaseAppConfig.proxyHost = ""
                 tvProxyLocation.text = getString(R.string.ip_proxy)
                 tvProxyIp.setVisible(false)
                 val typeface = ResourcesCompat.getFont(context, R.font.inter_normal)
@@ -380,7 +385,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         allowAppViewModel.getAllowApp()
         bindFlowCreate(allowAppViewModel.allowApp) { result ->
             processResultData(result, onSuccess = { rs ->
-                proxyViewModel.startProxy(context, allowApp = rs.map { it.packageName })
+                proxyViewModel.startProxy(mainViewModel.getDeviceId(requireContext()), context, allowApp = rs.map { it.packageName })
             })
         }
 
@@ -389,7 +394,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     private fun stopVpnService() {
         try {
             proxyViewModel.updateUI(DISCONNECTING)
-            proxyViewModel.stopProxy(context)
+            proxyViewModel.stopProxy(mainViewModel.getDeviceId(requireContext()), context)
             binding.tvTrafficDownload.text = "--"
             binding.tvTrafficUpload.text = "--"
         } catch (e: Exception) {

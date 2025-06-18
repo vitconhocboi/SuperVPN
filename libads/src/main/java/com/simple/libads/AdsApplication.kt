@@ -32,6 +32,7 @@ abstract class AdsApplication : MultiDexApplication(), Application.ActivityLifec
 
     override fun onCreate() {
         super.onCreate()
+        Timber.d("check_open_splash 01 ${System.currentTimeMillis()}")
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         }
@@ -39,6 +40,7 @@ abstract class AdsApplication : MultiDexApplication(), Application.ActivityLifec
         mOpenApplicationManager = OpenApplicationManager()
         registerActivityLifecycleCallbacks(this)
         ProcessLifecycleOwner.get().lifecycle.addObserver(this)
+        Timber.d("check_open_splash 02 ${System.currentTimeMillis()}")
     }
 
     fun setupAds(openConfig: OpenConfig) {

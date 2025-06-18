@@ -24,6 +24,14 @@ object BaseAppConfig {
             SharedPrefs.instance.put(KEY_PROXY, value)
         }
 
+    private const val DEVICE_ID = "DEVICE_ID"
+
+    var deviceId: String
+        get() = SharedPrefs.instance[DEVICE_ID, String::class.java, ""]
+        set(value) {
+            SharedPrefs.instance.put(DEVICE_ID, value)
+        }
+
 //    private const val KEY_PROXY_TYPE = "PROXY_TYPE"
 //
 //    var proxyType: String
@@ -39,12 +47,12 @@ object BaseAppConfig {
             SharedPrefs.instance.put(KEY_PROXY_COUNTRY, value)
         }
 
-//    private const val KEY_PROXY_HOST = "PROXY_HOST"
-//    var proxyHost: String
-//        get() = SharedPrefs.instance[KEY_PROXY_HOST, String::class.java, ""]
-//        set(value) {
-//            SharedPrefs.instance.put(KEY_PROXY_HOST, value)
-//        }
+    private const val KEY_PROXY_HOST = "PROXY_HOST"
+    var proxyHost: String
+        get() = SharedPrefs.instance[KEY_PROXY_HOST, String::class.java, ""]
+        set(value) {
+            SharedPrefs.instance.put(KEY_PROXY_HOST, value)
+        }
 //
 //    private const val KEY_PROXY_PORT = "PROXY_PORT"
 //    var proxyPort: String

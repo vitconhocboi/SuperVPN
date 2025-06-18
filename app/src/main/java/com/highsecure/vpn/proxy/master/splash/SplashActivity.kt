@@ -23,6 +23,7 @@ import com.simple.libads.NetworkUtils
 import com.simple.libads.config.OpenConfig
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : ProductActivity<ActivitySplashBinding>() {

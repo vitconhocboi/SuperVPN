@@ -88,23 +88,7 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
                             if (mainViewModel.isSub()) {
                                 selected = true
                                 mPagerAdapter.notifyDataSetChanged()
-                                val deviceId = try {
-                                    val adInfo =
-                                        AdvertisingIdClient.getAdvertisingIdInfo(requireContext())
-                                    if (!adInfo.isLimitAdTrackingEnabled) {
-                                        adInfo.id
-                                    } else {
-                                        Settings.Secure.getString(
-                                            requireContext().contentResolver,
-                                            Settings.Secure.ANDROID_ID
-                                        )
-                                    }
-                                } catch (e: Exception) {
-                                    Settings.Secure.getString(
-                                        requireContext().contentResolver,
-                                        Settings.Secure.ANDROID_ID
-                                    )
-                                }
+                                val deviceId = mainViewModel.getDeviceId(requireContext())
                                 val reconnect =
                                     if (item.country != BaseAppConfig.proxyCountry || !item.active) "RECONNECT" else ""
                                 if (item.country == BaseAppConfig.proxyCountry) {

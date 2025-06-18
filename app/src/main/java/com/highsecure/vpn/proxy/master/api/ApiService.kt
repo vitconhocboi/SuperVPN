@@ -13,6 +13,9 @@ interface ApiService {
     @POST("disconnect")
     suspend fun disconnect(@Body request: DisconnectRequest): Response<DisconnectResponse>
 
+    @POST("connect")
+    suspend fun connect(@Body user: Users): Response<DisconnectResponse>
+
     @GET("get-countries")
     suspend fun getCountries(
         @Query("type") type: String
@@ -21,6 +24,11 @@ interface ApiService {
     @GET("get-dns")
     suspend fun getDns(): Response<DnsResponse>
 }
+
+data class Users(
+    val user_id: String,
+    val ip_address: String
+)
 
 data class ProxyRequest(
     val user_id: String,

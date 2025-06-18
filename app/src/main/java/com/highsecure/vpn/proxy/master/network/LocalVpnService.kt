@@ -109,6 +109,11 @@ class LocalVpnService : VpnService(), Runnable {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                     createNotificationChannel()
                     startForeground(1, buildNotification(), ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE)
+                } else {
+                    startForeground(
+                        1,
+                        buildNotification()
+                    )
                 }
                 // Start a new session by creating a new thread.
                 m_VPNThread = Thread(this, "VPNServiceThread")
@@ -116,6 +121,7 @@ class LocalVpnService : VpnService(), Runnable {
 
                 engine.Engine.decodeString(BaseAppConfig.proxy).split(":").let { parts ->
                     if (parts.size >= 5) {
+                        BaseAppConfig.proxyHost = parts[1]
                         currentProxy = ProxySpeedTest.ProxyConfig(
                             host = parts[1],
                             port = parts[2].toInt(),

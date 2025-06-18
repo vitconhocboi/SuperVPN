@@ -11,8 +11,12 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
 import com.simple.libads.config.InterConfig
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import timber.log.Timber
 
 
 abstract class BindingActivity<T : ViewBinding> : BaseActivity() {
@@ -43,14 +47,20 @@ abstract class BindingActivity<T : ViewBinding> : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Timber.d("check_open_splash 3 ${System.currentTimeMillis()}")
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         if (::binding.isInitialized.not()) {
             binding = bindingProvider(layoutInflater)
             setContentView(binding.root)
             initView()
 //            makeStatusBarTransparent()
-            loadAds()
+            if (!BaseAppConfig.isSub) {
+                lifecycleScope.launch (Dispatchers.IO) {
+                    loadAds()
+                }
+            }
         }
+        Timber.d("check_open_splash 4 ${System.currentTimeMillis()}")
     }
 
 //    fun updateStatusBarColor(color: String?) {

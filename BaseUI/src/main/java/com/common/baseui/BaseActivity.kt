@@ -21,16 +21,17 @@ import com.common.baseui.extension.getPermissionString
 import com.common.baseui.lingver.Lingver
 import com.common.baseui.util.ConnectionLiveData
 import com.simple.libads.AdsActivity
+import timber.log.Timber
 
 
 abstract class BaseActivity: AdsActivity() {
-    private lateinit var startActivityIntent: ActivityResultLauncher<Intent>
-    private var onResult: ((ActivityResult) -> Unit) ?= null
+//    private lateinit var startActivityIntent: ActivityResultLauncher<Intent>
+//    private var onResult: ((ActivityResult) -> Unit) ?= null
 
-    private lateinit var mAskCheckPermissionCamera: ActivityResultLauncher<Array<String>>
-    private lateinit var mAskCheckPermissionStorage: ActivityResultLauncher<Array<String>>
-    private var onPermissionStorageGranted: ((isGrant: Boolean) -> Unit)? = null
-    private var onPermissionCameraGranted: ((isGrant: Boolean) -> Unit)? = null
+//    private lateinit var mAskCheckPermissionCamera: ActivityResultLauncher<Array<String>>
+//    private lateinit var mAskCheckPermissionStorage: ActivityResultLauncher<Array<String>>
+//    private var onPermissionStorageGranted: ((isGrant: Boolean) -> Unit)? = null
+//    private var onPermissionCameraGranted: ((isGrant: Boolean) -> Unit)? = null
 
     /*private val networkChangeReceiver: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
@@ -52,47 +53,49 @@ abstract class BaseActivity: AdsActivity() {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Timber.d("check_open_splash 1 ${System.currentTimeMillis()}")
         changeLanguageAppConfig()
-        startActivityIntent = registerForActivityResult(
-            ActivityResultContracts.StartActivityForResult()
-        ) { result ->
-            onResult?.invoke(result)
-        }
+        Timber.d("check_open_splash 2 ${System.currentTimeMillis()}")
+//        startActivityIntent = registerForActivityResult(
+//            ActivityResultContracts.StartActivityForResult()
+//        ) { result ->
+//            onResult?.invoke(result)
+//        }
 
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN
-        )
+//        window.setFlags(
+//            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+//            WindowManager.LayoutParams.FLAG_FULLSCREEN
+//        )
 
 
-        mAskCheckPermissionStorage =
-            (this as ComponentActivity).registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { result ->
-                if (result.entries.firstOrNull { !it.value } == null) {
-                    onPermissionStorageGranted?.invoke(true)
-                } else {
-                    onPermissionStorageGranted?.invoke(false)
-                    if(requiredOpenSettingPermission(getPermissionString(PERMISSION_WRITE_STORAGE))) {
-                        onRequiredOpenSettingPermission(PERMISSION_WRITE_STORAGE)
-                    }
-                }
-            }
+//        mAskCheckPermissionStorage =
+//            (this as ComponentActivity).registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { result ->
+//                if (result.entries.firstOrNull { !it.value } == null) {
+//                    onPermissionStorageGranted?.invoke(true)
+//                } else {
+//                    onPermissionStorageGranted?.invoke(false)
+//                    if(requiredOpenSettingPermission(getPermissionString(PERMISSION_WRITE_STORAGE))) {
+//                        onRequiredOpenSettingPermission(PERMISSION_WRITE_STORAGE)
+//                    }
+//                }
+//            }
+//
+//        mAskCheckPermissionCamera =
+//            (this as ComponentActivity).registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { result ->
+//                if (result.entries.firstOrNull { !it.value } == null) {
+//                    onPermissionCameraGranted?.invoke(true)
+//                } else {
+//                    onPermissionCameraGranted?.invoke(false)
+//                    if(requiredOpenSettingPermission(getPermissionString(PERMISSION_ALL))) {
+//                        onRequiredOpenSettingPermission(PERMISSION_ALL)
+//                    }
+//                }
+//            }
 
-        mAskCheckPermissionCamera =
-            (this as ComponentActivity).registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { result ->
-                if (result.entries.firstOrNull { !it.value } == null) {
-                    onPermissionCameraGranted?.invoke(true)
-                } else {
-                    onPermissionCameraGranted?.invoke(false)
-                    if(requiredOpenSettingPermission(getPermissionString(PERMISSION_ALL))) {
-                        onRequiredOpenSettingPermission(PERMISSION_ALL)
-                    }
-                }
-            }
-
-        val connectionLiveData = ConnectionLiveData(this)
-        connectionLiveData.observe(this) {
-            onNetworkChange(it)
-        }
+//        val connectionLiveData = ConnectionLiveData(this)
+//        connectionLiveData.observe(this) {
+//            onNetworkChange(it)
+//        }
     }
 
     // id == PERMISSION_WRITE_STORAGE || PERMISSION_CAMERA || PERMISSION_ALL
@@ -113,23 +116,23 @@ abstract class BaseActivity: AdsActivity() {
         return false
     }
 
-    fun launchForResult(intent: Intent, onResult: (ActivityResult) -> Unit) {
-        this.onResult = onResult
-        startActivityIntent.launch(intent)
-    }
-
-    fun requestCameraPermission(onPermissionGrant: (isGrant: Boolean) -> Unit) {
-        onPermissionCameraGranted = onPermissionGrant
-        mAskCheckPermissionCamera.launch(
-            getPermissionString(PERMISSION_ALL)
-        )
-    }
-
-    fun requestStoragePermission(onPermissionGrant: (isGrant: Boolean) -> Unit) {
-        onPermissionStorageGranted = onPermissionGrant
-        mAskCheckPermissionStorage.launch(
-            getPermissionString(PERMISSION_WRITE_STORAGE)
-        )
-    }
+//    fun launchForResult(intent: Intent, onResult: (ActivityResult) -> Unit) {
+//        this.onResult = onResult
+//        startActivityIntent.launch(intent)
+//    }
+//
+//    fun requestCameraPermission(onPermissionGrant: (isGrant: Boolean) -> Unit) {
+//        onPermissionCameraGranted = onPermissionGrant
+//        mAskCheckPermissionCamera.launch(
+//            getPermissionString(PERMISSION_ALL)
+//        )
+//    }
+//
+//    fun requestStoragePermission(onPermissionGrant: (isGrant: Boolean) -> Unit) {
+//        onPermissionStorageGranted = onPermissionGrant
+//        mAskCheckPermissionStorage.launch(
+//            getPermissionString(PERMISSION_WRITE_STORAGE)
+//        )
+//    }
 
 }
