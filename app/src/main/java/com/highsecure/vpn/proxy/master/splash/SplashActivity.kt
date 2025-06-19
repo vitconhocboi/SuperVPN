@@ -38,7 +38,7 @@ class SplashActivity : ProductActivity<ActivitySplashBinding>() {
         lifecycleScope.launch {
             var progress = 0
             while (progress < 100) {
-                delay(50)  // Wait for 200ms
+                delay(20)  // Wait for 200ms
                 progress += 5
                 binding.customProgressBar.progress = progress
             }
@@ -70,14 +70,12 @@ class SplashActivity : ProductActivity<ActivitySplashBinding>() {
     }
 
     override fun initView() {
-        checkLanguage()
-        simulateProgress()
-        if (!BaseAppConfig.isSub) {
-            initAdmob()
-            binding.adsNotice.visibility = View.VISIBLE
-        } else {
-            binding.adsNotice.visibility = View.GONE
+        lifecycleScope.launch {
+            launch { checkLanguage() }
+            launch { if (!BaseAppConfig.isSub) initAdmob() }
+            simulateProgress()
         }
+        binding.adsNotice.visibility = if (!BaseAppConfig.isSub) View.VISIBLE else View.GONE
     }
 
     private fun initAdmob() {
