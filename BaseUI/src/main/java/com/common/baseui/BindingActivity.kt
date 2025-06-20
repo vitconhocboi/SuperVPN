@@ -55,9 +55,7 @@ abstract class BindingActivity<T : ViewBinding> : BaseActivity() {
             initView()
 //            makeStatusBarTransparent()
             if (!BaseAppConfig.isSub) {
-                lifecycleScope.launch (Dispatchers.IO) {
-                    loadAds()
-                }
+                loadAds()
             }
         }
         Timber.d("check_open_splash 4 ${System.currentTimeMillis()}")

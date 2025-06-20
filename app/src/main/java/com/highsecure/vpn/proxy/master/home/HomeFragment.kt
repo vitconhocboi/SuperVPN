@@ -168,7 +168,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     private fun isLocalVpnServiceRunning(context: Context) {
         if (!isVpnActive(context) && !LocalVpnService.IsRunning) {
             proxyViewModel.updateUI(DISCONNECTED)
-            proxyViewModel.stopProxy(mainViewModel.getDeviceId(requireContext()), context)
+//            proxyViewModel.stopProxy(mainViewModel.getDeviceId(requireContext()), context)
             return
         }
         val activityManager = context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
@@ -180,7 +180,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         }
         if (!LocalVpnService.IsRunning) {
             proxyViewModel.updateUI(DISCONNECTED)
-            proxyViewModel.stopProxy(mainViewModel.getDeviceId(requireContext()), context)
+//            proxyViewModel.stopProxy(mainViewModel.getDeviceId(requireContext()), context)
         }
     }
 

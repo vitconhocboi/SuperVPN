@@ -104,28 +104,13 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
         if (item != null && deviceId != null) {
             BaseAppConfig.proxyCountry = item.country
 
-            // Call API to assign proxy
             val request = ProxyRequest(user_id = deviceId, country = item.country, type = type)
             val response = apiService.assignProxy(request)
 
             if (response.isSuccessful) {
                 val assignResponse = response.body()
-                if (assignResponse != null && assignResponse.proxy != null) {
+                if (assignResponse != null) {
                     BaseAppConfig.proxy = assignResponse.proxy
-                    // Parse the proxy string (expected format: "ip:port:user:pass:type")
-//                    val proxyParts = assignResponse.proxy.split(":")
-//                    if (proxyParts.size == 5) {
-//                        // Update proxy configuration from API response
-//                        BaseAppConfig.apply {
-//                            proxyHost = proxyParts[1]
-//                            proxyPort = proxyParts[2]
-//                            proxyUser = proxyParts[3]
-//                            proxyPass = proxyParts[4]
-//                            proxyType = proxyParts[0]
-//                        }
-//                    } else {
-//                        throw Exception("Invalid proxy string format")
-//                    }
                 } else {
                     throw Exception(assignResponse?.error ?: "Empty proxy response")
                 }
@@ -133,15 +118,6 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
                 throw Exception("Failed to assign proxy: ${response.code()}")
             }
         } else {
-            // Reset proxy when item is null
-//            BaseAppConfig.apply {
-//                proxyHost = ""
-//                proxyPort = ""
-//                proxyUser = ""
-//                proxyPass = ""
-//                proxyType = ""
-//                proxyCountry = ""
-//            }
             BaseAppConfig.proxy = ""
             BaseAppConfig.proxyHost = ""
             BaseAppConfig.proxyCountry = ""
@@ -166,9 +142,15 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
             })
         }
 
-        viewModelScope.launch (Dispatchers.IO) {
+        viewModelScope.launch(Dispatchers.IO) {
             if (deviceId != null) {
-                apiService.connect(Users(user_id = deviceId, ip_address = BaseAppConfig.proxyHost))
+                apiService.connect(
+                    Users(
+                        user_id = deviceId,
+                        ip_address = BaseAppConfig.proxyHost,
+                        type = "connect"
+                    )
+                )
             }
         }
 
@@ -180,11 +162,17 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
         context!!.startService(Intent(context, LocalVpnService::class.java).apply {
             action = ACTION_STOP
         })
-//        viewModelScope.launch(Dispatchers.IO) {
-//            if (deviceId != null) {
-//                apiService.disconnect(DisconnectRequest(user_id = deviceId))
-//            }
-//        }
+        viewModelScope.launch(Dispatchers.IO) {
+            if (deviceId != null) {
+                apiService.connect(
+                    Users(
+                        user_id = deviceId,
+                        ip_address = BaseAppConfig.proxyHost,
+                        type = "disconnect"
+                    )
+                )
+            }
+        }
     }
 
     override fun updateUI(status: String) {
@@ -192,7 +180,7 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
     }
 
     fun startProxyTest() {
-        viewModelScope.launch (Dispatchers.IO) {
+        viewModelScope.launch(Dispatchers.IO) {
             engine.Engine.decodeString(BaseAppConfig.proxy).split(":").let { parts ->
                 if (parts.size >= 2) {
                     currentProxy.postValue(

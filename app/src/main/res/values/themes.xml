@@ -18,7 +18,7 @@
     <!-- Splash theme remains unchanged, just ensure consistency -->
     <style name="Theme.SuperVPN.Splash" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">#02091A</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_logo</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_round</item>
         <item name="windowSplashScreenAnimationDuration">200</item>
 
         <item name="windowActionBar">false</item>

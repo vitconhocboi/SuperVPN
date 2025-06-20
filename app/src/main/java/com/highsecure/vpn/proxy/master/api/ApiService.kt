@@ -27,7 +27,8 @@ interface ApiService {
 
 data class Users(
     val user_id: String,
-    val ip_address: String
+    val ip_address: String,
+    val type: String
 )
 
 data class ProxyRequest(

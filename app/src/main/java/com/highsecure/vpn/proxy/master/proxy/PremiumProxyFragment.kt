@@ -19,6 +19,7 @@ import com.google.android.gms.ads.identifier.AdvertisingIdClient
 import com.highsecure.vpn.proxy.master.main.MainViewModel
 import com.highsecure.vpn.proxy.master.proxy.ProxyViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -82,7 +83,7 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
             }
 
             mPagerAdapter.onItemClick = { _, item ->
-                lifecycleScope.launch {
+                lifecycleScope.launch(Dispatchers.IO) {
                     try {
                         if (!selected) {
                             if (mainViewModel.isSub()) {
@@ -94,13 +95,17 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
                                 if (item.country == BaseAppConfig.proxyCountry) {
                                     item.active = false
                                 }
-                                if (item.active) {
-                                    mProxyViewModel.setActiveProxy(item, deviceId, PREMIUM)
-                                } else {
-                                    mProxyViewModel.setActiveProxy(null, deviceId, PREMIUM)
+                                try {
+                                    if (item.active) {
+                                        mProxyViewModel.setActiveProxy(item, deviceId, PREMIUM)
+                                    } else {
+                                        mProxyViewModel.setActiveProxy(null, deviceId, PREMIUM)
+                                    }
+                                    requireActivity().finish()
+                                    Navigator.startMainActivity(requireContext(), "POPUP")
+                                } catch (e: Exception) {
+                                    Toast.makeText(requireContext(), "An error occur. Please try again", Toast.LENGTH_SHORT).show()
                                 }
-                                requireActivity().finish()
-                                Navigator.startMainActivity(requireContext(), "POPUP")
                                 selected = false
                             } else {
                                 Navigator.startPremiumActivity(requireContext())
