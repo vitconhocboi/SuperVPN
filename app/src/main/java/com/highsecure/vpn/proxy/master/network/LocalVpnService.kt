@@ -27,6 +27,8 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import timber.log.Timber
 import java.io.FileDescriptor
+import java.io.FileInputStream
+import java.io.FileOutputStream
 import java.util.concurrent.atomic.AtomicReference
 import javax.inject.Inject
 
@@ -230,6 +232,7 @@ class LocalVpnService : VpnService(), Runnable {
         key.mtu = ProxyConfig.Instance.mTU.toLong()
         key.device = "fd://" + pfdDescriptor?.fd
         key.logLevel = "silent"
+        key.directUDP = Build.VERSION.SDK_INT < Build.VERSION_CODES.Q
         if (currentProxy?.type?.lowercase() == "socks5") {
             key.proxy =
                 "socks5://${currentProxy!!.username}:${currentProxy!!.password}@${currentProxy!!.host}:${currentProxy!!.port}"
