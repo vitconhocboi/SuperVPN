@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.highsecure.vpn.proxy.master">
+    package="com.tici.vpn.proxy.master">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -23,7 +23,7 @@
         tools:ignore="QueryAllPackagesPermission" />
 
     <application
-        android:name="com.highsecure.vpn.proxy.master.SuperVpnApplication"
+        android:name="com.tici.vpn.proxy.master.SuperVpnApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -41,12 +41,12 @@
             tools:replace="android:resource" />
 
         <activity
-            android:name="com.highsecure.vpn.proxy.master.proxy.ProxyActivity"
+            android:name="com.tici.vpn.proxy.master.proxy.ProxyActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.SuperVPN" />
         <activity
-            android:name="com.highsecure.vpn.proxy.master.language.LanguageActivity"
+            android:name="com.tici.vpn.proxy.master.language.LanguageActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.SuperVPN" />
@@ -56,7 +56,7 @@
             android:value="@string/app_ads_id" />
 
         <activity
-            android:name="com.highsecure.vpn.proxy.master.splash.SplashActivity"
+            android:name="com.tici.vpn.proxy.master.splash.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.SuperVPN.Splash">
@@ -66,7 +66,7 @@
             </intent-filter>
         </activity>
         <service
-            android:name="com.highsecure.vpn.proxy.master.network.LocalVpnService"
+            android:name="com.tici.vpn.proxy.master.network.LocalVpnService"
             android:exported="false"
             android:foregroundServiceType="specialUse"
             android:permission="android.permission.BIND_VPN_SERVICE">
@@ -76,16 +76,16 @@
         </service>
 
         <activity
-            android:name="com.highsecure.vpn.proxy.master.main.MainActivity"
+            android:name="com.tici.vpn.proxy.master.main.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.SuperVPN" />
         <activity
-            android:name="com.highsecure.vpn.proxy.master.premium.PremiumActivity"
+            android:name="com.tici.vpn.proxy.master.premium.PremiumActivity"
             android:exported="true"
             android:theme="@style/Theme.SuperVPN" />
 
 <!--        <receiver-->
-<!--            android:name="com.highsecure.vpn.proxy.master.broadcast.SchedulerReceiver"-->
+<!--            android:name="com.tici.vpn.proxy.master.broadcast.SchedulerReceiver"-->
 <!--            android:enabled="true"-->
 <!--            android:exported="true">-->
 <!--            <intent-filter>-->

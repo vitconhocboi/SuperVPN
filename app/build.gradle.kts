@@ -9,11 +9,11 @@ plugins {
 }
 
 android {
-    namespace = "com.highsecure.vpn.proxy.master"
+    namespace = "com.tici.vpn.proxy.master"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.highsecure.vpn.proxy.master"
+        applicationId = "com.tici.vpn.proxy.master"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
