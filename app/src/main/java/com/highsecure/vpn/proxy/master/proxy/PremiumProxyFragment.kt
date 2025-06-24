@@ -83,8 +83,8 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
             }
 
             mPagerAdapter.onItemClick = { _, item ->
-                lifecycleScope.launch(Dispatchers.IO) {
-                    try {
+                try {
+                    lifecycleScope.launch {
                         if (!selected) {
                             if (mainViewModel.isSub()) {
                                 selected = true
@@ -104,7 +104,12 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
                                     requireActivity().finish()
                                     Navigator.startMainActivity(requireContext(), "POPUP")
                                 } catch (e: Exception) {
-                                    Toast.makeText(requireContext(), "An error occur. Please try again", Toast.LENGTH_SHORT).show()
+                                    e.printStackTrace()
+                                    Toast.makeText(
+                                        requireContext(),
+                                        "An error occur. Please try again",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
                                 }
                                 selected = false
                             } else {
@@ -113,14 +118,16 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
                         } else {
                             item.active = false
                         }
-                    } catch (e: Exception) {
-                        Toast.makeText(
-                            requireContext(),
-                            "Cannot get proxy: ${e.message}",
-                            Toast.LENGTH_SHORT
-                        ).show()
                     }
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                    Toast.makeText(
+                        requireContext(),
+                        "Cannot get proxy: ${e.message}",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
+
             }
 
             ivBack.setOnClickListener {
