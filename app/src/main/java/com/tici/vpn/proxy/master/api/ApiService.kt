@@ -1,5 +1,6 @@
 package com.tici.vpn.proxy.master.api
 
+import com.google.gson.annotations.SerializedName
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -26,41 +27,41 @@ interface ApiService {
 }
 
 data class Users(
-    val user_id: String,
-    val ip_address: String,
-    val type: String
+    @SerializedName("user_id") val user_id: String,
+    @SerializedName("ip_address") val ip_address: String,
+    @SerializedName("type") val type: String
 )
 
 data class ProxyRequest(
-    val user_id: String,
-    val country: String,
-    val type: String
+    @SerializedName("user_id") val user_id: String,
+    @SerializedName("country") val country: String,
+    @SerializedName("type") val type: String
 )
 
 data class AssignProxyResponse(
-    val proxy: String,
-    val error: String?
+    @SerializedName("proxy") val proxy: String,
+    @SerializedName("error") val error: String?
 )
 
 data class DisconnectRequest(
-    val user_id: String
+    @SerializedName("user_id") val user_id: String
 )
 
 data class DisconnectResponse(
-    val message: String
+    @SerializedName("message") val message: String
 )
 
 data class CountriesResponse(
-    val countries: List<String>,
-    val error: String?
+    @SerializedName("countries") val countries: List<String>,
+    @SerializedName("error") val error: String?
 )
 
 data class DnsDB(
-    val name: String,
-    val ip_address: String
+    @SerializedName("name") val name: String,
+    @SerializedName("ip_address") val ip_address: String
 )
 
 data class DnsResponse(
-    val dns: List<DnsDB>,
-    val error: String?
+    @SerializedName("dns") val dns: List<DnsDB>,
+    @SerializedName("error") val error: String?
 )
