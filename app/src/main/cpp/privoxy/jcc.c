@@ -1278,7 +1278,7 @@ static char *get_request_line(struct client_state *csp) {
         }
 
         len = read_socket(csp->cfd, buf, sizeof(buf) - 1);
-        saveToPref(0,len);
+//        saveToPref(0,len);
 
         if (len <= 0) return NULL;
 
@@ -2622,7 +2622,7 @@ static void chat(struct client_state *csp) {
 
     log_error(LOG_LEVEL_CLF, "%s - - [%T] \"%s\" 200 %llu",
               csp->ip_addr_str, http->ocmd, csp->content_length);
-    saveToPref(1,csp->content_length);
+//    saveToPref(1,csp->content_length);
     csp->server_connection.timestamp = time(NULL);
 }
 

@@ -909,7 +909,7 @@ void log_error(int loglevel, const char *fmt, ...)
          break;
       }
    }
-    LOGI("%s",outbuf);
+//    LOGI("%s",outbuf);
    /* done with var. args */
    va_end(ap);
 
