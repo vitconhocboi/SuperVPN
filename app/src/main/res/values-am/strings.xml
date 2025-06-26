@@ -74,9 +74,9 @@
   <string name="premium_sub2">ፈጣን እና የተረጋጋ ፍጥነት</string>
   <string name="premium_sub3">ዓለም አቀፍ አካባቢ</string>
   <string name="premium_sub4">የመተግበሪያ ማጣሪያ</string>
-  <string name="premium_weekly">በየሳምንቱ</string>
-  <string name="premium_monthly">ወርሃዊ</string>
-  <string name="premium_yearly">በየአመቱ</string>
+  <string name="weekly">በየሳምንቱ</string>
+  <string name="monthly">ወርሃዊ</string>
+  <string name="yearly">በየአመቱ</string>
   <string name="premium_desc">በመጀመሪያዎቹ 3 ቀናት በነጻ ይደሰቱ፣ ከዚያ እቅዱ በራስ-ሰር ያድሳል።</string>
   <string name="premium_start_trial">ሙከራ ጀምር</string>
   <string name="premium_trial_desc">ተደጋጋሚ የሂሳብ አከፋፈል። Google Play መደብር ላይ በማንኛውም ጊዜ ይሰርዙ።</string>

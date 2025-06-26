@@ -7,7 +7,7 @@ android {
     namespace = "com.common.baseui"
     compileSdk = 34
     defaultConfig {
-        minSdk = 24
+        minSdk = 27
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 

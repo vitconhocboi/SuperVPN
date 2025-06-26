@@ -74,9 +74,9 @@
   <string name="premium_sub2">Mabilis at matatag na bilis</string>
   <string name="premium_sub3">Lokasyon sa buong mundo</string>
   <string name="premium_sub4">Filter ng App</string>
-  <string name="premium_weekly">Linggu-linggo</string>
-  <string name="premium_monthly">Buwan-buwan</string>
-  <string name="premium_yearly">Taon-taon</string>
+  <string name="weekly">Linggu-linggo</string>
+  <string name="monthly">Buwan-buwan</string>
+  <string name="yearly">Taon-taon</string>
   <string name="premium_desc">I-enjoy ang unang 3 araw nang libre, pagkatapos ay awtomatikong magre-renew ang plan.</string>
   <string name="premium_start_trial">Simulan ang pagsubok</string>
   <string name="premium_trial_desc">Umuulit na pagsingil. Kanselahin anumang oras sa Google Play Store.</string>

@@ -74,9 +74,9 @@
   <string name="premium_sub2">Vitesse rapide et stable</string>
   <string name="premium_sub3">Localisation mondiale</string>
   <string name="premium_sub4">Filtre d\'application</string>
-  <string name="premium_weekly">Hebdomadaire</string>
-  <string name="premium_monthly">Mensuel</string>
-  <string name="premium_yearly">Annuel</string>
+  <string name="weekly">Hebdomadaire</string>
+  <string name="monthly">Mensuel</string>
+  <string name="yearly">Annuel</string>
   <string name="premium_desc">Profitez des 3 premiers jours gratuits, puis le forfait se renouvelle automatiquement.</string>
   <string name="premium_start_trial">Commencer l\'essai</string>
   <string name="premium_trial_desc">Facturation récurrente. Annulez à tout moment sur Google Play Store.</string>

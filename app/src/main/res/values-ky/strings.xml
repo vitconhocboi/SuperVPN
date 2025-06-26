@@ -74,9 +74,9 @@
   <string name="premium_sub2">Тез жана туруктуу ылдамдык</string>
   <string name="premium_sub3">Дүйнө жүзү боюнча жайгашкан</string>
   <string name="premium_sub4">Колдонмо чыпкасы</string>
-  <string name="premium_weekly">Апта сайын</string>
-  <string name="premium_monthly">Ай сайын</string>
-  <string name="premium_yearly">Жыл сайын</string>
+  <string name="weekly">Апта сайын</string>
+  <string name="monthly">Ай сайын</string>
+  <string name="yearly">Жыл сайын</string>
   <string name="premium_desc">Алгачкы 3 күн акысыз, андан кийин план автоматтык түрдө жаңыртылат.</string>
   <string name="premium_start_trial">Сыноону баштоо</string>
   <string name="premium_trial_desc">Кайталануучу эсеп коюу. Google Play дүкөнүнөн каалаган убакта жокко чыгарыңыз.</string>

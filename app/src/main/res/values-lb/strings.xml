@@ -74,9 +74,9 @@
   <string name="premium_sub2">Schnell a stabil Geschwindegkeet</string>
   <string name="premium_sub3">Weltwäit Standuert</string>
   <string name="premium_sub4">App-Filter</string>
-  <string name="premium_weekly">Wochemaart</string>
-  <string name="premium_monthly">Mount</string>
-  <string name="premium_yearly">Joer</string>
+  <string name="weekly">Wochemaart</string>
+  <string name="monthly">Mount</string>
+  <string name="yearly">Joer</string>
   <string name="premium_desc">Genéisst déi éischt 3 Deeg gratis, duerno gëtt den Abonnement automatesch erneiert.</string>
   <string name="premium_start_trial">Testphase starten</string>
   <string name="premium_trial_desc">Widderhuelend Rechnungsstellung. Kënnt zu all Moment am Google Play Store kënnegen.</string>

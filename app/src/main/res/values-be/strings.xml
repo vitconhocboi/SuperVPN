@@ -74,9 +74,9 @@
   <string name="premium_sub2">Хуткая і стабільная хуткасць</string>
   <string name="premium_sub3">Месцазнаходжанне па ўсім свеце</string>
   <string name="premium_sub4">Фільтр праграм</string>
-  <string name="premium_weekly">Штотыдзень</string>
-  <string name="premium_monthly">Штомесяц</string>
-  <string name="premium_yearly">Штогод</string>
+  <string name="weekly">Штотыдзень</string>
+  <string name="monthly">Штомесяц</string>
+  <string name="yearly">Штогод</string>
   <string name="premium_desc">Карыстайцеся бясплатным падпіскай першыя 3 дні, пасля чаго падпіска будзе аўтаматычна падаўжацца.</string>
   <string name="premium_start_trial">Пачаць пробны перыяд</string>
   <string name="premium_trial_desc">Рэгулярны рахунак. Адмяніць можна ў любы час у краме Google Play.</string>

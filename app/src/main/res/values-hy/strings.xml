@@ -74,9 +74,9 @@
   <string name="premium_sub2">Արագ և կայուն արագություն</string>
   <string name="premium_sub3">Աշխարհի տարբեր մասեր</string>
   <string name="premium_sub4">Հավելվածի ֆիլտր</string>
-  <string name="premium_weekly">Շաբաթական</string>
-  <string name="premium_monthly">Ամսական</string>
-  <string name="premium_yearly">Տարեկան</string>
+  <string name="weekly">Շաբաթական</string>
+  <string name="monthly">Ամսական</string>
+  <string name="yearly">Տարեկան</string>
   <string name="premium_desc">Վայելեք առաջին 3 օրերը անվճար, ապա պլանը ավտոմատ կերպով կերկարաձգվի։</string>
   <string name="premium_start_trial">Սկսել փորձաշրջանը</string>
   <string name="premium_trial_desc">Կրկնվող վճարում։ Չեղարկեք ցանկացած պահի Google Play Store-ում։</string>

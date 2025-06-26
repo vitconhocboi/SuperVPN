@@ -74,9 +74,9 @@
   <string name="premium_sub2">Isivinini esisheshayo nezinzile</string>
   <string name="premium_sub3">Indawo yomhlaba wonke</string>
   <string name="premium_sub4">Isihlungi Sohlelo Lokusebenza</string>
-  <string name="premium_weekly">Maviki onke</string>
-  <string name="premium_monthly">Nyanga zonke</string>
-  <string name="premium_yearly">Minyaka yonke</string>
+  <string name="weekly">Maviki onke</string>
+  <string name="monthly">Nyanga zonke</string>
+  <string name="yearly">Minyaka yonke</string>
   <string name="premium_desc">Jabulela izinsuku ezingu-3 zokuqala mahhala, bese uhlelo luzivuselela ngokuzenzakalela.</string>
   <string name="premium_start_trial">Qala ukuzama</string>
   <string name="premium_trial_desc">Ukukhokha okuphindelelayo. Khansela noma nini ku-Google Play Isitolo.</string>

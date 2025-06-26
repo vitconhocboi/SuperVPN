@@ -74,9 +74,9 @@
   <string name="premium_sub2">Суръати зуд ва устувор</string>
   <string name="premium_sub3">Ҷойгиршавӣ дар саросари ҷаҳон</string>
   <string name="premium_sub4">Филтри барнома</string>
-  <string name="premium_weekly">Ҳар ҳафта</string>
-  <string name="premium_monthly">Ҳармоҳа</string>
-  <string name="premium_yearly">солона</string>
+  <string name="weekly">Ҳар ҳафта</string>
+  <string name="monthly">Ҳармоҳа</string>
+  <string name="yearly">солона</string>
   <string name="premium_desc">Аз 3 рӯзи аввал ройгон лаззат баред, пас нақшаи худкор навсозӣ мешавад.</string>
   <string name="premium_start_trial">Оғози озмоиш</string>
   <string name="premium_trial_desc">Ҳисобкунии такрорӣ. Дар Google Play Store дилхоҳ вақт бекор кунед.</string>

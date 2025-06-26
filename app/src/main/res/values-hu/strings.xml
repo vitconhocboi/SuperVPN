@@ -74,9 +74,9 @@
   <string name="premium_sub2">Gyors és stabil sebesség</string>
   <string name="premium_sub3">Világszerte elérhető</string>
   <string name="premium_sub4">Alkalmazásszűrő</string>
-  <string name="premium_weekly">Heti</string>
-  <string name="premium_monthly">Havi</string>
-  <string name="premium_yearly">Évi</string>
+  <string name="weekly">Heti</string>
+  <string name="monthly">Havi</string>
+  <string name="yearly">Évi</string>
   <string name="premium_desc">Élvezd az első 3 napot ingyen, utána a csomag automatikusan megújul.</string>
   <string name="premium_start_trial">Próbaidőszak indítása</string>
   <string name="premium_trial_desc">Rendszeres számlázás. Bármikor lemondható a Google Play Áruházban.</string>

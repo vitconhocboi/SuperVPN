@@ -74,9 +74,9 @@
   <string name="premium_sub2">Astar luath is seasmhach</string>
   <string name="premium_sub3">Àite air feadh an t-saoghail</string>
   <string name="premium_sub4">Criathrag Aplacaid</string>
-  <string name="premium_weekly">Seachdaineach</string>
-  <string name="premium_monthly">Mìosail</string>
-  <string name="premium_yearly">Bliadhnail</string>
+  <string name="weekly">Seachdaineach</string>
+  <string name="monthly">Mìosail</string>
+  <string name="yearly">Bliadhnail</string>
   <string name="premium_desc">Faigh tlachd às a’ chiad 3 latha an-asgaidh, agus an uairsin thèid am plana ùrachadh gu fèin-ghluasadach.</string>
   <string name="premium_start_trial">Tòisich deuchainn</string>
   <string name="premium_trial_desc">Bileachadh ath-chuairteach. Sguir dheth aig àm sam bith air Google Play Store.</string>

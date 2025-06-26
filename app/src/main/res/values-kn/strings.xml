@@ -74,9 +74,9 @@
   <string name="premium_sub2">ವೇಗದ ಮತ್ತು ಸ್ಥಿರವಾದ ವೇಗ</string>
   <string name="premium_sub3">ವಿಶ್ವಾದ್ಯಂತ ಸ್ಥಳ</string>
   <string name="premium_sub4">ಅಪ್ಲಿಕೇಶನ್ ಫಿಲ್ಟರ್</string>
-  <string name="premium_weekly">ಸಾಪ್ತಾಹಿಕ</string>
-  <string name="premium_monthly">ಮಾಸಿಕ</string>
-  <string name="premium_yearly">ವಾರ್ಷಿಕ</string>
+  <string name="weekly">ಸಾಪ್ತಾಹಿಕ</string>
+  <string name="monthly">ಮಾಸಿಕ</string>
+  <string name="yearly">ವಾರ್ಷಿಕ</string>
   <string name="premium_desc">ಮೊದಲ 3 ದಿನಗಳನ್ನು ಉಚಿತವಾಗಿ ಆನಂದಿಸಿ, ನಂತರ ಯೋಜನೆ ಸ್ವಯಂ ನವೀಕರಣಗೊಳ್ಳುತ್ತದೆ.</string>
   <string name="premium_start_trial">ಪ್ರಾಯೋಗಿಕ ಅವಧಿಯನ್ನು ಪ್ರಾರಂಭಿಸಿ</string>
   <string name="premium_trial_desc">ಮರುಕಳಿಸುವ ಬಿಲ್ಲಿಂಗ್. Google Play Store ನಲ್ಲಿ ಯಾವುದೇ ಸಮಯದಲ್ಲಿ ರದ್ದುಗೊಳಿಸಿ.</string>

@@ -74,9 +74,9 @@
   <string name="premium_sub2">Snabb och stabil hastighet</string>
   <string name="premium_sub3">Världsomspännande plats</string>
   <string name="premium_sub4">Appfilter</string>
-  <string name="premium_weekly">Varje vecka</string>
-  <string name="premium_monthly">Månatlig</string>
-  <string name="premium_yearly">Årlig</string>
+  <string name="weekly">Varje vecka</string>
+  <string name="monthly">Månatlig</string>
+  <string name="yearly">Årlig</string>
   <string name="premium_desc">Njut av de första 3 dagarna gratis, sedan förnyas planen automatiskt.</string>
   <string name="premium_start_trial">Starta provperioden</string>
   <string name="premium_trial_desc">Återkommande fakturering. Avsluta när som helst i Google Play Store.</string>

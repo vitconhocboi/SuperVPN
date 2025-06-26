@@ -74,9 +74,9 @@
   <string name="premium_sub2">ល្បឿនលឿននិងមានស្ថេរភាព</string>
   <string name="premium_sub3">ទីតាំងទូទាំងពិភពលោក</string>
   <string name="premium_sub4">តម្រងកម្មវិធី</string>
-  <string name="premium_weekly">ប្រចាំសប្តាហ៍</string>
-  <string name="premium_monthly">ប្រចាំខែ</string>
-  <string name="premium_yearly">ប្រចាំឆ្នាំ</string>
+  <string name="weekly">ប្រចាំសប្តាហ៍</string>
+  <string name="monthly">ប្រចាំខែ</string>
+  <string name="yearly">ប្រចាំឆ្នាំ</string>
   <string name="premium_desc">សូមរីករាយជាមួយ 3 ថ្ងៃដំបូងដោយឥតគិតថ្លៃ បន្ទាប់មកគម្រោងបន្តដោយស្វ័យប្រវត្តិ។</string>
   <string name="premium_start_trial">ចាប់ផ្តើមការសាកល្បង</string>
   <string name="premium_trial_desc">ការចេញវិក្កយបត្របន្ត។ បោះបង់នៅពេលណាក៏បាននៅលើ Google Play Store ។</string>

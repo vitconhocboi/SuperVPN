@@ -74,9 +74,9 @@
   <string name="premium_sub2">Laju gancang sareng stabil</string>
   <string name="premium_sub3">lokasi sakuliah dunya</string>
   <string name="premium_sub4">Filter Aplikasi</string>
-  <string name="premium_weekly">Mingguan</string>
-  <string name="premium_monthly">Bulanan</string>
-  <string name="premium_yearly">taunan</string>
+  <string name="weekly">Mingguan</string>
+  <string name="monthly">Bulanan</string>
+  <string name="yearly">taunan</string>
   <string name="premium_desc">Ngarasakeun 3 dinten munggaran gratis, teras rencanana otomatis-renew.</string>
   <string name="premium_start_trial">Mimitian sidang</string>
   <string name="premium_trial_desc">tagihan ulang. Bolaykeun iraha waé dina Google Play Store.</string>

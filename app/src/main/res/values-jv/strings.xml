@@ -74,9 +74,9 @@
   <string name="premium_sub2">Kacepetan cepet lan stabil</string>
   <string name="premium_sub3">Lokasi ing saindenging jagad</string>
   <string name="premium_sub4">Filter Aplikasi</string>
-  <string name="premium_weekly">Mingguan</string>
-  <string name="premium_monthly">Saben wulan</string>
-  <string name="premium_yearly">taunan</string>
+  <string name="weekly">Mingguan</string>
+  <string name="monthly">Saben wulan</string>
+  <string name="yearly">taunan</string>
   <string name="premium_desc">Seneng 3 dina pisanan gratis, banjur rencana nganyari otomatis.</string>
   <string name="premium_start_trial">Miwiti nyoba</string>
   <string name="premium_trial_desc">Tagihan ambalan. Batal kapan wae ing Google Play Store.</string>

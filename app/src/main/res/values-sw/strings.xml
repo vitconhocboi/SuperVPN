@@ -74,9 +74,9 @@
   <string name="premium_sub2">Kasi ya haraka na thabiti</string>
   <string name="premium_sub3">Mahali pa ulimwengu</string>
   <string name="premium_sub4">Kichujio cha Programu</string>
-  <string name="premium_weekly">Kila wiki</string>
-  <string name="premium_monthly">Kila mwezi</string>
-  <string name="premium_yearly">Kila mwaka</string>
+  <string name="weekly">Kila wiki</string>
+  <string name="monthly">Kila mwezi</string>
+  <string name="yearly">Kila mwaka</string>
   <string name="premium_desc">Furahia siku 3 za kwanza bila malipo, kisha mpango utajisasisha kiotomatiki.</string>
   <string name="premium_start_trial">Anza jaribio</string>
   <string name="premium_trial_desc">Malipo ya mara kwa mara. Ghairi wakati wowote kwenye Google Play Store.</string>

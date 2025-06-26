@@ -74,9 +74,9 @@
   <string name="premium_sub2">Schnelle und stabile Geschwindigkeit</string>
   <string name="premium_sub3">Weltweiter Standort</string>
   <string name="premium_sub4">App Filter</string>
-  <string name="premium_weekly">Wöchentlich</string>
-  <string name="premium_monthly">Monatlich</string>
-  <string name="premium_yearly">Jährlich</string>
+  <string name="weekly">Wöchentlich</string>
+  <string name="monthly">Monatlich</string>
+  <string name="yearly">Jährlich</string>
   <string name="premium_desc">Genießen Sie die ersten 3 Tage kostenlos, danach verlängert sich der Plan automatisch.</string>
   <string name="premium_start_trial">Testversion starten</string>
   <string name="premium_trial_desc">Wiederkehrende Abrechnung. Jederzeit im Google Play Store kündbar.</string>

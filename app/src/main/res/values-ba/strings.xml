@@ -74,9 +74,9 @@
   <string name="premium_sub2">Тиҙ һәм тотороҡло тиҙлек</string>
   <string name="premium_sub3">Бөтә донъяла урынлашҡан</string>
   <string name="premium_sub4">Ҡушымта фильтры</string>
-  <string name="premium_weekly">Аҙна һайын</string>
-  <string name="premium_monthly">Ай һайын .</string>
-  <string name="premium_yearly">Йыл һайын .</string>
+  <string name="weekly">Аҙна һайын</string>
+  <string name="monthly">Ай һайын .</string>
+  <string name="yearly">Йыл һайын .</string>
   <string name="premium_desc">Тәүге 3 көн бушлай рәхәтләнеп, һуңынан план авто-яңыртыла.</string>
   <string name="premium_start_trial">Һынау башлау</string>
   <string name="premium_trial_desc">Ҡабатланған иҫәп-хисап. Google Play магазинында теләһә ниндәй ваҡытта отменить.</string>

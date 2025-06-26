@@ -74,9 +74,9 @@
   <string name="premium_sub2">Luas tapa agus cobhsaí</string>
   <string name="premium_sub3">Suíomh ar fud an domhain</string>
   <string name="premium_sub4">Scagaire Aipeanna</string>
-  <string name="premium_weekly">Seachtainiúil</string>
-  <string name="premium_monthly">go míosúil</string>
-  <string name="premium_yearly">Bliantúil</string>
+  <string name="weekly">Seachtainiúil</string>
+  <string name="monthly">go míosúil</string>
+  <string name="yearly">Bliantúil</string>
   <string name="premium_desc">Bain sult as na chéad 3 lá saor in aisce, ansin athnuaitear an plean go huathoibríoch.</string>
   <string name="premium_start_trial">Tosaigh an triail</string>
   <string name="premium_trial_desc">Billeáil athfhillteach. Cealaigh am ar bith ar Google Play Store.</string>

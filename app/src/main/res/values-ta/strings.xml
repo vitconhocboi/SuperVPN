@@ -74,9 +74,9 @@
   <string name="premium_sub2">வேகமான மற்றும் நிலையான வேகம்</string>
   <string name="premium_sub3">உலகளாவிய இருப்பிடம்</string>
   <string name="premium_sub4">பயன்பாட்டு வடிகட்டி</string>
-  <string name="premium_weekly">வாரந்தோறும்</string>
-  <string name="premium_monthly">மாதாந்திர</string>
-  <string name="premium_yearly">ஆண்டுதோறும்</string>
+  <string name="weekly">வாரந்தோறும்</string>
+  <string name="monthly">மாதாந்திர</string>
+  <string name="yearly">ஆண்டுதோறும்</string>
   <string name="premium_desc">முதல் 3 நாட்கள் இலவசமாகப் பயன்படுத்தி மகிழுங்கள், பிறகு திட்டம் தானாகப் புதுப்பிக்கப்படும்.</string>
   <string name="premium_start_trial">சோதனையைத் தொடங்கு</string>
   <string name="premium_trial_desc">தொடர்ச்சியான பில்லிங். Google Play Store இல் எந்த நேரத்திலும் ரத்துசெய்யலாம்.</string>

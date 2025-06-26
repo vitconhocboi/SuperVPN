@@ -74,9 +74,9 @@
   <string name="premium_sub2">Hızlı ve istikrarlı hız</string>
   <string name="premium_sub3">Dünya çapında konum</string>
   <string name="premium_sub4">Uygulama Filtresi</string>
-  <string name="premium_weekly">Haftalık</string>
-  <string name="premium_monthly">Aylık</string>
-  <string name="premium_yearly">Yıllık</string>
+  <string name="weekly">Haftalık</string>
+  <string name="monthly">Aylık</string>
+  <string name="yearly">Yıllık</string>
   <string name="premium_desc">İlk 3 günü ücretsiz kullanın, ardından plan otomatik olarak yenilenir.</string>
   <string name="premium_start_trial">Denemeye başla</string>
   <string name="premium_trial_desc">Tekrarlayan faturalandırma. Google Play Store\'dan istediğiniz zaman iptal edin.</string>

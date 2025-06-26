@@ -74,9 +74,9 @@
   <string name="premium_sub2">Ātrs un stabils ātrums</string>
   <string name="premium_sub3">Atrašanās vieta visā pasaulē</string>
   <string name="premium_sub4">Lietotņu filtrs</string>
-  <string name="premium_weekly">Iknedēļas</string>
-  <string name="premium_monthly">Ikmēneša</string>
-  <string name="premium_yearly">Ik gadu</string>
+  <string name="weekly">Iknedēļas</string>
+  <string name="monthly">Ikmēneša</string>
+  <string name="yearly">Ik gadu</string>
   <string name="premium_desc">Izbaudiet pirmās 3 dienas bez maksas, pēc tam plāns tiks automātiski atjaunots.</string>
   <string name="premium_start_trial">Sākt izmēģinājuma periodu</string>
   <string name="premium_trial_desc">Regulāri rēķini. Varat jebkurā laikā atcelt Google Play veikalā.</string>

@@ -74,9 +74,9 @@
   <string name="premium_sub2">სწრაფი და სტაბილური სიჩქარე</string>
   <string name="premium_sub3">მსოფლიო მასშტაბით მდებარეობა</string>
   <string name="premium_sub4">აპლიკაციის ფილტრი</string>
-  <string name="premium_weekly">ყოველკვირეული</string>
-  <string name="premium_monthly">ყოველთვიური</string>
-  <string name="premium_yearly">ყოველწლიურად</string>
+  <string name="weekly">ყოველკვირეული</string>
+  <string name="monthly">ყოველთვიური</string>
+  <string name="yearly">ყოველწლიურად</string>
   <string name="premium_desc">ისარგებლეთ პირველი 3 დღით უფასოდ, შემდეგ გეგმა ავტომატურად განახლდება.</string>
   <string name="premium_start_trial">საცდელი პერიოდის დაწყება</string>
   <string name="premium_trial_desc">განმეორებადი ანგარიშსწორება. გააუქმეთ ნებისმიერ დროს Google Play Store-ში.</string>

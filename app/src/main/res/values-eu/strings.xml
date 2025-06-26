@@ -74,9 +74,9 @@
   <string name="premium_sub2">Abiadura azkarra eta egonkorra</string>
   <string name="premium_sub3">Mundu osoko kokapena</string>
   <string name="premium_sub4">Aplikazioen iragazkia</string>
-  <string name="premium_weekly">Asterokoa</string>
-  <string name="premium_monthly">Hilerokoa</string>
-  <string name="premium_yearly">Urtero</string>
+  <string name="weekly">Asterokoa</string>
+  <string name="monthly">Hilerokoa</string>
+  <string name="yearly">Urtero</string>
   <string name="premium_desc">Gozatu lehenengo 3 egunak doan, eta gero plana automatikoki berritzen da.</string>
   <string name="premium_start_trial">Hasi probaldia</string>
   <string name="premium_trial_desc">Fakturazio errepikakorra. Edozein unetan bertan behera utzi dezakezu Google Play Store-n.</string>

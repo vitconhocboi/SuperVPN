@@ -74,9 +74,9 @@
   <string name="premium_sub2">Kecepatan cepat dan stabil</string>
   <string name="premium_sub3">Lokasi di seluruh dunia</string>
   <string name="premium_sub4">Filter Aplikasi</string>
-  <string name="premium_weekly">Mingguan</string>
-  <string name="premium_monthly">Bulanan</string>
-  <string name="premium_yearly">Tahunan</string>
+  <string name="weekly">Mingguan</string>
+  <string name="monthly">Bulanan</string>
+  <string name="yearly">Tahunan</string>
   <string name="premium_desc">Nikmati 3 hari pertama gratis, lalu paket diperbarui otomatis.</string>
   <string name="premium_start_trial">Mulai uji coba</string>
   <string name="premium_trial_desc">Penagihan berulang. Batalkan kapan saja di Google Play Store.</string>

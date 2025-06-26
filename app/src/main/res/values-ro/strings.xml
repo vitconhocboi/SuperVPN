@@ -74,9 +74,9 @@
   <string name="premium_sub2">Viteză rapidă și stabilă</string>
   <string name="premium_sub3">Locație mondială</string>
   <string name="premium_sub4">Filtru de aplicații</string>
-  <string name="premium_weekly">Săptămânal</string>
-  <string name="premium_monthly">Lunar</string>
-  <string name="premium_yearly">Anual</string>
+  <string name="weekly">Săptămânal</string>
+  <string name="monthly">Lunar</string>
+  <string name="yearly">Anual</string>
   <string name="premium_desc">Bucură-te de primele 3 zile gratuite, apoi abonamentul se reînnoiește automat.</string>
   <string name="premium_start_trial">Începeți perioada de probă</string>
   <string name="premium_trial_desc">Facturare recurentă. Anulați oricând din Magazinul Google Play.</string>

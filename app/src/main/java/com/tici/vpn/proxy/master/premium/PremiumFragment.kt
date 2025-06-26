@@ -59,9 +59,9 @@ class PremiumFragment : ProductFragment<FragmentPremiumBinding>() {
 
             startTrial.setOnClickListener {
                 if (selectedSku.productName.isNotEmpty()) {
-//                    premiumViewModel.launchSubscription(requireActivity(), selectedSku.productName)
-                    mainViewModel.setSub(true)
-                    requireActivity().finish()
+                    premiumViewModel.launchSubscription(requireActivity(), PremiumViewModel.PRODUCT_NAME)
+//                    mainViewModel.setSub(true)
+//                    requireActivity().finish()
                     //Navigator.startMainActivity(requireContext(), "")
                     Toast.makeText(requireContext(), com.tici.vpn.proxy.master.R.string.premium_purchase_success, Toast.LENGTH_SHORT).show()
                     (activity as? PremiumActivity)?.apply {

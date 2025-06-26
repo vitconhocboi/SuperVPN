@@ -74,9 +74,9 @@
   <string name="premium_sub2">Snelle en stabiele snelheid</string>
   <string name="premium_sub3">Wereldwijde locatie</string>
   <string name="premium_sub4">App-filter</string>
-  <string name="premium_weekly">Wekelijks</string>
-  <string name="premium_monthly">Maandelijks</string>
-  <string name="premium_yearly">Jaarlijks</string>
+  <string name="weekly">Wekelijks</string>
+  <string name="monthly">Maandelijks</string>
+  <string name="yearly">Jaarlijks</string>
   <string name="premium_desc">Geniet van de eerste 3 dagen gratis, daarna wordt het abonnement automatisch verlengd.</string>
   <string name="premium_start_trial">Proefperiode starten</string>
   <string name="premium_trial_desc">Terugkerende facturering. Op elk gewenst moment opzegbaar via de Google Play Store.</string>

@@ -74,9 +74,9 @@
   <string name="premium_sub2">വേഗതയേറിയതും സ്ഥിരതയുള്ളതുമായ വേഗത</string>
   <string name="premium_sub3">ലോകമെമ്പാടുമുള്ള സ്ഥാനം</string>
   <string name="premium_sub4">ആപ്പ് ഫിൽട്ടർ</string>
-  <string name="premium_weekly">പ്രതിവാരം</string>
-  <string name="premium_monthly">പ്രതിമാസ</string>
-  <string name="premium_yearly">വർഷം തോറും</string>
+  <string name="weekly">പ്രതിവാരം</string>
+  <string name="monthly">പ്രതിമാസ</string>
+  <string name="yearly">വർഷം തോറും</string>
   <string name="premium_desc">ആദ്യത്തെ 3 ദിവസം സൗജന്യമായി ആസ്വദിക്കൂ, തുടർന്ന് പ്ലാൻ സ്വയമേവ പുതുക്കും.</string>
   <string name="premium_start_trial">ട്രയൽ ആരംഭിക്കുക</string>
   <string name="premium_trial_desc">ആവർത്തിച്ചുള്ള ബില്ലിംഗ്. Google Play Store-ൽ എപ്പോൾ വേണമെങ്കിലും റദ്ദാക്കാം.</string>

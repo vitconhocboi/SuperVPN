@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="middle"
-            android:text="@string/premium_monthly"
+            android:text="@string/monthly"
             android:textColor="@color/text_gray_1" />
 
         <View
@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="middle"
-            android:text="@string/premium_monthly"
+            android:text="@string/monthly"
             android:textColor="@color/text_gray_1" />
 
 <!--        <androidx.appcompat.widget.AppCompatCheckBox-->

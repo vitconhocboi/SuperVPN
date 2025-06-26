@@ -74,9 +74,9 @@
   <string name="premium_sub2">Vinnige en stabiele spoed</string>
   <string name="premium_sub3">Wêreldwye ligging</string>
   <string name="premium_sub4">App-filter</string>
-  <string name="premium_weekly">Weekliks</string>
-  <string name="premium_monthly">Maandeliks</string>
-  <string name="premium_yearly">Jaarliks</string>
+  <string name="weekly">Weekliks</string>
+  <string name="monthly">Maandeliks</string>
+  <string name="yearly">Jaarliks</string>
   <string name="premium_desc">Geniet die eerste 3 dae gratis, dan hernu die plan outomaties.</string>
   <string name="premium_start_trial">Begin proeflopie</string>
   <string name="premium_trial_desc">Herhalende fakturering. Kanselleer enige tyd op Google Play Winkel.</string>

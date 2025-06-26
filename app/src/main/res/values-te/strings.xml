@@ -74,9 +74,9 @@
   <string name="premium_sub2">వేగవంతమైన మరియు స్థిరమైన వేగం</string>
   <string name="premium_sub3">ప్రపంచవ్యాప్తంగా ఉన్న స్థానం</string>
   <string name="premium_sub4">యాప్ ఫిల్టర్</string>
-  <string name="premium_weekly">వారానికోసారి</string>
-  <string name="premium_monthly">నెలవారీ</string>
-  <string name="premium_yearly">సంవత్సరానికి</string>
+  <string name="weekly">వారానికోసారి</string>
+  <string name="monthly">నెలవారీ</string>
+  <string name="yearly">సంవత్సరానికి</string>
   <string name="premium_desc">మొదటి 3 రోజులు ఉచితంగా ఆనందించండి, తర్వాత ప్లాన్ స్వయంచాలకంగా పునరుద్ధరించబడుతుంది.</string>
   <string name="premium_start_trial">ట్రయల్ ప్రారంభించండి</string>
   <string name="premium_trial_desc">పునరావృత బిల్లింగ్. Google Play Storeలో ఎప్పుడైనా రద్దు చేయండి.</string>

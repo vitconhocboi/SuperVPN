@@ -74,9 +74,9 @@
   <string name="premium_sub2">तेज़ और स्थिर गति</string>
   <string name="premium_sub3">विश्वव्यापी स्थान</string>
   <string name="premium_sub4">ऐप फ़िल्टर</string>
-  <string name="premium_weekly">साप्ताहिक</string>
-  <string name="premium_monthly">महीने के</string>
-  <string name="premium_yearly">सालाना</string>
+  <string name="weekly">साप्ताहिक</string>
+  <string name="monthly">महीने के</string>
+  <string name="yearly">सालाना</string>
   <string name="premium_desc">पहले 3 दिन निःशुल्क आनंद लें, उसके बाद योजना स्वतः नवीनीकृत हो जाएगी।</string>
   <string name="premium_start_trial">शुरू परीक्षण</string>
   <string name="premium_trial_desc">आवर्ती बिलिंग। Google Play स्टोर पर किसी भी समय रद्द करें।</string>

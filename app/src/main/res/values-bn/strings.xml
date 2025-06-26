@@ -74,9 +74,9 @@
   <string name="premium_sub2">দ্রুত এবং স্থিতিশীল গতি</string>
   <string name="premium_sub3">বিশ্বব্যাপী অবস্থান</string>
   <string name="premium_sub4">অ্যাপ ফিল্টার</string>
-  <string name="premium_weekly">সাপ্তাহিক</string>
-  <string name="premium_monthly">মাসিক</string>
-  <string name="premium_yearly">বার্ষিক</string>
+  <string name="weekly">সাপ্তাহিক</string>
+  <string name="monthly">মাসিক</string>
+  <string name="yearly">বার্ষিক</string>
   <string name="premium_desc">প্রথম ৩ দিন বিনামূল্যে উপভোগ করুন, তারপর প্ল্যানটি স্বয়ংক্রিয়ভাবে পুনর্নবীকরণ হবে।</string>
   <string name="premium_start_trial">ট্রায়াল শুরু করুন</string>
   <string name="premium_trial_desc">পুনরাবৃত্ত বিলিং। Google Play Store থেকে যেকোনো সময় বাতিল করুন।</string>

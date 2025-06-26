@@ -74,9 +74,9 @@
   <string name="premium_sub2">מהירות מהירה ויציבה</string>
   <string name="premium_sub3">מיקום עולמי</string>
   <string name="premium_sub4">מסנן אפליקציות</string>
-  <string name="premium_weekly">שְׁבוּעִי</string>
-  <string name="premium_monthly">יַרחוֹן</string>
-  <string name="premium_yearly">שְׁנָתִי</string>
+  <string name="weekly">שְׁבוּעִי</string>
+  <string name="monthly">יַרחוֹן</string>
+  <string name="yearly">שְׁנָתִי</string>
   <string name="premium_desc">תהנו מ-3 הימים הראשונים בחינם, לאחר מכן התוכנית מתחדשת אוטומטית.</string>
   <string name="premium_start_trial">התחלת ניסיון</string>
   <string name="premium_trial_desc">חיוב חוזר. ניתן לבטל בכל עת בחנות Google Play.</string>

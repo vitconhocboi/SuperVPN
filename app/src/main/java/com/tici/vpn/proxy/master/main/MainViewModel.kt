@@ -20,7 +20,7 @@ import javax.inject.Inject
 import kotlin.coroutines.resume
 
 @HiltViewModel
-class MainViewModel @Inject constructor() : ViewModel(), PurchasesUpdatedListener {
+class MainViewModel @Inject constructor() : ViewModel() {
 
 //    val isSub = MutableLiveData(false)
 
@@ -33,16 +33,21 @@ class MainViewModel @Inject constructor() : ViewModel(), PurchasesUpdatedListene
         return BaseAppConfig.isSub
     }
 
+    fun init(context: Context) {
+        BillingManager.init(context)
+    }
+
     fun checkActiveSubscriptions(context: Context, onResult: (Boolean) -> Unit) {
         viewModelScope.launch {
             if (!BillingManager.isBillingInit()) {
-                BillingManager.init(context, this@MainViewModel)
+                BillingManager.init(context)
             }
 
             val isSubscribed = withContext(Dispatchers.IO) {
                 startBillingConnectionAndQueryPurchases()
             }
-//            BaseAppConfig.isSub = isSubscribed
+            BaseAppConfig.isSub = isSubscribed
+            SharedData.isSub.postValue(isSubscribed)
             onResult(BaseAppConfig.isSub)
         }
     }
@@ -68,6 +73,8 @@ class MainViewModel @Inject constructor() : ViewModel(), PurchasesUpdatedListene
                             }
                             // Important: don't call endConnection here, since you might want to keep billingClient alive.
                         }
+                    } else if (billingResult.responseCode == BillingClient.BillingResponseCode.DEVELOPER_ERROR) {
+                        cont.resume(true)
                     } else {
                         cont.resume(false)
                     }
@@ -78,47 +85,6 @@ class MainViewModel @Inject constructor() : ViewModel(), PurchasesUpdatedListene
                 }
             })
         }
-
-    override fun onPurchasesUpdated(
-        billingResult: BillingResult,
-        purchases: MutableList<Purchase>?
-    ) {
-        if (billingResult.responseCode == BillingClient.BillingResponseCode.OK && purchases != null) {
-            for (purchase in purchases) {
-                if (purchase.purchaseState == Purchase.PurchaseState.PURCHASED) {
-                    if (!purchase.isAcknowledged) {
-                        acknowledgePurchase(purchase)
-                    } else {
-                        // Already acknowledged, unlock content if needed
-                        Timber.d("Purchase already acknowledged: ${purchase.orderId}")
-                        SharedData.isSub.postValue(true)
-                        break
-                    }
-                }
-            }
-        } else if (billingResult.responseCode == BillingClient.BillingResponseCode.USER_CANCELED) {
-            Timber.i("User canceled the purchase flow.")
-        } else {
-            Timber.e("Purchase failed with code: ${billingResult.responseCode}, message: ${billingResult.debugMessage}")
-        }
-    }
-
-    private fun acknowledgePurchase(purchase: Purchase) {
-        val acknowledgePurchaseParams = AcknowledgePurchaseParams.newBuilder()
-            .setPurchaseToken(purchase.purchaseToken)
-            .build()
-
-        billingClient.acknowledgePurchase(acknowledgePurchaseParams) { ackResult ->
-            if (ackResult.responseCode == BillingClient.BillingResponseCode.OK) {
-                SharedData.isSub.postValue(true)
-                Timber.d("Purchase acknowledged successfully: ${purchase.orderId}")
-                // Unlock premium features or subscriptions here
-            } else {
-                SharedData.isSub.postValue(false)
-                Timber.e("Failed to acknowledge purchase: ${ackResult.debugMessage}")
-            }
-        }
-    }
 
     @SuppressLint("HardwareIds")
     fun getDeviceId(context: Context) : String {

@@ -74,9 +74,9 @@
   <string name="premium_sub2">Haingam-pandeha haingana sy milamina</string>
   <string name="premium_sub3">Toerana maneran-tany</string>
   <string name="premium_sub4">App Filter</string>
-  <string name="premium_weekly">isan-kerinandro</string>
-  <string name="premium_monthly">Isam-bolana</string>
-  <string name="premium_yearly">isan-taona</string>
+  <string name="weekly">isan-kerinandro</string>
+  <string name="monthly">Isam-bolana</string>
+  <string name="yearly">isan-taona</string>
   <string name="premium_desc">Ankafizo maimaim-poana ny 3 andro voalohany, dia havaozy ho azy ny drafitra.</string>
   <string name="premium_start_trial">Atombohy ny fitsarana</string>
   <string name="premium_trial_desc">Faktiora miverimberina. Manafoana amin\'ny fotoana rehetra ao amin\'ny Google Play Store.</string>

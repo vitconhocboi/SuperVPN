@@ -5,7 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.android.billingclient.api.*
+import com.common.baseui.BaseAppConfig
 import com.tici.vpn.proxy.master.billing.BillingManager
+import com.tici.vpn.proxy.master.billing.BillingManager.billingClient
+import com.tici.vpn.proxy.master.main.SharedData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -16,7 +19,12 @@ import javax.inject.Inject
 import kotlin.coroutines.resume
 
 @HiltViewModel
-class PremiumViewModel @Inject constructor() : ViewModel() {
+class PremiumViewModel @Inject constructor() : ViewModel(), PurchasesUpdatedListener {
+
+    companion object {
+        const val PRODUCT_NAME = "Premium"
+        const val PRODUCT_ID = "premium_access"
+    }
 
     val skus = MutableLiveData<ArrayList<Sku>>()
 
@@ -29,7 +37,8 @@ class PremiumViewModel @Inject constructor() : ViewModel() {
             isLoading.postValue(true)
             val productDetailsList = withContext(Dispatchers.IO) {
                 queryAvailableSubscriptions(
-                    listOf("weekly", "monthly", "yearly")
+                    //listOf("weekly", "monthly", "yearly")
+                    listOf(PRODUCT_ID)
                 )
             }
 
@@ -38,19 +47,38 @@ class PremiumViewModel @Inject constructor() : ViewModel() {
             products.clear()
             for (product in productDetailsList) {
                 Timber.d("Billing Found subscription: ${product.name} - ${product.oneTimePurchaseOfferDetails?.priceCurrencyCode}")
-                val offer = product.subscriptionOfferDetails?.firstOrNull()
-                val pricingPhase = offer?.pricingPhases?.pricingPhaseList?.firstOrNull()
-                val formattedPrice = pricingPhase?.formattedPrice ?: "N/A"
-                listSkus.add(Sku(product.name, formattedPrice))
+                productDetailsList.forEach { productDetails ->
+                    // Loop through base plans (weekly, monthly, annual)
+                    productDetails.subscriptionOfferDetails?.forEach { offer ->
+                        val pricingPhase = offer.pricingPhases.pricingPhaseList.first()
+                        val price = pricingPhase.formattedPrice
+                        val planId = offer.basePlanId // weekly_plan, monthly_plan, etc.
+                        listSkus.add(Sku(planId, price))
+                        // Store or show these to user
+                    }
+                }
                 products.put(product.name, product)
-                Timber.d("Formatted Price: $formattedPrice")
+//                val offer = product.subscriptionOfferDetails?.firstOrNull()
+//                val pricingPhase = offer?.pricingPhases?.pricingPhaseList?.firstOrNull()
+//                val formattedPrice = pricingPhase?.formattedPrice ?: "N/A"
+//                listSkus.add(Sku(product.name, formattedPrice))
+//                products.put(product.name, product)
+//                Timber.d("Formatted Price: $formattedPrice")
             }
             if (listSkus.isEmpty()) {
-                listSkus.add(Sku("premium_weekly", "59.000 VND"))
-                listSkus.add(Sku("premium_monthly", "109.000 VND"))
-                listSkus.add(Sku("premium_yearly", "899.000 VND"))
+                listSkus.add(Sku("weekly", "59.000 VND"))
+                listSkus.add(Sku("monthly", "109.000 VND"))
+                listSkus.add(Sku("yearly", "899.000 VND"))
                 skus.postValue(listSkus)
             } else {
+                val durationOrder = mapOf(
+                    "weekly" to 0,
+                    "monthly" to 1,
+                    "yearly" to 2
+                )
+                listSkus.sortBy { sku ->
+                    durationOrder[sku.productName] ?: Int.MAX_VALUE
+                }
                 skus.postValue(listSkus)
             }
             isLoading.postValue(false)
@@ -87,6 +115,8 @@ class PremiumViewModel @Inject constructor() : ViewModel() {
 
     fun launchSubscription(activity: Activity, productName: String) {
         isLoading.postValue(true)
+        BillingManager.setPurchaseListener(this@PremiumViewModel)
+
         val productDetail = products.get(productName)
         if (productDetail == null) return
         val offerDetails = productDetail.subscriptionOfferDetails?.firstOrNull()
@@ -101,11 +131,54 @@ class PremiumViewModel @Inject constructor() : ViewModel() {
             )
             .build()
 
-        val billingResult = BillingManager.billingClient.launchBillingFlow(activity, billingFlowParams)
+        val billingResult = billingClient.launchBillingFlow(activity, billingFlowParams)
 
         if (billingResult.responseCode != BillingClient.BillingResponseCode.OK) {
             Timber.i("Billing Error launching billing flow: ${billingResult.debugMessage}")
         }
         isLoading.postValue(false)
+    }
+
+    override fun onPurchasesUpdated(
+        billingResult: BillingResult,
+        purchases: MutableList<Purchase>?
+    ) {
+        if (billingResult.responseCode == BillingClient.BillingResponseCode.OK && purchases != null) {
+            for (purchase in purchases) {
+                if (purchase.purchaseState == Purchase.PurchaseState.PURCHASED) {
+                    if (!purchase.isAcknowledged) {
+                        acknowledgePurchase(purchase)
+                    } else {
+                        // Already acknowledged, unlock content if needed
+                        Timber.d("Purchase already acknowledged: ${purchase.orderId}")
+                        SharedData.isSub.postValue(true)
+                        break
+                    }
+                }
+            }
+        } else if (billingResult.responseCode == BillingClient.BillingResponseCode.USER_CANCELED) {
+            Timber.i("User canceled the purchase flow.")
+        } else {
+            Timber.e("Purchase failed with code: ${billingResult.responseCode}, message: ${billingResult.debugMessage}")
+        }
+    }
+
+    private fun acknowledgePurchase(purchase: Purchase) {
+        val acknowledgePurchaseParams = AcknowledgePurchaseParams.newBuilder()
+            .setPurchaseToken(purchase.purchaseToken)
+            .build()
+
+        billingClient.acknowledgePurchase(acknowledgePurchaseParams) { ackResult ->
+            if (ackResult.responseCode == BillingClient.BillingResponseCode.OK) {
+                SharedData.isSub.postValue(true)
+                BaseAppConfig.isSub = true
+                Timber.d("Purchase acknowledged successfully: ${purchase.orderId}")
+                // Unlock premium features or subscriptions here
+            } else {
+                SharedData.isSub.postValue(false)
+//                BaseAppConfig.isSub = true
+                Timber.e("Failed to acknowledge purchase: ${ackResult.debugMessage}")
+            }
+        }
     }
 }

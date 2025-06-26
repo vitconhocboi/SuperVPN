@@ -74,9 +74,9 @@
   <string name="premium_sub2">Greitas ir stabilus greitis</string>
   <string name="premium_sub3">Vieta visame pasaulyje</string>
   <string name="premium_sub4">Programų filtras</string>
-  <string name="premium_weekly">Kas savaitę</string>
-  <string name="premium_monthly">Kas mėnesį</string>
-  <string name="premium_yearly">Kasmet</string>
+  <string name="weekly">Kas savaitę</string>
+  <string name="monthly">Kas mėnesį</string>
+  <string name="yearly">Kasmet</string>
   <string name="premium_desc">Pirmąsias 3 dienas mėgaukitės nemokamai, o vėliau planas automatiškai atnaujinamas.</string>
   <string name="premium_start_trial">Pradėti bandomąjį laikotarpį</string>
   <string name="premium_trial_desc">Pasikartojantys mokėjimai. Atšaukite bet kuriuo metu „Google Play“ parduotuvėje.</string>

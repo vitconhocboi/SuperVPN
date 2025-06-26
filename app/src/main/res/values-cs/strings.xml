@@ -74,9 +74,9 @@
   <string name="premium_sub2">Rychlá a stabilní rychlost</string>
   <string name="premium_sub3">Celosvětová lokalita</string>
   <string name="premium_sub4">Filtr aplikací</string>
-  <string name="premium_weekly">Týdně</string>
-  <string name="premium_monthly">Měsíční</string>
-  <string name="premium_yearly">Roční</string>
+  <string name="weekly">Týdně</string>
+  <string name="monthly">Měsíční</string>
+  <string name="yearly">Roční</string>
   <string name="premium_desc">První 3 dny si můžete užít zdarma, poté se předplatné automaticky obnoví.</string>
   <string name="premium_start_trial">Zahájit zkušební verzi</string>
   <string name="premium_trial_desc">Opakovaná fakturace. Zrušit můžete kdykoli v Obchodě Google Play.</string>

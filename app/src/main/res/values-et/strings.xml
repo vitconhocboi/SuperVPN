@@ -74,9 +74,9 @@
   <string name="premium_sub2">Kiire ja stabiilne kiirus</string>
   <string name="premium_sub3">Asukoht üle maailma</string>
   <string name="premium_sub4">Rakenduste filter</string>
-  <string name="premium_weekly">Iganädalane</string>
-  <string name="premium_monthly">Igakuine</string>
-  <string name="premium_yearly">Aastane</string>
+  <string name="weekly">Iganädalane</string>
+  <string name="monthly">Igakuine</string>
+  <string name="yearly">Aastane</string>
   <string name="premium_desc">Nautige esimesi 3 päeva tasuta, seejärel uueneb pakett automaatselt.</string>
   <string name="premium_start_trial">Alusta prooviperioodi</string>
   <string name="premium_trial_desc">Korduv arveldamine. Tühistada saab igal ajal Google Play poes.</string>

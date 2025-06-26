@@ -74,9 +74,9 @@
   <string name="premium_sub2">Shpejtësi e shpejtë dhe e qëndrueshme</string>
   <string name="premium_sub3">Vendndodhja në të gjithë botën</string>
   <string name="premium_sub4">Filtri i Aplikacionit</string>
-  <string name="premium_weekly">Javore</string>
-  <string name="premium_monthly">Mujore</string>
-  <string name="premium_yearly">vjetore</string>
+  <string name="weekly">Javore</string>
+  <string name="monthly">Mujore</string>
+  <string name="yearly">vjetore</string>
   <string name="premium_desc">Shijoni 3 ditët e para falas, pastaj plani rinovohet automatikisht.</string>
   <string name="premium_start_trial">Fillo provën</string>
   <string name="premium_trial_desc">Faturim i përsëritur. Anulojeni në çdo kohë në Google Play Store.</string>

@@ -74,9 +74,9 @@
   <string name="premium_sub2">Isantya esikhawulezayo nesizinzileyo</string>
   <string name="premium_sub3">Indawo yehlabathi</string>
   <string name="premium_sub4">Isihluzi sosetyenziso</string>
-  <string name="premium_weekly">Rhoqo ngeveki</string>
-  <string name="premium_monthly">Ngenyanga</string>
-  <string name="premium_yearly">Ngonyaka</string>
+  <string name="weekly">Rhoqo ngeveki</string>
+  <string name="monthly">Ngenyanga</string>
+  <string name="yearly">Ngonyaka</string>
   <string name="premium_desc">Yonwabela iintsuku ezi-3 zokuqala simahla, emva koko isicwangciso siyazihlaziya.</string>
   <string name="premium_start_trial">Qala ulingo</string>
   <string name="premium_trial_desc">Ukuhlawula rhoqo. Rhoxisa nanini na kuGoogle Play Store.</string>

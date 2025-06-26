@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">SuperVPN</string>
-    <string name="ads_message_inter">Pixel Art is running, please wait...</string>
+    <string name="ads_message_inter">VPN is running, please wait…</string>
     <string name="ads_message_open">Welcome back to Pixel Art</string>
     <string name="ads_message_notice">This action can contains ads</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -138,9 +138,9 @@
     <string name="premium_sub2">Fast and stable speed</string>
     <string name="premium_sub3">Worldwide location</string>
     <string name="premium_sub4">App Filter</string>
-    <string name="premium_weekly">Weekly</string>
-    <string name="premium_monthly">Monthly</string>
-    <string name="premium_yearly">Yearly</string>
+    <string name="weekly">Weekly</string>
+    <string name="monthly">Monthly</string>
+    <string name="yearly">Yearly</string>
     <string name="premium_desc">Enjoy the first 3 days free, then the plan auto-renews.</string>
     <string name="premium_start_trial">Start trial</string>
     <string name="premium_trial_desc">Recurring billing. Cancel anytime on Google Play Store.</string>

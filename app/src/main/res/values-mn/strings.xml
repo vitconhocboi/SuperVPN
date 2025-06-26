@@ -74,9 +74,9 @@
   <string name="premium_sub2">Хурдан, тогтвортой хурд</string>
   <string name="premium_sub3">Дэлхий даяар байршил</string>
   <string name="premium_sub4">Апп шүүлтүүр</string>
-  <string name="premium_weekly">Долоо хоног бүр</string>
-  <string name="premium_monthly">Сар бүр</string>
-  <string name="premium_yearly">Жил бүр</string>
+  <string name="weekly">Долоо хоног бүр</string>
+  <string name="monthly">Сар бүр</string>
+  <string name="yearly">Жил бүр</string>
   <string name="premium_desc">Эхний 3 өдөр үнэгүй, дараа нь төлөвлөгөөг автоматаар шинэчил.</string>
   <string name="premium_start_trial">Туршилтыг эхлүүлэх</string>
   <string name="premium_trial_desc">Тогтмол тооцоо. Google Play Store дээр хүссэн үедээ цуцлаарай.</string>

@@ -74,9 +74,9 @@
   <string name="premium_sub2">Брза и стабилна брзина</string>
   <string name="premium_sub3">Локација широм света</string>
   <string name="premium_sub4">Филтер апликација</string>
-  <string name="premium_weekly">Недељно</string>
-  <string name="premium_monthly">Месечно</string>
-  <string name="premium_yearly">Годишње</string>
+  <string name="weekly">Недељно</string>
+  <string name="monthly">Месечно</string>
+  <string name="yearly">Годишње</string>
   <string name="premium_desc">Уживајте прва 3 дана бесплатно, а затим се план аутоматски обнавља.</string>
   <string name="premium_start_trial">Започни пробни период</string>
   <string name="premium_trial_desc">Периодично обрачунавање. Откажите било када у Google Play продавници.</string>

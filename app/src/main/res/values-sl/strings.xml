@@ -74,9 +74,9 @@
   <string name="premium_sub2">Hitra in stabilna hitrost</string>
   <string name="premium_sub3">Lokacija po vsem svetu</string>
   <string name="premium_sub4">Filter aplikacij</string>
-  <string name="premium_weekly">Tedensko</string>
-  <string name="premium_monthly">Mesečno</string>
-  <string name="premium_yearly">Letno</string>
+  <string name="weekly">Tedensko</string>
+  <string name="monthly">Mesečno</string>
+  <string name="yearly">Letno</string>
   <string name="premium_desc">Prve 3 dni uživajte brezplačno, nato se paket samodejno podaljša.</string>
   <string name="premium_start_trial">Začni preizkus</string>
   <string name="premium_trial_desc">Ponavljajoče se obračunavanje. Prekličete lahko kadar koli v trgovini Google Play.</string>

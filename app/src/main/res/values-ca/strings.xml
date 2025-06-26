@@ -74,9 +74,9 @@
   <string name="premium_sub2">Velocitat ràpida i estable</string>
   <string name="premium_sub3">Ubicació mundial</string>
   <string name="premium_sub4">Filtre d\'aplicacions</string>
-  <string name="premium_weekly">Setmanalment</string>
-  <string name="premium_monthly">Mensualment</string>
-  <string name="premium_yearly">Anualment</string>
+  <string name="weekly">Setmanalment</string>
+  <string name="monthly">Mensualment</string>
+  <string name="yearly">Anualment</string>
   <string name="premium_desc">Gaudeix dels primers 3 dies gratuïts i després el pla es renova automàticament.</string>
   <string name="premium_start_trial">Inicia la prova</string>
   <string name="premium_trial_desc">Facturació recurrent. Cancel·la quan vulguis a Google Play Store.</string>

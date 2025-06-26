@@ -74,9 +74,9 @@
   <string name="premium_sub2">Vitès rapid ak ki estab</string>
   <string name="premium_sub3">Kote atravè lemond</string>
   <string name="premium_sub4">Filtè Aplikasyon</string>
-  <string name="premium_weekly">Chak semèn</string>
-  <string name="premium_monthly">Chak mwa</string>
-  <string name="premium_yearly">Chak ane</string>
+  <string name="weekly">Chak semèn</string>
+  <string name="monthly">Chak mwa</string>
+  <string name="yearly">Chak ane</string>
   <string name="premium_desc">Pwofite twa premye jou yo gratis, apre sa plan an ap renouvle otomatikman.</string>
   <string name="premium_start_trial">Kòmanse esè a</string>
   <string name="premium_trial_desc">Faktirasyon rekiran. Ou ka anile nenpòt ki lè sou Google Play Store.</string>

@@ -74,9 +74,9 @@
   <string name="premium_sub2">Швидка та стабільна швидкість</string>
   <string name="premium_sub3">Розташування по всьому світу</string>
   <string name="premium_sub4">Фільтр програм</string>
-  <string name="premium_weekly">Щотижня</string>
-  <string name="premium_monthly">Щомісяця</string>
-  <string name="premium_yearly">щорічно</string>
+  <string name="weekly">Щотижня</string>
+  <string name="monthly">Щомісяця</string>
+  <string name="yearly">щорічно</string>
   <string name="premium_desc">Перші 3 дні користуйтеся безкоштовно, потім план автоматично поновлюється.</string>
   <string name="premium_start_trial">Почати пробний період</string>
   <string name="premium_trial_desc">Регулярне виставлення рахунків. Скасувати можна будь-коли в Google Play Store.</string>

@@ -74,9 +74,9 @@
   <string name="premium_sub2">ઝડપી અને સ્થિર ગતિ</string>
   <string name="premium_sub3">વિશ્વવ્યાપી સ્થાન</string>
   <string name="premium_sub4">એપ્લિકેશન ફિલ્ટર</string>
-  <string name="premium_weekly">સાપ્તાહિક</string>
-  <string name="premium_monthly">માસિક</string>
-  <string name="premium_yearly">વાર્ષિક</string>
+  <string name="weekly">સાપ્તાહિક</string>
+  <string name="monthly">માસિક</string>
+  <string name="yearly">વાર્ષિક</string>
   <string name="premium_desc">પહેલા 3 દિવસ મફતમાં માણો, પછી પ્લાન આપમેળે રિન્યૂ થશે.</string>
   <string name="premium_start_trial">ટ્રાયલ શરૂ કરો</string>
   <string name="premium_trial_desc">પુનરાવર્તિત બિલિંગ. Google Play Store પર ગમે ત્યારે રદ કરો.</string>

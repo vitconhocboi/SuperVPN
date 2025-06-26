@@ -74,9 +74,9 @@
   <string name="premium_sub2">Brza i stabilna brzina</string>
   <string name="premium_sub3">Lokacija diljem svijeta</string>
   <string name="premium_sub4">Filter aplikacija</string>
-  <string name="premium_weekly">Tjedni</string>
-  <string name="premium_monthly">Mjesečno</string>
-  <string name="premium_yearly">Godišnje</string>
+  <string name="weekly">Tjedni</string>
+  <string name="monthly">Mjesečno</string>
+  <string name="yearly">Godišnje</string>
   <string name="premium_desc">Prva 3 dana su besplatna, a zatim se pretplata automatski obnavlja.</string>
   <string name="premium_start_trial">Započni probno razdoblje</string>
   <string name="premium_trial_desc">Ponavljajuća naplata. Otkažite bilo kada u Trgovini Google Play.</string>

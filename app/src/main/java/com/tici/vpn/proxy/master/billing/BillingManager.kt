@@ -11,12 +11,20 @@ object BillingManager {
     lateinit var billingClient: BillingClient
     private var isBillingReady = false
 
+    private var listener: PurchasesUpdatedListener? = null
+
+    fun setPurchaseListener(l: PurchasesUpdatedListener) {
+        listener = l
+    }
+
     fun isBillingInit() = ::billingClient.isInitialized
 
-    fun init(context: Context, listener: PurchasesUpdatedListener) {
+    fun init(context: Context) {
         billingClient = BillingClient.newBuilder(context)
             .enablePendingPurchases()
-            .setListener(listener)
+            .setListener { result, purchases ->
+                listener?.onPurchasesUpdated(result, purchases)
+            }
             .build()
 
         billingClient.startConnection(object : BillingClientStateListener {

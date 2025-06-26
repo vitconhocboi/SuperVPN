@@ -74,9 +74,9 @@
   <string name="premium_sub2">Tốc độ nhanh và ổn định</string>
   <string name="premium_sub3">Vị trí trên toàn thế giới</string>
   <string name="premium_sub4">Bộ lọc ứng dụng</string>
-  <string name="premium_weekly">Hàng tuần</string>
-  <string name="premium_monthly">Hàng tháng</string>
-  <string name="premium_yearly">Hàng năm</string>
+  <string name="weekly">Hàng tuần</string>
+  <string name="monthly">Hàng tháng</string>
+  <string name="yearly">Hàng năm</string>
   <string name="premium_desc">Tận hưởng 3 ngày đầu tiên miễn phí, sau đó gói cước sẽ tự động gia hạn.</string>
   <string name="premium_start_trial">Bắt đầu dùng thử</string>
   <string name="premium_trial_desc">Thanh toán định kỳ. Hủy bất cứ lúc nào trên Google Play Store.</string>

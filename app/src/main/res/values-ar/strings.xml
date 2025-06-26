@@ -74,9 +74,9 @@
   <string name="premium_sub2">سرعة سريعة ومستقرة</string>
   <string name="premium_sub3">الموقع العالمي</string>
   <string name="premium_sub4">مرشح التطبيق</string>
-  <string name="premium_weekly">أسبوعي</string>
-  <string name="premium_monthly">شهريا</string>
-  <string name="premium_yearly">سنوي</string>
+  <string name="weekly">أسبوعي</string>
+  <string name="monthly">شهريا</string>
+  <string name="yearly">سنوي</string>
   <string name="premium_desc">استمتع بأول 3 أيام مجانًا، ثم يتم تجديد الخطة تلقائيًا.</string>
   <string name="premium_start_trial">بدء المحاكمة</string>
   <string name="premium_trial_desc">فاتورة متكررة. يمكنك الإلغاء في أي وقت على متجر Google Play.</string>

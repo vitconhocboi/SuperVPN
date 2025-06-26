@@ -74,9 +74,9 @@
   <string name="premium_sub2">Veloċità mgħaġġla u stabbli</string>
   <string name="premium_sub3">Lokazzjoni madwar id-dinja</string>
   <string name="premium_sub4">Filtru tal-App</string>
-  <string name="premium_weekly">Kull ġimgħa</string>
-  <string name="premium_monthly">Kull xahar</string>
-  <string name="premium_yearly">Kull sena</string>
+  <string name="weekly">Kull ġimgħa</string>
+  <string name="monthly">Kull xahar</string>
+  <string name="yearly">Kull sena</string>
   <string name="premium_desc">Gawdi l-ewwel 3 ijiem b\'xejn, imbagħad il-pjan jiġġedded awtomatikament.</string>
   <string name="premium_start_trial">Ibda l-prova</string>
   <string name="premium_trial_desc">Kontijiet rikorrenti. Ikkanċella f\'kull ħin fuq Google Play Store.</string>

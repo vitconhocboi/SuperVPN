@@ -74,9 +74,9 @@
   <string name="premium_sub2">Бърза и стабилна скорост</string>
   <string name="premium_sub3">Местоположение по целия свят</string>
   <string name="premium_sub4">Филтър за приложения</string>
-  <string name="premium_weekly">Ежеседмично</string>
-  <string name="premium_monthly">Месечно</string>
-  <string name="premium_yearly">Годишно</string>
+  <string name="weekly">Ежеседмично</string>
+  <string name="monthly">Месечно</string>
+  <string name="yearly">Годишно</string>
   <string name="premium_desc">Възползвайте се от първите 3 дни безплатно, след което планът се подновява автоматично.</string>
   <string name="premium_start_trial">Започнете пробен период</string>
   <string name="premium_trial_desc">Повтарящо се фактуриране. Можете да анулирате по всяко време в Google Play Store.</string>

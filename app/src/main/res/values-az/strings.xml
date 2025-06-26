@@ -74,9 +74,9 @@
   <string name="premium_sub2">Sürətli və sabit sürət</string>
   <string name="premium_sub3">Ümumdünya yeri</string>
   <string name="premium_sub4">Tətbiq Filtri</string>
-  <string name="premium_weekly">Həftəlik</string>
-  <string name="premium_monthly">Aylıq</string>
-  <string name="premium_yearly">İllik</string>
+  <string name="weekly">Həftəlik</string>
+  <string name="monthly">Aylıq</string>
+  <string name="yearly">İllik</string>
   <string name="premium_desc">İlk 3 gündən pulsuz yararlanın, sonra plan avtomatik yenilənir.</string>
   <string name="premium_start_trial">Sınağa başlayın</string>
   <string name="premium_trial_desc">Təkrarlanan faktura. Google Play Store-da istənilən vaxt ləğv edin.</string>

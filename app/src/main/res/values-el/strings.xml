@@ -74,9 +74,9 @@
   <string name="premium_sub2">Γρήγορη και σταθερή ταχύτητα</string>
   <string name="premium_sub3">Παγκόσμια τοποθεσία</string>
   <string name="premium_sub4">Φίλτρο εφαρμογής</string>
-  <string name="premium_weekly">Εβδομαδιαίος</string>
-  <string name="premium_monthly">Μηνιαίος</string>
-  <string name="premium_yearly">Ετήσια</string>
+  <string name="weekly">Εβδομαδιαίος</string>
+  <string name="monthly">Μηνιαίος</string>
+  <string name="yearly">Ετήσια</string>
   <string name="premium_desc">Απολαύστε τις πρώτες 3 ημέρες δωρεάν και στη συνέχεια το πρόγραμμα ανανεώνεται αυτόματα.</string>
   <string name="premium_start_trial">Έναρξη δοκιμαστικής περιόδου</string>
   <string name="premium_trial_desc">Επαναλαμβανόμενη χρέωση. Ακύρωση οποιαδήποτε στιγμή στο Google Play Store.</string>

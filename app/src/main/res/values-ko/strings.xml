@@ -74,9 +74,9 @@
   <string name="premium_sub2">빠르고 안정적인 속도</string>
   <string name="premium_sub3">전 세계 위치</string>
   <string name="premium_sub4">앱 필터</string>
-  <string name="premium_weekly">주간</string>
-  <string name="premium_monthly">월간 간행물</string>
-  <string name="premium_yearly">매년</string>
+  <string name="weekly">주간</string>
+  <string name="monthly">월간 간행물</string>
+  <string name="yearly">매년</string>
   <string name="premium_desc">처음 3일간은 무료로 이용할 수 있으며, 그 이후에는 플랜이 자동으로 갱신됩니다.</string>
   <string name="premium_start_trial">체험판 시작</string>
   <string name="premium_trial_desc">정기 결제입니다. Google Play 스토어에서 언제든지 취소할 수 있습니다.</string>

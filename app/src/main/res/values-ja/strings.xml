@@ -74,9 +74,9 @@
   <string name="premium_sub2">高速かつ安定した速度</string>
   <string name="premium_sub3">世界的な拠点</string>
   <string name="premium_sub4">アプリフィルター</string>
-  <string name="premium_weekly">毎週</string>
-  <string name="premium_monthly">月次</string>
-  <string name="premium_yearly">年間</string>
+  <string name="weekly">毎週</string>
+  <string name="monthly">月次</string>
+  <string name="yearly">年間</string>
   <string name="premium_desc">最初の 3 日間は無料でご利用いただけます。その後、プランは自動更新されます。</string>
   <string name="premium_start_trial">トライアルを開始</string>
   <string name="premium_trial_desc">定期請求。Google Play ストアでいつでもキャンセルできます。</string>

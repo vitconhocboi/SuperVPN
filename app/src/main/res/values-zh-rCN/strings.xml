@@ -74,9 +74,9 @@
   <string name="premium_sub2">速度快且稳定</string>
   <string name="premium_sub3">全球分布</string>
   <string name="premium_sub4">应用程序过滤器</string>
-  <string name="premium_weekly">每周</string>
-  <string name="premium_monthly">每月</string>
-  <string name="premium_yearly">每年</string>
+  <string name="weekly">每周</string>
+  <string name="monthly">每月</string>
+  <string name="yearly">每年</string>
   <string name="premium_desc">享受前 3 天免费，然后计划自动续订。</string>
   <string name="premium_start_trial">开始试用</string>
   <string name="premium_trial_desc">定期计费。可随时在 Google Play 商店取消。</string>

@@ -74,9 +74,9 @@
   <string name="premium_sub2">Тиз һәм тотрыклы тизлек</string>
   <string name="premium_sub3">Бөтен дөнья буенча урнашу</string>
   <string name="premium_sub4">Кушымта фильтры</string>
-  <string name="premium_weekly">Атна саен</string>
-  <string name="premium_monthly">Ай саен</string>
-  <string name="premium_yearly">Ел саен</string>
+  <string name="weekly">Атна саен</string>
+  <string name="monthly">Ай саен</string>
+  <string name="yearly">Ел саен</string>
   <string name="premium_desc">Беренче 3 көн бушлай ләззәтләнегез, аннары план автоматик яңартыла.</string>
   <string name="premium_start_trial">Сынауны башлау</string>
   <string name="premium_trial_desc">Кабатлау. Google Play кибетендә теләсә кайсы вакытта кире кагарга.</string>

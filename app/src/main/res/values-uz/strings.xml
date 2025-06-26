@@ -74,9 +74,9 @@
   <string name="premium_sub2">Tez va barqaror tezlik</string>
   <string name="premium_sub3">Dunyo bo\'ylab joylashuvi</string>
   <string name="premium_sub4">Ilova filtri</string>
-  <string name="premium_weekly">Haftalik</string>
-  <string name="premium_monthly">Oylik</string>
-  <string name="premium_yearly">Yillik</string>
+  <string name="weekly">Haftalik</string>
+  <string name="monthly">Oylik</string>
+  <string name="yearly">Yillik</string>
   <string name="premium_desc">Dastlabki 3 kun bepul, keyin esa reja avtomatik ravishda yangilanadi.</string>
   <string name="premium_start_trial">Sinovni boshlang</string>
   <string name="premium_trial_desc">Takroriy hisob-kitob. Google Play doʻkonida istalgan vaqtda bekor qiling.</string>

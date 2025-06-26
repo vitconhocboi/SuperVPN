@@ -74,9 +74,9 @@
   <string name="premium_sub2">ความเร็วที่รวดเร็วและเสถียร</string>
   <string name="premium_sub3">ที่ตั้งทั่วโลก</string>
   <string name="premium_sub4">ตัวกรองแอป</string>
-  <string name="premium_weekly">รายสัปดาห์</string>
-  <string name="premium_monthly">รายเดือน</string>
-  <string name="premium_yearly">รายปี</string>
+  <string name="weekly">รายสัปดาห์</string>
+  <string name="monthly">รายเดือน</string>
+  <string name="yearly">รายปี</string>
   <string name="premium_desc">ใช้งานฟรี 3 วันแรก จากนั้นแผนจะได้รับการต่ออายุอัตโนมัติ</string>
   <string name="premium_start_trial">เริ่มทดลองใช้งาน</string>
   <string name="premium_trial_desc">การเรียกเก็บเงินซ้ำ ยกเลิกได้ตลอดเวลาบน Google Play Store</string>

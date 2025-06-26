@@ -74,9 +74,9 @@
   <string name="premium_sub2">Nopea ja vakaa nopeus</string>
   <string name="premium_sub3">Maailmanlaajuinen sijainti</string>
   <string name="premium_sub4">Sovellussuodatin</string>
-  <string name="premium_weekly">Viikoittain</string>
-  <string name="premium_monthly">Kuukausittain</string>
-  <string name="premium_yearly">Vuosittain</string>
+  <string name="weekly">Viikoittain</string>
+  <string name="monthly">Kuukausittain</string>
+  <string name="yearly">Vuosittain</string>
   <string name="premium_desc">Nauti ensimmäiset 3 päivää ilmaiseksi, minkä jälkeen tilaus uusiutuu automaattisesti.</string>
   <string name="premium_start_trial">Aloita kokeilu</string>
   <string name="premium_trial_desc">Toistuva laskutus. Voit peruuttaa tilauksen milloin tahansa Google Play Kaupassa.</string>

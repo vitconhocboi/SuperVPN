@@ -74,9 +74,9 @@
   <string name="premium_sub2">වේගවත් සහ ස්ථාවර වේගය</string>
   <string name="premium_sub3">ලොව පුරා පිහිටීම</string>
   <string name="premium_sub4">යෙදුම් පෙරහන</string>
-  <string name="premium_weekly">සතිපතා</string>
-  <string name="premium_monthly">මාසිකව</string>
-  <string name="premium_yearly">වාර්ෂිකව</string>
+  <string name="weekly">සතිපතා</string>
+  <string name="monthly">මාසිකව</string>
+  <string name="yearly">වාර්ෂිකව</string>
   <string name="premium_desc">පළමු දින 3 නොමිලේ භුක්ති විඳින්න, පසුව සැලැස්ම ස්වයංක්‍රීයව අලුත් වේ.</string>
   <string name="premium_start_trial">අත්හදා බැලීම ආරම්භ කරන්න</string>
   <string name="premium_trial_desc">පුනරාවර්තන බිල්පත්. Google Play Store හි ඕනෑම වේලාවක අවලංගු කරන්න.</string>

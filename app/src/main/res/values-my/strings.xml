@@ -74,9 +74,9 @@
   <string name="premium_sub2">မြန်ပြီး တည်ငြိမ်တဲ့ အမြန်နှုန်း</string>
   <string name="premium_sub3">ကမ္ဘာအနှံ့တည်နေရာ</string>
   <string name="premium_sub4">အက်ပ်စစ်ထုတ်မှု</string>
-  <string name="premium_weekly">အပတ်စဉ်</string>
-  <string name="premium_monthly">လစဉ်</string>
-  <string name="premium_yearly">နှစ်အလိုက်</string>
+  <string name="weekly">အပတ်စဉ်</string>
+  <string name="monthly">လစဉ်</string>
+  <string name="yearly">နှစ်အလိုက်</string>
   <string name="premium_desc">ပထမ 3 ရက် အခမဲ့ခံစားပါ၊ ထို့နောက် အစီအစဉ်ကို အလိုအလျောက် သက်တမ်းတိုးလိုက်ပါ။</string>
   <string name="premium_start_trial">အစမ်းစတင်ပါ။</string>
   <string name="premium_trial_desc">ထပ်တလဲလဲ ငွေတောင်းခံခြင်း။ Google Play Store တွင် အချိန်မရွေး ပယ်ဖျက်ပါ။</string>

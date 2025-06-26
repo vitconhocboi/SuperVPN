@@ -14,10 +14,10 @@ android {
 
     defaultConfig {
         applicationId = "com.tici.vpn.proxy.master"
-        minSdk = 24
+        minSdk = 27
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -62,12 +62,12 @@ android {
             buildConfigField("boolean", "ADS_ON", "true")
             buildConfigField("boolean", "FIREBASE_DEBUG", "false")
 
-            buildConfigField("String", "app_ads_id_new", "\"ca-app-pub-4253116256630907~6076109717\"")
+            buildConfigField("String", "app_ads_id_new", "\"ca-app-pub-4253116256630907~7625139262\"")
             buildConfigField("String", "ads_native_id_new", "\"ca-app-pub-4253116256630907/4890887109\"")
-            buildConfigField("String", "ads_banner_id_new", "\"ca-app-pub-4253116256630907/1536931615\"")
-            buildConfigField("String", "ads_full_without_video_new", "\"ca-app-pub-4253116256630907/2192705023\"")
-            buildConfigField("String", "ads_full_with_video_new", "\"ca-app-pub-4253116256630907/2192705023\"")
-            buildConfigField("String", "app_ads_open_resume_id_new", "\"ca-app-pub-4253116256630907/9879623352\"")
+            buildConfigField("String", "ads_banner_id_new", "\"ca-app-pub-4253116256630907/3619247978\"")
+            buildConfigField("String", "ads_full_without_video_new", "\"ca-app-pub-4253116256630907/2676064914\"")
+            buildConfigField("String", "ads_full_with_video_new", "\"ca-app-pub-4253116256630907/2676064914\"")
+            buildConfigField("String", "app_ads_open_resume_id_new", "\"ca-app-pub-4253116256630907/3257954190\"")
             buildConfigField("String", "ads_reward_id_new", "\"ca-app-pub-4253116256630907/6423594072\"")
 
             isShrinkResources = true

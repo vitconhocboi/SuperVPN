@@ -74,9 +74,9 @@
   <string name="premium_sub2">Kelajuan pantas dan stabil</string>
   <string name="premium_sub3">Lokasi seluruh dunia</string>
   <string name="premium_sub4">Penapis Apl</string>
-  <string name="premium_weekly">Mingguan</string>
-  <string name="premium_monthly">Bulanan</string>
-  <string name="premium_yearly">setiap tahun</string>
+  <string name="weekly">Mingguan</string>
+  <string name="monthly">Bulanan</string>
+  <string name="yearly">setiap tahun</string>
   <string name="premium_desc">Nikmati 3 hari pertama percuma, kemudian pelan itu diperbaharui secara automatik.</string>
   <string name="premium_start_trial">Mulakan percubaan</string>
   <string name="premium_trial_desc">Pengebilan berulang. Batalkan pada bila-bila masa di Gedung Google Play.</string>

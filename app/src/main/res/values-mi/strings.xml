@@ -74,9 +74,9 @@
   <string name="premium_sub2">Te tere tere me te pumau</string>
   <string name="premium_sub3">Te waahi o te ao</string>
   <string name="premium_sub4">Tātari Taupānga</string>
-  <string name="premium_weekly">Ia wiki</string>
-  <string name="premium_monthly">Ia marama</string>
-  <string name="premium_yearly">Ia tau</string>
+  <string name="weekly">Ia wiki</string>
+  <string name="monthly">Ia marama</string>
+  <string name="yearly">Ia tau</string>
   <string name="premium_desc">Kia pai ki nga ra tuatahi e 3 kore utu, katahi ka whakahou-aunoa te mahere.</string>
   <string name="premium_start_trial">Tīmatahia te whakamatautau</string>
   <string name="premium_trial_desc">Te nama haere tonu. Whakakore i nga wa katoa i runga i te Toa Play Google.</string>

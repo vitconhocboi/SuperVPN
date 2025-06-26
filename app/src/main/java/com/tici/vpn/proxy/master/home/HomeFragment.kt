@@ -298,9 +298,15 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                         ).show()
                     }
                 } else {
-                    stopSpeedTest()
-                    vpnPermissionLauncher.unregister()
-                    stopVpnService()
+                    if (NetworkUtils.isInternetAvailable(requireActivity())) {
+                        stopSpeedTest()
+                        vpnPermissionLauncher.unregister()
+                        stopVpnService()
+                    } else {
+                        Toast.makeText(
+                            requireContext(), "No internet connection", Toast.LENGTH_SHORT
+                        ).show()
+                    }
                 }
             }
 

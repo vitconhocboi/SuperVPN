@@ -74,9 +74,9 @@
   <string name="premium_sub2">سرعت سریع و پایدار</string>
   <string name="premium_sub3">موقعیت جهانی</string>
   <string name="premium_sub4">فیلتر برنامه</string>
-  <string name="premium_weekly">هفتگی</string>
-  <string name="premium_monthly">ماهانه</string>
-  <string name="premium_yearly">سالانه</string>
+  <string name="weekly">هفتگی</string>
+  <string name="monthly">ماهانه</string>
+  <string name="yearly">سالانه</string>
   <string name="premium_desc">از ۳ روز اول رایگان لذت ببرید، سپس طرح به صورت خودکار تمدید می‌شود.</string>
   <string name="premium_start_trial">شروع محاکمه</string>
   <string name="premium_trial_desc">صورتحساب دوره‌ای. هر زمان که بخواهید می‌توانید آن را در فروشگاه گوگل پلی لغو کنید.</string>
