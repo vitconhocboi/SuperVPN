@@ -4,6 +4,7 @@ import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.common.baseui.BaseAppConfig
 import com.common.baseui.extension.setOnClickNoDoubleClick
@@ -59,14 +60,18 @@ class LanguageFragment (
         }
 
         binding.ivDone.setOnClickNoDoubleClick {
-            BaseAppConfig.firstTimeSetup = false
-            BaseAppConfig.languageCode = languageCode
-            if (BaseAppConfig.languageCode.isNotEmpty()) {
-                Lingver.getInstance().setLocale(requireContext(), BaseAppConfig.languageCode)
+            if (languageCode.isEmpty()) {
+//                Toast.makeText(requireContext(), "Language is not change", Toast.LENGTH_SHORT).show()
+                BaseAppConfig.firstTimeSetup = false
             } else {
-                Lingver.getInstance().setFollowSystemLocale(requireContext())
+                BaseAppConfig.firstTimeSetup = false
+                BaseAppConfig.languageCode = languageCode
+                if (BaseAppConfig.languageCode.isNotEmpty()) {
+                    Lingver.getInstance().setLocale(requireContext(), BaseAppConfig.languageCode)
+                } else {
+                    Lingver.getInstance().setFollowSystemLocale(requireContext())
+                }
             }
-
             (activity as? LanguageActivity)?.apply {
                 Navigator.startMainActivity(this)
                 finish()

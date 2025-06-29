@@ -20,6 +20,7 @@ import com.tici.vpn.proxy.master.dialog.SettingSuccessDialog
 import com.tici.vpn.proxy.master.remoteconfig.AdPlacementId
 import com.tici.vpn.proxy.master.remoteconfig.FirebaseConfigManager
 import com.simple.libads.AdNetworkType
+import com.simple.libads.FrameAds
 import com.simple.libads.base.bannerads.BannerLoader
 import com.simple.libads.config.InterConfig
 import com.simple.libads.manager.BannerManager
@@ -118,23 +119,20 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
             }
 
             if (!BaseAppConfig.isSub) {
-                configAd.adBanner.find { it.placementId == AdPlacementId.BANNER_HOME }?.let {
-                    mBannerLoader = BannerManager.createLoader(adNetwork = it.adNetwork, bannerId = it.adId)
-                    mBannerLoader?.canRequest = true
-                    try {
-                        mBannerLoader?.loadAds(
-                            context = this@MainActivity, bannerType = it.adType, parent = frameBanner
-                        )
-                    } catch (e: Exception) {}
-                }
+                initLoadAds(frameBanner)
             }
         }
 
         SharedData.isSub.observe(this) { it ->
+            Timber.d("Test_Subscribe isSub main_activity")
             if (it == true) {
+                Timber.d("Test_Subscribe isSub main_activity true")
                 binding.frameBanner.visibility = View.GONE
+//                Toast.makeText(baseContext, com.tici.vpn.proxy.master.R.string.premium_purchase_success, Toast.LENGTH_SHORT).show()
             } else {
+                Timber.d("Test_Subscribe isSub main_activity false")
                 binding.frameBanner.visibility = View.VISIBLE
+                initLoadAds(binding.frameBanner)
             }
         }
 
@@ -154,6 +152,18 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                     }
                 }
             })
+    }
+
+    private fun initLoadAds(frameBanner : FrameAds) {
+        configAd.adBanner.find { it.placementId == AdPlacementId.BANNER_HOME }?.let {
+            mBannerLoader = BannerManager.createLoader(adNetwork = it.adNetwork, bannerId = it.adId)
+            mBannerLoader?.canRequest = true
+            try {
+                mBannerLoader?.loadAds(
+                    context = this@MainActivity, bannerType = it.adType, parent = frameBanner
+                )
+            } catch (e: Exception) {}
+        }
     }
 
     private var mListFragment = arrayListOf<Fragment>()

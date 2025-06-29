@@ -11,6 +11,7 @@ import com.tici.vpn.proxy.master.base.ProductFragment
 import com.tici.vpn.proxy.master.databinding.FragmentPremiumBinding
 import com.tici.vpn.proxy.master.main.MainViewModel
 import com.tici.vpn.proxy.master.main.SharedData
+import com.tici.vpn.proxy.master.settings.SettingViewModel
 import timber.log.Timber
 import kotlin.getValue
 
@@ -59,11 +60,12 @@ class PremiumFragment : ProductFragment<FragmentPremiumBinding>() {
 
             startTrial.setOnClickListener {
                 if (selectedSku.productName.isNotEmpty()) {
+                    mainViewModel.getDeviceId(requireContext())
                     premiumViewModel.launchSubscription(requireActivity(), PremiumViewModel.PRODUCT_NAME)
 //                    mainViewModel.setSub(true)
 //                    requireActivity().finish()
                     //Navigator.startMainActivity(requireContext(), "")
-                    Toast.makeText(requireContext(), com.tici.vpn.proxy.master.R.string.premium_purchase_success, Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(requireContext(), com.tici.vpn.proxy.master.R.string.premium_purchase_success, Toast.LENGTH_SHORT).show()
                     (activity as? PremiumActivity)?.apply {
                         finish()
                     }

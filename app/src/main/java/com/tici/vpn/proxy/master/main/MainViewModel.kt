@@ -3,6 +3,7 @@ package com.tici.vpn.proxy.master.main
 import android.annotation.SuppressLint
 import android.content.Context
 import android.provider.Settings
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.android.billingclient.api.*
@@ -46,7 +47,9 @@ class MainViewModel @Inject constructor() : ViewModel() {
             val isSubscribed = withContext(Dispatchers.IO) {
                 startBillingConnectionAndQueryPurchases()
             }
+            Log.i("TestRelease", "debug_sub isSubscribed $isSubscribed")
             BaseAppConfig.isSub = isSubscribed
+            Timber.d("Test_Subscribe isSub postValue $isSubscribed")
             SharedData.isSub.postValue(isSubscribed)
             onResult(BaseAppConfig.isSub)
         }
@@ -56,6 +59,7 @@ class MainViewModel @Inject constructor() : ViewModel() {
         suspendCancellableCoroutine { cont ->
             billingClient.startConnection(object : BillingClientStateListener {
                 override fun onBillingSetupFinished(billingResult: BillingResult) {
+                    Log.i("TestRelease", "debug_sub billingResult.responseCode ${billingResult.responseCode}")
                     if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
                         val params = QueryPurchasesParams.newBuilder()
                             .setProductType(BillingClient.ProductType.SUBS)
@@ -67,6 +71,7 @@ class MainViewModel @Inject constructor() : ViewModel() {
                                     purchase.purchaseState == Purchase.PurchaseState.PURCHASED &&
                                             purchase.isAcknowledged
                                 }
+                                Log.i("TestRelease", "debug_sub come subs $isSubscribed")
                                 cont.resume(isSubscribed)
                             } else {
                                 cont.resume(false)
@@ -74,7 +79,8 @@ class MainViewModel @Inject constructor() : ViewModel() {
                             // Important: don't call endConnection here, since you might want to keep billingClient alive.
                         }
                     } else if (billingResult.responseCode == BillingClient.BillingResponseCode.DEVELOPER_ERROR) {
-                        cont.resume(true)
+                        Log.i("TestRelease", "debug_sub DEVELOPER_ERROR ${billingResult.responseCode}")
+                        cont.resume(false)
                     } else {
                         cont.resume(false)
                     }

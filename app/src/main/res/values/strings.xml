@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">SuperVPN</string>
     <string name="ads_message_inter">VPN is running, please wait…</string>
-    <string name="ads_message_open">Welcome back to Pixel Art</string>
+    <string name="ads_message_open">Welcome back to SuperVPN</string>
     <string name="ads_message_notice">This action can contains ads</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="language_fragment">Language fragment</string>

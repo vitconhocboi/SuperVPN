@@ -17,6 +17,9 @@ interface ApiService {
     @POST("connect")
     suspend fun connect(@Body user: Users): Response<DisconnectResponse>
 
+    @POST("subscription")
+    suspend fun subscription(@Body sub: Subscription): Response<DisconnectResponse>
+
     @GET("get-countries")
     suspend fun getCountries(
         @Query("type") type: String
@@ -25,6 +28,11 @@ interface ApiService {
     @GET("get-dns")
     suspend fun getDns(): Response<DnsResponse>
 }
+
+data class Subscription(
+    @SerializedName("user_id") val user_id: String,
+    @SerializedName("pack") val pack: String
+)
 
 data class Users(
     @SerializedName("user_id") val user_id: String,

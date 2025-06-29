@@ -1,3 +1,8 @@
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Date
+import java.util.GregorianCalendar
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -34,6 +39,16 @@ android {
         ndk {
             abiFilters += listOf("armeabi-v7a", "arm64-v8a","x86_64") // Specify architectures
         }
+
+        val date = Date()
+        val formattedDate = SimpleDateFormat("MM_dd").format(date)
+//        val calendar = GregorianCalendar.getInstance()
+
+//        val hour = calendar.get(Calendar.HOUR_OF_DAY)
+//        val minute = calendar.get(Calendar.MINUTE)
+        //val fix = 1
+        setProperty("archivesBaseName", "SuperVPN_Code_" + versionCode + "_Name_" + versionName + "_${formattedDate}")
+
     }
 
     buildTypes {

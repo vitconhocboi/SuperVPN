@@ -36,6 +36,7 @@ import com.tici.vpn.proxy.master.main.MainViewModel
 import com.tici.vpn.proxy.master.remoteconfig.AdPlacementId
 import com.simple.libads.NetworkUtils
 import com.simple.libads.setVisible
+import com.tici.vpn.proxy.master.main.SharedData
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
@@ -234,44 +235,9 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 //        isLocalVpnServiceRunning(requireContext())
         with(binding) {
             ivSelectProxy.scaleX = if (isRTL) -1f else 1f
-            if (BaseAppConfig.proxy.isNotEmpty()) {
-                //update UI
-                ivFlag.setImageResource(Utils.getFlag(BaseAppConfig.proxyCountry))
-                tvProxyLocation.text = requireContext().safeGetString(BaseAppConfig.proxyCountry)
-                engine.Engine.decodeString(BaseAppConfig.proxy).split(":").let { parts ->
-                    if (parts.size >= 2) {
-                        BaseAppConfig.proxyHost = parts[1]
-                        currentProxy = ProxySpeedTest.ProxyConfig(
-                            host = parts[1],
-                            port = parts[2].toInt(),
-                            username = parts.getOrNull(3) ?: "",
-                            password = parts.getOrNull(4) ?: "",
-                            type = parts.getOrNull(0) ?: "http"
-                        )
-                    } else {
-                        currentProxy = null
-                    }
-                }
-
-                tvProxyIp.setVisible(true)
-                tvProxyIp.text = currentProxy?.host
-                val typeface = ResourcesCompat.getFont(context, R.font.inter_bold)
-                tvProxyLocation.typeface = typeface
-                tvProxyLocation.setTextColor(resources.getColor(R.color.language_item_text_color))
-            } else {
-                ivFlag.setImageResource(R.drawable.ic_earth)
-                BaseAppConfig.proxy = ""
-                BaseAppConfig.proxyHost = ""
-                tvProxyLocation.text = getString(R.string.ip_proxy)
-                tvProxyIp.setVisible(false)
-                val typeface = ResourcesCompat.getFont(context, R.font.inter_normal)
-                tvProxyLocation.typeface = typeface
-                tvProxyLocation.setTextColor(resources.getColor(R.color.green_1))
-                currentProxy = null
-            }
 
             allowAppViewModel.getAllowApp()
-
+            Timber.d("Test_Subscribe allowAppViewModel")
             bindFlowCreate(allowAppViewModel.allowApp) { result ->
                 processResultData(result, onSuccess = {
                     allowApp = it
@@ -329,6 +295,71 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                     })
             }
 
+            SharedData.isSub.observe(viewLifecycleOwner) { it ->
+                Timber.d("Test_Subscribe isSub 1")
+                if (it == false) {
+                    Timber.d("Test_Subscribe isSub false")
+                    if (isConnected) {
+                        if (NetworkUtils.isInternetAvailable(requireActivity())) {
+                            stopSpeedTest()
+                            vpnPermissionLauncher.unregister()
+                            stopVpnService()
+                        }
+                    }
+                    with (binding) {
+                        ivConnect.isSelected = false
+                        ivFlag.setImageResource(R.drawable.ic_earth)
+                        BaseAppConfig.proxy = ""
+                        BaseAppConfig.proxyHost = ""
+                        BaseAppConfig.proxyCountry = ""
+                        tvProxyLocation.text = getString(R.string.ip_proxy)
+                        tvProxyIp.setVisible(false)
+                        val typeface = ResourcesCompat.getFont(context, R.font.inter_normal)
+                        tvProxyLocation.typeface = typeface
+                        tvProxyLocation.setTextColor(resources.getColor(R.color.green_1))
+                        currentProxy = null
+                    }
+                } else {
+                    Timber.d("Test_Subscribe isSub true")
+                    if (BaseAppConfig.proxy.isNotEmpty()) {
+                        //update UI
+                        ivFlag.setImageResource(Utils.getFlag(BaseAppConfig.proxyCountry))
+                        tvProxyLocation.text = requireContext().safeGetString(BaseAppConfig.proxyCountry)
+                        engine.Engine.decodeString(BaseAppConfig.proxy).split(":").let { parts ->
+                            if (parts.size >= 2) {
+                                BaseAppConfig.proxyHost = parts[1]
+                                currentProxy = ProxySpeedTest.ProxyConfig(
+                                    host = parts[1],
+                                    port = parts[2].toInt(),
+                                    username = parts.getOrNull(3) ?: "",
+                                    password = parts.getOrNull(4) ?: "",
+                                    type = parts.getOrNull(0) ?: "http"
+                                )
+                            } else {
+                                currentProxy = null
+                            }
+                        }
+
+                        tvProxyIp.setVisible(true)
+                        tvProxyIp.text = currentProxy?.host
+                        val typeface = ResourcesCompat.getFont(context, R.font.inter_bold)
+                        tvProxyLocation.typeface = typeface
+                        tvProxyLocation.setTextColor(resources.getColor(R.color.language_item_text_color))
+                    } else {
+                        ivFlag.setImageResource(R.drawable.ic_earth)
+                        BaseAppConfig.proxy = ""
+                        BaseAppConfig.proxyHost = ""
+                        BaseAppConfig.proxyCountry = ""
+                        tvProxyLocation.text = getString(R.string.ip_proxy)
+                        tvProxyIp.setVisible(false)
+                        val typeface = ResourcesCompat.getFont(context, R.font.inter_normal)
+                        tvProxyLocation.typeface = typeface
+                        tvProxyLocation.setTextColor(resources.getColor(R.color.green_1))
+                        currentProxy = null
+                    }
+                }
+            }
+
             proxyId = arguments?.getString("id", null)
         }
 
@@ -336,6 +367,34 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
             updateUI(status)
         }
 
+    }
+
+    private fun onToggleStop() {
+        if (!isConnected) {
+            if (BaseAppConfig.proxy.isNotEmpty()) {
+                prepareVpn()
+            } else {
+                ConfirmDnsDialog(
+                    requireActivity(),
+                    onContinue = {
+                        prepareVpn()
+                    },
+                    selectVpn = {
+                        Navigator.startProxyActivity(requireContext(), null)
+                    }
+                ).show()
+            }
+        } else {
+            if (NetworkUtils.isInternetAvailable(requireActivity())) {
+                stopSpeedTest()
+                vpnPermissionLauncher.unregister()
+                stopVpnService()
+            } else {
+                Toast.makeText(
+                    requireContext(), "No internet connection", Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
     }
 
     private fun prepareVpn() {
@@ -360,6 +419,10 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
             handler.post(speedTestRunnable)
         }
         isLocalVpnServiceRunning(requireContext())
+    }
+
+    override fun onResume() {
+        super.onResume()
     }
 
     override fun onStop() {

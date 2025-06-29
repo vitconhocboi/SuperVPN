@@ -4,22 +4,36 @@ import android.app.Activity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.android.billingclient.api.*
+import com.android.billingclient.api.AcknowledgePurchaseParams
+import com.android.billingclient.api.BillingClient
+import com.android.billingclient.api.BillingFlowParams
+import com.android.billingclient.api.BillingResult
+import com.android.billingclient.api.ProductDetails
+import com.android.billingclient.api.Purchase
+import com.android.billingclient.api.PurchasesUpdatedListener
+import com.android.billingclient.api.QueryProductDetailsParams
 import com.common.baseui.BaseAppConfig
+import com.tici.vpn.proxy.master.api.ApiService
+import com.tici.vpn.proxy.master.api.Subscription
 import com.tici.vpn.proxy.master.billing.BillingManager
-import com.tici.vpn.proxy.master.billing.BillingManager.billingClient
+import com.tici.vpn.proxy.master.db.VpnDatabase
 import com.tici.vpn.proxy.master.main.SharedData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import kotlinx.coroutines.suspendCancellableCoroutine
+import kotlinx.coroutines.withContext
 import timber.log.Timber
 import javax.inject.Inject
+import kotlin.collections.forEach
 import kotlin.coroutines.resume
 
 @HiltViewModel
-class PremiumViewModel @Inject constructor() : ViewModel(), PurchasesUpdatedListener {
+class PremiumViewModel @Inject constructor(
+    private val apiService: ApiService
+) : ViewModel(), PurchasesUpdatedListener {
 
     companion object {
         const val PRODUCT_NAME = "Premium"
@@ -31,6 +45,8 @@ class PremiumViewModel @Inject constructor() : ViewModel(), PurchasesUpdatedList
     val products = HashMap<String, ProductDetails>()
 
     val isLoading = MutableLiveData<Boolean>()
+
+    var subName : String = ""
 
     fun loadData() {
         viewModelScope.launch {
@@ -46,7 +62,7 @@ class PremiumViewModel @Inject constructor() : ViewModel(), PurchasesUpdatedList
             val listSkus = ArrayList<Sku>()
             products.clear()
             for (product in productDetailsList) {
-                Timber.d("Billing Found subscription: ${product.name} - ${product.oneTimePurchaseOfferDetails?.priceCurrencyCode}")
+                Timber.Forest.d("Billing Found subscription: ${product.name} - ${product.oneTimePurchaseOfferDetails?.priceCurrencyCode}")
                 productDetailsList.forEach { productDetails ->
                     // Loop through base plans (weekly, monthly, annual)
                     productDetails.subscriptionOfferDetails?.forEach { offer ->
@@ -116,7 +132,7 @@ class PremiumViewModel @Inject constructor() : ViewModel(), PurchasesUpdatedList
     fun launchSubscription(activity: Activity, productName: String) {
         isLoading.postValue(true)
         BillingManager.setPurchaseListener(this@PremiumViewModel)
-
+        subName = productName
         val productDetail = products.get(productName)
         if (productDetail == null) return
         val offerDetails = productDetail.subscriptionOfferDetails?.firstOrNull()
@@ -131,10 +147,10 @@ class PremiumViewModel @Inject constructor() : ViewModel(), PurchasesUpdatedList
             )
             .build()
 
-        val billingResult = billingClient.launchBillingFlow(activity, billingFlowParams)
+        val billingResult = BillingManager.billingClient.launchBillingFlow(activity, billingFlowParams)
 
         if (billingResult.responseCode != BillingClient.BillingResponseCode.OK) {
-            Timber.i("Billing Error launching billing flow: ${billingResult.debugMessage}")
+            Timber.Forest.i("Billing Error launching billing flow: ${billingResult.debugMessage}")
         }
         isLoading.postValue(false)
     }
@@ -150,16 +166,20 @@ class PremiumViewModel @Inject constructor() : ViewModel(), PurchasesUpdatedList
                         acknowledgePurchase(purchase)
                     } else {
                         // Already acknowledged, unlock content if needed
-                        Timber.d("Purchase already acknowledged: ${purchase.orderId}")
+                        Timber.Forest.d("Purchase already acknowledged: ${purchase.orderId}")
                         SharedData.isSub.postValue(true)
                         break
                     }
                 }
             }
         } else if (billingResult.responseCode == BillingClient.BillingResponseCode.USER_CANCELED) {
-            Timber.i("User canceled the purchase flow.")
+            Timber.Forest.i("User canceled the purchase flow.")
+        } else if (billingResult.responseCode == BillingClient.BillingResponseCode.ITEM_ALREADY_OWNED) {
+            Timber.Forest.i("User own the item.")
+            SharedData.isSub.postValue(true)
+            BaseAppConfig.isSub = true
         } else {
-            Timber.e("Purchase failed with code: ${billingResult.responseCode}, message: ${billingResult.debugMessage}")
+            Timber.Forest.e("Purchase failed with code: ${billingResult.responseCode}, message: ${billingResult.debugMessage}")
         }
     }
 
@@ -168,16 +188,16 @@ class PremiumViewModel @Inject constructor() : ViewModel(), PurchasesUpdatedList
             .setPurchaseToken(purchase.purchaseToken)
             .build()
 
-        billingClient.acknowledgePurchase(acknowledgePurchaseParams) { ackResult ->
+        BillingManager.billingClient.acknowledgePurchase(acknowledgePurchaseParams) { ackResult ->
             if (ackResult.responseCode == BillingClient.BillingResponseCode.OK) {
                 SharedData.isSub.postValue(true)
                 BaseAppConfig.isSub = true
-                Timber.d("Purchase acknowledged successfully: ${purchase.orderId}")
-                // Unlock premium features or subscriptions here
+//                purchaseListener?.onPurchase(subName)
+                Timber.Forest.d("Purchase acknowledged successfully: ${purchase.orderId}")
             } else {
                 SharedData.isSub.postValue(false)
 //                BaseAppConfig.isSub = true
-                Timber.e("Failed to acknowledge purchase: ${ackResult.debugMessage}")
+                Timber.Forest.e("Failed to acknowledge purchase: ${ackResult.debugMessage}")
             }
         }
     }
