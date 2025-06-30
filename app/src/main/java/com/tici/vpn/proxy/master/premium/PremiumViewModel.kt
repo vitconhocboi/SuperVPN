@@ -32,7 +32,7 @@ import kotlin.coroutines.resume
 
 @HiltViewModel
 class PremiumViewModel @Inject constructor(
-    private val apiService: ApiService
+//    private val apiService: ApiService
 ) : ViewModel(), PurchasesUpdatedListener {
 
     companion object {
