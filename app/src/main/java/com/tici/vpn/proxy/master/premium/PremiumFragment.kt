@@ -12,9 +12,11 @@ import com.tici.vpn.proxy.master.databinding.FragmentPremiumBinding
 import com.tici.vpn.proxy.master.main.MainViewModel
 import com.tici.vpn.proxy.master.main.SharedData
 import com.tici.vpn.proxy.master.settings.SettingViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 import kotlin.getValue
 
+@AndroidEntryPoint
 class PremiumFragment : ProductFragment<FragmentPremiumBinding>() {
 
     private val premiumViewModel: PremiumViewModel by viewModels()

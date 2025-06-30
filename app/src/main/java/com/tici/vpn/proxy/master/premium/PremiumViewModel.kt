@@ -14,20 +14,15 @@ import com.android.billingclient.api.PurchasesUpdatedListener
 import com.android.billingclient.api.QueryProductDetailsParams
 import com.common.baseui.BaseAppConfig
 import com.tici.vpn.proxy.master.api.ApiService
-import com.tici.vpn.proxy.master.api.Subscription
 import com.tici.vpn.proxy.master.billing.BillingManager
-import com.tici.vpn.proxy.master.db.VpnDatabase
 import com.tici.vpn.proxy.master.main.SharedData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.coroutines.withContext
 import timber.log.Timber
 import javax.inject.Inject
-import kotlin.collections.forEach
 import kotlin.coroutines.resume
 
 @HiltViewModel
