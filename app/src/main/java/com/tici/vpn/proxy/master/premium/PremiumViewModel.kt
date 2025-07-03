@@ -1,6 +1,7 @@
 package com.tici.vpn.proxy.master.premium
 
 import android.app.Activity
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -14,6 +15,7 @@ import com.android.billingclient.api.PurchasesUpdatedListener
 import com.android.billingclient.api.QueryProductDetailsParams
 import com.common.baseui.BaseAppConfig
 import com.tici.vpn.proxy.master.api.ApiService
+import com.tici.vpn.proxy.master.api.Subscription
 import com.tici.vpn.proxy.master.billing.BillingManager
 import com.tici.vpn.proxy.master.main.SharedData
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -27,7 +29,7 @@ import kotlin.coroutines.resume
 
 @HiltViewModel
 class PremiumViewModel @Inject constructor(
-//    private val apiService: ApiService
+    private val apiService: ApiService
 ) : ViewModel(), PurchasesUpdatedListener {
 
     companion object {
@@ -40,6 +42,8 @@ class PremiumViewModel @Inject constructor(
     val products = HashMap<String, ProductDetails>()
 
     val isLoading = MutableLiveData<Boolean>()
+
+    val sub = MutableLiveData<Boolean>()
 
     var subName : String = ""
 
@@ -77,9 +81,9 @@ class PremiumViewModel @Inject constructor(
 //                Timber.d("Formatted Price: $formattedPrice")
             }
             if (listSkus.isEmpty()) {
-                listSkus.add(Sku("weekly", "59.000 VND"))
-                listSkus.add(Sku("monthly", "109.000 VND"))
-                listSkus.add(Sku("yearly", "899.000 VND"))
+//                listSkus.add(Sku("weekly", "59.000 VND"))
+//                listSkus.add(Sku("monthly", "109.000 VND"))
+//                listSkus.add(Sku("yearly", "899.000 VND"))
                 skus.postValue(listSkus)
             } else {
                 val durationOrder = mapOf(
@@ -97,12 +101,15 @@ class PremiumViewModel @Inject constructor(
     }
 
     private suspend fun queryAvailableSubscriptions(productIds: List<String>): List<ProductDetails> {
+        Log.i("SuperVpn", "Test_sub start queryAvailableSubscriptions")
         return suspendCancellableCoroutine { continuation ->
+            Log.i("SuperVpn", "Test_sub start queryAvailableSubscriptions 2")
             if (!BillingManager.isReady()) {
                 continuation.resume(emptyList())
                 return@suspendCancellableCoroutine
             }
 
+            Log.i("SuperVpn", "Test_sub start queryAvailableSubscriptions 3")
             val productList = productIds.map { productId ->
                 QueryProductDetailsParams.Product.newBuilder()
                     .setProductId(productId)
@@ -110,14 +117,18 @@ class PremiumViewModel @Inject constructor(
                     .build()
             }
 
+            Log.i("SuperVpn", "Test_sub start queryAvailableSubscriptions 4 ${productList}")
             val params = QueryProductDetailsParams.newBuilder()
                 .setProductList(productList)
                 .build()
 
             BillingManager.billingClient.queryProductDetailsAsync(params) { billingResult, productDetailsList ->
+                Log.i("SuperVpn", "Test_sub start queryProductDetailsAsync ")
                 if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
+                    Log.i("SuperVpn", "Test_sub start queryProductDetailsAsync OK ${productDetailsList.size}")
                     continuation.resume(productDetailsList)
                 } else {
+                    Log.i("SuperVpn", "Test_sub start queryProductDetailsAsync empty")
                     continuation.resume(emptyList())
                 }
             }
@@ -126,6 +137,7 @@ class PremiumViewModel @Inject constructor(
 
     fun launchSubscription(activity: Activity, productName: String) {
         isLoading.postValue(true)
+        sub.postValue(false)
         BillingManager.setPurchaseListener(this@PremiumViewModel)
         subName = productName
         val productDetail = products.get(productName)
@@ -159,22 +171,36 @@ class PremiumViewModel @Inject constructor(
                 if (purchase.purchaseState == Purchase.PurchaseState.PURCHASED) {
                     if (!purchase.isAcknowledged) {
                         acknowledgePurchase(purchase)
+                        sub.postValue(true)
                     } else {
                         // Already acknowledged, unlock content if needed
                         Timber.Forest.d("Purchase already acknowledged: ${purchase.orderId}")
                         SharedData.isSub.postValue(true)
+                        sub.postValue(true)
                         break
                     }
                 }
             }
         } else if (billingResult.responseCode == BillingClient.BillingResponseCode.USER_CANCELED) {
             Timber.Forest.i("User canceled the purchase flow.")
+//            sub.postValue(true)
         } else if (billingResult.responseCode == BillingClient.BillingResponseCode.ITEM_ALREADY_OWNED) {
             Timber.Forest.i("User own the item.")
             SharedData.isSub.postValue(true)
             BaseAppConfig.isSub = true
+            sub.postValue(true)
+            viewModelScope.launch (Dispatchers.IO) {
+                try {
+                    val sub = Subscription(user_id = BaseAppConfig.deviceId, pack = subName)
+                    apiService.subscription(sub)
+                } catch (e: Exception) {
+                    Timber.e(e)
+                    e.printStackTrace()
+                }
+            }
         } else {
             Timber.Forest.e("Purchase failed with code: ${billingResult.responseCode}, message: ${billingResult.debugMessage}")
+            sub.postValue(true)
         }
     }
 
@@ -187,11 +213,18 @@ class PremiumViewModel @Inject constructor(
             if (ackResult.responseCode == BillingClient.BillingResponseCode.OK) {
                 SharedData.isSub.postValue(true)
                 BaseAppConfig.isSub = true
-//                purchaseListener?.onPurchase(subName)
+                viewModelScope.launch (Dispatchers.IO) {
+                    try {
+                        val sub = Subscription(user_id = BaseAppConfig.deviceId, pack = subName)
+                        apiService.subscription(sub)
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                    }
+                }
                 Timber.Forest.d("Purchase acknowledged successfully: ${purchase.orderId}")
             } else {
                 SharedData.isSub.postValue(false)
-//                BaseAppConfig.isSub = true
+                BaseAppConfig.isSub = false
                 Timber.Forest.e("Failed to acknowledge purchase: ${ackResult.debugMessage}")
             }
         }

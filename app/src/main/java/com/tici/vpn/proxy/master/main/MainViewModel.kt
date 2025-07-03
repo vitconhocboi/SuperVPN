@@ -47,9 +47,10 @@ class MainViewModel @Inject constructor() : ViewModel() {
             val isSubscribed = withContext(Dispatchers.IO) {
                 startBillingConnectionAndQueryPurchases()
             }
-            Log.i("TestRelease", "debug_sub isSubscribed $isSubscribed")
+            Log.i("TestRelease", "TestRelease isSubscribed $isSubscribed")
             BaseAppConfig.isSub = isSubscribed
-            Timber.d("Test_Subscribe isSub postValue $isSubscribed")
+            Log.i("TestRelease", "TestRelease isSubscribed $isSubscribed")
+//            Timber.d("Test_Subscribe isSub postValue $isSubscribed")
             SharedData.isSub.postValue(isSubscribed)
             onResult(BaseAppConfig.isSub)
         }
@@ -59,7 +60,7 @@ class MainViewModel @Inject constructor() : ViewModel() {
         suspendCancellableCoroutine { cont ->
             billingClient.startConnection(object : BillingClientStateListener {
                 override fun onBillingSetupFinished(billingResult: BillingResult) {
-                    Log.i("TestRelease", "debug_sub billingResult.responseCode ${billingResult.responseCode}")
+                    Log.i("SuperVpn", "TestRelease billingResult.responseCode ${billingResult.responseCode}")
                     if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
                         val params = QueryPurchasesParams.newBuilder()
                             .setProductType(BillingClient.ProductType.SUBS)
@@ -67,21 +68,25 @@ class MainViewModel @Inject constructor() : ViewModel() {
 
                         billingClient.queryPurchasesAsync(params) { result, purchasesList ->
                             if (result.responseCode == BillingClient.BillingResponseCode.OK) {
+                                Log.i("SuperVpn", "TestRelease BillingClient.BillingResponseCode.OK")
                                 val isSubscribed = purchasesList.any { purchase ->
+                                    Log.i("SuperVpn", "TestRelease purchase item ${purchase.purchaseState} ${Purchase.PurchaseState.PURCHASED} ${purchase.isAcknowledged}")
                                     purchase.purchaseState == Purchase.PurchaseState.PURCHASED &&
                                             purchase.isAcknowledged
                                 }
-                                Log.i("TestRelease", "debug_sub come subs $isSubscribed")
+                                Log.i("SuperVpn", "TestRelease come subs $isSubscribed")
                                 cont.resume(isSubscribed)
                             } else {
+                                Log.i("SuperVpn", "TestRelease BillingClient.BillingResponseCode Not OK")
                                 cont.resume(false)
                             }
                             // Important: don't call endConnection here, since you might want to keep billingClient alive.
                         }
                     } else if (billingResult.responseCode == BillingClient.BillingResponseCode.DEVELOPER_ERROR) {
-                        Log.i("TestRelease", "debug_sub DEVELOPER_ERROR ${billingResult.responseCode}")
+                        Log.i("SuperVpn", "TestRelease DEVELOPER_ERROR ${billingResult.responseCode}")
                         cont.resume(false)
                     } else {
+                        Log.i("SuperVpn", "TestRelease OTHER ${billingResult.responseCode}")
                         cont.resume(false)
                     }
                 }

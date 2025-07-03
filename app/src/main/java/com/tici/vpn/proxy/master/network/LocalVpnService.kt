@@ -34,7 +34,7 @@ class LocalVpnService : VpnService(), Runnable {
 //    private val m_IPHeader: IPHeader
     private var m_VPNThread: Thread? = null
     private var m_VPNInterface: ParcelFileDescriptor? = null
-    private var m_PrivoxyManager: PrivoxyManager? = null
+    private var m_PrivoxyManager: VpnManager? = null
 
     @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
     @Inject
@@ -132,20 +132,21 @@ class LocalVpnService : VpnService(), Runnable {
                     }
                 }
 
-                m_PrivoxyManager = PrivoxyManager(this)
+                m_PrivoxyManager = VpnManager(this)
                 if (m_PrivoxyManager!!.initialize(currentProxy) && m_PrivoxyManager!!.start()) {
-                    Timber.tag(Constant.TAG)
-                        .d("Privoxy started on: ${m_PrivoxyManager!!.getProxyAddress()}")
+//                    Timber.tag(Constant.TAG)
+//                        .d("Privoxy started on: ${m_PrivoxyManager!!.getProxyAddress()}")
                     proxyConnection.updateUI(HomeFragment.CONNECTED)
                 } else {
-                    Timber.tag(Constant.TAG).d("Failed to start Privoxy")
+//                    Timber.tag(Constant.TAG).d("Failed to start Privoxy")
                     proxyConnection.updateUI(HomeFragment.DISCONNECTED)
                 }
             }
 
             ACTION_STOP -> {
-                Timber.tag(Constant.TAG).d("Stop super vpn service")
+//                Timber.tag(Constant.TAG).d("Stop super vpn service")
                 stopVPN()
+                stopForeground(true)
             }
         }
 

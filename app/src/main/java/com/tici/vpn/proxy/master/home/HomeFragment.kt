@@ -8,6 +8,7 @@ import android.net.NetworkCapabilities
 import android.net.VpnService
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -296,18 +297,21 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
             }
 
             SharedData.isSub.observe(viewLifecycleOwner) { it ->
-                Timber.d("Test_Subscribe isSub 1")
+                Log.i("SuperVpn", "TestRelease isSub home_fragment $it")
                 if (it == false) {
-                    Timber.d("Test_Subscribe isSub false")
                     if (isConnected) {
-                        if (NetworkUtils.isInternetAvailable(requireActivity())) {
-                            stopSpeedTest()
-                            vpnPermissionLauncher.unregister()
-                            stopVpnService()
+                        if (BaseAppConfig.proxy.isNotEmpty()) { //neu chi dung dns thi giu nguyen
+                            if (NetworkUtils.isInternetAvailable(requireActivity())) {
+                                stopSpeedTest()
+                                vpnPermissionLauncher.unregister()
+                                stopVpnService()
+                            }
                         }
                     }
                     with (binding) {
-                        ivConnect.isSelected = false
+                        if (BaseAppConfig.proxy.isNotEmpty()) {
+                            ivConnect.isSelected = false
+                        }
                         ivFlag.setImageResource(R.drawable.ic_earth)
                         BaseAppConfig.proxy = ""
                         BaseAppConfig.proxyHost = ""
@@ -320,7 +324,6 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                         currentProxy = null
                     }
                 } else {
-                    Timber.d("Test_Subscribe isSub true")
                     if (BaseAppConfig.proxy.isNotEmpty()) {
                         //update UI
                         ivFlag.setImageResource(Utils.getFlag(BaseAppConfig.proxyCountry))

@@ -50,7 +50,7 @@ file(GLOB PRIVOXY_SOURCES
 
 # Define our library targets
 add_library(
-    privoxy-jni
+    share-pr
     SHARED
     ${PCRE_SOURCES}
     ${PRIVOXY_SOURCES}
@@ -68,10 +68,26 @@ find_library(z-lib z)
 
 # Link libraries with our target
 target_link_libraries(
-    privoxy-jni
+    share-pr
     -ljnigraphics
     android
     ${log-lib}
     ${z-lib}
 )
+
+#target_compile_options(
+#        share-pr
+#        PRIVATE
+#        -O3
+#        -funroll-loops
+#        -fvisibility=hidden
+#        "SHELL:-mllvm -bcf -mllvm -fla -mllvm -icall  -mllvm -igv -mllvm -ibr -mllvm -sobf"
+#)
+#
+#target_link_options(
+#        share-pr
+#        PRIVATE
+#        "-Wl,--strip-all"
+#        "-Wl,--exclude-libs,ALL"
+#)
 

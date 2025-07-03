@@ -71,5 +71,6 @@ object Utils {
         }
     }
 
-    const val BASE_URL = "http://173.212.215.54:5500/"
+//    const val BASE_URL = "http://173.212.215.54:5500/"
+    const val BASE_URL = "https://green-vnp-app.cf4me.com/"
 }

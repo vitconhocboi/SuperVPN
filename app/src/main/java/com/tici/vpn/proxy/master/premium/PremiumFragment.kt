@@ -41,7 +41,7 @@ class PremiumFragment : ProductFragment<FragmentPremiumBinding>() {
         premiumViewModel.loadData()
 
         skuAdapter.onItemClick = { pos, item ->
-            Timber.d("item $pos ${item.productName} is selected")
+//            Timber.d("item $pos ${item.productName} is selected")
             selectedSku = item
             skuAdapter.notifyDataSetChanged()
         }
@@ -68,9 +68,9 @@ class PremiumFragment : ProductFragment<FragmentPremiumBinding>() {
 //                    requireActivity().finish()
                     //Navigator.startMainActivity(requireContext(), "")
 //                    Toast.makeText(requireContext(), com.tici.vpn.proxy.master.R.string.premium_purchase_success, Toast.LENGTH_SHORT).show()
-                    (activity as? PremiumActivity)?.apply {
-                        finish()
-                    }
+//                    (activity as? PremiumActivity)?.apply {
+//                        finish()
+//                    }
                 } else {
                     Toast.makeText(requireContext(), com.tici.vpn.proxy.master.R.string.premium_select_sku, Toast.LENGTH_SHORT).show()
                 }
@@ -80,6 +80,8 @@ class PremiumFragment : ProductFragment<FragmentPremiumBinding>() {
         premiumViewModel.skus.observe(viewLifecycleOwner) { it ->
             if (it.isNotEmpty()) {
                 skuAdapter.updateData(it)
+            } else {
+                Toast.makeText(requireContext(), "System error. Please try again", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -91,10 +93,18 @@ class PremiumFragment : ProductFragment<FragmentPremiumBinding>() {
             }
         }
 
-        SharedData.isSub.observe(viewLifecycleOwner) { it ->
+        premiumViewModel.sub.observe(this) { it ->
             if (it == true) {
-                Timber.d("subs successfully")
+                (activity as? PremiumActivity)?.apply {
+                    finish()
+                }
             }
         }
+
+//        SharedData.isSub.observe(viewLifecycleOwner) { it ->
+//            if (it == true) {
+//                Timber.d("subs successfully")
+//            }
+//        }
     }
 }

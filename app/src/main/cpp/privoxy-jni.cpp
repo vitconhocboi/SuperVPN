@@ -88,7 +88,7 @@ void *run_privoxy(void *context) {
 
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_com_tici_vpn_proxy_master_network_PrivoxyManager_nativeStopPrivoxy(JNIEnv *env, jclass clazz) {
+Java_com_tici_vpn_proxy_master_network_VpnManager_nativeStop(JNIEnv *env, jclass clazz) {
     if (!is_running) {
         return JNI_TRUE;
     }
@@ -106,14 +106,14 @@ Java_com_tici_vpn_proxy_master_network_PrivoxyManager_nativeStopPrivoxy(JNIEnv *
 
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_com_tici_vpn_proxy_master_network_PrivoxyManager_nativeIsRunning(JNIEnv *env, jclass clazz) {
+Java_com_tici_vpn_proxy_master_network_VpnManager_nativeIsRunning(JNIEnv *env, jclass clazz) {
     return is_running ? JNI_TRUE : JNI_FALSE;
 }
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_com_tici_vpn_proxy_master_network_PrivoxyManager_nativeStartPrivoxy(JNIEnv *env, jclass clazz,
-                                                                     jstring config_path_java,
-                                                                     jobject owner) {
+Java_com_tici_vpn_proxy_master_network_VpnManager_nativeStart(JNIEnv *env, jclass clazz,
+                                                              jstring config_path_java,
+                                                              jobject owner) {
     // If already running, return true
     if (is_running) {
         return JNI_TRUE;

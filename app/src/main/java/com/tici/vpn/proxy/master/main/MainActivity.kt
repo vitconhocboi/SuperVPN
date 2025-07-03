@@ -2,6 +2,7 @@ package com.tici.vpn.proxy.master.main
 
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
@@ -125,6 +126,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
 
         SharedData.isSub.observe(this) { it ->
             Timber.d("Test_Subscribe isSub main_activity")
+            Log.i("SuperVpn", "TestRelease isSub main_activity $it")
             if (it == true) {
                 Timber.d("Test_Subscribe isSub main_activity true")
                 binding.frameBanner.visibility = View.GONE
