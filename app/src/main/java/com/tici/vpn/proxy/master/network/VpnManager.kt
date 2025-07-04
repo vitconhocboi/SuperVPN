@@ -174,7 +174,7 @@ ${getForwardSettings()}
     private fun getForwardSettings(): String {
         // Get proxy settings from your existing configuration
 //        Timber.tag(Constant.TAG).d("${currentProxy?.type}://${currentProxy!!.username}:${currentProxy!!.password}@${currentProxy!!.host}:${currentProxy!!.port}")
-        if (currentProxy != null) {
+        return if (currentProxy != null) {
             if (currentProxy?.type?.lowercase() == "http") {
                 """forward / ${currentProxy!!.host}:${currentProxy!!.port}
     enable-proxy-authentication-forwarding 1
