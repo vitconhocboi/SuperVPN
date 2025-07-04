@@ -313,9 +313,9 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                             ivConnect.isSelected = false
                         }
                         ivFlag.setImageResource(R.drawable.ic_earth)
-                        BaseAppConfig.proxy = ""
-                        BaseAppConfig.proxyHost = ""
-                        BaseAppConfig.proxyCountry = ""
+//                        BaseAppConfig.proxy = ""
+//                        BaseAppConfig.proxyHost = ""
+//                        BaseAppConfig.proxyCountry = ""
                         tvProxyLocation.text = getString(R.string.ip_proxy)
                         tvProxyIp.setVisible(false)
                         val typeface = ResourcesCompat.getFont(context, R.font.inter_normal)
