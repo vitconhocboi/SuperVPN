@@ -10,6 +10,7 @@ import com.android.billingclient.api.BillingClient
 import com.android.billingclient.api.BillingFlowParams
 import com.android.billingclient.api.BillingResult
 import com.android.billingclient.api.ProductDetails
+import com.android.billingclient.api.ProductDetails.SubscriptionOfferDetails
 import com.android.billingclient.api.Purchase
 import com.android.billingclient.api.PurchasesUpdatedListener
 import com.android.billingclient.api.QueryProductDetailsParams
@@ -39,13 +40,14 @@ class PremiumViewModel @Inject constructor(
 
     val skus = MutableLiveData<ArrayList<Sku>>()
 
-    val products = HashMap<String, ProductDetails>()
+    val products = HashMap<String, SubscriptionOfferDetails>()
 
     val isLoading = MutableLiveData<Boolean>()
 
     val sub = MutableLiveData<Boolean>()
 
     var subName : String = ""
+    lateinit var productDetailSelected : ProductDetails
 
     fun loadData() {
         viewModelScope.launch {
@@ -68,11 +70,13 @@ class PremiumViewModel @Inject constructor(
                         val pricingPhase = offer.pricingPhases.pricingPhaseList.first()
                         val price = pricingPhase.formattedPrice
                         val planId = offer.basePlanId // weekly_plan, monthly_plan, etc.
-                        listSkus.add(Sku(planId, price))
+                        val sku = Sku(planId, price)
+                        listSkus.add(sku)
+                        products[planId] = offer
                         // Store or show these to user
                     }
+                    productDetailSelected = productDetails
                 }
-                products.put(product.name, product)
 //                val offer = product.subscriptionOfferDetails?.firstOrNull()
 //                val pricingPhase = offer?.pricingPhases?.pricingPhaseList?.firstOrNull()
 //                val formattedPrice = pricingPhase?.formattedPrice ?: "N/A"
@@ -140,15 +144,13 @@ class PremiumViewModel @Inject constructor(
         sub.postValue(false)
         BillingManager.setPurchaseListener(this@PremiumViewModel)
         subName = productName
-        val productDetail = products.get(productName)
-        if (productDetail == null) return
-        val offerDetails = productDetail.subscriptionOfferDetails?.firstOrNull()
+        val saveOfferDetails = products[productName] ?: return
         val billingFlowParams = BillingFlowParams.newBuilder()
             .setProductDetailsParamsList(
                 listOf(
                     BillingFlowParams.ProductDetailsParams.newBuilder()
-                        .setProductDetails(productDetail)
-                        .setOfferToken(offerDetails?.offerToken ?: "")
+                        .setProductDetails(productDetailSelected)
+                        .setOfferToken(saveOfferDetails.offerToken)
                         .build()
                 )
             )

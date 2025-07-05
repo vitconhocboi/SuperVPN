@@ -63,7 +63,7 @@ class PremiumFragment : ProductFragment<FragmentPremiumBinding>() {
             startTrial.setOnClickListener {
                 if (selectedSku.productName.isNotEmpty()) {
                     mainViewModel.getDeviceId(requireContext())
-                    premiumViewModel.launchSubscription(requireActivity(), PremiumViewModel.PRODUCT_NAME)
+                    premiumViewModel.launchSubscription(requireActivity(), selectedSku.productName)
 //                    mainViewModel.setSub(true)
 //                    requireActivity().finish()
                     //Navigator.startMainActivity(requireContext(), "")
