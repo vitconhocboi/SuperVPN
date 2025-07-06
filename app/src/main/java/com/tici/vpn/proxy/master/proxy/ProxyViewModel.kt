@@ -170,6 +170,7 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
 
     fun stopProxy(deviceId: String?, context: Context?) {
         proxyUpdate.setProxyUpdate(this)
+        Log.i("SuperVpn", "TestRelease stopProxy")
         context!!.startService(Intent(context, LocalVpnService::class.java).apply {
             action = ACTION_STOP
         })

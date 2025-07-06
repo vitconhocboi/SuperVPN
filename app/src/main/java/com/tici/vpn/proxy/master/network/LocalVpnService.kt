@@ -13,6 +13,7 @@ import android.os.Build
 import android.os.DeadObjectException
 import android.os.IBinder
 import android.os.ParcelFileDescriptor
+import android.util.Log
 import androidx.core.app.NotificationCompat
 import com.tici.vpn.proxy.master.R
 import com.tici.vpn.proxy.master.home.HomeFragment
@@ -20,6 +21,7 @@ import com.tici.vpn.proxy.master.main.MainActivity
 import com.tici.vpn.proxy.master.proxy.ProxyConnection
 import com.tici.vpn.proxy.master.utils.Constant
 import com.common.baseui.BaseAppConfig
+import com.tici.vpn.proxy.master.main.SharedData
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
@@ -155,10 +157,12 @@ class LocalVpnService : VpnService(), Runnable {
 
     @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
     fun stopVPN() {
+        Log.i("SuperVpn", "TestRelease stopVPN $IsRunning")
         if (IsRunning) {
             IsRunning = false
             // First stop the VPN thread to prevent new operations
             if (m_VPNThread != null) {
+                Log.i("SuperVpn", "TestRelease stopVPN m_VPNThread")
                 m_VPNThread!!.interrupt()
                 try {
                     m_VPNThread!!.join(1000) // Wait up to 1 second for thread to finish
@@ -171,6 +175,7 @@ class LocalVpnService : VpnService(), Runnable {
             // Detach file descriptor before stopping engine
             if (m_VPNInterface != null) {
                 try {
+                    Log.i("SuperVpn", "TestRelease stopVPN m_VPNInterface")
                     m_VPNInterface!!.close()
                     Timber.tag(Constant.TAG).d("Successfully detached fd:")
                 } catch (e: Exception) {
@@ -181,6 +186,7 @@ class LocalVpnService : VpnService(), Runnable {
             }
 
             // Now stop engine after fd is detached
+            Log.i("SuperVpn", "TestRelease engine.Engine.stop() ${BaseAppConfig.proxy.isNotEmpty()}")
             if (BaseAppConfig.proxy.isNotEmpty()) {
                 engine.Engine.stop()
             }
@@ -190,11 +196,18 @@ class LocalVpnService : VpnService(), Runnable {
             currentProxy = null
 
             if (Instance != null) {
+                Log.i("SuperVpn", "TestRelease Instance")
                 Instance!!.stopForeground(true)
                 Instance!!.stopSelf() // Stop the service after cleanup
                 Instance = null // Clear the instance reference
             }
             proxyConnection.updateUI(HomeFragment.DISCONNECTED)
+            Log.i("SuperVpn", "TestRelease isSub stopVPN ${SharedData.isSub.value}")
+            if (SharedData.isSub.value == false) {
+                BaseAppConfig.proxy = ""
+                BaseAppConfig.proxyHost = ""
+                BaseAppConfig.proxyCountry = ""
+            }
             Timber.tag(Constant.TAG).d("VPNService stopped.")
         }
     }
