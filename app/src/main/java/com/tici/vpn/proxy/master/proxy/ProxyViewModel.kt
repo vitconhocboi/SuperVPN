@@ -67,18 +67,18 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
     }
 
     fun getAllPremiumProxy(context: Context, type: String) {
-        Log.i("TestRelease", "getAllPremiumProxy ${type}")
+//        Log.i("TestRelease", "getAllPremiumProxy ${type}")
         viewModelScope.launch(Dispatchers.IO) {
-            Log.i("TestRelease", "getAllPremiumProxy viewModelScope ${type}")
+//            Log.i("TestRelease", "getAllPremiumProxy viewModelScope ${type}")
             try {
-                Log.i("TestRelease", "call api ${type} ${Utils.BASE_URL}")
+//                Log.i("TestRelease", "call api ${type} ${Utils.BASE_URL}")
                 val response = apiService.getCountries(type)
-                Log.i("TestRelease", "response ${response.isSuccessful} ${response.body()}")
+//                Log.i("TestRelease", "response ${response.isSuccessful} ${response.body()}")
                 if (response.isSuccessful) {
                     response.body()?.let { countriesResponse ->
                         val listProxies = countriesResponse.countries.map { country ->
-                            Log.i("TestRelease", "response country ${country.toString()}")
-                            Log.i("TestRelease", "response active ${country == BaseAppConfig.proxyCountry}")
+//                            Log.i("TestRelease", "response country ${country.toString()}")
+//                            Log.i("TestRelease", "response active ${country == BaseAppConfig.proxyCountry}")
                             ProxyGroupUI(
                                 country = country, active = country == BaseAppConfig.proxyCountry
                             )
@@ -170,7 +170,7 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
 
     fun stopProxy(deviceId: String?, context: Context?) {
         proxyUpdate.setProxyUpdate(this)
-        Log.i("SuperVpn", "TestRelease stopProxy")
+//        Log.i("SuperVpn", "TestRelease stopProxy")
         context!!.startService(Intent(context, LocalVpnService::class.java).apply {
             action = ACTION_STOP
         })

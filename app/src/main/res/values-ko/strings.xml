@@ -139,7 +139,7 @@
   <string name="status_on">에</string>
   <string name="status_off">끄다</string>
   <string name="dg_vpn_permission_title">Super VPN은 권한으로 연결할 수 없습니다</string>
-  <string name="dg_vpn_permission_guide">VPN 연결을 허용하려면 “&lt;b&gt;확인&lt;/b&gt;”을 누르세요.</string>
+  <string name="dg_vpn_permission_guide">VPN 연결을 허용하려면 “확인”을 누르세요.</string>
   <string name="connection_request">연결 요청</string>
   <string name="vpn_des1">SupperVPN에서 네트워크 트래픽을 모니터링할 수 있는 VPN 연결 설정 권한을 요청하고 있습니다. 출처를 신뢰할 수 있는 경우에만 허용해 주세요.</string>
   <string name="vpn_des2">VPN을 사용하는 동안 화면 상단에 아이콘이 표시됩니다. 허용하시겠습니까?</string>

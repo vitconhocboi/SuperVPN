@@ -139,7 +139,7 @@
   <string name="status_on">SU</string>
   <string name="status_off">Spento</string>
   <string name="dg_vpn_permission_title">Super VPN non può essere connesso con l\'autorità</string>
-  <string name="dg_vpn_permission_guide">Premere "&lt;b&gt;OK&lt;/b&gt;" per consentire la connessione VPN.</string>
+  <string name="dg_vpn_permission_guide">Premere "OK" per consentire la connessione VPN.</string>
   <string name="connection_request">Richiesta di connessione</string>
   <string name="vpn_des1">SupperVPN richiede l\'autorizzazione per configurare una connessione VPN che gli consentirà di monitorare il traffico di rete. Consentilo solo se la fonte è attendibile.</string>
   <string name="vpn_des2">Mentre la VPN è in uso, verrà visualizzata un\'icona nella parte superiore dello schermo. Consentire?</string>

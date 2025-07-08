@@ -139,7 +139,7 @@
   <string name="status_on">ON</string>
   <string name="status_off">Mitfi</string>
   <string name="dg_vpn_permission_title">Super VPN ma jistax jikkonnettja ma\' awtorità</string>
-  <string name="dg_vpn_permission_guide">Agħfas “&lt;b&gt;OK&lt;/b&gt;’ biex tippermetti l-konnessjoni VPN.</string>
+  <string name="dg_vpn_permission_guide">Agħfas “OK’ biex tippermetti l-konnessjoni VPN.</string>
   <string name="connection_request">Talba għal konnessjoni</string>
   <string name="vpn_des1">SupperVPN qed titlob permess biex twaqqaf konnessjoni VPN li tippermettilha tissorvelja t-traffiku tan-netwerk. Ħalli dan biss jekk tafda s-sors.</string>
   <string name="vpn_des2">Se tintwera ikona fil-parti ta\' fuq tal-iskrin tiegħek waqt li l-VPN ikun qed jintuża. Tippermetti?</string>

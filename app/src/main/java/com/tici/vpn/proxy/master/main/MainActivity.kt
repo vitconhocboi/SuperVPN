@@ -125,14 +125,14 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
         }
 
         SharedData.isSub.observe(this) { it ->
-            Timber.d("Test_Subscribe isSub main_activity")
-            Log.i("SuperVpn", "TestRelease isSub main_activity $it")
+//            Timber.d("Test_Subscribe isSub main_activity")
+//            Log.i("SuperVpn", "TestRelease isSub main_activity $it")
             if (it == true) {
-                Timber.d("Test_Subscribe isSub main_activity true")
+//                Timber.d("Test_Subscribe isSub main_activity true")
                 binding.frameBanner.visibility = View.GONE
 //                Toast.makeText(baseContext, com.tici.vpn.proxy.master.R.string.premium_purchase_success, Toast.LENGTH_SHORT).show()
             } else {
-                Timber.d("Test_Subscribe isSub main_activity false")
+//                Timber.d("Test_Subscribe isSub main_activity false")
                 binding.frameBanner.visibility = View.VISIBLE
                 initLoadAds(binding.frameBanner)
             }

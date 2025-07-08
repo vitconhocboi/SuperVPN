@@ -139,7 +139,7 @@
   <string name="status_on">ഓൺ</string>
   <string name="status_off">ഓഫ്</string>
   <string name="dg_vpn_permission_title">സൂപ്പർ വിപിഎൻ അധികാരികളുമായി ബന്ധിപ്പിക്കാൻ കഴിയില്ല</string>
-  <string name="dg_vpn_permission_guide">VPN കണക്ഷൻ അനുവദിക്കാൻ “&lt;b&gt;ശരി&lt;/b&gt;” അമർത്തുക.</string>
+  <string name="dg_vpn_permission_guide">VPN കണക്ഷൻ അനുവദിക്കാൻ “ശരി” അമർത്തുക.</string>
   <string name="connection_request">കണക്ഷൻ അഭ്യർത്ഥന</string>
   <string name="vpn_des1">നെറ്റ്‌വർക്ക് ട്രാഫിക് നിരീക്ഷിക്കാൻ അനുവദിക്കുന്ന ഒരു VPN കണക്ഷൻ സജ്ജീകരിക്കാൻ SupperVPN അനുമതി അഭ്യർത്ഥിക്കുന്നു. ഉറവിടത്തെ നിങ്ങൾ വിശ്വസിക്കുന്നുവെങ്കിൽ മാത്രം ഇത് അനുവദിക്കുക.</string>
   <string name="vpn_des2">VPN ഉപയോഗത്തിലായിരിക്കുമ്പോൾ നിങ്ങളുടെ സ്ക്രീനിന്റെ മുകളിൽ ഒരു ഐക്കൺ കാണിക്കും. അനുവദിക്കണോ?</string>

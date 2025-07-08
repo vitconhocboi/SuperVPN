@@ -139,7 +139,7 @@
   <string name="status_on">КҮЙҮК</string>
   <string name="status_off">Өчүк</string>
   <string name="dg_vpn_permission_title">Super VPN бийлик менен туташуу мүмкүн эмес</string>
-  <string name="dg_vpn_permission_guide">VPN туташуусуна уруксат берүү үчүн “&lt;b&gt;OK&lt;/b&gt;” басыңыз.</string>
+  <string name="dg_vpn_permission_guide">VPN туташуусуна уруксат берүү үчүн “OK” басыңыз.</string>
   <string name="connection_request">Туташуу өтүнүчү</string>
   <string name="vpn_des1">SupperVPN тармак трафигин көзөмөлдөөгө мүмкүндүк берген VPN туташуусун орнотууга уруксат сурап жатат. Булакка ишенсеңиз гана уруксат бериңиз.</string>
   <string name="vpn_des2">VPN колдонулуп жатканда экраныңыздын жогору жагында сөлөкөт көрсөтүлөт. Уруксат бересизби?</string>

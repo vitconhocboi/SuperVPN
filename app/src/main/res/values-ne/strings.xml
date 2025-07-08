@@ -139,7 +139,7 @@
   <string name="status_on">खुला</string>
   <string name="status_off">बन्द</string>
   <string name="dg_vpn_permission_title">सुपर VPN लाई प्राधिकरणसँग जोड्न सकिँदैन</string>
-  <string name="dg_vpn_permission_guide">VPN जडानलाई अनुमति दिन “&lt;b&gt;OK&lt;/b&gt;” थिच्नुहोस्।</string>
+  <string name="dg_vpn_permission_guide">VPN जडानलाई अनुमति दिन “OK” थिच्नुहोस्।</string>
   <string name="connection_request">जडान अनुरोध</string>
   <string name="vpn_des1">SupperVPN ले नेटवर्क ट्राफिक निगरानी गर्न अनुमति दिने VPN जडान सेटअप गर्न अनुमति मागिरहेको छ। यदि तपाईं स्रोतमा विश्वास गर्नुहुन्छ भने मात्र यसलाई अनुमति दिनुहोस्।</string>
   <string name="vpn_des2">VPN प्रयोगमा हुँदा तपाईंको स्क्रिनको माथिल्लो भागमा एउटा आइकन देखिनेछ। अनुमति दिने हो?</string>

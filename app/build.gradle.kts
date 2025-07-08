@@ -23,8 +23,12 @@ android {
         applicationId = "com.tici.vpn.proxy.master"
         minSdk = 27
         targetSdk = 34
-        versionCode = 2
-        versionName = "1.1"
+        versionCode = 7
+        versionName = "1.7"
+
+        resourceConfigurations.addAll(
+            listOf("en", "vi", "ar", "hi", "id", "ms", "ru", "pt", "fr", "de", "es", "ja", "ko")
+        )
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -55,7 +59,7 @@ android {
 
     buildTypes {
         debug {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             buildConfigField("boolean", "ADS_ON", "true")
             buildConfigField("boolean", "FIREBASE_DEBUG", "false")
 
@@ -67,7 +71,7 @@ android {
             buildConfigField("String", "app_ads_open_resume_id_new", "\"ca-app-pub-3940256099942544/9257395921\"")
             buildConfigField("String", "ads_reward_id_new", "\"ca-app-pub-3940256099942544/5224354917\"")
 
-            isShrinkResources = false
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"

@@ -139,7 +139,7 @@
   <string name="status_on">NA</string>
   <string name="status_off">Isključeno</string>
   <string name="dg_vpn_permission_title">Super VPN se ne može povezati s ovlaštenjem</string>
-  <string name="dg_vpn_permission_guide">Pritisnite “&lt;b&gt;U redu&lt;/b&gt;” kako biste omogućili VPN vezu.</string>
+  <string name="dg_vpn_permission_guide">Pritisnite “U redu” kako biste omogućili VPN vezu.</string>
   <string name="connection_request">Zahtjev za povezivanje</string>
   <string name="vpn_des1">SupperVPN traži dopuštenje za postavljanje VPN veze koja će mu omogućiti praćenje mrežnog prometa. Dopustite ovo samo ako pouzdano vjerujete izvoru.</string>
   <string name="vpn_des2">Ikona će se prikazivati ​​na vrhu zaslona dok je VPN u upotrebi. Dopustiti?</string>

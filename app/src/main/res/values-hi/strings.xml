@@ -139,7 +139,7 @@
   <string name="status_on">पर</string>
   <string name="status_off">बंद</string>
   <string name="dg_vpn_permission_title">सुपर वीपीएन को प्राधिकरण से कनेक्ट नहीं किया जा सकता</string>
-  <string name="dg_vpn_permission_guide">VPN कनेक्शन की अनुमति देने के लिए “&lt;b&gt;OK&lt;/b&gt;” दबाएँ।</string>
+  <string name="dg_vpn_permission_guide">VPN कनेक्शन की अनुमति देने के लिए “OK” दबाएँ।</string>
   <string name="connection_request">कनेक्शन अनुरोध</string>
   <string name="vpn_des1">SupperVPN एक VPN कनेक्शन स्थापित करने की अनुमति मांग रहा है जो उसे नेटवर्क ट्रैफ़िक की निगरानी करने की अनुमति देगा। इसे केवल तभी अनुमति दें जब आप स्रोत पर भरोसा करते हों।</string>
   <string name="vpn_des2">VPN के उपयोग के दौरान आपकी स्क्रीन के शीर्ष पर एक आइकन दिखाया जाएगा। अनुमति दें?</string>

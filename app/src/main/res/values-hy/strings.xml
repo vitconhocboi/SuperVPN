@@ -139,7 +139,7 @@
   <string name="status_on">ՄԻԱՑՎԱԾ</string>
   <string name="status_off">Անջատված</string>
   <string name="dg_vpn_permission_title">Super VPN-ը չի կարող միանալ իշխանության հետ</string>
-  <string name="dg_vpn_permission_guide">VPN կապը թույլատրելու համար սեղմեք «&lt;b&gt;Լավ&lt;/b&gt;» կոճակը։</string>
+  <string name="dg_vpn_permission_guide">VPN կապը թույլատրելու համար սեղմեք «Լավ» կոճակը։</string>
   <string name="connection_request">Միացման հարցում</string>
   <string name="vpn_des1">SupperVPN-ը թույլտվություն է խնդրում VPN կապ հաստատելու համար, որը թույլ կտա վերահսկել ցանցային երթևեկությունը: Թույլատրեք սա միայն այն դեպքում, եթե վստահում եք աղբյուրին:</string>
   <string name="vpn_des2">VPN-ի օգտագործման ընթացքում էկրանի վերևի մասում կցուցադրվի պատկերակ։ Թույլատրե՞լ։</string>

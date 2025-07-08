@@ -139,7 +139,7 @@
   <string name="status_on">PADA</string>
   <string name="status_off">Mati</string>
   <string name="dg_vpn_permission_title">Super VPN tidak dapat terhubung dengan otoritas</string>
-  <string name="dg_vpn_permission_guide">Tekan “&lt;b&gt;OK&lt;/b&gt;” untuk mengizinkan koneksi VPN.</string>
+  <string name="dg_vpn_permission_guide">Tekan “OK” untuk mengizinkan koneksi VPN.</string>
   <string name="connection_request">Permintaan koneksi</string>
   <string name="vpn_des1">SupperVPN meminta izin untuk menyiapkan koneksi VPN yang memungkinkannya memantau lalu lintas jaringan. Izinkan ini hanya jika Anda memercayai sumbernya.</string>
   <string name="vpn_des2">Ikon akan ditampilkan di bagian atas layar saat VPN sedang digunakan. Izinkan?</string>

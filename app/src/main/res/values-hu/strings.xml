@@ -139,7 +139,7 @@
   <string name="status_on">ON</string>
   <string name="status_off">Le</string>
   <string name="dg_vpn_permission_title">A Super VPN nem tud csatlakozni a hatósághoz</string>
-  <string name="dg_vpn_permission_guide">Nyomja meg az „&lt;b&gt;OK&lt;/b&gt;” gombot a VPN-kapcsolat engedélyezéséhez.</string>
+  <string name="dg_vpn_permission_guide">Nyomja meg az „OK” gombot a VPN-kapcsolat engedélyezéséhez.</string>
   <string name="connection_request">Kapcsolódási kérelem</string>
   <string name="vpn_des1">A SupperVPN engedélyt kér egy VPN-kapcsolat beállításához, amely lehetővé teszi számára a hálózati forgalom figyelését. Csak akkor engedélyezze ezt, ha megbízik a forrásban.</string>
   <string name="vpn_des2">Egy ikon jelenik meg a képernyő tetején, amíg a VPN használatban van. Engedélyezi?</string>

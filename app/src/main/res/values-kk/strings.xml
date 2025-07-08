@@ -139,7 +139,7 @@
   <string name="status_on">ҚОСУЛЫ</string>
   <string name="status_off">Өшірулі</string>
   <string name="dg_vpn_permission_title">Super VPN өкілеттікпен қосылу мүмкін емес</string>
-  <string name="dg_vpn_permission_guide">VPN қосылымына рұқсат беру үшін “&lt;b&gt;OK&lt;/b&gt;” түймесін басыңыз.</string>
+  <string name="dg_vpn_permission_guide">VPN қосылымына рұқсат беру үшін “OK” түймесін басыңыз.</string>
   <string name="connection_request">Қосылу сұрауы</string>
   <string name="vpn_des1">SupperVPN желілік трафикті бақылауға мүмкіндік беретін VPN қосылымын орнатуға рұқсат сұрайды. Дереккөзге сенсеңіз ғана рұқсат етіңіз.</string>
   <string name="vpn_des2">VPN пайдалану кезінде экранның жоғарғы жағында белгіше көрсетіледі. Рұқсат ету керек пе?</string>

@@ -139,7 +139,7 @@
   <string name="status_on">SEES</string>
   <string name="status_off">Väljas</string>
   <string name="dg_vpn_permission_title">Super VPN-i ei saa autoriteediga ühendust luua</string>
-  <string name="dg_vpn_permission_guide">VPN-ühenduse lubamiseks vajutage nuppu „&lt;b&gt;OK&lt;/b&gt;“.</string>
+  <string name="dg_vpn_permission_guide">VPN-ühenduse lubamiseks vajutage nuppu „OK“.</string>
   <string name="connection_request">Ühenduse taotlus</string>
   <string name="vpn_des1">SupperVPN küsib luba VPN-ühenduse loomiseks, mis võimaldab tal jälgida võrguliiklust. Lubage seda ainult siis, kui usaldate allikat.</string>
   <string name="vpn_des2">VPN-i kasutamise ajal kuvatakse ekraani ülaosas ikoon. Kas lubada?</string>

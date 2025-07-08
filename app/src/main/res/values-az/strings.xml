@@ -139,7 +139,7 @@
   <string name="status_on">ON</string>
   <string name="status_off">Söndür</string>
   <string name="dg_vpn_permission_title">Super VPN avtoritet ilə əlaqə qura bilməz</string>
-  <string name="dg_vpn_permission_guide">VPN bağlantısına icazə vermək üçün “&lt;b&gt;OK&lt;/b&gt;”</string>
+  <string name="dg_vpn_permission_guide">VPN bağlantısına icazə vermək üçün “OK”</string>
   <string name="connection_request">Bağlantı sorğusu</string>
   <string name="vpn_des1">SupperVPN şəbəkə trafikinə nəzarət etməyə imkan verəcək VPN bağlantısı qurmaq üçün icazə tələb edir. Yalnız mənbəyə güvəndiyiniz halda buna icazə verin.</string>
   <string name="vpn_des2">VPN istifadə edərkən ekranınızın yuxarısında bir ikona görünəcək. İcazə verilsin?</string>

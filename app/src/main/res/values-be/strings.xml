@@ -139,7 +139,7 @@
   <string name="status_on">ВКЛ</string>
   <string name="status_off">Выкл</string>
   <string name="dg_vpn_permission_title">Super VPN не можа падключыцца да аўтарызацыі</string>
-  <string name="dg_vpn_permission_guide">Націсніце «&lt;b&gt;ОК&lt;/b&gt;», каб дазволіць VPN-злучэнне.</string>
+  <string name="dg_vpn_permission_guide">Націсніце «ОК», каб дазволіць VPN-злучэнне.</string>
   <string name="connection_request">Запыт на падключэнне</string>
   <string name="vpn_des1">SupperVPN запытвае дазвол на наладжванне VPN-злучэння, якое дазволіць яму кантраляваць сеткавы трафік. Дазвольце гэта толькі ў тым выпадку, калі вы давяраеце крыніцы.</string>
   <string name="vpn_des2">Падчас выкарыстання VPN уверсе экрана будзе паказаны значок. Дазволіць?</string>

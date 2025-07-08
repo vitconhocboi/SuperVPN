@@ -139,7 +139,7 @@
   <string name="status_on">AN</string>
   <string name="status_off">Aus</string>
   <string name="dg_vpn_permission_title">Super VPN kann keine Verbindung mit der Autorität herstellen</string>
-  <string name="dg_vpn_permission_guide">Drücken Sie „&lt;b&gt;OK&lt;/b&gt;“, um die VPN-Verbindung zuzulassen.</string>
+  <string name="dg_vpn_permission_guide">Drücken Sie „OK“, um die VPN-Verbindung zuzulassen.</string>
   <string name="connection_request">Verbindungsanfrage</string>
   <string name="vpn_des1">SupperVPN fordert die Berechtigung zum Einrichten einer VPN-Verbindung an, um den Netzwerkverkehr zu überwachen. Erlauben Sie dies nur, wenn Sie der Quelle vertrauen.</string>
   <string name="vpn_des2">Während der VPN-Nutzung wird oben auf Ihrem Bildschirm ein Symbol angezeigt. Zulassen?</string>

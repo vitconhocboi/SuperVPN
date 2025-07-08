@@ -139,7 +139,7 @@
   <string name="status_on">АСААЛТТАЙ</string>
   <string name="status_off">Унтраах</string>
   <string name="dg_vpn_permission_title">Super VPN нь эрх мэдэлтэй холбогдох боломжгүй</string>
-  <string name="dg_vpn_permission_guide">VPN холболтыг зөвшөөрөхийн тулд “&lt;b&gt;OK&lt;/b&gt;”-г дарна уу.</string>
+  <string name="dg_vpn_permission_guide">VPN холболтыг зөвшөөрөхийн тулд “OK”-г дарна уу.</string>
   <string name="connection_request">Холболтын хүсэлт</string>
   <string name="vpn_des1">SupperVPN нь сүлжээний урсгалыг хянах боломжийг олгох VPN холболтыг тохируулах зөвшөөрөл хүсч байна. Хэрэв та эх сурвалжид итгэж байгаа бол үүнийг зөвшөөрнө үү.</string>
   <string name="vpn_des2">VPN ашиглаж байх үед таны дэлгэцийн дээд хэсэгт дүрс гарч ирнэ. Зөвшөөрөх үү?</string>

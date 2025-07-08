@@ -139,7 +139,7 @@
   <string name="status_on">HIDUP</string>
   <string name="status_off">Mati</string>
   <string name="dg_vpn_permission_title">Super VPN tidak boleh disambungkan dengan pihak berkuasa</string>
-  <string name="dg_vpn_permission_guide">Tekan “&lt;b&gt;OK&lt;/b&gt;” untuk membenarkan sambungan VPN.</string>
+  <string name="dg_vpn_permission_guide">Tekan “OK” untuk membenarkan sambungan VPN.</string>
   <string name="connection_request">Permintaan sambungan</string>
   <string name="vpn_des1">SupperVPN meminta kebenaran untuk menyediakan sambungan VPN yang membolehkannya memantau trafik rangkaian. Hanya benarkan ini jika anda mempercayai sumbernya.</string>
   <string name="vpn_des2">Ikon akan ditunjukkan di bahagian atas skrin anda semasa VPN sedang digunakan. benarkan?</string>

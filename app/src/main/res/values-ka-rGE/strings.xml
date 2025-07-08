@@ -139,7 +139,7 @@
   <string name="status_on">ჩართულია</string>
   <string name="status_off">გამორთულია</string>
   <string name="dg_vpn_permission_title">Super VPN-ის დაკავშირება ავტორიტეტთან შეუძლებელია</string>
-  <string name="dg_vpn_permission_guide">VPN კავშირის დასაშვებად დააჭირეთ ღილაკს „&lt;b&gt;OK&lt;/b&gt;“.</string>
+  <string name="dg_vpn_permission_guide">VPN კავშირის დასაშვებად დააჭირეთ ღილაკს „OK“.</string>
   <string name="connection_request">დაკავშირების მოთხოვნა</string>
   <string name="vpn_des1">SupperVPN ითხოვს ნებართვას VPN კავშირის დასაყენებლად, რაც მას ქსელური ტრაფიკის მონიტორინგის საშუალებას მისცემს. ამის დაშვება მხოლოდ იმ შემთხვევაში შეგიძლიათ, თუ წყაროს ენდობით.</string>
   <string name="vpn_des2">VPN-ის გამოყენებისას ეკრანის ზედა ნაწილში ხატულა გამოჩნდება. ნებას რთავთ?</string>

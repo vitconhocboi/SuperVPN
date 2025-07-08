@@ -139,7 +139,7 @@
   <string name="status_on">ΕΠΙ</string>
   <string name="status_off">Μακριά από</string>
   <string name="dg_vpn_permission_title">Το Super VPN δεν μπορεί να συνδεθεί με την αρχή</string>
-  <string name="dg_vpn_permission_guide">Πατήστε «&lt;b&gt;OK&lt;/b&gt;» για να επιτρέψετε τη σύνδεση VPN.</string>
+  <string name="dg_vpn_permission_guide">Πατήστε «OK» για να επιτρέψετε τη σύνδεση VPN.</string>
   <string name="connection_request">Αίτημα σύνδεσης</string>
   <string name="vpn_des1">Το SupperVPN ζητά άδεια για να ρυθμίσει μια σύνδεση VPN που θα του επιτρέψει να παρακολουθεί την κίνηση δικτύου. Επιτρέψτε την μόνο εάν εμπιστεύεστε την πηγή.</string>
   <string name="vpn_des2">Ένα εικονίδιο θα εμφανίζεται στο επάνω μέρος της οθόνης σας όσο χρησιμοποιείται το VPN. Επιτρέπεται;</string>

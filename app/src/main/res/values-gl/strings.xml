@@ -139,7 +139,7 @@
   <string name="status_on">ON</string>
   <string name="status_off">Desactivado</string>
   <string name="dg_vpn_permission_title">A Super VPN non se pode conectar coa autoridade</string>
-  <string name="dg_vpn_permission_guide">Prema “&lt;b&gt;Aceptar&lt;/b&gt;” para permitir a conexión VPN.</string>
+  <string name="dg_vpn_permission_guide">Prema “Aceptar” para permitir a conexión VPN.</string>
   <string name="connection_request">Solicitude de conexión</string>
   <string name="vpn_des1">SupperVPN está a solicitar permiso para configurar unha conexión VPN que lle permita monitorizar o tráfico da rede. Só permite isto se confías na fonte.</string>
   <string name="vpn_des2">Mostrarase unha icona na parte superior da pantalla mentres a VPN estea en uso. Permitir?</string>

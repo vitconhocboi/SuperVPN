@@ -139,7 +139,7 @@
   <string name="status_on">ಆನ್</string>
   <string name="status_off">ಆಫ್</string>
   <string name="dg_vpn_permission_title">ಸೂಪರ್ ವಿಪಿಎನ್ ಅನ್ನು ಅಧಿಕಾರದೊಂದಿಗೆ ಸಂಪರ್ಕಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ</string>
-  <string name="dg_vpn_permission_guide">VPN ಸಂಪರ್ಕವನ್ನು ಅನುಮತಿಸಲು “&lt;b&gt;ಸರಿ&lt;/b&gt;” ಒತ್ತಿರಿ.</string>
+  <string name="dg_vpn_permission_guide">VPN ಸಂಪರ್ಕವನ್ನು ಅನುಮತಿಸಲು “ಸರಿ” ಒತ್ತಿರಿ.</string>
   <string name="connection_request">ಸಂಪರ್ಕ ವಿನಂತಿ</string>
   <string name="vpn_des1">ನೆಟ್‌ವರ್ಕ್ ಟ್ರಾಫಿಕ್ ಅನ್ನು ಮೇಲ್ವಿಚಾರಣೆ ಮಾಡಲು ಅನುಮತಿಸುವ VPN ಸಂಪರ್ಕವನ್ನು ಹೊಂದಿಸಲು SupperVPN ಅನುಮತಿಯನ್ನು ವಿನಂತಿಸುತ್ತಿದೆ. ನೀವು ಮೂಲವನ್ನು ನಂಬಿದರೆ ಮಾತ್ರ ಇದನ್ನು ಅನುಮತಿಸಿ.</string>
   <string name="vpn_des2">VPN ಬಳಕೆಯಲ್ಲಿರುವಾಗ ನಿಮ್ಮ ಪರದೆಯ ಮೇಲ್ಭಾಗದಲ್ಲಿ ಐಕಾನ್ ಕಾಣಿಸುತ್ತದೆ. ಅನುಮತಿಸುವುದೇ?</string>

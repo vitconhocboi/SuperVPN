@@ -46,12 +46,12 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
     @SuppressLint("HardwareIds", "NotifyDataSetChanged")
     override fun initView() {
         super.initView()
-        Log.i("TestRelease", "getAllPremiumProxy initView")
+//        Log.i("TestRelease", "getAllPremiumProxy initView")
         val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
         with(binding) {
             ivBack.scaleX = if (isRTL) -1f else 1f
             rcvGroupProxy.adapter = mPagerAdapter
-            Log.i("TestRelease", "getAllPremiumProxy mProxyViewModel")
+//            Log.i("TestRelease", "getAllPremiumProxy mProxyViewModel")
             mProxyViewModel.getAllPremiumProxy(requireContext(), PREMIUM)
             bindFlowCreate(mProxyViewModel.allPremiumProxy) { result ->
                 when (result.status) {

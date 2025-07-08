@@ -139,7 +139,7 @@
   <string name="status_on">BẬT</string>
   <string name="status_off">TẮT</string>
   <string name="dg_vpn_permission_title">Super VPN không thể kết nối với chính quyền</string>
-  <string name="dg_vpn_permission_guide">Nhấn “&lt;b&gt;OK&lt;/b&gt;” để cho phép kết nối VPN.</string>
+  <string name="dg_vpn_permission_guide">Nhấn “OK” để cho phép kết nối VPN.</string>
   <string name="connection_request">Yêu cầu kết nối</string>
   <string name="vpn_des1">SupperVPN đang yêu cầu quyền thiết lập kết nối VPN cho phép theo dõi lưu lượng mạng. Chỉ cho phép điều này nếu bạn tin tưởng nguồn.</string>
   <string name="vpn_des2">Một biểu tượng sẽ hiển thị ở đầu màn hình khi VPN đang được sử dụng. Cho phép?</string>

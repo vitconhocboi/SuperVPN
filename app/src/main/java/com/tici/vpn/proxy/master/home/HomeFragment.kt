@@ -97,7 +97,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 binding.lnConnecting.invisible()
                 binding.ivConnect.isSelected = true
                 binding.ivConnect.isEnabled = true
-                Log.i("SuperVpn", "TestRelease isConnected true")
+//                Log.i("SuperVpn", "TestRelease isConnected true")
                 isConnected = true
                 binding.lnConnected.visible()
                 if (state == "RECONNECT") {
@@ -114,7 +114,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 binding.lnConnecting.invisible()
                 binding.ivConnect.isSelected = false
                 binding.ivConnect.isEnabled = false
-                Log.i("SuperVpn", "TestRelease isConnected false from DISCONNECTING")
+//                Log.i("SuperVpn", "TestRelease isConnected false from DISCONNECTING")
                 isConnected = false
                 binding.lnConnected.invisible()
             }
@@ -128,7 +128,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 binding.ivConnect.isSelected = false
                 binding.ivConnect.isEnabled = true
                 binding.lnConnected.invisible()
-                Log.i("SuperVpn", "TestRelease isConnected false from DISCONNECTED")
+//                Log.i("SuperVpn", "TestRelease isConnected false from DISCONNECTED")
                 isConnected = false
                 if (state == "CONNECT") {
                     state = ""
@@ -145,7 +145,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 binding.ivConnect.isSelected = false
                 binding.ivConnect.isEnabled = false
                 binding.lnConnected.invisible()
-                Log.i("SuperVpn", "TestRelease isConnected false from ERROR")
+//                Log.i("SuperVpn", "TestRelease isConnected false from ERROR")
                 isConnected = false
             }
         }
@@ -301,26 +301,26 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
             }
 
             SharedData.isSub.observe(viewLifecycleOwner) { it ->
-                Log.i("SuperVpn", "TestRelease isSub home_fragment $it")
+//                Log.i("SuperVpn", "TestRelease isSub home_fragment $it")
                 if (it == false) {
-                    Log.i("SuperVpn", "TestRelease isConnected $isConnected")
+//                    Log.i("SuperVpn", "TestRelease isConnected $isConnected")
                     if (isConnected) {
-                        Log.i("SuperVpn", "TestRelease BaseAppConfig.proxy ${BaseAppConfig.proxy} ${BaseAppConfig.proxy.isNotEmpty()}")
+//                        Log.i("SuperVpn", "TestRelease BaseAppConfig.proxy ${BaseAppConfig.proxy} ${BaseAppConfig.proxy.isNotEmpty()}")
                         if (BaseAppConfig.proxy.isNotEmpty()) { //neu chi dung dns thi giu nguyen
                             if (NetworkUtils.isInternetAvailable(requireActivity())) {
-                                Log.i("SuperVpn", "TestRelease has internet and stop")
+//                                Log.i("SuperVpn", "TestRelease has internet and stop")
                                 stopSpeedTest()
                                 vpnPermissionLauncher.unregister()
-                                Log.i("SuperVpn", "TestRelease has stopVpnService and stop")
+//                                Log.i("SuperVpn", "TestRelease has stopVpnService and stop")
                                 stopVpnService()
                             }
                         }
                     }
                     with (binding) {
-                        Log.i("SuperVpn", "TestRelease BaseAppConfig.proxy ${BaseAppConfig.proxy}")
+//                        Log.i("SuperVpn", "TestRelease BaseAppConfig.proxy ${BaseAppConfig.proxy}")
                         if (BaseAppConfig.proxy.isNotEmpty()) {
                             ivConnect.isSelected = false
-                            Log.i("SuperVpn", "TestRelease BaseAppConfig.proxy isConnected ${isConnected}")
+//                            Log.i("SuperVpn", "TestRelease BaseAppConfig.proxy isConnected ${isConnected}")
                             if (!isConnected) {
                                 BaseAppConfig.proxy = ""
                                 BaseAppConfig.proxyHost = ""

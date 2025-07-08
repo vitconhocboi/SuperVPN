@@ -139,7 +139,7 @@
   <string name="status_on">ON</string>
   <string name="status_off">Desaktibatuta</string>
   <string name="dg_vpn_permission_title">Super VPN-a ezin da agintaritzarekin konektatu</string>
-  <string name="dg_vpn_permission_guide">Sakatu “&lt;b&gt;Ados&lt;/b&gt;’ VPN konexioa baimentzeko.</string>
+  <string name="dg_vpn_permission_guide">Sakatu “Ados’ VPN konexioa baimentzeko.</string>
   <string name="connection_request">Konexio eskaera</string>
   <string name="vpn_des1">SupperVPN-k sareko trafikoa kontrolatzeko aukera emango dion VPN konexio bat ezartzeko baimena eskatzen ari da. Iturburuaz fidatzen bazara bakarrik baimendu hau.</string>
   <string name="vpn_des2">VPNa erabiltzen ari zaren bitartean, ikono bat agertuko da pantailaren goialdean. Baimendu?</string>

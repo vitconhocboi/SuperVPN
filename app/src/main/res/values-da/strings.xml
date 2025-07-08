@@ -139,7 +139,7 @@
   <string name="status_on">PÅ</string>
   <string name="status_off">Slukket</string>
   <string name="dg_vpn_permission_title">Super VPN kan ikke oprette forbindelse til autoritet</string>
-  <string name="dg_vpn_permission_guide">Tryk på “&lt;b&gt;OK&lt;/b&gt;” for at tillade VPN-forbindelsen.</string>
+  <string name="dg_vpn_permission_guide">Tryk på “OK” for at tillade VPN-forbindelsen.</string>
   <string name="connection_request">Forbindelsesanmodning</string>
   <string name="vpn_des1">SupperVPN anmoder om tilladelse til at oprette en VPN-forbindelse, der gør det muligt at overvåge netværkstrafik. Tillad kun dette, hvis du har tillid til kilden.</string>
   <string name="vpn_des2">Der vises et ikon øverst på skærmen, mens VPN\'en er i brug. Tillad?</string>

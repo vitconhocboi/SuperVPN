@@ -139,7 +139,7 @@
   <string name="status_on">ເປີດ</string>
   <string name="status_off">ປິດ</string>
   <string name="dg_vpn_permission_title">Super VPN ບໍ່ສາມາດເຊື່ອມຕໍ່ກັບສິດອໍານາດໄດ້</string>
-  <string name="dg_vpn_permission_guide">ກົດ “&lt;b&gt;ຕົກລົງ&lt;/b&gt;” ເພື່ອອະນຸຍາດໃຫ້ເຊື່ອມຕໍ່ VPN.</string>
+  <string name="dg_vpn_permission_guide">ກົດ “ຕົກລົງ” ເພື່ອອະນຸຍາດໃຫ້ເຊື່ອມຕໍ່ VPN.</string>
   <string name="connection_request">ການຮ້ອງຂໍການເຊື່ອມຕໍ່</string>
   <string name="vpn_des1">SupperVPN ກໍາລັງຮ້ອງຂໍການອະນຸຍາດເພື່ອຕັ້ງຄ່າການເຊື່ອມຕໍ່ VPN ທີ່ຈະຊ່ວຍໃຫ້ມັນຕິດຕາມກວດກາການຈະລາຈອນເຄືອຂ່າຍ. ອະນຸຍາດໃຫ້ນີ້ພຽງແຕ່ຖ້າທ່ານໄວ້ວາງໃຈແຫຼ່ງ.</string>
   <string name="vpn_des2">ໄອຄອນຈະສະແດງຢູ່ເທິງສຸດຂອງໜ້າຈໍທ່ານໃນຂະນະທີ່ VPN ນຳໃຊ້ຢູ່. ອະນຸຍາດ?</string>

@@ -139,7 +139,7 @@
   <string name="status_on">ON</string>
   <string name="status_off">Wehe</string>
   <string name="dg_vpn_permission_title">Ko te Super VPN kaore e taea te hono atu ki te mana</string>
-  <string name="dg_vpn_permission_guide">Pēhia te “&lt;b&gt;OK&lt;/b&gt;” kia whakaaetia te hononga VPN.</string>
+  <string name="dg_vpn_permission_guide">Pēhia te “OK” kia whakaaetia te hononga VPN.</string>
   <string name="connection_request">Tono hononga</string>
   <string name="vpn_des1">Kei te tono whakaaetanga a SupperVPN ki te whakarite hononga VPN ka taea e ia te aro turuki i nga hokohoko whatunga. Whakaaetia tenei mena ka whakawhirinaki koe ki te puna.</string>
   <string name="vpn_des2">Ka whakaatuhia he ata ki runga o to mata i te wa e whakamahia ana te VPN. Whakaae?</string>

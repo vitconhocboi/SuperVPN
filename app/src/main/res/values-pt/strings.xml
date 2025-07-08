@@ -139,7 +139,7 @@
   <string name="status_on">SOBRE</string>
   <string name="status_off">Desligado</string>
   <string name="dg_vpn_permission_title">O Super VPN não pode ser conectado com autoridade</string>
-  <string name="dg_vpn_permission_guide">Pressione “&lt;b&gt;OK&lt;/b&gt;” para permitir a conexão VPN.</string>
+  <string name="dg_vpn_permission_guide">Pressione “OK” para permitir a conexão VPN.</string>
   <string name="connection_request">Solicitação de conexão</string>
   <string name="vpn_des1">O SupperVPN está solicitando permissão para configurar uma conexão VPN que permitirá monitorar o tráfego de rede. Só permita isso se você confiar na fonte.</string>
   <string name="vpn_des2">Um ícone será exibido na parte superior da tela enquanto a VPN estiver em uso. Permitir?</string>

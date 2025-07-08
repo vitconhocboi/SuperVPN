@@ -1,6 +1,7 @@
 package com.tici.vpn.proxy.master.language
 
 import android.content.res.Resources
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -66,8 +67,10 @@ class LanguageFragment (
             } else {
                 BaseAppConfig.firstTimeSetup = false
                 BaseAppConfig.languageCode = languageCode
+                Log.d("LanguageSwitch", "Language set to: ${BaseAppConfig.languageCode}")
                 if (BaseAppConfig.languageCode.isNotEmpty()) {
                     Lingver.getInstance().setLocale(requireContext(), BaseAppConfig.languageCode)
+                    activity?.recreate()
                 } else {
                     Lingver.getInstance().setFollowSystemLocale(requireContext())
                 }

@@ -139,7 +139,7 @@
   <string name="status_on">ĮJUNGTA</string>
   <string name="status_off">Išjungta</string>
   <string name="dg_vpn_permission_title">Super VPN negali prisijungti prie valdžios institucijos</string>
-  <string name="dg_vpn_permission_guide">Paspauskite „&lt;b&gt;Gerai&lt;/b&gt;“, kad leistumėte VPN ryšį.</string>
+  <string name="dg_vpn_permission_guide">Paspauskite „Gerai“, kad leistumėte VPN ryšį.</string>
   <string name="connection_request">Prisijungimo užklausa</string>
   <string name="vpn_des1">„SupperVPN“ prašo leidimo nustatyti VPN ryšį, kuris leis jam stebėti tinklo srautą. Leiskite tai tik tuo atveju, jei pasitikite šaltiniu.</string>
   <string name="vpn_des2">Kai VPN bus naudojamas, ekrano viršuje bus rodoma piktograma. Leisti?</string>

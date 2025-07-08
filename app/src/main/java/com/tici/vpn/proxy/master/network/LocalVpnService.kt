@@ -157,12 +157,12 @@ class LocalVpnService : VpnService(), Runnable {
 
     @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
     fun stopVPN() {
-        Log.i("SuperVpn", "TestRelease stopVPN $IsRunning")
+//        Log.i("SuperVpn", "TestRelease stopVPN $IsRunning")
         if (IsRunning) {
             IsRunning = false
             // First stop the VPN thread to prevent new operations
             if (m_VPNThread != null) {
-                Log.i("SuperVpn", "TestRelease stopVPN m_VPNThread")
+//                Log.i("SuperVpn", "TestRelease stopVPN m_VPNThread")
                 m_VPNThread!!.interrupt()
                 try {
                     m_VPNThread!!.join(1000) // Wait up to 1 second for thread to finish
@@ -175,7 +175,7 @@ class LocalVpnService : VpnService(), Runnable {
             // Detach file descriptor before stopping engine
             if (m_VPNInterface != null) {
                 try {
-                    Log.i("SuperVpn", "TestRelease stopVPN m_VPNInterface")
+//                    Log.i("SuperVpn", "TestRelease stopVPN m_VPNInterface")
                     m_VPNInterface!!.close()
                     Timber.tag(Constant.TAG).d("Successfully detached fd:")
                 } catch (e: Exception) {
@@ -186,7 +186,7 @@ class LocalVpnService : VpnService(), Runnable {
             }
 
             // Now stop engine after fd is detached
-            Log.i("SuperVpn", "TestRelease engine.Engine.stop() ${BaseAppConfig.proxy.isNotEmpty()}")
+//            Log.i("SuperVpn", "TestRelease engine.Engine.stop() ${BaseAppConfig.proxy.isNotEmpty()}")
             if (BaseAppConfig.proxy.isNotEmpty()) {
                 engine.Engine.stop()
             }
@@ -196,13 +196,13 @@ class LocalVpnService : VpnService(), Runnable {
             currentProxy = null
 
             if (Instance != null) {
-                Log.i("SuperVpn", "TestRelease Instance")
+//                Log.i("SuperVpn", "TestRelease Instance")
                 Instance!!.stopForeground(true)
                 Instance!!.stopSelf() // Stop the service after cleanup
                 Instance = null // Clear the instance reference
             }
             proxyConnection.updateUI(HomeFragment.DISCONNECTED)
-            Log.i("SuperVpn", "TestRelease isSub stopVPN ${SharedData.isSub.value}")
+//            Log.i("SuperVpn", "TestRelease isSub stopVPN ${SharedData.isSub.value}")
             if (SharedData.isSub.value == false) {
                 BaseAppConfig.proxy = ""
                 BaseAppConfig.proxyHost = ""

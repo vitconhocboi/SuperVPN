@@ -148,7 +148,7 @@
     <string name="status_on">On</string>
     <string name="status_off">Off</string>
     <string name="dg_vpn_permission_title">Super VPN can not be connect with authority</string>
-    <string name="dg_vpn_permission_guide">Press “<b>OK</b>” to allow the VPN connection.</string>
+    <string name="dg_vpn_permission_guide">Press “OK” to allow the VPN connection.</string>
     <string name="connection_request">Connection request</string>
     <string name="vpn_des1">SupperVPN is requesting  permission to set up a VPN connection that will allow it to monitor network traffic. Only allow this if you trust the source.</string>
     <string name="vpn_des2">An icon will be shown at the top of your screen while the VPN is in use. Allow?</string>

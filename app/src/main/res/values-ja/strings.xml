@@ -139,7 +139,7 @@
   <string name="status_on">の上</string>
   <string name="status_off">オフ</string>
   <string name="dg_vpn_permission_title">スーパーVPNは権限を持って接続できません</string>
-  <string name="dg_vpn_permission_guide">VPN接続を許可するには、「&lt;b&gt;OK&lt;/b&gt;」を押します。</string>
+  <string name="dg_vpn_permission_guide">VPN接続を許可するには、「OK」を押します。</string>
   <string name="connection_request">接続リクエスト</string>
   <string name="vpn_des1">SupperVPN は、ネットワークトラフィックの監視を可能にする VPN 接続を確立するための許可を要求しています。送信元を信頼できる場合のみ、許可してください。</string>
   <string name="vpn_des2">VPNの使用中は画面上部にアイコンが表示されます。許可しますか？</string>

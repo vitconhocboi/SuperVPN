@@ -139,7 +139,7 @@
   <string name="status_on">ON</string>
   <string name="status_off">Һүндерелгән</string>
   <string name="dg_vpn_permission_title">Супер VPN власть менән тоташтырып булмай .</string>
-  <string name="dg_vpn_permission_guide">Баҫығыҙ “&lt;b&gt;ОК&lt;/b&gt;” рөхсәт итеү өсөн VPN тоташыу.</string>
+  <string name="dg_vpn_permission_guide">Баҫығыҙ “ОК” рөхсәт итеү өсөн VPN тоташыу.</string>
   <string name="connection_request">Тоташыу тураһында һорау</string>
   <string name="vpn_des1">SupperVPN рөхсәт һорай, VPN тоташыуын булдырыу өсөн, был селтәр трафикын күҙәтеү мөмкинлеге бирәсәк. Сығанаҡҡа ышанһағыҙ ғына быға рөхсәт итегеҙ.</string>
   <string name="vpn_des2">Һеҙҙең экрандың өҫкө өлөшөндә иконка күрһәтеләсәк, ә VPN ҡулланыла. Рөхсәт итергә?</string>

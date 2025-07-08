@@ -139,7 +139,7 @@
   <string name="status_on">ON</string>
   <string name="status_off">Mati</string>
   <string name="dg_vpn_permission_title">Super VPN ora bisa nyambung karo panguwasa</string>
-  <string name="dg_vpn_permission_guide">Pencet "&lt;b&gt;OK&lt;/b&gt;” kanggo ngidini sambungan VPN.</string>
+  <string name="dg_vpn_permission_guide">Pencet "OK” kanggo ngidini sambungan VPN.</string>
   <string name="connection_request">Panjaluk sambungan</string>
   <string name="vpn_des1">SupperVPN njaluk ijin kanggo nyiyapake sambungan VPN sing bakal ngidini kanggo ngawasi lalu lintas jaringan. Mung ngidini iki yen sampeyan dipercaya sumber.</string>
   <string name="vpn_des2">Lambang bakal ditampilake ing sisih ndhuwur layar nalika VPN digunakake. ngidini?</string>

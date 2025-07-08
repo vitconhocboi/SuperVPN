@@ -10,7 +10,7 @@ enum class LangType(val langNameStringId: Int, val flagDrawableId: Int, val lang
     VI(R.string.lang_vi, R.drawable.ic_flag_vietnam, "vi"),
     ARAB(R.string.lang_ar, R.drawable.ic_flag_arab, "ar"),
     HI(R.string.lang_hi, R.drawable.ic_flag_india, "hi"),
-    IN(R.string.lang_in, R.drawable.ic_flag_indonesia, "in"),
+    IN(R.string.lang_in, R.drawable.ic_flag_indonesia, "id"),
     MS(R.string.lang_ms, R.drawable.ic_flag_malay, "ms"),
     RU(R.string.lang_ru, R.drawable.ic_flag_russian, "ru"),
     PT(R.string.lang_pt, R.drawable.ic_flag_potuguese, "pt"),

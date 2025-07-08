@@ -139,7 +139,7 @@
   <string name="status_on">على</string>
   <string name="status_off">عن</string>
   <string name="dg_vpn_permission_title">لا يمكن الاتصال بـ Super VPN مع السلطة</string>
-  <string name="dg_vpn_permission_guide">اضغط على "&lt;b&gt;موافق&lt;/b&gt;" للسماح باتصال VPN.</string>
+  <string name="dg_vpn_permission_guide">اضغط على "موافق" للسماح باتصال VPN.</string>
   <string name="connection_request">طلب اتصال</string>
   <string name="vpn_des1">يطلب SupperVPN إذنًا لإعداد اتصال VPN يسمح له بمراقبة حركة مرور الشبكة. اسمح بذلك فقط إذا كنت تثق بالمصدر.</string>
   <string name="vpn_des2">سيظهر رمز أعلى الشاشة أثناء استخدام VPN. هل تريد السماح بذلك؟</string>

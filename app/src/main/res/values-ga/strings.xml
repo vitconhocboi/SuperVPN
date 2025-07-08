@@ -139,7 +139,7 @@
   <string name="status_on">AR AGHAIDH</string>
   <string name="status_off">as</string>
   <string name="dg_vpn_permission_title">Ní féidir Super VPN a nascadh le húdarás</string>
-  <string name="dg_vpn_permission_guide">Brúigh “&lt;b&gt;Ceart go leor&lt;/b&gt;” chun an nasc VPN a cheadú.</string>
+  <string name="dg_vpn_permission_guide">Brúigh “Ceart go leor” chun an nasc VPN a cheadú.</string>
   <string name="connection_request">Iarratas ceangail</string>
   <string name="vpn_des1">Tá SupperVPN ag iarraidh cead chun nasc VPN a bhunú a ligfidh dó trácht líonra a mhonatóiriú. Ná ceadaigh é seo ach amháin má tá muinín agat as an bhfoinse.</string>
   <string name="vpn_des2">Taispeánfar deilbhín ag barr do scáileáin agus an VPN in úsáid. Ceadaigh?</string>

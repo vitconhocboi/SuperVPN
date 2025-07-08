@@ -139,7 +139,7 @@
   <string name="status_on">চালু</string>
   <string name="status_off">বন্ধ</string>
   <string name="dg_vpn_permission_title">সুপার ভিপিএন কর্তৃপক্ষের সাথে সংযুক্ত হতে পারে না</string>
-  <string name="dg_vpn_permission_guide">VPN সংযোগের অনুমতি দিতে “&lt;b&gt;ঠিক আছে&lt;/b&gt;” টিপুন।</string>
+  <string name="dg_vpn_permission_guide">VPN সংযোগের অনুমতি দিতে “ঠিক আছে” টিপুন।</string>
   <string name="connection_request">সংযোগের অনুরোধ</string>
   <string name="vpn_des1">SupperVPN একটি VPN সংযোগ সেট আপ করার অনুমতি চাইছে যা এটিকে নেটওয়ার্ক ট্র্যাফিক পর্যবেক্ষণ করার অনুমতি দেবে। যদি আপনি উৎসটি বিশ্বাস করেন তবেই এটি অনুমতি দিন।</string>
   <string name="vpn_des2">VPN ব্যবহারের সময় আপনার স্ক্রিনের উপরে একটি আইকন দেখাবে। অনুমতি দেবেন?</string>

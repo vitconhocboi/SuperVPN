@@ -139,7 +139,7 @@
   <string name="status_on">ON</string>
   <string name="status_off">NIALA</string>
   <string name="dg_vpn_permission_title">Super VPN dia tsy afaka mifandray amin\'ny manam-pahefana</string>
-  <string name="dg_vpn_permission_guide">Tsindrio "&lt;b&gt;OK&lt;/b&gt;” raha te hamela ny fifandraisana VPN.</string>
+  <string name="dg_vpn_permission_guide">Tsindrio "OK” raha te hamela ny fifandraisana VPN.</string>
   <string name="connection_request">Fangatahana fifandraisana</string>
   <string name="vpn_des1">SupperVPN dia mangataka alalana hanangana fifandraisana VPN izay ahafahany manara-maso ny fifamoivoizana amin\'ny tambajotra. Avelao fotsiny izany raha matoky ny loharano ianao.</string>
   <string name="vpn_des2">Haseho eo an-tampon\'ny efijery ny kisary iray rehefa ampiasaina ny VPN. Avelao?</string>

@@ -139,7 +139,7 @@
   <string name="status_on">AIRSON</string>
   <string name="status_off">dheth</string>
   <string name="dg_vpn_permission_title">Chan urrainnear Super VPN a cheangal ri ùghdarras</string>
-  <string name="dg_vpn_permission_guide">Brùth “&lt;b&gt;Ceart gu leòr&lt;/b&gt;” gus an ceangal VPN a cheadachadh.</string>
+  <string name="dg_vpn_permission_guide">Brùth “Ceart gu leòr” gus an ceangal VPN a cheadachadh.</string>
   <string name="connection_request">Iarrtas ceangail</string>
   <string name="vpn_des1">Tha SupperVPN ag iarraidh cead ceangal VPN a stèidheachadh a leigeas leis trafaic lìonra a sgrùdadh. Na leig seo ach ma tha earbsa agad san stòr.</string>
   <string name="vpn_des2">Nochdaidh ìomhaigh aig mullach na sgrìn agad fhad ’s a bhios an VPN ga chleachdadh. Ceadaich?</string>

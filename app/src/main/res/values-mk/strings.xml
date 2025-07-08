@@ -139,7 +139,7 @@
   <string name="status_on">ВКЛУЧЕНО</string>
   <string name="status_off">Исклучено</string>
   <string name="dg_vpn_permission_title">Супер VPN не може да се поврзе со авторитет</string>
-  <string name="dg_vpn_permission_guide">Притиснете „&lt;b&gt;OK&lt;/b&gt;“ за да ја дозволите VPN-врската.</string>
+  <string name="dg_vpn_permission_guide">Притиснете „OK“ за да ја дозволите VPN-врската.</string>
   <string name="connection_request">Барање за поврзување</string>
   <string name="vpn_des1">SupperVPN бара дозвола за поставување VPN конекција што ќе му овозможи да го следи мрежниот сообраќај. Дозволете го ова само ако му верувате на изворот.</string>
   <string name="vpn_des2">На горниот дел од екранот ќе се прикаже икона додека VPN-мрежата е во употреба. Дозволи?</string>

@@ -139,7 +139,7 @@
   <string name="status_on">በርቷል</string>
   <string name="status_off">ጠፍቷል</string>
   <string name="dg_vpn_permission_title">ልዕለ ቪፒኤን ከስልጣን ጋር መገናኘት አይችልም።</string>
-  <string name="dg_vpn_permission_guide">የቪፒኤን ግንኙነት ለመፍቀድ &lt;b&gt;እሺ&lt;/b&gt;ን ይጫኑ።</string>
+  <string name="dg_vpn_permission_guide">የቪፒኤን ግንኙነት ለመፍቀድ እሺን ይጫኑ።</string>
   <string name="connection_request">የግንኙነት ጥያቄ</string>
   <string name="vpn_des1">SupperVPN የአውታረ መረብ ትራፊክን ለመከታተል የሚያስችለውን የቪፒኤን ግንኙነት ለማዘጋጀት ፍቃድ እየጠየቀ ነው። ምንጩን ካመኑ ብቻ ይህን ፍቀድ።</string>
   <string name="vpn_des2">ቪፒኤን በአገልግሎት ላይ እያለ አንድ አዶ በማያ ገጽዎ ላይኛው ክፍል ይታያል። ፍቀድ?</string>

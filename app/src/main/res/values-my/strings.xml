@@ -139,7 +139,7 @@
   <string name="status_on">ဖွင့်ထားသည်။</string>
   <string name="status_off">ပိတ်သည်။</string>
   <string name="dg_vpn_permission_title">Super VPN ကို အာဏာပိုင်များနှင့် ချိတ်ဆက်၍မရပါ။</string>
-  <string name="dg_vpn_permission_guide">VPN ချိတ်ဆက်မှုကို ခွင့်ပြုရန် “&lt;b&gt;OK&lt;/b&gt;”</string>
+  <string name="dg_vpn_permission_guide">VPN ချိတ်ဆက်မှုကို ခွင့်ပြုရန် “OK”</string>
   <string name="connection_request">ချိတ်ဆက်မှုတောင်းဆိုမှု</string>
   <string name="vpn_des1">SupperVPN သည် ကွန်ရက်အသွားအလာကို စောင့်ကြည့်ရန် ခွင့်ပြုမည့် VPN ချိတ်ဆက်မှုတစ်ခုကို စနစ်ထည့်သွင်းရန် ခွင့်ပြုချက်တောင်းနေသည်။ အရင်းအမြစ်ကို ယုံကြည်ပါက ၎င်းကိုသာ ခွင့်ပြုပါ။</string>
   <string name="vpn_des2">VPN ကိုအသုံးပြုနေစဉ်တွင် သင့်စခရင်၏ထိပ်တွင် အိုင်ကွန်တစ်ခုပြပါမည်။ ခွင့်ပြုမလား။</string>

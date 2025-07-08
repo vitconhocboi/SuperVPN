@@ -139,11 +139,11 @@
   <string name="status_on">SUR</string>
   <string name="status_off">Désactivé</string>
   <string name="dg_vpn_permission_title">Super VPN ne peut pas être connecté avec l\'autorité</string>
-  <string name="dg_vpn_permission_guide">Appuyez sur « &lt;b&gt;OK&lt;/b&gt; » pour autoriser la connexion VPN.</string>
+  <string name="dg_vpn_permission_guide">Appuyez sur «OK» pour autoriser la connexion VPN.</string>
   <string name="connection_request">Demande de connexion</string>
   <string name="vpn_des1">SupperVPN demande l\'autorisation d\'établir une connexion VPN qui lui permettra de surveiller le trafic réseau. N\'autorisez cette connexion que si vous faites confiance à la source.</string>
-  <string name="vpn_des2">Une icône s\'affichera en haut de votre écran pendant l\'utilisation du VPN. Autoriser ?</string>
-  <string name="vpn_reason">Pourquoi une autorisation VPN est-elle nécessaire ?</string>
+  <string name="vpn_des2">Une icône s\'affichera en haut de votre écran pendant l\'utilisation du VPN. Autoriser?</string>
+  <string name="vpn_reason">Pourquoi une autorisation VPN est-elle nécessaire?</string>
   <string name="vpn_reason_des">L\'application nécessite l\'autorisation VPN pour établir une connexion sécurisée et chiffrée entre votre appareil et le serveur. Cette autorisation permet à l\'application de protéger votre vie privée et de chiffrer vos données, notamment lorsque vous utilisez des réseaux publics.</string>
   <string name="got_it">J\'ai compris</string>
   <string name="text_rate_hint">Le meilleur rang que nous pouvions obtenir :)</string>

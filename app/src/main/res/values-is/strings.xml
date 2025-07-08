@@ -139,7 +139,7 @@
   <string name="status_on">ON</string>
   <string name="status_off">Slökkt</string>
   <string name="dg_vpn_permission_title">Ekki er hægt að tengjast Super VPN við yfirvöld</string>
-  <string name="dg_vpn_permission_guide">Ýttu á „&lt;b&gt;Í lagi&lt;/b&gt;“ til að leyfa VPN-tenginguna.</string>
+  <string name="dg_vpn_permission_guide">Ýttu á „Í lagi“ til að leyfa VPN-tenginguna.</string>
   <string name="connection_request">Beiðni um tengingu</string>
   <string name="vpn_des1">SupperVPN biður um leyfi til að setja upp VPN-tengingu sem gerir því kleift að fylgjast með netumferð. Leyfðu þetta aðeins ef þú treystir upprunanum.</string>
   <string name="vpn_des2">Táknmynd birtist efst á skjánum á meðan VPN er í notkun. Leyfa?</string>

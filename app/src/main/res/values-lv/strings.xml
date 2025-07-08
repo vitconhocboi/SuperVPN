@@ -139,7 +139,7 @@
   <string name="status_on">IESL</string>
   <string name="status_off">Izslēgts</string>
   <string name="dg_vpn_permission_title">Super VPN nevar izveidot savienojumu ar iestādi</string>
-  <string name="dg_vpn_permission_guide">Nospiediet “&lt;b&gt;Labi&lt;/b&gt;”, lai atļautu VPN savienojumu.</string>
+  <string name="dg_vpn_permission_guide">Nospiediet “Labi”, lai atļautu VPN savienojumu.</string>
   <string name="connection_request">Savienojuma pieprasījums</string>
   <string name="vpn_des1">SupperVPN pieprasa atļauju iestatīt VPN savienojumu, kas ļaus tam uzraudzīt tīkla trafiku. Atļaujiet to tikai tad, ja uzticaties avotam.</string>
   <string name="vpn_des2">Kamēr VPN tiek izmantots, ekrāna augšdaļā tiks parādīta ikona. Vai atļaut?</string>

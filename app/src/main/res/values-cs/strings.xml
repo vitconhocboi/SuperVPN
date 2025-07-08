@@ -139,7 +139,7 @@
   <string name="status_on">NA</string>
   <string name="status_off">Vypnuto</string>
   <string name="dg_vpn_permission_title">Super VPN se nemůže připojit k autorizaci</string>
-  <string name="dg_vpn_permission_guide">Stisknutím tlačítka „&lt;b&gt;OK&lt;/b&gt;“ povolíte připojení VPN.</string>
+  <string name="dg_vpn_permission_guide">Stisknutím tlačítka „OK“ povolíte připojení VPN.</string>
   <string name="connection_request">Žádost o připojení</string>
   <string name="vpn_des1">SupperVPN žádá o povolení k nastavení VPN připojení, které mu umožní monitorovat síťový provoz. Povolte to pouze v případě, že zdroji důvěřujete.</string>
   <string name="vpn_des2">Během používání VPN se v horní části obrazovky zobrazí ikona. Povolit?</string>

@@ -139,7 +139,7 @@
   <string name="status_on">ON</string>
   <string name="status_off">Off</string>
   <string name="dg_vpn_permission_title">Super VPN pa ka konekte ak otorite a</string>
-  <string name="dg_vpn_permission_guide">Peze “&lt;b&gt;OK&lt;/b&gt;’ pou pèmèt koneksyon VPN lan.</string>
+  <string name="dg_vpn_permission_guide">Peze “OK’ pou pèmèt koneksyon VPN lan.</string>
   <string name="connection_request">Demann koneksyon</string>
   <string name="vpn_des1">SupperVPN ap mande pèmisyon pou mete kanpe yon koneksyon VPN ki pral pèmèt li kontwole trafik rezo a. Sèlman pèmèt sa si ou fè sous la konfyans.</string>
   <string name="vpn_des2">Yon ikòn ap parèt anlè ekran ou a pandan VPN nan ap fonksyone. Pèmèt?</string>

@@ -139,7 +139,7 @@
   <string name="status_on">ВКЛ</string>
   <string name="status_off">Изкл</string>
   <string name="dg_vpn_permission_title">Super VPN не може да се свърже с авторитет</string>
-  <string name="dg_vpn_permission_guide">Натиснете „&lt;b&gt;OK&lt;/b&gt;“, за да разрешите VPN връзката.</string>
+  <string name="dg_vpn_permission_guide">Натиснете „OK“, за да разрешите VPN връзката.</string>
   <string name="connection_request">Заявка за връзка</string>
   <string name="vpn_des1">SupperVPN иска разрешение за установяване на VPN връзка, която ще му позволи да наблюдава мрежовия трафик. Разрешете това само ако имате доверие на източника.</string>
   <string name="vpn_des2">В горната част на екрана ще се показва икона, докато VPN се използва. Да се ​​разреши ли?</string>

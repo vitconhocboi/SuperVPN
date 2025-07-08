@@ -139,7 +139,7 @@
   <string name="status_on">YMLAEN</string>
   <string name="status_off">I ffwrdd</string>
   <string name="dg_vpn_permission_title">Ni ellir cysylltu Super VPN ag awdurdod</string>
-  <string name="dg_vpn_permission_guide">Pwyswch “&lt;b&gt;Iawn&lt;/b&gt;” i ganiatáu’r cysylltiad VPN.</string>
+  <string name="dg_vpn_permission_guide">Pwyswch “Iawn” i ganiatáu’r cysylltiad VPN.</string>
   <string name="connection_request">Cais cysylltiad</string>
   <string name="vpn_des1">Mae SupperVPN yn gofyn am ganiatâd i sefydlu cysylltiad VPN a fydd yn caniatáu iddo fonitro traffig rhwydwaith. Dim ond caniatáu hyn os ydych chi\'n ymddiried yn y ffynhonnell.</string>
   <string name="vpn_des2">Bydd eicon yn cael ei ddangos ar frig eich sgrin tra bydd y VPN yn cael ei ddefnyddio. Caniatáu?</string>

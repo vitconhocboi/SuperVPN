@@ -139,7 +139,7 @@
   <string name="status_on">PÄÄLLÄ</string>
   <string name="status_off">Pois</string>
   <string name="dg_vpn_permission_title">Super VPN:ää ei voida yhdistää auktoriteettiin</string>
-  <string name="dg_vpn_permission_guide">Salli VPN-yhteys painamalla “&lt;b&gt;OK&lt;/b&gt;”.</string>
+  <string name="dg_vpn_permission_guide">Salli VPN-yhteys painamalla “OK”.</string>
   <string name="connection_request">Yhteyspyyntö</string>
   <string name="vpn_des1">SupperVPN pyytää lupaa muodostaa VPN-yhteyden, jonka avulla se voi valvoa verkkoliikennettä. Salli tämä vain, jos luotat lähteeseen.</string>
   <string name="vpn_des2">Näytön yläreunassa näkyy kuvake, kun VPN on käytössä. Sallitaanko?</string>

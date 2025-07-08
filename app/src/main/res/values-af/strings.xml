@@ -139,7 +139,7 @@
   <string name="status_on">AAN</string>
   <string name="status_off">Af</string>
   <string name="dg_vpn_permission_title">Super VPN kan nie met gesag verbind word nie</string>
-  <string name="dg_vpn_permission_guide">Druk “&lt;b&gt;OK&lt;/b&gt;” om die VPN-verbinding toe te laat.</string>
+  <string name="dg_vpn_permission_guide">Druk “OK” om die VPN-verbinding toe te laat.</string>
   <string name="connection_request">Verbindingsversoek</string>
   <string name="vpn_des1">SupperVPN versoek toestemming om \'n VPN-verbinding op te stel wat dit in staat sal stel om netwerkverkeer te monitor. Laat dit slegs toe as jy die bron vertrou.</string>
   <string name="vpn_des2">\'n Ikoon sal bo-aan jou skerm vertoon word terwyl die VPN gebruik word. Toelaat?</string>

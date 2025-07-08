@@ -139,7 +139,7 @@
   <string name="status_on">ચાલુ</string>
   <string name="status_off">બંધ</string>
   <string name="dg_vpn_permission_title">સુપર વીપીએન ઓથોરિટી સાથે કનેક્ટ થઈ શકતું નથી</string>
-  <string name="dg_vpn_permission_guide">VPN કનેક્શનને મંજૂરી આપવા માટે “&lt;b&gt;OK&lt;/b&gt;” દબાવો.</string>
+  <string name="dg_vpn_permission_guide">VPN કનેક્શનને મંજૂરી આપવા માટે “OK” દબાવો.</string>
   <string name="connection_request">કનેક્શન વિનંતી</string>
   <string name="vpn_des1">SupperVPN એક VPN કનેક્શન સેટ કરવા માટે પરવાનગીની વિનંતી કરી રહ્યું છે જે તેને નેટવર્ક ટ્રાફિકનું નિરીક્ષણ કરવાની મંજૂરી આપશે. જો તમને સ્રોત પર વિશ્વાસ હોય તો જ આને મંજૂરી આપો.</string>
   <string name="vpn_des2">VPN ઉપયોગમાં હશે ત્યારે તમારી સ્ક્રીનની ટોચ પર એક આઇકન દેખાશે. મંજૂરી આપીએ?</string>

@@ -139,7 +139,7 @@
   <string name="status_on">روشن</string>
   <string name="status_off">خاموش</string>
   <string name="dg_vpn_permission_title">سوپر VPN نمی‌تواند با مرجع مربوطه ارتباط برقرار کند</string>
-  <string name="dg_vpn_permission_guide">برای اجازه اتصال VPN، «&lt;b&gt;تأیید&lt;/b&gt;» را فشار دهید.</string>
+  <string name="dg_vpn_permission_guide">برای اجازه اتصال VPN، «تأیید» را فشار دهید.</string>
   <string name="connection_request">درخواست اتصال</string>
   <string name="vpn_des1">SupperVPN درخواست مجوز برای راه‌اندازی اتصال VPN را دارد که به آن امکان نظارت بر ترافیک شبکه را می‌دهد. فقط در صورتی که به منبع آن اعتماد دارید، این اجازه را بدهید.</string>
   <string name="vpn_des2">هنگام استفاده از VPN، یک آیکون در بالای صفحه نمایش شما نشان داده می‌شود. اجازه می‌دهید؟</string>
