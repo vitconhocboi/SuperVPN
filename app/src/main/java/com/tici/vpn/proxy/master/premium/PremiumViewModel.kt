@@ -63,7 +63,7 @@ class PremiumViewModel @Inject constructor(
             val listSkus = ArrayList<Sku>()
             products.clear()
             for (product in productDetailsList) {
-                Timber.Forest.d("Billing Found subscription: ${product.name} - ${product.oneTimePurchaseOfferDetails?.priceCurrencyCode}")
+//                Timber.Forest.d("Billing Found subscription: ${product.name} - ${product.oneTimePurchaseOfferDetails?.priceCurrencyCode}")
                 productDetailsList.forEach { productDetails ->
                     // Loop through base plans (weekly, monthly, annual)
                     productDetails.subscriptionOfferDetails?.forEach { offer ->
@@ -105,15 +105,15 @@ class PremiumViewModel @Inject constructor(
     }
 
     private suspend fun queryAvailableSubscriptions(productIds: List<String>): List<ProductDetails> {
-        Log.i("SuperVpn", "Test_sub start queryAvailableSubscriptions")
+//        Log.i("SuperVpn", "Test_sub start queryAvailableSubscriptions")
         return suspendCancellableCoroutine { continuation ->
-            Log.i("SuperVpn", "Test_sub start queryAvailableSubscriptions 2")
+//            Log.i("SuperVpn", "Test_sub start queryAvailableSubscriptions 2")
             if (!BillingManager.isReady()) {
                 continuation.resume(emptyList())
                 return@suspendCancellableCoroutine
             }
 
-            Log.i("SuperVpn", "Test_sub start queryAvailableSubscriptions 3")
+//            Log.i("SuperVpn", "Test_sub start queryAvailableSubscriptions 3")
             val productList = productIds.map { productId ->
                 QueryProductDetailsParams.Product.newBuilder()
                     .setProductId(productId)
@@ -121,18 +121,18 @@ class PremiumViewModel @Inject constructor(
                     .build()
             }
 
-            Log.i("SuperVpn", "Test_sub start queryAvailableSubscriptions 4 ${productList}")
+//            Log.i("SuperVpn", "Test_sub start queryAvailableSubscriptions 4 ${productList}")
             val params = QueryProductDetailsParams.newBuilder()
                 .setProductList(productList)
                 .build()
 
             BillingManager.billingClient.queryProductDetailsAsync(params) { billingResult, productDetailsList ->
-                Log.i("SuperVpn", "Test_sub start queryProductDetailsAsync ")
+//                Log.i("SuperVpn", "Test_sub start queryProductDetailsAsync ")
                 if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
-                    Log.i("SuperVpn", "Test_sub start queryProductDetailsAsync OK ${productDetailsList.size}")
+//                    Log.i("SuperVpn", "Test_sub start queryProductDetailsAsync OK ${productDetailsList.size}")
                     continuation.resume(productDetailsList)
                 } else {
-                    Log.i("SuperVpn", "Test_sub start queryProductDetailsAsync empty")
+//                    Log.i("SuperVpn", "Test_sub start queryProductDetailsAsync empty")
                     continuation.resume(emptyList())
                 }
             }

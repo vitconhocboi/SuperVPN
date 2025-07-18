@@ -75,19 +75,19 @@ target_link_libraries(
     ${z-lib}
 )
 
-#target_compile_options(
-#        share-pr
-#        PRIVATE
-#        -O3
-#        -funroll-loops
-#        -fvisibility=hidden
-#        "SHELL:-mllvm -bcf -mllvm -fla -mllvm -icall  -mllvm -igv -mllvm -ibr -mllvm -sobf"
-#)
-#
-#target_link_options(
-#        share-pr
-#        PRIVATE
-#        "-Wl,--strip-all"
-#        "-Wl,--exclude-libs,ALL"
-#)
+target_compile_options(
+        share-pr
+        PRIVATE
+        -O3
+        -funroll-loops
+        -fvisibility=hidden
+        "SHELL:-mllvm -bcf -mllvm -fla -mllvm -icall  -mllvm -igv -mllvm -ibr -mllvm -sobf"
+)
+
+target_link_options(
+        share-pr
+        PRIVATE
+        "-Wl,--strip-all"
+        "-Wl,--exclude-libs,ALL"
+)
 

@@ -105,6 +105,13 @@ object BaseAppConfig {
             SharedPrefs.instance.put(KEY_ADS_BLOCK, value)
         }
 
+    private const val DATA_COLLECTION = "DATA_COLLECTION"
+    var allowCollectData: Boolean
+        get() = SharedPrefs.instance[DATA_COLLECTION, Boolean::class.java, false]
+        set(value) {
+            SharedPrefs.instance.put(DATA_COLLECTION, value)
+        }
+
     private const val KEY_FEEDBACK = "FEEDBACK"
     var isFeedback: Boolean
         get() = SharedPrefs.instance[KEY_FEEDBACK, Boolean::class.java, false]

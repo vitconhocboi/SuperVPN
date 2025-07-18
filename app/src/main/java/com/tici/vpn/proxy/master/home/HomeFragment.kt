@@ -339,6 +339,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                         currentProxy = null
                     }
                 } else {
+//                    Log.i("SuperVpn", "TestRelease proxy ${BaseAppConfig.proxy}")
                     if (BaseAppConfig.proxy.isNotEmpty()) {
                         //update UI
                         ivFlag.setImageResource(Utils.getFlag(BaseAppConfig.proxyCountry))
@@ -359,6 +360,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                         }
 
                         tvProxyIp.setVisible(true)
+//                        Log.i("SuperVpn", "TestRelease update text ${currentProxy?.host}")
                         tvProxyIp.text = currentProxy?.host
                         val typeface = ResourcesCompat.getFont(context, R.font.inter_bold)
                         tvProxyLocation.typeface = typeface

@@ -13,12 +13,13 @@ import com.common.baseui.lingver.Lingver
 import com.tici.vpn.proxy.master.base.ProductFragment
 import com.tici.vpn.proxy.master.databinding.FragmentLanguageBinding
 import com.tici.vpn.proxy.master.R
+import com.tici.vpn.proxy.master.splash.AgreementDialog
 import com.tici.vpn.proxy.master.utils.Navigator
 import java.util.Locale
 
 
-class LanguageFragment (
-    val fromSetting : Boolean = false
+class LanguageFragment(
+    val fromSetting: Boolean = false
 ) : ProductFragment<FragmentLanguageBinding>() {
     private val mViewModel: LanguageViewModel by viewModels()
     private val mLangAdapter = LanguageAdapter()
@@ -61,23 +62,37 @@ class LanguageFragment (
         }
 
         binding.ivDone.setOnClickNoDoubleClick {
-            if (languageCode.isEmpty()) {
-//                Toast.makeText(requireContext(), "Language is not change", Toast.LENGTH_SHORT).show()
-                BaseAppConfig.firstTimeSetup = false
+
+            if (!BaseAppConfig.allowCollectData && !fromSetting) {
+                AgreementDialog(
+                    requireActivity(),
+                    onContinue = {
+                        if (languageCode.isEmpty()) {
+                            BaseAppConfig.firstTimeSetup = false
+                        } else {
+                            BaseAppConfig.firstTimeSetup = false
+                            BaseAppConfig.languageCode = languageCode
+                            Log.d("LanguageSwitch", "Language set to: ${BaseAppConfig.languageCode}")
+                            if (BaseAppConfig.languageCode.isNotEmpty()) {
+                                Lingver.getInstance().setLocale(requireContext(), BaseAppConfig.languageCode)
+                                activity?.recreate()
+                            } else {
+                                Lingver.getInstance().setFollowSystemLocale(requireContext())
+                            }
+                        }
+
+                        BaseAppConfig.allowCollectData = true
+                        (activity as? LanguageActivity)?.apply {
+                            Navigator.startMainActivity(this)
+                            finish()
+                        }
+                    }
+                ).show()
             } else {
-                BaseAppConfig.firstTimeSetup = false
-                BaseAppConfig.languageCode = languageCode
-                Log.d("LanguageSwitch", "Language set to: ${BaseAppConfig.languageCode}")
-                if (BaseAppConfig.languageCode.isNotEmpty()) {
-                    Lingver.getInstance().setLocale(requireContext(), BaseAppConfig.languageCode)
-                    activity?.recreate()
-                } else {
-                    Lingver.getInstance().setFollowSystemLocale(requireContext())
+                (activity as? LanguageActivity)?.apply {
+                    Navigator.startMainActivity(this)
+                    finish()
                 }
-            }
-            (activity as? LanguageActivity)?.apply {
-                Navigator.startMainActivity(this)
-                finish()
             }
         }
     }

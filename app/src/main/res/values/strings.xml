@@ -133,6 +133,21 @@
     <string name="confirm_dns">VPN Not Active</string>
     <string name="confirm_dns_msg">You are currently using DNS only. For a more secure and private connection, please select a VPN server.</string>
 
+    <string name="btn_agree">Agree</string>
+    <string name="confirm_collect">Your Privacy, Your Control</string>
+    <string name="confirm_accept_msg">To complete your subscription, this app collects your Advertising ID to verify registration, enhance service quality, and prevent fraudulent activity. Do you agree to this data collection?</string>
+    <string name="accept_continue">Accept and Continue</string>
+    <string name="go_back">Back</string>
+    <string name="leave_anyway">Exit</string>
+
+    <string name="confirm_accept_msg_1">Hey there, thank you for using SuperVPN</string>
+    <string name="confirm_accept_msg_2">We only collect minimum data needed to keep your connection smooth and secure. Here is the quick breakdown.</string>
+    <string name="confirm_accept_msg_3">Advertising ID: help to track your subscription and using VPN.</string>
+    <string name="confirm_accept_msg_4">That\'s it. No tracking your internet traffic, no selling your data. We have no logs policy and follow privacy laws. Your data stays yours.</string>
+
+    <string name="exit">Are you sure want to exit?</string>
+    <string name="exit_msg">According to user data protection policies, we can not provide our services without your consent. Are you sure to exit?</string>
+
     <string name="premium_title">VPN Fast &amp; Safe Pro</string>
     <string name="premium_sub1">No ads</string>
     <string name="premium_sub2">Fast and stable speed</string>

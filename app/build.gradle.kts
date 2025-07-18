@@ -23,12 +23,12 @@ android {
         applicationId = "com.tici.vpn.proxy.master"
         minSdk = 27
         targetSdk = 34
-        versionCode = 7
-        versionName = "1.7"
-
-        resourceConfigurations.addAll(
-            listOf("en", "vi", "ar", "hi", "id", "ms", "ru", "pt", "fr", "de", "es", "ja", "ko")
-        )
+        versionCode = 16
+        versionName = "1.16"
+//
+//        resourceConfigurations.addAll(
+//            listOf("en", "vi", "ar", "hi", "id", "ms", "ru", "pt", "fr", "de", "es", "ja", "ko")
+//        )
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -90,6 +90,7 @@ android {
             buildConfigField("String", "ads_full_with_video_new", "\"ca-app-pub-4253116256630907/2676064914\"")
             buildConfigField("String", "app_ads_open_resume_id_new", "\"ca-app-pub-4253116256630907/3257954190\"")
             buildConfigField("String", "ads_reward_id_new", "\"ca-app-pub-4253116256630907/6423594072\"")
+            buildConfigField("boolean", "LOG_ENABLED", "true")
 
             isShrinkResources = true
             proguardFiles(
@@ -125,6 +126,12 @@ android {
         cmake {
             path = file("src/main/cpp/CMakeLists.txt")
             version = "3.22.1"
+        }
+    }
+
+    bundle {
+        language {
+            enableSplit = false
         }
     }
 }

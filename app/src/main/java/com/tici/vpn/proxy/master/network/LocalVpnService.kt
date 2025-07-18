@@ -187,9 +187,9 @@ class LocalVpnService : VpnService(), Runnable {
 
             // Now stop engine after fd is detached
 //            Log.i("SuperVpn", "TestRelease engine.Engine.stop() ${BaseAppConfig.proxy.isNotEmpty()}")
-            if (BaseAppConfig.proxy.isNotEmpty()) {
+//            if (BaseAppConfig.proxy.isNotEmpty()) {
                 engine.Engine.stop()
-            }
+//            }
             // Stop other components
             m_PrivoxyManager?.stop()
             m_PrivoxyManager = null

@@ -84,8 +84,8 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                 .show(supportFragmentManager, "SettingSuccessDialog")
         }
 
+        Log.i("SuperVPN", "check subscription")
         mainViewModel.checkActiveSubscriptions(applicationContext) { it ->
-            Timber.d("checkActiveSubscriptions $it")
             if (it == true) {
                 binding.frameBanner.visibility = View.GONE
             }

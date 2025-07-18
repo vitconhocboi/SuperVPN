@@ -34,6 +34,20 @@ class SplashActivity : ProductActivity<ActivitySplashBinding>() {
     }
 
     private fun simulateProgress() {
+//        if (!BaseAppConfig.allowCollectData) {
+//            AgreementDialog(
+//                this@SplashActivity,
+//                onContinue = {
+//                    BaseAppConfig.allowCollectData = true
+//                    runSimulate()
+//                }
+//            ).show()
+//        } else {
+        runSimulate()
+//        }
+    }
+
+    private fun runSimulate() {
         lifecycleScope.launch {
             var progress = 0
             while (progress < 100) {

@@ -1,6 +1,7 @@
 package com.tici.vpn.proxy.master.billing
 
 import android.content.Context
+import android.util.Log
 import com.android.billingclient.api.BillingClient
 import com.android.billingclient.api.BillingClientStateListener
 import com.android.billingclient.api.BillingResult
@@ -19,7 +20,15 @@ object BillingManager {
 
     fun isBillingInit() = ::billingClient.isInitialized
 
-    fun init(context: Context) {
+    fun init(context: Context, onReady: (Boolean) -> Unit) {
+
+        if (::billingClient.isInitialized && billingClient.isReady) {
+            onReady(true)
+            return
+        }
+
+        Log.i("SuperVpn", "subscription init billingClient")
+
         billingClient = BillingClient.newBuilder(context)
             .enablePendingPurchases()
             .setListener { result, purchases ->
@@ -31,6 +40,7 @@ object BillingManager {
             override fun onBillingSetupFinished(billingResult: BillingResult) {
                 if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
                     isBillingReady = true
+                    onReady(isBillingReady)
                     // Now you can query products or purchases
                 }
             }

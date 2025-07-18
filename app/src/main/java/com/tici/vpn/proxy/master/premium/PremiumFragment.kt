@@ -6,12 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import com.common.baseui.BaseAppConfig
 import com.common.baseui.extension.setVisible
 import com.tici.vpn.proxy.master.base.ProductFragment
 import com.tici.vpn.proxy.master.databinding.FragmentPremiumBinding
+import com.tici.vpn.proxy.master.home.ConfirmDnsDialog
 import com.tici.vpn.proxy.master.main.MainViewModel
 import com.tici.vpn.proxy.master.main.SharedData
 import com.tici.vpn.proxy.master.settings.SettingViewModel
+import com.tici.vpn.proxy.master.utils.Navigator
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 import kotlin.getValue
@@ -61,19 +64,17 @@ class PremiumFragment : ProductFragment<FragmentPremiumBinding>() {
             }
 
             startTrial.setOnClickListener {
-                if (selectedSku.productName.isNotEmpty()) {
-                    mainViewModel.getDeviceId(requireContext())
-                    premiumViewModel.launchSubscription(requireActivity(), selectedSku.productName)
-//                    mainViewModel.setSub(true)
-//                    requireActivity().finish()
-                    //Navigator.startMainActivity(requireContext(), "")
-//                    Toast.makeText(requireContext(), com.tici.vpn.proxy.master.R.string.premium_purchase_success, Toast.LENGTH_SHORT).show()
-//                    (activity as? PremiumActivity)?.apply {
-//                        finish()
-//                    }
-                } else {
-                    Toast.makeText(requireContext(), com.tici.vpn.proxy.master.R.string.premium_select_sku, Toast.LENGTH_SHORT).show()
-                }
+//                if (!BaseAppConfig.allowCollectData) {
+//                    AcceptCollectDataDialog(
+//                        requireActivity(),
+//                        onContinue = {
+//                            BaseAppConfig.allowCollectData = true
+//                            startTrial()
+//                        }
+//                    ).show()
+//                } else {
+                startTrial()
+//                }
             }
         }
 
@@ -81,7 +82,11 @@ class PremiumFragment : ProductFragment<FragmentPremiumBinding>() {
             if (it.isNotEmpty()) {
                 skuAdapter.updateData(it)
             } else {
-                Toast.makeText(requireContext(), "System error. Please try again", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    requireContext(),
+                    "System error. Please try again",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
 
@@ -106,5 +111,21 @@ class PremiumFragment : ProductFragment<FragmentPremiumBinding>() {
 //                Timber.d("subs successfully")
 //            }
 //        }
+    }
+
+    private fun startTrial() {
+        if (selectedSku.productName.isNotEmpty()) {
+            mainViewModel.getDeviceId(requireContext())
+            premiumViewModel.launchSubscription(
+                requireActivity(),
+                selectedSku.productName
+            )
+        } else {
+            Toast.makeText(
+                requireContext(),
+                com.tici.vpn.proxy.master.R.string.premium_select_sku,
+                Toast.LENGTH_SHORT
+            ).show()
+        }
     }
 }
