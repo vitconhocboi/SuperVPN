@@ -125,6 +125,18 @@
   <string name="dns_only">Само DNS</string>
   <string name="confirm_dns">VPN не е активен</string>
   <string name="confirm_dns_msg">Моментално користите само DNS. За побезбедна и поприватна врска, изберете VPN сервер.</string>
+  <string name="btn_agree">Се согласувам</string>
+  <string name="confirm_collect">Вашата приватност, вашата контрола</string>
+  <string name="confirm_accept_msg">За да ја завршите вашата претплата, оваа апликација го собира вашиот ID за рекламирање за да ја потврди регистрацијата, да го подобри квалитетот на услугата и да спречи измамнички активности. Дали се согласувате со ова собирање податоци?</string>
+  <string name="accept_continue">Прифати и продолжи</string>
+  <string name="go_back">Назад</string>
+  <string name="leave_anyway">Излезете</string>
+  <string name="confirm_accept_msg_1">Здраво, ви благодарам што користите SuperVPN</string>
+  <string name="confirm_accept_msg_2">Собираме само минимални податоци потребни за да ја одржиме вашата врска непречена и безбедна. Еве краток опис.</string>
+  <string name="confirm_accept_msg_3">ИД за рекламирање: помош за следење на вашата претплата и користење на VPN.</string>
+  <string name="confirm_accept_msg_4">Тоа е тоа. Нема следење на вашиот интернет сообраќај, нема продажба на вашите податоци. Немаме политика за логови и ги почитуваме законите за приватност. Вашите податоци остануваат ваши.</string>
+  <string name="exit">Дали сигурно сакате да излезете?</string>
+  <string name="exit_msg">Според политиките за заштита на податоците на корисниците, не можеме да ги обезбедиме нашите услуги без ваша согласност. Дали сигурно сакате да излезете?</string>
   <string name="premium_title">VPN Брз и безбеден професионалец</string>
   <string name="premium_sub1">Нема реклами</string>
   <string name="premium_sub2">Брза и стабилна брзина</string>
@@ -139,7 +151,7 @@
   <string name="status_on">ВКЛУЧЕНО</string>
   <string name="status_off">Исклучено</string>
   <string name="dg_vpn_permission_title">Супер VPN не може да се поврзе со авторитет</string>
-  <string name="dg_vpn_permission_guide">Притиснете „OK“ за да ја дозволите VPN-врската.</string>
+  <string name="dg_vpn_permission_guide">Притиснете „ОК“ за да дозволите VPN конекција.</string>
   <string name="connection_request">Барање за поврзување</string>
   <string name="vpn_des1">SupperVPN бара дозвола за поставување VPN конекција што ќе му овозможи да го следи мрежниот сообраќај. Дозволете го ова само ако му верувате на изворот.</string>
   <string name="vpn_des2">На горниот дел од екранот ќе се прикаже икона додека VPN-мрежата е во употреба. Дозволи?</string>

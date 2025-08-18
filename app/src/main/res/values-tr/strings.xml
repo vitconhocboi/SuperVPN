@@ -125,6 +125,18 @@
   <string name="dns_only">Yalnızca DNS</string>
   <string name="confirm_dns">VPN Etkin Değil</string>
   <string name="confirm_dns_msg">Şu anda yalnızca DNS kullanıyorsunuz. Daha güvenli ve özel bir bağlantı için lütfen bir VPN sunucusu seçin.</string>
+  <string name="btn_agree">Kabul etmek</string>
+  <string name="confirm_collect">Gizliliğiniz, Kontrolünüz</string>
+  <string name="confirm_accept_msg">Aboneliğinizi tamamlamak için bu uygulama, kaydınızı doğrulamak, hizmet kalitesini artırmak ve dolandırıcılık faaliyetlerini önlemek amacıyla Reklam Kimliğinizi toplar. Bu veri toplama işlemini kabul ediyor musunuz?</string>
+  <string name="accept_continue">Kabul Et ve Devam Et</string>
+  <string name="go_back">Geri</string>
+  <string name="leave_anyway">Çıkış</string>
+  <string name="confirm_accept_msg_1">Merhaba, SuperVPN\'i kullandığınız için teşekkür ederiz</string>
+  <string name="confirm_accept_msg_2">Bağlantınızın sorunsuz ve güvenli kalması için yalnızca gereken minimum verileri topluyoruz. İşte kısa özeti.</string>
+  <string name="confirm_accept_msg_3">Reklam Kimliği: Aboneliğinizi takip etmenize ve VPN kullanmanıza yardımcı olur.</string>
+  <string name="confirm_accept_msg_4">İşte bu kadar. İnternet trafiğiniz izlenmiyor, verileriniz satılmıyor. Kayıt tutma politikamız yok ve gizlilik yasalarına uyuyoruz. Verileriniz size ait kalır.</string>
+  <string name="exit">Çıkmak istediğinizden emin misiniz?</string>
+  <string name="exit_msg">Kullanıcı veri koruma politikaları gereği, izniniz olmadan hizmetlerimizi sunamayız. Çıkmak istediğinizden emin misiniz?</string>
   <string name="premium_title">VPN Hızlı ve Güvenli Pro</string>
   <string name="premium_sub1">Reklam Yok</string>
   <string name="premium_sub2">Hızlı ve istikrarlı hız</string>
@@ -139,7 +151,7 @@
   <string name="status_on">AÇIK</string>
   <string name="status_off">Kapalı</string>
   <string name="dg_vpn_permission_title">Super VPN yetkili ile bağlantı kurulamıyor</string>
-  <string name="dg_vpn_permission_guide">VPN bağlantısına izin vermek için “&lt;b&gt;Tamam&lt;/b&gt;”a basın.</string>
+  <string name="dg_vpn_permission_guide">VPN bağlantısına izin vermek için “Tamam”a basın.</string>
   <string name="connection_request">Bağlantı isteği</string>
   <string name="vpn_des1">SupperVPN, ağ trafiğini izlemesine izin verecek bir VPN bağlantısı kurmak için izin istiyor. Buna yalnızca kaynağa güveniyorsanız izin verin.</string>
   <string name="vpn_des2">VPN kullanımdayken ekranınızın üst kısmında bir simge gösterilecektir. İzin ver?</string>

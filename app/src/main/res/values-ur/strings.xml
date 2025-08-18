@@ -125,6 +125,18 @@
   <string name="dns_only">صرف DNS</string>
   <string name="confirm_dns">VPN فعال نہیں ہے۔</string>
   <string name="confirm_dns_msg">آپ فی الحال صرف DNS استعمال کر رہے ہیں۔ مزید محفوظ اور نجی کنکشن کے لیے، براہ کرم ایک VPN سرور منتخب کریں۔</string>
+  <string name="btn_agree">متفق</string>
+  <string name="confirm_collect">آپ کی پرائیویسی، آپ کا کنٹرول</string>
+  <string name="confirm_accept_msg">آپ کی سبسکرپشن مکمل کرنے کے لیے، یہ ایپ رجسٹریشن کی توثیق کرنے، سروس کے معیار کو بڑھانے اور دھوکہ دہی کی سرگرمیوں کو روکنے کے لیے آپ کی اشتہاری ID جمع کرتی ہے۔ کیا آپ اس ڈیٹا اکٹھا کرنے سے اتفاق کرتے ہیں؟</string>
+  <string name="accept_continue">قبول کریں اور جاری رکھیں</string>
+  <string name="go_back">پیچھے</string>
+  <string name="leave_anyway">باہر نکلیں۔</string>
+  <string name="confirm_accept_msg_1">ارے وہاں، SuperVPN استعمال کرنے کا شکریہ</string>
+  <string name="confirm_accept_msg_2">ہم صرف آپ کے کنکشن کو ہموار اور محفوظ رکھنے کے لیے درکار کم سے کم ڈیٹا اکٹھا کرتے ہیں۔ یہاں فوری بریک ڈاؤن ہے۔</string>
+  <string name="confirm_accept_msg_3">ایڈورٹائزنگ آئی ڈی: اپنے سبسکرپشن کو ٹریک کرنے اور VPN استعمال کرنے میں مدد کریں۔</string>
+  <string name="confirm_accept_msg_4">بس۔ آپ کے انٹرنیٹ ٹریفک کو ٹریک نہیں کرنا، آپ کا ڈیٹا بیچنا نہیں۔ ہمارے پاس کوئی لاگ پالیسی نہیں ہے اور ہم رازداری کے قوانین کی پیروی کرتے ہیں۔ آپ کا ڈیٹا آپ کا ہی رہتا ہے۔</string>
+  <string name="exit">کیا آپ واقعی باہر نکلنا چاہتے ہیں؟</string>
+  <string name="exit_msg">صارف کے ڈیٹا کے تحفظ کی پالیسیوں کے مطابق، ہم آپ کی رضامندی کے بغیر اپنی خدمات فراہم نہیں کر سکتے۔ کیا آپ یقینی طور پر باہر نکلنا چاہتے ہیں؟</string>
   <string name="premium_title">وی پی این فاسٹ اینڈ سیف پرو</string>
   <string name="premium_sub1">کوئی اشتہار نہیں۔</string>
   <string name="premium_sub2">تیز رفتار اور مستحکم رفتار</string>
@@ -139,7 +151,7 @@
   <string name="status_on">آن</string>
   <string name="status_off">آف</string>
   <string name="dg_vpn_permission_title">سپر وی پی این اتھارٹی سے منسلک نہیں ہو سکتا</string>
-  <string name="dg_vpn_permission_guide">VPN کنکشن کی اجازت دینے کے لیے "&lt;b&gt;OK&lt;/b&gt;”" کو دبائیں۔</string>
+  <string name="dg_vpn_permission_guide">VPN کنکشن کی اجازت دینے کے لیے "OK" کو دبائیں۔</string>
   <string name="connection_request">کنکشن کی درخواست</string>
   <string name="vpn_des1">SupperVPN ایک VPN کنکشن قائم کرنے کی اجازت کی درخواست کر رہا ہے جو اسے نیٹ ورک ٹریفک کی نگرانی کرنے کی اجازت دے گا۔ اس کی اجازت صرف اس صورت میں دیں جب آپ ماخذ پر بھروسہ کریں۔</string>
   <string name="vpn_des2">VPN کے استعمال کے دوران آپ کی سکرین کے اوپری حصے میں ایک آئیکن دکھایا جائے گا۔ اجازت دیں؟</string>

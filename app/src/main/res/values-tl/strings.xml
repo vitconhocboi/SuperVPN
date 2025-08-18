@@ -125,6 +125,18 @@
   <string name="dns_only">DNS lang</string>
   <string name="confirm_dns">Hindi Aktibo ang VPN</string>
   <string name="confirm_dns_msg">Kasalukuyan kang gumagamit ng DNS lamang. Para sa mas secure at pribadong koneksyon, mangyaring pumili ng VPN server.</string>
+  <string name="btn_agree">Sumang-ayon</string>
+  <string name="confirm_collect">Iyong Privacy, Iyong Kontrol</string>
+  <string name="confirm_accept_msg">Upang makumpleto ang iyong subscription, kinokolekta ng app na ito ang iyong Advertising ID upang i-verify ang pagpaparehistro, pahusayin ang kalidad ng serbisyo, at maiwasan ang mapanlinlang na aktibidad. Sumasang-ayon ka ba sa pagkolekta ng data na ito?</string>
+  <string name="accept_continue">Tanggapin at Ipagpatuloy</string>
+  <string name="go_back">Bumalik</string>
+  <string name="leave_anyway">Lumabas</string>
+  <string name="confirm_accept_msg_1">Uy, salamat sa paggamit ng SuperVPN</string>
+  <string name="confirm_accept_msg_2">Kinokolekta lang namin ang minimum na data na kailangan para mapanatiling maayos at secure ang iyong koneksyon. Narito ang mabilis na pagkasira.</string>
+  <string name="confirm_accept_msg_3">Advertising ID: tulong upang subaybayan ang iyong subscription at paggamit ng VPN.</string>
+  <string name="confirm_accept_msg_4">Iyon lang. Walang pagsubaybay sa iyong trapiko sa internet, walang pagbebenta ng iyong data. Wala kaming patakaran sa pag-log at sumusunod sa mga batas sa privacy. Ang iyong data ay mananatiling iyo.</string>
+  <string name="exit">Sigurado ka bang gusto mong lumabas?</string>
+  <string name="exit_msg">Ayon sa mga patakaran sa proteksyon ng data ng user, hindi namin maibibigay ang aming mga serbisyo nang wala ang iyong pahintulot. Sigurado ka bang lalabas?</string>
   <string name="premium_title">Mabilis at Ligtas na VPN Pro</string>
   <string name="premium_sub1">Walang Ads</string>
   <string name="premium_sub2">Mabilis at matatag na bilis</string>
@@ -139,7 +151,7 @@
   <string name="status_on">NAKA-ON</string>
   <string name="status_off">Naka-off</string>
   <string name="dg_vpn_permission_title">Ang Super VPN ay hindi maaaring kumonekta sa awtoridad</string>
-  <string name="dg_vpn_permission_guide">Pindutin ang “&lt;b&gt;OK&lt;/b&gt;” upang payagan ang koneksyon ng VPN.</string>
+  <string name="dg_vpn_permission_guide">Pindutin ang "OK" upang payagan ang koneksyon ng VPN.</string>
   <string name="connection_request">Kahilingan sa koneksyon</string>
   <string name="vpn_des1">Humihiling ang SupperVPN ng pahintulot na mag-set up ng koneksyon sa VPN na magbibigay-daan dito na subaybayan ang trapiko sa network. Payagan lamang ito kung pinagkakatiwalaan mo ang pinagmulan.</string>
   <string name="vpn_des2">May ipapakitang icon sa tuktok ng iyong screen habang ginagamit ang VPN. Payagan?</string>

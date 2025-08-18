@@ -11,9 +11,9 @@
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 12,
-      "versionName": "1.12",
-      "outputFile": "SuperVPN_Code_12_Name_1.12_07_15-release.apk"
+      "versionCode": 19,
+      "versionName": "1.19",
+      "outputFile": "SuperVPN_Code_19_Name_1.19_07_27-release.apk"
     }
   ],
   "elementType": "File",
@@ -22,14 +22,14 @@
       "minApi": 28,
       "maxApi": 30,
       "baselineProfiles": [
-        "baselineProfiles/1/SuperVPN_Code_12_Name_1.12_07_15-release.dm"
+        "baselineProfiles/1/SuperVPN_Code_19_Name_1.19_07_27-release.dm"
       ]
     },
     {
       "minApi": 31,
       "maxApi": 2147483647,
       "baselineProfiles": [
-        "baselineProfiles/0/SuperVPN_Code_12_Name_1.12_07_15-release.dm"
+        "baselineProfiles/0/SuperVPN_Code_19_Name_1.19_07_27-release.dm"
       ]
     }
   ],

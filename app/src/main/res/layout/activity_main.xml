@@ -69,6 +69,17 @@
 <!--                -->
 <!--                />-->
 
+<!--            <androidx.appcompat.widget.AppCompatImageView-->
+<!--                android:id="@+id/lnSetting"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginStart="@dimen/size12"-->
+<!--                android:background="@drawable/bg_ripple_transparent_oval"-->
+<!--                android:foreground="?selectableItemBackgroundBorderless"-->
+<!--                android:padding="@dimen/size3"-->
+<!--                android:src="@drawable/ic_setting" />-->
+
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/lnSetting"
                 android:layout_width="wrap_content"
@@ -76,7 +87,6 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="@dimen/size12"
                 android:background="@drawable/bg_ripple_transparent_oval"
-                android:foreground="?selectableItemBackgroundBorderless"
                 android:padding="@dimen/size3"
                 android:src="@drawable/ic_setting" />
         </androidx.appcompat.widget.LinearLayoutCompat>

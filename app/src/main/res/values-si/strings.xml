@@ -125,6 +125,18 @@
   <string name="dns_only">DNS පමණි</string>
   <string name="confirm_dns">VPN ක්‍රියාකාරී නොවේ</string>
   <string name="confirm_dns_msg">ඔබ දැනට DNS පමණක් භාවිතා කරයි. වඩාත් ආරක්ෂිත සහ පුද්ගලික සම්බන්ධතාවයක් සඳහා, කරුණාකර VPN සේවාදායකයක් තෝරන්න.</string>
+  <string name="btn_agree">එකඟයි</string>
+  <string name="confirm_collect">ඔබේ පෞද්ගලිකත්වය, ඔබේ පාලනය</string>
+  <string name="confirm_accept_msg">ඔබගේ දායකත්වය සම්පූර්ණ කිරීම සඳහා, ලියාපදිංචිය සත්‍යාපනය කිරීමට, සේවා ගුණාත්මකභාවය වැඩි දියුණු කිරීමට සහ වංචනික ක්‍රියාකාරකම් වැළැක්වීමට මෙම යෙදුම ඔබගේ වෙළඳ දැන්වීම් හැඳුනුම්පත රැස් කරයි. මෙම දත්ත රැස් කිරීමට ඔබ එකඟද?</string>
+  <string name="accept_continue">පිළිගෙන ඉදිරියට යන්න</string>
+  <string name="go_back">ආපසු</string>
+  <string name="leave_anyway">පිටවෙන්න</string>
+  <string name="confirm_accept_msg_1">හේයි, SuperVPN භාවිතා කිරීම ගැන ඔබට ස්තූතියි.</string>
+  <string name="confirm_accept_msg_2">ඔබගේ සම්බන්ධතාවය සුමටව සහ ආරක්ෂිතව තබා ගැනීමට අවශ්‍ය අවම දත්ත පමණක් අපි රැස් කරන්නෙමු. මෙන්න ඉක්මන් විස්තරය.</string>
+  <string name="confirm_accept_msg_3">වෙළඳ දැන්වීම් හැඳුනුම්පත: ඔබගේ දායකත්වය නිරීක්ෂණය කිරීමට සහ VPN භාවිතා කිරීමට උදව් වන්න.</string>
+  <string name="confirm_accept_msg_4">එච්චරයි. ඔබේ අන්තර්ජාල ගමනාගමනය නිරීක්ෂණය කිරීමට හෝ ඔබේ දත්ත විකිණීමට කිසිවක් නැත. අපට ලොග් ප්‍රතිපත්තියක් නොමැති අතර රහස්‍යතා නීති අනුගමනය කරයි. ඔබේ දත්ත ඔබ සතුව පවතී.</string>
+  <string name="exit">ඔබට නිසැකවම පිටවීමට අවශ්‍යද?</string>
+  <string name="exit_msg">පරිශීලක දත්ත ආරක්ෂණ ප්‍රතිපත්තිවලට අනුව, ඔබගේ කැමැත්තෙන් තොරව අපට අපගේ සේවාවන් සැපයිය නොහැක. ඔබට නිසැකවම ඉවත් විය හැකිද?</string>
   <string name="premium_title">වේගවත් සහ ආරක්ෂිත VPN Pro</string>
   <string name="premium_sub1">දැන්වීම් නැත</string>
   <string name="premium_sub2">වේගවත් සහ ස්ථාවර වේගය</string>
@@ -139,7 +151,7 @@
   <string name="status_on">ක්‍රියාත්මකයි</string>
   <string name="status_off">අක්‍රියයි</string>
   <string name="dg_vpn_permission_title">සුපිරි VPN අධිකාරිය සමඟ සම්බන්ධ විය නොහැක</string>
-  <string name="dg_vpn_permission_guide">VPN සම්බන්ධතාවයට ඉඩ දීමට “&lt;b&gt;හරි&lt;/b&gt;” ඔබන්න.</string>
+  <string name="dg_vpn_permission_guide">VPN සම්බන්ධතාවයට ඉඩ දීමට "හරි" ඔබන්න.</string>
   <string name="connection_request">සම්බන්ධතා ඉල්ලීම</string>
   <string name="vpn_des1">ජාල ගමනාගමනය නිරීක්ෂණය කිරීමට ඉඩ සලසන VPN සම්බන්ධතාවයක් සැකසීමට SupperVPN අවසර ඉල්ලා සිටී. ඔබ මූලාශ්‍රය විශ්වාස කරන්නේ නම් පමණක් මෙයට ඉඩ දෙන්න.</string>
   <string name="vpn_des2">VPN භාවිතයේ පවතින අතරතුර ඔබගේ තිරයේ ඉහළින් නිරූපකයක් පෙන්වනු ඇත. ඉඩ දෙන්නද?</string>

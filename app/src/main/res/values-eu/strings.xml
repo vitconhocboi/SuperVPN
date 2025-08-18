@@ -125,6 +125,18 @@
   <string name="dns_only">DNS bakarrik</string>
   <string name="confirm_dns">VPN ez dago aktibo</string>
   <string name="confirm_dns_msg">Une honetan DNS soilik erabiltzen ari zara. Konexio seguruago eta pribatuago bat lortzeko, hautatu VPN zerbitzari bat.</string>
+  <string name="btn_agree">Ados</string>
+  <string name="confirm_collect">Zure Pribatutasuna, Zure Kontrola</string>
+  <string name="confirm_accept_msg">Harpidetza osatzeko, aplikazio honek zure publizitate IDa biltzen du erregistroa egiaztatzeko, zerbitzuaren kalitatea hobetzeko eta iruzurrezko jarduerak saihesteko. Datuen bilketa honekin ados zaude?</string>
+  <string name="accept_continue">Onartu eta jarraitu</string>
+  <string name="go_back">Atzera</string>
+  <string name="leave_anyway">Irten</string>
+  <string name="confirm_accept_msg_1">Kaixo, eskerrik asko SuperVPN erabiltzeagatik.</string>
+  <string name="confirm_accept_msg_2">Zure konexioa leun eta seguru mantentzeko beharrezkoak diren datu minimoak baino ez ditugu biltzen. Hona hemen azalpen laburra.</string>
+  <string name="confirm_accept_msg_3">Publizitate IDa: zure harpidetza eta VPNaren erabilera jarraitzen laguntzen du.</string>
+  <string name="confirm_accept_msg_4">Hori da dena. Ez dugu zure Interneteko trafikoaren jarraipena egingo, ez dugu zure datuak salduko. Ez dugu erregistro-politikarik eta pribatutasun-legeak betetzen ditugu. Zure datuak zureak izaten jarraituko dute.</string>
+  <string name="exit">Ziur irten nahi duzula?</string>
+  <string name="exit_msg">Erabiltzaileen datuen babeserako gidalerroen arabera, ezin ditugu gure zerbitzuak eman zure baimenik gabe. Ziur irten nahi duzu?</string>
   <string name="premium_title">VPN Pro Azkarra eta Segurua</string>
   <string name="premium_sub1">Iragarkirik ez</string>
   <string name="premium_sub2">Abiadura azkarra eta egonkorra</string>
@@ -139,7 +151,7 @@
   <string name="status_on">ON</string>
   <string name="status_off">Desaktibatuta</string>
   <string name="dg_vpn_permission_title">Super VPN-a ezin da agintaritzarekin konektatu</string>
-  <string name="dg_vpn_permission_guide">Sakatu “Ados’ VPN konexioa baimentzeko.</string>
+  <string name="dg_vpn_permission_guide">Sakatu “Ados” VPN konexioa baimentzeko.</string>
   <string name="connection_request">Konexio eskaera</string>
   <string name="vpn_des1">SupperVPN-k sareko trafikoa kontrolatzeko aukera emango dion VPN konexio bat ezartzeko baimena eskatzen ari da. Iturburuaz fidatzen bazara bakarrik baimendu hau.</string>
   <string name="vpn_des2">VPNa erabiltzen ari zaren bitartean, ikono bat agertuko da pantailaren goialdean. Baimendu?</string>

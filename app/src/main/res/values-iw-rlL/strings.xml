@@ -125,6 +125,18 @@
   <string name="dns_only">DNS בלבד</string>
   <string name="confirm_dns">VPN לא פעיל</string>
   <string name="confirm_dns_msg">אתה משתמש כרגע ב-DNS בלבד. לחיבור מאובטח ופרטי יותר, אנא בחר שרת VPN.</string>
+  <string name="btn_agree">לְהַסכִּים</string>
+  <string name="confirm_collect">הפרטיות שלך, השליטה שלך</string>
+  <string name="confirm_accept_msg">כדי להשלים את המנוי שלך, אפליקציה זו אוספת את מזהה הפרסום שלך כדי לאמת את ההרשמה, לשפר את איכות השירות ולמנוע פעילות הונאה. האם אתה מסכים לאיסוף נתונים זה?</string>
+  <string name="accept_continue">קבל והמשך</string>
+  <string name="go_back">בְּחֲזָרָה</string>
+  <string name="leave_anyway">יְצִיאָה</string>
+  <string name="confirm_accept_msg_1">היי, תודה שהשתמשת ב-SuperVPN</string>
+  <string name="confirm_accept_msg_2">אנו אוספים רק את הנתונים המינימליים הדרושים כדי לשמור על החיבור שלך חלק ומאובטח. הנה פירוט קצר.</string>
+  <string name="confirm_accept_msg_3">מזהה פרסום: עוזר לעקוב אחר המנוי שלך והשימוש שלך ב-VPN.</string>
+  <string name="confirm_accept_msg_4">זהו. אין מעקב אחר תעבורת האינטרנט שלך, אין מכירת הנתונים שלך. אין לנו מדיניות של איסור יומני נתונים ואנו פועלים לפי חוקי הפרטיות. הנתונים שלך נשארים שלך.</string>
+  <string name="exit">האם אתה בטוח שברצונך לצאת?</string>
+  <string name="exit_msg">בהתאם למדיניות הגנת נתוני המשתמשים, איננו יכולים לספק את שירותינו ללא הסכמתך. האם אתה בטוח שברצונך לצאת?</string>
   <string name="premium_title">VPN מהיר ובטוח פרו</string>
   <string name="premium_sub1">אין מודעות</string>
   <string name="premium_sub2">מהירות מהירה ויציבה</string>
@@ -139,7 +151,7 @@
   <string name="status_on">עַל</string>
   <string name="status_off">כבוי</string>
   <string name="dg_vpn_permission_title">לא ניתן להתחבר ל-Super VPN עם סמכות</string>
-  <string name="dg_vpn_permission_guide">לחץ על "*אישור*" כדי לאפשר את חיבור ה-VPN.</string>
+  <string name="dg_vpn_permission_guide">לחץ על "אישור" כדי לאפשר את חיבור ה-VPN.</string>
   <string name="connection_request">בקשת חיבור</string>
   <string name="vpn_des1">SupperVPN מבקש אישור להגדיר חיבור VPN שיאפשר לו לנטר תעבורת רשת. אפשר זאת רק אם אתה סומך על המקור.</string>
   <string name="vpn_des2">סמל יוצג בראש המסך בזמן שה-VPN נמצא בשימוש. לאפשר?</string>

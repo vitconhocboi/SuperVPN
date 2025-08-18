@@ -125,6 +125,18 @@
   <string name="dns_only">DNS гына</string>
   <string name="confirm_dns">VPN актив түгел</string>
   <string name="confirm_dns_msg">Сез хәзер DNS гына кулланасыз. Куркынычсыз һәм шәхси тоташу өчен VPN серверын сайлагыз.</string>
+  <string name="btn_agree">Килешегез</string>
+  <string name="confirm_collect">Сезнең хосусыйлык, сезнең контроль</string>
+  <string name="confirm_accept_msg">Подпискагызны тәмамлау өчен, бу кушымта сезнең Реклама ID-егезне җыя, теркәлүне тикшерү, хезмәт сыйфатын күтәрү һәм алдау эшчәнлеген булдырмау өчен. Сез бу мәгълүмат җыюга ризамы?</string>
+  <string name="accept_continue">Кабул итегез һәм дәвам итегез</string>
+  <string name="go_back">Кире</string>
+  <string name="leave_anyway">Чык</string>
+  <string name="confirm_accept_msg_1">Әй, анда, SuperVPN кулланган өчен рәхмәт</string>
+  <string name="confirm_accept_msg_2">Сезнең бәйләнешне шома һәм куркынычсыз тоту өчен без кирәк булган минималь мәгълүматны гына җыябыз. Менә тиз өзелү.</string>
+  <string name="confirm_accept_msg_3">Реклама ID: язылуыгызны күзәтергә һәм VPN кулланырга булышыгыз.</string>
+  <string name="confirm_accept_msg_4">Бу. Сезнең интернет-трафикны күзәтү юк, мәгълүматыгызны сату юк. Бездә бүрәнәләр политикасы юк һәм хосусыйлык законнары буенча эш итәбез. Сезнең мәгълүматлар сезнеке булып кала.</string>
+  <string name="exit">Сез чыгарга телисезме?</string>
+  <string name="exit_msg">Кулланучының мәгълүматларын саклау политикасы буенча, без сезнең рөхсәтсез хезмәтләребезне күрсәтә алмыйбыз. Сез чыгасызмы?</string>
   <string name="premium_title">VPN Тиз һәм Куркынычсыз Про</string>
   <string name="premium_sub1">Реклама юк</string>
   <string name="premium_sub2">Тиз һәм тотрыклы тизлек</string>
@@ -139,7 +151,7 @@
   <string name="status_on">ЯШ ON</string>
   <string name="status_off">Сүндерелгән</string>
   <string name="dg_vpn_permission_title">Супер VPN хакимият белән бәйләнештә була алмый</string>
-  <string name="dg_vpn_permission_guide">VPN тоташу өчен "&lt;b&gt; Ярар &lt;/b&gt; &amp; # 8221; басыгыз.</string>
+  <string name="dg_vpn_permission_guide">VPN тоташу өчен "ОК" басыгыз.</string>
   <string name="connection_request">Бәйләнеш соравы</string>
   <string name="vpn_des1">SupperVPN челтәр трафигын күзәтергә мөмкинлек бирүче VPN тоташу өчен рөхсәт сорый. Чыганакка ышансагыз гына рөхсәт итегез.</string>
   <string name="vpn_des2">VPN кулланылган вакытта иконка экранның өске өлешендә күрсәтеләчәк. Рөхсәт итегез?</string>

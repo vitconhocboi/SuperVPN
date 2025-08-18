@@ -2,6 +2,7 @@ package com.tici.vpn.proxy.master.settings.dns
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.tici.vpn.proxy.master.base.ProductFragment
 import com.tici.vpn.proxy.master.databinding.FragmentDnsBinding
@@ -65,6 +66,13 @@ class DNSFragment : ProductFragment<FragmentDnsBinding>() {
                 binding.progress.setVisible(true)
             } else {
                 binding.progress.setVisible(false)
+            }
+        }
+
+        mDnsModel.errorMessage.observe(this) { it ->
+            if (it.isNotEmpty()) {
+                Toast.makeText(requireContext(), "internet connection error.", Toast.LENGTH_SHORT).show()
+                onBackPress()
             }
         }
 

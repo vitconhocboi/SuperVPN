@@ -125,6 +125,18 @@
   <string name="dns_only">শুধুমাত্র DNS</string>
   <string name="confirm_dns">ভিপিএন সক্রিয় নয়</string>
   <string name="confirm_dns_msg">আপনি বর্তমানে শুধুমাত্র DNS ব্যবহার করছেন। আরও নিরাপদ এবং ব্যক্তিগত সংযোগের জন্য, অনুগ্রহ করে একটি VPN সার্ভার নির্বাচন করুন।</string>
+  <string name="btn_agree">একমত</string>
+  <string name="confirm_collect">আপনার গোপনীয়তা, আপনার নিয়ন্ত্রণ</string>
+  <string name="confirm_accept_msg">আপনার সাবস্ক্রিপশন সম্পূর্ণ করার জন্য, এই অ্যাপটি নিবন্ধন যাচাই করতে, পরিষেবার মান উন্নত করতে এবং প্রতারণামূলক কার্যকলাপ প্রতিরোধ করতে আপনার বিজ্ঞাপন আইডি সংগ্রহ করে। আপনি কি এই তথ্য সংগ্রহের সাথে সম্মত?</string>
+  <string name="accept_continue">গ্রহণ করুন এবং চালিয়ে যান</string>
+  <string name="go_back">পিছনে</string>
+  <string name="leave_anyway">প্রস্থান করুন</string>
+  <string name="confirm_accept_msg_1">হাই, সুপারভিপিএন ব্যবহার করার জন্য ধন্যবাদ।</string>
+  <string name="confirm_accept_msg_2">আপনার সংযোগ মসৃণ এবং সুরক্ষিত রাখার জন্য আমরা কেবলমাত্র ন্যূনতম তথ্য সংগ্রহ করি। এখানে সংক্ষিপ্ত বিবরণ দেওয়া হল।</string>
+  <string name="confirm_accept_msg_3">বিজ্ঞাপন আইডি: আপনার সাবস্ক্রিপশন এবং VPN ব্যবহার ট্র্যাক করতে সাহায্য করুন।</string>
+  <string name="confirm_accept_msg_4">ব্যস, আর কিছু নয়। আপনার ইন্টারনেট ট্র্যাফিক ট্র্যাক করা হবে না, আপনার ডেটা বিক্রি করা হবে না। আমাদের কোনও লগ নীতি নেই এবং আমরা গোপনীয়তা আইন মেনে চলি। আপনার ডেটা আপনারই থাকবে।</string>
+  <string name="exit">তুমি কি নিশ্চিত যে বেরিয়ে যেতে চাও?</string>
+  <string name="exit_msg">ব্যবহারকারীর তথ্য সুরক্ষা নীতি অনুসারে, আপনার সম্মতি ছাড়া আমরা আমাদের পরিষেবা প্রদান করতে পারি না। আপনি কি নিশ্চিত যে আপনি বেরিয়ে আসবেন?</string>
   <string name="premium_title">VPN Fast &amp; Safe Pro সম্পর্কে</string>
   <string name="premium_sub1">কোনও বিজ্ঞাপন নেই</string>
   <string name="premium_sub2">দ্রুত এবং স্থিতিশীল গতি</string>
@@ -139,7 +151,7 @@
   <string name="status_on">চালু</string>
   <string name="status_off">বন্ধ</string>
   <string name="dg_vpn_permission_title">সুপার ভিপিএন কর্তৃপক্ষের সাথে সংযুক্ত হতে পারে না</string>
-  <string name="dg_vpn_permission_guide">VPN সংযোগের অনুমতি দিতে “ঠিক আছে” টিপুন।</string>
+  <string name="dg_vpn_permission_guide">VPN সংযোগের অনুমতি দিতে "ঠিক আছে" টিপুন।</string>
   <string name="connection_request">সংযোগের অনুরোধ</string>
   <string name="vpn_des1">SupperVPN একটি VPN সংযোগ সেট আপ করার অনুমতি চাইছে যা এটিকে নেটওয়ার্ক ট্র্যাফিক পর্যবেক্ষণ করার অনুমতি দেবে। যদি আপনি উৎসটি বিশ্বাস করেন তবেই এটি অনুমতি দিন।</string>
   <string name="vpn_des2">VPN ব্যবহারের সময় আপনার স্ক্রিনের উপরে একটি আইকন দেখাবে। অনুমতি দেবেন?</string>

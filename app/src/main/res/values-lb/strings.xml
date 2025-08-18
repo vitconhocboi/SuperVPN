@@ -15,7 +15,7 @@
   <string name="setting_trial">Gratis Testphase vun 3 Deeg</string>
   <string name="setting_upgrade">Upgrade</string>
   <string name="ip_proxy">Serveren</string>
-  <string name="setting_app_proxy">App-Filter</string>m
+  <string name="setting_app_proxy">App-Filter</string>
   <string name="setting_app_proxy_desc">Wielt wéi eng Apps iwwer VPN mam Internet verbannen</string>
   <string name="setting_ads_block">Reklammeblock</string>
   <string name="setting_ads_desc">Reklammen beim Surfen am Internet limitéieren</string>
@@ -125,6 +125,18 @@
   <string name="dns_only">Nëmmen DNS</string>
   <string name="confirm_dns">VPN net aktiv</string>
   <string name="confirm_dns_msg">Dir benotzt am Moment nëmmen DNS. Fir eng méi sécher a privat Verbindung, wielt w.e.g. e VPN-Server.</string>
+  <string name="btn_agree">Zoustëmmen</string>
+  <string name="confirm_collect">Är Privatsphär, Är Kontroll</string>
+  <string name="confirm_accept_msg">Fir Äert Abonnement ofzeschléissen, sammelt dës App Är Reklamm-ID fir d\'Aschreiwung ze verifizéieren, d\'Servicequalitéit ze verbesseren an betrügeresch Aktivitéiten ze verhënneren. Sidd Dir dëser Datenerfassung averstanen?</string>
+  <string name="accept_continue">Akzeptéieren a weiderfueren</string>
+  <string name="go_back">Zréck</string>
+  <string name="leave_anyway">Sortie</string>
+  <string name="confirm_accept_msg_1">Moien, merci datt Dir SuperVPN benotzt</string>
+  <string name="confirm_accept_msg_2">Mir sammelen nëmmen déi néideg Daten, fir Är Verbindung reibungslos a sécher ze halen. Hei ass eng kuerz Iwwersiicht.</string>
+  <string name="confirm_accept_msg_3">Reklamm-ID: Hëllef fir Äert Abonnement an d\'Benotzung vu VPN ze verfollegen.</string>
+  <string name="confirm_accept_msg_4">Dat ass et. Ären Internetverkéier gëtt net verfollegt, Är Donnéeë ginn net verkaaft. Mir hunn eng Politik ouni Logbicher a respektéieren d\'Dateschutzgesetzer. Är Donnéeë bleiwen Är.</string>
+  <string name="exit">Bass du sécher, datt du eraus wëlls?</string>
+  <string name="exit_msg">Geméiss de Richtlinne fir de Schutz vun de Benotzerdaten kënne mir eis Servicer net ouni Är Zoustëmmung ubidden. Sidd Dir sécher, datt Dir wëllt ofschléissen?</string>
   <string name="premium_title">VPN Schnell &amp; Sécher Pro</string>
   <string name="premium_sub1">Keng Annoncen</string>
   <string name="premium_sub2">Schnell a stabil Geschwindegkeet</string>
@@ -139,7 +151,7 @@
   <string name="status_on">OP</string>
   <string name="status_off">Off</string>
   <string name="dg_vpn_permission_title">Super VPN kann net mat der Autoritéit verbonne ginn</string>
-  <string name="dg_vpn_permission_guide">Dréckt op „OK“ fir d\'VPN-Verbindung z\'erméiglechen.</string>
+  <string name="dg_vpn_permission_guide">Dréckt op "OK" fir d\'VPN-Verbindung z\'erméiglechen.</string>
   <string name="connection_request">Verbindungsufro</string>
   <string name="vpn_des1">SupperVPN freet d\'Erlaabnes fir eng VPN-Verbindung opzestellen, déi et erlaabt den Netzwierkverkéier ze iwwerwaachen. Erlaabt dëst nëmmen, wann Dir der Quell vertraut.</string>
   <string name="vpn_des2">E Symbol gëtt uewen op Ärem Écran ugewisen, während de VPN am Gebrauch ass. Erlaabt?</string>

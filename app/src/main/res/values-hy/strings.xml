@@ -125,6 +125,18 @@
   <string name="dns_only">Միայն DNS</string>
   <string name="confirm_dns">VPN-ը ակտիվ չէ</string>
   <string name="confirm_dns_msg">Դուք ներկայումս օգտագործում եք միայն DNS: Ավելի անվտանգ և գաղտնի կապի համար, խնդրում ենք ընտրել VPN սերվեր:</string>
+  <string name="btn_agree">Համաձայն եմ</string>
+  <string name="confirm_collect">Ձեր գաղտնիությունը, ձեր վերահսկողությունը</string>
+  <string name="confirm_accept_msg">Ձեր բաժանորդագրությունն ավարտելու համար այս հավելվածը հավաքում է ձեր գովազդային ID-ն՝ գրանցումը հաստատելու, ծառայության որակը բարելավելու և խարդախությունը կանխելու համար: Համաձա՞յն եք տվյալների այս հավաքագրմանը:</string>
+  <string name="accept_continue">Ընդունել և շարունակել</string>
+  <string name="go_back">Հետ</string>
+  <string name="leave_anyway">Ելք</string>
+  <string name="confirm_accept_msg_1">Բարև ձեզ, շնորհակալություն SuperVPN-ն օգտագործելու համար</string>
+  <string name="confirm_accept_msg_2">Մենք հավաքում ենք միայն նվազագույն տվյալներ, որոնք անհրաժեշտ են ձեր կապը սահուն և անվտանգ պահելու համար: Ահա համառոտ նկարագրությունը:</string>
+  <string name="confirm_accept_msg_3">Գովազդի ID. օգնում է հետևել ձեր բաժանորդագրությանը և օգտագործել VPN-ը։</string>
+  <string name="confirm_accept_msg_4">Այսքանը։ Ձեր ինտերնետային տրաֆիկի հետևում չկա, ձեր տվյալները չեն վաճառվում։ Մենք չունենք գրանցամատյանների քաղաքականություն և հետևում ենք գաղտնիության օրենքներին։ Ձեր տվյալները մնում են ձերը։</string>
+  <string name="exit">Վստա՞հ եք, որ ուզում եք դուրս գալ։</string>
+  <string name="exit_msg">Համաձայն օգտատիրոջ տվյալների պաշտպանության քաղաքականության, մենք չենք կարող մեր ծառայությունները մատուցել առանց ձեր համաձայնության: Վստա՞հ եք դուրս գալ:</string>
   <string name="premium_title">VPN արագ և անվտանգ Pro</string>
   <string name="premium_sub1">Գովազդ չկա</string>
   <string name="premium_sub2">Արագ և կայուն արագություն</string>
@@ -139,7 +151,7 @@
   <string name="status_on">ՄԻԱՑՎԱԾ</string>
   <string name="status_off">Անջատված</string>
   <string name="dg_vpn_permission_title">Super VPN-ը չի կարող միանալ իշխանության հետ</string>
-  <string name="dg_vpn_permission_guide">VPN կապը թույլատրելու համար սեղմեք «Լավ» կոճակը։</string>
+  <string name="dg_vpn_permission_guide">VPN կապը թույլատրելու համար սեղմեք «Լավ»։</string>
   <string name="connection_request">Միացման հարցում</string>
   <string name="vpn_des1">SupperVPN-ը թույլտվություն է խնդրում VPN կապ հաստատելու համար, որը թույլ կտա վերահսկել ցանցային երթևեկությունը: Թույլատրեք սա միայն այն դեպքում, եթե վստահում եք աղբյուրին:</string>
   <string name="vpn_des2">VPN-ի օգտագործման ընթացքում էկրանի վերևի մասում կցուցադրվի պատկերակ։ Թույլատրե՞լ։</string>

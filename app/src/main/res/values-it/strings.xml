@@ -125,6 +125,18 @@
   <string name="dns_only">Solo DNS</string>
   <string name="confirm_dns">VPN non attiva</string>
   <string name="confirm_dns_msg">Al momento stai utilizzando solo DNS. Per una connessione più sicura e privata, seleziona un server VPN.</string>
+  <string name="btn_agree">Essere d\'accordo</string>
+  <string name="confirm_collect">La tua privacy, il tuo controllo</string>
+  <string name="confirm_accept_msg">Per completare l\'abbonamento, questa app raccoglie il tuo ID pubblicitario per verificare la registrazione, migliorare la qualità del servizio e prevenire attività fraudolente. Acconsenti a questa raccolta di dati?</string>
+  <string name="accept_continue">Accetta e continua</string>
+  <string name="go_back">Indietro</string>
+  <string name="leave_anyway">Uscita</string>
+  <string name="confirm_accept_msg_1">Ciao, grazie per aver utilizzato SuperVPN</string>
+  <string name="confirm_accept_msg_2">Raccogliamo solo i dati minimi necessari per mantenere la tua connessione fluida e sicura. Ecco una rapida analisi.</string>
+  <string name="confirm_accept_msg_3">ID pubblicitario: aiuta a monitorare il tuo abbonamento e l\'utilizzo della VPN.</string>
+  <string name="confirm_accept_msg_4">Ecco fatto. Nessun tracciamento del tuo traffico internet, nessuna vendita dei tuoi dati. Non abbiamo una politica di log e rispettiamo le leggi sulla privacy. I tuoi dati rimangono tuoi.</string>
+  <string name="exit">Vuoi davvero uscire?</string>
+  <string name="exit_msg">In conformità con le politiche sulla protezione dei dati degli utenti, non possiamo fornire i nostri servizi senza il tuo consenso. Vuoi uscire?</string>
   <string name="premium_title">VPN Veloce e Sicuro Pro</string>
   <string name="premium_sub1">Nessuna pubblicità</string>
   <string name="premium_sub2">Velocità veloce e stabile</string>
@@ -139,7 +151,7 @@
   <string name="status_on">SU</string>
   <string name="status_off">Spento</string>
   <string name="dg_vpn_permission_title">Super VPN non può essere connesso con l\'autorità</string>
-  <string name="dg_vpn_permission_guide">Premere "OK" per consentire la connessione VPN.</string>
+  <string name="dg_vpn_permission_guide">Premere “OK” per consentire la connessione VPN.</string>
   <string name="connection_request">Richiesta di connessione</string>
   <string name="vpn_des1">SupperVPN richiede l\'autorizzazione per configurare una connessione VPN che gli consentirà di monitorare il traffico di rete. Consentilo solo se la fonte è attendibile.</string>
   <string name="vpn_des2">Mentre la VPN è in uso, verrà visualizzata un\'icona nella parte superiore dello schermo. Consentire?</string>

@@ -125,6 +125,18 @@
   <string name="dns_only">DNS តែប៉ុណ្ណោះ</string>
   <string name="confirm_dns">VPN មិនសកម្ម</string>
   <string name="confirm_dns_msg">បច្ចុប្បន្នអ្នកកំពុងប្រើតែ DNS ប៉ុណ្ណោះ។ សម្រាប់ការតភ្ជាប់ដែលមានសុវត្ថិភាព និងឯកជនជាងមុន សូមជ្រើសរើសម៉ាស៊ីនមេ VPN ។</string>
+  <string name="btn_agree">យល់ព្រម</string>
+  <string name="confirm_collect">ភាពឯកជនរបស់អ្នក ការគ្រប់គ្រងរបស់អ្នក។</string>
+  <string name="confirm_accept_msg">ដើម្បីបញ្ចប់ការជាវរបស់អ្នក កម្មវិធីនេះប្រមូលលេខសម្គាល់ការផ្សាយពាណិជ្ជកម្មរបស់អ្នក ដើម្បីផ្ទៀងផ្ទាត់ការចុះឈ្មោះ បង្កើនគុណភាពសេវាកម្ម និងការពារសកម្មភាពក្លែងបន្លំ។ តើអ្នកយល់ព្រមចំពោះការប្រមូលទិន្នន័យនេះទេ?</string>
+  <string name="accept_continue">ទទួលយក និងបន្ត</string>
+  <string name="go_back">ត្រឡប់មកវិញ</string>
+  <string name="leave_anyway">ចេញ</string>
+  <string name="confirm_accept_msg_1">សួស្តី អរគុណសម្រាប់ការប្រើប្រាស់ SuperVPN</string>
+  <string name="confirm_accept_msg_2">យើងប្រមូលតែទិន្នន័យអប្បបរមាដែលត្រូវការ ដើម្បីរក្សាការតភ្ជាប់របស់អ្នកឱ្យរលូន និងមានសុវត្ថិភាព។ នេះគឺជាការវិភាគរហ័ស។</string>
+  <string name="confirm_accept_msg_3">លេខសម្គាល់ការផ្សាយពាណិជ្ជកម្ម៖ ជួយតាមដានការជាវរបស់អ្នក និងប្រើប្រាស់ VPN ។</string>
+  <string name="confirm_accept_msg_4">នោះហើយជាវា។ គ្មានការតាមដានចរាចរណ៍អ៊ីនធឺណិតរបស់អ្នក គ្មានការលក់ទិន្នន័យរបស់អ្នកទេ។ យើងមិនមានគោលការណ៍កំណត់ហេតុទេ ហើយអនុវត្តតាមច្បាប់ឯកជនភាព។ ទិន្នន័យរបស់អ្នកនៅតែជារបស់អ្នក។</string>
+  <string name="exit">តើអ្នកប្រាកដជាចង់ចេញមែនទេ?</string>
+  <string name="exit_msg">យោងតាមគោលការណ៍ការពារទិន្នន័យអ្នកប្រើប្រាស់ យើងមិនអាចផ្តល់សេវាកម្មរបស់យើងដោយគ្មានការយល់ព្រមពីអ្នកបានទេ។ តើអ្នកប្រាកដក្នុងការចាកចេញទេ?</string>
   <string name="premium_title">VPN លឿន &amp; សុវត្ថិភាព Pro</string>
   <string name="premium_sub1">គ្មានការផ្សាយពាណិជ្ជកម្ម</string>
   <string name="premium_sub2">ល្បឿនលឿននិងមានស្ថេរភាព</string>
@@ -139,7 +151,7 @@
   <string name="status_on">បើក</string>
   <string name="status_off">បិទ</string>
   <string name="dg_vpn_permission_title">Super VPN មិនអាចភ្ជាប់ជាមួយអាជ្ញាធរបានទេ។</string>
-  <string name="dg_vpn_permission_guide">ចុច “យល់ព្រម” ដើម្បីអនុញ្ញាតការភ្ជាប់ VPN ។</string>
+  <string name="dg_vpn_permission_guide">ចុច "យល់ព្រម" ដើម្បីអនុញ្ញាតឱ្យការតភ្ជាប់ VPN ។</string>
   <string name="connection_request">ពាក្យសុំភ្ជាប់</string>
   <string name="vpn_des1">SupperVPN កំពុងស្នើសុំការអនុញ្ញាតក្នុងការដំឡើងការតភ្ជាប់ VPN ដែលនឹងអនុញ្ញាតឱ្យវាត្រួតពិនិត្យចរាចរណ៍បណ្តាញ។ អនុញ្ញាត​វា​តែ​ប្រសិន​បើ​អ្នក​ជឿ​ទុក​ចិត្ត​ប្រភព។</string>
   <string name="vpn_des2">រូបតំណាងនឹងត្រូវបានបង្ហាញនៅផ្នែកខាងលើនៃអេក្រង់របស់អ្នក ខណៈពេលដែល VPN កំពុងប្រើប្រាស់។ អនុញ្ញាត?</string>

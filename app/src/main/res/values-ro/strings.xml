@@ -125,6 +125,18 @@
   <string name="dns_only">Numai DNS</string>
   <string name="confirm_dns">VPN nu este activ</string>
   <string name="confirm_dns_msg">În prezent, utilizați doar DNS. Pentru o conexiune mai sigură și mai privată, selectați un server VPN.</string>
+  <string name="btn_agree">De acord</string>
+  <string name="confirm_collect">Confidențialitatea ta, controlul tău</string>
+  <string name="confirm_accept_msg">Pentru a finaliza abonamentul, această aplicație colectează ID-ul dvs. de publicitate pentru a verifica înregistrarea, a îmbunătăți calitatea serviciilor și a preveni activitățile frauduloase. Sunteți de acord cu această colectare de date?</string>
+  <string name="accept_continue">Acceptați și continuați</string>
+  <string name="go_back">Spate</string>
+  <string name="leave_anyway">Ieșire</string>
+  <string name="confirm_accept_msg_1">Salut, îți mulțumesc că folosești SuperVPN</string>
+  <string name="confirm_accept_msg_2">Colectăm doar datele minime necesare pentru a vă menține conexiunea fluidă și sigură. Iată o scurtă descriere.</string>
+  <string name="confirm_accept_msg_3">ID publicitar: ajută la urmărirea abonamentului și a utilizării VPN-ului.</string>
+  <string name="confirm_accept_msg_4">Asta e tot. Nu vă urmărim traficul de internet, nu vă vindem datele. Avem o politică fără jurnalizare și respectăm legile privind confidențialitatea. Datele dumneavoastră rămân ale dumneavoastră.</string>
+  <string name="exit">Sigur vrei să ieși?</string>
+  <string name="exit_msg">Conform politicilor de protecție a datelor utilizatorilor, nu putem furniza serviciile noastre fără consimțământul dumneavoastră. Sigur doriți să ieșiți?</string>
   <string name="premium_title">VPN Rapid și Sigur Pro</string>
   <string name="premium_sub1">Fără reclame</string>
   <string name="premium_sub2">Viteză rapidă și stabilă</string>
@@ -139,7 +151,7 @@
   <string name="status_on">PE</string>
   <string name="status_off">Oprit</string>
   <string name="dg_vpn_permission_title">Super VPN nu se poate conecta cu autoritatea</string>
-  <string name="dg_vpn_permission_guide">Apăsați pe „**OK** pentru a permite conexiunea VPN.</string>
+  <string name="dg_vpn_permission_guide">Apăsați „OK” pentru a permite conexiunea VPN.</string>
   <string name="connection_request">Cerere de conectare</string>
   <string name="vpn_des1">SupperVPN solicită permisiunea de a configura o conexiune VPN care îi va permite să monitorizeze traficul de rețea. Permiteți acest lucru numai dacă aveți încredere în sursă.</string>
   <string name="vpn_des2">O pictogramă va fi afișată în partea de sus a ecranului în timp ce VPN-ul este utilizat. Permiteți?</string>

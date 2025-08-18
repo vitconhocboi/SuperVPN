@@ -125,6 +125,18 @@
   <string name="dns_only">DNS sèlman</string>
   <string name="confirm_dns">VPN pa aktif</string>
   <string name="confirm_dns_msg">Kounye a, w ap sèlman itilize DNS. Pou yon koneksyon ki pi an sekirite e prive, tanpri chwazi yon sèvè VPN.</string>
+  <string name="btn_agree">Dakò</string>
+  <string name="confirm_collect">Konfidansyalite w, Kontwòl ou</string>
+  <string name="confirm_accept_msg">Pou konplete abònman ou an, aplikasyon sa a kolekte ID Piblisite ou pou verifye enskripsyon an, amelyore kalite sèvis la, epi anpeche aktivite fwod. Èske ou dakò ak koleksyon done sa a?</string>
+  <string name="accept_continue">Aksepte epi Kontinye</string>
+  <string name="go_back">Retounen</string>
+  <string name="leave_anyway">Sòti</string>
+  <string name="confirm_accept_msg_1">Alo, mèsi paske ou te itilize SuperVPN.</string>
+  <string name="confirm_accept_msg_2">Nou sèlman kolekte done minimòm ki nesesè pou kenbe koneksyon ou an bon eta epi an sekirite. Men yon ti detay rapid.</string>
+  <string name="confirm_accept_msg_3">ID Piblisite: ede w swiv abònman w ak itilizasyon VPN ou.</string>
+  <string name="confirm_accept_msg_4">Se sa sèlman. Pa gen swiv trafik entènèt ou, pa gen vann done ou yo. Nou pa gen okenn politik anrejistreman done (log) epi nou respekte lwa sou vi prive yo. Done ou yo rete pou ou.</string>
+  <string name="exit">Èske ou sèten ou vle sòti?</string>
+  <string name="exit_msg">Selon règleman pwoteksyon done itilizatè yo, nou pa ka bay sèvis nou yo san konsantman ou. Èske ou sèten ou vle kite?</string>
   <string name="premium_title">VPN Pwofesyonèl Rapid ak An Sekirite</string>
   <string name="premium_sub1">Pa gen Ajoute</string>
   <string name="premium_sub2">Vitès rapid ak ki estab</string>
@@ -139,7 +151,7 @@
   <string name="status_on">ON</string>
   <string name="status_off">Off</string>
   <string name="dg_vpn_permission_title">Super VPN pa ka konekte ak otorite a</string>
-  <string name="dg_vpn_permission_guide">Peze “OK’ pou pèmèt koneksyon VPN lan.</string>
+  <string name="dg_vpn_permission_guide">Peze "OK" pou pèmèt koneksyon VPN lan.</string>
   <string name="connection_request">Demann koneksyon</string>
   <string name="vpn_des1">SupperVPN ap mande pèmisyon pou mete kanpe yon koneksyon VPN ki pral pèmèt li kontwole trafik rezo a. Sèlman pèmèt sa si ou fè sous la konfyans.</string>
   <string name="vpn_des2">Yon ikòn ap parèt anlè ekran ou a pandan VPN nan ap fonksyone. Pèmèt?</string>

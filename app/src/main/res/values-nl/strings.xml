@@ -125,6 +125,18 @@
   <string name="dns_only">Alleen DNS</string>
   <string name="confirm_dns">VPN niet actief</string>
   <string name="confirm_dns_msg">U gebruikt momenteel alleen DNS. Voor een veiligere en meer private verbinding selecteert u een VPN-server.</string>
+  <string name="btn_agree">Mee eens zijn</string>
+  <string name="confirm_collect">Uw privacy, uw controle</string>
+  <string name="confirm_accept_msg">Om uw abonnement te voltooien, verzamelt deze app uw advertentie-ID om uw registratie te verifiëren, de servicekwaliteit te verbeteren en frauduleuze activiteiten te voorkomen. Gaat u akkoord met deze gegevensverzameling?</string>
+  <string name="accept_continue">Accepteren en doorgaan</string>
+  <string name="go_back">Rug</string>
+  <string name="leave_anyway">Uitgang</string>
+  <string name="confirm_accept_msg_1">Hallo, bedankt voor het gebruik van SuperVPN</string>
+  <string name="confirm_accept_msg_2">We verzamelen alleen de minimale gegevens die nodig zijn om je verbinding soepel en veilig te houden. Hieronder een kort overzicht.</string>
+  <string name="confirm_accept_msg_3">Advertentie-ID: helpt u bij het volgen van uw abonnement en het gebruik van VPN.</string>
+  <string name="confirm_accept_msg_4">Dat is alles. Geen tracking van je internetverkeer, geen verkoop van je gegevens. We hebben geen logsbeleid en volgen de privacywetgeving. Je gegevens blijven van jou.</string>
+  <string name="exit">Weet u zeker dat u wilt afsluiten?</string>
+  <string name="exit_msg">Volgens het beleid voor gebruikersgegevensbescherming kunnen we onze diensten niet aanbieden zonder uw toestemming. Weet u zeker dat u wilt afsluiten?</string>
   <string name="premium_title">VPN Snel &amp; Veilig Pro</string>
   <string name="premium_sub1">Geen advertenties</string>
   <string name="premium_sub2">Snelle en stabiele snelheid</string>
@@ -139,7 +151,7 @@
   <string name="status_on">OP</string>
   <string name="status_off">Uit</string>
   <string name="dg_vpn_permission_title">Super VPN kan geen verbinding maken met autoriteit</string>
-  <string name="dg_vpn_permission_guide">Druk op “&lt;b&gt;OK&lt;/b&gt;” om de VPN-verbinding toe te staan.</string>
+  <string name="dg_vpn_permission_guide">Klik op “OK” om de VPN-verbinding toe te staan.</string>
   <string name="connection_request">Verbindingsverzoek</string>
   <string name="vpn_des1">SupperVPN vraagt toestemming om een VPN-verbinding op te zetten waarmee het netwerkverkeer kan worden gemonitord. Sta dit alleen toe als u de bron vertrouwt.</string>
   <string name="vpn_des2">Terwijl de VPN in gebruik is, wordt er bovenaan uw scherm een pictogram weergegeven. Toestaan?</string>

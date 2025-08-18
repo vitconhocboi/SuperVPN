@@ -134,5 +134,11 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
                 Navigator.startMainActivity(requireActivity())
             }
         }
+
+        mProxyViewModel.isError.observe(viewLifecycleOwner) { isError ->
+            if (isError == true) {
+                Toast.makeText(requireContext(), "Connection error. Please try again.", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }

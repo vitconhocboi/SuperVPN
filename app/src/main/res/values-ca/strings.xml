@@ -125,6 +125,18 @@
   <string name="dns_only">Només DNS</string>
   <string name="confirm_dns">VPN no activa</string>
   <string name="confirm_dns_msg">Actualment només utilitzeu DNS. Per a una connexió més segura i privada, seleccioneu un servidor VPN.</string>
+  <string name="btn_agree">D\'acord</string>
+  <string name="confirm_collect">La teva privadesa, el teu control</string>
+  <string name="confirm_accept_msg">Per completar la subscripció, aquesta aplicació recopila el vostre ID de publicitat per verificar el registre, millorar la qualitat del servei i evitar activitats fraudulentes. Accepteu aquesta recopilació de dades?</string>
+  <string name="accept_continue">Accepta i continua</string>
+  <string name="go_back">Enrere</string>
+  <string name="leave_anyway">Sortida</string>
+  <string name="confirm_accept_msg_1">Hola, gràcies per utilitzar SuperVPN</string>
+  <string name="confirm_accept_msg_2">Només recopilem les dades mínimes necessàries per mantenir la vostra connexió fluida i segura. Aquí teniu un breu desglossament.</string>
+  <string name="confirm_accept_msg_3">ID de publicitat: ajuda per fer un seguiment de la vostra subscripció i de l\'ús de la VPN.</string>
+  <string name="confirm_accept_msg_4">Això és tot. No fem seguiment del trànsit d\'Internet, no venem les teves dades. No tenim una política de registre i seguim les lleis de privadesa. Les teves dades continuen sent teves.</string>
+  <string name="exit">Esteu segur que voleu sortir?</string>
+  <string name="exit_msg">D\'acord amb les polítiques de protecció de dades d\'usuaris, no podem proporcionar els nostres serveis sense el vostre consentiment. Esteu segur de sortir?</string>
   <string name="premium_title">VPN Ràpida i Segura Pro</string>
   <string name="premium_sub1">No hi ha anuncis</string>
   <string name="premium_sub2">Velocitat ràpida i estable</string>
@@ -139,7 +151,7 @@
   <string name="status_on">ON</string>
   <string name="status_off">Apagat</string>
   <string name="dg_vpn_permission_title">La Super VPN no es pot connectar amb l\'autoritat</string>
-  <string name="dg_vpn_permission_guide">Premeu “**D\'acord**” per permetre la connexió VPN.</string>
+  <string name="dg_vpn_permission_guide">Premeu “D\'acord” per permetre la connexió VPN.</string>
   <string name="connection_request">Sol·licitud de connexió</string>
   <string name="vpn_des1">SupperVPN sol·licita permís per configurar una connexió VPN que li permeti monitoritzar el trànsit de xarxa. Només permeteu-ho si confieu en la font.</string>
   <string name="vpn_des2">Es mostrarà una icona a la part superior de la pantalla mentre la VPN estigui en ús. Voleu permetre-ho?</string>

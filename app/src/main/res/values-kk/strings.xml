@@ -125,6 +125,18 @@
   <string name="dns_only">Тек DNS</string>
   <string name="confirm_dns">VPN белсенді емес</string>
   <string name="confirm_dns_msg">Сіз қазір тек DNS пайдаланудасыз. Қауіпсіз және жеке қосылым үшін VPN серверін таңдаңыз.</string>
+  <string name="btn_agree">Келісемін</string>
+  <string name="confirm_collect">Сіздің жеке өміріңіз, сіздің бақылауыңыз</string>
+  <string name="confirm_accept_msg">Жазылымыңызды аяқтау үшін бұл қолданба тіркеуді растау, қызмет сапасын жақсарту және алаяқтық әрекеттердің алдын алу үшін сіздің Жарнама идентификаторыңызды жинайды. Сіз бұл деректер жинаумен келісесіз бе?</string>
+  <string name="accept_continue">Қабылдау және жалғастыру</string>
+  <string name="go_back">Артқа</string>
+  <string name="leave_anyway">Шығу</string>
+  <string name="confirm_accept_msg_1">Сәлем, SuperVPN пайдаланғаныңыз үшін рахмет</string>
+  <string name="confirm_accept_msg_2">Біз тек қосылымыңызды тегіс және қауіпсіз сақтау үшін қажетті ең аз деректерді жинаймыз. Міне, жылдам бұзылу.</string>
+  <string name="confirm_accept_msg_3">Жарнама идентификаторы: жазылымды және VPN пайдалануды қадағалауға көмектеседі.</string>
+  <string name="confirm_accept_msg_4">Міне бітті. Интернет-трафикті бақылауға болмайды, деректеріңізді сатуға болмайды. Бізде журналдар саясаты жоқ және құпиялылық заңдарын ұстанамыз. Деректер сіздікі болып қалады.</string>
+  <string name="exit">Шынымен шыққыңыз келе ме?</string>
+  <string name="exit_msg">Пайдаланушы деректерін қорғау саясатына сәйкес, сіздің келісіміңізсіз қызметтерімізді ұсына алмаймыз. Шығыңызға сенімдісіз бе?</string>
   <string name="premium_title">VPN Fast &amp; Safe Pro</string>
   <string name="premium_sub1">Жарнамалар жоқ</string>
   <string name="premium_sub2">Жылдам және тұрақты жылдамдық</string>
@@ -139,7 +151,7 @@
   <string name="status_on">ҚОСУЛЫ</string>
   <string name="status_off">Өшірулі</string>
   <string name="dg_vpn_permission_title">Super VPN өкілеттікпен қосылу мүмкін емес</string>
-  <string name="dg_vpn_permission_guide">VPN қосылымына рұқсат беру үшін “OK” түймесін басыңыз.</string>
+  <string name="dg_vpn_permission_guide">VPN қосылымына рұқсат беру үшін «OK» түймесін басыңыз.</string>
   <string name="connection_request">Қосылу сұрауы</string>
   <string name="vpn_des1">SupperVPN желілік трафикті бақылауға мүмкіндік беретін VPN қосылымын орнатуға рұқсат сұрайды. Дереккөзге сенсеңіз ғана рұқсат етіңіз.</string>
   <string name="vpn_des2">VPN пайдалану кезінде экранның жоғарғы жағында белгіше көрсетіледі. Рұқсат ету керек пе?</string>

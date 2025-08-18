@@ -125,6 +125,18 @@
   <string name="dns_only">DNS ihany</string>
   <string name="confirm_dns">VPN tsy mavitrika</string>
   <string name="confirm_dns_msg">Mampiasa DNS fotsiny ianao amin\'izao fotoana izao. Raha mila fifandraisana azo antoka kokoa sy manokana, misafidiana mpizara VPN azafady.</string>
+  <string name="btn_agree">manaiky</string>
+  <string name="confirm_collect">Ny tsiambaratelonao, ny fifehezanao</string>
+  <string name="confirm_accept_msg">Mba hamenoana ny famandrihanao, ity app ity dia manangona ny ID Advertising anao hanamarina ny fisoratana anarana, hanatsara ny kalitaon\'ny serivisy ary hisorohana ny asa hosoka. Manaiky an\'ity fanangonana angona ity ve ianao?</string>
+  <string name="accept_continue">Ekeo ary tohizo</string>
+  <string name="go_back">indray</string>
+  <string name="leave_anyway">Fivoahana</string>
+  <string name="confirm_accept_msg_1">Salama, misaotra anao mampiasa SuperVPN</string>
+  <string name="confirm_accept_msg_2">Angon-drakitra faran\'izay kely ilaina ihany no angoninay mba hitazonana ny fifandraisanao milamina sy azo antoka. Ity ny fahatapahana haingana.</string>
+  <string name="confirm_accept_msg_3">ID momba ny dokam-barotra: manampy amin\'ny fanaraha-maso ny famandrihanao sy ny fampiasana VPN.</string>
+  <string name="confirm_accept_msg_4">Dia izay. Tsy manara-maso ny fifamoivoizana amin\'ny Internet, tsy mivarotra ny angonao. Tsy manana politika momba ny diary izahay ary manaraka ny lalàna momba ny fiainana manokana. Ny angonao dia mijanona ho anao.</string>
+  <string name="exit">Tena te hiala ve ianao?</string>
+  <string name="exit_msg">Araka ny politika fiarovana ny angon-drakitra mpampiasa, tsy afaka manome ny serivisy izahay raha tsy misy ny fanekenao. Tena hivoaka ve ianao?</string>
   <string name="premium_title">VPN Fast &amp; Safe Pro</string>
   <string name="premium_sub1">Tsy misy doka</string>
   <string name="premium_sub2">Haingam-pandeha haingana sy milamina</string>
@@ -139,7 +151,7 @@
   <string name="status_on">ON</string>
   <string name="status_off">NIALA</string>
   <string name="dg_vpn_permission_title">Super VPN dia tsy afaka mifandray amin\'ny manam-pahefana</string>
-  <string name="dg_vpn_permission_guide">Tsindrio "OK” raha te hamela ny fifandraisana VPN.</string>
+  <string name="dg_vpn_permission_guide">Tsindrio "OK" hamela ny fifandraisana VPN.</string>
   <string name="connection_request">Fangatahana fifandraisana</string>
   <string name="vpn_des1">SupperVPN dia mangataka alalana hanangana fifandraisana VPN izay ahafahany manara-maso ny fifamoivoizana amin\'ny tambajotra. Avelao fotsiny izany raha matoky ny loharano ianao.</string>
   <string name="vpn_des2">Haseho eo an-tampon\'ny efijery ny kisary iray rehefa ampiasaina ny VPN. Avelao?</string>

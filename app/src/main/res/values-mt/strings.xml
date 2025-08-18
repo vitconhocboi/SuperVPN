@@ -125,6 +125,18 @@
   <string name="dns_only">DNS biss</string>
   <string name="confirm_dns">VPN Mhux Attiv</string>
   <string name="confirm_dns_msg">Bħalissa qed tuża DNS biss. Għal konnessjoni aktar sigura u privata, jekk jogħġbok agħżel server VPN.</string>
+  <string name="btn_agree">Naqbel</string>
+  <string name="confirm_collect">Il-Privatezza Tiegħek, il-Kontroll Tiegħek</string>
+  <string name="confirm_accept_msg">Biex tlesti l-abbonament tiegħek, din l-app tiġbor l-ID tar-Reklamar tiegħek biex tivverifika r-reġistrazzjoni, ittejjeb il-kwalità tas-servizz, u tipprevjeni attività frodulenti. Taqbel ma\' dan il-ġbir tad-dejta?</string>
+  <string name="accept_continue">Aċċetta u Kompli</string>
+  <string name="go_back">Lura</string>
+  <string name="leave_anyway">Ħruġ</string>
+  <string name="confirm_accept_msg_1">Ħej, grazzi talli użajt SuperVPN</string>
+  <string name="confirm_accept_msg_2">Niġbru biss id-dejta minima meħtieġa biex inżommu l-konnessjoni tiegħek bla xkiel u sigura. Hawn hi t-tqassim fil-qosor.</string>
+  <string name="confirm_accept_msg_3">ID tar-Reklamar: jgħinek issegwi l-abbonament tiegħek u l-użu tal-VPN.</string>
+  <string name="confirm_accept_msg_4">Dak hu. L-ebda traċċar tat-traffiku tal-internet tiegħek, l-ebda bejgħ tad-dejta tiegħek. M\'għandna l-ebda politika ta\' logs u nsegwu l-liġijiet tal-privatezza. Id-dejta tiegħek tibqa\' tiegħek.</string>
+  <string name="exit">Żgur li trid toħroġ?</string>
+  <string name="exit_msg">Skont il-politiki tal-protezzjoni tad-dejta tal-utent, ma nistgħux nipprovdu s-servizzi tagħna mingħajr il-kunsens tiegħek. Żgur li se toħroġ?</string>
   <string name="premium_title">VPN Pro Veloċi u Sikur</string>
   <string name="premium_sub1">Ebda Reklami</string>
   <string name="premium_sub2">Veloċità mgħaġġla u stabbli</string>
@@ -139,7 +151,7 @@
   <string name="status_on">ON</string>
   <string name="status_off">Mitfi</string>
   <string name="dg_vpn_permission_title">Super VPN ma jistax jikkonnettja ma\' awtorità</string>
-  <string name="dg_vpn_permission_guide">Agħfas “OK’ biex tippermetti l-konnessjoni VPN.</string>
+  <string name="dg_vpn_permission_guide">Agħfas “OK” biex tippermetti l-konnessjoni VPN.</string>
   <string name="connection_request">Talba għal konnessjoni</string>
   <string name="vpn_des1">SupperVPN qed titlob permess biex twaqqaf konnessjoni VPN li tippermettilha tissorvelja t-traffiku tan-netwerk. Ħalli dan biss jekk tafda s-sors.</string>
   <string name="vpn_des2">Se tintwera ikona fil-parti ta\' fuq tal-iskrin tiegħek waqt li l-VPN ikun qed jintuża. Tippermetti?</string>

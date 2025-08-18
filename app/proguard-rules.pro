@@ -25,8 +25,6 @@
 -keep class okhttp3.** { *; }
 -keep interface okhttp3.** { *; }
 
-#-keep class com.highsecure.pixel.art.data** { *; }
-#-keep class com.highsecure.pixel.art.domain** { *; }
 -dontwarn okhttp3.**
 
 -keep class com.google.** { *; }
@@ -34,8 +32,6 @@
 
 -keepattributes Signature
 
-
--dontwarn com.squareup.okhttp.**
 -dontwarn okio.**
 
 -dontpreverify

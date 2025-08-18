@@ -125,6 +125,18 @@
   <string name="dns_only">Само ДНС</string>
   <string name="confirm_dns">VPN није активан</string>
   <string name="confirm_dns_msg">Тренутно користите само DNS. За безбеднију и приватнију везу, изаберите VPN сервер.</string>
+  <string name="btn_agree">Слажем се</string>
+  <string name="confirm_collect">Ваша приватност, ваша контрола</string>
+  <string name="confirm_accept_msg">Да бисте завршили претплату, ова апликација прикупља ваш ИД за оглашавање како би потврдила регистрацију, побољшала квалитет услуге и спречила преварне активности. Да ли се слажете са овим прикупљањем података?</string>
+  <string name="accept_continue">Прихвати и настави</string>
+  <string name="go_back">Назад</string>
+  <string name="leave_anyway">Изађи</string>
+  <string name="confirm_accept_msg_1">Здраво, хвала вам што користите SuperVPN</string>
+  <string name="confirm_accept_msg_2">Прикупљамо само минималне податке потребне да би ваша веза била безбедна и безбедна. Ево кратког прегледа.</string>
+  <string name="confirm_accept_msg_3">ИД оглашавања: помаже у праћењу ваше претплате и коришћења VPN-а.</string>
+  <string name="confirm_accept_msg_4">То је то. Нема праћења вашег интернет саобраћаја, нема продаје ваших података. Немамо политику евидентирања и поштујемо законе о приватности. Ваши подаци остају ваши.</string>
+  <string name="exit">Да ли сте сигурни да желите да изађете?</string>
+  <string name="exit_msg">У складу са политикама заштите података корисника, не можемо да пружамо наше услуге без вашег пристанка. Да ли сте сигурни да желите да изађете?</string>
   <string name="premium_title">VPN брз и безбедан професионалац</string>
   <string name="premium_sub1">Нема огласа</string>
   <string name="premium_sub2">Брза и стабилна брзина</string>
@@ -139,7 +151,7 @@
   <string name="status_on">ОН</string>
   <string name="status_off">Офф</string>
   <string name="dg_vpn_permission_title">Супер ВПН се не може повезати са ауторитетом</string>
-  <string name="dg_vpn_permission_guide">Притисните „ &lt;b&gt;ОК&lt;/b&gt; “ да бисте омогућили ВПН везу.</string>
+  <string name="dg_vpn_permission_guide">Притисните „ОК“ да бисте омогућили ВПН везу.</string>
   <string name="connection_request">Захтев за повезивање</string>
   <string name="vpn_des1">SupperVPN тражи дозволу за подешавање VPN везе која ће му омогућити праћење мрежног саобраћаја. Дозволите ово само ако верујете извору.</string>
   <string name="vpn_des2">Икона ће бити приказана на врху екрана док је VPN у употреби. Дозволити?</string>

@@ -125,6 +125,18 @@
   <string name="dns_only">Faqat DNS</string>
   <string name="confirm_dns">VPN faol emas</string>
   <string name="confirm_dns_msg">Siz hozir faqat DNS dan foydalanyapsiz. Xavfsizroq va shaxsiy ulanish uchun VPN serverini tanlang.</string>
+  <string name="btn_agree">Rozi</string>
+  <string name="confirm_collect">Sizning maxfiyligingiz, sizning nazoratingiz</string>
+  <string name="confirm_accept_msg">Obunangizni yakunlash uchun ushbu ilova roʻyxatdan oʻtishni tasdiqlash, xizmat sifatini oshirish va firibgarlik harakatlarini oldini olish uchun reklama identifikatoringizni toʻplaydi. Ushbu ma\'lumotlar to\'plamiga rozimisiz?</string>
+  <string name="accept_continue">Qabul qiling va davom eting</string>
+  <string name="go_back">Orqaga</string>
+  <string name="leave_anyway">Chiqish</string>
+  <string name="confirm_accept_msg_1">Salom, SuperVPN-dan foydalanganingiz uchun tashakkur</string>
+  <string name="confirm_accept_msg_2">Biz ulanishingizni silliq va xavfsiz saqlash uchun zarur bo\'lgan minimal ma\'lumotlarni yig\'amiz. Mana tez buzilish.</string>
+  <string name="confirm_accept_msg_3">Reklama identifikatori: obunangizni kuzatish va VPN dan foydalanishga yordam beradi.</string>
+  <string name="confirm_accept_msg_4">Bo\'ldi shu. Internet-trafikingizni kuzatib bo\'lmaydi, ma\'lumotlaringizni sotmaysiz. Bizda jurnallar siyosati yo\'q va maxfiylik qonunlariga amal qilamiz. Sizning ma\'lumotlaringiz sizniki bo\'lib qoladi.</string>
+  <string name="exit">Haqiqatan ham chiqmoqchimisiz?</string>
+  <string name="exit_msg">Foydalanuvchi ma\'lumotlarini himoya qilish siyosatiga ko\'ra, biz sizning roziligingizsiz xizmatlarimizni taqdim eta olmaymiz. Chiqishingizga ishonchingiz komilmi?</string>
   <string name="premium_title">VPN Fast &amp; Safe Pro</string>
   <string name="premium_sub1">Reklamalar yo\'q</string>
   <string name="premium_sub2">Tez va barqaror tezlik</string>
@@ -139,7 +151,7 @@
   <string name="status_on">ON</string>
   <string name="status_off">Oʻchirilgan</string>
   <string name="dg_vpn_permission_title">Super VPN hokimiyat bilan bog\'lanib bo\'lmaydi</string>
-  <string name="dg_vpn_permission_guide">VPN ulanishiga ruxsat berish uchun “&lt;b&gt;OK&lt;/b&gt;”-ni bosing.</string>
+  <string name="dg_vpn_permission_guide">VPN ulanishiga ruxsat berish uchun "OK" tugmasini bosing.</string>
   <string name="connection_request">Ulanish so\'rovi</string>
   <string name="vpn_des1">SupperVPN tarmoq trafigini kuzatish imkonini beruvchi VPN ulanishini oʻrnatishga ruxsat soʻramoqda. Agar manbaga ishonsangizgina ruxsat bering.</string>
   <string name="vpn_des2">VPN ishlatilayotganda ekranning yuqori qismida belgi ko\'rsatiladi. Ruxsat berilsinmi?</string>

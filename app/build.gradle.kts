@@ -15,16 +15,16 @@ plugins {
 
 android {
     namespace = "com.tici.vpn.proxy.master"
-    compileSdk = 34
+    compileSdk = 35
 
     ndkVersion = "26.1.10909125"
 
     defaultConfig {
         applicationId = "com.tici.vpn.proxy.master"
         minSdk = 27
-        targetSdk = 34
-        versionCode = 16
-        versionName = "1.16"
+        targetSdk = 35
+        versionCode = 24
+        versionName = "1.24"
 //
 //        resourceConfigurations.addAll(
 //            listOf("en", "vi", "ar", "hi", "id", "ms", "ru", "pt", "fr", "de", "es", "ja", "ko")
@@ -161,7 +161,7 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("androidx.core:core-splashscreen:1.0.1")
     implementation("androidx.room:room-runtime:2.6.1")
-    implementation("com.android.billingclient:billing:6.2.1")
+    implementation("com.android.billingclient:billing:7.1.1")
     kapt("androidx.room:room-compiler:2.6.1")
     implementation(libs.androidx.room.ktx)
     implementation(libs.hilt.android)

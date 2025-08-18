@@ -18,12 +18,17 @@ class RetrofitModule {
     @Provides
     @Singleton
     fun provideApiService(): ApiService {
-        val clientBuilder = OkHttpClient.Builder()
+        val clientBuilder = OkHttpClient
+            .Builder()
+            .dns(IPv4OnlyDns)
+
         val httpLoggingInterceptor = HttpLoggingInterceptor()
         httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
         clientBuilder.addInterceptor(httpLoggingInterceptor)
-            .connectTimeout(5, TimeUnit.MINUTES).readTimeout(15, TimeUnit.SECONDS)
-            .writeTimeout(15, TimeUnit.SECONDS).retryOnConnectionFailure(false)
+            .connectTimeout(5, TimeUnit.MINUTES)
+            .readTimeout(15, TimeUnit.SECONDS)
+            .writeTimeout(15, TimeUnit.SECONDS)
+            .retryOnConnectionFailure(false)
 
 
         val retrofit = Retrofit.Builder().baseUrl(Utils.BASE_URL)

@@ -125,6 +125,18 @@
   <string name="dns_only">נאָר די-ען-עס</string>
   <string name="confirm_dns">VPN נישט אקטיוו</string>
   <string name="confirm_dns_msg">איר ניצט איצט נאָר DNS. פֿאַר אַ מער זיכערע און פּריוואַטע פֿאַרבינדונג, ביטע אויסקלײַבן אַ VPN סערווער.</string>
+  <string name="btn_agree">מסכים זיין</string>
+  <string name="confirm_collect">דיין פּריוואַטקייט, דיין קאָנטראָל</string>
+  <string name="confirm_accept_msg">כדי צו פֿאַרענדיקן אייער אַבאָנעמענט, זאַמלט די אַפּ אייער גאַנצע אידענטיפֿיקאַציע צו באַשטעטיקן רעגיסטראַציע, פֿאַרבעסערן סערוויס קוואַליטעט און פֿאַרהיטן פֿרוידאַל טעטיקייט. שטימט איר צו צו דעם דאַטן זאַמלונג?</string>
+  <string name="accept_continue">אָננעמען און פאָרזעצן</string>
+  <string name="go_back">צוריק</string>
+  <string name="leave_anyway">אַרויסגאַנג</string>
+  <string name="confirm_accept_msg_1">העלא, א דאנק פארן ניצן SuperVPN</string>
+  <string name="confirm_accept_msg_2">מיר זאַמלען בלויז די מינימום דאַטן וואָס זענען נויטיק צו האַלטן אייער פֿאַרבינדונג גלאַט און זיכער. דאָ איז די שנעלע איבערבליק.</string>
+  <string name="confirm_accept_msg_3">גאַנצע פֿאַרקויף ID: הילף צו שפּורן דיין אַבאָנעמענט און נוצן VPN.</string>
+  <string name="confirm_accept_msg_4">דאָס איז אַלץ. מיר טראַקן נישט אייער אינטערנעט טראַפיק, מיר פאַרקויפן נישט אייער דאַטן. מיר האָבן קיין לאָגס פּאָליטיק און מיר נאָכפאָלגן די פּריוואַטקייט געזעצן. אייער דאַטן בלייבן אייערע.</string>
+  <string name="exit">ביסטו זיכער אז דו ווילסט ארויסגיין?</string>
+  <string name="exit_msg">לויט באַניצער דאַטן שוץ פּאָליטיק, קענען מיר נישט צושטעלן אונדזערע באַדינונגען אָן דיין צושטימונג. זענט איר זיכער צו פֿאַרלאָזן?</string>
   <string name="premium_title">VPN שנעל און זיכער פּראָ</string>
   <string name="premium_sub1">קיין אַדס</string>
   <string name="premium_sub2">שנעלע און סטאַבילע גיכקייט</string>
@@ -139,7 +151,7 @@
   <string name="status_on">אויף</string>
   <string name="status_off">אַוועק</string>
   <string name="dg_vpn_permission_title">סופּער וויפּיען קען נישט זיין פארבונדן מיט אויטאָריטעט</string>
-  <string name="dg_vpn_permission_guide">דריק "&lt;b&gt;OK&lt;/b&gt;" צו ערלויבן די VPN פארבינדונג.</string>
+  <string name="dg_vpn_permission_guide">דריק "OK" צו ערלויבן די VPN פֿאַרבינדונג.</string>
   <string name="connection_request">פֿאַרבינדונג בקשה</string>
   <string name="vpn_des1">SupperVPN בעט דערלויבעניש צו אויפשטעלן א VPN פארבינדונג וואס וועט עס ערלויבן צו מאניטארירן נעץ טראפיק. ערלויבט דאס נאר אויב איר טראסט די מקור.</string>
   <string name="vpn_des2">אן אייקאן וועט ווערן געוויזן ביים שפיץ פון אייער עקראן בשעת די ווי-פי-ען איז אין באנוץ. ערלויבן?</string>

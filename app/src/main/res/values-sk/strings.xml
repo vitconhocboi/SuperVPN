@@ -125,6 +125,18 @@
   <string name="dns_only">Iba DNS</string>
   <string name="confirm_dns">VPN nie je aktívna</string>
   <string name="confirm_dns_msg">Momentálne používate iba DNS. Pre bezpečnejšie a súkromnejšie pripojenie vyberte server VPN.</string>
+  <string name="btn_agree">Súhlasím</string>
+  <string name="confirm_collect">Vaše súkromie, vaša kontrola</string>
+  <string name="confirm_accept_msg">Na dokončenie vášho predplatného táto aplikácia zhromažďuje vaše reklamné ID na overenie registrácie, zlepšenie kvality služieb a zabránenie podvodným aktivitám. Súhlasíte s týmto zhromažďovaním údajov?</string>
+  <string name="accept_continue">Prijať a pokračovať</string>
+  <string name="go_back">Späť</string>
+  <string name="leave_anyway">VÝCHOD</string>
+  <string name="confirm_accept_msg_1">Ahoj, ďakujem, že používaš SuperVPN</string>
+  <string name="confirm_accept_msg_2">Zhromažďujeme iba minimum údajov potrebných na zabezpečenie bezproblémového a bezpečného pripojenia. Tu je stručný prehľad.</string>
+  <string name="confirm_accept_msg_3">Reklamné ID: pomáha sledovať vaše predplatné a používanie VPN.</string>
+  <string name="confirm_accept_msg_4">To je všetko. Žiadne sledovanie vašej internetovej prevádzky, žiadny predaj vašich údajov. Nemáme žiadne pravidlá protokolovania a dodržiavame zákony o ochrane osobných údajov. Vaše údaje zostávajú vaše.</string>
+  <string name="exit">Naozaj chcete odísť?</string>
+  <string name="exit_msg">V súlade so zásadami ochrany údajov používateľov nemôžeme poskytovať naše služby bez vášho súhlasu. Naozaj chcete odísť?</string>
   <string name="premium_title">VPN Rýchla a bezpečná profesionálna</string>
   <string name="premium_sub1">Žiadne reklamy</string>
   <string name="premium_sub2">Rýchla a stabilná rýchlosť</string>
@@ -139,7 +151,7 @@
   <string name="status_on">ON</string>
   <string name="status_off">Vypnuté</string>
   <string name="dg_vpn_permission_title">Super VPN sa nedá pripojiť k autorizácii</string>
-  <string name="dg_vpn_permission_guide">Stlačením tlačidla „&lt;b&gt;OK&lt;/b&gt;“ povolíte pripojenie VPN.</string>
+  <string name="dg_vpn_permission_guide">Stlačením tlačidla „OK“ povolíte pripojenie VPN.</string>
   <string name="connection_request">Žiadosť o pripojenie</string>
   <string name="vpn_des1">SupperVPN žiada o povolenie na vytvorenie VPN pripojenia, ktoré mu umožní monitorovať sieťovú prevádzku. Povoľte to iba v prípade, že dôverujete zdroju.</string>
   <string name="vpn_des2">Počas používania siete VPN sa v hornej časti obrazovky zobrazí ikona. Povoliť?</string>

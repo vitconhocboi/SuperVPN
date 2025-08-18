@@ -125,6 +125,18 @@
   <string name="dns_only">DNS മാത്രം</string>
   <string name="confirm_dns">VPN സജീവമല്ല</string>
   <string name="confirm_dns_msg">നിങ്ങൾ നിലവിൽ DNS മാത്രമാണ് ഉപയോഗിക്കുന്നത്. കൂടുതൽ സുരക്ഷിതവും സ്വകാര്യവുമായ കണക്ഷന്, ദയവായി ഒരു VPN സെർവർ തിരഞ്ഞെടുക്കുക.</string>
+  <string name="btn_agree">സമ്മതിക്കുന്നു</string>
+  <string name="confirm_collect">നിങ്ങളുടെ സ്വകാര്യത, നിങ്ങളുടെ നിയന്ത്രണം</string>
+  <string name="confirm_accept_msg">നിങ്ങളുടെ സബ്‌സ്‌ക്രിപ്‌ഷൻ പൂർത്തിയാക്കുന്നതിന്, രജിസ്ട്രേഷൻ പരിശോധിക്കുന്നതിനും സേവന നിലവാരം മെച്ചപ്പെടുത്തുന്നതിനും വഞ്ചനാപരമായ പ്രവർത്തനങ്ങൾ തടയുന്നതിനും ഈ ആപ്പ് നിങ്ങളുടെ പരസ്യ ഐഡി ശേഖരിക്കുന്നു. ഈ ഡാറ്റ ശേഖരണത്തോട് നിങ്ങൾ യോജിക്കുന്നുണ്ടോ?</string>
+  <string name="accept_continue">അംഗീകരിച്ച് തുടരുക</string>
+  <string name="go_back">തിരികെ</string>
+  <string name="leave_anyway">പുറത്ത്</string>
+  <string name="confirm_accept_msg_1">ഹേയ്, സൂപ്പർവിപിഎൻ ഉപയോഗിച്ചതിന് നന്ദി.</string>
+  <string name="confirm_accept_msg_2">നിങ്ങളുടെ കണക്ഷൻ സുഗമവും സുരക്ഷിതവുമായി നിലനിർത്താൻ ആവശ്യമായ ഏറ്റവും കുറഞ്ഞ ഡാറ്റ മാത്രമേ ഞങ്ങൾ ശേഖരിക്കുന്നുള്ളൂ. ദ്രുത വിശദീകരണം ഇതാ.</string>
+  <string name="confirm_accept_msg_3">പരസ്യ ഐഡി: നിങ്ങളുടെ സബ്‌സ്‌ക്രിപ്‌ഷൻ ട്രാക്ക് ചെയ്യാനും VPN ഉപയോഗിക്കാനും സഹായിക്കുക.</string>
+  <string name="confirm_accept_msg_4">അത്രയേ ഉള്ളൂ. നിങ്ങളുടെ ഇന്റർനെറ്റ് ട്രാഫിക് ട്രാക്ക് ചെയ്യേണ്ട, നിങ്ങളുടെ ഡാറ്റ വിൽക്കേണ്ട. ഞങ്ങൾക്ക് ലോഗ് നയമില്ല, സ്വകാര്യതാ നിയമങ്ങൾ പാലിക്കുകയും ചെയ്യുന്നു. നിങ്ങളുടെ ഡാറ്റ നിങ്ങളുടേതായി തന്നെ തുടരും.</string>
+  <string name="exit">നിങ്ങൾക്ക് തീർച്ചയായും പുറത്തുകടക്കാൻ താൽപ്പര്യമുണ്ടോ?</string>
+  <string name="exit_msg">ഉപയോക്തൃ ഡാറ്റാ സംരക്ഷണ നയങ്ങൾ അനുസരിച്ച്, നിങ്ങളുടെ സമ്മതമില്ലാതെ ഞങ്ങൾക്ക് ഞങ്ങളുടെ സേവനങ്ങൾ നൽകാൻ കഴിയില്ല. നിങ്ങൾക്ക് പുറത്തുകടക്കണമെന്ന് ഉറപ്പാണോ?</string>
   <string name="premium_title">വേഗതയേറിയതും സുരക്ഷിതവുമായ VPN പ്രോ</string>
   <string name="premium_sub1">പരസ്യങ്ങളില്ല</string>
   <string name="premium_sub2">വേഗതയേറിയതും സ്ഥിരതയുള്ളതുമായ വേഗത</string>
@@ -139,7 +151,7 @@
   <string name="status_on">ഓൺ</string>
   <string name="status_off">ഓഫ്</string>
   <string name="dg_vpn_permission_title">സൂപ്പർ വിപിഎൻ അധികാരികളുമായി ബന്ധിപ്പിക്കാൻ കഴിയില്ല</string>
-  <string name="dg_vpn_permission_guide">VPN കണക്ഷൻ അനുവദിക്കാൻ “ശരി” അമർത്തുക.</string>
+  <string name="dg_vpn_permission_guide">VPN കണക്ഷൻ അനുവദിക്കുന്നതിന് "ശരി" അമർത്തുക.</string>
   <string name="connection_request">കണക്ഷൻ അഭ്യർത്ഥന</string>
   <string name="vpn_des1">നെറ്റ്‌വർക്ക് ട്രാഫിക് നിരീക്ഷിക്കാൻ അനുവദിക്കുന്ന ഒരു VPN കണക്ഷൻ സജ്ജീകരിക്കാൻ SupperVPN അനുമതി അഭ്യർത്ഥിക്കുന്നു. ഉറവിടത്തെ നിങ്ങൾ വിശ്വസിക്കുന്നുവെങ്കിൽ മാത്രം ഇത് അനുവദിക്കുക.</string>
   <string name="vpn_des2">VPN ഉപയോഗത്തിലായിരിക്കുമ്പോൾ നിങ്ങളുടെ സ്ക്രീനിന്റെ മുകളിൽ ഒരു ഐക്കൺ കാണിക്കും. അനുവദിക്കണോ?</string>

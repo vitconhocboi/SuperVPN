@@ -12,16 +12,21 @@ class AgreementDialog(
 ) : BaseDialog<DialogAgreementBinding>(activity) {
 
     override fun initUI() {
+        // Make dialog fullscreen
+        window?.setLayout(
+            android.view.ViewGroup.LayoutParams.MATCH_PARENT,
+            android.view.ViewGroup.LayoutParams.MATCH_PARENT
+        )
+        window?.setBackgroundDrawableResource(android.R.color.transparent) // optional: transparent background
 
         binding?.apply {
-
             btnAccept.setOnClickListener {
                 dismiss()
                 onContinue()
             }
 
             btnClose.setOnClickListener {
-                CloseAgreementDialog (activity = activity).show()
+                CloseAgreementDialog(activity = activity).show()
             }
         }
     }

@@ -125,6 +125,18 @@
   <string name="dns_only">DNS మాత్రమే</string>
   <string name="confirm_dns">VPN యాక్టివ్‌గా లేదు</string>
   <string name="confirm_dns_msg">మీరు ప్రస్తుతం DNS మాత్రమే ఉపయోగిస్తున్నారు. మరింత సురక్షితమైన మరియు ప్రైవేట్ కనెక్షన్ కోసం, దయచేసి VPN సర్వర్‌ను ఎంచుకోండి.</string>
+  <string name="btn_agree">అంగీకరిస్తున్నారు</string>
+  <string name="confirm_collect">మీ గోప్యత, మీ నియంత్రణ</string>
+  <string name="confirm_accept_msg">మీ సభ్యత్వాన్ని పూర్తి చేయడానికి, రిజిస్ట్రేషన్‌ను ధృవీకరించడానికి, సేవా నాణ్యతను మెరుగుపరచడానికి మరియు మోసపూరిత కార్యకలాపాలను నిరోధించడానికి ఈ యాప్ మీ ప్రకటన IDని సేకరిస్తుంది. మీరు ఈ డేటా సేకరణకు అంగీకరిస్తున్నారా?</string>
+  <string name="accept_continue">అంగీకరించి కొనసాగించు</string>
+  <string name="go_back">వెనుకకు</string>
+  <string name="leave_anyway">నిష్క్రమించు</string>
+  <string name="confirm_accept_msg_1">హే, సూపర్‌విపిఎన్ ఉపయోగించినందుకు ధన్యవాదాలు.</string>
+  <string name="confirm_accept_msg_2">మీ కనెక్షన్‌ను సజావుగా మరియు సురక్షితంగా ఉంచడానికి అవసరమైన కనీస డేటాను మాత్రమే మేము సేకరిస్తాము. ఇక్కడ శీఘ్ర వివరణ ఉంది.</string>
+  <string name="confirm_accept_msg_3">ప్రకటన ID: మీ సభ్యత్వాన్ని ట్రాక్ చేయడంలో మరియు VPNని ఉపయోగించడంలో సహాయపడండి.</string>
+  <string name="confirm_accept_msg_4">అంతే. మీ ఇంటర్నెట్ ట్రాఫిక్‌ను ట్రాక్ చేయాల్సిన అవసరం లేదు, మీ డేటాను అమ్మాల్సిన అవసరం లేదు. మా దగ్గర లాగ్‌ల విధానం లేదు మరియు గోప్యతా చట్టాలను పాటిస్తాము. మీ డేటా మీ వద్దే ఉంటుంది.</string>
+  <string name="exit">మీరు ఖచ్చితంగా నిష్క్రమించాలనుకుంటున్నారా?</string>
+  <string name="exit_msg">వినియోగదారు డేటా రక్షణ విధానాల ప్రకారం, మీ అనుమతి లేకుండా మేము మా సేవలను అందించలేము. మీరు ఖచ్చితంగా నిష్క్రమించాలనుకుంటున్నారా?</string>
   <string name="premium_title">VPN ఫాస్ట్ &amp; సేఫ్ ప్రో</string>
   <string name="premium_sub1">ప్రకటనలు లేవు</string>
   <string name="premium_sub2">వేగవంతమైన మరియు స్థిరమైన వేగం</string>
@@ -139,7 +151,7 @@
   <string name="status_on">ఆన్</string>
   <string name="status_off">ఆఫ్</string>
   <string name="dg_vpn_permission_title">సూపర్ VPN అధికారంతో కనెక్ట్ అవ్వదు</string>
-  <string name="dg_vpn_permission_guide">VPN కనెక్షన్‌ను అనుమతించడానికి “&lt;b&gt;సరే&lt;/b&gt;” నొక్కండి.</string>
+  <string name="dg_vpn_permission_guide">VPN కనెక్షన్‌ను ప్రారంభించడానికి "సరే" నొక్కండి.</string>
   <string name="connection_request">కనెక్షన్ అభ్యర్థన</string>
   <string name="vpn_des1">నెట్‌వర్క్ ట్రాఫిక్‌ను పర్యవేక్షించడానికి అనుమతించే VPN కనెక్షన్‌ను సెటప్ చేయడానికి SupperVPN అనుమతిని అభ్యర్థిస్తోంది. మీరు మూలాన్ని విశ్వసిస్తేనే దీన్ని అనుమతించండి.</string>
   <string name="vpn_des2">VPN ఉపయోగంలో ఉన్నప్పుడు మీ స్క్రీన్ పైభాగంలో ఒక చిహ్నం చూపబడుతుంది. అనుమతించాలా?</string>

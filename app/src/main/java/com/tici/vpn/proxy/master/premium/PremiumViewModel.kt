@@ -16,7 +16,9 @@ import com.android.billingclient.api.PurchasesUpdatedListener
 import com.android.billingclient.api.QueryProductDetailsParams
 import com.common.baseui.BaseAppConfig
 import com.tici.vpn.proxy.master.api.ApiService
+import com.tici.vpn.proxy.master.api.DisconnectResponse
 import com.tici.vpn.proxy.master.api.Subscription
+import com.tici.vpn.proxy.master.api.Users
 import com.tici.vpn.proxy.master.billing.BillingManager
 import com.tici.vpn.proxy.master.main.SharedData
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -25,7 +27,11 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.coroutines.withContext
 import timber.log.Timber
+import java.io.IOException
+import java.net.SocketTimeoutException
+import java.net.UnknownHostException
 import javax.inject.Inject
+import javax.net.ssl.SSLHandshakeException
 import kotlin.coroutines.resume
 
 @HiltViewModel
@@ -194,7 +200,14 @@ class PremiumViewModel @Inject constructor(
             viewModelScope.launch (Dispatchers.IO) {
                 try {
                     val sub = Subscription(user_id = BaseAppConfig.deviceId, pack = subName)
-                    apiService.subscription(sub)
+//                    apiService.subscription(sub)
+                    val result = subscribeSafe(sub)
+                    result
+                        .onSuccess { _ ->
+                        }
+                        .onFailure { error ->
+                            throw Exception("Failed to assign proxy: $error")
+                        }
                 } catch (e: Exception) {
                     Timber.e(e)
                     e.printStackTrace()
@@ -218,7 +231,14 @@ class PremiumViewModel @Inject constructor(
                 viewModelScope.launch (Dispatchers.IO) {
                     try {
                         val sub = Subscription(user_id = BaseAppConfig.deviceId, pack = subName)
-                        apiService.subscription(sub)
+//                        apiService.subscription(sub)
+                        val result = subscribeSafe(sub)
+                        result
+                            .onSuccess { _ ->
+                            }
+                            .onFailure { error ->
+                                throw Exception("Failed to assign proxy: $error")
+                            }
                     } catch (e: Exception) {
                         e.printStackTrace()
                     }
@@ -229,6 +249,32 @@ class PremiumViewModel @Inject constructor(
                 BaseAppConfig.isSub = false
                 Timber.Forest.e("Failed to acknowledge purchase: ${ackResult.debugMessage}")
             }
+        }
+    }
+
+    suspend fun subscribeSafe(sub: Subscription): Result<DisconnectResponse> {
+        return try {
+            val response = apiService.subscription(sub)
+            if (response.isSuccessful) {
+                val body = response.body()
+                if (body != null) {
+                    Result.success(body)
+                } else {
+                    Result.failure(Exception("Empty response from server"))
+                }
+            } else {
+                Result.failure(Exception("Server error: ${response.code()}"))
+            }
+        } catch (e: SSLHandshakeException) {
+            Result.failure(Exception("SSL Handshake failed"))
+        } catch (e: SocketTimeoutException) {
+            Result.failure(Exception("Connection timed out. Please try again later."))
+        } catch (e: UnknownHostException) {
+            Result.failure(Exception("No internet connection or DNS resolution failed"))
+        } catch (e: IOException) {
+            Result.failure(Exception("Network I/O error occurred"))
+        } catch (e: Exception) {
+            Result.failure(e)
         }
     }
 }

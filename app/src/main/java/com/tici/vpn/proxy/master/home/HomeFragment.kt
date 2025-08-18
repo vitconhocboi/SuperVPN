@@ -387,6 +387,12 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
             updateUI(status)
         }
 
+        proxyViewModel.isError.observe(viewLifecycleOwner) { isError ->
+            if (isError == true) {
+                Toast.makeText(requireContext(), "Connection error. Please try again.", Toast.LENGTH_SHORT).show()
+            }
+        }
+
     }
 
     private fun onToggleStop() {
@@ -468,7 +474,14 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         allowAppViewModel.getAllowApp()
         bindFlowCreate(allowAppViewModel.allowApp) { result ->
             processResultData(result, onSuccess = { rs ->
-                proxyViewModel.startProxy(mainViewModel.getDeviceId(requireContext()), context, allowApp = rs.map { it.packageName })
+                try {
+                    proxyViewModel.startProxy(
+                        mainViewModel.getDeviceId(requireContext()),
+                        context,
+                        allowApp = rs.map { it.packageName })
+                } catch (_: Exception) {
+                    Toast.makeText(requireContext(), "Network error. Please try again", Toast.LENGTH_SHORT).show()
+                }
             })
         }
 

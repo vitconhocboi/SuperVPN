@@ -125,6 +125,18 @@
   <string name="dns_only">Зөвхөн DNS</string>
   <string name="confirm_dns">VPN Идэвхгүй байна</string>
   <string name="confirm_dns_msg">Та одоогоор зөвхөн DNS ашиглаж байна. Илүү найдвартай, хувийн холболт хийхийн тулд VPN серверийг сонгоно уу.</string>
+  <string name="btn_agree">Зөвшөөрч байна</string>
+  <string name="confirm_collect">Таны хувийн нууц, таны хяналт</string>
+  <string name="confirm_accept_msg">Таны бүртгэлийг дуусгахын тулд энэ апп бүртгэлийг баталгаажуулах, үйлчилгээний чанарыг сайжруулах, залилан мэхлэх үйлдлээс урьдчилан сэргийлэх зорилгоор таны сурталчилгааны ID-г цуглуулдаг. Та энэ мэдээлэл цуглуулахыг зөвшөөрч байна уу?</string>
+  <string name="accept_continue">Зөвшөөрч, үргэлжлүүлнэ үү</string>
+  <string name="go_back">Буцах</string>
+  <string name="leave_anyway">Гарах</string>
+  <string name="confirm_accept_msg_1">Сайн уу, SuperVPN ашигласанд баярлалаа</string>
+  <string name="confirm_accept_msg_2">Бид таны холболтыг жигд, аюулгүй байлгахад шаардлагатай хамгийн бага өгөгдлийг л цуглуулдаг. Энд хурдан задаргаа байна.</string>
+  <string name="confirm_accept_msg_3">Сурталчилгааны ID: захиалгаа хянах, VPN ашиглахад тусална.</string>
+  <string name="confirm_accept_msg_4">Ингээд л болоо. Таны интернетийн урсгалыг хянах боломжгүй, өгөгдлийг зарах боломжгүй. Бид бүртгэлийн бодлогогүй бөгөөд нууцлалын хуулийг дагаж мөрддөг. Таны өгөгдөл таных хэвээр үлдэнэ.</string>
+  <string name="exit">Та гарахдаа итгэлтэй байна уу?</string>
+  <string name="exit_msg">Хэрэглэгчийн мэдээллийг хамгаалах бодлогын дагуу бид таны зөвшөөрөлгүйгээр үйлчилгээгээ үзүүлэх боломжгүй. Та гарахдаа итгэлтэй байна уу?</string>
   <string name="premium_title">VPN Fast &amp; Safe Pro</string>
   <string name="premium_sub1">Зар байхгүй</string>
   <string name="premium_sub2">Хурдан, тогтвортой хурд</string>
@@ -139,7 +151,7 @@
   <string name="status_on">АСААЛТТАЙ</string>
   <string name="status_off">Унтраах</string>
   <string name="dg_vpn_permission_title">Super VPN нь эрх мэдэлтэй холбогдох боломжгүй</string>
-  <string name="dg_vpn_permission_guide">VPN холболтыг зөвшөөрөхийн тулд “OK”-г дарна уу.</string>
+  <string name="dg_vpn_permission_guide">VPN холболтыг зөвшөөрөхийн тулд "OK" дээр дарна уу.</string>
   <string name="connection_request">Холболтын хүсэлт</string>
   <string name="vpn_des1">SupperVPN нь сүлжээний урсгалыг хянах боломжийг олгох VPN холболтыг тохируулах зөвшөөрөл хүсч байна. Хэрэв та эх сурвалжид итгэж байгаа бол үүнийг зөвшөөрнө үү.</string>
   <string name="vpn_des2">VPN ашиглаж байх үед таны дэлгэцийн дээд хэсэгт дүрс гарч ирнэ. Зөвшөөрөх үү?</string>

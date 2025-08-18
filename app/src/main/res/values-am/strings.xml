@@ -125,6 +125,18 @@
   <string name="dns_only">ዲ ኤን ኤስ ብቻ</string>
   <string name="confirm_dns">ቪፒኤን ገቢር አይደለም።</string>
   <string name="confirm_dns_msg">በአሁኑ ጊዜ ዲኤንኤስ ብቻ እየተጠቀሙ ነው። የበለጠ ደህንነቱ የተጠበቀ እና ግላዊ ግንኙነት ለማግኘት፣ እባክዎ የቪፒኤን አገልጋይ ይምረጡ።</string>
+  <string name="btn_agree">ተስማማ</string>
+  <string name="confirm_collect">የእርስዎ ግላዊነት፣ የእርስዎ ቁጥጥር</string>
+  <string name="confirm_accept_msg">ምዝገባዎን ለማጠናቀቅ ይህ መተግበሪያ ምዝገባን ለማረጋገጥ፣ የአገልግሎት ጥራትን ለማሻሻል እና የማጭበርበር ድርጊቶችን ለመከላከል የማስታወቂያ መታወቂያዎን ይሰበስባል። በዚህ መረጃ መሰብሰብ ተስማምተዋል?</string>
+  <string name="accept_continue">ተቀበል እና ቀጥል</string>
+  <string name="go_back">ተመለስ</string>
+  <string name="leave_anyway">ውጣ</string>
+  <string name="confirm_accept_msg_1">ሄይ፣ SuperVPN ስለተጠቀሙ እናመሰግናለን</string>
+  <string name="confirm_accept_msg_2">ግንኙነትዎን ለስላሳ እና ደህንነቱ የተጠበቀ ለማድረግ የሚያስፈልጉትን አነስተኛ መረጃዎች ብቻ እንሰበስባለን። ፈጣን ብልሽቱ እዚህ አለ።</string>
+  <string name="confirm_accept_msg_3">የማስታወቂያ መታወቂያ፡ የደንበኝነት ምዝገባዎን እና ቪፒኤንን ለመጠቀም ይረዱ።</string>
+  <string name="confirm_accept_msg_4">ያ ነው ። የበይነመረብ ትራፊክዎን መከታተል የለም፣ ውሂብዎን መሸጥ የለም። ምንም የምዝግብ ማስታወሻ ፖሊሲ የለንም እና የግላዊነት ህጎችን እንከተላለን። የእርስዎ ውሂብ የእርስዎ እንደሆነ ይቆያል።</string>
+  <string name="exit">እርግጠኛ ነህ መውጣት ትፈልጋለህ?</string>
+  <string name="exit_msg">በተጠቃሚ ውሂብ ጥበቃ ፖሊሲዎች መሰረት አገልግሎቶቻችንን ያለእርስዎ ፍቃድ መስጠት አንችልም። ለመውጣት እርግጠኛ ነህ?</string>
   <string name="premium_title">ቪፒኤን ፈጣን እና ደህንነቱ የተጠበቀ ፕሮ</string>
   <string name="premium_sub1">ማስታወቂያዎች የሉም</string>
   <string name="premium_sub2">ፈጣን እና የተረጋጋ ፍጥነት</string>
@@ -139,7 +151,7 @@
   <string name="status_on">በርቷል</string>
   <string name="status_off">ጠፍቷል</string>
   <string name="dg_vpn_permission_title">ልዕለ ቪፒኤን ከስልጣን ጋር መገናኘት አይችልም።</string>
-  <string name="dg_vpn_permission_guide">የቪፒኤን ግንኙነት ለመፍቀድ እሺን ይጫኑ።</string>
+  <string name="dg_vpn_permission_guide">የቪፒኤን ግንኙነት ለመፍቀድ “እሺ”ን ተጫን።</string>
   <string name="connection_request">የግንኙነት ጥያቄ</string>
   <string name="vpn_des1">SupperVPN የአውታረ መረብ ትራፊክን ለመከታተል የሚያስችለውን የቪፒኤን ግንኙነት ለማዘጋጀት ፍቃድ እየጠየቀ ነው። ምንጩን ካመኑ ብቻ ይህን ፍቀድ።</string>
   <string name="vpn_des2">ቪፒኤን በአገልግሎት ላይ እያለ አንድ አዶ በማያ ገጽዎ ላይኛው ክፍል ይታያል። ፍቀድ?</string>

@@ -125,6 +125,18 @@
   <string name="dns_only">DNS anake</string>
   <string name="confirm_dns">VPN Kaore i Hohe</string>
   <string name="confirm_dns_msg">Kei te whakamahi koe i te DNS anake. Mo te hononga haumaru me te motuhake, tohua he tūmau VPN.</string>
+  <string name="btn_agree">Whakaae</string>
+  <string name="confirm_collect">Tō Tūmataitinga, To Mana Whakahaere</string>
+  <string name="confirm_accept_msg">Hei whakaoti i to ohaurunga, ka kohia e tenei taupānga to TT Advertising ki te manatoko i te rehitatanga, te whakapai ake i te kounga o te ratonga, me te aukati i nga mahi tinihanga. E whakaae ana koe ki tenei kohinga raraunga?</string>
+  <string name="accept_continue">Whakaae me te Haere tonu</string>
+  <string name="go_back">Whakamuri</string>
+  <string name="leave_anyway">Putaatu</string>
+  <string name="confirm_accept_msg_1">Kia ora, whakawhetai ki a koe mo te whakamahi i te SuperVPN</string>
+  <string name="confirm_accept_msg_2">Ka kohia e matou nga raraunga iti rawa hei pupuri i to hononga kia maeneene me te haumaru. Anei te wehenga tere.</string>
+  <string name="confirm_accept_msg_3">ID Panuitanga: awhina ki te whai i to ohaurunga me te whakamahi VPN.</string>
+  <string name="confirm_accept_msg_4">Koia tena. Kaua e whai i to hokohoko ipurangi, kaua e hoko raraunga. Karekau he kaupapa here mo te raarangi me te whai i nga ture tūmataiti. Ka noho tonu to raraunga ki a koe.</string>
+  <string name="exit">Kei te tino hiahia koe ki te puta?</string>
+  <string name="exit_msg">E ai ki nga kaupapa here tiaki raraunga kaiwhakamahi, kaore e taea e matou te whakarato i a maatau ratonga me te kore to whakaae. Me puta koe?</string>
   <string name="premium_title">VPN Tere me te Haumaru Pro</string>
   <string name="premium_sub1">Kore Panui</string>
   <string name="premium_sub2">Te tere tere me te pumau</string>
@@ -139,7 +151,7 @@
   <string name="status_on">ON</string>
   <string name="status_off">Wehe</string>
   <string name="dg_vpn_permission_title">Ko te Super VPN kaore e taea te hono atu ki te mana</string>
-  <string name="dg_vpn_permission_guide">Pēhia te “OK” kia whakaaetia te hononga VPN.</string>
+  <string name="dg_vpn_permission_guide">Patohia te "OK" hei tuku i te hononga VPN.</string>
   <string name="connection_request">Tono hononga</string>
   <string name="vpn_des1">Kei te tono whakaaetanga a SupperVPN ki te whakarite hononga VPN ka taea e ia te aro turuki i nga hokohoko whatunga. Whakaaetia tenei mena ka whakawhirinaki koe ki te puna.</string>
   <string name="vpn_des2">Ka whakaatuhia he ata ki runga o to mata i te wa e whakamahia ana te VPN. Whakaae?</string>

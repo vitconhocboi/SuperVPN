@@ -125,6 +125,18 @@
   <string name="dns_only">DNS pekee</string>
   <string name="confirm_dns">VPN Haitumiki</string>
   <string name="confirm_dns_msg">Kwa sasa unatumia DNS pekee. Kwa muunganisho salama zaidi na wa faragha, tafadhali chagua seva ya VPN.</string>
+  <string name="btn_agree">Kubali</string>
+  <string name="confirm_collect">Faragha Yako, Udhibiti Wako</string>
+  <string name="confirm_accept_msg">Ili kukamilisha usajili wako, programu hii hukusanya Kitambulisho chako cha Mtangazaji ili kuthibitisha usajili, kuboresha ubora wa huduma na kuzuia shughuli za ulaghai. Je, unakubali ukusanyaji huu wa data?</string>
+  <string name="accept_continue">Kubali na Uendelee</string>
+  <string name="go_back">Nyuma</string>
+  <string name="leave_anyway">Utgång</string>
+  <string name="confirm_accept_msg_1">Hujambo, asante kwa kutumia SuperVPN</string>
+  <string name="confirm_accept_msg_2">Tunakusanya data ya chini zaidi inayohitajika ili kuweka muunganisho wako laini na salama. Hapa kuna uchanganuzi wa haraka.</string>
+  <string name="confirm_accept_msg_3">Kitambulisho cha Mtangazaji: usaidizi wa kufuatilia usajili wako na kutumia VPN.</string>
+  <string name="confirm_accept_msg_4">Hiyo ndiyo. Hakuna kufuatilia trafiki yako ya mtandao, hakuna kuuza data yako. Hatuna sera ya kumbukumbu na tunafuata sheria za faragha. Data yako itabaki kuwa yako.</string>
+  <string name="exit">Je, una uhakika ungependa kuondoka?</string>
+  <string name="exit_msg">Kulingana na sera za ulinzi wa data ya mtumiaji, hatuwezi kutoa huduma zetu bila kibali chako. Je, una uhakika wa kuondoka?</string>
   <string name="premium_title">VPN Haraka na Salama Pro</string>
   <string name="premium_sub1">Hakuna Matangazo</string>
   <string name="premium_sub2">Kasi ya haraka na thabiti</string>
@@ -139,7 +151,7 @@
   <string name="status_on">WASHA</string>
   <string name="status_off">Imezimwa</string>
   <string name="dg_vpn_permission_title">Super VPN haiwezi kuunganishwa na mamlaka</string>
-  <string name="dg_vpn_permission_guide">Bonyeza “&lt;b&gt;Sawa&lt;/b&gt;” ili kuruhusu muunganisho wa VPN.</string>
+  <string name="dg_vpn_permission_guide">Bonyeza "Sawa" ili kuruhusu muunganisho wa VPN.</string>
   <string name="connection_request">Ombi la muunganisho</string>
   <string name="vpn_des1">SupperVPN inaomba ruhusa ya kusanidi muunganisho wa VPN utakaoiruhusu kufuatilia trafiki ya mtandao. Ruhusu hii tu ikiwa unaamini chanzo.</string>
   <string name="vpn_des2">Aikoni itaonyeshwa juu ya skrini yako wakati VPN inatumika. Ruhusu?</string>

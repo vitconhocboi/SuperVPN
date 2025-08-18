@@ -125,6 +125,18 @@
   <string name="dns_only">Ainult DNS</string>
   <string name="confirm_dns">VPN pole aktiivne</string>
   <string name="confirm_dns_msg">Kasutate praegu ainult DNS-i. Turvalisema ja privaatsema ühenduse loomiseks valige VPN-server.</string>
+  <string name="btn_agree">Nõustun</string>
+  <string name="confirm_collect">Teie privaatsus, teie kontroll</string>
+  <string name="confirm_accept_msg">Teie tellimuse lõpuleviimiseks kogub see rakendus teie reklaami-ID registreerimise kinnitamiseks, teenuse kvaliteedi parandamiseks ja pettuste ennetamiseks. Kas nõustute selle andmete kogumisega?</string>
+  <string name="accept_continue">Nõustu ja jätka</string>
+  <string name="go_back">Tagasi</string>
+  <string name="leave_anyway">Välju</string>
+  <string name="confirm_accept_msg_1">Tere, tänan teid SuperVPN-i kasutamise eest</string>
+  <string name="confirm_accept_msg_2">Kogume ainult minimaalselt andmeid, mis on vajalikud teie ühenduse sujuva ja turvalisena hoidmiseks. Siin on lühike ülevaade.</string>
+  <string name="confirm_accept_msg_3">Reklaami ID: aitab jälgida teie tellimust ja VPN-i kasutamist.</string>
+  <string name="confirm_accept_msg_4">See on kõik. Me ei jälgi teie internetiliiklust ega müü teie andmeid. Meil puudub logide kogumise poliitika ja järgime privaatsusseadusi. Teie andmed jäävad teie omaks.</string>
+  <string name="exit">Kas oled kindel, et soovid väljuda?</string>
+  <string name="exit_msg">Kasutajaandmete kaitse eeskirjade kohaselt ei saa me oma teenuseid ilma teie nõusolekuta pakkuda. Kas olete kindel, et soovite väljuda?</string>
   <string name="premium_title">VPN Kiire ja Turvaline Pro</string>
   <string name="premium_sub1">Reklaame pole</string>
   <string name="premium_sub2">Kiire ja stabiilne kiirus</string>
@@ -139,7 +151,7 @@
   <string name="status_on">SEES</string>
   <string name="status_off">Väljas</string>
   <string name="dg_vpn_permission_title">Super VPN-i ei saa autoriteediga ühendust luua</string>
-  <string name="dg_vpn_permission_guide">VPN-ühenduse lubamiseks vajutage nuppu „OK“.</string>
+  <string name="dg_vpn_permission_guide">VPN-ühenduse lubamiseks vajutage „OK“.</string>
   <string name="connection_request">Ühenduse taotlus</string>
   <string name="vpn_des1">SupperVPN küsib luba VPN-ühenduse loomiseks, mis võimaldab tal jälgida võrguliiklust. Lubage seda ainult siis, kui usaldate allikat.</string>
   <string name="vpn_des2">VPN-i kasutamise ajal kuvatakse ekraani ülaosas ikoon. Kas lubada?</string>

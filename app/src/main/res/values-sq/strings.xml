@@ -125,6 +125,18 @@
   <string name="dns_only">Vetëm DNS</string>
   <string name="confirm_dns">VPN jo aktive</string>
   <string name="confirm_dns_msg">Aktualisht po përdorni vetëm DNS. Për një lidhje më të sigurt dhe private, zgjidhni një server VPN.</string>
+  <string name="btn_agree">Pajtohem</string>
+  <string name="confirm_collect">Privatësia juaj, Kontrolli juaj</string>
+  <string name="confirm_accept_msg">Për të përfunduar abonimin tuaj, ky aplikacion mbledh ID-në tuaj të reklamimit për të verifikuar regjistrimin, për të përmirësuar cilësinë e shërbimit dhe për të parandaluar aktivitetin mashtrues. A jeni dakord me këtë mbledhje të të dhënave?</string>
+  <string name="accept_continue">Prano dhe Vazhdo</string>
+  <string name="go_back">Mbrapa</string>
+  <string name="leave_anyway">Dilni</string>
+  <string name="confirm_accept_msg_1">Përshëndetje, faleminderit që përdorni SuperVPN</string>
+  <string name="confirm_accept_msg_2">Ne mbledhim vetëm të dhënat minimale të nevojshme për ta mbajtur lidhjen tuaj të qetë dhe të sigurt. Ja një përmbledhje e shkurtër.</string>
+  <string name="confirm_accept_msg_3">ID e reklamimit: ndihmë për të ndjekur abonimin tuaj dhe përdorimin e VPN-së.</string>
+  <string name="confirm_accept_msg_4">Kaq ishte. Nuk ka nevojë për ndjekjen e trafikut tuaj të internetit, nuk ka shitje të të dhënave tuaja. Ne nuk kemi politikë për regjistrimet dhe ndjekim ligjet e privatësisë. Të dhënat tuaja mbeten tuajat.</string>
+  <string name="exit">Je i sigurt që dëshiron të dalësh?</string>
+  <string name="exit_msg">Sipas politikave të mbrojtjes së të dhënave të përdoruesve, ne nuk mund t\'i ofrojmë shërbimet tona pa pëlqimin tuaj. A jeni i sigurt që doni të dilni?</string>
   <string name="premium_title">VPN i Shpejtë dhe i Sigurt Pro</string>
   <string name="premium_sub1">Nuk ka reklama</string>
   <string name="premium_sub2">Shpejtësi e shpejtë dhe e qëndrueshme</string>
@@ -139,7 +151,7 @@
   <string name="status_on">AKTIV</string>
   <string name="status_off">Joaktiv</string>
   <string name="dg_vpn_permission_title">Super VPN nuk mund të lidhet me autoritetin</string>
-  <string name="dg_vpn_permission_guide">Shtypni “&lt;b&gt;Në rregull&lt;/b&gt;” për të lejuar lidhjen VPN.</string>
+  <string name="dg_vpn_permission_guide">Shtypni "OK" për të lejuar lidhjen VPN.</string>
   <string name="connection_request">Kërkesë për lidhje</string>
   <string name="vpn_des1">SupperVPN po kërkon leje për të konfiguruar një lidhje VPN që do t\'i lejojë asaj të monitorojë trafikun e rrjetit. Lejojeni këtë vetëm nëse i besoni burimit.</string>
   <string name="vpn_des2">Një ikonë do të shfaqet në krye të ekranit tuaj ndërsa VPN është në përdorim. Lejohet?</string>

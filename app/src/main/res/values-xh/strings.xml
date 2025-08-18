@@ -125,6 +125,18 @@
   <string name="dns_only">DNS kuphela</string>
   <string name="confirm_dns">I-VPN ayisebenzi</string>
   <string name="confirm_dns_msg">Ngoku usebenzisa i-DNS kuphela. Ngokhuseleko ngakumbi kunye noqhagamshelwano lwabucala, nceda ukhethe iseva yeVPN.</string>
+  <string name="btn_agree">Vuma</string>
+  <string name="confirm_collect">Ubumfihlo bakho, ulawulo lwakho</string>
+  <string name="confirm_accept_msg">Ukugqiba umrhumo wakho, le app iqokelela iSazisi sakho seNtengiso ukuze iqinisekise ubhaliso, iphucule umgangatho wenkonzo, kwaye ithintele ubuqhophololo. Ngaba uyavumelana nale ngqokelela yedatha?</string>
+  <string name="accept_continue">Yamkela kwaye Uqhubeke</string>
+  <string name="go_back">Emva</string>
+  <string name="leave_anyway">Phuma</string>
+  <string name="confirm_accept_msg_1">Molo apho, enkosi ngokusebenzisa iSuperVPN</string>
+  <string name="confirm_accept_msg_2">Siqokelela kuphela ubuncinci bedatha efunekayo ukugcina unxibelelwano lwakho lugudile kwaye lukhuselekile. Nantsi ukucazulula ngokukhawuleza.</string>
+  <string name="confirm_accept_msg_3">I-ID yeNtengiso: uncedo lokulandela umrhumo wakho kunye nokusebenzisa iVPN.</string>
+  <string name="confirm_accept_msg_4">Yiyo leyo. Akukho kulandelela itrafikhi yakho ye-intanethi, akukho kuthengisa idatha yakho. Asinamgaqo-nkqubo welogi kwaye silandela imithetho yabucala. Idatha yakho ihlala yeyakho.</string>
+  <string name="exit">Uqinisekile ufuna ukuphuma?</string>
+  <string name="exit_msg">Ngokwemigaqo-nkqubo yokhuseleko lwedatha yomsebenzisi, asikwazi ukubonelela ngeenkonzo zethu ngaphandle kwemvume yakho. Uqinisekile ukuba uyaphuma?</string>
   <string name="premium_title">I-VPN ngokukhawuleza kwaye iKhusekile iPro</string>
   <string name="premium_sub1">Akukho zintengiso</string>
   <string name="premium_sub2">Isantya esikhawulezayo nesizinzileyo</string>
@@ -139,7 +151,7 @@
   <string name="status_on">VULA</string>
   <string name="status_off">Cimile</string>
   <string name="dg_vpn_permission_title">Super VPN ayinakudityaniswa negunya</string>
-  <string name="dg_vpn_permission_guide">Cofa "&lt;b&gt;Kulungile&lt;/b&gt;” ukuvumela uqhagamshelo lweVPN.</string>
+  <string name="dg_vpn_permission_guide">Cofa "Kulungile" ukuvumela uqhagamshelo lweVPN.</string>
   <string name="connection_request">Isicelo soqhagamshelo</string>
   <string name="vpn_des1">I-SupperVPN icela imvume yokuseta uqhagamshelo lweVPN oluya kuyivumela ukuba ibeke iliso kwitrafikhi yenethiwekhi. Vumela oku kuphela ukuba uyamthemba umthombo.</string>
   <string name="vpn_des2">I icon iya kuboniswa phezulu kwesikrini sakho ngelixa kusetyenziswa iVPN. Vumela?</string>

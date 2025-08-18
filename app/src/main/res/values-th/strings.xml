@@ -125,6 +125,18 @@
   <string name="dns_only">DNS เท่านั้น</string>
   <string name="confirm_dns">VPN ไม่ได้ใช้งาน</string>
   <string name="confirm_dns_msg">ขณะนี้คุณกำลังใช้ DNS เท่านั้น หากต้องการการเชื่อมต่อที่ปลอดภัยและเป็นส่วนตัวยิ่งขึ้น โปรดเลือกเซิร์ฟเวอร์ VPN</string>
+  <string name="btn_agree">เห็นด้วย</string>
+  <string name="confirm_collect">ความเป็นส่วนตัวของคุณ การควบคุมของคุณ</string>
+  <string name="confirm_accept_msg">เพื่อให้การสมัครของคุณเสร็จสมบูรณ์ แอปนี้จะรวบรวมรหัสโฆษณาของคุณเพื่อตรวจสอบการลงทะเบียน ปรับปรุงคุณภาพบริการ และป้องกันการทุจริต คุณยินยอมให้มีการรวบรวมข้อมูลนี้หรือไม่</string>
+  <string name="accept_continue">ยอมรับและดำเนินการต่อ</string>
+  <string name="go_back">กลับ</string>
+  <string name="leave_anyway">ทางออก</string>
+  <string name="confirm_accept_msg_1">สวัสดี ขอบคุณที่ใช้ SuperVPN</string>
+  <string name="confirm_accept_msg_2">เราเก็บรวบรวมเฉพาะข้อมูลที่จำเป็นขั้นต่ำเพื่อให้การเชื่อมต่อของคุณราบรื่นและปลอดภัย นี่คือรายละเอียดโดยย่อ</string>
+  <string name="confirm_accept_msg_3">ID โฆษณา: ช่วยติดตามการสมัครใช้งานและการใช้งาน VPN ของคุณ</string>
+  <string name="confirm_accept_msg_4">แค่นี้เอง ไม่ต้องติดตามการใช้งานอินเทอร์เน็ตของคุณ ไม่ต้องขายข้อมูลของคุณ เราไม่เก็บบันทึกข้อมูลและปฏิบัติตามกฎหมายความเป็นส่วนตัว ข้อมูลของคุณยังคงเป็นของคุณ</string>
+  <string name="exit">คุณแน่ใจว่าต้องการออกใช่ไหม?</string>
+  <string name="exit_msg">ตามนโยบายการคุ้มครองข้อมูลผู้ใช้ เราไม่สามารถให้บริการได้หากไม่ได้รับความยินยอมจากคุณ คุณแน่ใจหรือไม่ว่าจะออก</string>
   <string name="premium_title">VPN รวดเร็วและปลอดภัยระดับมืออาชีพ</string>
   <string name="premium_sub1">ไม่มีโฆษณา</string>
   <string name="premium_sub2">ความเร็วที่รวดเร็วและเสถียร</string>
@@ -139,7 +151,7 @@
   <string name="status_on">บน</string>
   <string name="status_off">ปิด</string>
   <string name="dg_vpn_permission_title">Super VPN ไม่สามารถเชื่อมต่อกับผู้มีอำนาจได้</string>
-  <string name="dg_vpn_permission_guide">กด “&lt;b&gt;ตกลง&lt;/b&gt;” เพื่ออนุญาตการเชื่อมต่อ VPN</string>
+  <string name="dg_vpn_permission_guide">กด “ตกลง” เพื่ออนุญาตการเชื่อมต่อ VPN</string>
   <string name="connection_request">คำขอเชื่อมต่อ</string>
   <string name="vpn_des1">SupperVPN กำลังขออนุญาตตั้งค่าการเชื่อมต่อ VPN ที่จะอนุญาตให้ตรวจสอบปริมาณการรับส่งข้อมูลบนเครือข่าย อนุญาตเฉพาะในกรณีที่คุณเชื่อถือแหล่งที่มาเท่านั้น</string>
   <string name="vpn_des2">ไอคอนจะปรากฏที่ด้านบนของหน้าจอของคุณในขณะที่ VPN กำลังใช้งาน อนุญาตหรือไม่</string>

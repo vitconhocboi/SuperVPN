@@ -125,6 +125,18 @@
   <string name="dns_only">DNS ເທົ່ານັ້ນ</string>
   <string name="confirm_dns">VPN ບໍ່ເຄື່ອນໄຫວ</string>
   <string name="confirm_dns_msg">ຕອນນີ້ທ່ານກຳລັງໃຊ້ DNS ເທົ່ານັ້ນ. ສໍາລັບການເຊື່ອມຕໍ່ທີ່ປອດໄພກວ່າ ແລະເປັນສ່ວນຕົວ, ກະລຸນາເລືອກເຊີບເວີ VPN.</string>
+  <string name="btn_agree">ເຫັນດີ</string>
+  <string name="confirm_collect">ຄວາມເປັນສ່ວນຕົວຂອງເຈົ້າ, ການຄວບຄຸມຂອງເຈົ້າ</string>
+  <string name="confirm_accept_msg">ເພື່ອສຳເລັດການສະໝັກສະມາຊິກຂອງທ່ານ, ແອັບນີ້ຈະເກັບກຳ ID ການໂຄສະນາຂອງທ່ານເພື່ອຢັ້ງຢືນການລົງທະບຽນ, ປັບປຸງຄຸນນະພາບການບໍລິການ ແລະ ປ້ອງກັນການເຄື່ອນໄຫວທີ່ຫຼອກລວງ. ທ່ານຕົກລົງເຫັນດີກັບການເກັບກໍາຂໍ້ມູນນີ້ບໍ?</string>
+  <string name="accept_continue">ຍອມຮັບແລະສືບຕໍ່</string>
+  <string name="go_back">ກັບຄືນໄປບ່ອນ</string>
+  <string name="leave_anyway">ອອກໄປ</string>
+  <string name="confirm_accept_msg_1">ສະບາຍດີ, ຂອບໃຈທີ່ໃຊ້ SuperVPN</string>
+  <string name="confirm_accept_msg_2">ພວກເຮົາພຽງແຕ່ເກັບກໍາຂໍ້ມູນຂັ້ນຕ່ໍາທີ່ຈໍາເປັນເພື່ອຮັກສາການເຊື່ອມຕໍ່ຂອງທ່ານກ້ຽງແລະປອດໄພ. ນີ້ແມ່ນການແບ່ງຂັ້ນໄວ.</string>
+  <string name="confirm_accept_msg_3">ID ການ​ໂຄ​ສະ​ນາ​: ຊ່ວຍ​ໃນ​ການ​ຕິດ​ຕາມ​ການ​ສະ​ຫມັກ​ຂອງ​ທ່ານ​ແລະ​ການ​ນໍາ​ໃຊ້ VPN​.</string>
+  <string name="confirm_accept_msg_4">ນັ້ນ​ແມ່ນ​ມັນ. ບໍ່ມີການຕິດຕາມການຈະລາຈອນທາງອິນເຕີເນັດຂອງທ່ານ, ບໍ່ມີການຂາຍຂໍ້ມູນຂອງທ່ານ. ພວກເຮົາບໍ່ມີນະໂຍບາຍບັນທຶກ ແລະປະຕິບັດຕາມກົດໝາຍຄວາມເປັນສ່ວນຕົວ. ຂໍ້ມູນຂອງທ່ານຍັງຄົງເປັນຂອງທ່ານ.</string>
+  <string name="exit">ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການອອກ?</string>
+  <string name="exit_msg">ອີງຕາມນະໂຍບາຍການປົກປ້ອງຂໍ້ມູນຜູ້ໃຊ້, ພວກເຮົາບໍ່ສາມາດໃຫ້ບໍລິການຂອງພວກເຮົາໂດຍບໍ່ມີການຍິນຍອມເຫັນດີຂອງທ່ານ. ທ່ານແນ່ໃຈບໍ່ທີ່ຈະອອກ?</string>
   <string name="premium_title">VPN ໄວ &amp; ປອດໄພ Pro</string>
   <string name="premium_sub1">ບໍ່ມີໂຄສະນາ</string>
   <string name="premium_sub2">ຄວາມໄວທີ່ໄວແລະຫມັ້ນຄົງ</string>
@@ -139,7 +151,7 @@
   <string name="status_on">ເປີດ</string>
   <string name="status_off">ປິດ</string>
   <string name="dg_vpn_permission_title">Super VPN ບໍ່ສາມາດເຊື່ອມຕໍ່ກັບສິດອໍານາດໄດ້</string>
-  <string name="dg_vpn_permission_guide">ກົດ “ຕົກລົງ” ເພື່ອອະນຸຍາດໃຫ້ເຊື່ອມຕໍ່ VPN.</string>
+  <string name="dg_vpn_permission_guide">ກົດ “OK” ເພື່ອອະນຸຍາດໃຫ້ເຊື່ອມຕໍ່ VPN.</string>
   <string name="connection_request">ການຮ້ອງຂໍການເຊື່ອມຕໍ່</string>
   <string name="vpn_des1">SupperVPN ກໍາລັງຮ້ອງຂໍການອະນຸຍາດເພື່ອຕັ້ງຄ່າການເຊື່ອມຕໍ່ VPN ທີ່ຈະຊ່ວຍໃຫ້ມັນຕິດຕາມກວດກາການຈະລາຈອນເຄືອຂ່າຍ. ອະນຸຍາດໃຫ້ນີ້ພຽງແຕ່ຖ້າທ່ານໄວ້ວາງໃຈແຫຼ່ງ.</string>
   <string name="vpn_des2">ໄອຄອນຈະສະແດງຢູ່ເທິງສຸດຂອງໜ້າຈໍທ່ານໃນຂະນະທີ່ VPN ນຳໃຊ້ຢູ່. ອະນຸຍາດ?</string>

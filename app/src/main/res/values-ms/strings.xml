@@ -125,6 +125,18 @@
   <string name="dns_only">DNS sahaja</string>
   <string name="confirm_dns">VPN Tidak Aktif</string>
   <string name="confirm_dns_msg">Anda sedang menggunakan DNS sahaja. Untuk sambungan yang lebih selamat dan peribadi, sila pilih pelayan VPN.</string>
+  <string name="btn_agree">Setuju</string>
+  <string name="confirm_collect">Privasi Anda, Kawalan Anda</string>
+  <string name="confirm_accept_msg">Untuk melengkapkan langganan anda, apl ini mengumpul ID Pengiklanan anda untuk mengesahkan pendaftaran, meningkatkan kualiti perkhidmatan dan mencegah aktiviti penipuan. Adakah anda bersetuju dengan pengumpulan data ini?</string>
+  <string name="accept_continue">Terima dan Teruskan</string>
+  <string name="go_back">belakang</string>
+  <string name="leave_anyway">Keluar</string>
+  <string name="confirm_accept_msg_1">Hai, terima kasih kerana menggunakan SuperVPN</string>
+  <string name="confirm_accept_msg_2">Kami hanya mengumpul data minimum yang diperlukan untuk memastikan sambungan anda lancar dan selamat. Berikut ialah pecahan cepat.</string>
+  <string name="confirm_accept_msg_3">ID Pengiklanan: membantu untuk menjejaki langganan anda dan menggunakan VPN.</string>
+  <string name="confirm_accept_msg_4">Itu sahaja. Tiada menjejaki trafik internet anda, tiada menjual data anda. Kami tidak mempunyai dasar log dan mematuhi undang-undang privasi. Data anda kekal milik anda.</string>
+  <string name="exit">Adakah anda pasti mahu keluar?</string>
+  <string name="exit_msg">Menurut dasar perlindungan data pengguna, kami tidak boleh menyediakan perkhidmatan kami tanpa kebenaran anda. Adakah anda pasti untuk keluar?</string>
   <string name="premium_title">VPN Cepat &amp; Selamat Pro</string>
   <string name="premium_sub1">Tiada Iklan</string>
   <string name="premium_sub2">Kelajuan pantas dan stabil</string>
@@ -139,7 +151,7 @@
   <string name="status_on">HIDUP</string>
   <string name="status_off">Mati</string>
   <string name="dg_vpn_permission_title">Super VPN tidak boleh disambungkan dengan pihak berkuasa</string>
-  <string name="dg_vpn_permission_guide">Tekan “OK” untuk membenarkan sambungan VPN.</string>
+  <string name="dg_vpn_permission_guide">Tekan "OK" untuk membenarkan sambungan VPN.</string>
   <string name="connection_request">Permintaan sambungan</string>
   <string name="vpn_des1">SupperVPN meminta kebenaran untuk menyediakan sambungan VPN yang membolehkannya memantau trafik rangkaian. Hanya benarkan ini jika anda mempercayai sumbernya.</string>
   <string name="vpn_des2">Ikon akan ditunjukkan di bahagian atas skrin anda semasa VPN sedang digunakan. benarkan?</string>

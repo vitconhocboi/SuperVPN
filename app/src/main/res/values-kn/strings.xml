@@ -125,6 +125,18 @@
   <string name="dns_only">DNS ಮಾತ್ರ</string>
   <string name="confirm_dns">VPN ಸಕ್ರಿಯವಾಗಿಲ್ಲ</string>
   <string name="confirm_dns_msg">ನೀವು ಪ್ರಸ್ತುತ DNS ಅನ್ನು ಮಾತ್ರ ಬಳಸುತ್ತಿದ್ದೀರಿ. ಹೆಚ್ಚು ಸುರಕ್ಷಿತ ಮತ್ತು ಖಾಸಗಿ ಸಂಪರ್ಕಕ್ಕಾಗಿ, ದಯವಿಟ್ಟು VPN ಸರ್ವರ್ ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ.</string>
+  <string name="btn_agree">ಒಪ್ಪುತ್ತೇನೆ</string>
+  <string name="confirm_collect">ನಿಮ್ಮ ಗೌಪ್ಯತೆ, ನಿಮ್ಮ ನಿಯಂತ್ರಣ</string>
+  <string name="confirm_accept_msg">ನಿಮ್ಮ ಚಂದಾದಾರಿಕೆಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಲು, ನೋಂದಣಿಯನ್ನು ಪರಿಶೀಲಿಸಲು, ಸೇವಾ ಗುಣಮಟ್ಟವನ್ನು ಹೆಚ್ಚಿಸಲು ಮತ್ತು ವಂಚನೆಯ ಚಟುವಟಿಕೆಯನ್ನು ತಡೆಯಲು ಈ ಅಪ್ಲಿಕೇಶನ್ ನಿಮ್ಮ ಜಾಹೀರಾತು ಐಡಿಯನ್ನು ಸಂಗ್ರಹಿಸುತ್ತದೆ. ಈ ಡೇಟಾ ಸಂಗ್ರಹಣೆಗೆ ನೀವು ಒಪ್ಪುತ್ತೀರಾ?</string>
+  <string name="accept_continue">ಸ್ವೀಕರಿಸಿ ಮತ್ತು ಮುಂದುವರಿಸಿ</string>
+  <string name="go_back">ಹಿಂದೆ</string>
+  <string name="leave_anyway">ನಿರ್ಗಮಿಸಿ</string>
+  <string name="confirm_accept_msg_1">ಹೇ, ಸೂಪರ್‌ವಿಪಿಎನ್ ಬಳಸಿದ್ದಕ್ಕಾಗಿ ಧನ್ಯವಾದಗಳು.</string>
+  <string name="confirm_accept_msg_2">ನಿಮ್ಮ ಸಂಪರ್ಕವನ್ನು ಸುಗಮ ಮತ್ತು ಸುರಕ್ಷಿತವಾಗಿಡಲು ಅಗತ್ಯವಿರುವ ಕನಿಷ್ಠ ಡೇಟಾವನ್ನು ಮಾತ್ರ ನಾವು ಸಂಗ್ರಹಿಸುತ್ತೇವೆ. ತ್ವರಿತ ವಿವರ ಇಲ್ಲಿದೆ.</string>
+  <string name="confirm_accept_msg_3">ಜಾಹೀರಾತು ಐಡಿ: ನಿಮ್ಮ ಚಂದಾದಾರಿಕೆಯನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಲು ಮತ್ತು VPN ಬಳಸಲು ಸಹಾಯ ಮಾಡಿ.</string>
+  <string name="confirm_accept_msg_4">ಅಷ್ಟೇ. ನಿಮ್ಮ ಇಂಟರ್ನೆಟ್ ಟ್ರಾಫಿಕ್ ಅನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡುವ ಅಗತ್ಯವಿಲ್ಲ, ನಿಮ್ಮ ಡೇಟಾವನ್ನು ಮಾರಾಟ ಮಾಡುವ ಅಗತ್ಯವಿಲ್ಲ. ನಮ್ಮಲ್ಲಿ ಯಾವುದೇ ಲಾಗ್ ನೀತಿ ಇಲ್ಲ ಮತ್ತು ಗೌಪ್ಯತಾ ಕಾನೂನುಗಳನ್ನು ಅನುಸರಿಸುತ್ತೇವೆ. ನಿಮ್ಮ ಡೇಟಾ ನಿಮ್ಮದೇ ಆಗಿರುತ್ತದೆ.</string>
+  <string name="exit">ನೀವು ಖಚಿತವಾಗಿ ನಿರ್ಗಮಿಸಲು ಬಯಸುತ್ತೀರಾ?</string>
+  <string name="exit_msg">ಬಳಕೆದಾರರ ಡೇಟಾ ಸಂರಕ್ಷಣಾ ನೀತಿಗಳ ಪ್ರಕಾರ, ನಿಮ್ಮ ಒಪ್ಪಿಗೆಯಿಲ್ಲದೆ ನಾವು ನಮ್ಮ ಸೇವೆಗಳನ್ನು ಒದಗಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ನೀವು ನಿರ್ಗಮಿಸುವುದು ಖಚಿತವೇ?</string>
   <string name="premium_title">VPN ಫಾಸ್ಟ್ &amp; ಸೇಫ್ ಪ್ರೊ</string>
   <string name="premium_sub1">ಜಾಹೀರಾತುಗಳಿಲ್ಲ</string>
   <string name="premium_sub2">ವೇಗದ ಮತ್ತು ಸ್ಥಿರವಾದ ವೇಗ</string>
@@ -139,7 +151,7 @@
   <string name="status_on">ಆನ್</string>
   <string name="status_off">ಆಫ್</string>
   <string name="dg_vpn_permission_title">ಸೂಪರ್ ವಿಪಿಎನ್ ಅನ್ನು ಅಧಿಕಾರದೊಂದಿಗೆ ಸಂಪರ್ಕಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ</string>
-  <string name="dg_vpn_permission_guide">VPN ಸಂಪರ್ಕವನ್ನು ಅನುಮತಿಸಲು “ಸರಿ” ಒತ್ತಿರಿ.</string>
+  <string name="dg_vpn_permission_guide">VPN ಸಂಪರ್ಕವನ್ನು ಅನುಮತಿಸಲು "ಸರಿ" ಒತ್ತಿರಿ.</string>
   <string name="connection_request">ಸಂಪರ್ಕ ವಿನಂತಿ</string>
   <string name="vpn_des1">ನೆಟ್‌ವರ್ಕ್ ಟ್ರಾಫಿಕ್ ಅನ್ನು ಮೇಲ್ವಿಚಾರಣೆ ಮಾಡಲು ಅನುಮತಿಸುವ VPN ಸಂಪರ್ಕವನ್ನು ಹೊಂದಿಸಲು SupperVPN ಅನುಮತಿಯನ್ನು ವಿನಂತಿಸುತ್ತಿದೆ. ನೀವು ಮೂಲವನ್ನು ನಂಬಿದರೆ ಮಾತ್ರ ಇದನ್ನು ಅನುಮತಿಸಿ.</string>
   <string name="vpn_des2">VPN ಬಳಕೆಯಲ್ಲಿರುವಾಗ ನಿಮ್ಮ ಪರದೆಯ ಮೇಲ್ಭಾಗದಲ್ಲಿ ಐಕಾನ್ ಕಾಣಿಸುತ್ತದೆ. ಅನುಮತಿಸುವುದೇ?</string>

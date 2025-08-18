@@ -125,6 +125,18 @@
   <string name="dns_only">ਸਿਰਫ਼ DNS</string>
   <string name="confirm_dns">VPN ਕਿਰਿਆਸ਼ੀਲ ਨਹੀਂ ਹੈ</string>
   <string name="confirm_dns_msg">ਤੁਸੀਂ ਇਸ ਵੇਲੇ ਸਿਰਫ਼ DNS ਦੀ ਵਰਤੋਂ ਕਰ ਰਹੇ ਹੋ। ਵਧੇਰੇ ਸੁਰੱਖਿਅਤ ਅਤੇ ਨਿੱਜੀ ਕਨੈਕਸ਼ਨ ਲਈ, ਕਿਰਪਾ ਕਰਕੇ ਇੱਕ VPN ਸਰਵਰ ਚੁਣੋ।</string>
+  <string name="btn_agree">ਸਹਿਮਤ</string>
+  <string name="confirm_collect">ਤੁਹਾਡੀ ਗੋਪਨੀਯਤਾ, ਤੁਹਾਡਾ ਨਿਯੰਤਰਣ</string>
+  <string name="confirm_accept_msg">ਤੁਹਾਡੀ ਗਾਹਕੀ ਨੂੰ ਪੂਰਾ ਕਰਨ ਲਈ, ਇਹ ਐਪ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਦੀ ਪੁਸ਼ਟੀ ਕਰਨ, ਸੇਵਾ ਦੀ ਗੁਣਵੱਤਾ ਵਧਾਉਣ ਅਤੇ ਧੋਖਾਧੜੀ ਵਾਲੀ ਗਤੀਵਿਧੀ ਨੂੰ ਰੋਕਣ ਲਈ ਤੁਹਾਡੀ ਇਸ਼ਤਿਹਾਰਬਾਜ਼ੀ ਆਈਡੀ ਇਕੱਠੀ ਕਰਦੀ ਹੈ। ਕੀ ਤੁਸੀਂ ਇਸ ਡੇਟਾ ਸੰਗ੍ਰਹਿ ਨਾਲ ਸਹਿਮਤ ਹੋ?</string>
+  <string name="accept_continue">ਸਵੀਕਾਰ ਕਰੋ ਅਤੇ ਜਾਰੀ ਰੱਖੋ</string>
+  <string name="go_back">ਪਿੱਛੇ</string>
+  <string name="leave_anyway">ਨਿਕਾਸ</string>
+  <string name="confirm_accept_msg_1">ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ, SuperVPN ਵਰਤਣ ਲਈ ਧੰਨਵਾਦ।</string>
+  <string name="confirm_accept_msg_2">ਅਸੀਂ ਤੁਹਾਡੇ ਕਨੈਕਸ਼ਨ ਨੂੰ ਸੁਚਾਰੂ ਅਤੇ ਸੁਰੱਖਿਅਤ ਰੱਖਣ ਲਈ ਲੋੜੀਂਦਾ ਘੱਟੋ-ਘੱਟ ਡਾਟਾ ਇਕੱਠਾ ਕਰਦੇ ਹਾਂ। ਇੱਥੇ ਸੰਖੇਪ ਜਾਣਕਾਰੀ ਦਿੱਤੀ ਗਈ ਹੈ।</string>
+  <string name="confirm_accept_msg_3">ਇਸ਼ਤਿਹਾਰਬਾਜ਼ੀ ਆਈਡੀ: ਤੁਹਾਡੀ ਗਾਹਕੀ ਅਤੇ VPN ਦੀ ਵਰਤੋਂ ਨੂੰ ਟਰੈਕ ਕਰਨ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ।</string>
+  <string name="confirm_accept_msg_4">ਬੱਸ ਇੰਨਾ ਹੀ। ਤੁਹਾਡੇ ਇੰਟਰਨੈੱਟ ਟ੍ਰੈਫਿਕ ਨੂੰ ਟਰੈਕ ਨਹੀਂ ਕੀਤਾ ਜਾ ਰਿਹਾ, ਤੁਹਾਡਾ ਡੇਟਾ ਨਹੀਂ ਵੇਚਿਆ ਜਾ ਰਿਹਾ। ਸਾਡੇ ਕੋਲ ਕੋਈ ਲੌਗ ਨੀਤੀ ਨਹੀਂ ਹੈ ਅਤੇ ਅਸੀਂ ਗੋਪਨੀਯਤਾ ਕਾਨੂੰਨਾਂ ਦੀ ਪਾਲਣਾ ਕਰਦੇ ਹਾਂ। ਤੁਹਾਡਾ ਡੇਟਾ ਤੁਹਾਡਾ ਹੀ ਰਹਿੰਦਾ ਹੈ।</string>
+  <string name="exit">ਕੀ ਤੁਸੀਂ ਪੱਕਾ ਬਾਹਰ ਜਾਣਾ ਚਾਹੁੰਦੇ ਹੋ?</string>
+  <string name="exit_msg">ਉਪਭੋਗਤਾ ਡੇਟਾ ਸੁਰੱਖਿਆ ਨੀਤੀਆਂ ਦੇ ਅਨੁਸਾਰ, ਅਸੀਂ ਤੁਹਾਡੀ ਸਹਿਮਤੀ ਤੋਂ ਬਿਨਾਂ ਆਪਣੀਆਂ ਸੇਵਾਵਾਂ ਪ੍ਰਦਾਨ ਨਹੀਂ ਕਰ ਸਕਦੇ। ਕੀ ਤੁਸੀਂ ਬਾਹਰ ਨਿਕਲਣਾ ਚਾਹੁੰਦੇ ਹੋ?</string>
   <string name="premium_title">VPN ਤੇਜ਼ ਅਤੇ ਸੁਰੱਖਿਅਤ ਪ੍ਰੋ</string>
   <string name="premium_sub1">ਕੋਈ ਇਸ਼ਤਿਹਾਰ ਨਹੀਂ</string>
   <string name="premium_sub2">ਤੇਜ਼ ਅਤੇ ਸਥਿਰ ਗਤੀ</string>
@@ -139,7 +151,7 @@
   <string name="status_on">ਚਾਲੂ</string>
   <string name="status_off">ਬੰਦ</string>
   <string name="dg_vpn_permission_title">ਸੁਪਰ ਵੀਪੀਐਨ ਨੂੰ ਅਥਾਰਟੀ ਨਾਲ ਜੋੜਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ</string>
-  <string name="dg_vpn_permission_guide">VPN ਕਨੈਕਸ਼ਨ ਦੀ ਆਗਿਆ ਦੇਣ ਲਈ “&lt;b&gt;ਠੀਕ ਹੈ&lt;/b&gt;” ਦਬਾਓ।</string>
+  <string name="dg_vpn_permission_guide">VPN ਕਨੈਕਸ਼ਨ ਦੀ ਆਗਿਆ ਦੇਣ ਲਈ "ਠੀਕ ਹੈ" ਦਬਾਓ।</string>
   <string name="connection_request">ਕਨੈਕਸ਼ਨ ਬੇਨਤੀ</string>
   <string name="vpn_des1">SupperVPN ਇੱਕ VPN ਕਨੈਕਸ਼ਨ ਸਥਾਪਤ ਕਰਨ ਦੀ ਇਜਾਜ਼ਤ ਮੰਗ ਰਿਹਾ ਹੈ ਜੋ ਇਸਨੂੰ ਨੈੱਟਵਰਕ ਟ੍ਰੈਫਿਕ ਦੀ ਨਿਗਰਾਨੀ ਕਰਨ ਦੀ ਇਜਾਜ਼ਤ ਦੇਵੇਗਾ। ਇਸਦੀ ਇਜਾਜ਼ਤ ਸਿਰਫ਼ ਤਾਂ ਹੀ ਦਿਓ ਜੇਕਰ ਤੁਹਾਨੂੰ ਸਰੋਤ \'ਤੇ ਭਰੋਸਾ ਹੈ।</string>
   <string name="vpn_des2">VPN ਵਰਤੋਂ ਵਿੱਚ ਹੋਣ \'ਤੇ ਤੁਹਾਡੀ ਸਕ੍ਰੀਨ ਦੇ ਸਿਖਰ \'ਤੇ ਇੱਕ ਆਈਕਨ ਦਿਖਾਈ ਦੇਵੇਗਾ। ਕੀ ਇਜਾਜ਼ਤ ਦੇਣੀ ਹੈ?</string>

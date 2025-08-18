@@ -125,6 +125,18 @@
   <string name="dns_only">только DNS</string>
   <string name="confirm_dns">VPN не активен</string>
   <string name="confirm_dns_msg">В настоящее время вы используете только DNS. Для более безопасного и приватного соединения выберите VPN-сервер.</string>
+  <string name="btn_agree">Соглашаться</string>
+  <string name="confirm_collect">Ваша конфиденциальность, ваш контроль</string>
+  <string name="confirm_accept_msg">Для завершения подписки это приложение собирает ваш рекламный идентификатор для подтверждения регистрации, повышения качества обслуживания и предотвращения мошенничества. Вы согласны на сбор этих данных?</string>
+  <string name="accept_continue">Принять и продолжить</string>
+  <string name="go_back">Назад</string>
+  <string name="leave_anyway">Выход</string>
+  <string name="confirm_accept_msg_1">Привет, спасибо за использование SuperVPN.</string>
+  <string name="confirm_accept_msg_2">Мы собираем только минимально необходимые данные для обеспечения бесперебойного и безопасного подключения. Вот краткий обзор.</string>
+  <string name="confirm_accept_msg_3">Рекламный идентификатор: помогите отслеживать вашу подписку и использование VPN.</string>
+  <string name="confirm_accept_msg_4">Вот и всё. Никакого отслеживания вашего интернет-трафика, никакой продажи ваших данных. Мы не ведем журналы и соблюдаем законы о конфиденциальности. Ваши данные остаются вашими.</string>
+  <string name="exit">Вы уверены, что хотите выйти?</string>
+  <string name="exit_msg">Согласно политике защиты данных пользователей, мы не можем предоставлять наши услуги без вашего согласия. Вы уверены, что хотите выйти?</string>
   <string name="premium_title">VPN Быстрый и Безопасный Pro</string>
   <string name="premium_sub1">Без рекламы</string>
   <string name="premium_sub2">Быстрая и стабильная скорость</string>
@@ -139,7 +151,7 @@
   <string name="status_on">НА</string>
   <string name="status_off">Выключенный</string>
   <string name="dg_vpn_permission_title">Super VPN не может быть подключен к властям</string>
-  <string name="dg_vpn_permission_guide">Нажмите «&lt;b&gt;ОК&lt;/b&gt;», чтобы разрешить VPN-подключение.</string>
+  <string name="dg_vpn_permission_guide">Нажмите «ОК», чтобы разрешить VPN-подключение.</string>
   <string name="connection_request">Запрос на подключение</string>
   <string name="vpn_des1">SupperVPN запрашивает разрешение на установку VPN-подключения, которое позволит ему отслеживать сетевой трафик. Разрешите это только в том случае, если вы доверяете источнику.</string>
   <string name="vpn_des2">Во время использования VPN в верхней части экрана будет отображаться значок. Разрешить?</string>

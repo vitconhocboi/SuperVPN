@@ -125,6 +125,18 @@
   <string name="dns_only">DNS mung</string>
   <string name="confirm_dns">VPN Ora Aktif</string>
   <string name="confirm_dns_msg">Sampeyan saiki mung nggunakake DNS. Kanggo sambungan sing luwih aman lan pribadi, pilih server VPN.</string>
+  <string name="btn_agree">Setuju</string>
+  <string name="confirm_collect">Privasi Panjenengan, Kontrol Panjenengan</string>
+  <string name="confirm_accept_msg">Kanggo ngrampungake langganan sampeyan, aplikasi iki ngumpulake ID Iklan kanggo verifikasi registrasi, ningkatake kualitas layanan, lan nyegah kegiatan penipuan. Apa sampeyan setuju karo pengumpulan data iki?</string>
+  <string name="accept_continue">Nampa lan Terusake</string>
+  <string name="go_back">Mbalik</string>
+  <string name="leave_anyway">metu</string>
+  <string name="confirm_accept_msg_1">Hei, matur nuwun kanggo nggunakake SuperVPN</string>
+  <string name="confirm_accept_msg_2">Kita mung ngumpulake data minimal sing dibutuhake kanggo njaga sambungan lancar lan aman. Punika risak cepet.</string>
+  <string name="confirm_accept_msg_3">ID Iklan: bantuan kanggo nglacak langganan lan nggunakake VPN.</string>
+  <string name="confirm_accept_msg_4">Wis ngono wae. Ora nglacak lalu lintas internet, ora adol data sampeyan. Kita ora duwe kabijakan log lan tindakake hukum privasi. Data sampeyan tetep dadi sampeyan.</string>
+  <string name="exit">Apa sampeyan yakin arep metu?</string>
+  <string name="exit_msg">Miturut kabijakan perlindungan data pangguna, kita ora bisa nyedhiyakake layanan tanpa idin saka sampeyan. Apa sampeyan yakin arep metu?</string>
   <string name="premium_title">VPN Cepet &amp; Aman Pro</string>
   <string name="premium_sub1">Ora Iklan</string>
   <string name="premium_sub2">Kacepetan cepet lan stabil</string>
@@ -139,7 +151,7 @@
   <string name="status_on">ON</string>
   <string name="status_off">Mati</string>
   <string name="dg_vpn_permission_title">Super VPN ora bisa nyambung karo panguwasa</string>
-  <string name="dg_vpn_permission_guide">Pencet "OK” kanggo ngidini sambungan VPN.</string>
+  <string name="dg_vpn_permission_guide">Pencet "OK" kanggo ngidini sambungan VPN.</string>
   <string name="connection_request">Panjaluk sambungan</string>
   <string name="vpn_des1">SupperVPN njaluk ijin kanggo nyiyapake sambungan VPN sing bakal ngidini kanggo ngawasi lalu lintas jaringan. Mung ngidini iki yen sampeyan dipercaya sumber.</string>
   <string name="vpn_des2">Lambang bakal ditampilake ing sisih ndhuwur layar nalika VPN digunakake. ngidini?</string>

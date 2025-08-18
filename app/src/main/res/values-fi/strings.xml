@@ -125,6 +125,18 @@
   <string name="dns_only">Vain DNS</string>
   <string name="confirm_dns">VPN ei ole aktiivinen</string>
   <string name="confirm_dns_msg">Käytät tällä hetkellä vain DNS:ää. Valitse VPN-palvelin turvallisemman ja yksityisemmän yhteyden saamiseksi.</string>
+  <string name="btn_agree">Samaa mieltä</string>
+  <string name="confirm_collect">Tietosuojasi, hallintasi</string>
+  <string name="confirm_accept_msg">Tilauksesi viimeistelemiseksi tämä sovellus kerää mainostunnuksesi rekisteröinnin vahvistamiseksi, palvelun laadun parantamiseksi ja petollisen toiminnan estämiseksi. Hyväksytkö tämän tiedonkeruun?</string>
+  <string name="accept_continue">Hyväksy ja jatka</string>
+  <string name="go_back">Takaisin</string>
+  <string name="leave_anyway">Poistu</string>
+  <string name="confirm_accept_msg_1">Hei, kiitos SuperVPN:n käytöstä</string>
+  <string name="confirm_accept_msg_2">Keräämme vain vähimmäismäärän tietoja, joita tarvitaan yhteytesi sujuvan ja turvallisen toiminnan ylläpitämiseen. Tässä on lyhyt erittely.</string>
+  <string name="confirm_accept_msg_3">Mainostunnus: auttaa seuraamaan tilaustasi ja VPN:n käyttöä.</string>
+  <string name="confirm_accept_msg_4">Siinä kaikki. Ei internet-liikennettäsi seuraamista, ei tietojesi myymistä. Meillä ei ole lokitietoja ja noudatamme tietosuojalakeja. Tietosi pysyvät sinun.</string>
+  <string name="exit">Haluatko varmasti poistua?</string>
+  <string name="exit_msg">Käyttäjätietosuojakäytäntöjemme mukaisesti emme voi tarjota palveluitamme ilman suostumustasi. Haluatko varmasti poistua?</string>
   <string name="premium_title">VPN Nopea ja turvallinen ammattilainen</string>
   <string name="premium_sub1">Ei mainoksia</string>
   <string name="premium_sub2">Nopea ja vakaa nopeus</string>
@@ -139,7 +151,7 @@
   <string name="status_on">PÄÄLLÄ</string>
   <string name="status_off">Pois</string>
   <string name="dg_vpn_permission_title">Super VPN:ää ei voida yhdistää auktoriteettiin</string>
-  <string name="dg_vpn_permission_guide">Salli VPN-yhteys painamalla “OK”.</string>
+  <string name="dg_vpn_permission_guide">Paina “OK” salliaksesi VPN-yhteyden.</string>
   <string name="connection_request">Yhteyspyyntö</string>
   <string name="vpn_des1">SupperVPN pyytää lupaa muodostaa VPN-yhteyden, jonka avulla se voi valvoa verkkoliikennettä. Salli tämä vain, jos luotat lähteeseen.</string>
   <string name="vpn_des2">Näytön yläreunassa näkyy kuvake, kun VPN on käytössä. Sallitaanko?</string>

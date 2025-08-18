@@ -125,6 +125,18 @@
   <string name="dns_only">DNS मात्र</string>
   <string name="confirm_dns">VPN सक्रिय छैन</string>
   <string name="confirm_dns_msg">तपाईं हाल DNS मात्र प्रयोग गर्दै हुनुहुन्छ। अझ सुरक्षित र निजी जडानको लागि, कृपया VPN सर्भर चयन गर्नुहोस्।</string>
+  <string name="btn_agree">सहमत</string>
+  <string name="confirm_collect">तपाईंको गोपनीयता, तपाईंको नियन्त्रण</string>
+  <string name="confirm_accept_msg">तपाईंको सदस्यता पूरा गर्न, यो एपले दर्ता प्रमाणित गर्न, सेवाको गुणस्तर बढाउन र धोखाधडी गतिविधि रोक्न तपाईंको विज्ञापन ID सङ्कलन गर्छ। के तपाईं यो डेटा सङ्कलनमा सहमत हुनुहुन्छ?</string>
+  <string name="accept_continue">स्वीकार गर्नुहोस् र जारी राख्नुहोस्</string>
+  <string name="go_back">पछाडि</string>
+  <string name="leave_anyway">बाहिर निस्कनुहोस्</string>
+  <string name="confirm_accept_msg_1">नमस्ते, SuperVPN प्रयोग गर्नुभएकोमा धन्यवाद।</string>
+  <string name="confirm_accept_msg_2">हामी तपाईंको जडानलाई सहज र सुरक्षित राख्न आवश्यक पर्ने न्यूनतम डेटा मात्र सङ्कलन गर्छौं। यहाँ छोटो विवरण दिइएको छ।</string>
+  <string name="confirm_accept_msg_3">विज्ञापन आईडी: तपाईंको सदस्यता र VPN प्रयोग ट्र्याक गर्न मद्दत गर्नुहोस्।</string>
+  <string name="confirm_accept_msg_4">यति नै हो। तपाईंको इन्टरनेट ट्राफिक ट्र्याक गर्ने छैन, तपाईंको डेटा बेच्ने छैन। हामीसँग कुनै लग नीति छैन र हामी गोपनीयता कानूनहरू पालना गर्छौं। तपाईंको डेटा तपाईंको नै रहन्छ।</string>
+  <string name="exit">के तपाईं पक्कै बाहिर निस्कन चाहनुहुन्छ?</string>
+  <string name="exit_msg">प्रयोगकर्ता डेटा सुरक्षा नीतिहरू अनुसार, हामी तपाईंको सहमति बिना हाम्रा सेवाहरू प्रदान गर्न सक्दैनौं। के तपाईं बाहिर निस्कन निश्चित हुनुहुन्छ?</string>
   <string name="premium_title">VPN छिटो र सुरक्षित प्रो</string>
   <string name="premium_sub1">कुनै विज्ञापन छैन</string>
   <string name="premium_sub2">छिटो र स्थिर गति</string>
@@ -139,7 +151,7 @@
   <string name="status_on">खुला</string>
   <string name="status_off">बन्द</string>
   <string name="dg_vpn_permission_title">सुपर VPN लाई प्राधिकरणसँग जोड्न सकिँदैन</string>
-  <string name="dg_vpn_permission_guide">VPN जडानलाई अनुमति दिन “OK” थिच्नुहोस्।</string>
+  <string name="dg_vpn_permission_guide">VPN जडानलाई अनुमति दिन "OK" थिच्नुहोस्।</string>
   <string name="connection_request">जडान अनुरोध</string>
   <string name="vpn_des1">SupperVPN ले नेटवर्क ट्राफिक निगरानी गर्न अनुमति दिने VPN जडान सेटअप गर्न अनुमति मागिरहेको छ। यदि तपाईं स्रोतमा विश्वास गर्नुहुन्छ भने मात्र यसलाई अनुमति दिनुहोस्।</string>
   <string name="vpn_des2">VPN प्रयोगमा हुँदा तपाईंको स्क्रिनको माथिल्लो भागमा एउटा आइकन देखिनेछ। अनुमति दिने हो?</string>

@@ -125,6 +125,18 @@
   <string name="dns_only">DNSのみ</string>
   <string name="confirm_dns">VPNがアクティブではありません</string>
   <string name="confirm_dns_msg">現在、DNSのみを使用しています。より安全でプライベートな接続を実現するには、VPNサーバーを選択してください。</string>
+  <string name="btn_agree">同意する</string>
+  <string name="confirm_collect">あなたのプライバシー、あなたのコントロール</string>
+  <string name="confirm_accept_msg">サブスクリプションを完了するために、このアプリは登録の確認、サービス品質の向上、不正行為の防止を目的として広告IDを収集します。このデータ収集に同意しますか？</string>
+  <string name="accept_continue">同意して続行</string>
+  <string name="go_back">戻る</string>
+  <string name="leave_anyway">出口</string>
+  <string name="confirm_accept_msg_1">こんにちは。SuperVPNをご利用いただきありがとうございます。</string>
+  <string name="confirm_accept_msg_2">スムーズで安全な接続を維持するために必要な最小限のデータのみを収集します。概要は以下のとおりです。</string>
+  <string name="confirm_accept_msg_3">広告 ID: サブスクリプションと VPN の使用状況を追跡するのに役立ちます。</string>
+  <string name="confirm_accept_msg_4">以上です。インターネットトラフィックの追跡やデータの販売は一切ありません。ログなしポリシーを採用し、プライバシー法を遵守しています。データはお客様の所有物です。</string>
+  <string name="exit">本当に終了してもよろしいですか?</string>
+  <string name="exit_msg">ユーザーデータ保護ポリシーに基づき、お客様の同意なしにサービスを提供することはできません。終了してもよろしいですか？</string>
   <string name="premium_title">VPN 高速 &amp; 安全 プロ</string>
   <string name="premium_sub1">広告なし</string>
   <string name="premium_sub2">高速かつ安定した速度</string>
@@ -139,7 +151,7 @@
   <string name="status_on">の上</string>
   <string name="status_off">オフ</string>
   <string name="dg_vpn_permission_title">スーパーVPNは権限を持って接続できません</string>
-  <string name="dg_vpn_permission_guide">VPN接続を許可するには、「OK」を押します。</string>
+  <string name="dg_vpn_permission_guide">「OK」を押してVPN接続を許可します。</string>
   <string name="connection_request">接続リクエスト</string>
   <string name="vpn_des1">SupperVPN は、ネットワークトラフィックの監視を可能にする VPN 接続を確立するための許可を要求しています。送信元を信頼できる場合のみ、許可してください。</string>
   <string name="vpn_des2">VPNの使用中は画面上部にアイコンが表示されます。許可しますか？</string>

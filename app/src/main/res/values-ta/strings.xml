@@ -125,6 +125,18 @@
   <string name="dns_only">DNS மட்டும்</string>
   <string name="confirm_dns">VPN செயலில் இல்லை</string>
   <string name="confirm_dns_msg">நீங்கள் தற்போது DNS ஐ மட்டுமே பயன்படுத்துகிறீர்கள். மிகவும் பாதுகாப்பான மற்றும் தனிப்பட்ட இணைப்பிற்கு, தயவுசெய்து ஒரு VPN சேவையகத்தைத் தேர்ந்தெடுக்கவும்.</string>
+  <string name="btn_agree">ஒப்புக்கொள்கிறேன்</string>
+  <string name="confirm_collect">உங்கள் தனியுரிமை, உங்கள் கட்டுப்பாடு</string>
+  <string name="confirm_accept_msg">உங்கள் சந்தாவை முடிக்க, பதிவைச் சரிபார்க்கவும், சேவை தரத்தை மேம்படுத்தவும், மோசடி நடவடிக்கைகளைத் தடுக்கவும் இந்தப் பயன்பாடு உங்கள் விளம்பர ஐடியைச் சேகரிக்கிறது. இந்தத் தரவு சேகரிப்பை நீங்கள் ஒப்புக்கொள்கிறீர்களா?</string>
+  <string name="accept_continue">ஏற்றுக்கொண்டு தொடரவும்</string>
+  <string name="go_back">மீண்டும்</string>
+  <string name="leave_anyway">வெளியேறு</string>
+  <string name="confirm_accept_msg_1">வணக்கம், SuperVPN ஐப் பயன்படுத்தியதற்கு நன்றி.</string>
+  <string name="confirm_accept_msg_2">உங்கள் இணைப்பை சீராகவும் பாதுகாப்பாகவும் வைத்திருக்க தேவையான குறைந்தபட்ச தரவை மட்டுமே நாங்கள் சேகரிக்கிறோம். இதோ விரைவான விளக்கம்.</string>
+  <string name="confirm_accept_msg_3">விளம்பர ஐடி: உங்கள் சந்தாவைக் கண்காணிக்கவும் VPN ஐப் பயன்படுத்தவும் உதவுங்கள்.</string>
+  <string name="confirm_accept_msg_4">அவ்வளவுதான். உங்கள் இணைய போக்குவரத்தை கண்காணிக்கவோ, உங்கள் தரவை விற்கவோ தேவையில்லை. எங்களிடம் பதிவுகள் கொள்கை இல்லை மற்றும் தனியுரிமைச் சட்டங்களைப் பின்பற்றுகிறோம். உங்கள் தரவு உங்களுடையதாகவே இருக்கும்.</string>
+  <string name="exit">நீங்கள் நிச்சயமாக வெளியேற விரும்புகிறீர்களா?</string>
+  <string name="exit_msg">பயனர் தரவு பாதுகாப்பு கொள்கைகளின்படி, உங்கள் ஒப்புதல் இல்லாமல் எங்கள் சேவைகளை நாங்கள் வழங்க முடியாது. நீங்கள் வெளியேறுவது உறுதியா?</string>
   <string name="premium_title">வேகமான &amp; பாதுகாப்பான VPN ப்ரோ</string>
   <string name="premium_sub1">விளம்பரங்கள் இல்லை</string>
   <string name="premium_sub2">வேகமான மற்றும் நிலையான வேகம்</string>
@@ -139,7 +151,7 @@
   <string name="status_on">ஆன்</string>
   <string name="status_off">ஆஃப்</string>
   <string name="dg_vpn_permission_title">சூப்பர் VPN அதிகாரத்துடன் இணைக்க முடியாது.</string>
-  <string name="dg_vpn_permission_guide">VPN இணைப்பை அனுமதிக்க “&lt;b&gt;சரி&lt;/b&gt;” என்பதை அழுத்தவும்.</string>
+  <string name="dg_vpn_permission_guide">VPN இணைப்பை அனுமதிக்க "சரி" என்பதை அழுத்தவும்.</string>
   <string name="connection_request">இணைப்பு கோரிக்கை</string>
   <string name="vpn_des1">நெட்வொர்க் டிராஃபிக்கைக் கண்காணிக்க அனுமதிக்கும் VPN இணைப்பை அமைக்க SupperVPN அனுமதி கோருகிறது. மூலத்தை நீங்கள் நம்பினால் மட்டுமே இதை அனுமதிக்கவும்.</string>
   <string name="vpn_des2">VPN பயன்பாட்டில் இருக்கும்போது உங்கள் திரையின் மேற்புறத்தில் ஒரு ஐகான் காட்டப்படும். அனுமதிக்கவா?</string>

@@ -125,6 +125,18 @@
   <string name="dns_only">DNS သာ</string>
   <string name="confirm_dns">VPN သည် Active မဖြစ်ပါ။</string>
   <string name="confirm_dns_msg">သင်သည် လက်ရှိ DNS ကိုသာ အသုံးပြုနေပါသည်။ ပိုမိုလုံခြုံပြီး သီးသန့်ချိတ်ဆက်မှုအတွက်၊ ကျေးဇူးပြု၍ VPN ဆာဗာကို ရွေးချယ်ပါ။</string>
+  <string name="btn_agree">သဘောတူတယ်။</string>
+  <string name="confirm_collect">သင်၏ကိုယ်ရေးကိုယ်တာ၊ သင်၏ထိန်းချုပ်မှု</string>
+  <string name="confirm_accept_msg">သင်၏စာရင်းသွင်းမှုကို အပြီးသတ်ရန်၊ ဤအက်ပ်သည် မှတ်ပုံတင်ခြင်းကို အတည်ပြုရန်၊ ဝန်ဆောင်မှုအရည်အသွေးကို မြှင့်တင်ရန်နှင့် လိမ်လည်လုပ်ဆောင်မှုများကို ကာကွယ်ရန် သင်၏ကြော်ငြာ ID ကို စုဆောင်းပါသည်။ ဤဒေတာစုဆောင်းခြင်းကို သင်သဘောတူပါသလား။</string>
+  <string name="accept_continue">လက်ခံပြီး ဆက်လုပ်ပါ။</string>
+  <string name="go_back">ကျော</string>
+  <string name="leave_anyway">ထွက်ပေါက်</string>
+  <string name="confirm_accept_msg_1">ဟေး၊ SuperVPN ကို အသုံးပြုသည့်အတွက် ကျေးဇူးတင်ပါသည်။</string>
+  <string name="confirm_accept_msg_2">သင့်ချိတ်ဆက်မှုကို ချောမွေ့လုံခြုံစေရန်အတွက် လိုအပ်သော အနိမ့်ဆုံးဒေတာကိုသာ ကျွန်ုပ်တို့စုဆောင်းပါသည်။ ဤတွင် အမြန်ပြိုကွဲသည်။</string>
+  <string name="confirm_accept_msg_3">ကြော်ငြာ ID- သင်၏ စာရင်းသွင်းမှုကို ခြေရာခံရန်နှင့် VPN ကို အသုံးပြုရန် ကူညီပေးသည်။</string>
+  <string name="confirm_accept_msg_4">ဒါပဲ။ သင်၏အင်တာနက်အသွားအလာကို ခြေရာခံခြင်းမရှိပါ၊ သင်၏ဒေတာကို ရောင်းချခြင်းမရှိပါ။ ကျွန်ုပ်တို့တွင် မှတ်တမ်းမူဝါဒမရှိပါ၊ လျှို့ဝှက်ရေးဥပဒေများကို လိုက်နာပါ။ သင့်ဒေတာသည် သင့်တွင်ရှိနေပါသည်။</string>
+  <string name="exit">ထွက်လိုသည်မှာ သေချာပါသလား။</string>
+  <string name="exit_msg">သုံးစွဲသူဒေတာကာကွယ်ရေးမူဝါဒများအရ၊ ကျွန်ုပ်တို့သည် သင့်သဘောဆန္ဒမပါဘဲ ကျွန်ုပ်တို့၏ဝန်ဆောင်မှုများကို မပေးနိုင်ပါ။ ထွက်ရန်သေချာပါသလား။</string>
   <string name="premium_title">VPN မြန်ဆန်ပြီး ဘေးကင်းသော Pro</string>
   <string name="premium_sub1">ကြော်ငြာမရှိပါ။</string>
   <string name="premium_sub2">မြန်ပြီး တည်ငြိမ်တဲ့ အမြန်နှုန်း</string>
@@ -139,7 +151,7 @@
   <string name="status_on">ဖွင့်ထားသည်။</string>
   <string name="status_off">ပိတ်သည်။</string>
   <string name="dg_vpn_permission_title">Super VPN ကို အာဏာပိုင်များနှင့် ချိတ်ဆက်၍မရပါ။</string>
-  <string name="dg_vpn_permission_guide">VPN ချိတ်ဆက်မှုကို ခွင့်ပြုရန် “OK”</string>
+  <string name="dg_vpn_permission_guide">VPN ချိတ်ဆက်မှုကို ခွင့်ပြုရန် "OK" ကိုနှိပ်ပါ။</string>
   <string name="connection_request">ချိတ်ဆက်မှုတောင်းဆိုမှု</string>
   <string name="vpn_des1">SupperVPN သည် ကွန်ရက်အသွားအလာကို စောင့်ကြည့်ရန် ခွင့်ပြုမည့် VPN ချိတ်ဆက်မှုတစ်ခုကို စနစ်ထည့်သွင်းရန် ခွင့်ပြုချက်တောင်းနေသည်။ အရင်းအမြစ်ကို ယုံကြည်ပါက ၎င်းကိုသာ ခွင့်ပြုပါ။</string>
   <string name="vpn_des2">VPN ကိုအသုံးပြုနေစဉ်တွင် သင့်စခရင်၏ထိပ်တွင် အိုင်ကွန်တစ်ခုပြပါမည်။ ခွင့်ပြုမလား။</string>

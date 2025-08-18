@@ -125,6 +125,18 @@
   <string name="dns_only">僅 DNS</string>
   <string name="confirm_dns">VPN未啟用</string>
   <string name="confirm_dns_msg">您目前僅使用 DNS。為了獲得更安全、更私密的連接，請選擇 VPN 伺服器。</string>
+  <string name="btn_agree">同意</string>
+  <string name="confirm_collect">您的隱私，您的控制</string>
+  <string name="confirm_accept_msg">為了完成您的訂閱，此應用程式會收集您的廣告 ID，以驗證註冊資訊、提升服務品質並防止詐欺行為。您是否同意此資料收集？</string>
+  <string name="accept_continue">接受並繼續</string>
+  <string name="go_back">後退</string>
+  <string name="leave_anyway">出口</string>
+  <string name="confirm_accept_msg_1">嘿，感謝您使用 SuperVPN</string>
+  <string name="confirm_accept_msg_2">我們僅收集確保您的連線順暢安全所需的最低限度的資料。以下是簡要說明。</string>
+  <string name="confirm_accept_msg_3">廣告ID：幫助追蹤您的訂閱和使用VPN。</string>
+  <string name="confirm_accept_msg_4">就是這樣。我們不會追蹤您的網路流量，也不會出售您的資料。我們實行無日誌政策，並遵守隱私權法。您的資料始終屬於您。</string>
+  <string name="exit">您確定要退出嗎？</string>
+  <string name="exit_msg">根據用戶資料保護政策，未經您的同意，我們無法提供服務。您確定退出嗎？</string>
   <string name="premium_title">VPN 快速安全專業版</string>
   <string name="premium_sub1">無廣告</string>
   <string name="premium_sub2">速度快且穩定</string>
@@ -139,7 +151,7 @@
   <string name="status_on">在</string>
   <string name="status_off">離開</string>
   <string name="dg_vpn_permission_title">Super VPN 無法連線權限</string>
-  <string name="dg_vpn_permission_guide">按“&lt;b&gt;OK&lt;/b&gt;”以允許 VPN 連線。</string>
+  <string name="dg_vpn_permission_guide">按下「確定」允許 VPN 連線。</string>
   <string name="connection_request">連線請求</string>
   <string name="vpn_des1">SupperVPN 正在要求建立 VPN 連線的權限，以便監控網路流量。請僅在您信任來源的情況下允許此操作。</string>
   <string name="vpn_des2">使用 VPN 時，螢幕頂部將顯示一個圖示。允許嗎？</string>

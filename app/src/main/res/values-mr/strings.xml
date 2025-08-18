@@ -125,6 +125,18 @@
   <string name="dns_only">फक्त DNS</string>
   <string name="confirm_dns">VPN सक्रिय नाही</string>
   <string name="confirm_dns_msg">तुम्ही सध्या फक्त DNS वापरत आहात. अधिक सुरक्षित आणि खाजगी कनेक्शनसाठी, कृपया VPN सर्व्हर निवडा.</string>
+  <string name="btn_agree">सहमत</string>
+  <string name="confirm_collect">तुमची गोपनीयता, तुमचे नियंत्रण</string>
+  <string name="confirm_accept_msg">तुमचे सदस्यत्व पूर्ण करण्यासाठी, हे अॅप नोंदणी सत्यापित करण्यासाठी, सेवेची गुणवत्ता वाढविण्यासाठी आणि फसव्या क्रियाकलापांना प्रतिबंध करण्यासाठी तुमचा जाहिरात आयडी गोळा करते. तुम्ही या डेटा संकलनाशी सहमत आहात का?</string>
+  <string name="accept_continue">स्वीकारा आणि सुरू ठेवा</string>
+  <string name="go_back">मागे</string>
+  <string name="leave_anyway">बाहेर पडा</string>
+  <string name="confirm_accept_msg_1">नमस्कार, सुपरव्हीपीएन वापरल्याबद्दल धन्यवाद.</string>
+  <string name="confirm_accept_msg_2">तुमचे कनेक्शन सुरळीत आणि सुरक्षित ठेवण्यासाठी आम्ही फक्त किमान डेटा गोळा करतो. येथे थोडक्यात माहिती दिली आहे.</string>
+  <string name="confirm_accept_msg_3">जाहिरात आयडी: तुमची सदस्यता आणि VPN वापर ट्रॅक करण्यास मदत करा.</string>
+  <string name="confirm_accept_msg_4">बस्स. तुमचा इंटरनेट ट्रॅफिक ट्रॅक करत नाही, तुमचा डेटा विकत नाही. आमच्याकडे कोणतेही लॉग धोरण नाही आणि आम्ही गोपनीयता कायद्यांचे पालन करतो. तुमचा डेटा तुमचाच राहतो.</string>
+  <string name="exit">तुम्हाला नक्की बाहेर पडायचे आहे का?</string>
+  <string name="exit_msg">वापरकर्ता डेटा संरक्षण धोरणांनुसार, तुमच्या संमतीशिवाय आम्ही आमच्या सेवा देऊ शकत नाही. तुम्हाला बाहेर पडायचे आहे का?</string>
   <string name="premium_title">VPN जलद आणि सुरक्षित प्रो</string>
   <string name="premium_sub1">जाहिराती नाहीत</string>
   <string name="premium_sub2">जलद आणि स्थिर गती</string>
@@ -139,7 +151,7 @@
   <string name="status_on">चालू</string>
   <string name="status_off">बंद</string>
   <string name="dg_vpn_permission_title">सुपर व्हीपीएन प्राधिकरणाशी कनेक्ट होऊ शकत नाही</string>
-  <string name="dg_vpn_permission_guide">VPN कनेक्शनला परवानगी देण्यासाठी “OK” दाबा.</string>
+  <string name="dg_vpn_permission_guide">VPN कनेक्शनला परवानगी देण्यासाठी "ओके" दाबा.</string>
   <string name="connection_request">कनेक्शन विनंती</string>
   <string name="vpn_des1">SupperVPN नेटवर्क ट्रॅफिकचे निरीक्षण करण्यास अनुमती देणारे VPN कनेक्शन सेट अप करण्याची परवानगी मागत आहे. जर तुम्हाला स्रोतावर विश्वास असेल तरच हे करण्याची परवानगी द्या.</string>
   <string name="vpn_des2">VPN वापरात असताना तुमच्या स्क्रीनच्या वरच्या बाजूला एक आयकॉन दिसेल. परवानगी द्यायची?</string>

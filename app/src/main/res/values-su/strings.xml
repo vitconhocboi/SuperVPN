@@ -125,6 +125,18 @@
   <string name="dns_only">DNS wungkul</string>
   <string name="confirm_dns">VPN Henteu Aktif</string>
   <string name="confirm_dns_msg">Anjeun ayeuna nganggo DNS wungkul. Pikeun sambungan anu langkung aman sareng pribadi, mangga pilih pangladén VPN.</string>
+  <string name="btn_agree">satuju</string>
+  <string name="confirm_collect">Privasi anjeun, Kontrol anjeun</string>
+  <string name="confirm_accept_msg">Pikeun ngarengsekeun langganan anjeun, aplikasi ieu ngumpulkeun ID Iklan anjeun pikeun pariksa pendaptaran, ningkatkeun kualitas layanan, sareng nyegah kagiatan panipuan. Naha anjeun satuju kana ngumpulkeun data ieu?</string>
+  <string name="accept_continue">Narima jeung Teruskeun</string>
+  <string name="go_back">Balik deui</string>
+  <string name="leave_anyway">Kaluar</string>
+  <string name="confirm_accept_msg_1">Héy, hatur nuhun pikeun ngagunakeun SuperVPN</string>
+  <string name="confirm_accept_msg_2">Kami ngan ukur ngumpulkeun data minimum anu diperyogikeun pikeun ngajaga sambungan anjeun lancar sareng aman. Ieu ngarecahna gancang.</string>
+  <string name="confirm_accept_msg_3">ID Iklan: bantosan ngalacak langganan anjeun sareng nganggo VPN.</string>
+  <string name="confirm_accept_msg_4">Éta pisan. Henteu aya nyukcruk lalu lintas internét anjeun, henteu ngajual data anjeun. Kami henteu gaduh kawijakan log sareng nuturkeun hukum privasi. Data anjeun tetep milik anjeun.</string>
+  <string name="exit">Anjeun yakin rék kaluar?</string>
+  <string name="exit_msg">Numutkeun kabijakan panyalindungan data pangguna, kami henteu tiasa nyayogikeun jasa kami tanpa idin anjeun. Anjeun yakin kaluar?</string>
   <string name="premium_title">VPN Gancang &amp; Aman Pro</string>
   <string name="premium_sub1">Taya Iklan</string>
   <string name="premium_sub2">Laju gancang sareng stabil</string>
@@ -139,7 +151,7 @@
   <string name="status_on">ON</string>
   <string name="status_off">Pareum</string>
   <string name="dg_vpn_permission_title">Super VPN teu tiasa nyambung sareng otoritas</string>
-  <string name="dg_vpn_permission_guide">Pencét "&lt;b&gt;OK&lt;/b&gt;” pikeun ngidinan sambungan VPN.</string>
+  <string name="dg_vpn_permission_guide">Pencét "OK" pikeun ngidinan sambungan VPN.</string>
   <string name="connection_request">Paménta sambungan</string>
   <string name="vpn_des1">SupperVPN nyuhunkeun idin pikeun nyetél sambungan VPN anu ngamungkinkeun pikeun ngawas lalu lintas jaringan. Ngan ngawenangkeun ieu upami anjeun percanten ka sumberna.</string>
   <string name="vpn_des2">Ikon bakal ditingalikeun di luhureun layar anjeun nalika VPN dianggo. Ngidinan?</string>

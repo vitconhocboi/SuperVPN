@@ -1,6 +1,7 @@
 package com.tici.vpn.proxy.master.language
 
 import android.content.res.Resources
+import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -18,17 +19,34 @@ import com.tici.vpn.proxy.master.utils.Navigator
 import java.util.Locale
 
 
-class LanguageFragment(
-    val fromSetting: Boolean = false
-) : ProductFragment<FragmentLanguageBinding>() {
+class LanguageFragment : ProductFragment<FragmentLanguageBinding>() {
     private val mViewModel: LanguageViewModel by viewModels()
     private val mLangAdapter = LanguageAdapter()
     var languageCode = ""
+
+    private var fromSetting: Boolean = false
 
     override fun bindingProvider(
         inflater: LayoutInflater, container: ViewGroup?
     ): FragmentLanguageBinding {
         return FragmentLanguageBinding.inflate(inflater, container, false)
+    }
+
+    companion object {
+        private const val ARG_FROM_SETTING = "fromSetting"
+
+        fun newInstance(fromSetting: Boolean): LanguageFragment {
+            val fragment = LanguageFragment()
+            val args = Bundle()
+            args.putBoolean(ARG_FROM_SETTING, fromSetting)
+            fragment.arguments = args
+            return fragment
+        }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        fromSetting = arguments?.getBoolean(ARG_FROM_SETTING) ?: false
     }
 
     override fun initView() {
@@ -63,38 +81,37 @@ class LanguageFragment(
 
         binding.ivDone.setOnClickNoDoubleClick {
 
-            if (!BaseAppConfig.allowCollectData && !fromSetting) {
-                AgreementDialog(
-                    requireActivity(),
-                    onContinue = {
-                        if (languageCode.isEmpty()) {
-                            BaseAppConfig.firstTimeSetup = false
-                        } else {
-                            BaseAppConfig.firstTimeSetup = false
-                            BaseAppConfig.languageCode = languageCode
-                            Log.d("LanguageSwitch", "Language set to: ${BaseAppConfig.languageCode}")
-                            if (BaseAppConfig.languageCode.isNotEmpty()) {
-                                Lingver.getInstance().setLocale(requireContext(), BaseAppConfig.languageCode)
-                                activity?.recreate()
-                            } else {
-                                Lingver.getInstance().setFollowSystemLocale(requireContext())
-                            }
-                        }
-
-                        BaseAppConfig.allowCollectData = true
-                        (activity as? LanguageActivity)?.apply {
-                            Navigator.startMainActivity(this)
-                            finish()
-                        }
-                    }
-                ).show()
+//            if (!BaseAppConfig.allowCollectData && !fromSetting) {
+//                AgreementDialog(
+//                    requireActivity(),
+//                    onContinue = {
+            if (languageCode.isEmpty()) {
+                BaseAppConfig.firstTimeSetup = false
             } else {
-                (activity as? LanguageActivity)?.apply {
-                    Navigator.startMainActivity(this)
-                    finish()
+                BaseAppConfig.firstTimeSetup = false
+                BaseAppConfig.languageCode = languageCode
+                if (BaseAppConfig.languageCode.isNotEmpty()) {
+                    Lingver.getInstance().setLocale(requireContext(), BaseAppConfig.languageCode)
+                    activity?.recreate()
+                } else {
+                    Lingver.getInstance().setFollowSystemLocale(requireContext())
                 }
             }
+
+            BaseAppConfig.allowCollectData = true
+            (activity as? LanguageActivity)?.apply {
+                Navigator.startMainActivity(this)
+                finish()
+            }
         }
+//                ).show()
+//            } else {
+//                (activity as? LanguageActivity)?.apply {
+//                    Navigator.startMainActivity(this)
+//                    finish()
+//                }
+//            }
+//    }
     }
 
     private fun getSystemLanguage(lang: LangType): LangDataModel {

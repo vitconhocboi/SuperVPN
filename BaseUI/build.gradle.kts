@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.common.baseui"
-    compileSdk = 34
+    compileSdk = 35
     defaultConfig {
         minSdk = 27
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

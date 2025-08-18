@@ -125,6 +125,18 @@
   <string name="dns_only">ફક્ત DNS</string>
   <string name="confirm_dns">VPN સક્રિય નથી</string>
   <string name="confirm_dns_msg">તમે હાલમાં ફક્ત DNS નો ઉપયોગ કરી રહ્યા છો. વધુ સુરક્ષિત અને ખાનગી કનેક્શન માટે, કૃપા કરીને VPN સર્વર પસંદ કરો.</string>
+  <string name="btn_agree">સંમત</string>
+  <string name="confirm_collect">તમારી ગોપનીયતા, તમારું નિયંત્રણ</string>
+  <string name="confirm_accept_msg">તમારા સબ્સ્ક્રિપ્શનને પૂર્ણ કરવા માટે, આ એપ્લિકેશન નોંધણી ચકાસવા, સેવાની ગુણવત્તા વધારવા અને કપટપૂર્ણ પ્રવૃત્તિ અટકાવવા માટે તમારું જાહેરાત ID એકત્રિત કરે છે. શું તમે આ ડેટા સંગ્રહ સાથે સંમત છો?</string>
+  <string name="accept_continue">સ્વીકારો અને ચાલુ રાખો</string>
+  <string name="go_back">પાછળ</string>
+  <string name="leave_anyway">બહાર નીકળો</string>
+  <string name="confirm_accept_msg_1">હેલો, સુપરવીપીએનનો ઉપયોગ કરવા બદલ આભાર.</string>
+  <string name="confirm_accept_msg_2">અમે તમારા કનેક્શનને સરળ અને સુરક્ષિત રાખવા માટે જરૂરી ન્યૂનતમ ડેટા જ એકત્રિત કરીએ છીએ. અહીં ટૂંકું વિશ્લેષણ છે.</string>
+  <string name="confirm_accept_msg_3">જાહેરાત ID: તમારા સબ્સ્ક્રિપ્શન અને VPN નો ઉપયોગ ટ્રૅક કરવામાં મદદ કરે છે.</string>
+  <string name="confirm_accept_msg_4">બસ, બસ. તમારા ઇન્ટરનેટ ટ્રાફિકને ટ્રેક કરવાની જરૂર નથી, તમારો ડેટા વેચવાની જરૂર નથી. અમારી પાસે કોઈ લોગ નીતિ નથી અને અમે ગોપનીયતા કાયદાઓનું પાલન કરીએ છીએ. તમારો ડેટા તમારો જ રહે છે.</string>
+  <string name="exit">શું તમે ખરેખર બહાર નીકળવા માંગો છો?</string>
+  <string name="exit_msg">વપરાશકર્તા ડેટા સુરક્ષા નીતિઓ અનુસાર, અમે તમારી સંમતિ વિના અમારી સેવાઓ પ્રદાન કરી શકતા નથી. શું તમે ખરેખર બહાર નીકળશો?</string>
   <string name="premium_title">VPN ફાસ્ટ એન્ડ સેફ પ્રો</string>
   <string name="premium_sub1">કોઈ જાહેરાતો નહીં</string>
   <string name="premium_sub2">ઝડપી અને સ્થિર ગતિ</string>
@@ -139,7 +151,7 @@
   <string name="status_on">ચાલુ</string>
   <string name="status_off">બંધ</string>
   <string name="dg_vpn_permission_title">સુપર વીપીએન ઓથોરિટી સાથે કનેક્ટ થઈ શકતું નથી</string>
-  <string name="dg_vpn_permission_guide">VPN કનેક્શનને મંજૂરી આપવા માટે “OK” દબાવો.</string>
+  <string name="dg_vpn_permission_guide">VPN કનેક્શનને મંજૂરી આપવા માટે "ઓકે" દબાવો.</string>
   <string name="connection_request">કનેક્શન વિનંતી</string>
   <string name="vpn_des1">SupperVPN એક VPN કનેક્શન સેટ કરવા માટે પરવાનગીની વિનંતી કરી રહ્યું છે જે તેને નેટવર્ક ટ્રાફિકનું નિરીક્ષણ કરવાની મંજૂરી આપશે. જો તમને સ્રોત પર વિશ્વાસ હોય તો જ આને મંજૂરી આપો.</string>
   <string name="vpn_des2">VPN ઉપયોગમાં હશે ત્યારે તમારી સ્ક્રીનની ટોચ પર એક આઇકન દેખાશે. મંજૂરી આપીએ?</string>

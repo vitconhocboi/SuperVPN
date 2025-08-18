@@ -125,6 +125,18 @@
   <string name="dns_only">Kun DNS</string>
   <string name="confirm_dns">VPN ikke aktiv</string>
   <string name="confirm_dns_msg">Du bruker for øyeblikket bare DNS. For en sikrere og mer privat tilkobling, velg en VPN-server.</string>
+  <string name="btn_agree">Enig</string>
+  <string name="confirm_collect">Ditt personvern, din kontroll</string>
+  <string name="confirm_accept_msg">For å fullføre abonnementet ditt samler denne appen inn annonse-ID-en din for å bekrefte registrering, forbedre tjenestekvaliteten og forhindre svindelaktivitet. Samtykker du i denne datainnsamlingen?</string>
+  <string name="accept_continue">Godta og fortsett</string>
+  <string name="go_back">Tilbake</string>
+  <string name="leave_anyway">Gå</string>
+  <string name="confirm_accept_msg_1">Hei, takk for at du bruker SuperVPN</string>
+  <string name="confirm_accept_msg_2">Vi samler bare inn et minimum av data som trengs for å holde forbindelsen din problemfri og sikker. Her er en rask oversikt.</string>
+  <string name="confirm_accept_msg_3">Annonserings-ID: hjelper deg med å spore abonnementet ditt og bruken av VPN.</string>
+  <string name="confirm_accept_msg_4">Det var det. Ingen sporing av internettrafikken din, ingen salg av dataene dine. Vi har ingen loggføringspolicy og følger personvernlover. Dataene dine forblir dine.</string>
+  <string name="exit">Er du sikker på at du vil avslutte?</string>
+  <string name="exit_msg">I henhold til retningslinjene for databeskyttelse kan vi ikke tilby tjenestene våre uten ditt samtykke. Er du sikker på at du vil avslutte?</string>
   <string name="premium_title">VPN Raskt og trygt Pro</string>
   <string name="premium_sub1">Ingen annonser</string>
   <string name="premium_sub2">Rask og stabil hastighet</string>
@@ -139,7 +151,7 @@
   <string name="status_on">PÅ</string>
   <string name="status_off">Av</string>
   <string name="dg_vpn_permission_title">Super VPN kan ikke kobles til autoritet</string>
-  <string name="dg_vpn_permission_guide">Trykk «&lt;b&gt;OK&lt;/b&gt;» for å tillate VPN-tilkoblingen.</string>
+  <string name="dg_vpn_permission_guide">Trykk «OK» for å tillate VPN-tilkoblingen.</string>
   <string name="connection_request">Tilkoblingsforespørsel</string>
   <string name="vpn_des1">SupperVPN ber om tillatelse til å sette opp en VPN-tilkobling som lar den overvåke nettverkstrafikk. Tillat bare dette hvis du stoler på kilden.</string>
   <string name="vpn_des2">Et ikon vil vises øverst på skjermen mens VPN-et er i bruk. Tillate?</string>
