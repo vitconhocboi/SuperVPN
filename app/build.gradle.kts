@@ -183,6 +183,7 @@ dependencies {
     implementation(libs.converter.gson)
     implementation (libs.logging.interceptor)
     implementation (libs.okhttp)
+    implementation(libs.dotsindicator)
 }
 
 // Allow references to generated code

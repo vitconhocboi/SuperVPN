@@ -37,6 +37,7 @@ import com.tici.vpn.proxy.master.main.MainViewModel
 import com.tici.vpn.proxy.master.remoteconfig.AdPlacementId
 import com.simple.libads.NetworkUtils
 import com.simple.libads.setVisible
+import com.tici.vpn.proxy.master.guide.ViewGuide
 import com.tici.vpn.proxy.master.main.SharedData
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
@@ -239,6 +240,9 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
 //        isLocalVpnServiceRunning(requireContext())
         with(binding) {
+            if (BaseAppConfig.isCanShowGuide) {
+                ViewGuide().show(parentFragmentManager, "dialog_guide")
+            }
             ivSelectProxy.scaleX = if (isRTL) -1f else 1f
 
             allowAppViewModel.getAllowApp()

@@ -194,4 +194,8 @@
 
     <string name="free">Free</string>
     <string name="premium">Premium</string>
+
+    <string name="guide_1">Just one touch to connect.</string>
+    <string name="guide_2">Multiple VPN servers in different countries</string>
+    <string name="guide_3">Protect your online privacy</string>
 </resources>
