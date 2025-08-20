@@ -127,21 +127,45 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tap_to_connect"
                 android:fontFamily="@font/inter_normal"
+                android:text="@string/tap_to_connect"
                 android:textColor="#0FDD54"
                 android:textSize="12sp" />
         </LinearLayout>
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/iv_connect"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_status_connection"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:background="@drawable/bg_round">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/turn_on"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                android:id="@+id/iv_connect"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                app:cpb_background_progressbar_color="#646B80"
+                app:cpb_background_progressbar_color_direction="left_to_right"
+                app:cpb_background_progressbar_width="10dp"
+                app:cpb_indeterminate_mode="false"
+                app:cpb_progress_direction="to_right"
+                app:cpb_progressbar_color="#03C343"
+                app:cpb_progressbar_color_direction="right_to_left"
+                app:cpb_progressbar_width="10dp"
+                app:cpb_round_border="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -163,8 +187,8 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/upload"
                     android:fontFamily="@font/inter_normal"
+                    android:text="@string/upload"
                     android:textColor="#FFFFFFFF"
                     android:textSize="12sp" />
 
@@ -198,8 +222,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/size16"
-                    android:text="@string/download"
                     android:fontFamily="@font/inter_normal"
+                    android:text="@string/download"
                     android:textColor="#FFFFFF"
                     android:textSize="12sp" />
 
@@ -213,16 +237,14 @@
             </LinearLayout>
         </LinearLayout>
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@drawable/bg_earth"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@id/pnProxy"
-        app:layout_constraintDimensionRatio="H,1:1"
-        app:layout_constraintTop_toTopOf="parent">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_earth"
+            android:gravity="center"
+            android:orientation="vertical">
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -248,15 +270,15 @@
                 android:id="@+id/ivFlag"
                 android:layout_width="@dimen/size32"
                 android:layout_height="@dimen/size32"
-                android:src="@drawable/flag_us"
                 android:scaleType="centerCrop"
+                android:src="@drawable/flag_us"
                 app:shapeAppearanceOverlay="@style/CircleImageView" />
 
-<!--            <androidx.appcompat.widget.AppCompatImageView-->
-<!--                android:id="@+id/ivFlag"-->
-<!--                android:layout_width="@dimen/size32"-->
-<!--                android:layout_height="@dimen/size32"-->
-<!--                android:src="@drawable/flag_us" />-->
+            <!--            <androidx.appcompat.widget.AppCompatImageView-->
+            <!--                android:id="@+id/ivFlag"-->
+            <!--                android:layout_width="@dimen/size32"-->
+            <!--                android:layout_height="@dimen/size32"-->
+            <!--                android:src="@drawable/flag_us" />-->
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="0dp"
@@ -271,7 +293,7 @@
                     android:layout_marginStart="@dimen/size8"
                     android:fontFamily="@font/inter_bold"
                     android:text="United States"
-                    android:textColor="#ECEFF5"/>
+                    android:textColor="#ECEFF5" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvProxyIp"
@@ -283,7 +305,7 @@
                     android:text="103.23.23.123"
                     android:textColor="#767C8A"
                     android:textSize="@dimen/text_normal"
-                    android:visibility="gone"/>
+                    android:visibility="gone" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
 

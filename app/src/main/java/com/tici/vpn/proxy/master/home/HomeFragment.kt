@@ -257,6 +257,19 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 
             }
 
+            ivConnect.apply {
+                // Set Progress
+                progress = 0f
+                // or with animation
+                setProgressWithAnimation(99f, 10000) // =1s
+
+                // Set Progress Max
+                progressMax = 100f
+                // Other
+                roundBorder = true
+                startAngle = 0f
+            }
+
             ivConnect.setOnClickListener {
                 if (!isConnected) {
                     if (BaseAppConfig.proxy.isNotEmpty()) {
