@@ -11,7 +11,7 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@id/pnProxy"
         app:layout_constraintTop_toTopOf="parent">
@@ -134,18 +134,10 @@
         </LinearLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ivConnectPanel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_round">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/turn_on"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            android:background="@drawable/bg_round_active">
 
             <com.mikhaellopez.circularprogressbar.CircularProgressBar
                 android:id="@+id/iv_connect"
@@ -164,78 +156,87 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/turn_on"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/size40"
-            android:layout_marginTop="@dimen/margin_68">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="@dimen/size40"-->
+<!--            android:layout_marginTop="@dimen/margin_68">-->
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_upload_button" />
+<!--            <androidx.appcompat.widget.AppCompatImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/ic_upload_button" />-->
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/size14"
-                android:orientation="vertical">
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="@dimen/size14"-->
+<!--                android:orientation="vertical">-->
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/inter_normal"
-                    android:text="@string/upload"
-                    android:textColor="#FFFFFFFF"
-                    android:textSize="12sp" />
+<!--                <androidx.appcompat.widget.AppCompatTextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/inter_normal"-->
+<!--                    android:text="@string/upload"-->
+<!--                    android:textColor="#FFFFFFFF"-->
+<!--                    android:textSize="12sp" />-->
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tvTrafficUpload"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="--"
-                    android:textColor="#FFA900"
-                    android:textSize="16sp" />
-            </LinearLayout>
+<!--                <androidx.appcompat.widget.AppCompatTextView-->
+<!--                    android:id="@+id/tvTrafficUpload"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="&#45;&#45;"-->
+<!--                    android:textColor="#FFA900"-->
+<!--                    android:textSize="16sp" />-->
+<!--            </LinearLayout>-->
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+<!--            <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1" />-->
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_download_button" />
+<!--            <androidx.appcompat.widget.AppCompatImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/ic_download_button" />-->
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/size14"
-                android:gravity="start"
-                android:orientation="vertical">
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="@dimen/size14"-->
+<!--                android:gravity="start"-->
+<!--                android:orientation="vertical">-->
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/size16"
-                    android:fontFamily="@font/inter_normal"
-                    android:text="@string/download"
-                    android:textColor="#FFFFFF"
-                    android:textSize="12sp" />
+<!--                <androidx.appcompat.widget.AppCompatTextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginEnd="@dimen/size16"-->
+<!--                    android:fontFamily="@font/inter_normal"-->
+<!--                    android:text="@string/download"-->
+<!--                    android:textColor="#FFFFFF"-->
+<!--                    android:textSize="12sp" />-->
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tvTrafficDownload"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="--"
-                    android:textColor="#3F51B5"
-                    android:textSize="16sp" />
-            </LinearLayout>
-        </LinearLayout>
+<!--                <androidx.appcompat.widget.AppCompatTextView-->
+<!--                    android:id="@+id/tvTrafficDownload"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="&#45;&#45;"-->
+<!--                    android:textColor="#3F51B5"-->
+<!--                    android:textSize="16sp" />-->
+<!--            </LinearLayout>-->
+<!--        </LinearLayout>-->
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
