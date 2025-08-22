@@ -54,9 +54,6 @@ class ViewGuide : BindingSheetDialog<FragmentViewGuideBinding>() {
             } else {
                 ivBack.rotationY = 180f
             }
-            if (!BaseAppConfig.isSub) {
-                initLoadAds(frameAds)
-            }
         }
         BaseAppConfig.isCanShowGuide = false
     }

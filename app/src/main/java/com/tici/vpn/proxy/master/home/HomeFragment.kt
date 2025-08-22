@@ -193,23 +193,23 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 
     var currentProxy: ProxySpeedTest.ProxyConfig? = null
 
-    private val speedTestRunnable = object : Runnable {
-        override fun run() {
-            if (BaseAppConfig.proxy.isNotEmpty()) {
-                ProxySpeedTest.Instance.startSpeedTest(currentProxy,
-                    callback = { download, upload ->
-                        try {
-                            if (ProxySpeedTest.FAILED != download) binding.tvTrafficDownload.text =
-                                download
-                            if (ProxySpeedTest.FAILED != upload) binding.tvTrafficUpload.text =
-                                upload
-                        } catch (e: Exception) {
-                        }
-                    })
-            }
-            handler.postDelayed(this, INTERVAL)
-        }
-    }
+//    private val speedTestRunnable = object : Runnable {
+//        override fun run() {
+//            if (BaseAppConfig.proxy.isNotEmpty()) {
+//                ProxySpeedTest.Instance.startSpeedTest(currentProxy,
+//                    callback = { download, upload ->
+//                        try {
+//                            if (ProxySpeedTest.FAILED != download) binding.tvTrafficDownload.text =
+//                                download
+//                            if (ProxySpeedTest.FAILED != upload) binding.tvTrafficUpload.text =
+//                                upload
+//                        } catch (e: Exception) {
+//                        }
+//                    })
+//            }
+//            handler.postDelayed(this, INTERVAL)
+//        }
+//    }
 
 //    @SuppressLint("DefaultLocale")
 //    fun formatBytes(bytes: Int): String {
@@ -273,7 +273,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                         binding.ivConnectPanel.background = ResourcesCompat.getDrawable(
                             resources, R.drawable.bg_round_active, null
                         )
-                    }else if(progress == 0f){
+                    } else if (progress == 0f) {
                         binding.ivConnectPanel.background = ResourcesCompat.getDrawable(
                             resources, R.drawable.bg_round, null
                         )
@@ -323,6 +323,10 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                     })
             }
 
+            ivIpInfo.setOnClickListener {
+                Navigator.startProxyInfoActivity(requireContext(), null)
+            }
+
             SharedData.isSub.observe(viewLifecycleOwner) { it ->
 //                Log.i("SuperVpn", "TestRelease isSub home_fragment $it")
                 if (it == false) {
@@ -368,8 +372,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                         ivFlag.setImageResource(Utils.getFlag(BaseAppConfig.proxyCountry))
                         tvProxyLocation.text =
                             requireContext().safeGetString(BaseAppConfig.proxyCountry)
-                        engine.Engine.decodeString(BaseAppConfig.proxy).split(":")
-                            .let { parts ->
+                        engine.Engine.decodeString(BaseAppConfig.proxy).split(":").let { parts ->
                                 if (parts.size >= 2) {
                                     BaseAppConfig.proxyHost = parts[1]
                                     currentProxy = ProxySpeedTest.ProxyConfig(
@@ -453,7 +456,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 vpnPermissionLauncher.launch(intent)
             } else {
                 startVpnService()
-                handler.post(speedTestRunnable)
+//                handler.post(speedTestRunnable)
             }
         } else {
             Toast.makeText(
@@ -465,7 +468,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     override fun onStart() {
         super.onStart()
         if (LocalVpnService.IsRunning) {
-            handler.post(speedTestRunnable)
+//            handler.post(speedTestRunnable)
         }
         isLocalVpnServiceRunning(requireContext())
     }
@@ -476,18 +479,18 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 
     override fun onStop() {
         super.onStop()
-        handler.removeCallbacks(speedTestRunnable)
+//        handler.removeCallbacks(speedTestRunnable)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        handler.removeCallbacks(speedTestRunnable)
+//        handler.removeCallbacks(speedTestRunnable)
     }
 
     fun stopSpeedTest() {
-        binding.tvTrafficDownload.text = "--"
-        binding.tvTrafficUpload.text = "--"
-        handler.removeCallbacks(speedTestRunnable)
+//        binding.tvTrafficDownload.text = "--"
+//        binding.tvTrafficUpload.text = "--"
+//        handler.removeCallbacks(speedTestRunnable)
         ProxySpeedTest.Instance.stopProxyTest()
     }
 
@@ -516,8 +519,8 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         try {
             proxyViewModel.updateUI(DISCONNECTING)
             proxyViewModel.stopProxy(mainViewModel.getDeviceId(requireContext()), context)
-            binding.tvTrafficDownload.text = "--"
-            binding.tvTrafficUpload.text = "--"
+//            binding.tvTrafficDownload.text = "--"
+//            binding.tvTrafficUpload.text = "--"
         } catch (e: Exception) {
             Timber.e(e, "VPN Error stopping VPN service")
         }

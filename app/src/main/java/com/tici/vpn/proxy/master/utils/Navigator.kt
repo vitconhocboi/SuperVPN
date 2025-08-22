@@ -7,6 +7,7 @@ import com.tici.vpn.proxy.master.main.MainActivity
 import com.tici.vpn.proxy.master.proxy.ProxyActivity
 import com.tici.vpn.proxy.master.premium.PremiumActivity
 import com.tici.vpn.proxy.DNSActivity
+import com.tici.vpn.proxy.master.ipinfo.IpInfoActivity
 
 object Navigator {
 
@@ -34,5 +35,11 @@ object Navigator {
 
     fun startDnsActivity(context: Context) {
         context.startActivity(Intent(context, DNSActivity::class.java))
+    }
+
+    fun startProxyInfoActivity(context: Context, proxyId: String?) {
+        context.startActivity(Intent(context, IpInfoActivity::class.java).apply {
+            putExtra("ID", proxyId)
+        })
     }
 }

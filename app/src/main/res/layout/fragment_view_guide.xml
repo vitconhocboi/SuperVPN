@@ -49,9 +49,9 @@
             android:textColor="@color/successColor" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <com.simple.libads.FrameAds
-        android:id="@+id/frameAds"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent" />
+<!--    <com.simple.libads.FrameAds-->
+<!--        android:id="@+id/frameAds"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

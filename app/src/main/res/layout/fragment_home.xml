@@ -11,6 +11,7 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="@dimen/size60"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@id/pnProxy"
@@ -137,7 +138,7 @@
             android:id="@+id/ivConnectPanel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_round_active">
+            android:background="@drawable/bg_round">
 
             <com.mikhaellopez.circularprogressbar.CircularProgressBar
                 android:id="@+id/iv_connect"
@@ -168,75 +169,75 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginHorizontal="@dimen/size40"-->
-<!--            android:layout_marginTop="@dimen/margin_68">-->
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginHorizontal="@dimen/size40"-->
+        <!--            android:layout_marginTop="@dimen/margin_68">-->
 
-<!--            <androidx.appcompat.widget.AppCompatImageView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:src="@drawable/ic_upload_button" />-->
+        <!--            <androidx.appcompat.widget.AppCompatImageView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:src="@drawable/ic_upload_button" />-->
 
-<!--            <LinearLayout-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="@dimen/size14"-->
-<!--                android:orientation="vertical">-->
+        <!--            <LinearLayout-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginStart="@dimen/size14"-->
+        <!--                android:orientation="vertical">-->
 
-<!--                <androidx.appcompat.widget.AppCompatTextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:fontFamily="@font/inter_normal"-->
-<!--                    android:text="@string/upload"-->
-<!--                    android:textColor="#FFFFFFFF"-->
-<!--                    android:textSize="12sp" />-->
+        <!--                <androidx.appcompat.widget.AppCompatTextView-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:fontFamily="@font/inter_normal"-->
+        <!--                    android:text="@string/upload"-->
+        <!--                    android:textColor="#FFFFFFFF"-->
+        <!--                    android:textSize="12sp" />-->
 
-<!--                <androidx.appcompat.widget.AppCompatTextView-->
-<!--                    android:id="@+id/tvTrafficUpload"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="&#45;&#45;"-->
-<!--                    android:textColor="#FFA900"-->
-<!--                    android:textSize="16sp" />-->
-<!--            </LinearLayout>-->
+        <!--                <androidx.appcompat.widget.AppCompatTextView-->
+        <!--                    android:id="@+id/tvTrafficUpload"-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:text="&#45;&#45;"-->
+        <!--                    android:textColor="#FFA900"-->
+        <!--                    android:textSize="16sp" />-->
+        <!--            </LinearLayout>-->
 
-<!--            <LinearLayout-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_weight="1" />-->
+        <!--            <LinearLayout-->
+        <!--                android:layout_width="0dp"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_weight="1" />-->
 
-<!--            <androidx.appcompat.widget.AppCompatImageView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:src="@drawable/ic_download_button" />-->
+        <!--            <androidx.appcompat.widget.AppCompatImageView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:src="@drawable/ic_download_button" />-->
 
-<!--            <LinearLayout-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="@dimen/size14"-->
-<!--                android:gravity="start"-->
-<!--                android:orientation="vertical">-->
+        <!--            <LinearLayout-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginStart="@dimen/size14"-->
+        <!--                android:gravity="start"-->
+        <!--                android:orientation="vertical">-->
 
-<!--                <androidx.appcompat.widget.AppCompatTextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginEnd="@dimen/size16"-->
-<!--                    android:fontFamily="@font/inter_normal"-->
-<!--                    android:text="@string/download"-->
-<!--                    android:textColor="#FFFFFF"-->
-<!--                    android:textSize="12sp" />-->
+        <!--                <androidx.appcompat.widget.AppCompatTextView-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_marginEnd="@dimen/size16"-->
+        <!--                    android:fontFamily="@font/inter_normal"-->
+        <!--                    android:text="@string/download"-->
+        <!--                    android:textColor="#FFFFFF"-->
+        <!--                    android:textSize="12sp" />-->
 
-<!--                <androidx.appcompat.widget.AppCompatTextView-->
-<!--                    android:id="@+id/tvTrafficDownload"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="&#45;&#45;"-->
-<!--                    android:textColor="#3F51B5"-->
-<!--                    android:textSize="16sp" />-->
-<!--            </LinearLayout>-->
-<!--        </LinearLayout>-->
+        <!--                <androidx.appcompat.widget.AppCompatTextView-->
+        <!--                    android:id="@+id/tvTrafficDownload"-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:text="&#45;&#45;"-->
+        <!--                    android:textColor="#3F51B5"-->
+        <!--                    android:textSize="16sp" />-->
+        <!--            </LinearLayout>-->
+        <!--        </LinearLayout>-->
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -253,16 +254,53 @@
         android:id="@+id/pnProxy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/size16"
-        android:layout_marginBottom="@dimen/size16"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/pn_ip_info"
+            android:layout_marginHorizontal="@dimen/size16"
+            android:layout_marginBottom="@dimen/size16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_setting_pro2"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/size12">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivLoc"
+                android:layout_width="@dimen/size32"
+                android:layout_height="@dimen/size32"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_location"
+                app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWhatisMyIp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size8"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/what_is_my_ip"
+                android:textColor="#ECEFF5" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivIpInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size16"
+                android:layout_marginRight="@dimen/size16"
+                android:src="@drawable/ic_next_arrow" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/pn_select_proxy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_setting_pro2"
+            android:background="#232836"
             android:gravity="center"
             android:orientation="horizontal"
             android:padding="@dimen/size12">
@@ -315,7 +353,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/size16"
-                android:layout_marginRight="@dimen/size16"
+                android:layout_marginRight="@dimen/size12"
                 android:src="@drawable/ic_next_arrow" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>

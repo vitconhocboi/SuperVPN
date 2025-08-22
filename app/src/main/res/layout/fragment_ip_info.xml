@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/proxyActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/size16"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/size16"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:src="@drawable/back" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size16"
+            android:layout_weight="1"
+            android:fontFamily="@font/inter_normal"
+            android:text="@string/what_is_my_ip"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/text_medium" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/pnProxy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/proxyActionBar">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/pn_ip_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/size16"
+            android:layout_marginTop="@dimen/size12"
+            android:background="@drawable/bg_ip_info"
+            android:gravity="top"
+            android:orientation="vertical"
+            android:padding="@dimen/size12">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivIpAddress"
+                    android:layout_width="@dimen/size32"
+                    android:layout_height="@dimen/size32"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_address_ip"
+                    app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size10"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size32"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_normal"
+                        android:gravity="center_vertical"
+                        android:text="@string/ip_address"
+                        android:textColor="#70788F" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvIpAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size32"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_normal"
+                        android:gravity="center_vertical"
+                        android:text="10.10.10.10"
+                        android:textColor="#ECEFF5" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivNetwork"
+                    android:layout_width="@dimen/size32"
+                    android:layout_height="@dimen/size32"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_network_provider"
+                    app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size10"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size32"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_normal"
+                        android:gravity="center_vertical"
+                        android:text="@string/network_provider"
+                        android:textColor="#70788F" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvNetworkProvider"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size32"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_normal"
+                        android:gravity="center_vertical"
+                        android:text="FPT Telecom Company"
+                        android:textColor="#ECEFF5" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivLoc"
+                    android:layout_width="@dimen/size32"
+                    android:layout_height="@dimen/size32"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_location_2"
+                    app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size10"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size32"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_normal"
+                        android:gravity="center_vertical"
+                        android:text="@string/location"
+                        android:textColor="#70788F" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size32"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_normal"
+                        android:gravity="center_vertical"
+                        android:text="Ha Noi, Viet Nam"
+                        android:textColor="#ECEFF5" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivPincode"
+                    android:layout_width="@dimen/size32"
+                    android:layout_height="@dimen/size32"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_pincode"
+                    app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size10"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size32"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_normal"
+                        android:gravity="center_vertical"
+                        android:text="@string/pincode"
+                        android:textColor="#70788F" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPincode"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size32"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_normal"
+                        android:gravity="center_vertical"
+                        android:text="100000"
+                        android:textColor="#ECEFF5" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivTimeZone"
+                    android:layout_width="@dimen/size32"
+                    android:layout_height="@dimen/size32"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_clock_timezone"
+                    app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size10"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size32"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_normal"
+                        android:gravity="center_vertical"
+                        android:text="@string/timezone"
+                        android:textColor="#70788F" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTimeZone"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size32"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_normal"
+                        android:gravity="center_vertical"
+                        android:text="asia/ho_chi_minh"
+                        android:textColor="#ECEFF5" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
