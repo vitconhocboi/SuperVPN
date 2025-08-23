@@ -315,7 +315,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 //                }
 //            }
 
-            pnProxy.setOnClickListener {
+            pnSelectProxy.setOnClickListener {
                 showInterAds(placementId = AdPlacementId.INTER_ART_HOME,
                     impressedCallBack = {},
                     showCallBack = {
@@ -323,8 +323,8 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                     })
             }
 
-            ivIpInfo.setOnClickListener {
-                Navigator.startProxyInfoActivity(requireContext(), null)
+            pnIpInfo.setOnClickListener {
+                Navigator.startProxyInfoActivity(requireContext(), currentProxy)
             }
 
             SharedData.isSub.observe(viewLifecycleOwner) { it ->
@@ -373,19 +373,19 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                         tvProxyLocation.text =
                             requireContext().safeGetString(BaseAppConfig.proxyCountry)
                         engine.Engine.decodeString(BaseAppConfig.proxy).split(":").let { parts ->
-                                if (parts.size >= 2) {
-                                    BaseAppConfig.proxyHost = parts[1]
-                                    currentProxy = ProxySpeedTest.ProxyConfig(
-                                        host = parts[1],
-                                        port = parts[2].toInt(),
-                                        username = parts.getOrNull(3) ?: "",
-                                        password = parts.getOrNull(4) ?: "",
-                                        type = parts.getOrNull(0) ?: "http"
-                                    )
-                                } else {
-                                    currentProxy = null
-                                }
+                            if (parts.size >= 2) {
+                                BaseAppConfig.proxyHost = parts[1]
+                                currentProxy = ProxySpeedTest.ProxyConfig(
+                                    host = parts[1],
+                                    port = parts[2].toInt(),
+                                    username = parts.getOrNull(3) ?: "",
+                                    password = parts.getOrNull(4) ?: "",
+                                    type = parts.getOrNull(0) ?: "http"
+                                )
+                            } else {
+                                currentProxy = null
                             }
+                        }
 
                         tvProxyIp.setVisible(true)
 //                        Log.i("SuperVpn", "TestRelease update text ${currentProxy?.host}")

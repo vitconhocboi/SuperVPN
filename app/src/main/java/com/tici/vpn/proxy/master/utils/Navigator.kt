@@ -8,6 +8,7 @@ import com.tici.vpn.proxy.master.proxy.ProxyActivity
 import com.tici.vpn.proxy.master.premium.PremiumActivity
 import com.tici.vpn.proxy.DNSActivity
 import com.tici.vpn.proxy.master.ipinfo.IpInfoActivity
+import com.tici.vpn.proxy.master.network.ProxySpeedTest.ProxyConfig
 
 object Navigator {
 
@@ -37,9 +38,9 @@ object Navigator {
         context.startActivity(Intent(context, DNSActivity::class.java))
     }
 
-    fun startProxyInfoActivity(context: Context, proxyId: String?) {
+    fun startProxyInfoActivity(context: Context, proxy: ProxyConfig?) {
         context.startActivity(Intent(context, IpInfoActivity::class.java).apply {
-            putExtra("ID", proxyId)
+            putExtra("Proxy", proxy)
         })
     }
 }
