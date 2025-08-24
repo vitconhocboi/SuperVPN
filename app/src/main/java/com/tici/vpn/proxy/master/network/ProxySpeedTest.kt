@@ -10,6 +10,7 @@ import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.Response
 import okhttp3.Route
 import timber.log.Timber
+import java.io.Serializable
 import java.net.Authenticator
 import java.net.InetSocketAddress
 import java.net.PasswordAuthentication
@@ -35,16 +36,19 @@ class ProxySpeedTest {
     private var testProxyTask: TestProxyTask? = null
 
     // SOCKS5 proxy configuration with authentication
-    data class ProxyConfig (
+    data class ProxyConfig(
         val host: String,
         val port: Int,
         val username: String,
         val password: String,
         val type: String
-    )
+    ) : Serializable
 
     // Test SOCKS5 proxy download and upload speeds
-    fun startSpeedTest(proxyConfig: ProxyConfig?, callback: (download: String, upload: String) -> Unit) {
+    fun startSpeedTest(
+        proxyConfig: ProxyConfig?,
+        callback: (download: String, upload: String) -> Unit
+    ) {
         testProxyTask = TestProxyTask(proxyConfig, callback)
         testProxyTask?.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR)
     }

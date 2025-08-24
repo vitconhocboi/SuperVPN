@@ -201,4 +201,14 @@
     <string name="unlock_premium">Unlock VPN Premium</string>
     <string name="get_premium">Get Premium</string>
     <string name="watch_ads">Watch ads to Connect</string>
+
+    <string name="guide_1">Just one touch to connect.</string>
+    <string name="guide_2">Multiple VPN servers in different countries</string>
+    <string name="guide_3">Protect your online privacy</string>
+    <string name="what_is_my_ip">What is my ip?</string>
+    <string name="ip_address">IP address</string>
+    <string name="network_provider">Network provider</string>
+    <string name="location">Location</string>
+    <string name="pincode">Pin code</string>
+    <string name="timezone">Time zone</string>
 </resources>

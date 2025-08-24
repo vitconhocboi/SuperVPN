@@ -3,6 +3,7 @@ package com.common.baseui
 object BaseAppConfig {
     private const val KEY_LANGUAGE_CODE = "LANGUAGE_CODE"
     private const val KEY_FIRST_TIME_SETUP = "KEY_FIRST_TIME_SETUP"
+    const val CAN_SHOW_GUIDE = "can_show_guide"
 
     var languageCode: String
         get() = SharedPrefs.instance[KEY_LANGUAGE_CODE, String::class.java, ""]
@@ -11,6 +12,12 @@ object BaseAppConfig {
         }
 
     var firstTimeSetup: Boolean
+        get() = SharedPrefs.instance[CAN_SHOW_GUIDE, Boolean::class.java, true]
+        set(value) {
+            SharedPrefs.instance.put(CAN_SHOW_GUIDE, value)
+        }
+
+    var isCanShowGuide: Boolean
         get() = SharedPrefs.instance[KEY_FIRST_TIME_SETUP, Boolean::class.java, true]
         set(value) {
             SharedPrefs.instance.put(KEY_FIRST_TIME_SETUP, value)
