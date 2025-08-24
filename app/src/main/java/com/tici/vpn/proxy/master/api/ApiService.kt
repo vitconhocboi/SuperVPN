@@ -25,6 +25,9 @@ interface ApiService {
         @Query("type") type: String
     ): Response<CountriesResponse>
 
+    @GET("get-countries-v2")
+    suspend fun getCountriesV2(): Response<CountriesResponseV2>
+
     @GET("get-dns")
     suspend fun getDns(): Response<DnsResponse>
 }
@@ -62,6 +65,17 @@ data class DisconnectResponse(
 data class CountriesResponse(
     @SerializedName("countries") val countries: List<String>,
     @SerializedName("error") val error: String?
+)
+
+data class CountriesResponseV2(
+    @SerializedName("countries") val countries: List<Country>,
+    @SerializedName("error") val error: String?
+)
+
+data class Country(
+    @SerializedName("country") val name: String,
+    @SerializedName("is_quick_access") val is_quick_access: Int,
+    @SerializedName("type") val type: String,
 )
 
 data class DnsDB(

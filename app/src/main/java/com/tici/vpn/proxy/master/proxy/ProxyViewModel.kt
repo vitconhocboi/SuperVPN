@@ -13,6 +13,7 @@ import com.google.firebase.crashlytics.internal.model.CrashlyticsReport.Session.
 import com.tici.vpn.proxy.master.api.ApiService
 import com.tici.vpn.proxy.master.api.AssignProxyResponse
 import com.tici.vpn.proxy.master.api.CountriesResponse
+import com.tici.vpn.proxy.master.api.CountriesResponseV2
 import com.tici.vpn.proxy.master.api.DisconnectRequest
 import com.tici.vpn.proxy.master.api.DisconnectResponse
 import com.tici.vpn.proxy.master.api.ProxyRequest
@@ -69,18 +70,23 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
 //                    }
 //                }
 
-                val result = getCountriesSafe(type)
+//                val result = getCountriesSafe(type)
+                val result = getCountriesV2Safe()
                 result
                     .onSuccess { countriesResponse ->
                         val listProxies = countriesResponse.countries.map { country ->
                             ProxyGroupUI(
-                                country = country, active = country == BaseAppConfig.proxyCountry
+                                country = country.name,
+                                active = country.name == BaseAppConfig.proxyCountry,
+//                                isQuickAccess = country.is_quick_access == 1,
+                                type = country.type
                             )
                         }
                         allFreeProxy.emit(ResultData.Companion.success(listProxies))
                     }
                     .onFailure { error ->
 //                        throw Exception("Failed to get countries: $error")
+                        Timber.d("isError getCountriesV2Safe $isError")
                         isError.postValue(true)
                     }
             } catch (e: Exception) {
@@ -94,6 +100,7 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
     fun getAllPremiumProxy(context: Context, type: String) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
+                Timber.d("load countries start")
 //                val response = apiService.getCountries(type)
 //                if (response.isSuccessful) {
 //                    response.body()?.let { countriesResponse ->
@@ -106,18 +113,24 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
 //                    }
 //                }
 
-                val result = getCountriesSafe(type)
+                val result = getCountriesV2Safe()
                 result
                     .onSuccess { countriesResponse ->
+                        Timber.d("load countries success size ${countriesResponse.countries.size}")
                         val listProxies = countriesResponse.countries.map { country ->
                             ProxyGroupUI(
-                                country = country, active = country == BaseAppConfig.proxyCountry
+                                country = country.name,
+                                active = country.name == BaseAppConfig.proxyCountry,
+//                                isQuickAccess = country.is_quick_access == 1,
+                                type = country.type
                             )
                         }
+                        Timber.d("load countries success size emit ${countriesResponse.countries.size}")
                         allPremiumProxy.emit(ResultData.Companion.success(listProxies))
                     }
                     .onFailure { error ->
 //                        throw Exception("Failed to get countries: $error")
+                        Timber.d("isError getCountriesV2Safe $isError")
                         isError.postValue(true)
                     }
 
@@ -132,6 +145,32 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
     suspend fun getCountriesSafe(type: String): Result<CountriesResponse> {
         return try {
             val response = apiService.getCountries(type)
+            if (response.isSuccessful) {
+                val body = response.body()
+                if (body != null) {
+                    Result.success(body)
+                } else {
+                    Result.failure(Exception("Empty response from server"))
+                }
+            } else {
+                Result.failure(Exception("Server error: ${response.code()}"))
+            }
+        } catch (e: SSLHandshakeException) {
+            Result.failure(Exception("SSL Handshake failed"))
+        } catch (e: SocketTimeoutException) {
+            Result.failure(Exception("Connection timed out. Please try again later."))
+        } catch (e: UnknownHostException) {
+            Result.failure(Exception("No internet connection or DNS resolution failed"))
+        } catch (e: IOException) {
+            Result.failure(Exception("Network I/O error occurred"))
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
+
+    suspend fun getCountriesV2Safe(): Result<CountriesResponseV2> {
+        return try {
+            val response = apiService.getCountriesV2()
             if (response.isSuccessful) {
                 val body = response.body()
                 if (body != null) {
@@ -173,7 +212,9 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
     }
 
     suspend fun setActiveProxy(item: ProxyGroupUI?, deviceId: String?, type: String) {
+        Timber.d("click country item setActiveProxy")
         if (item != null && deviceId != null) {
+            Timber.d("click country item setActiveProxy assign ${item.country}")
             BaseAppConfig.proxyCountry = item.country
 
             val request = ProxyRequest(user_id = deviceId, country = item.country, type = type)
@@ -194,9 +235,11 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
             result
                 .onSuccess { assignResponse ->
                     BaseAppConfig.proxy = assignResponse.proxy
+                    addLastUsedVpn(item.country)
                 }
                 .onFailure { error ->
 //                    throw Exception("Failed to assign proxy: $error")
+                    Timber.d("isError assignProxySafe $isError")
                     isError.postValue(true)
                 }
         } else {
@@ -247,6 +290,7 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
                     }
                     .onFailure { error ->
 //                        throw Exception("Failed to assign proxy: $error")
+                        Timber.d("isError connectSafe $isError")
                         isError.postValue(true)
                     }
 
@@ -285,6 +329,7 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
                     }
                     .onFailure { error ->
 //                        throw Exception("Failed to assign proxy: $error")
+                        Timber.d("isError connectSafe stopProxy $isError")
                         isError.postValue(true)
                     }
             }
@@ -365,5 +410,25 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
         } catch (e: Exception) {
             Result.failure(e)
         }
+    }
+
+    fun addLastUsedVpn(country: String) {
+        val current = BaseAppConfig.lastUsedVpn
+        val items = current.split("|").filter { it.isNotEmpty() }.toMutableList()
+
+        // maintain uniqueness and order
+        items.remove(country)
+        items.add(0, country)
+
+        if (items.size > 3) {
+            items.subList(3, items.size).clear()
+        }
+
+        BaseAppConfig.lastUsedVpn = items.joinToString("|")
+    }
+
+    fun getLastUsedVpn(): List<String> {
+        val current = BaseAppConfig.lastUsedVpn
+        return current.split("|").filter { it.isNotEmpty() }
     }
 }

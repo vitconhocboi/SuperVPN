@@ -15,6 +15,8 @@ import com.common.baseui.ResultData
 import com.common.baseui.extension.bindFlowCreate
 import com.common.baseui.extension.setVisible
 import com.tici.vpn.proxy.master.databinding.FragmentProxyBinding
+import com.tici.vpn.proxy.master.dialog.DialogRateComplete
+import com.tici.vpn.proxy.master.dialog.UnlockDialog
 import com.tici.vpn.proxy.master.main.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -26,6 +28,9 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
 
     @Inject
     lateinit var mPagerAdapter: ProxyGroupAdapter
+
+    @Inject
+    lateinit var mQuickAccessAdapter: ProxyGroupAdapter
 
     private val mProxyViewModel: ProxyViewModel by viewModels()
     private val mainViewModel: MainViewModel by viewModels()
@@ -51,7 +56,9 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
         with(binding) {
             ivBack.scaleX = if (isRTL) -1f else 1f
             rcvGroupProxy.adapter = mPagerAdapter
-//            Log.i("TestRelease", "getAllPremiumProxy mProxyViewModel")
+
+            rcvQuickAccess.adapter = mQuickAccessAdapter
+
             mProxyViewModel.getAllPremiumProxy(requireContext(), PREMIUM)
             bindFlowCreate(mProxyViewModel.allPremiumProxy) { result ->
                 when (result.status) {
@@ -67,6 +74,12 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
                         val data = result.data ?: arrayListOf()
                         if (data.isNotEmpty()) {
                             mPagerAdapter.updateData(data)
+                            if (mProxyViewModel.getLastUsedVpn().isNotEmpty()) {
+                                tvQuickAccess.visibility = View.VISIBLE
+                                mQuickAccessAdapter.updateData(data.filter { mProxyViewModel.getLastUsedVpn().contains(it.country) })
+                            } else {
+                                tvQuickAccess.visibility = View.GONE
+                            }
                             progress.setVisible(false)
                         }
                     }
@@ -82,13 +95,13 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
                 }
             }
 
-            mPagerAdapter.onItemClick = { _, item ->
+            mQuickAccessAdapter.onItemClick = { _, item ->
                 try {
                     lifecycleScope.launch {
                         if (!selected) {
-                            if (mainViewModel.isSub()) {
+                            if (item.type == "free" || mainViewModel.isSub()) {
                                 selected = true
-                                mPagerAdapter.notifyDataSetChanged()
+                                mQuickAccessAdapter.notifyDataSetChanged()
                                 val deviceId = mainViewModel.getDeviceId(requireContext())
                                 val reconnect =
                                     if (item.country != BaseAppConfig.proxyCountry || !item.active) "RECONNECT" else ""
@@ -97,9 +110,9 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
                                 }
                                 try {
                                     if (item.active) {
-                                        mProxyViewModel.setActiveProxy(item, deviceId, PREMIUM)
+                                        mProxyViewModel.setActiveProxy(item, deviceId, item.type)
                                     } else {
-                                        mProxyViewModel.setActiveProxy(null, deviceId, PREMIUM)
+                                        mProxyViewModel.setActiveProxy(null, deviceId, item.type)
                                     }
                                     requireActivity().finish()
                                     Navigator.startMainActivity(requireContext(), "POPUP")
@@ -113,7 +126,61 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
                                 }
                                 selected = false
                             } else {
-                                Navigator.startPremiumActivity(requireContext())
+//                                Navigator.startPremiumActivity(requireContext())
+                                UnlockDialog(data = item).show(parentFragmentManager, "unlock_dialog")
+                            }
+                        } else {
+                            item.active = false
+                        }
+                    }
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                    Toast.makeText(
+                        requireContext(),
+                        "Cannot get proxy: ${e.message}",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+
+            }
+
+            mPagerAdapter.onItemClick = { _, item ->
+                try {
+                    lifecycleScope.launch {
+                        Timber.d("click country item 1 item country ${item.country}")
+                        if (!selected) {
+                            Timber.d("click country item 1 1")
+                            if (item.type == "free" || mainViewModel.isSub()) {
+                                Timber.d("click country item 2 ${BaseAppConfig.proxyCountry} ${item.country}")
+                                selected = true
+                                mPagerAdapter.notifyDataSetChanged()
+                                val deviceId = mainViewModel.getDeviceId(requireContext())
+                                val reconnect =
+                                    if (item.country != BaseAppConfig.proxyCountry || !item.active) "RECONNECT" else ""
+                                if (item.country == BaseAppConfig.proxyCountry) {
+                                    item.active = false
+                                }
+                                try {
+                                    Timber.d("click country item 2 ${BaseAppConfig.proxyCountry} ${item.country} ${item.active}")
+                                    if (item.active) {
+                                        mProxyViewModel.setActiveProxy(item, deviceId, item.type)
+                                    } else {
+                                        mProxyViewModel.setActiveProxy(null, deviceId, item.type)
+                                    }
+                                    requireActivity().finish()
+                                    Navigator.startMainActivity(requireContext(), "POPUP")
+                                } catch (e: Exception) {
+                                    e.printStackTrace()
+                                    Toast.makeText(
+                                        requireContext(),
+                                        "An error occur. Please try again",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
+                                selected = false
+                            } else {
+//                                Navigator.startPremiumActivity(requireContext())
+                                UnlockDialog(data = item).show(parentFragmentManager, "unlock_dialog")
                             }
                         } else {
                             item.active = false
@@ -136,8 +203,9 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
         }
 
         mProxyViewModel.isError.observe(viewLifecycleOwner) { isError ->
+            Timber.d("isError PremiumFragment $isError")
             if (isError == true) {
-                Toast.makeText(requireContext(), "Connection error. Please try again.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Connection error PremiumFragment. Please try again.", Toast.LENGTH_SHORT).show()
             }
         }
     }

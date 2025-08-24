@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_feedback_complete"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/pnTitle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_big"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/unlock_premium"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_large" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:src="@drawable/ic_close_x" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/pnContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/size16"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pnTitle">
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/pnGroupProxy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/unlock_item_background"
+            android:gravity="center_vertical"
+            android:padding="@dimen/size16">
+
+            <com.common.baseui.view.roundimage.RoundedImageView
+                android:id="@+id/ivFlag"
+                android:layout_width="@dimen/size24"
+                android:layout_height="@dimen/size24"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/size16"
+                android:layout_marginEnd="@dimen/size16"
+                android:scaleType="centerCrop"
+                android:src="@drawable/flag_us"
+                app:riv_oval="true" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/countryTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_bold"
+                android:gravity="center_vertical"
+                android:text="@string/us"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_normal" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icCrown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_big"
+                android:foreground="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_crown" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size16"
+            android:background="@drawable/unlock_bg"
+            android:gravity="center"
+            android:padding="@dimen/size16">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnGetPremium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableStart="@drawable/ic_white_crown"
+                android:drawablePadding="@dimen/margin_big"
+                android:text="@string/get_premium"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/white" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size16"
+            android:layout_marginBottom="@dimen/size24"
+            android:background="@drawable/unlock_watch_video_background"
+            android:gravity="center"
+            android:padding="@dimen/size16">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnWatchVideo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableStart="@drawable/ic_watch_video"
+                android:drawablePadding="@dimen/margin_big"
+                android:text="@string/watch_ads"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/text_color" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

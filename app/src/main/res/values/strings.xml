@@ -16,6 +16,10 @@
     <string name="setting_trial">Free trial 3 days</string>
     <string name="setting_upgrade">Upgrade</string>
     <string name="ip_proxy">Servers</string>
+
+    <string name="ip_quick_access">Quick Access</string>
+    <string name="ip_all">All</string>
+
     <string name="setting_app_proxy">App Filter</string>
     <string name="setting_app_proxy_desc">Choose which apps will connect to the Internet through VPN</string>
     <string name="setting_ads_block">Ads block</string>
@@ -194,4 +198,7 @@
 
     <string name="free">Free</string>
     <string name="premium">Premium</string>
+    <string name="unlock_premium">Unlock VPN Premium</string>
+    <string name="get_premium">Get Premium</string>
+    <string name="watch_ads">Watch ads to Connect</string>
 </resources>

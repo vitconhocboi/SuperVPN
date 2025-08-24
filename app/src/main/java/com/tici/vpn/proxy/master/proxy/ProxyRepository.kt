@@ -72,25 +72,18 @@ class ProxyRepository @Inject constructor(private val database: VpnDatabase) : P
         ),
     )
 
-    override fun getAllProxy(): Flow<ResultData<List<ProxyGroupUI>>> = flow {
-        var cached = database.proxyDAO().getAll()
-        if (cached.isNullOrEmpty()) {
-            database.proxyDAO().insertAll(list.map { it.mapToDB() })
-            cached = database.proxyDAO().getAll()
-        }
-        val group = cached.groupBy { it.country }.map {
-            ProxyGroupUI(it.key, it.value.find { it.active } != null, it.value.map { it.mapToUI() })
-        }
-
-//        val activeGroup = group.find(ProxyGroupUI::collapsed)
-//        if (activeGroup != null) {
-//            activeGroup.collapsed = true
-//        } else {
-//            group.first().collapsed = true
+//    override fun getAllProxy(): Flow<ResultData<List<ProxyGroupUI>>> = flow {
+//        var cached = database.proxyDAO().getAll()
+//        if (cached.isNullOrEmpty()) {
+//            database.proxyDAO().insertAll(list.map { it.mapToDB() })
+//            cached = database.proxyDAO().getAll()
 //        }
-
-        emit(ResultData.success(group))
-    }
+//        val group = cached.groupBy { it.country }.map {
+//            ProxyGroupUI(it.key, it.value.find { it.active } != null, it.value.map { it.mapToUI() })
+//        }
+//
+//        emit(ResultData.success(group))
+//    }
 
 
     override fun getActiveProxy(): Flow<ResultData<ProxyUI?>> = flow {

@@ -21,6 +21,8 @@
     <color name="normalColor">#353A3E</color>
     <color name="greyColor">#C4C9D9</color>
 
+    <color name="text_color">#03C343</color>
+
     <color name="uncompleted_color">#A3E0D9</color>
     <color name="uncompleted_text_color">#F8F8F8</color>
 </resources>

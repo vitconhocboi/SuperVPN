@@ -2,6 +2,7 @@ package com.tici.vpn.proxy.master.proxy
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import com.common.baseui.BaseAppConfig
 import com.tici.vpn.proxy.master.databinding.AdapterProxyGroupBinding
@@ -36,19 +37,21 @@ class ProxyGroupAdapter @Inject constructor() :
         override fun bindData(position: Int, data: ProxyGroupUI) {
             mViewBinding.apply {
                 ivFlag.setImageResource(Utils.getFlag(data.country))
-                tvTitle.setText(
-                    getStringSafely(context = context, name = data.country) ?: "undefined"
-                )
+                tvTitle.text = getStringSafely(context = context, name = data.country) ?: "undefined"
 
-//                tvProxyIp.text = data.host
+                if (data.type == "premium" && !BaseAppConfig.isSub) {
+                    icCrown.visibility = View.VISIBLE
+                } else {
+                    icCrown.visibility = View.INVISIBLE
+                }
 
                 lnMain.isSelected = data.active
 
                 lnMain.setOnClickNoDoubleClick {
-                    if (BaseAppConfig.isSub) {
+//                    if (BaseAppConfig.isSub) {
                         focusToProxy(position)
                         notifyItemChanged(position)
-                    }
+//                    }
                     onItemClick?.invoke(position, data)
                 }
 

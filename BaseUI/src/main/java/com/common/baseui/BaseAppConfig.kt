@@ -125,4 +125,11 @@ object BaseAppConfig {
         set(value) {
             SharedPrefs.instance.put(KEY_IS_SUBSCRIPTION, value)
         }
+
+    private const val LAST_USED_VPN = "LAST_USED_VPN"
+    var lastUsedVpn: String
+        get() = SharedPrefs.instance[LAST_USED_VPN, String::class.java, ""]
+        set(value) {
+            SharedPrefs.instance.put(LAST_USED_VPN, value)
+        }
 }

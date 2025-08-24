@@ -300,85 +300,108 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                     })
             }
 
-            SharedData.isSub.observe(viewLifecycleOwner) { it ->
-//                Log.i("SuperVpn", "TestRelease isSub home_fragment $it")
-                if (it == false) {
-//                    Log.i("SuperVpn", "TestRelease isConnected $isConnected")
-                    if (isConnected) {
-//                        Log.i("SuperVpn", "TestRelease BaseAppConfig.proxy ${BaseAppConfig.proxy} ${BaseAppConfig.proxy.isNotEmpty()}")
-                        if (BaseAppConfig.proxy.isNotEmpty()) { //neu chi dung dns thi giu nguyen
-                            if (NetworkUtils.isInternetAvailable(requireActivity())) {
-//                                Log.i("SuperVpn", "TestRelease has internet and stop")
-                                stopSpeedTest()
-                                vpnPermissionLauncher.unregister()
-//                                Log.i("SuperVpn", "TestRelease has stopVpnService and stop")
-                                stopVpnService()
-                            }
-                        }
-                    }
-                    with (binding) {
-//                        Log.i("SuperVpn", "TestRelease BaseAppConfig.proxy ${BaseAppConfig.proxy}")
-                        if (BaseAppConfig.proxy.isNotEmpty()) {
-                            ivConnect.isSelected = false
-//                            Log.i("SuperVpn", "TestRelease BaseAppConfig.proxy isConnected ${isConnected}")
-                            if (!isConnected) {
-                                BaseAppConfig.proxy = ""
-                                BaseAppConfig.proxyHost = ""
-                                BaseAppConfig.proxyCountry = ""
-                            }
-                        }
-                        ivFlag.setImageResource(R.drawable.ic_earth)
-//                        BaseAppConfig.proxy = ""
-//                        BaseAppConfig.proxyHost = ""
-//                        BaseAppConfig.proxyCountry = ""
-                        tvProxyLocation.text = getString(R.string.ip_proxy)
-                        tvProxyIp.setVisible(false)
-                        val typeface = ResourcesCompat.getFont(context, R.font.inter_normal)
-                        tvProxyLocation.typeface = typeface
-                        tvProxyLocation.setTextColor(resources.getColor(R.color.green_1))
-                        currentProxy = null
-                    }
-                } else {
-//                    Log.i("SuperVpn", "TestRelease proxy ${BaseAppConfig.proxy}")
-                    if (BaseAppConfig.proxy.isNotEmpty()) {
-                        //update UI
-                        ivFlag.setImageResource(Utils.getFlag(BaseAppConfig.proxyCountry))
-                        tvProxyLocation.text = requireContext().safeGetString(BaseAppConfig.proxyCountry)
-                        engine.Engine.decodeString(BaseAppConfig.proxy).split(":").let { parts ->
-                            if (parts.size >= 2) {
-                                BaseAppConfig.proxyHost = parts[1]
-                                currentProxy = ProxySpeedTest.ProxyConfig(
-                                    host = parts[1],
-                                    port = parts[2].toInt(),
-                                    username = parts.getOrNull(3) ?: "",
-                                    password = parts.getOrNull(4) ?: "",
-                                    type = parts.getOrNull(0) ?: "http"
-                                )
-                            } else {
-                                currentProxy = null
-                            }
-                        }
-
-                        tvProxyIp.setVisible(true)
-//                        Log.i("SuperVpn", "TestRelease update text ${currentProxy?.host}")
-                        tvProxyIp.text = currentProxy?.host
-                        val typeface = ResourcesCompat.getFont(context, R.font.inter_bold)
-                        tvProxyLocation.typeface = typeface
-                        tvProxyLocation.setTextColor(resources.getColor(R.color.language_item_text_color))
+            if (BaseAppConfig.proxy.isNotEmpty()) {
+                ivFlag.setImageResource(Utils.getFlag(BaseAppConfig.proxyCountry))
+                tvProxyLocation.text = requireContext().safeGetString(BaseAppConfig.proxyCountry)
+                engine.Engine.decodeString(BaseAppConfig.proxy).split(":").let { parts ->
+                    if (parts.size >= 2) {
+                        BaseAppConfig.proxyHost = parts[1]
+                        currentProxy = ProxySpeedTest.ProxyConfig(
+                            host = parts[1],
+                            port = parts[2].toInt(),
+                            username = parts.getOrNull(3) ?: "",
+                            password = parts.getOrNull(4) ?: "",
+                            type = parts.getOrNull(0) ?: "http"
+                        )
                     } else {
-                        ivFlag.setImageResource(R.drawable.ic_earth)
-                        BaseAppConfig.proxy = ""
-                        BaseAppConfig.proxyHost = ""
-                        BaseAppConfig.proxyCountry = ""
-                        tvProxyLocation.text = getString(R.string.ip_proxy)
-                        tvProxyIp.setVisible(false)
-                        val typeface = ResourcesCompat.getFont(context, R.font.inter_normal)
-                        tvProxyLocation.typeface = typeface
-                        tvProxyLocation.setTextColor(resources.getColor(R.color.green_1))
                         currentProxy = null
                     }
                 }
+
+                tvProxyIp.setVisible(true)
+                tvProxyIp.text = currentProxy?.host
+                val typeface = ResourcesCompat.getFont(context, R.font.inter_bold)
+                tvProxyLocation.typeface = typeface
+                tvProxyLocation.setTextColor(resources.getColor(R.color.language_item_text_color))
+            } else {
+                ivFlag.setImageResource(R.drawable.ic_earth)
+                BaseAppConfig.proxy = ""
+                BaseAppConfig.proxyHost = ""
+                BaseAppConfig.proxyCountry = ""
+                tvProxyLocation.text = getString(R.string.ip_proxy)
+                tvProxyIp.setVisible(false)
+                val typeface = ResourcesCompat.getFont(context, R.font.inter_normal)
+                tvProxyLocation.typeface = typeface
+                tvProxyLocation.setTextColor(resources.getColor(R.color.green_1))
+                currentProxy = null
             }
+
+//            SharedData.isSub.observe(viewLifecycleOwner) { it ->
+//                if (it == false) {
+//                    if (isConnected) {
+//                        if (BaseAppConfig.proxy.isNotEmpty()) { //neu chi dung dns thi giu nguyen
+//                            if (NetworkUtils.isInternetAvailable(requireActivity())) {
+//                                stopSpeedTest()
+//                                vpnPermissionLauncher.unregister()
+//                                stopVpnService()
+//                            }
+//                        }
+//                    }
+//                    with (binding) {
+//                        if (BaseAppConfig.proxy.isNotEmpty()) {
+//                            ivConnect.isSelected = false
+//                            if (!isConnected) {
+//                                BaseAppConfig.proxy = ""
+//                                BaseAppConfig.proxyHost = ""
+//                                BaseAppConfig.proxyCountry = ""
+//                            }
+//                        }
+//                        ivFlag.setImageResource(R.drawable.ic_earth)
+//                        tvProxyLocation.text = getString(R.string.ip_proxy)
+//                        tvProxyIp.setVisible(false)
+//                        val typeface = ResourcesCompat.getFont(context, R.font.inter_normal)
+//                        tvProxyLocation.typeface = typeface
+//                        tvProxyLocation.setTextColor(resources.getColor(R.color.green_1))
+//                        currentProxy = null
+//                    }
+//                } else {
+//                    if (BaseAppConfig.proxy.isNotEmpty()) {
+//                        ivFlag.setImageResource(Utils.getFlag(BaseAppConfig.proxyCountry))
+//                        tvProxyLocation.text = requireContext().safeGetString(BaseAppConfig.proxyCountry)
+//                        engine.Engine.decodeString(BaseAppConfig.proxy).split(":").let { parts ->
+//                            if (parts.size >= 2) {
+//                                BaseAppConfig.proxyHost = parts[1]
+//                                currentProxy = ProxySpeedTest.ProxyConfig(
+//                                    host = parts[1],
+//                                    port = parts[2].toInt(),
+//                                    username = parts.getOrNull(3) ?: "",
+//                                    password = parts.getOrNull(4) ?: "",
+//                                    type = parts.getOrNull(0) ?: "http"
+//                                )
+//                            } else {
+//                                currentProxy = null
+//                            }
+//                        }
+//
+//                        tvProxyIp.setVisible(true)
+//                        tvProxyIp.text = currentProxy?.host
+//                        val typeface = ResourcesCompat.getFont(context, R.font.inter_bold)
+//                        tvProxyLocation.typeface = typeface
+//                        tvProxyLocation.setTextColor(resources.getColor(R.color.language_item_text_color))
+//                    } else {
+//                        ivFlag.setImageResource(R.drawable.ic_earth)
+//                        BaseAppConfig.proxy = ""
+//                        BaseAppConfig.proxyHost = ""
+//                        BaseAppConfig.proxyCountry = ""
+//                        tvProxyLocation.text = getString(R.string.ip_proxy)
+//                        tvProxyIp.setVisible(false)
+//                        val typeface = ResourcesCompat.getFont(context, R.font.inter_normal)
+//                        tvProxyLocation.typeface = typeface
+//                        tvProxyLocation.setTextColor(resources.getColor(R.color.green_1))
+//                        currentProxy = null
+//                    }
+//                }
+//            }
 
             proxyId = arguments?.getString("id", null)
         }
@@ -388,8 +411,9 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         }
 
         proxyViewModel.isError.observe(viewLifecycleOwner) { isError ->
+            Timber.d("isError HomeFragment $isError")
             if (isError == true) {
-                Toast.makeText(requireContext(), "Connection error. Please try again.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Connection error HomeFragment. Please try again.", Toast.LENGTH_SHORT).show()
             }
         }
 
