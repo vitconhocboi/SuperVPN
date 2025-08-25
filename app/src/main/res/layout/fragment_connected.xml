@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home.ConnectedFragment">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivFlag"
+            android:layout_width="@dimen/size64"
+            android:layout_height="@dimen/size64"
+            android:scaleType="centerCrop"
+            android:src="@drawable/flag_us"
+            app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_bold"
+            android:layout_marginTop="@dimen/size16"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/size14"
+            android:text="United States" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_bold"
+            android:layout_marginTop="@dimen/size20"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/size20"
+            android:text="@string/connected" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/pn_ip_info"
+            android:layout_marginHorizontal="@dimen/size16"
+            android:layout_marginTop="@dimen/size24"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_what_is_myip_connected"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/size12">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivLoc"
+                android:layout_width="@dimen/size32"
+                android:layout_height="@dimen/size32"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_location2"
+                app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWhatisMyIp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size8"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/what_is_my_ip"
+                android:textColor="#ECEFF5" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivIpInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size16"
+                android:layout_marginRight="@dimen/size16"
+                android:src="@drawable/ic_next_arrow" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

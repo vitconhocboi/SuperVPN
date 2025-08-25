@@ -211,4 +211,7 @@
     <string name="location">Location</string>
     <string name="pincode">Pin code</string>
     <string name="timezone">Time zone</string>
+    <string name="duration">Duration</string>
+    <string name="connect_success">Connected success</string>
+    <string name="connect_report">Connect report</string>
 </resources>

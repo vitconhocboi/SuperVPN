@@ -1,6 +1,7 @@
 package com.tici.vpn.proxy.master.main
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.pm.PackageManager
 import android.util.Log
 import android.view.LayoutInflater
@@ -26,6 +27,11 @@ import com.simple.libads.base.bannerads.BannerLoader
 import com.simple.libads.config.InterConfig
 import com.simple.libads.manager.BannerManager
 import com.simple.libads.setVisible
+import com.tici.vpn.proxy.master.home.BackActionBarFragment
+import com.tici.vpn.proxy.master.home.ConnectedFragment
+import com.tici.vpn.proxy.master.home.DisconnectedFragment
+import com.tici.vpn.proxy.master.home.ProxyReport
+import com.tici.vpn.proxy.master.network.ProxySpeedTest
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
@@ -41,13 +47,12 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
     private val mainViewModel: MainViewModel by viewModels()
 
     private val mHomeFragment by lazy {
-        HomeFragment()
+        HomeFragment(onShowConnected = { proxy -> showConnected(proxy) },
+            onShowDisconnected = { report -> showDisonnected(report) })
     }
 
     private val mAppProxyFragment by lazy {
-        AppProxyFragment(
-            onSelect = {}
-        )
+        AppProxyFragment(onSelect = {})
     }
 
     private val mDnsFragment by lazy {
@@ -55,14 +60,19 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
     }
 
     private val mSettingFragment by lazy {
-        SettingFragment(
-            showAppProxy = {
-                showAppProxy()
-            },
-            showDns = {
-                showDns()
-            }
-        )
+        SettingFragment(showAppProxy = {
+            showAppProxy()
+        }, showDns = {
+            showDns()
+        })
+    }
+
+    private val mConnectedFragment by lazy {
+        ConnectedFragment()
+    }
+
+    private val mDisonnectedFragment by lazy {
+        DisconnectedFragment()
     }
 
     companion object {
@@ -80,8 +90,9 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
         val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
         val reconnect = intent.getStringExtra("state")
         if (reconnect != null && reconnect == "POPUP") {
-            SettingSuccessDialog(R.string.setting_choose_proxy, R.string.home_reconnect_to_take_effect)
-                .show(supportFragmentManager, "SettingSuccessDialog")
+            SettingSuccessDialog(
+                R.string.setting_choose_proxy, R.string.home_reconnect_to_take_effect
+            ).show(supportFragmentManager, "SettingSuccessDialog")
         }
 
         Log.i("SuperVPN", "check subscription")
@@ -95,6 +106,8 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
         mListFragment.add(mSettingFragment)
         mListFragment.add(mAppProxyFragment)
         mListFragment.add(mDnsFragment)
+        mListFragment.add(mConnectedFragment)
+        mListFragment.add(mDisonnectedFragment)
 
         showFragment(mHomeFragment)
 //        binding.progress.setVisible(true)
@@ -113,6 +126,10 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
 
             ivBack.setOnClickListener {
                 showFragment(mSettingFragment)
+            }
+
+            ivBack2.setOnClickListener {
+                showFragment(mHomeFragment)
             }
 
             selectAll.setOnClickListener {
@@ -138,8 +155,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
             }
         }
 
-        onBackPressedDispatcher.addCallback(
-            this@MainActivity,
+        onBackPressedDispatcher.addCallback(this@MainActivity,
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
                     if (isSettingFragment) {
@@ -156,7 +172,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
             })
     }
 
-    private fun initLoadAds(frameBanner : FrameAds) {
+    private fun initLoadAds(frameBanner: FrameAds) {
         configAd.adBanner.find { it.placementId == AdPlacementId.BANNER_HOME }?.let {
             mBannerLoader = BannerManager.createLoader(adNetwork = it.adNetwork, bannerId = it.adId)
             mBannerLoader?.canRequest = true
@@ -164,7 +180,8 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                 mBannerLoader?.loadAds(
                     context = this@MainActivity, bannerType = it.adType, parent = frameBanner
                 )
-            } catch (e: Exception) {}
+            } catch (e: Exception) {
+            }
         }
     }
 
@@ -208,6 +225,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                     subActionbar.setVisible(true)
                     dnsActionBar.setVisible(false)
                     selectAll.setVisible(true)
+                    backActionBar.setVisible(false)
                     actionBar.setBackgroundColor(resources.getColor(R.color.gray_3))
                 }
             }
@@ -222,6 +240,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                     subActionbar.setVisible(true)
                     dnsActionBar.setVisible(false)
                     selectAll.setVisible(false)
+                    backActionBar.setVisible(false)
                     actionBar.setBackgroundColor(resources.getColor(R.color.gray_3))
                 }
             }
@@ -237,16 +256,30 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                     //ivSwitch.isSelected = BaseAppConfig.dnsServer.isNotEmpty()
                     ivSwitch.setVisible(false)
                     selectAll.setVisible(false)
+                    backActionBar.setVisible(false)
                     actionBar.setBackgroundColor(resources.getColor(R.color.gray_3))
                 }
             }
 
-            else -> {
+            is HomeFragment -> {
                 with(binding) {
                     homeActionBar.setVisible(true)
                     subActionbar.setVisible(false)
                     dnsActionBar.setVisible(false)
                     selectAll.setVisible(false)
+                    backActionBar.setVisible(false)
+                    actionBar.setBackgroundColor(resources.getColor(R.color.backgroundColor))
+                }
+            }
+
+            else -> {
+                with(binding) {
+                    homeActionBar.setVisible(false)
+                    subActionbar.setVisible(false)
+                    dnsActionBar.setVisible(false)
+                    selectAll.setVisible(false)
+                    backActionBar.setVisible(true)
+                    tvTitle2.text = (fragment as? BackActionBarFragment)?.getTitle()
                     actionBar.setBackgroundColor(resources.getColor(R.color.backgroundColor))
                 }
             }
@@ -267,6 +300,16 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
         showFragment(mDnsFragment)
     }
 
+    fun showConnected(proxy: ProxySpeedTest.ProxyConfig?) {
+        mConnectedFragment.setCurrentProxy(proxy)
+        showFragment(mConnectedFragment)
+    }
+
+    fun showDisonnected(report: ProxyReport) {
+        mDisonnectedFragment.loadData(report)
+        showFragment(mDisonnectedFragment)
+    }
+
     fun selectAll() {
         mAppProxyFragment.checkUncheckAll()
     }
@@ -278,16 +321,13 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
     private fun requestAdvertisingIdPermission() {
         if (!checkAdvertisingIdPermission()) {
             requestPermissions(
-                arrayOf(android.Manifest.permission.INTERNET),
-                ADVERTISING_ID_PERMISSION
+                arrayOf(android.Manifest.permission.INTERNET), ADVERTISING_ID_PERMISSION
             )
         }
     }
 
     override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
+        requestCode: Int, permissions: Array<out String>, grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         when (requestCode) {
@@ -306,9 +346,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
     override fun interConfigs(): List<InterConfig>? {
         return configAd.adWithoutVideoPlacement.placementIds.map {
             InterConfig(
-                adid = configAd.adWithVideo.adId,
-                adnetwork = AdNetworkType.ADMOB,
-                placement_id = it
+                adid = configAd.adWithVideo.adId, adnetwork = AdNetworkType.ADMOB, placement_id = it
             )
         }
     }

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home.ConnectedFragment">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivFlag"
+            android:layout_width="@dimen/size64"
+            android:layout_height="@dimen/size64"
+            android:scaleType="centerCrop"
+            android:src="@drawable/flag_us"
+            app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size16"
+            android:fontFamily="@font/inter_bold"
+            android:text="United States"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/size14" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/pn_ip_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/size16"
+            android:layout_marginTop="@dimen/size12"
+            android:background="@drawable/bg_ip_info"
+            android:gravity="top"
+            android:orientation="vertical"
+            android:padding="@dimen/size12">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/size14"
+                    android:text="@string/duration"
+                    android:fontFamily="@font/inter_normal"
+                    android:textColor="#70788F" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDuration"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="00:15:23"
+                    android:textSize="@dimen/size14"
+                    android:fontFamily="@font/inter_normal"
+                    android:textAlignment="viewEnd"
+                    android:textColor="#ECEFF5" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size12">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/size14"
+                    android:fontFamily="@font/inter_normal"
+                    android:text="@string/upload"
+                    android:textColor="#70788F" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvUpload"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="32m/s"
+                    android:textSize="@dimen/size14"
+                    android:fontFamily="@font/inter_normal"
+                    android:textAlignment="viewEnd"
+                    android:textColor="#ECEFF5" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size12">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/download"
+                    android:textSize="@dimen/size14"
+                    android:fontFamily="@font/inter_normal"
+                    android:textColor="#70788F" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDownload"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="32m/s"
+                    android:textSize="@dimen/size14"
+                    android:fontFamily="@font/inter_normal"
+                    android:textAlignment="viewEnd"
+                    android:textColor="#ECEFF5" />
+            </LinearLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
