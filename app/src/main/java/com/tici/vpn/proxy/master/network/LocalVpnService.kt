@@ -203,7 +203,7 @@ class LocalVpnService : VpnService(), Runnable {
             }
             proxyConnection.updateUI(HomeFragment.DISCONNECTED)
 //            Log.i("SuperVpn", "TestRelease isSub stopVPN ${SharedData.isSub.value}")
-            if (SharedData.isSub.value == false) {
+            if (SharedData.isSub.value == false && BaseAppConfig.usingType == "premium") {
                 BaseAppConfig.proxy = ""
                 BaseAppConfig.proxyHost = ""
                 BaseAppConfig.proxyCountry = ""

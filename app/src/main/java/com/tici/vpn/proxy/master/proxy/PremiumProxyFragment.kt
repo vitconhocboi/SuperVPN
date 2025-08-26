@@ -109,6 +109,7 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
                                     item.active = false
                                 }
                                 try {
+                                    BaseAppConfig.usingType = item.type
                                     if (item.active) {
                                         mProxyViewModel.setActiveProxy(item, deviceId, item.type)
                                     } else {

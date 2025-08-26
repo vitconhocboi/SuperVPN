@@ -1,14 +1,17 @@
 package com.tici.vpn.proxy.master.dialog
 
 import android.content.Context
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import com.common.baseui.extension.context
 import com.tici.vpn.proxy.master.databinding.DialogRateCompleteBinding
 import com.common.baseui.extension.setOnClickNoDoubleClick
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.tici.vpn.proxy.master.R
 import com.tici.vpn.proxy.master.databinding.DialogUnlockBinding
 import com.tici.vpn.proxy.master.proxy.ProxyGroupUI
 import com.tici.vpn.proxy.master.utils.Navigator
@@ -38,13 +41,19 @@ class UnlockDialog(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val bitmap = BitmapFactory.decodeResource(resources, R.drawable.ic_setting_pro_bg)
+        val roundedDrawable = RoundedBitmapDrawableFactory.create(resources, bitmap)
+        roundedDrawable.cornerRadius = 20f
+
         binding.apply {
 //            tvSubmit.setOnClickNoDoubleClick { dismiss() }
 //            tvSubmit.isSelected = true
             ivFlag.setImageResource(Utils.getFlag(data.country))
-            tvTitle.text = getStringSafely(context = context, name = data.country) ?: "undefined"
+            countryTitle.text = getStringSafely(context = context, name = data.country) ?: "undefined"
+            lnGetPremium.background = roundedDrawable
 
-            btnGetPremium.setOnClickListener {
+            lnGetPremium.setOnClickListener {
                 Navigator.startPremiumActivity(requireContext())
                 dismiss()
             }
