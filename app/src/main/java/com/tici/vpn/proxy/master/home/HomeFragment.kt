@@ -25,10 +25,12 @@ import com.common.baseui.extension.visible
 import com.simple.libads.NetworkUtils
 import com.simple.libads.setVisible
 import com.tici.vpn.proxy.master.DialogVpnPermission
+import com.tici.vpn.proxy.master.DisconnectConfirmDialog
 import com.tici.vpn.proxy.master.R
 import com.tici.vpn.proxy.master.base.ProductFragment
 import com.tici.vpn.proxy.master.databinding.FragmentHomeBinding
 import com.tici.vpn.proxy.master.db.VpnAppItemDB
+import com.tici.vpn.proxy.master.dialog.DialogFeedback
 import com.tici.vpn.proxy.master.guide.ViewGuide
 import com.tici.vpn.proxy.master.main.MainViewModel
 import com.tici.vpn.proxy.master.network.LocalVpnService
@@ -204,10 +206,8 @@ class HomeFragment(
                 ProxySpeedTest.Instance.startSpeedTest(currentProxy,
                     callback = { download, upload ->
                         try {
-                            if (ProxySpeedTest.FAILED != download) report.download =
-                                download
-                            if (ProxySpeedTest.FAILED != upload) report.upload =
-                                upload
+                            if (ProxySpeedTest.FAILED != download) report.download = download
+                            if (ProxySpeedTest.FAILED != upload) report.upload = upload
                         } catch (e: Exception) {
                         }
                     })
@@ -314,16 +314,18 @@ class HomeFragment(
                         }).show()
                     }
                 } else {
-                    isShowReport = false
-                    if (NetworkUtils.isInternetAvailable(requireActivity())) {
-                        stopSpeedTest()
-                        vpnPermissionLauncher.unregister()
-                        stopVpnService()
-                    } else {
-                        Toast.makeText(
-                            requireContext(), "No internet connection", Toast.LENGTH_SHORT
-                        ).show()
-                    }
+                    DisconnectConfirmDialog(onConfirm = {
+                        isShowReport = false
+                        if (NetworkUtils.isInternetAvailable(requireActivity())) {
+                            stopSpeedTest()
+                            vpnPermissionLauncher.unregister()
+                            stopVpnService()
+                        } else {
+                            Toast.makeText(
+                                requireContext(), "No internet connection", Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }).show(childFragmentManager, "DialogConfirm")
                 }
             }
 
