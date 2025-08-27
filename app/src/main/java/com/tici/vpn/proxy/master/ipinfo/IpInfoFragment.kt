@@ -37,6 +37,7 @@ class IpInfoFragment : ProductFragment<FragmentIpInfoBinding>() {
 
     override fun initView() {
         super.initView()
+        showLoading()
         val proxyConfig = arguments?.getSerializable("proxyConfig") as? ProxyConfig
         Log.d("SUPERVPN", "initView: $proxyConfig")
         viewLifecycleOwner.lifecycleScope.launch {
@@ -103,9 +104,11 @@ class IpInfoFragment : ProductFragment<FragmentIpInfoBinding>() {
                         tvTimeZone.text = json.getJSONArray("timeZones").getString(0)
                     }
                 }
+                hideLoading()
             }
         } catch (e: Exception) {
             Log.d("SupperVPN", "getIpInfo:", e)
+            hideLoading()
         }
     }
 }
