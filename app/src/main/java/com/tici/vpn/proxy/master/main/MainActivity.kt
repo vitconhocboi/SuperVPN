@@ -10,6 +10,10 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import androidx.lifecycle.whenResumed
 import com.common.baseui.BaseAppConfig
 import com.tici.vpn.proxy.master.base.ProductActivity
 import com.tici.vpn.proxy.master.databinding.ActivityMainBinding
@@ -33,6 +37,7 @@ import com.tici.vpn.proxy.master.home.DisconnectedFragment
 import com.tici.vpn.proxy.master.home.ProxyReport
 import com.tici.vpn.proxy.master.network.ProxySpeedTest
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import timber.log.Timber
 
 @AndroidEntryPoint
@@ -47,7 +52,8 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
     private val mainViewModel: MainViewModel by viewModels()
 
     private val mHomeFragment by lazy {
-        HomeFragment(onShowConnected = { proxy -> showConnected(proxy) },
+        HomeFragment(
+            onShowConnected = { proxy -> showConnected(proxy) },
             onShowDisconnected = { report -> showDisonnected(report) })
     }
 
@@ -155,7 +161,8 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
             }
         }
 
-        onBackPressedDispatcher.addCallback(this@MainActivity,
+        onBackPressedDispatcher.addCallback(
+            this@MainActivity,
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
                     if (isSettingFragment) {
@@ -209,145 +216,152 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
             }
         }
 
-        fragmentTransaction.commitNow()
-
-        isAppProxyFragment = false
-        isSettingFragment = false
-
-        when (fragment) {
-            is AppProxyFragment -> {
-                isAppProxyFragment = true
-                isSettingFragment = false
-                isDnsFragment = false
-                with(binding) {
-                    lbSetting.text = getString(R.string.setting_app_proxy)
-                    homeActionBar.setVisible(false)
-                    subActionbar.setVisible(true)
-                    dnsActionBar.setVisible(false)
-                    selectAll.setVisible(true)
-                    backActionBar.setVisible(false)
-                    actionBar.setBackgroundColor(resources.getColor(R.color.gray_3))
-                }
+        lifecycleScope.launch {
+            lifecycle.whenResumed {
+                fragmentTransaction.commitNow()
             }
+        }
+//        fragmentTransaction.commitAllowingStateLoss()
 
-            is SettingFragment -> {
-                isSettingFragment = true
-                isAppProxyFragment = false
-                isDnsFragment = false
-                with(binding) {
-                    lbSetting.text = getString(R.string.setting)
-                    homeActionBar.setVisible(false)
-                    subActionbar.setVisible(true)
-                    dnsActionBar.setVisible(false)
-                    selectAll.setVisible(false)
-                    backActionBar.setVisible(false)
-                    actionBar.setBackgroundColor(resources.getColor(R.color.gray_3))
+            isAppProxyFragment = false
+            isSettingFragment = false
+
+            when (fragment) {
+                is AppProxyFragment -> {
+                    isAppProxyFragment = true
+                    isSettingFragment = false
+                    isDnsFragment = false
+                    with(binding) {
+                        lbSetting.text = getString(R.string.setting_app_proxy)
+                        homeActionBar.setVisible(false)
+                        subActionbar.setVisible(true)
+                        dnsActionBar.setVisible(false)
+                        selectAll.setVisible(true)
+                        backActionBar.setVisible(false)
+                        actionBar.setBackgroundColor(resources.getColor(R.color.gray_3))
+                    }
                 }
-            }
 
-            is DNSFragment -> {
-                isAppProxyFragment = false
-                isDnsFragment = true
-                isSettingFragment = false
-                with(binding) {
-                    homeActionBar.setVisible(false)
-                    subActionbar.setVisible(false)
-                    dnsActionBar.setVisible(true)
-                    //ivSwitch.isSelected = BaseAppConfig.dnsServer.isNotEmpty()
-                    ivSwitch.setVisible(false)
-                    selectAll.setVisible(false)
-                    backActionBar.setVisible(false)
-                    actionBar.setBackgroundColor(resources.getColor(R.color.gray_3))
+                is SettingFragment -> {
+                    isSettingFragment = true
+                    isAppProxyFragment = false
+                    isDnsFragment = false
+                    with(binding) {
+                        lbSetting.text = getString(R.string.setting)
+                        homeActionBar.setVisible(false)
+                        subActionbar.setVisible(true)
+                        dnsActionBar.setVisible(false)
+                        selectAll.setVisible(false)
+                        backActionBar.setVisible(false)
+                        actionBar.setBackgroundColor(resources.getColor(R.color.gray_3))
+                    }
                 }
-            }
 
-            is HomeFragment -> {
-                with(binding) {
-                    homeActionBar.setVisible(true)
-                    subActionbar.setVisible(false)
-                    dnsActionBar.setVisible(false)
-                    selectAll.setVisible(false)
-                    backActionBar.setVisible(false)
-                    actionBar.setBackgroundColor(resources.getColor(R.color.backgroundColor))
+                is DNSFragment -> {
+                    isAppProxyFragment = false
+                    isDnsFragment = true
+                    isSettingFragment = false
+                    with(binding) {
+                        homeActionBar.setVisible(false)
+                        subActionbar.setVisible(false)
+                        dnsActionBar.setVisible(true)
+                        //ivSwitch.isSelected = BaseAppConfig.dnsServer.isNotEmpty()
+                        ivSwitch.setVisible(false)
+                        selectAll.setVisible(false)
+                        backActionBar.setVisible(false)
+                        actionBar.setBackgroundColor(resources.getColor(R.color.gray_3))
+                    }
                 }
-            }
 
-            else -> {
-                with(binding) {
-                    homeActionBar.setVisible(false)
-                    subActionbar.setVisible(false)
-                    dnsActionBar.setVisible(false)
-                    selectAll.setVisible(false)
-                    backActionBar.setVisible(true)
-                    tvTitle2.text = (fragment as? BackActionBarFragment)?.getTitle()
-                    actionBar.setBackgroundColor(resources.getColor(R.color.backgroundColor))
+                is HomeFragment -> {
+                    with(binding) {
+                        homeActionBar.setVisible(true)
+                        subActionbar.setVisible(false)
+                        dnsActionBar.setVisible(false)
+                        selectAll.setVisible(false)
+                        backActionBar.setVisible(false)
+                        actionBar.setBackgroundColor(resources.getColor(R.color.backgroundColor))
+                    }
+                }
+
+                else -> {
+                    with(binding) {
+                        homeActionBar.setVisible(false)
+                        subActionbar.setVisible(false)
+                        dnsActionBar.setVisible(false)
+                        selectAll.setVisible(false)
+                        backActionBar.setVisible(true)
+                        tvTitle2.text = (fragment as? BackActionBarFragment)?.getTitle()
+                        actionBar.setBackgroundColor(resources.getColor(R.color.backgroundColor))
+                    }
                 }
             }
         }
-    }
 
-    fun showAppProxy() {
+        fun showAppProxy() {
 //        mainViewModel.getInstalledAppsWithInternetPermission(baseContext)
-        showFragment(mAppProxyFragment)
-        mAppProxyFragment.loadData()
-        mAppProxyFragment.clearUI()
-    }
-
-    fun showDns() {
-        if (mDnsFragment.isNeedReload == true) {
-            mDnsFragment.loadData()
+            showFragment(mAppProxyFragment)
+            mAppProxyFragment.loadData()
+            mAppProxyFragment.clearUI()
         }
-        showFragment(mDnsFragment)
-    }
 
-    fun showConnected(proxy: ProxySpeedTest.ProxyConfig?) {
-        mConnectedFragment.setCurrentProxy(proxy)
-        showFragment(mConnectedFragment)
-    }
-
-    fun showDisonnected(report: ProxyReport) {
-        mDisonnectedFragment.loadData(report)
-        showFragment(mDisonnectedFragment)
-    }
-
-    fun selectAll() {
-        mAppProxyFragment.checkUncheckAll()
-    }
-
-    private fun checkAdvertisingIdPermission(): Boolean {
-        return checkSelfPermission(android.Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED
-    }
-
-    private fun requestAdvertisingIdPermission() {
-        if (!checkAdvertisingIdPermission()) {
-            requestPermissions(
-                arrayOf(android.Manifest.permission.INTERNET), ADVERTISING_ID_PERMISSION
-            )
+        fun showDns() {
+            if (mDnsFragment.isNeedReload == true) {
+                mDnsFragment.loadData()
+            }
+            showFragment(mDnsFragment)
         }
-    }
 
-    override fun onRequestPermissionsResult(
-        requestCode: Int, permissions: Array<out String>, grantResults: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        when (requestCode) {
-            ADVERTISING_ID_PERMISSION -> {
-                if (grantResults.isNotEmpty() && grantResults[0] != PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(
-                        this,
-                        "Permission denied. Some features may not work properly",
-                        Toast.LENGTH_SHORT
-                    ).show()
+        fun showConnected(proxy: ProxySpeedTest.ProxyConfig?) {
+            mConnectedFragment.setCurrentProxy(proxy)
+            showFragment(mConnectedFragment)
+        }
+
+        fun showDisonnected(report: ProxyReport) {
+            mDisonnectedFragment.loadData(report)
+            showFragment(mDisonnectedFragment)
+        }
+
+        fun selectAll() {
+            mAppProxyFragment.checkUncheckAll()
+        }
+
+        private fun checkAdvertisingIdPermission(): Boolean {
+            return checkSelfPermission(android.Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED
+        }
+
+        private fun requestAdvertisingIdPermission() {
+            if (!checkAdvertisingIdPermission()) {
+                requestPermissions(
+                    arrayOf(android.Manifest.permission.INTERNET), ADVERTISING_ID_PERMISSION
+                )
+            }
+        }
+
+        override fun onRequestPermissionsResult(
+            requestCode: Int, permissions: Array<out String>, grantResults: IntArray
+        ) {
+            super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+            when (requestCode) {
+                ADVERTISING_ID_PERMISSION -> {
+                    if (grantResults.isNotEmpty() && grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+                        Toast.makeText(
+                            this,
+                            "Permission denied. Some features may not work properly",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
                 }
             }
         }
-    }
 
-    override fun interConfigs(): List<InterConfig>? {
-        return configAd.adWithoutVideoPlacement.placementIds.map {
-            InterConfig(
-                adid = configAd.adWithVideo.adId, adnetwork = AdNetworkType.ADMOB, placement_id = it
-            )
+        override fun interConfigs(): List<InterConfig>? {
+            return configAd.adWithoutVideoPlacement.placementIds.map {
+                InterConfig(
+                    adid = configAd.adWithVideo.adId,
+                    adnetwork = AdNetworkType.ADMOB,
+                    placement_id = it
+                )
+            }
         }
     }
-}
