@@ -250,9 +250,9 @@ class HomeFragment(
         val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
 //        isLocalVpnServiceRunning(requireContext())
         with(binding) {
-            if (BaseAppConfig.isCanShowGuide) {
+//            if (BaseAppConfig.isCanShowGuide) {
                 ViewGuide().show(parentFragmentManager, "dialog_guide")
-            }
+//            }
             ivSelectProxy.scaleX = if (isRTL) -1f else 1f
 
             allowAppViewModel.getAllowApp()

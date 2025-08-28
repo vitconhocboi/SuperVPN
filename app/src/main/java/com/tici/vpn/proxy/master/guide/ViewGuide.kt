@@ -27,6 +27,8 @@ class ViewGuide : BindingSheetDialog<FragmentViewGuideBinding>() {
         return FragmentViewGuideBinding.inflate(inflater, container, false)
     }
 
+    override fun getTheme() = com.common.baseui.R.style.CustomBottomSheetDialogTheme
+
     override fun onStart() {
         super.onStart()
         dialog?.window?.setLayout(

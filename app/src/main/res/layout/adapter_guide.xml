@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
+    android:background="#11141D"
     android:orientation="vertical">
 
     <!--    <androidx.cardview.widget.CardView-->
@@ -17,11 +17,12 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivGuideImage"
         android:layout_width="wrap_content"
+        android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/size2"
         android:layout_marginTop="@dimen/size58"
         android:adjustViewBounds="true"
-        android:background="#000000"
+        android:background="#11141D"
         android:scaleType="centerCrop"
         android:src="@drawable/guide2" />
     <!--    </androidx.cardview.widget.CardView>-->
@@ -30,17 +31,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvDes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/size20"
+            android:layout_marginBottom="@dimen/size30"
             android:fontFamily="@font/inter_bold"
             android:gravity="center"
+            android:singleLine="false"
+            android:inputType="textMultiLine"
+            android:ellipsize="none"
+            android:lines="2"
             android:paddingHorizontal="@dimen/size20"
-            android:paddingBottom="@dimen/size30"
-            android:text="@string/guide_3"
+            android:text="@string/guide_2"
             android:textColor="@color/white"
             android:textSize="@dimen/text_large" />
     </FrameLayout>

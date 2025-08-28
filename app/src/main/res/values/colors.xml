@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="backgroundColor">#02091A</color>
+    <color name="backgroundColor">#11141D</color>
     <color name="backgroundColor2">#02091A</color>
     <color name="textColor">#ECEFF5</color>
     <color name="topBarColor">#F15E24</color>
