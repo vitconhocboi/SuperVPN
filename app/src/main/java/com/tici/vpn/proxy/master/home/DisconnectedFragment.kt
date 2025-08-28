@@ -21,16 +21,17 @@ class DisconnectedFragment : BackActionBarFragment, ProductFragment<FragmentDisc
             tvDuration.text = report?.duration
             tvUpload.text = report?.upload
             tvDownload.text = report?.download
-            ProxySpeedTest.Instance.startSpeedTest(report?.proxyConfig,
-                callback = { download, upload ->
-                    try {
-                        if (ProxySpeedTest.FAILED != download) tvDownload.text =
-                            download
-                        if (ProxySpeedTest.FAILED != upload) tvUpload.text =
-                            upload
-                    } catch (e: Exception) {
-                    }
-                })
+            if (report?.upload?.isEmpty() == true && report?.upload?.isEmpty() == true) {
+                ProxySpeedTest.Instance.startSpeedTest(
+                    report?.proxyConfig,
+                    callback = { download, upload ->
+                        try {
+                            if (ProxySpeedTest.FAILED != download) tvDownload.text = download
+                            if (ProxySpeedTest.FAILED != upload) tvUpload.text = upload
+                        } catch (e: Exception) {
+                        }
+                    })
+            }
         }
     }
 

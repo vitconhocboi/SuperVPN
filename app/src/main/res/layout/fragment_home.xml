@@ -82,6 +82,7 @@
                 android:src="@drawable/ic_status_connected" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPrivateInternet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/size8"

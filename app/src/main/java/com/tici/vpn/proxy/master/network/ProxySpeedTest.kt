@@ -72,7 +72,7 @@ class ProxySpeedTest {
             Timber.i("$TAG doInBackground started")
             try {
                 if (isCancelled()) {
-                    return Pair("--", "--")
+                    return Pair("", "")
                 }
                 val client = buildOkHttpClient(proxyConfig)
 
@@ -95,7 +95,7 @@ class ProxySpeedTest {
                 return Pair(formatSpeed(downloadSpeed), formatSpeed(uploadSpeed))
             } catch (_: Exception) {
             }
-            return Pair("--", "--")
+            return Pair("", "")
         }
 
         @Deprecated("Deprecated in Java")
@@ -105,7 +105,7 @@ class ProxySpeedTest {
 
         @Deprecated("Deprecated in Java")
         override fun onCancelled() {
-            callback("--", "--")
+            callback("", "")
         }
 
         private fun buildOkHttpClient(proxyConfig: ProxyConfig?): OkHttpClient {
