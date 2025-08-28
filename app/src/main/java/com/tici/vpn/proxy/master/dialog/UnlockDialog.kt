@@ -42,7 +42,7 @@ class UnlockDialog(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val bitmap = BitmapFactory.decodeResource(resources, R.drawable.ic_setting_pro_bg)
+        val bitmap = BitmapFactory.decodeResource(resources, R.drawable.unlock_bg)
         val roundedDrawable = RoundedBitmapDrawableFactory.create(resources, bitmap)
         roundedDrawable.cornerRadius = 20f
 

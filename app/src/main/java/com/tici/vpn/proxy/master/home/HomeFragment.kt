@@ -6,6 +6,7 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.net.VpnService
+import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
@@ -32,6 +33,7 @@ import com.tici.vpn.proxy.master.databinding.FragmentHomeBinding
 import com.tici.vpn.proxy.master.db.VpnAppItemDB
 import com.tici.vpn.proxy.master.dialog.DialogFeedback
 import com.tici.vpn.proxy.master.guide.ViewGuide
+import com.tici.vpn.proxy.master.language.LanguageFragment
 import com.tici.vpn.proxy.master.main.MainViewModel
 import com.tici.vpn.proxy.master.network.LocalVpnService
 import com.tici.vpn.proxy.master.network.ProxySpeedTest
@@ -44,13 +46,13 @@ import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
 @AndroidEntryPoint
-class HomeFragment(
-    val onShowConnected: (proxy: ProxySpeedTest.ProxyConfig?) -> Unit,
-    val onShowDisconnected: (report: ProxyReport) -> Unit
-) : ProductFragment<FragmentHomeBinding>() {
+class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 
     private val handler = Handler(Looper.getMainLooper())
     private var state: String? = null
+
+    private lateinit var onShowConnected: (proxy: ProxySpeedTest.ProxyConfig?) -> Unit
+    private lateinit var onShowDisconnected: (report: ProxyReport) -> Unit
 
     companion object {
         const val CONNECTING = "CONNECTING"
@@ -61,6 +63,16 @@ class HomeFragment(
         const val INTERVAL = 10000L
         var isShowReport = true
         var lastProcess = 50f
+
+        fun newInstance(
+            showConnected: (proxy: ProxySpeedTest.ProxyConfig?) -> Unit,
+            showDisconnected: (report: ProxyReport) -> Unit
+        ): HomeFragment {
+            val fragment = HomeFragment()
+            fragment.onShowConnected = showConnected
+            fragment.onShowDisconnected = showDisconnected
+            return fragment
+        }
     }
 
     private var isConnected = false

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <LinearLayout
         android:id="@+id/proxyActionBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,16 +30,16 @@
             android:textColor="@color/textColor"
             android:textSize="@dimen/text_medium" />
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </LinearLayout>
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <LinearLayout
         android:id="@+id/pnProxy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@id/proxyActionBar">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
+        <LinearLayout
             android:id="@+id/pn_ip_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -50,7 +50,7 @@
             android:orientation="vertical"
             android:padding="@dimen/size12">
 
-            <androidx.appcompat.widget.LinearLayoutCompat
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -64,10 +64,10 @@
                     android:src="@drawable/ic_address_ip"
                     app:shapeAppearanceOverlay="@style/CircleImageView" />
 
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/size10"
+                    android:layout_marginStart="@dimen/size10"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
@@ -87,13 +87,12 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/inter_normal"
                         android:gravity="center_vertical"
-                        android:text="10.10.10.10"
                         android:textColor="#ECEFF5" />
-                </androidx.appcompat.widget.LinearLayoutCompat>
+                </LinearLayout>
 
-            </androidx.appcompat.widget.LinearLayoutCompat>
+            </LinearLayout>
 
-            <androidx.appcompat.widget.LinearLayoutCompat
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -107,10 +106,10 @@
                     android:src="@drawable/ic_network_provider"
                     app:shapeAppearanceOverlay="@style/CircleImageView" />
 
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/size10"
+                    android:layout_marginStart="@dimen/size10"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
@@ -130,13 +129,12 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/inter_normal"
                         android:gravity="center_vertical"
-                        android:text="FPT Telecom Company"
                         android:textColor="#ECEFF5" />
-                </androidx.appcompat.widget.LinearLayoutCompat>
+                </LinearLayout>
 
-            </androidx.appcompat.widget.LinearLayoutCompat>
+            </LinearLayout>
 
-            <androidx.appcompat.widget.LinearLayoutCompat
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -173,11 +171,10 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/inter_normal"
                         android:gravity="center_vertical"
-                        android:text="Ha Noi, Viet Nam"
                         android:textColor="#ECEFF5" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
-            </androidx.appcompat.widget.LinearLayoutCompat>
+            </LinearLayout>
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
@@ -216,7 +213,6 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/inter_normal"
                         android:gravity="center_vertical"
-                        android:text="100000"
                         android:textColor="#ECEFF5" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -259,14 +255,13 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/inter_normal"
                         android:gravity="center_vertical"
-                        android:text="asia/ho_chi_minh"
                         android:textColor="#ECEFF5" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
+        </LinearLayout>
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

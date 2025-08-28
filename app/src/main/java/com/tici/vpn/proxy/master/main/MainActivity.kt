@@ -52,9 +52,14 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
     private val mainViewModel: MainViewModel by viewModels()
 
     private val mHomeFragment by lazy {
-        HomeFragment(
-            onShowConnected = { proxy -> showConnected(proxy) },
-            onShowDisconnected = { report -> showDisonnected(report) })
+        HomeFragment.newInstance(
+            showConnected = {
+                proxy -> showConnected(proxy)
+            },
+            showDisconnected = {
+                report -> showDisonnected(report)
+            }
+        )
     }
 
     private val mAppProxyFragment by lazy {

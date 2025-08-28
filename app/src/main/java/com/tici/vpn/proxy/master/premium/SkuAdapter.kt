@@ -30,7 +30,11 @@ class SkuAdapter @Inject constructor() :
         override fun bindData(position: Int, data: Sku) {
             mViewBinding.apply {
                 val resId = context.resources.getIdentifier(data.productName, "string", context.packageName)
-                skuName.text = context.getString(resId)
+                try {
+                    skuName.text = context.getString(resId)
+                } catch (e : Exception) {
+                    skuName.text = "unknown"
+                }
                 skuPrice.text = data.productPrice
                 root.isSelected = position == selected
 //                checkboxSku.isChecked = position == selected
