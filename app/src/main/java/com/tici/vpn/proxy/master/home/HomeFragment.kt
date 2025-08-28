@@ -63,6 +63,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         const val INTERVAL = 10000L
         var isShowReport = true
         var lastProcess = 50f
+        var report = ProxyReport()
 
         fun newInstance(
             showConnected: (proxy: ProxySpeedTest.ProxyConfig?) -> Unit,
@@ -210,21 +211,31 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     }
 
     var currentProxy: ProxySpeedTest.ProxyConfig? = null
-    var report = ProxyReport()
 
     private val speedTestRunnable = object : Runnable {
         override fun run() {
             if (BaseAppConfig.proxy.isNotEmpty()) {
-                ProxySpeedTest.Instance.startSpeedTest(currentProxy,
+                ProxySpeedTest.Instance.startSpeedTest(
+                    currentProxy,
                     callback = { download, upload ->
                         try {
-                            if (ProxySpeedTest.FAILED != download) report.download = download
-                            if (ProxySpeedTest.FAILED != upload) report.upload = upload
+                            if ( download.isNotEmpty()) report.download = download
+                            if (upload.isNotEmpty()) report.upload = upload
                         } catch (e: Exception) {
                         }
                     })
             }
             handler.postDelayed(this, INTERVAL)
+        }
+    }
+
+    private val updateRunnable = object : Runnable {
+        override fun run() {
+            val start = context?.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE)
+                ?.getInt("start", 0)
+            val diff = System.currentTimeMillis().toInt() / 1000 - start!!
+            binding.tvPrivateInternet.text = formatSecondsToTime(diff)
+            handler.postDelayed(this, 1000L)
         }
     }
 
@@ -286,7 +297,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 startAngle = 1f
 
                 onProgressChangeListener = { progress ->
-                    Log.d("SuperVPN", "initView: progress: $progress")
+//                    Log.d("SuperVPN", "initView: progress: $progress")
                     if (lastProcess > 90 && lastProcess < 100 && progress == 100f) {
                         binding.ivConnectPanel.background = ResourcesCompat.getDrawable(
                             resources, R.drawable.bg_round_active, null
@@ -479,6 +490,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
             } else {
                 startVpnService()
                 handler.post(speedTestRunnable)
+                handler.post(updateRunnable)
             }
         } else {
             Toast.makeText(
@@ -502,17 +514,20 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     override fun onStop() {
         super.onStop()
         handler.removeCallbacks(speedTestRunnable)
+        handler.removeCallbacks(updateRunnable)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         handler.removeCallbacks(speedTestRunnable)
+        handler.removeCallbacks(updateRunnable)
     }
 
     fun stopSpeedTest() {
 //        binding.tvTrafficDownload.text = "--"
 //        binding.tvTrafficUpload.text = "--"
         handler.removeCallbacks(speedTestRunnable)
+        handler.removeCallbacks(updateRunnable)
         ProxySpeedTest.Instance.stopProxyTest()
     }
 
