@@ -35,6 +35,9 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
     private val mProxyViewModel: ProxyViewModel by viewModels()
     private val mainViewModel: MainViewModel by viewModels()
 
+    private lateinit var selectedItem: ProxyGroupUI
+    private var selectedType : Int = 0
+
     companion object {
         private var selected = false
         private const val PREMIUM = "premium"
@@ -96,77 +99,84 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
             }
 
             mQuickAccessAdapter.onItemClick = { _, item ->
-                try {
-                    lifecycleScope.launch {
-                        if (!selected) {
-                            if (item.type == "free" || mainViewModel.isSub()) {
-                                selected = true
-                                mQuickAccessAdapter.notifyDataSetChanged()
-                                val deviceId = mainViewModel.getDeviceId(requireContext())
-                                val reconnect =
-                                    if (item.country != BaseAppConfig.proxyCountry || !item.active) "RECONNECT" else ""
-                                if (item.country == BaseAppConfig.proxyCountry) {
-                                    item.active = false
-                                }
-                                try {
-                                    BaseAppConfig.usingType = item.type
-                                    if (item.active) {
-                                        mProxyViewModel.setActiveProxy(item, deviceId, item.type)
-                                    } else {
-                                        mProxyViewModel.setActiveProxy(null, deviceId, item.type)
-                                    }
-                                    requireActivity().finish()
-                                    Navigator.startMainActivity(requireContext(), "POPUP")
-                                } catch (e: Exception) {
-                                    e.printStackTrace()
-                                    Toast.makeText(
-                                        requireContext(),
-                                        "An error occur. Please try again",
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                                }
-                                selected = false
-                            } else {
-//                                Navigator.startPremiumActivity(requireContext())
-                                UnlockDialog(data = item).show(parentFragmentManager, "unlock_dialog")
-                            }
-                        } else {
-                            item.active = false
-                        }
-                    }
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                    Toast.makeText(
-                        requireContext(),
-                        "Cannot get proxy: ${e.message}",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
+                selectedItem = item
+                selectedType = 1
+//                try {
+//                    lifecycleScope.launch {
+//                        if (!selected) {
+//                            if (item.type == "free" || mainViewModel.isSub()) {
+//                                selected = true
+//                                mQuickAccessAdapter.notifyDataSetChanged()
+//                                val deviceId = mainViewModel.getDeviceId(requireContext())
+//                                val reconnect =
+//                                    if (item.country != BaseAppConfig.proxyCountry || !item.active) "RECONNECT" else ""
+//                                if (item.country == BaseAppConfig.proxyCountry) {
+//                                    item.active = false
+//                                }
+//                                try {
+//                                    BaseAppConfig.usingType = item.type
+//                                    if (item.active) {
+//                                        mProxyViewModel.setActiveProxy(item, deviceId, item.type)
+//                                    } else {
+//                                        mProxyViewModel.setActiveProxy(null, deviceId, item.type)
+//                                    }
+//                                    requireActivity().finish()
+//                                    Navigator.startMainActivity(requireContext(), "POPUP")
+//                                } catch (e: Exception) {
+//                                    e.printStackTrace()
+//                                    Toast.makeText(
+//                                        requireContext(),
+//                                        "An error occur. Please try again",
+//                                        Toast.LENGTH_SHORT
+//                                    ).show()
+//                                }
+//                                selected = false
+//                            } else {
+////                                Navigator.startPremiumActivity(requireContext())
+//                                UnlockDialog(data = item).show(parentFragmentManager, "unlock_dialog")
+//                            }
+//                        } else {
+//                            item.active = false
+//                        }
+//                    }
+//                } catch (e: Exception) {
+//                    e.printStackTrace()
+//                    Toast.makeText(
+//                        requireContext(),
+//                        "Cannot get proxy: ${e.message}",
+//                        Toast.LENGTH_SHORT
+//                    ).show()
+//                }
 
             }
 
             mPagerAdapter.onItemClick = { _, item ->
+                selectedItem = item
+                selectedType = 2
+            }
+
+            btnConnect.setOnClickListener {
                 try {
                     lifecycleScope.launch {
-                        Timber.d("click country item 1 item country ${item.country}")
                         if (!selected) {
-                            Timber.d("click country item 1 1")
-                            if (item.type == "free" || mainViewModel.isSub()) {
-                                Timber.d("click country item 2 ${BaseAppConfig.proxyCountry} ${item.country}")
+                            if (selectedItem.type == "free" || mainViewModel.isSub()) {
                                 selected = true
-                                mPagerAdapter.notifyDataSetChanged()
+                                if (selectedType == 1) {
+                                    mQuickAccessAdapter.notifyDataSetChanged()
+                                } else if (selectedType == 2) {
+                                    mPagerAdapter.notifyDataSetChanged()
+                                }
                                 val deviceId = mainViewModel.getDeviceId(requireContext())
                                 val reconnect =
-                                    if (item.country != BaseAppConfig.proxyCountry || !item.active) "RECONNECT" else ""
-                                if (item.country == BaseAppConfig.proxyCountry) {
-                                    item.active = false
+                                    if (selectedItem.country != BaseAppConfig.proxyCountry || !selectedItem.active) "RECONNECT" else ""
+                                if (selectedItem.country == BaseAppConfig.proxyCountry) {
+                                    selectedItem.active = false
                                 }
                                 try {
-                                    Timber.d("click country item 2 ${BaseAppConfig.proxyCountry} ${item.country} ${item.active}")
-                                    if (item.active) {
-                                        mProxyViewModel.setActiveProxy(item, deviceId, item.type)
+                                    if (selectedItem.active) {
+                                        mProxyViewModel.setActiveProxy(selectedItem, deviceId, selectedItem.type)
                                     } else {
-                                        mProxyViewModel.setActiveProxy(null, deviceId, item.type)
+                                        mProxyViewModel.setActiveProxy(null, deviceId, selectedItem.type)
                                     }
                                     requireActivity().finish()
                                     Navigator.startMainActivity(requireContext(), "POPUP")
@@ -181,10 +191,10 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
                                 selected = false
                             } else {
 //                                Navigator.startPremiumActivity(requireContext())
-                                UnlockDialog(data = item).show(parentFragmentManager, "unlock_dialog")
+                                UnlockDialog(data = selectedItem).show(parentFragmentManager, "unlock_dialog")
                             }
                         } else {
-                            item.active = false
+                            selectedItem.active = false
                         }
                     }
                 } catch (e: Exception) {
@@ -195,7 +205,6 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
                         Toast.LENGTH_SHORT
                     ).show()
                 }
-
             }
 
             ivBack.setOnClickListener {

@@ -115,6 +115,7 @@
     <string name="btn_ok">OK</string>
     <string name="common_ok">Ok</string>
     <string name="btn_save">Save</string>
+    <string name="btn_connect">Connect</string>
     <string name="btn_cancel">Cancel</string>
     <string name="btn_reset">Reset</string>
     <string name="auto">Auto</string>
@@ -135,7 +136,8 @@
     <string name="select_vpn">Select VPN</string>
     <string name="dns_only">DNS only</string>
     <string name="confirm_dns">VPN Not Active</string>
-    <string name="confirm_dns_msg">You are currently using DNS only. For a more secure and private connection, please select a VPN server.</string>
+<!--    <string name="confirm_dns_msg">You are currently using DNS only. For a more secure and private connection, please select a VPN server.</string>-->
+    <string name="confirm_dns_msg">No VPN Server selected. Please select a VPN server.</string>
 
     <string name="btn_agree">Agree</string>
     <string name="confirm_collect">Your Privacy, Your Control</string>

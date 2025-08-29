@@ -37,49 +37,49 @@
             app:layout_constraintStart_toStartOf="@+id/tv_title"
             app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/selectVPN"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/size30"
-            android:paddingHorizontal="@dimen/margin_20"
-            android:gravity="center_vertical"
-            android:background="@drawable/bg_select_vpn"
-            android:visibility="visible"
-            android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_content">
+<!--        <androidx.appcompat.widget.LinearLayoutCompat-->
+<!--            android:id="@+id/selectVPN"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="@dimen/size30"-->
+<!--            android:paddingHorizontal="@dimen/margin_20"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:background="@drawable/bg_select_vpn"-->
+<!--            android:visibility="visible"-->
+<!--            android:orientation="horizontal"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/tv_content">-->
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btn_select_dns"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:foreground="?selectableItemBackgroundBorderless"
-                android:gravity="start"
-                android:text="@string/select_vpn"
-                android:textAllCaps="false"
-                android:textAppearance="@style/App_TextAppearanceButton2"
-                android:textColor="@color/successColor" />
+<!--            <androidx.appcompat.widget.AppCompatTextView-->
+<!--                android:id="@+id/btn_select_dns"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:foreground="?selectableItemBackgroundBorderless"-->
+<!--                android:gravity="start"-->
+<!--                android:text="@string/select_vpn"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:textAppearance="@style/App_TextAppearanceButton2"-->
+<!--                android:textColor="@color/successColor" />-->
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1"
-                />
+<!--            <View-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:layout_weight="1"-->
+<!--                />-->
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/btnNext"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/size16"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_right_arrow" />
+<!--            <androidx.appcompat.widget.AppCompatImageView-->
+<!--                android:id="@+id/btnNext"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginVertical="@dimen/size16"-->
+<!--                android:clickable="true"-->
+<!--                android:focusable="true"-->
+<!--                android:foreground="?selectableItemBackgroundBorderless"-->
+<!--                android:src="@drawable/ic_right_arrow" />-->
 
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
+<!--        </androidx.appcompat.widget.LinearLayoutCompat>-->
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/btn_cancel"
@@ -97,7 +97,7 @@
             android:textAppearance="@style/App_TextAppearanceButton2"
             android:textColor="@color/text_gray_2"
             app:layout_constraintEnd_toStartOf="@+id/btn_ok"
-            app:layout_constraintTop_toBottomOf="@+id/selectVPN" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_content" />
 
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -111,12 +111,12 @@
             android:paddingTop="@dimen/margin_small"
             android:paddingEnd="@dimen/margin_24"
             android:paddingBottom="@dimen/margin_small"
-            android:text="@string/dns_only"
+            android:text="@string/select_vpn"
             android:textAllCaps="false"
             android:textAppearance="@style/App_TextAppearanceButton2"
             android:textColor="@color/successColor"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/selectVPN" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_content" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

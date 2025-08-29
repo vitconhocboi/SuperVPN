@@ -19,17 +19,18 @@ class ConfirmDnsDialog(
 
         binding?.apply {
 
-            btnNext.scaleX = if (isRTL) -1f else 1f
+//            btnNext.scaleX = if (isRTL) -1f else 1f
 
             btnOk.setOnClickListener {
                 dismiss()
-                onContinue()
-            }
-
-            selectVPN.setOnClickListener {
-                dismiss()
+//                onContinue()
                 selectVpn()
             }
+
+//            selectVPN.setOnClickListener {
+//                dismiss()
+//                selectVpn()
+//            }
 
             btnCancel.setOnClickListener {
                 dismiss()
