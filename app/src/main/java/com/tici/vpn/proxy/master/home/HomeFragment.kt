@@ -503,6 +503,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         super.onStart()
         if (LocalVpnService.IsRunning) {
             handler.post(speedTestRunnable)
+            handler.post(updateRunnable)
         }
         isLocalVpnServiceRunning(requireContext())
     }
