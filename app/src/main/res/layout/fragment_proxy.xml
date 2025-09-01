@@ -87,7 +87,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginHorizontal="@dimen/margin_big"
-        android:layout_marginTop="@dimen/margin_big"
+        android:layout_marginVertical="@dimen/margin_big"
         android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintBottom_toTopOf="@+id/btnConnect"
@@ -116,6 +116,7 @@
         android:background="@drawable/bg_btn_save"
         android:padding="@dimen/margin_12"
         android:textColor="@color/white"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         android:text="@string/btn_connect"/>
 

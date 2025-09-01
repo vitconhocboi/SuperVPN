@@ -11,6 +11,11 @@ fun Context.dp2Px(dp: Int): Int {
         .toInt()
 }
 
+fun Context.safeGetString(resourceName: String): String? {
+    val resId = resources.getIdentifier(resourceName, "string", packageName)
+    return if (resId != 0) getString(resId) else null
+}
+
 fun Activity.sendMail(content: String) {
     val emailIntent = Intent(Intent.ACTION_SEND).apply {
         type = "message/rfc822" // MIME type for email

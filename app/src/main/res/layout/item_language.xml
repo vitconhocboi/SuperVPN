@@ -7,13 +7,13 @@
     android:layout_marginHorizontal="@dimen/size5"
     android:layout_marginTop="@dimen/size10"
     android:gravity="center_vertical"
-    android:background="@drawable/bg_setting_items"
+    android:background="@drawable/bg_language_items"
     android:paddingHorizontal="@dimen/size10">
 
     <com.common.baseui.view.roundimage.RoundedImageView
         android:id="@+id/flagImageView"
-        android:layout_width="@dimen/size20"
-        android:layout_height="@dimen/size20"
+        android:layout_width="@dimen/size22"
+        android:layout_height="@dimen/size22"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
         android:scaleType="centerCrop"

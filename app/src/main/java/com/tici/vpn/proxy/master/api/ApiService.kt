@@ -28,6 +28,9 @@ interface ApiService {
     @GET("get-countries-v2")
     suspend fun getCountriesV2(): Response<CountriesResponseV2>
 
+    @GET("get-free-countries-v2")
+    suspend fun getFreeCountry(): Response<FreeCountryResponse>
+
     @GET("get-dns")
     suspend fun getDns(): Response<DnsResponse>
 }
@@ -70,6 +73,11 @@ data class CountriesResponse(
 data class CountriesResponseV2(
     @SerializedName("countries") val countries: List<Country>,
     @SerializedName("error") val error: String?
+)
+
+data class FreeCountryResponse(
+    @SerializedName("country") val country: String,
+    @SerializedName("type") val type: String
 )
 
 data class Country(

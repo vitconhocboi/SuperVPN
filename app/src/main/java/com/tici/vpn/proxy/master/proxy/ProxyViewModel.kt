@@ -16,6 +16,7 @@ import com.tici.vpn.proxy.master.api.CountriesResponse
 import com.tici.vpn.proxy.master.api.CountriesResponseV2
 import com.tici.vpn.proxy.master.api.DisconnectRequest
 import com.tici.vpn.proxy.master.api.DisconnectResponse
+import com.tici.vpn.proxy.master.api.FreeCountryResponse
 import com.tici.vpn.proxy.master.api.ProxyRequest
 import com.tici.vpn.proxy.master.api.Users
 import com.tici.vpn.proxy.master.network.LocalVpnService
@@ -52,6 +53,8 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
     val isConnected = MutableLiveData(proxyUpdate.vpnState)
 
     val currentProxy = MutableLiveData<ProxySpeedTest.ProxyConfig?>()
+
+    val freeProxy = MutableLiveData<ProxyGroupUI>()
 
     val isError = MutableLiveData(false)
 
@@ -142,6 +145,34 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
         }
     }
 
+    fun getRandomFreeProxy() {
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                val result = getFreeCountrySafe()
+                result
+                    .onSuccess { freeCountry ->
+                        with (freeCountry) {
+                            freeProxy.postValue(ProxyGroupUI(
+                                country = country,
+                                active = country == BaseAppConfig.proxyCountry,
+                                type = type
+                            ))
+                        }
+                    }
+                    .onFailure { error ->
+//                        throw Exception("Failed to get countries: $error")
+                        Timber.d("isError getCountriesV2Safe $isError")
+                        isError.postValue(true)
+                    }
+
+            } catch (e: Exception) {
+                // Handle error case
+                e.printStackTrace()
+                allPremiumProxy.emit(ResultData.Companion.error(e))
+            }
+        }
+    }
+
     suspend fun getCountriesSafe(type: String): Result<CountriesResponse> {
         return try {
             val response = apiService.getCountries(type)
@@ -171,6 +202,32 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
     suspend fun getCountriesV2Safe(): Result<CountriesResponseV2> {
         return try {
             val response = apiService.getCountriesV2()
+            if (response.isSuccessful) {
+                val body = response.body()
+                if (body != null) {
+                    Result.success(body)
+                } else {
+                    Result.failure(Exception("Empty response from server"))
+                }
+            } else {
+                Result.failure(Exception("Server error: ${response.code()}"))
+            }
+        } catch (e: SSLHandshakeException) {
+            Result.failure(Exception("SSL Handshake failed"))
+        } catch (e: SocketTimeoutException) {
+            Result.failure(Exception("Connection timed out. Please try again later."))
+        } catch (e: UnknownHostException) {
+            Result.failure(Exception("No internet connection or DNS resolution failed"))
+        } catch (e: IOException) {
+            Result.failure(Exception("Network I/O error occurred"))
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
+
+    suspend fun getFreeCountrySafe(): Result<FreeCountryResponse> {
+        return try {
+            val response = apiService.getFreeCountry()
             if (response.isSuccessful) {
                 val body = response.body()
                 if (body != null) {
@@ -237,7 +294,7 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
                     BaseAppConfig.proxy = assignResponse.proxy
                     addLastUsedVpn(item.country)
                 }
-                .onFailure { error ->
+                .onFailure { _ ->
 //                    throw Exception("Failed to assign proxy: $error")
                     Timber.d("isError assignProxySafe $isError")
                     isError.postValue(true)

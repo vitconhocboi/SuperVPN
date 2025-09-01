@@ -3,6 +3,7 @@ package com.tici.vpn.proxy.master.ipinfo
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.common.baseui.extension.setOnClickNoDoubleClick
 import com.tici.vpn.proxy.master.base.ProductFragment
@@ -40,7 +41,7 @@ class IpInfoFragment : ProductFragment<FragmentIpInfoBinding>() {
         super.initView()
         showLoading()
         val proxyConfig = arguments?.getSerializable("proxyConfig") as? ProxyConfig
-        Timber.d("SupperVPN", "initView: $proxyConfig")
+        Timber.d("SupperVPN", "getIpInfo initView: $proxyConfig")
         viewLifecycleOwner.lifecycleScope.launch(Dispatchers.IO) {
             getIpInfo(buildOkHttpClient(proxyConfig))
         }
@@ -84,15 +85,17 @@ class IpInfoFragment : ProductFragment<FragmentIpInfoBinding>() {
     }
 
     private suspend fun getIpInfo(client: OkHttpClient) = withContext(Dispatchers.IO) {
+        Timber.d("SuperVPN getIpInfo")
         val request = Request.Builder().url(URL_IP_INFO)
             .header("User-Agent", "AndroidApp/1.0")
             .header("Accept", "application/json").build()
         try {
+            Timber.d("SuperVPN getIpInfo try")
             client.newCall(request).execute().use { response ->
+                Timber.d("SuperVPN getIpInfo respnse ${response.isSuccessful}")
                 if (response.isSuccessful) {
                     val body = response.body.string()
                     val json = JSONObject(body)
-                    Timber.d("SupperVPN", "getIpInfo: $json")
                     binding.apply {
                         tvIpAddress.text = json.getString("ipAddress")
                         tvNetworkProvider.text = json.getString("asnOrganization")
@@ -102,12 +105,21 @@ class IpInfoFragment : ProductFragment<FragmentIpInfoBinding>() {
                         tvPincode.text = json.getString("zipCode")
                         tvTimeZone.text = json.getJSONArray("timeZones").getString(0)
                     }
+                } else {
+                    Timber.d("SuperVPN getIpInfo error connection ${response.code} ${response.isSuccessful}")
                 }
                 hideLoading()
             }
         } catch (e: Exception) {
-            Timber.d("SupperVPN", "getIpInfo:", e)
-            hideLoading()
+            withContext(Dispatchers.Main) {
+                Toast.makeText(
+                    requireContext(),
+                    "Connection failed. Please check the internet/VPN connection.",
+                    Toast.LENGTH_SHORT
+                ).show()
+                hideLoading()
+                Navigator.startMainActivity(requireActivity())
+            }
         }
     }
 }

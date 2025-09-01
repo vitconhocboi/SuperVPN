@@ -46,8 +46,12 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
     var isSettingFragment = false
     var isAppProxyFragment = false
     var isDnsFragment = false
+    var isConnectedFragment = false
+    var isDisconnectedFragment = false
 
-    var configAd: FirebaseConfigManager = FirebaseConfigManager.get()
+    var isAutoConnect = false
+
+    private var configAd: FirebaseConfigManager = FirebaseConfigManager.get()
 
     private val mainViewModel: MainViewModel by viewModels()
 
@@ -83,7 +87,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
     }
 
     private val mDisonnectedFragment by lazy {
-        DisconnectedFragment()
+        DisconnectedFragment.newInstance(BaseAppConfig.proxyCountry)
     }
 
     companion object {
@@ -101,10 +105,14 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
         val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
         val reconnect = intent.getStringExtra("state")
         if (reconnect != null && reconnect == "POPUP") {
-            SettingSuccessDialog(
-                R.string.setting_choose_proxy, R.string.home_reconnect_to_take_effect
-            ).show(supportFragmentManager, "SettingSuccessDialog")
+//            SettingSuccessDialog(
+//                R.string.setting_choose_proxy, R.string.home_reconnect_to_take_effect
+//            ).show(supportFragmentManager, "SettingSuccessDialog")
+            isAutoConnect = true
+        } else {
+            isAutoConnect = false
         }
+        intent.removeExtra("state")
 
         Log.i("SuperVPN", "check subscription")
         mainViewModel.checkActiveSubscriptions(applicationContext) { it ->
@@ -177,6 +185,10 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                         showFragment(mSettingFragment)
                     } else if (isDnsFragment) {
                         showFragment(mSettingFragment)
+                    } else if (isConnectedFragment) {
+                        showFragment(mHomeFragment)
+                    } else if (isDisconnectedFragment) {
+                        showFragment(mHomeFragment)
                     } else {
                         finishAffinity()
                     }
@@ -236,6 +248,8 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                     isAppProxyFragment = true
                     isSettingFragment = false
                     isDnsFragment = false
+                    isConnectedFragment = false
+                    isDisconnectedFragment = false
                     with(binding) {
                         lbSetting.text = getString(R.string.setting_app_proxy)
                         homeActionBar.setVisible(false)
@@ -251,6 +265,8 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                     isSettingFragment = true
                     isAppProxyFragment = false
                     isDnsFragment = false
+                    isConnectedFragment = false
+                    isDisconnectedFragment = false
                     with(binding) {
                         lbSetting.text = getString(R.string.setting)
                         homeActionBar.setVisible(false)
@@ -266,6 +282,8 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                     isAppProxyFragment = false
                     isDnsFragment = true
                     isSettingFragment = false
+                    isConnectedFragment = false
+                    isDisconnectedFragment = false
                     with(binding) {
                         homeActionBar.setVisible(false)
                         subActionbar.setVisible(false)
@@ -279,6 +297,8 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                 }
 
                 is HomeFragment -> {
+                    isConnectedFragment = false
+                    isDisconnectedFragment = false
                     with(binding) {
                         homeActionBar.setVisible(true)
                         subActionbar.setVisible(false)
@@ -319,11 +339,13 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
 
         fun showConnected(proxy: ProxySpeedTest.ProxyConfig?) {
             mConnectedFragment.setCurrentProxy(proxy)
+            isConnectedFragment = true
             showFragment(mConnectedFragment)
         }
 
         fun showDisonnected(report: ProxyReport) {
             mDisonnectedFragment.loadData(report)
+            isDisconnectedFragment = true
             showFragment(mDisonnectedFragment)
         }
 

@@ -17,6 +17,7 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.common.baseui.BaseAppConfig
 import com.common.baseui.extension.bindFlowCreate
 import com.common.baseui.extension.context
@@ -32,8 +33,10 @@ import com.tici.vpn.proxy.master.base.ProductFragment
 import com.tici.vpn.proxy.master.databinding.FragmentHomeBinding
 import com.tici.vpn.proxy.master.db.VpnAppItemDB
 import com.tici.vpn.proxy.master.dialog.DialogFeedback
+import com.tici.vpn.proxy.master.extension.safeGetString
 import com.tici.vpn.proxy.master.guide.ViewGuide
 import com.tici.vpn.proxy.master.language.LanguageFragment
+import com.tici.vpn.proxy.master.main.MainActivity
 import com.tici.vpn.proxy.master.main.MainViewModel
 import com.tici.vpn.proxy.master.network.LocalVpnService
 import com.tici.vpn.proxy.master.network.ProxySpeedTest
@@ -43,6 +46,7 @@ import com.tici.vpn.proxy.master.settings.appproxy.AppProxyViewModel
 import com.tici.vpn.proxy.master.utils.Navigator
 import com.tici.vpn.proxy.master.utils.Utils
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import timber.log.Timber
 
 @AndroidEntryPoint
@@ -262,11 +266,6 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         return String.format("%02d:%02d:%02d", hours, minutes, secs)
     }
 
-    fun Context.safeGetString(resourceName: String): String? {
-        val resId = resources.getIdentifier(resourceName, "string", packageName)
-        return if (resId != 0) getString(resId) else null
-    }
-
     override fun initView() {
         super.initView()
         state = activity?.intent?.getStringExtra("RECONNECT")
@@ -330,11 +329,14 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                     if (BaseAppConfig.proxy.isNotEmpty()) {
                         prepareVpn()
                     } else {
-                        ConfirmDnsDialog(requireActivity(), onContinue = {
-                            prepareVpn()
-                        }, selectVpn = {
-                            Navigator.startProxyActivity(requireContext(), null)
-                        }).show()
+//                        ConfirmDnsDialog(requireActivity(), onContinue = {
+//                            prepareVpn()
+//                        }, selectVpn = {
+//                            Navigator.startProxyActivity(requireContext(), null)
+//                        }).show()
+                        lifecycleScope.launch {
+                            proxyViewModel.getRandomFreeProxy()
+                        }
                     }
                 } else {
                     DisconnectConfirmDialog(onConfirm = {
@@ -371,7 +373,13 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
             }
 
             pnIpInfo.setOnClickListener {
-                Navigator.startProxyInfoActivity(requireContext(), currentProxy)
+                if (NetworkUtils.isInternetAvailable(requireActivity())) {
+                    Navigator.startProxyInfoActivity(requireContext(), currentProxy)
+                } else {
+                    Toast.makeText(
+                        requireContext(), "No internet connection", Toast.LENGTH_SHORT
+                    ).show()
+                }
             }
 
 //            SharedData.isSub.observe(viewLifecycleOwner) { it ->
@@ -454,6 +462,20 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                     requireContext(), "Connection error. Please try again.", Toast.LENGTH_SHORT
                 ).show()
             }
+        }
+
+        proxyViewModel.freeProxy.observe(viewLifecycleOwner) {
+            if (it != null) {
+                lifecycleScope.launch {
+                    val deviceId = mainViewModel.getDeviceId(requireContext())
+                    proxyViewModel.setActiveProxy(it, deviceId, "free")
+                    prepareVpn()
+                }
+            }
+        }
+
+        if ((activity as? MainActivity)?.isAutoConnect == true) {
+            binding.ivConnect.callOnClick()
         }
 
     }
