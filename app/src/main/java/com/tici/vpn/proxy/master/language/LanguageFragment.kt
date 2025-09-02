@@ -22,7 +22,7 @@ import java.util.Locale
 class LanguageFragment : ProductFragment<FragmentLanguageBinding>() {
     private val mViewModel: LanguageViewModel by viewModels()
     private val mLangAdapter = LanguageAdapter()
-    var languageCode = ""
+    private var languageCode = ""
 
     private var fromSetting: Boolean = false
 
@@ -64,7 +64,7 @@ class LanguageFragment : ProductFragment<FragmentLanguageBinding>() {
         }
         binding.rcvLanguage.adapter = mLangAdapter
         val datas = ArrayList<LangDataModel>()
-        for (lang in LangType.values()) {
+        for (lang in LangType.entries) {
             if (lang.langCode.isNotEmpty()) {
                 datas.add(LangDataModel(getLanguageName(lang.langCode), lang))
             } else {
@@ -121,7 +121,7 @@ class LanguageFragment : ProductFragment<FragmentLanguageBinding>() {
             Resources.getSystem().configuration.locale
         }
 
-        val isDuplicate = LangType.values()
+        val isDuplicate = LangType.entries.toTypedArray()
             .count { local.language.contains(it.langCode) && it.langCode.isNotEmpty() } > 0
 
         val langName: String = requireActivity().getString(R.string.lang_default)
@@ -136,7 +136,7 @@ class LanguageFragment : ProductFragment<FragmentLanguageBinding>() {
     }
 
 
-    fun getLanguageName(languageCode: String): String {
+    private fun getLanguageName(languageCode: String): String {
         val local = Locale(languageCode)
         val name = local.getDisplayName(local)
         return name.replaceFirstChar { it.uppercase() }

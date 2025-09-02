@@ -61,7 +61,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                 proxy -> showConnected(proxy)
             },
             showDisconnected = {
-                report -> showDisonnected(report)
+                report -> showDisconnected(report)
             }
         )
     }
@@ -114,9 +114,8 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
         }
         intent.removeExtra("state")
 
-        Log.i("SuperVPN", "check subscription")
-        mainViewModel.checkActiveSubscriptions(applicationContext) { it ->
-            if (it == true) {
+        mainViewModel.checkActiveSubscriptions(applicationContext) {
+            if (it) {
                 binding.frameBanner.visibility = View.GONE
             }
         }
@@ -204,7 +203,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                 mBannerLoader?.loadAds(
                     context = this@MainActivity, bannerType = it.adType, parent = frameBanner
                 )
-            } catch (e: Exception) {
+            } catch (_: Exception) {
             }
         }
     }
@@ -323,33 +322,33 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
             }
         }
 
-        fun showAppProxy() {
+        private fun showAppProxy() {
 //        mainViewModel.getInstalledAppsWithInternetPermission(baseContext)
             showFragment(mAppProxyFragment)
             mAppProxyFragment.loadData()
             mAppProxyFragment.clearUI()
         }
 
-        fun showDns() {
-            if (mDnsFragment.isNeedReload == true) {
+        private fun showDns() {
+            if (mDnsFragment.isNeedReload) {
                 mDnsFragment.loadData()
             }
             showFragment(mDnsFragment)
         }
 
-        fun showConnected(proxy: ProxySpeedTest.ProxyConfig?) {
+        private fun showConnected(proxy: ProxySpeedTest.ProxyConfig?) {
             mConnectedFragment.setCurrentProxy(proxy)
             isConnectedFragment = true
             showFragment(mConnectedFragment)
         }
 
-        fun showDisonnected(report: ProxyReport) {
+        private fun showDisconnected(report: ProxyReport) {
             mDisonnectedFragment.loadData(report)
             isDisconnectedFragment = true
             showFragment(mDisonnectedFragment)
         }
 
-        fun selectAll() {
+        private fun selectAll() {
             mAppProxyFragment.checkUncheckAll()
         }
 

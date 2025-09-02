@@ -43,19 +43,22 @@ class ViewGuide : BindingSheetDialog<FragmentViewGuideBinding>() {
         mGuideAdapter.updateData(mGuideModels)
         binding.apply {
             vpGuide.adapter = mGuideAdapter
-            ivBack.setOnClickNoDoubleClick {
-                if (vpGuide.currentItem == 2) {
-                    dismiss()
-                } else {
-                    vpGuide.setCurrentItem(vpGuide.currentItem + 1, true)
+            next.setOnClickNoDoubleClick {
+                when (vpGuide.currentItem) {
+                    2 -> dismiss()
+                    1 -> {
+                        vpGuide.setCurrentItem(vpGuide.currentItem + 1, true)
+                        next.text = getString(R.string.start)
+                    }
+                    else -> vpGuide.setCurrentItem(vpGuide.currentItem + 1, true)
                 }
             }
             indicator.attachTo(vpGuide)
-            if (getResources().configuration.layoutDirection == View.LAYOUT_DIRECTION_LTR) {
-                ivBack.rotationY = 0f
-            } else {
-                ivBack.rotationY = 180f
-            }
+//            if (resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_LTR) {
+//                next.rotationY = 0f
+//            } else {
+//                next.rotationY = 180f
+//            }
         }
         BaseAppConfig.isCanShowGuide = false
     }

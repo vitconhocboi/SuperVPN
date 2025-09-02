@@ -118,7 +118,7 @@ class IpInfoFragment : ProductFragment<FragmentIpInfoBinding>() {
                     Toast.LENGTH_SHORT
                 ).show()
                 hideLoading()
-                Navigator.startMainActivity(requireActivity())
+//                Navigator.startMainActivity(requireActivity())
             }
         }
     }

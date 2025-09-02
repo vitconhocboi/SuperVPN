@@ -34,8 +34,10 @@
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
 
+    <string name="start">Start</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+
     <string name="vn">Việt Nam</string>
     <string name="us">United States</string>
     <string name="kr">Korea</string>
@@ -194,6 +196,7 @@
     <string name="text_feedback_hint">Please give us more details so we can identify and resolve your issue faster (at least 6 characters)</string>
     <string name="text_thanks_feedback">Thanks for your feedback</string>
     <string name="text_feedback_content">We will fix this issue in a future version. Sorry for the inconvenience.</string>
+    <string name="no_available_vpn">There is no available free vpn, please go to VPN screen and choose a server.</string>
 
     <string name="msg_device_does_not_support_this_feature">This feature is not supported for this device!</string>
     <string name="search_app">search app..</string>

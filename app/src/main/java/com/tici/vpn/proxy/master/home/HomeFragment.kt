@@ -412,28 +412,29 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 //                    }
 //                } else {
             if (BaseAppConfig.proxy.isNotEmpty()) {
-                ivFlag.setImageResource(Utils.getFlag(BaseAppConfig.proxyCountry))
-                tvProxyLocation.text = requireContext().safeGetString(BaseAppConfig.proxyCountry)
-                engine.Engine.decodeString(BaseAppConfig.proxy).split(":").let { parts ->
-                    if (parts.size >= 2) {
-                        BaseAppConfig.proxyHost = parts[1]
-                        currentProxy = ProxySpeedTest.ProxyConfig(
-                            host = parts[1],
-                            port = parts[2].toInt(),
-                            username = parts.getOrNull(3) ?: "",
-                            password = parts.getOrNull(4) ?: "",
-                            type = parts.getOrNull(0) ?: "http"
-                        )
-                    } else {
-                        currentProxy = null
-                    }
-                }
-
-                tvProxyIp.setVisible(true)
-                tvProxyIp.text = currentProxy?.host
-                val typeface = ResourcesCompat.getFont(context, R.font.inter_bold)
-                tvProxyLocation.typeface = typeface
-                tvProxyLocation.setTextColor(resources.getColor(R.color.language_item_text_color))
+                showIpCountry()
+//                ivFlag.setImageResource(Utils.getFlag(BaseAppConfig.proxyCountry))
+//                tvProxyLocation.text = requireContext().safeGetString(BaseAppConfig.proxyCountry)
+//                engine.Engine.decodeString(BaseAppConfig.proxy).split(":").let { parts ->
+//                    if (parts.size >= 2) {
+//                        BaseAppConfig.proxyHost = parts[1]
+//                        currentProxy = ProxySpeedTest.ProxyConfig(
+//                            host = parts[1],
+//                            port = parts[2].toInt(),
+//                            username = parts.getOrNull(3) ?: "",
+//                            password = parts.getOrNull(4) ?: "",
+//                            type = parts.getOrNull(0) ?: "http"
+//                        )
+//                    } else {
+//                        currentProxy = null
+//                    }
+//                }
+//
+//                tvProxyIp.setVisible(true)
+//                tvProxyIp.text = currentProxy?.host
+//                val typeface = ResourcesCompat.getFont(context, R.font.inter_bold)
+//                tvProxyLocation.typeface = typeface
+//                tvProxyLocation.setTextColor(resources.getColor(R.color.language_item_text_color))
             } else {
                 ivFlag.setImageResource(R.drawable.ic_earth)
                 BaseAppConfig.proxy = ""
@@ -465,12 +466,17 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         }
 
         proxyViewModel.freeProxy.observe(viewLifecycleOwner) {
-            if (it != null) {
+            if (it != null && it.country.isNotEmpty()) {
                 lifecycleScope.launch {
                     val deviceId = mainViewModel.getDeviceId(requireContext())
                     proxyViewModel.setActiveProxy(it, deviceId, "free")
                     prepareVpn()
+                    showIpCountry()
                 }
+            } else if (it.country.isEmpty()) {
+                Toast.makeText(
+                    requireContext(), getString(R.string.no_available_vpn), Toast.LENGTH_SHORT
+                ).show()
             }
         }
 
@@ -501,6 +507,33 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                     requireContext(), "No internet connection", Toast.LENGTH_SHORT
                 ).show()
             }
+        }
+    }
+
+    private fun showIpCountry() {
+        with(binding) {
+            ivFlag.setImageResource(Utils.getFlag(BaseAppConfig.proxyCountry))
+            tvProxyLocation.text = requireContext().safeGetString(BaseAppConfig.proxyCountry)
+            engine.Engine.decodeString(BaseAppConfig.proxy).split(":").let { parts ->
+                if (parts.size >= 2) {
+                    BaseAppConfig.proxyHost = parts[1]
+                    currentProxy = ProxySpeedTest.ProxyConfig(
+                        host = parts[1],
+                        port = parts[2].toInt(),
+                        username = parts.getOrNull(3) ?: "",
+                        password = parts.getOrNull(4) ?: "",
+                        type = parts.getOrNull(0) ?: "http"
+                    )
+                } else {
+                    currentProxy = null
+                }
+            }
+
+            tvProxyIp.setVisible(true)
+            tvProxyIp.text = currentProxy?.host
+            val typeface = ResourcesCompat.getFont(context, R.font.inter_bold)
+            tvProxyLocation.typeface = typeface
+            tvProxyLocation.setTextColor(resources.getColor(R.color.language_item_text_color))
         }
     }
 

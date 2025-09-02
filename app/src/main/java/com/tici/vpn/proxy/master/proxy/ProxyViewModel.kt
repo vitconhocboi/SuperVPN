@@ -151,11 +151,21 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
                 val result = getFreeCountrySafe()
                 result
                     .onSuccess { freeCountry ->
-                        with (freeCountry) {
+                        if (freeCountry.country.isNotEmpty()) {
+                            with(freeCountry) {
+                                freeProxy.postValue(
+                                    ProxyGroupUI(
+                                        country = country,
+                                        active = country == BaseAppConfig.proxyCountry,
+                                        type = type
+                                    )
+                                )
+                            }
+                        } else {
                             freeProxy.postValue(ProxyGroupUI(
-                                country = country,
-                                active = country == BaseAppConfig.proxyCountry,
-                                type = type
+                                country = "",
+                                active = false,
+                                type = ""
                             ))
                         }
                     }
@@ -168,7 +178,7 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
             } catch (e: Exception) {
                 // Handle error case
                 e.printStackTrace()
-                allPremiumProxy.emit(ResultData.Companion.error(e))
+//                allPremiumProxy.emit(ResultData.Companion.error(e))
             }
         }
     }

@@ -27,6 +27,7 @@
         android:layout_gravity="center_vertical"
         android:gravity="center"
         android:orientation="horizontal"
+        android:layout_marginHorizontal="@dimen/margin_big"
         android:paddingBottom="@dimen/size24"
         app:layout_constraintTop_toBottomOf="@id/lnGuide">
 
@@ -40,12 +41,14 @@
             app:progressMode="true" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/ivBack"
+            android:id="@+id/next"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/size30"
-            android:layout_marginHorizontal="@dimen/size10"
+            android:layout_marginHorizontal="@dimen/margin_big"
             android:gravity="center"
             android:text="@string/next"
+            android:textStyle="bold"
+            android:textSize="18sp"
             android:textColor="@color/successColor" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
