@@ -305,6 +305,8 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                             isShowReport = true
                             onShowConnected(currentProxy)
                         }
+                        pnIpInfo.isEnabled = true
+                        pnSelectProxy.isClickable = true
                     } else if (lastProcess > 0 && lastProcess < 10 && progress == 0f) {
                         binding.ivConnectPanel.background = ResourcesCompat.getDrawable(
                             resources, R.drawable.bg_round, null
@@ -326,6 +328,8 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
             ivConnect.setOnClickListener {
                 if (!isConnected) {
                     isShowReport = false
+                    pnSelectProxy.isClickable = false
+                    pnIpInfo.isEnabled = false
                     if (BaseAppConfig.proxy.isNotEmpty()) {
                         prepareVpn()
                     } else {
@@ -365,11 +369,18 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 //            }
 
             pnSelectProxy.setOnClickListener {
-                showInterAds(placementId = AdPlacementId.INTER_ART_HOME,
-                    impressedCallBack = {},
-                    showCallBack = {
-                        Navigator.startProxyActivity(requireContext(), null)
-                    })
+                if (NetworkUtils.isInternetAvailable(requireActivity())) {
+                    showInterAds(
+                        placementId = AdPlacementId.INTER_ART_HOME,
+                        impressedCallBack = {},
+                        showCallBack = {
+                            Navigator.startProxyActivity(requireContext(), null)
+                        })
+                } else {
+                    Toast.makeText(
+                        requireContext(), "No internet connection", Toast.LENGTH_SHORT
+                    ).show()
+                }
             }
 
             pnIpInfo.setOnClickListener {

@@ -119,6 +119,7 @@
     <string name="btn_save">Save</string>
     <string name="btn_connect">Connect</string>
     <string name="btn_cancel">Cancel</string>
+    <string name="btn_exit">Exit</string>
     <string name="btn_reset">Reset</string>
     <string name="auto">Auto</string>
     <string name="min_60">60 Minutes</string>
@@ -200,6 +201,9 @@
 
     <string name="msg_device_does_not_support_this_feature">This feature is not supported for this device!</string>
     <string name="search_app">search app..</string>
+
+    <string name="exit_app">Exit App?</string>
+    <string name="exit_app_msg">Are you sure to exit?</string>
 
     <string name="free">Free</string>
     <string name="premium">Premium</string>

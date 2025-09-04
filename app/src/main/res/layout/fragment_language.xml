@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_24"
             android:layout_weight="1"
-            android:gravity="start"
+            android:gravity="center_horizontal"
             android:includeFontPadding="false"
             android:text="@string/setting_language"
             android:textAllCaps="false"

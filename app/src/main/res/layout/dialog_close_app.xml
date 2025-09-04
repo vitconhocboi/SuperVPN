@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/margin_big"
+    android:background="@drawable/bg_feedback_complete"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/size20">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/exit_app"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_large"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvExitMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/size20"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/exit_app_msg"
+        android:textColor="@color/normalColor"
+        android:textSize="@dimen/text_large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvExit" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/cancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size16"
+        android:layout_marginBottom="@dimen/size24"
+        android:background="@drawable/exit_popup_cancel_background"
+        android:gravity="center"
+        android:padding="@dimen/size16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/exit"
+        app:layout_constraintTop_toBottomOf="@+id/tvExitMsg">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/btn_cancel"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/exit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size16"
+        android:layout_marginBottom="@dimen/size24"
+        android:layout_marginStart="@dimen/margin_big"
+        android:background="@drawable/exit_popup_exit_background"
+        android:gravity="center"
+        android:padding="@dimen/size16"
+        app:layout_constraintStart_toEndOf="@+id/cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvExitMsg">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnExit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/btn_exit"
+            android:textColor="@color/successColor"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

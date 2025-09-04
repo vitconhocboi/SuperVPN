@@ -31,6 +31,7 @@ import com.simple.libads.base.bannerads.BannerLoader
 import com.simple.libads.config.InterConfig
 import com.simple.libads.manager.BannerManager
 import com.simple.libads.setVisible
+import com.tici.vpn.proxy.master.dialog.CloseAppDialog
 import com.tici.vpn.proxy.master.home.BackActionBarFragment
 import com.tici.vpn.proxy.master.home.ConnectedFragment
 import com.tici.vpn.proxy.master.home.DisconnectedFragment
@@ -189,7 +190,12 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                     } else if (isDisconnectedFragment) {
                         showFragment(mHomeFragment)
                     } else {
-                        finishAffinity()
+                        CloseAppDialog (
+                            onClose = {
+                                Timber.d("exit finishAffinity")
+                                finishAffinity()
+                            }
+                        ).show(supportFragmentManager, "CloseApp")
                     }
                 }
             })

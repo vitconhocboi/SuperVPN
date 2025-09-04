@@ -84,10 +84,11 @@ target_link_libraries(
 #        "SHELL:-mllvm -bcf -mllvm -fla -mllvm -icall  -mllvm -igv -mllvm -ibr -mllvm -sobf"
 #)
 #
-#target_link_options(
-#        share-pr
-#        PRIVATE
-#        "-Wl,--strip-all"
-#        "-Wl,--exclude-libs,ALL"
-#)
+target_link_options(
+        share-pr
+        PRIVATE
+        "-Wl,--strip-all"
+        "-Wl,--exclude-libs,ALL"
+        "-Wl,-z,max-page-size=16384"
+)
 
