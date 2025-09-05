@@ -8,6 +8,8 @@
         <item name="textAppearanceHeadline4">@style/App_TextAppearanceTitle2</item>
         <item name="textAppearanceBody1">@style/App_TextAppearanceBody1</item>
         <item name="textAppearanceBody2">@style/App_TextAppearanceBody2</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
     </style>
 
     <!-- Optional: fallback base theme if needed -->
