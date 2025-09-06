@@ -7,6 +7,7 @@ import androidx.lifecycle.lifecycleScope
 import com.common.baseui.extension.setOnClickNoDoubleClick
 import com.tici.vpn.proxy.master.base.ProductFragment
 import com.tici.vpn.proxy.master.databinding.FragmentIpInfoBinding
+import com.tici.vpn.proxy.master.network.LocalVpnService
 import com.tici.vpn.proxy.master.network.ProxySpeedTest.ProxyConfig
 import com.tici.vpn.proxy.master.utils.Navigator
 import kotlinx.coroutines.Dispatchers
@@ -38,7 +39,8 @@ class IpInfoFragment : ProductFragment<FragmentIpInfoBinding>() {
     override fun initView() {
         super.initView()
         showLoading()
-        val proxyConfig = arguments?.getSerializable("proxyConfig") as? ProxyConfig
+        val proxyConfig =
+            if (LocalVpnService.IsRunning) (arguments?.getSerializable("proxyConfig") as? ProxyConfig) else null
         Log.d("SUPERVPN", "initView: $proxyConfig")
         viewLifecycleOwner.lifecycleScope.launch {
             getIpInfo(buildOkHttpClient(proxyConfig))
