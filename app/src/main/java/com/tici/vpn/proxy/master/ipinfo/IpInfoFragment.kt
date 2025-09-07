@@ -57,35 +57,35 @@ class IpInfoFragment : ProductFragment<FragmentIpInfoBinding>() {
     private fun buildOkHttpClient(proxyConfig: ProxyConfig?): OkHttpClient {
         val builder = OkHttpClient.Builder().connectTimeout(15, TimeUnit.SECONDS)
             .readTimeout(15, TimeUnit.SECONDS).writeTimeout(15, TimeUnit.SECONDS)
-//        if (proxyConfig != null) {
-//            val proxy = Proxy(
-//                when (proxyConfig.type.uppercase()) {
-//                    "SOCKS5" -> Proxy.Type.SOCKS
-//                    "HTTP" -> Proxy.Type.HTTP
-//                    else -> throw IllegalArgumentException("Unsupported proxy type: ${proxyConfig.type}")
-//                }, InetSocketAddress(proxyConfig.host, proxyConfig.port)
-//            )
-//            builder.proxy(proxy)
-//        }
-//        if (proxyConfig?.type?.uppercase() == "HTTP") {
-//            builder.proxyAuthenticator(object : okhttp3.Authenticator {
-//                override fun authenticate(route: Route?, response: Response): Request? {
-//                    val credential = Credentials.basic(
-//                        proxyConfig.username, proxyConfig.password
-//                    )
-//                    return response.request.newBuilder().header("Proxy-Authorization", credential)
-//                        .build()
-//                }
-//            })
-//        } else if (proxyConfig?.type?.uppercase() == "SOCKS5") {
-//            Authenticator.setDefault(object : Authenticator() {
-//                override fun getPasswordAuthentication(): PasswordAuthentication {
-//                    return PasswordAuthentication(
-//                        proxyConfig.username, proxyConfig.password.toCharArray()
-//                    )
-//                }
-//            })
-//        }
+        if (proxyConfig != null) {
+            val proxy = Proxy(
+                when (proxyConfig.type.uppercase()) {
+                    "SOCKS5" -> Proxy.Type.SOCKS
+                    "HTTP" -> Proxy.Type.HTTP
+                    else -> throw IllegalArgumentException("Unsupported proxy type: ${proxyConfig.type}")
+                }, InetSocketAddress(proxyConfig.host, proxyConfig.port)
+            )
+            builder.proxy(proxy)
+        }
+        if (proxyConfig?.type?.uppercase() == "HTTP") {
+            builder.proxyAuthenticator(object : okhttp3.Authenticator {
+                override fun authenticate(route: Route?, response: Response): Request? {
+                    val credential = Credentials.basic(
+                        proxyConfig.username, proxyConfig.password
+                    )
+                    return response.request.newBuilder().header("Proxy-Authorization", credential)
+                        .build()
+                }
+            })
+        } else if (proxyConfig?.type?.uppercase() == "SOCKS5") {
+            Authenticator.setDefault(object : Authenticator() {
+                override fun getPasswordAuthentication(): PasswordAuthentication {
+                    return PasswordAuthentication(
+                        proxyConfig.username, proxyConfig.password.toCharArray()
+                    )
+                }
+            })
+        }
         return builder.build()
     }
 

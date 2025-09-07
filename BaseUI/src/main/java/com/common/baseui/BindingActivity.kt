@@ -11,6 +11,7 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
+import androidx.core.view.WindowCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
 import com.simple.libads.config.InterConfig
@@ -54,6 +55,9 @@ abstract class BindingActivity<T : ViewBinding> : BaseActivity() {
             setContentView(binding.root)
             initView()
 //            makeStatusBarTransparent()
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            WindowCompat.setDecorFitsSystemWindows(window, true)
             if (!BaseAppConfig.isSub) {
                 loadAds()
             }
