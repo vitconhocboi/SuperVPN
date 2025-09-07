@@ -2,12 +2,13 @@ package com.tici.vpn.proxy.master.ipinfo
 
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.common.baseui.extension.setOnClickNoDoubleClick
 import com.tici.vpn.proxy.master.base.ProductFragment
 import com.tici.vpn.proxy.master.databinding.FragmentIpInfoBinding
+import com.tici.vpn.proxy.master.network.LocalVpnService
 import com.tici.vpn.proxy.master.network.ProxySpeedTest.ProxyConfig
 import com.tici.vpn.proxy.master.utils.Navigator
 import kotlinx.coroutines.Dispatchers
@@ -19,7 +20,6 @@ import okhttp3.Request
 import okhttp3.Response
 import okhttp3.Route
 import org.json.JSONObject
-import timber.log.Timber
 import java.net.Authenticator
 import java.net.InetSocketAddress
 import java.net.PasswordAuthentication
@@ -28,7 +28,7 @@ import java.util.concurrent.TimeUnit
 
 class IpInfoFragment : ProductFragment<FragmentIpInfoBinding>() {
     companion object {
-        const val URL_IP_INFO = "https://free.freeipapi.com/api/json"
+        const val URL_IPINFO = "https://free.freeipapi.com/api/json"
     }
 
     override fun bindingProvider(
@@ -40,9 +40,12 @@ class IpInfoFragment : ProductFragment<FragmentIpInfoBinding>() {
     override fun initView() {
         super.initView()
         showLoading()
-        val proxyConfig = arguments?.getSerializable("proxyConfig") as? ProxyConfig
-        Timber.d("SupperVPN", "getIpInfo initView: $proxyConfig")
-        viewLifecycleOwner.lifecycleScope.launch(Dispatchers.IO) {
+        val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
+        binding.ivBack.scaleX = if (isRTL) -1f else 1f
+
+        val proxyConfig =
+            if (LocalVpnService.IsRunning) (arguments?.getSerializable("proxyConfig") as? ProxyConfig) else null
+        viewLifecycleOwner.lifecycleScope.launch {
             getIpInfo(buildOkHttpClient(proxyConfig))
         }
 
@@ -54,48 +57,48 @@ class IpInfoFragment : ProductFragment<FragmentIpInfoBinding>() {
     private fun buildOkHttpClient(proxyConfig: ProxyConfig?): OkHttpClient {
         val builder = OkHttpClient.Builder().connectTimeout(15, TimeUnit.SECONDS)
             .readTimeout(15, TimeUnit.SECONDS).writeTimeout(15, TimeUnit.SECONDS)
-        if (proxyConfig != null) {
-            val proxy = Proxy(
-                when (proxyConfig.type.uppercase()) {
-                    "SOCKS5" -> Proxy.Type.SOCKS
-                    "HTTP" -> Proxy.Type.HTTP
-                    else -> throw IllegalArgumentException("Unsupported proxy type: ${proxyConfig.type}")
-                }, InetSocketAddress(proxyConfig.host, proxyConfig.port)
-            )
-            builder.proxy(proxy)
-        }
-        if (proxyConfig?.type?.uppercase() == "HTTP") {
-            builder.proxyAuthenticator { _, response ->
-                val credential = Credentials.basic(
-                    proxyConfig.username, proxyConfig.password
-                )
-                response.request.newBuilder().header("Proxy-Authorization", credential)
-                    .build()
-            }
-        } else if (proxyConfig?.type?.uppercase() == "SOCKS5") {
-            Authenticator.setDefault(object : Authenticator() {
-                override fun getPasswordAuthentication(): PasswordAuthentication {
-                    return PasswordAuthentication(
-                        proxyConfig.username, proxyConfig.password.toCharArray()
-                    )
-                }
-            })
-        }
+//        if (proxyConfig != null) {
+//            val proxy = Proxy(
+//                when (proxyConfig.type.uppercase()) {
+//                    "SOCKS5" -> Proxy.Type.SOCKS
+//                    "HTTP" -> Proxy.Type.HTTP
+//                    else -> throw IllegalArgumentException("Unsupported proxy type: ${proxyConfig.type}")
+//                }, InetSocketAddress(proxyConfig.host, proxyConfig.port)
+//            )
+//            builder.proxy(proxy)
+//        }
+//        if (proxyConfig?.type?.uppercase() == "HTTP") {
+//            builder.proxyAuthenticator(object : okhttp3.Authenticator {
+//                override fun authenticate(route: Route?, response: Response): Request? {
+//                    val credential = Credentials.basic(
+//                        proxyConfig.username, proxyConfig.password
+//                    )
+//                    return response.request.newBuilder().header("Proxy-Authorization", credential)
+//                        .build()
+//                }
+//            })
+//        } else if (proxyConfig?.type?.uppercase() == "SOCKS5") {
+//            Authenticator.setDefault(object : Authenticator() {
+//                override fun getPasswordAuthentication(): PasswordAuthentication {
+//                    return PasswordAuthentication(
+//                        proxyConfig.username, proxyConfig.password.toCharArray()
+//                    )
+//                }
+//            })
+//        }
         return builder.build()
     }
 
     private suspend fun getIpInfo(client: OkHttpClient) = withContext(Dispatchers.IO) {
-        Timber.d("SuperVPN getIpInfo")
-        val request = Request.Builder().url(URL_IP_INFO)
+        val request = Request.Builder().url(URL_IPINFO)
             .header("User-Agent", "AndroidApp/1.0")
             .header("Accept", "application/json").build()
         try {
-            Timber.d("SuperVPN getIpInfo try")
             client.newCall(request).execute().use { response ->
-                Timber.d("SuperVPN getIpInfo respnse ${response.isSuccessful}")
                 if (response.isSuccessful) {
                     val body = response.body.string()
                     val json = JSONObject(body)
+                    Log.d("SupperVPN", "getIpInfo: $json")
                     binding.apply {
                         tvIpAddress.text = json.getString("ipAddress")
                         tvNetworkProvider.text = json.getString("asnOrganization")
@@ -105,21 +108,12 @@ class IpInfoFragment : ProductFragment<FragmentIpInfoBinding>() {
                         tvPincode.text = json.getString("zipCode")
                         tvTimeZone.text = json.getJSONArray("timeZones").getString(0)
                     }
-                } else {
-                    Timber.d("SuperVPN getIpInfo error connection ${response.code} ${response.isSuccessful}")
                 }
                 hideLoading()
             }
         } catch (e: Exception) {
-            withContext(Dispatchers.Main) {
-                Toast.makeText(
-                    requireContext(),
-                    "Connection failed. Please check the internet/VPN connection.",
-                    Toast.LENGTH_SHORT
-                ).show()
-                hideLoading()
-//                Navigator.startMainActivity(requireActivity())
-            }
+            Log.d("SupperVPN", "getIpInfo:", e)
+            hideLoading()
         }
     }
 }

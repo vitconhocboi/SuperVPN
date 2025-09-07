@@ -134,6 +134,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
 
             icBack.scaleX = if (isRTL) -1f else 1f
             ivBack.scaleX = if (isRTL) -1f else 1f
+            ivBack2.scaleX = if (isRTL) -1f else 1f
 
             lnSetting.setOnClickListener {
                 showFragment(mSettingFragment)

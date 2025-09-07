@@ -2,6 +2,7 @@ package com.tici.vpn.proxy.master.home
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
 import com.common.baseui.BaseAppConfig
@@ -23,6 +24,7 @@ class ConnectedFragment : BackActionBarFragment, ProductFragment<FragmentConnect
 
     override fun initView() {
         super.initView()
+
         binding.apply {
             pnIpInfo.setOnClickListener {
                 Navigator.startProxyInfoActivity(requireActivity(), currentProxy)

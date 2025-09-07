@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layoutDirection="locale">
 
     <LinearLayout
         android:id="@+id/proxyActionBar"
@@ -21,7 +22,7 @@
             android:src="@drawable/back" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/size16"
             android:layout_weight="1"
@@ -32,12 +33,12 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/pnProxy"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/proxyActionBar">
+<!--    <LinearLayout-->
+<!--        android:id="@+id/pnProxy"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/proxyActionBar">-->
 
         <LinearLayout
             android:id="@+id/pn_ip_info"
@@ -46,14 +47,14 @@
             android:layout_marginHorizontal="@dimen/size16"
             android:layout_marginTop="@dimen/size12"
             android:background="@drawable/bg_ip_info"
-            android:gravity="top"
             android:orientation="vertical"
-            android:padding="@dimen/size12">
+            android:padding="@dimen/size12"
+            app:layout_constraintTop_toBottomOf="@id/proxyActionBar">
 
+            <!-- Row 1: IP Address -->
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <com.google.android.material.imageview.ShapeableImageView
@@ -65,16 +66,14 @@
                     app:shapeAppearanceOverlay="@style/CircleImageView" />
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/size10"
-                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="@dimen/size32"
-                        android:layout_weight="1"
                         android:fontFamily="@font/inter_normal"
                         android:gravity="center_vertical"
                         android:text="@string/ip_address"
@@ -82,20 +81,18 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tvIpAddress"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="@dimen/size32"
-                        android:layout_weight="1"
                         android:fontFamily="@font/inter_normal"
                         android:gravity="center_vertical"
                         android:textColor="#ECEFF5" />
                 </LinearLayout>
-
             </LinearLayout>
 
+            <!-- Row 2: Network Provider -->
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <com.google.android.material.imageview.ShapeableImageView
@@ -107,16 +104,14 @@
                     app:shapeAppearanceOverlay="@style/CircleImageView" />
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/size10"
-                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="@dimen/size32"
-                        android:layout_weight="1"
                         android:fontFamily="@font/inter_normal"
                         android:gravity="center_vertical"
                         android:text="@string/network_provider"
@@ -124,20 +119,18 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tvNetworkProvider"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="@dimen/size32"
-                        android:layout_weight="1"
                         android:fontFamily="@font/inter_normal"
                         android:gravity="center_vertical"
                         android:textColor="#ECEFF5" />
                 </LinearLayout>
-
             </LinearLayout>
 
+            <!-- Row 3: Location -->
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <com.google.android.material.imageview.ShapeableImageView
@@ -148,17 +141,15 @@
                     android:src="@drawable/ic_location_2"
                     app:shapeAppearanceOverlay="@style/CircleImageView" />
 
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/size10"
-                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/size10"
                     android:orientation="vertical">
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="@dimen/size32"
-                        android:layout_weight="1"
                         android:fontFamily="@font/inter_normal"
                         android:gravity="center_vertical"
                         android:text="@string/location"
@@ -166,20 +157,18 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tvLocation"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="@dimen/size32"
-                        android:layout_weight="1"
                         android:fontFamily="@font/inter_normal"
                         android:gravity="center_vertical"
                         android:textColor="#ECEFF5" />
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
+                </LinearLayout>
             </LinearLayout>
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
+            <!-- Row 4: Pincode -->
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <com.google.android.material.imageview.ShapeableImageView
@@ -190,17 +179,15 @@
                     android:src="@drawable/ic_pincode"
                     app:shapeAppearanceOverlay="@style/CircleImageView" />
 
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/size10"
-                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/size10"
                     android:orientation="vertical">
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="@dimen/size32"
-                        android:layout_weight="1"
                         android:fontFamily="@font/inter_normal"
                         android:gravity="center_vertical"
                         android:text="@string/pincode"
@@ -208,20 +195,18 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tvPincode"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="@dimen/size32"
-                        android:layout_weight="1"
                         android:fontFamily="@font/inter_normal"
                         android:gravity="center_vertical"
                         android:textColor="#ECEFF5" />
-                </androidx.appcompat.widget.LinearLayoutCompat>
+                </LinearLayout>
+            </LinearLayout>
 
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
+            <!-- Row 5: Timezone -->
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <com.google.android.material.imageview.ShapeableImageView
@@ -232,17 +217,15 @@
                     android:src="@drawable/ic_clock_timezone"
                     app:shapeAppearanceOverlay="@style/CircleImageView" />
 
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/size10"
-                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/size10"
                     android:orientation="vertical">
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="@dimen/size32"
-                        android:layout_weight="1"
                         android:fontFamily="@font/inter_normal"
                         android:gravity="center_vertical"
                         android:text="@string/timezone"
@@ -250,18 +233,14 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tvTimeZone"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="@dimen/size32"
-                        android:layout_weight="1"
                         android:fontFamily="@font/inter_normal"
                         android:gravity="center_vertical"
                         android:textColor="#ECEFF5" />
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
+                </LinearLayout>
+            </LinearLayout>
 
         </LinearLayout>
-
-    </LinearLayout>
-
+<!--    </LinearLayout>-->
 </androidx.constraintlayout.widget.ConstraintLayout>

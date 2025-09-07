@@ -12,7 +12,7 @@
         android:id="@+id/actionBar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/size56"
-        android:background="@color/gray_3"
+        android:background="@color/backgroundColor2"
         android:gravity="center_vertical">
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -36,8 +36,9 @@
             android:includeFontPadding="false"
             android:text="@string/setting_language"
             android:textAllCaps="false"
+            android:textStyle="bold"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_large"
+            android:textSize="@dimen/text_medium"
             tools:ignore="SpUsage" />
 
         <FrameLayout

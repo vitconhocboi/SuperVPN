@@ -394,10 +394,10 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
                     .onSuccess { _ ->
 
                     }
-                    .onFailure { error ->
+                    .onFailure { _ ->
 //                        throw Exception("Failed to assign proxy: $error")
-                        Timber.d("isError connectSafe stopProxy $isError")
-                        isError.postValue(true)
+//                        Timber.d("isError connectSafe stopProxy $isError")
+//                        isError.postValue(true)
                     }
             }
         }

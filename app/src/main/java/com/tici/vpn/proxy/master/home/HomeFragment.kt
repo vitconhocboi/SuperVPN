@@ -276,6 +276,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 ViewGuide().show(parentFragmentManager, "dialog_guide")
             }
             ivSelectProxy.scaleX = if (isRTL) -1f else 1f
+            ivIpInfo.scaleX = if (isRTL) -1f else 1f
 
             allowAppViewModel.getAllowApp()
             Timber.d("Test_Subscribe allowAppViewModel")
@@ -345,15 +346,15 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 } else {
                     DisconnectConfirmDialog(onConfirm = {
                         isShowReport = false
-                        if (NetworkUtils.isInternetAvailable(requireActivity())) {
+//                        if (NetworkUtils.isInternetAvailable(requireActivity())) {
                             stopSpeedTest()
                             vpnPermissionLauncher.unregister()
                             stopVpnService()
-                        } else {
-                            Toast.makeText(
-                                requireContext(), "No internet connection", Toast.LENGTH_SHORT
-                            ).show()
-                        }
+//                        } else {
+//                            Toast.makeText(
+//                                requireContext(), "No internet connection", Toast.LENGTH_SHORT
+//                            ).show()
+//                        }
                     }).show(childFragmentManager, "DialogConfirm")
                 }
             }
@@ -590,7 +591,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         handler.removeCallbacks(updateRunnable)
     }
 
-    fun stopSpeedTest() {
+    private fun stopSpeedTest() {
 //        binding.tvTrafficDownload.text = "--"
 //        binding.tvTrafficUpload.text = "--"
         handler.removeCallbacks(speedTestRunnable)
