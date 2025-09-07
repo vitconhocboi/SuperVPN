@@ -99,14 +99,16 @@ class IpInfoFragment : ProductFragment<FragmentIpInfoBinding>() {
                     val body = response.body.string()
                     val json = JSONObject(body)
                     Log.d("SupperVPN", "getIpInfo: $json")
-                    binding.apply {
-                        tvIpAddress.text = json.getString("ipAddress")
-                        tvNetworkProvider.text = json.getString("asnOrganization")
-                        "${json.getString("regionName")}, ${json.getString("countryName")}".also {
-                            tvLocation.text = it
+                    withContext(Dispatchers.Main) {
+                        binding.apply {
+                            tvIpAddress.text = json.getString("ipAddress")
+                            tvNetworkProvider.text = json.getString("asnOrganization")
+                            "${json.getString("regionName")}, ${json.getString("countryName")}".also {
+                                tvLocation.text = it
+                            }
+                            tvPincode.text = json.getString("zipCode")
+                            tvTimeZone.text = json.getJSONArray("timeZones").getString(0)
                         }
-                        tvPincode.text = json.getString("zipCode")
-                        tvTimeZone.text = json.getJSONArray("timeZones").getString(0)
                     }
                 }
                 hideLoading()
