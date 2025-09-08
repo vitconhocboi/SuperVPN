@@ -1,9 +1,9 @@
 package com.tici.vpn.proxy.master.ipinfo
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.common.baseui.extension.setOnClickNoDoubleClick
 import com.tici.vpn.proxy.master.base.ProductFragment
@@ -98,22 +98,29 @@ class IpInfoFragment : ProductFragment<FragmentIpInfoBinding>() {
                 if (response.isSuccessful) {
                     val body = response.body.string()
                     val json = JSONObject(body)
-                    Log.d("SupperVPN", "getIpInfo: $json")
-                    binding.apply {
-                        tvIpAddress.text = json.getString("ipAddress")
-                        tvNetworkProvider.text = json.getString("asnOrganization")
-                        "${json.getString("regionName")}, ${json.getString("countryName")}".also {
-                            tvLocation.text = it
+                    withContext(Dispatchers.Main) {
+                        binding.apply {
+                            tvIpAddress.text = json.getString("ipAddress")
+                            tvNetworkProvider.text = json.getString("asnOrganization")
+                            "${json.getString("regionName")}, ${json.getString("countryName")}".also {
+                                tvLocation.text = it
+                            }
+                            tvPincode.text = json.getString("zipCode")
+                            tvTimeZone.text = json.getJSONArray("timeZones").getString(0)
                         }
-                        tvPincode.text = json.getString("zipCode")
-                        tvTimeZone.text = json.getJSONArray("timeZones").getString(0)
                     }
                 }
                 hideLoading()
             }
         } catch (e: Exception) {
-            Log.d("SupperVPN", "getIpInfo:", e)
-            hideLoading()
+            withContext(Dispatchers.Main) {
+                Toast.makeText(
+                    requireContext(),
+                    "Connection failed. Please check the internet/VPN connection.",
+                    Toast.LENGTH_SHORT
+                ).show()
+                hideLoading()
+            }
         }
     }
 }
