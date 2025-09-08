@@ -114,21 +114,24 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
             }
 
             CONNECTED -> {
-                binding.ivConnect.setProgressWithAnimation(100f, 2000)
-                binding.connectTitle.invisible()
-                binding.tvTime.visible()
-                binding.lnDisconnected.invisible()
-                binding.lnDisconnecting.invisible()
-                binding.lnConnecting.invisible()
-                binding.ivConnect.isSelected = true
-                binding.ivConnect.isEnabled = true
-//                Log.i("SuperVpn", "TestRelease isConnected true")
-                isConnected = true
-                report.proxyConfig = currentProxy
-                binding.lnConnected.visible()
                 if (state == "RECONNECT") {
                     state = "CONNECT"
                     stopVpnService()
+                } else if (!NetworkUtils.isInternetAvailable(requireContext())) {
+                    state = ""
+                    stopVpnService()
+                } else {
+                    binding.ivConnect.setProgressWithAnimation(100f, 2000)
+                    binding.connectTitle.invisible()
+                    binding.tvTime.visible()
+                    binding.lnDisconnected.invisible()
+                    binding.lnDisconnecting.invisible()
+                    binding.lnConnecting.invisible()
+                    binding.ivConnect.isSelected = true
+                    binding.ivConnect.isEnabled = true
+                    isConnected = true
+                    report.proxyConfig = currentProxy
+                    binding.lnConnected.visible()
                 }
             }
 
@@ -223,7 +226,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                     currentProxy,
                     callback = { download, upload ->
                         try {
-                            if ( download.isNotEmpty()) report.download = download
+                            if (download.isNotEmpty()) report.download = download
                             if (upload.isNotEmpty()) report.upload = upload
                         } catch (e: Exception) {
                         }
@@ -347,9 +350,9 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                     DisconnectConfirmDialog(onConfirm = {
                         isShowReport = false
 //                        if (NetworkUtils.isInternetAvailable(requireActivity())) {
-                            stopSpeedTest()
-                            vpnPermissionLauncher.unregister()
-                            stopVpnService()
+                        stopSpeedTest()
+                        vpnPermissionLauncher.unregister()
+                        stopVpnService()
 //                        } else {
 //                            Toast.makeText(
 //                                requireContext(), "No internet connection", Toast.LENGTH_SHORT
