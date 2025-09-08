@@ -110,7 +110,6 @@ class SplashActivity : ProductActivity<ActivitySplashBinding>() {
             }
         }, doException = {
             initAdmobSdk {}
-            nextScreen()
         })
     }
 
