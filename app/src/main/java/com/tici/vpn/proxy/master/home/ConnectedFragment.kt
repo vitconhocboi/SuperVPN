@@ -51,7 +51,11 @@ class ConnectedFragment : BackActionBarFragment, ProductFragment<FragmentConnect
     }
 
     override fun getTitle(): String {
-        return getString(R.string.connect_success)
+        return try {
+            resources.getString(R.string.connect_success)
+        } catch (e: Exception) {
+            "Connected success"
+        }
     }
 
     fun setCurrentProxy(proxy: ProxySpeedTest.ProxyConfig?) {
