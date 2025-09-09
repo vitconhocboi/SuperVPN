@@ -138,27 +138,9 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/ivConnectPanel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:background="@drawable/bg_round">
-
-            <com.mikhaellopez.circularprogressbar.CircularProgressBar
-                android:id="@+id/iv_connect"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                app:cpb_background_progressbar_color="#646B80"
-                app:cpb_background_progressbar_color_direction="left_to_right"
-                app:cpb_background_progressbar_width="10dp"
-                app:cpb_indeterminate_mode="false"
-                app:cpb_progress_direction="to_right"
-                app:cpb_progressbar_color="#03C343"
-                app:cpb_progressbar_color_direction="right_to_left"
-                app:cpb_progressbar_width="10dp"
-                app:cpb_round_border="true"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"

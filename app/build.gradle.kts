@@ -184,7 +184,6 @@ dependencies {
     implementation (libs.logging.interceptor)
     implementation (libs.okhttp)
     implementation(libs.dotsindicator)
-    implementation(libs.circularprogressbar)
 }
 
 // Allow references to generated code

@@ -23,6 +23,7 @@ import com.common.baseui.extension.bindFlowCreate
 import com.common.baseui.extension.context
 import com.common.baseui.extension.invisible
 import com.common.baseui.extension.processResultData
+import com.common.baseui.extension.setOnClickNoDoubleClick
 import com.common.baseui.extension.visible
 import com.simple.libads.NetworkUtils
 import com.simple.libads.setVisible
@@ -109,7 +110,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 binding.lnDisconnecting.invisible()
                 binding.lnDisconnected.invisible()
                 binding.lnConnecting.visible()
-                binding.ivConnect.isEnabled = false
+                binding.ivConnectPanel.isEnabled = false
                 binding.lnConnected.invisible()
             }
 
@@ -121,14 +122,17 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                     state = ""
                     stopVpnService()
                 } else {
-                    binding.ivConnect.setProgressWithAnimation(100f, 2000)
+//                    binding.ivConnect.setProgressWithAnimation(100f, 2000)
+                    binding.ivConnectPanel.background= ResourcesCompat.getDrawable(
+                        resources, R.drawable.bg_round_active, null
+                    )
                     binding.connectTitle.invisible()
                     binding.tvTime.visible()
                     binding.lnDisconnected.invisible()
                     binding.lnDisconnecting.invisible()
                     binding.lnConnecting.invisible()
-                    binding.ivConnect.isSelected = true
-                    binding.ivConnect.isEnabled = true
+                    binding.ivConnectPanel.isSelected = true
+                    binding.ivConnectPanel.isEnabled = true
                     isConnected = true
                     report.proxyConfig = currentProxy
                     binding.lnConnected.visible()
@@ -141,15 +145,15 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 binding.lnDisconnected.invisible()
                 binding.lnDisconnecting.visible()
                 binding.lnConnecting.invisible()
-                binding.ivConnect.isSelected = false
-                binding.ivConnect.isEnabled = false
+                binding.ivConnectPanel.isSelected = false
+                binding.ivConnectPanel.isEnabled = false
 //                Log.i("SuperVpn", "TestRelease isConnected false from DISCONNECTING")
                 isConnected = false
                 binding.lnConnected.invisible()
             }
 
             DISCONNECTED -> {
-                binding.ivConnect.setProgressWithAnimation(0f, 2000)
+//                binding.ivConnect.setProgressWithAnimation(0f, 2000)
                 binding.ivConnectPanel.background = ResourcesCompat.getDrawable(
                     resources, R.drawable.bg_round, null
                 )
@@ -158,8 +162,8 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 binding.lnDisconnected.visible()
                 binding.lnDisconnecting.invisible()
                 binding.lnConnecting.invisible()
-                binding.ivConnect.isSelected = false
-                binding.ivConnect.isEnabled = true
+                binding.ivConnectPanel.isSelected = false
+                binding.ivConnectPanel.isEnabled = true
                 binding.lnConnected.invisible()
 //                Log.i("SuperVpn", "TestRelease isConnected false from DISCONNECTED")
                 isConnected = false
@@ -175,8 +179,8 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 binding.lnDisconnected.visible()
                 binding.lnDisconnecting.invisible()
                 binding.lnConnecting.invisible()
-                binding.ivConnect.isSelected = false
-                binding.ivConnect.isEnabled = false
+                binding.ivConnectPanel.isSelected = false
+                binding.ivConnectPanel.isEnabled = false
                 binding.lnConnected.invisible()
 //                Log.i("SuperVpn", "TestRelease isConnected false from ERROR")
                 isConnected = false
@@ -293,43 +297,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 
             }
 
-            ivConnect.apply {
-                progress = 0f
-                progressMax = 100f
-                roundBorder = true
-                startAngle = 1f
-
-                onProgressChangeListener = { progress ->
-//                    Log.d("SuperVPN", "initView: progress: $progress")
-                    if (lastProcess > 90 && lastProcess < 100 && progress == 100f) {
-                        binding.ivConnectPanel.background = ResourcesCompat.getDrawable(
-                            resources, R.drawable.bg_round_active, null
-                        )
-                        if (!isShowReport) {
-                            isShowReport = true
-                            onShowConnected(currentProxy)
-                        }
-                        pnIpInfo.isEnabled = true
-                        pnSelectProxy.isClickable = true
-                    } else if (lastProcess > 0 && lastProcess < 10 && progress == 0f) {
-                        binding.ivConnectPanel.background = ResourcesCompat.getDrawable(
-                            resources, R.drawable.bg_round, null
-                        )
-                        if (!isShowReport) {
-                            isShowReport = true
-                            val start = context?.getSharedPreferences(
-                                "privoxy_traffic", Context.MODE_PRIVATE
-                            )?.getInt("start", 0)
-                            val diff = System.currentTimeMillis().toInt() / 1000 - start!!
-                            report.duration = formatSecondsToTime(diff)
-                            onShowDisconnected(report)
-                        }
-                    }
-                    lastProcess = progress
-                }
-            }
-
-            ivConnect.setOnClickListener {
+            ivConnectPanel.setOnClickListener {
                 if (!isConnected) {
                     isShowReport = false
                     pnSelectProxy.isClickable = false
@@ -496,7 +464,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         }
 
         if ((activity as? MainActivity)?.isAutoConnect == true) {
-            binding.ivConnect.callOnClick()
+            binding.ivConnectPanel.callOnClick()
         }
 
     }
@@ -609,7 +577,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         bindFlowCreate(allowAppViewModel.allowApp) { result ->
             processResultData(result, onSuccess = { rs ->
                 try {
-                    binding.ivConnect.setProgressWithAnimation(99f, 10000)
+//                    binding.ivConnect.setProgressWithAnimation(99f, 10000)
                     proxyViewModel.startProxy(mainViewModel.getDeviceId(requireContext()),
                         context,
                         allowApp = rs.map { it.packageName })
