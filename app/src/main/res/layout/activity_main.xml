@@ -146,7 +146,7 @@
             android:id="@+id/dnsActionBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/size16"
+            android:paddingHorizontal="@dimen/size16"
             android:gravity="center_vertical"
             android:visibility="gone"
             app:layout_constraintTop_toTopOf="parent">

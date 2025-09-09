@@ -25,7 +25,10 @@ class ConnectedFragment : BackActionBarFragment, ProductFragment<FragmentConnect
     override fun initView() {
         super.initView()
 
+        val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
+
         binding.apply {
+            ivIpInfo.scaleX = if (isRTL) -1f else 1f
             pnIpInfo.setOnClickListener {
                 Navigator.startProxyInfoActivity(requireActivity(), currentProxy)
             }
