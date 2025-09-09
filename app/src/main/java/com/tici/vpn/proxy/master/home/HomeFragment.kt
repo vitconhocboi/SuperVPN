@@ -123,7 +123,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                     stopVpnService()
                 } else {
 //                    binding.ivConnect.setProgressWithAnimation(100f, 2000)
-                    binding.ivConnectPanel.background= ResourcesCompat.getDrawable(
+                    binding.ivConnectPanel.background = ResourcesCompat.getDrawable(
                         resources, R.drawable.bg_round_active, null
                     )
                     binding.connectTitle.invisible()
@@ -136,6 +136,10 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                     isConnected = true
                     report.proxyConfig = currentProxy
                     binding.lnConnected.visible()
+                    if (!isShowReport) {
+                        isShowReport = true
+                        onShowConnected(currentProxy)
+                    }
                 }
             }
 
@@ -170,6 +174,15 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 if (state == "CONNECT") {
                     state = ""
                     startVpnService()
+                }
+                if (!isShowReport) {
+                    isShowReport = true
+                    val start = context?.getSharedPreferences(
+                        "privoxy_traffic", Context.MODE_PRIVATE
+                    )?.getInt("start", 0)
+                    val diff = System.currentTimeMillis().toInt() / 1000 - start!!
+                    report.duration = formatSecondsToTime(diff)
+                    onShowDisconnected(report)
                 }
             }
 
@@ -226,8 +239,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     private val speedTestRunnable = object : Runnable {
         override fun run() {
             if (BaseAppConfig.proxy.isNotEmpty()) {
-                ProxySpeedTest.Instance.startSpeedTest(
-                    currentProxy,
+                ProxySpeedTest.Instance.startSpeedTest(currentProxy,
                     callback = { download, upload ->
                         try {
                             if (download.isNotEmpty()) report.download = download
@@ -342,8 +354,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 
             pnSelectProxy.setOnClickListener {
                 if (NetworkUtils.isInternetAvailable(requireActivity())) {
-                    showInterAds(
-                        placementId = AdPlacementId.INTER_ART_HOME,
+                    showInterAds(placementId = AdPlacementId.INTER_ART_HOME,
                         impressedCallBack = {},
                         showCallBack = {
                             Navigator.startProxyActivity(requireContext(), null)
