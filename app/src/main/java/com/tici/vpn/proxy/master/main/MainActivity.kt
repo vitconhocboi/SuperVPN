@@ -50,7 +50,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
     var isConnectedFragment = false
     var isDisconnectedFragment = false
 
-    var isAutoConnect = false
+//    var isAutoConnect = false
 
     private var configAd: FirebaseConfigManager = FirebaseConfigManager.get()
 
@@ -104,16 +104,16 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
     override fun initView() {
         requestAdvertisingIdPermission()
         val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
-        val reconnect = intent.getStringExtra("state")
-        if (reconnect != null && reconnect == "POPUP") {
-//            SettingSuccessDialog(
-//                R.string.setting_choose_proxy, R.string.home_reconnect_to_take_effect
-//            ).show(supportFragmentManager, "SettingSuccessDialog")
-            isAutoConnect = true
-        } else {
-            isAutoConnect = false
-        }
-        intent.removeExtra("state")
+//        val reconnect = intent.getStringExtra("state")
+//        if (reconnect != null && reconnect == "POPUP") {
+////            SettingSuccessDialog(
+////                R.string.setting_choose_proxy, R.string.home_reconnect_to_take_effect
+////            ).show(supportFragmentManager, "SettingSuccessDialog")
+//            isAutoConnect = true
+//        } else {
+//            isAutoConnect = false
+//        }
+//        intent.removeExtra("state")
 
         mainViewModel.checkActiveSubscriptions(applicationContext) {
             if (it) {

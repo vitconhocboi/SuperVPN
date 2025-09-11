@@ -37,7 +37,8 @@ class ProxyGroupAdapter @Inject constructor() :
         override fun bindData(position: Int, data: ProxyGroupUI) {
             mViewBinding.apply {
                 ivFlag.setImageResource(Utils.getFlag(data.country))
-                tvTitle.text = getStringSafely(context = context, name = data.country) ?: "undefined"
+                tvTitle.text =
+                    getStringSafely(context = context, name = data.country) ?: "undefined"
 
                 if (data.type == "premium" && !BaseAppConfig.isSub) {
                     icCrown.visibility = View.VISIBLE
@@ -47,10 +48,10 @@ class ProxyGroupAdapter @Inject constructor() :
 
                 lnMain.isSelected = data.active
 
-                lnMain.setOnClickNoDoubleClick {
+                lnMain.setOnClickListener {
 //                    if (BaseAppConfig.isSub) {
-                        focusToProxy(position)
-                        notifyItemChanged(position)
+                    focusToProxy(position)
+                    notifyItemChanged(position)
 //                    }
                     onItemClick?.invoke(position, data)
                 }
@@ -80,11 +81,9 @@ class ProxyGroupAdapter @Inject constructor() :
     fun focusToProxy(position: Int) {
         datas.forEachIndexed { index, item ->
             if (position == index) {
-                item?.active = true
-                notifyItemChanged(index)
+                item?.active = !item?.active!!
             } else if (item?.active == true) {
                 item.active = false
-                notifyItemChanged(index)
             }
         }
     }
