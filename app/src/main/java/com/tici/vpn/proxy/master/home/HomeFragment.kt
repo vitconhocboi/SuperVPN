@@ -312,8 +312,8 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
             ivConnectPanel.setOnClickListener {
                 if (!isConnected) {
                     isShowReport = false
-                    pnSelectProxy.isClickable = false
-                    pnIpInfo.isEnabled = false
+//                    pnSelectProxy.isClickable = false
+//                    pnIpInfo.isEnabled = false
                     if (BaseAppConfig.proxy.isNotEmpty()) {
                         prepareVpn()
                     } else {
