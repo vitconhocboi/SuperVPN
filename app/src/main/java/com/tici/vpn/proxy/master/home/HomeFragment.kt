@@ -1,5 +1,6 @@
 package com.tici.vpn.proxy.master.home
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.ActivityManager
 import android.content.Context
@@ -278,6 +279,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 //    }
 //
 
+    @SuppressLint("DefaultLocale")
     fun formatSecondsToTime(seconds: Int): String {
         val hours = seconds / 3600
         val minutes = (seconds % 3600) / 60
@@ -287,7 +289,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 
     override fun initView() {
         super.initView()
-        state = activity?.intent?.getStringExtra("RECONNECT")
+        state = activity?.intent?.getStringExtra("state")
         val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
 //        isLocalVpnServiceRunning(requireContext())
         with(binding) {
@@ -309,7 +311,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 
             }
 
-            ivConnectPanel.setOnClickListener {
+            ivConnectPanel.setOnClickNoDoubleClick {
                 if (!isConnected) {
                     isShowReport = false
 //                    pnSelectProxy.isClickable = false
@@ -352,7 +354,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 //                }
 //            }
 
-            pnSelectProxy.setOnClickListener {
+            pnSelectProxy.setOnClickNoDoubleClick {
                 if (NetworkUtils.isInternetAvailable(requireActivity())) {
                     showInterAds(placementId = AdPlacementId.INTER_ART_HOME,
                         impressedCallBack = {},
@@ -366,7 +368,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 }
             }
 
-            pnIpInfo.setOnClickListener {
+            pnIpInfo.setOnClickNoDoubleClick {
                 if (NetworkUtils.isInternetAvailable(requireActivity())) {
                     Navigator.startProxyInfoActivity(requireContext(), currentProxy)
                 } else {
@@ -473,10 +475,19 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 ).show()
             }
         }
-
-        if ((activity as? MainActivity)?.isAutoConnect == true) {
-            binding.ivConnectPanel.callOnClick()
-        }
+//        val reconnect = activity?.intent?.getStringExtra("state")
+//        if (reconnect != null && reconnect == "POPUP") {
+////            SettingSuccessDialog(
+////                R.string.setting_choose_proxy, R.string.home_reconnect_to_take_effect
+////            ).show(supportFragmentManager, "SettingSuccessDialog")
+//            isAutoConnect = true
+//        } else {
+//            isAutoConnect = false
+//        }
+//        if ( reconnect == "POPUP") {
+//            Toast.makeText(requireContext(), R.string.connection_request, Toast.LENGTH_LONG).show()
+//            binding.ivConnectPanel.callOnClick()
+//        }
 
     }
 

@@ -18,6 +18,7 @@ import com.tici.vpn.proxy.master.databinding.FragmentProxyBinding
 import com.tici.vpn.proxy.master.dialog.DialogRateComplete
 import com.tici.vpn.proxy.master.dialog.UnlockDialog
 import com.tici.vpn.proxy.master.main.MainViewModel
+import com.tici.vpn.proxy.master.network.LocalVpnService
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import timber.log.Timber
@@ -36,7 +37,9 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
     private val mainViewModel: MainViewModel by viewModels()
 
     private lateinit var selectedItem: ProxyGroupUI
-    private var selectedType : Int = 0
+    private var selectedType: Int = 0
+
+    private var connectState: String = ""
 
     companion object {
         private var selected = false
@@ -79,7 +82,9 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
                             mPagerAdapter.updateData(data)
                             if (mProxyViewModel.getLastUsedVpn().isNotEmpty()) {
                                 tvQuickAccess.visibility = View.VISIBLE
-                                mQuickAccessAdapter.updateData(data.filter { mProxyViewModel.getLastUsedVpn().contains(it.country) })
+                                mQuickAccessAdapter.updateData(data.filter {
+                                    mProxyViewModel.getLastUsedVpn().contains(it.country)
+                                })
                             } else {
                                 tvQuickAccess.visibility = View.GONE
                             }
@@ -102,54 +107,63 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
                 selectedItem = item
                 selectedType = 1
                 btnConnect.visibility = View.VISIBLE
+                mPagerAdapter.datas.find { it?.country == item.country }?.active = item.active
+                mPagerAdapter.notifyDataSetChanged()
             }
 
             mPagerAdapter.onItemClick = { _, item ->
                 selectedItem = item
                 selectedType = 2
                 btnConnect.visibility = View.VISIBLE
+                mQuickAccessAdapter.datas.find { it?.country == item.country }?.active = item.active
+                mQuickAccessAdapter.notifyDataSetChanged()
+                mPagerAdapter.notifyDataSetChanged()
             }
 
             btnConnect.setOnClickListener {
                 try {
                     lifecycleScope.launch {
-                        if (!selected) {
-                            if (selectedItem.type == "free" || mainViewModel.isSub()) {
-                                selected = true
-                                if (selectedType == 1) {
-                                    mQuickAccessAdapter.notifyDataSetChanged()
-                                } else if (selectedType == 2) {
-                                    mPagerAdapter.notifyDataSetChanged()
+                        showLoading()
+                        try {
+                            if (selectedItem.active) {
+                                if (selectedItem.type != "free" && !mainViewModel.isSub()) {
+                                    UnlockDialog(data = selectedItem).show(
+                                        parentFragmentManager,
+                                        "unlock_dialog"
+                                    )
+                                    return@launch
                                 }
-                                val deviceId = mainViewModel.getDeviceId(requireContext())
-                                val reconnect =
-                                    if (selectedItem.country != BaseAppConfig.proxyCountry || !selectedItem.active) "RECONNECT" else ""
-                                if (selectedItem.country == BaseAppConfig.proxyCountry) {
-                                    selectedItem.active = false
-                                }
-                                try {
-                                    if (selectedItem.active) {
-                                        mProxyViewModel.setActiveProxy(selectedItem, deviceId, selectedItem.type)
-                                    } else {
-                                        mProxyViewModel.setActiveProxy(null, deviceId, selectedItem.type)
-                                    }
-                                    requireActivity().finish()
-                                    Navigator.startMainActivity(requireContext(), "POPUP")
-                                } catch (e: Exception) {
-                                    e.printStackTrace()
-                                    Toast.makeText(
-                                        requireContext(),
-                                        "An error occur. Please try again",
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                                }
-                                selected = false
-                            } else {
-//                                Navigator.startPremiumActivity(requireContext())
-                                UnlockDialog(data = selectedItem).show(parentFragmentManager, "unlock_dialog")
                             }
-                        } else {
-                            selectedItem.active = false
+                            connectState =
+                                if (selectedItem.country != BaseAppConfig.proxyCountry || !selectedItem.active) {
+                                    if (LocalVpnService.IsRunning) "RECONNECT" else "CONNECT"
+                                } else ""
+                            val deviceId = mainViewModel.getDeviceId(requireContext())
+                            if (selectedItem.active) {
+                                mProxyViewModel.setActiveProxy(
+                                    selectedItem,
+                                    deviceId,
+                                    selectedItem.type
+                                )
+                            } else {
+                                mProxyViewModel.setActiveProxy(
+                                    null,
+                                    deviceId,
+                                    selectedItem.type
+                                )
+                            }
+                            requireActivity().finish()
+                            Navigator.startMainActivity(
+                                requireContext(),
+                                connectState
+                            )
+                        } catch (e: Exception) {
+                            e.printStackTrace()
+                            Toast.makeText(
+                                requireContext(),
+                                "An error occur. Please try again",
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
                     }
                 } catch (e: Exception) {
@@ -159,6 +173,8 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
                         "Cannot get proxy: ${e.message}",
                         Toast.LENGTH_SHORT
                     ).show()
+                } finally {
+                    hideLoading()
                 }
             }
 
@@ -170,7 +186,11 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
         mProxyViewModel.isError.observe(viewLifecycleOwner) { isError ->
             Timber.d("isError PremiumFragment $isError")
             if (isError == true) {
-                Toast.makeText(requireContext(), "Connection error PremiumFragment. Please try again.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    requireContext(),
+                    "Connection error PremiumFragment. Please try again.",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }
