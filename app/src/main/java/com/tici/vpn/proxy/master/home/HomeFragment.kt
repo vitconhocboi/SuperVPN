@@ -175,6 +175,8 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                 if (state == "CONNECT") {
                     state = ""
                     startVpnService()
+                    handler.post(speedTestRunnable)
+                    handler.post(updateRunnable)
                 }
                 if (!isShowReport) {
                     isShowReport = true
