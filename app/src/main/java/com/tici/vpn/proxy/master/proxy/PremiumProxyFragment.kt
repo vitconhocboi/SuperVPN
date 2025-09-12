@@ -108,6 +108,7 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
                 selectedType = 1
                 btnConnect.visibility = View.VISIBLE
                 mPagerAdapter.datas.find { it?.country == item.country }?.active = item.active
+                mQuickAccessAdapter.notifyDataSetChanged()
                 mPagerAdapter.notifyDataSetChanged()
             }
 
@@ -135,9 +136,10 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
                                 }
                             }
                             connectState =
-                                if (selectedItem.country != BaseAppConfig.proxyCountry || !selectedItem.active) {
+                                if (selectedItem.country != BaseAppConfig.proxyCountry || !selectedItem.active || !LocalVpnService.IsRunning) {
                                     if (LocalVpnService.IsRunning) "RECONNECT" else "CONNECT"
                                 } else ""
+//                            Log.i("SUPPERVPN", "initView: connectState $connectState")
                             val deviceId = mainViewModel.getDeviceId(requireContext())
                             if (selectedItem.active) {
                                 mProxyViewModel.setActiveProxy(
