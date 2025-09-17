@@ -7,36 +7,40 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
+import androidx.lifecycle.lifecycleScope
 import com.common.baseui.extension.context
-import com.tici.vpn.proxy.master.databinding.DialogRateCompleteBinding
-import com.common.baseui.extension.setOnClickNoDoubleClick
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.core.baseui.BaseAdsBottomSheetDialogFragment
+import com.core.config.domain.data.IAdPlaceName
+import com.core.utilities.setOnSingleClick
+import com.core.utilities.toast
 import com.tici.vpn.proxy.master.R
 import com.tici.vpn.proxy.master.databinding.DialogUnlockBinding
 import com.tici.vpn.proxy.master.proxy.ProxyGroupUI
+import com.tici.vpn.proxy.master.required.ads.AppAdPlaceName
+import com.tici.vpn.proxy.master.utils.Constant.KEY_RESULT_CONNECT_VPN
 import com.tici.vpn.proxy.master.utils.Navigator
 import com.tici.vpn.proxy.master.utils.Utils
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
+
+@AndroidEntryPoint
 class UnlockDialog(
     val data: ProxyGroupUI
-) : BottomSheetDialogFragment() {
-    private var _binding: DialogUnlockBinding? = null
-    protected val binding: DialogUnlockBinding
-        get() = _binding
-            ?: throw RuntimeException("Should only use binding after onCreateView and before onDestroyView")
+) : BaseAdsBottomSheetDialogFragment<DialogUnlockBinding>() {
 
-    fun bindingProvider(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-    ): DialogRateCompleteBinding {
-        return DialogRateCompleteBinding.inflate(inflater, container, false)
+    override fun providerRewardAdPlaceName(): List<IAdPlaceName> {
+        return listOf(
+            AppAdPlaceName.REWARDED_CONNECT_VPN
+        )
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View {
-        _binding = DialogUnlockBinding.inflate(inflater, container, false)
-        return binding.root
+    override fun bindingProvider(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): DialogUnlockBinding {
+        return DialogUnlockBinding.inflate(inflater, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -47,21 +51,62 @@ class UnlockDialog(
         roundedDrawable.cornerRadius = 20f
 
         binding.apply {
-//            tvSubmit.setOnClickNoDoubleClick { dismiss() }
-//            tvSubmit.isSelected = true
             ivFlag.setImageResource(Utils.getFlag(data.country))
-            countryTitle.text = getStringSafely(context = context, name = data.country) ?: "undefined"
+            countryTitle.text =
+                getStringSafely(context = context, name = data.country) ?: "undefined"
             lnGetPremium.background = roundedDrawable
 
             lnGetPremium.setOnClickListener {
                 Navigator.startPremiumActivity(requireContext())
-                dismiss()
+                closeDialog()
             }
 
             btnClose.setOnClickListener {
-                dismiss()
+                closeDialog()
+            }
+
+            bgLlWatchAds.setOnSingleClick {
+                showRewardAd(adPlaceName = AppAdPlaceName.REWARDED_CONNECT_VPN) { isShown, isEarnedReward ->
+                    if (isEarnedReward) {
+                        callBackConnectVpn()
+                        closeDialog()
+                    } else if (isShown) {
+                        context.toast(R.string.connect_error)
+                    } else {
+                        //
+                    }
+                }
+
+//                fun unlockWithRewarded(callbackSuccess: () -> Unit, callbackClose: (() -> Unit)? = null) {
+//                    showRewardAd(adPlaceName = AppAdPlaceName.REWARDED_CONNECT_VPN, onHandleCompleted = { isShown, isEarnedReward ->
+//                        if (isEarnedReward) {
+//                            callbackSuccess.invoke()
+//                        } else if (isShown) {
+//                            callbackClose?.invoke()
+//                            cancelRewarded()
+//                        } else {
+//                            unlockDownloadShareViewModel.unlockFailed(isNetworkError = false)
+//                        }
+//                    })
+//                }
             }
         }
+    }
+
+    fun closeDialog() {
+        lifecycleScope.launch(Dispatchers.Main) {
+            if (isAdded) {
+                dismissAllowingStateLoss()
+            }
+        }
+    }
+
+    private fun callBackConnectVpn() {
+        val bundleBack = Bundle()
+        parentFragmentManager.setFragmentResult(
+            KEY_RESULT_CONNECT_VPN,
+            bundleBack
+        )
     }
 
     private fun getStringSafely(context: Context, name: String): String? {
@@ -69,8 +114,4 @@ class UnlockDialog(
         return if (resId != 0) context.getString(resId) else null
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }

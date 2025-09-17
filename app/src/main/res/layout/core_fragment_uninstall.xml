@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.tici.vpn.proxy.master.required.view.SafeNestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <View
+                android:id="@+id/viewClickReturn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnBack"
+                android:layout_width="@dimen/_45dp"
+                android:layout_height="@dimen/_45dp"
+                android:layout_margin="@dimen/_4dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="@dimen/_12dp"
+                android:scaleType="centerCrop"
+                android:scaleX="@integer/locale_mirror_flip"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/icon_back" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_problems_using"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_14dp"
+                android:layout_marginEnd="@dimen/_16dp"
+                app:layout_constraintDimensionRatio="249:219"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnBack"
+                app:layout_constraintWidth_percent="0.35"
+                app:srcCompat="@drawable/img_problems_using" />
+
+            <TextView
+                android:id="@+id/tvProblemWhenUsing"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginEnd="@dimen/_15dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/tv_problems_when_using"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_20sp"
+                app:layout_constraintEnd_toStartOf="@+id/img_problems_using"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/img_problems_using" />
+
+            <TextView
+                android:id="@+id/tvBetterExperience"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_12dp"
+                android:layout_marginEnd="@dimen/_15dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/tv_better_experience"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/img_problems_using"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvProblemWhenUsing" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bgClUnableCreateKeyboard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_34dp"
+                android:background="@drawable/bg_option_question_uninstall"
+                app:layout_constraintTop_toBottomOf="@+id/img_problems_using">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ic_unable_create_keyboard"
+                    android:layout_width="@dimen/_40dp"
+                    android:layout_height="@dimen/_75dp"
+                    android:layout_marginStart="@dimen/_12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_unable_connect_vpn" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16dp"
+                    android:layout_marginEnd="@dimen/_10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:paddingVertical="@dimen/_10dp"
+                    android:text="@string/tv_unable_connect_vpn"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvCreateNow"
+                    app:layout_constraintStart_toEndOf="@+id/ic_unable_create_keyboard"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvCreateNow"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_12dp"
+                    android:background="@drawable/bg_border_button_step1_disable"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/_16dp"
+                    android:paddingVertical="@dimen/_10dp"
+                    android:text="@string/tv_connection_now"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.29" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bgClNoLongInteresting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:background="@drawable/bg_option_question_uninstall"
+                app:layout_constraintTop_toBottomOf="@+id/bgClUnableCreateKeyboard">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ic_no_longer_interesting"
+                    android:layout_width="@dimen/_40dp"
+                    android:layout_height="@dimen/_75dp"
+                    android:layout_marginStart="@dimen/_12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_no_longer_interesting" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_16dp"
+                    android:layout_marginEnd="@dimen/_10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:paddingVertical="@dimen/_10dp"
+                    android:text="@string/tv_no_longer_interesting"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvDiscover"
+                    app:layout_constraintStart_toEndOf="@+id/ic_no_longer_interesting"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvDiscover"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_12dp"
+                    android:background="@drawable/bg_border_button_step1_disable"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/_16dp"
+                    android:paddingVertical="@dimen/_10dp"
+                    android:text="@string/tv_shortcut_discover"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.29" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tvDontWantUninstall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_36dp"
+                android:background="@drawable/bg_border_uninstall"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:paddingVertical="@dimen/_14dp"
+                android:text="@string/tv_dont_want_uninstall"
+                android:textColor="@color/blue_language_select"
+                android:textSize="@dimen/_15sp"
+                app:layout_constraintTop_toBottomOf="@+id/bgClNoLongInteresting" />
+
+            <TextView
+                android:id="@+id/tvStillUninstall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_6dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:paddingVertical="@dimen/_14dp"
+                android:text="@string/tv_still_want_uninstall"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sp"
+                app:layout_constraintTop_toBottomOf="@+id/tvDontWantUninstall" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.tici.vpn.proxy.master.required.view.SafeNestedScrollView>
+    <!-- Placeholder cho Quảng cáo -->
+    <FrameLayout
+        android:id="@+id/ad_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <!-- SDK quảng cáo của bạn sẽ được đặt ở đây -->
+        <com.core.ads.customviews.ads.BannerNativeContainerLayout
+            android:id="@+id/layoutBannerNative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
+</LinearLayout>
+
+

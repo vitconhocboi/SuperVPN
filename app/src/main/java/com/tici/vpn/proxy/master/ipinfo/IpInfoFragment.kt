@@ -1,16 +1,23 @@
 package com.tici.vpn.proxy.master.ipinfo
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.common.baseui.extension.setOnClickNoDoubleClick
-import com.tici.vpn.proxy.master.base.ProductFragment
+import com.core.ads.domain.AdLoadBannerNativeUiResource
+import com.core.baseui.fragment.BaseFragment
+import com.core.baseui.fragment.ScreenType
+import com.core.config.domain.data.IAdPlaceName
 import com.tici.vpn.proxy.master.databinding.FragmentIpInfoBinding
 import com.tici.vpn.proxy.master.network.LocalVpnService
 import com.tici.vpn.proxy.master.network.ProxySpeedTest.ProxyConfig
+import com.tici.vpn.proxy.master.required.ads.AppAdPlaceName
+import com.tici.vpn.proxy.master.required.shortcut.AppScreenType
 import com.tici.vpn.proxy.master.utils.Navigator
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -26,7 +33,9 @@ import java.net.PasswordAuthentication
 import java.net.Proxy
 import java.util.concurrent.TimeUnit
 
-class IpInfoFragment : ProductFragment<FragmentIpInfoBinding>() {
+@AndroidEntryPoint
+class IpInfoFragment : BaseFragment<FragmentIpInfoBinding>() {
+
     companion object {
         const val URL_IPINFO = "https://free.freeipapi.com/api/json"
     }
@@ -37,19 +46,40 @@ class IpInfoFragment : ProductFragment<FragmentIpInfoBinding>() {
         return FragmentIpInfoBinding.inflate(inflater, container, false)
     }
 
-    override fun initView() {
-        super.initView()
+    override val screenType: ScreenType
+        get() = AppScreenType.IpInfoFragment
+
+    override fun onBannerNativeResult(adResource: AdLoadBannerNativeUiResource) {
+        binding.layoutBannerNative.processAdResource(
+            adResource,
+            AppAdPlaceName.ANCHORED_BOTTOM_MY_IP
+        )
+    }
+
+    override fun providerBannerNativeAdPlaceName(): List<IAdPlaceName> {
+        return listOf(
+            AppAdPlaceName.ANCHORED_BOTTOM_MY_IP
+        )
+    }
+
+    override fun initViews(savedInstanceState: Bundle?) {
         showLoading()
+//<<<<<<< HEAD
         val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
         binding.ivBack.scaleX = if (isRTL) -1f else 1f
 
         val proxyConfig =
             if (LocalVpnService.IsRunning) (arguments?.getSerializable("proxyConfig") as? ProxyConfig) else null
         viewLifecycleOwner.lifecycleScope.launch {
+//=======
+//        val proxyConfig = arguments?.getSerializable("proxyConfig") as? ProxyConfig
+//        viewLifecycleOwner.lifecycleScope.launch(Dispatchers.IO) {
+//>>>>>>> feature/08092025_update_core_base
             getIpInfo(buildOkHttpClient(proxyConfig))
         }
 
         binding.ivBack.setOnClickNoDoubleClick {
+            activity?.finish()
             Navigator.startMainActivity(requireActivity())
         }
     }

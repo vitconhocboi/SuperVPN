@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/base_bottom_sheet_background"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/_20dp">
+
+    <!-- Tiêu đề của dialog -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/exit_the_application"
+        android:textColor="@android:color/black"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <!-- Nội dung thông báo -->
+    <TextView
+        android:id="@+id/textViewMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:text="@string/are_you_sure_you_want_to_exit"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="16sp" />
+
+    <!-- Nhóm chứa hai nút bấm -->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/_12dp">
+
+        <!-- Nút "Yes" -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonYes"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="#F1F1F1"
+            android:text="@string/common_yes"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:cornerRadius="12dp" />
+
+        <!-- Nút "No" -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonNo"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="@string/common_no"
+            android:textAllCaps="false"
+            android:textColor="#007AFF"
+            android:textSize="18sp"
+            app:cornerRadius="12dp"
+            app:strokeColor="#007AFF"
+            app:strokeWidth="2dp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.core.ads.customviews.ads.BannerNativeContainerLayout
+        android:id="@+id/layoutBannerNative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10dp" />
+
+</LinearLayout>

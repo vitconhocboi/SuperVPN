@@ -260,3 +260,20 @@ native <methods>;
 # Retain generic signatures of TypeToken and its subclasses with R8 version 3.0 and higher.
 -keep,allowobfuscation,allowshrinking class com.google.gson.reflect.TypeToken
 -keep,allowobfuscation,allowshrinking class * extends com.google.gson.reflect.TypeToken
+
+
+# Giữ sealed class AppAdPlaceName và mọi object kế thừa
+-keep class **.AppAdPlaceName { *; }
+-keep class **.AppAdPlaceName$* { *; }
+
+# Giữ INSTANCE cho objectInstance
+-keepclassmembers class **.AppAdPlaceName$* {
+    public static ** INSTANCE;
+}
+
+-keep class **.CoreAdPlaceName { *; }
+-keep class **.CoreAdPlaceName* { *; }
+
+-keepclassmembers class **.CoreAdPlaceName* {
+    public static ** INSTANCE;
+}

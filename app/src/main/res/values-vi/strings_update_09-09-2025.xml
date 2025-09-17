@@ -1,0 +1,6 @@
+<resources>
+    <string name="core_shortcut_short_label_uninstall">Gỡ cài đặt</string>
+    <string name="core_shortcut_long_label_uninstall">Gỡ cài đặt</string>
+    <string name="core_shortcut_short_label_settings">Cài đặt</string>
+    <string name="core_shortcut_long_label_settings">Cài đặt</string>
+</resources>

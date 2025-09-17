@@ -1,6 +1,7 @@
 package com.tici.vpn.proxy.master.proxy
 
 import android.annotation.SuppressLint
+import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -8,24 +9,26 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.tici.vpn.proxy.master.base.ProductFragment
-import com.tici.vpn.proxy.master.utils.Navigator
 import com.common.baseui.BaseAppConfig
 import com.common.baseui.ResultData
 import com.common.baseui.extension.bindFlowCreate
 import com.common.baseui.extension.setVisible
+import com.core.baseui.fragment.BaseFragment
+import com.core.baseui.fragment.ScreenType
 import com.tici.vpn.proxy.master.databinding.FragmentProxyBinding
-import com.tici.vpn.proxy.master.dialog.DialogRateComplete
 import com.tici.vpn.proxy.master.dialog.UnlockDialog
 import com.tici.vpn.proxy.master.main.MainViewModel
 import com.tici.vpn.proxy.master.network.LocalVpnService
+import com.tici.vpn.proxy.master.required.shortcut.AppScreenType
+import com.tici.vpn.proxy.master.utils.Constant.KEY_RESULT_CONNECT_VPN
+import com.tici.vpn.proxy.master.utils.Navigator
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
+class PremiumProxyFragment : BaseFragment<FragmentProxyBinding>() {
 
     @Inject
     lateinit var mPagerAdapter: ProxyGroupAdapter
@@ -54,10 +57,14 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
         return FragmentProxyBinding.inflate(inflater, container, false)
     }
 
+    override val screenType: ScreenType
+        get() = AppScreenType.PremiumProxyFragment
+
     @SuppressLint("HardwareIds", "NotifyDataSetChanged")
-    override fun initView() {
-        super.initView()
+    override fun initViews(savedInstanceState: Bundle?) {
 //        Log.i("TestRelease", "getAllPremiumProxy initView")
+
+//        callBackResult()
         val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
         with(binding) {
             ivBack.scaleX = if (isRTL) -1f else 1f
@@ -106,7 +113,11 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
             mQuickAccessAdapter.onItemClick = { _, item ->
                 selectedItem = item
                 selectedType = 1
-                btnConnect.visibility = View.VISIBLE
+                if (item.active) {
+                    btnConnect.visibility = View.VISIBLE
+                } else {
+                    btnConnect.visibility = View.GONE
+                }
                 mPagerAdapter.datas.find { it?.country == item.country }?.active = item.active
                 mQuickAccessAdapter.notifyDataSetChanged()
                 mPagerAdapter.notifyDataSetChanged()
@@ -115,7 +126,11 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
             mPagerAdapter.onItemClick = { _, item ->
                 selectedItem = item
                 selectedType = 2
-                btnConnect.visibility = View.VISIBLE
+                if (item.active) {
+                    btnConnect.visibility = View.VISIBLE
+                } else {
+                    btnConnect.visibility = View.GONE
+                }
                 mQuickAccessAdapter.datas.find { it?.country == item.country }?.active = item.active
                 mQuickAccessAdapter.notifyDataSetChanged()
                 mPagerAdapter.notifyDataSetChanged()
@@ -123,7 +138,9 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
 
             btnConnect.setOnClickListener {
                 try {
+                    Log.d("SuperVPN", "SuperVPN come here showLoading 1")
                     lifecycleScope.launch {
+                        Log.d("SuperVPN", "SuperVPN come here showLoading 2")
                         showLoading()
                         try {
                             if (selectedItem.active) {
@@ -141,6 +158,7 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
                                 } else ""
 //                            Log.i("SUPPERVPN", "initView: connectState $connectState")
                             val deviceId = mainViewModel.getDeviceId(requireContext())
+                            Log.d("SuperVPN", "SuperVPN come here showLoading 2 $deviceId ${selectedItem.active}")
                             if (selectedItem.active) {
                                 mProxyViewModel.setActiveProxy(
                                     selectedItem,
@@ -182,6 +200,7 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
 
             ivBack.setOnClickListener {
                 Navigator.startMainActivity(requireActivity())
+                activity?.finish()
             }
         }
 
@@ -193,6 +212,62 @@ class PremiumProxyFragment : ProductFragment<FragmentProxyBinding>() {
                     "Connection error PremiumFragment. Please try again.",
                     Toast.LENGTH_SHORT
                 ).show()
+//<<<<<<< HEAD
+//=======
+//            }
+//        }
+//    }
+//
+//    private suspend fun connectVPN() {
+//        selected = true
+//        if (selectedType == 1) {
+//            mQuickAccessAdapter.notifyDataSetChanged()
+//        } else if (selectedType == 2) {
+//            mPagerAdapter.notifyDataSetChanged()
+//        }
+//        val deviceId = mainViewModel.getDeviceId(requireContext())
+//        val reconnect =
+//            if (selectedItem.country != BaseAppConfig.proxyCountry || !selectedItem.active) "RECONNECT" else ""
+//        if (selectedItem.country == BaseAppConfig.proxyCountry) {
+//            selectedItem.active = false
+//        }
+//        try {
+//            if (selectedItem.active) {
+//                mProxyViewModel.setActiveProxy(
+//                    selectedItem,
+//                    deviceId,
+//                    selectedItem.type
+//                )
+//            } else {
+//                mProxyViewModel.setActiveProxy(
+//                    null,
+//                    deviceId,
+//                    selectedItem.type
+//                )
+//            }
+//            requireActivity().finish()
+//            Navigator.startMainActivity(requireContext(), "POPUP")
+//        } catch (e: Exception) {
+//            e.printStackTrace()
+//            Toast.makeText(
+//                requireContext(),
+//                "An error occur. Please try again",
+//                Toast.LENGTH_SHORT
+//            ).show()
+//        }
+//        selected = false
+//    }
+//
+//    private fun callBackResult() {
+//        childFragmentManager.setFragmentResultListener(
+//            KEY_RESULT_CONNECT_VPN,
+//            this
+//        ) { _, bundle ->
+//            if (view != null && isAdded) {
+//                lifecycleScope.launch {
+//                    connectVPN()
+//                }
+//>>>>>>> feature/08092025_update_core_base
             }
         }
     }

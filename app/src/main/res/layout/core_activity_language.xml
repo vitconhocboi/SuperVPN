@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_setting_language"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/actionBarView"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:gravity="center_vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            style="@style/IconOnActionBar"
+            android:layout_marginStart="@dimen/_10dp"
+            android:src="@drawable/core_ic_back"
+            android:tint="#011540"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TitleActionBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12dp"
+            android:text="@string/setting_language"
+            android:textColor="@color/white" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btSave"
+            style="@style/Body14Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_12dp"
+            android:background="@drawable/core_bg_save_language"
+            android:drawableStart="@drawable/core_ic_done"
+            android:drawablePadding="@dimen/_2dp"
+            android:drawableTint="@color/core_color_save_language"
+            android:enabled="false"
+            android:paddingHorizontal="@dimen/_10dp"
+            android:paddingVertical="@dimen/_6dp"
+            android:text="@string/core_common_save"
+            android:textColor="@color/core_color_save_language" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLanguage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_12dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/core_item_language_ltr" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/lnApplyLoading"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <ProgressBar
+                android:layout_width="@dimen/_60dp"
+                android:indeterminateTint="@color/core_appColor"
+                android:layout_height="@dimen/_60dp"/>
+
+            <TextView
+                android:textColor="@color/white"
+                android:text="@string/core_apply_language"
+                style="@style/Title16Medium"
+                android:layout_marginTop="@dimen/_10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </FrameLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/layout_ads"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.core.ads.customviews.ads.BannerNativeContainerLayout
+            android:id="@+id/layout_banner_native"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@color/black" />
+    </RelativeLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

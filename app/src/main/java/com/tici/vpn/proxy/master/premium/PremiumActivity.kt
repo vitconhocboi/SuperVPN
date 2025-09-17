@@ -1,20 +1,21 @@
 package com.tici.vpn.proxy.master.premium
 
 import android.annotation.SuppressLint
+import android.os.Bundle
 import android.view.LayoutInflater
-import com.tici.vpn.proxy.master.base.ProductActivity
+import com.core.baseui.BaseActivity
 import com.tici.vpn.proxy.master.databinding.ActivityPremiumBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class PremiumActivity : ProductActivity<ActivityPremiumBinding>() {
+class PremiumActivity : BaseActivity<ActivityPremiumBinding>() {
 
     override fun bindingProvider(inflater: LayoutInflater): ActivityPremiumBinding {
         return ActivityPremiumBinding.inflate(inflater)
     }
 
     @SuppressLint("CommitTransaction")
-    override fun initView() {
+    override fun initViews(savedInstanceState: Bundle?) {
         supportFragmentManager.beginTransaction()
             .replace(com.tici.vpn.proxy.master.R.id.fragment_container_pre, PremiumFragment())
             .commit()

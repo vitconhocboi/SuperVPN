@@ -14,6 +14,18 @@
         <item name="android:includeFontPadding">false</item>
     </style>
 
+    <style name="IconOnActionBar">
+        <item name="android:layout_width">@dimen/_32dp</item>
+        <item name="android:layout_height">@dimen/_32dp</item>
+        <item name="android:padding">@dimen/_5dp</item>
+        <item name="android:tint">@color/white</item>
+        <item name="android:background">@drawable/bg_ripple_transparent_oval</item>
+    </style>
+
+    <style name="NoTintRadioButton" parent="">
+        <item name="colorControlActivated">@null</item>
+        <item name="android:buttonTint">@null</item>
+    </style>
 
     <style name="App_TextAppearanceBody1" parent="TextAppearance.AppCompat.Title">
         <item name="fontFamily">@font/inter_bold</item>
@@ -29,6 +41,58 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:includeFontPadding">false</item>
     </style>
+
+    <style name="DotIndicator">
+        <item name="android:layout_width">@dimen/_25dp</item>
+        <item name="android:layout_height">@dimen/_10dp</item>
+        <item name="android:background">@drawable/core_indicator_intro_selector</item>
+    </style>
+
+    <style name="MenuItemStyle" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="MenuIconStyle">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+    </style>
+
+    <style name="MenuTextStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">?attr/textAppearanceBodyLarge</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="RatioButtonFeedback">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layoutDirection">rtl</item>
+        <item name="android:paddingEnd">@dimen/_5dp</item>
+        <item name="android:paddingTop">@dimen/_16dp</item>
+        <item name="android:paddingBottom">@dimen/_16dp</item>
+        <item name="android:textColor">@color/core_text_primary_dark</item>
+        <item name="android:textSize">@dimen/_16sp</item>
+        <item name="android:lineSpacingExtra">@dimen/_5dp</item>
+    </style>
+
+    <style name="DefaultIcon">
+        <item name="android:layout_width">@dimen/_32dp</item>
+        <item name="android:layout_height">@dimen/_32dp</item>
+        <item name="android:padding">@dimen/_4dp</item>
+    </style>
+
 
     <style name="App_TextAppearanceButton1" parent="TextAppearance.AppCompat.Title">
         <item name="fontFamily">@font/inter_bold</item>

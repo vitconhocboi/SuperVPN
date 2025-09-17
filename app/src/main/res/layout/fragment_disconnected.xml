@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,15 +7,19 @@
     tools:context=".home.ConnectedFragment">
 
     <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/bgLlInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/ivFlag"
             android:layout_width="@dimen/size64"
             android:layout_height="@dimen/size64"
+            android:layout_marginTop="@dimen/_10dp"
             android:scaleType="centerCrop"
             android:src="@drawable/flag_us"
             app:shapeAppearanceOverlay="@style/CircleImageView" />
@@ -34,7 +38,7 @@
             android:id="@+id/pn_ip_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/size16"
+            android:layout_marginHorizontal="@dimen/_8dp"
             android:layout_marginTop="@dimen/size12"
             android:background="@drawable/bg_ip_info"
             android:gravity="top"
@@ -49,21 +53,21 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textSize="@dimen/size14"
-                    android:text="@string/duration"
                     android:fontFamily="@font/inter_normal"
-                    android:textColor="#70788F" />
+                    android:text="@string/duration"
+                    android:textColor="#70788F"
+                    android:textSize="@dimen/size14" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvDuration"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="00:15:23"
-                    android:textSize="@dimen/size14"
                     android:fontFamily="@font/inter_normal"
+                    android:text="00:15:23"
                     android:textAlignment="viewEnd"
-                    android:textColor="#ECEFF5" />
+                    android:textColor="#ECEFF5"
+                    android:textSize="@dimen/size14" />
             </LinearLayout>
 
             <LinearLayout
@@ -75,21 +79,21 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textSize="@dimen/size14"
                     android:fontFamily="@font/inter_normal"
                     android:text="@string/upload"
-                    android:textColor="#70788F" />
+                    android:textColor="#70788F"
+                    android:textSize="@dimen/size14" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvUpload"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="32m/s"
-                    android:textSize="@dimen/size14"
                     android:fontFamily="@font/inter_normal"
+                    android:text="32m/s"
                     android:textAlignment="viewEnd"
-                    android:textColor="#ECEFF5" />
+                    android:textColor="#ECEFF5"
+                    android:textSize="@dimen/size14" />
             </LinearLayout>
 
             <LinearLayout
@@ -101,24 +105,56 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/download"
-                    android:textSize="@dimen/size14"
                     android:fontFamily="@font/inter_normal"
-                    android:textColor="#70788F" />
+                    android:text="@string/download"
+                    android:textColor="#70788F"
+                    android:textSize="@dimen/size14" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvDownload"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="32m/s"
-                    android:textSize="@dimen/size14"
                     android:fontFamily="@font/inter_normal"
+                    android:text="32m/s"
                     android:textAlignment="viewEnd"
-                    android:textColor="#ECEFF5" />
+                    android:textColor="#ECEFF5"
+                    android:textSize="@dimen/size14" />
             </LinearLayout>
         </androidx.appcompat.widget.LinearLayoutCompat>
-
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+    <RelativeLayout
+        android:id="@+id/layout_ads"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_8dp"
+        android:layout_marginTop="@dimen/_12dp"
+        app:layout_constraintTop_toBottomOf="@+id/bgLlInfo">
+
+        <com.core.ads.customviews.ads.BannerNativeContainerLayout
+            android:id="@+id/layout_banner_native"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tvDoneExit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_22dp"
+        android:layout_marginTop="@dimen/_20dp"
+        android:layout_marginBottom="@dimen/_5dp"
+        android:background="@drawable/bg_border_uninstall"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_14dp"
+        android:text="@string/tv_done"
+        android:textColor="@color/blue_language_select"
+        android:textSize="@dimen/_15sp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

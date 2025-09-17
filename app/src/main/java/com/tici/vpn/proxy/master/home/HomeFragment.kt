@@ -10,7 +10,6 @@ import android.net.VpnService
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,24 +25,25 @@ import com.common.baseui.extension.invisible
 import com.common.baseui.extension.processResultData
 import com.common.baseui.extension.setOnClickNoDoubleClick
 import com.common.baseui.extension.visible
+import com.core.ads.domain.AdLoadBannerNativeUiResource
+import com.core.baseui.fragment.BaseFragment
+import com.core.baseui.fragment.ScreenType
+import com.core.config.domain.data.IAdPlaceName
 import com.simple.libads.NetworkUtils
 import com.simple.libads.setVisible
 import com.tici.vpn.proxy.master.DialogVpnPermission
 import com.tici.vpn.proxy.master.DisconnectConfirmDialog
 import com.tici.vpn.proxy.master.R
-import com.tici.vpn.proxy.master.base.ProductFragment
 import com.tici.vpn.proxy.master.databinding.FragmentHomeBinding
 import com.tici.vpn.proxy.master.db.VpnAppItemDB
-import com.tici.vpn.proxy.master.dialog.DialogFeedback
 import com.tici.vpn.proxy.master.extension.safeGetString
-import com.tici.vpn.proxy.master.guide.ViewGuide
-import com.tici.vpn.proxy.master.language.LanguageFragment
 import com.tici.vpn.proxy.master.main.MainActivity
 import com.tici.vpn.proxy.master.main.MainViewModel
 import com.tici.vpn.proxy.master.network.LocalVpnService
 import com.tici.vpn.proxy.master.network.ProxySpeedTest
 import com.tici.vpn.proxy.master.proxy.ProxyViewModel
-import com.tici.vpn.proxy.master.remoteconfig.AdPlacementId
+import com.tici.vpn.proxy.master.required.ads.AppAdPlaceName
+import com.tici.vpn.proxy.master.required.shortcut.AppScreenType
 import com.tici.vpn.proxy.master.settings.appproxy.AppProxyViewModel
 import com.tici.vpn.proxy.master.utils.Navigator
 import com.tici.vpn.proxy.master.utils.Utils
@@ -52,13 +52,23 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 
 @AndroidEntryPoint
-class HomeFragment : ProductFragment<FragmentHomeBinding>() {
+class HomeFragment : BaseFragment<FragmentHomeBinding>() {
+
+
+    override val screenType: ScreenType
+        get() = AppScreenType.HomeFragment
 
     private val handler = Handler(Looper.getMainLooper())
     private var state: String? = null
 
     private lateinit var onShowConnected: (proxy: ProxySpeedTest.ProxyConfig?) -> Unit
     private lateinit var onShowDisconnected: (report: ProxyReport) -> Unit
+
+    override fun providerInterAdPlaceName(): List<IAdPlaceName> {
+        return listOf(
+            AppAdPlaceName.FULLSCREEN_SELECTED_PROXY_HOME
+        )
+    }
 
     companion object {
         const val CONNECTING = "CONNECTING"
@@ -70,6 +80,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         var isShowReport = true
         var lastProcess = 50f
         var report = ProxyReport()
+        var isShowDisconnect = true
 
         fun newInstance(
             showConnected: (proxy: ProxySpeedTest.ProxyConfig?) -> Unit,
@@ -106,6 +117,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     private fun updateUI(status: String?) {
         when (status) {
             CONNECTING -> {
+                showInterAd(AppAdPlaceName.FULLSCREEN_SELECTED_PROXY_HOME) {}
                 binding.connectTitle.invisible()
                 binding.tvTime.visible()
                 binding.lnDisconnecting.invisible()
@@ -185,7 +197,9 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
                     )?.getInt("start", 0)
                     val diff = System.currentTimeMillis().toInt() / 1000 - start!!
                     report.duration = formatSecondsToTime(diff)
+//                    if (isShowDisconnect) {
                     onShowDisconnected(report)
+//                    }
                 }
             }
 
@@ -209,6 +223,7 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
     ): FragmentHomeBinding {
         return FragmentHomeBinding.inflate(inflater, container, false)
     }
+
 
     private fun isVpnActive(context: Context): Boolean {
         val connectivityManager =
@@ -289,20 +304,19 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         return String.format("%02d:%02d:%02d", hours, minutes, secs)
     }
 
-    override fun initView() {
-        super.initView()
-        state = activity?.intent?.getStringExtra("state")
+//    override fun initView() {
+//        super.initView()
+//        state = activity?.intent?.getStringExtra("state")
+    override fun initViews(savedInstanceState: Bundle?) {
+        state = activity?.intent?.getStringExtra("RECONNECT")
+
         val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
-//        isLocalVpnServiceRunning(requireContext())
         with(binding) {
-            if (BaseAppConfig.isCanShowGuide) {
-                ViewGuide().show(parentFragmentManager, "dialog_guide")
-            }
             ivSelectProxy.scaleX = if (isRTL) -1f else 1f
             ivIpInfo.scaleX = if (isRTL) -1f else 1f
 
             allowAppViewModel.getAllowApp()
-            Timber.d("Test_Subscribe allowAppViewModel")
+//            Timber.d("Test_Subscribe allowAppViewModel")
             bindFlowCreate(allowAppViewModel.allowApp) { result ->
                 processResultData(result, onSuccess = {
                     allowApp = it
@@ -313,37 +327,77 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 
             }
 
-            ivConnectPanel.setOnClickNoDoubleClick {
-                if (!isConnected) {
-                    isShowReport = false
-//                    pnSelectProxy.isClickable = false
-//                    pnIpInfo.isEnabled = false
-                    if (BaseAppConfig.proxy.isNotEmpty()) {
-                        prepareVpn()
-                    } else {
-//                        ConfirmDnsDialog(requireActivity(), onContinue = {
-//                            prepareVpn()
-//                        }, selectVpn = {
-//                            Navigator.startProxyActivity(requireContext(), null)
-//                        }).show()
-                        lifecycleScope.launch {
-                            proxyViewModel.getRandomFreeProxy()
-                        }
-                    }
-                } else {
-                    DisconnectConfirmDialog(onConfirm = {
-                        isShowReport = false
-//                        if (NetworkUtils.isInternetAvailable(requireActivity())) {
-                        stopSpeedTest()
-                        vpnPermissionLauncher.unregister()
-                        stopVpnService()
-//                        } else {
-//                            Toast.makeText(
-//                                requireContext(), "No internet connection", Toast.LENGTH_SHORT
-//                            ).show()
+//<<<<<<< HEAD
+//            ivConnectPanel.setOnClickNoDoubleClick {
+//                if (!isConnected) {
+//                    isShowReport = false
+////                    pnSelectProxy.isClickable = false
+////                    pnIpInfo.isEnabled = false
+//                    if (BaseAppConfig.proxy.isNotEmpty()) {
+//                        prepareVpn()
+//                    } else {
+////                        ConfirmDnsDialog(requireActivity(), onContinue = {
+////                            prepareVpn()
+////                        }, selectVpn = {
+////                            Navigator.startProxyActivity(requireContext(), null)
+////                        }).show()
+//                        lifecycleScope.launch {
+//                            proxyViewModel.getRandomFreeProxy()
 //                        }
-                    }).show(childFragmentManager, "DialogConfirm")
-                }
+//                    }
+//                } else {
+//                    DisconnectConfirmDialog(onConfirm = {
+//                        isShowReport = false
+////                        if (NetworkUtils.isInternetAvailable(requireActivity())) {
+//                        stopSpeedTest()
+//                        vpnPermissionLauncher.unregister()
+//                        stopVpnService()
+////                        } else {
+////                            Toast.makeText(
+////                                requireContext(), "No internet connection", Toast.LENGTH_SHORT
+////                            ).show()
+////                        }
+//                    }).show(childFragmentManager, "DialogConfirm")
+//                }
+//=======
+//            ivConnect.apply {
+//                progress = 0f
+//                progressMax = 100f
+//                roundBorder = true
+//                startAngle = 1f
+//
+//                onProgressChangeListener = { progress ->
+////                    Log.d("SuperVPN", "initView: progress: $progress")
+//                    if (lastProcess > 90 && lastProcess < 100 && progress == 100f) {
+//                        binding.ivConnectPanel.background = ResourcesCompat.getDrawable(
+//                            resources, R.drawable.bg_round_active, null
+//                        )
+//                        if (!isShowReport) {
+//                            isShowReport = true
+//                            (activity as? MainActivity)?.showConnected(currentProxy)
+//                        }
+//                    } else if (lastProcess > 0 && lastProcess < 10 && progress == 0f) {
+//                        binding.ivConnectPanel.background = ResourcesCompat.getDrawable(
+//                            resources, R.drawable.bg_round, null
+//                        )
+//                        if (!isShowReport) {
+//                            isShowReport = true
+//                            val start = context?.getSharedPreferences(
+//                                "privoxy_traffic", Context.MODE_PRIVATE
+//                            )?.getInt("start", 0)
+//                            val diff = System.currentTimeMillis().toInt() / 1000 - start!!
+//                            report.duration = formatSecondsToTime(diff)
+//                            (activity as? MainActivity)?.showDisconnected(report)
+//                        }
+//                    }
+//                    lastProcess = progress
+//                }
+//            }
+//
+            ivConnectPanel.setOnClickListener {
+                isShowDisconnect = false
+                actionConnectProxy()
+//>>>>>>> feature/08092025_update_core_base
             }
 
 //            proxyViewModel.currentProxy.observe(viewLifecycleOwner) { it ->
@@ -356,18 +410,24 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 //                }
 //            }
 
-            pnSelectProxy.setOnClickNoDoubleClick {
-                if (NetworkUtils.isInternetAvailable(requireActivity())) {
-                    showInterAds(placementId = AdPlacementId.INTER_ART_HOME,
-                        impressedCallBack = {},
-                        showCallBack = {
-                            Navigator.startProxyActivity(requireContext(), null)
-                        })
-                } else {
-                    Toast.makeText(
-                        requireContext(), "No internet connection", Toast.LENGTH_SHORT
-                    ).show()
-                }
+//<<<<<<< HEAD
+//            pnSelectProxy.setOnClickNoDoubleClick {
+//                if (NetworkUtils.isInternetAvailable(requireActivity())) {
+//                    showInterAds(placementId = AdPlacementId.INTER_ART_HOME,
+//                        impressedCallBack = {},
+//                        showCallBack = {
+//                            Navigator.startProxyActivity(requireContext(), null)
+//                        })
+//                } else {
+//                    Toast.makeText(
+//                        requireContext(), "No internet connection", Toast.LENGTH_SHORT
+//                    ).show()
+//                }
+//=======
+            pnSelectProxy.setOnClickListener {
+
+                showInterAdsFullSelectedProxy()
+//>>>>>>> feature/08092025_update_core_base
             }
 
             pnIpInfo.setOnClickNoDoubleClick {
@@ -493,6 +553,44 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
 
     }
 
+    private fun actionConnectProxy() {
+        if (!isConnected) {
+            isShowReport = false
+            if (BaseAppConfig.proxy.isNotEmpty()) {
+                prepareVpn()
+            } else {
+//                        ConfirmDnsDialog(requireActivity(), onContinue = {
+//                            prepareVpn()
+//                        }, selectVpn = {
+//                            Navigator.startProxyActivity(requireContext(), null)
+//                        }).show()
+                lifecycleScope.launch {
+                    proxyViewModel.getRandomFreeProxy()
+                }
+            }
+        } else {
+            DisconnectConfirmDialog(onConfirm = {
+                isShowReport = false
+                if (NetworkUtils.isInternetAvailable(requireActivity())) {
+                    stopSpeedTest()
+                    vpnPermissionLauncher.unregister()
+                    stopVpnService()
+                } else {
+                    Toast.makeText(
+                        requireContext(), "No internet connection", Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }).show(childFragmentManager, "DialogConfirm")
+        }
+    }
+
+    private fun showInterAdsFullSelectedProxy() {
+        showInterAd(AppAdPlaceName.FULLSCREEN_SELECTED_PROXY_HOME) {
+            if (isAdded && view != null)
+                Navigator.startProxyActivity(requireContext(), null)
+        }
+    }
+
     private fun onToggleStop() {
         if (!isConnected) {
             if (BaseAppConfig.proxy.isNotEmpty()) {
@@ -601,8 +699,14 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         bindFlowCreate(allowAppViewModel.allowApp) { result ->
             processResultData(result, onSuccess = { rs ->
                 try {
+//<<<<<<< HEAD
 //                    binding.ivConnect.setProgressWithAnimation(99f, 10000)
                     proxyViewModel.startProxy(mainViewModel.getDeviceId(requireContext()),
+//=======
+//                    binding.ivConnect.setProgressWithAnimation(99f, 10000)
+//                    proxyViewModel.startProxy(
+//                        mainViewModel.getDeviceId(requireContext()),
+//>>>>>>> feature/08092025_update_core_base
                         context,
                         allowApp = rs.map { it.packageName })
                 } catch (_: Exception) {
@@ -622,5 +726,18 @@ class HomeFragment : ProductFragment<FragmentHomeBinding>() {
         } catch (e: Exception) {
             Timber.e(e, "VPN Error stopping VPN service")
         }
+    }
+
+    override fun onBannerNativeResult(adResource: AdLoadBannerNativeUiResource) {
+        binding.layoutBannerNative.processAdResource(
+            adResource,
+            AppAdPlaceName.ANCHORED_CENTER_HOME
+        )
+    }
+
+    override fun providerBannerNativeAdPlaceName(): List<IAdPlaceName> {
+        return listOf(
+            AppAdPlaceName.ANCHORED_CENTER_HOME
+        )
     }
 }

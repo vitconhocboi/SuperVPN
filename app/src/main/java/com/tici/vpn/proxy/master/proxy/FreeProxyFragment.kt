@@ -1,27 +1,31 @@
 package com.tici.vpn.proxy.master.proxy
 
 import android.annotation.SuppressLint
+import android.os.Bundle
 import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.tici.vpn.proxy.master.base.ProductFragment
-import com.tici.vpn.proxy.master.databinding.FragmentProxyBinding
-import com.tici.vpn.proxy.master.utils.Navigator
 import com.common.baseui.BaseAppConfig
 import com.common.baseui.ResultData
 import com.common.baseui.extension.bindFlowCreate
 import com.common.baseui.extension.setVisible
+import com.core.baseui.fragment.BaseFragment
+import com.core.baseui.fragment.ScreenType
+import com.core.config.domain.data.IAdPlaceName
 import com.google.android.gms.ads.identifier.AdvertisingIdClient
-import com.tici.vpn.proxy.master.remoteconfig.AdPlacementId
+import com.tici.vpn.proxy.master.databinding.FragmentProxyBinding
+import com.tici.vpn.proxy.master.required.ads.AppAdPlaceName
+import com.tici.vpn.proxy.master.required.shortcut.AppScreenType
+import com.tici.vpn.proxy.master.utils.Navigator
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class FreeProxyFragment : ProductFragment<FragmentProxyBinding>() {
+class FreeProxyFragment : BaseFragment<FragmentProxyBinding>() {
 
     @Inject
     lateinit var mPagerAdapter: ProxyGroupAdapter
@@ -33,6 +37,12 @@ class FreeProxyFragment : ProductFragment<FragmentProxyBinding>() {
         private const val FREE = "free"
     }
 
+    override fun providerInterAdPlaceName(): List<IAdPlaceName> {
+        return listOf(
+            AppAdPlaceName.FULLSCREEN_SELECTED_CHANGE_VPN_SERVERS
+        )
+    }
+
 
     override fun bindingProvider(
         inflater: LayoutInflater, container: ViewGroup?
@@ -40,9 +50,11 @@ class FreeProxyFragment : ProductFragment<FragmentProxyBinding>() {
         return FragmentProxyBinding.inflate(inflater, container, false)
     }
 
+    override val screenType: ScreenType
+        get() = AppScreenType.FreeProxyFragment
+
     @SuppressLint("HardwareIds", "NotifyDataSetChanged")
-    override fun initView() {
-        super.initView()
+    override fun initViews(savedInstanceState: Bundle?) {
         with(binding) {
             rcvGroupProxy.adapter = mPagerAdapter
             mProxyViewModel.getAllFreeProxy(requireContext(), FREE)
@@ -76,12 +88,11 @@ class FreeProxyFragment : ProductFragment<FragmentProxyBinding>() {
             }
 
             mPagerAdapter.onItemClick = { _, item ->
-                showInterAds(placementId = AdPlacementId.INTER_ART_PAINTED,
-                    impressedCallBack = {},
-                    showCallBack = {
+                showInterAd(AppAdPlaceName.FULLSCREEN_SELECTED_CHANGE_VPN_SERVERS) {
+                    if (view != null && isAdded) {
                         itemClick(item)
-                    })
-//                itemClick(item)
+                    }
+                }
             }
         }
     }

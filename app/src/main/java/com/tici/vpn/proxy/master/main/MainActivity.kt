@@ -1,48 +1,43 @@
 package com.tici.vpn.proxy.master.main
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.pm.PackageManager
-import android.util.Log
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
 import androidx.lifecycle.whenResumed
 import com.common.baseui.BaseAppConfig
-import com.tici.vpn.proxy.master.base.ProductActivity
-import com.tici.vpn.proxy.master.databinding.ActivityMainBinding
-import com.tici.vpn.proxy.master.home.HomeFragment
-import com.tici.vpn.proxy.master.settings.SettingFragment
-import com.tici.vpn.proxy.master.settings.appproxy.AppProxyFragment
-import com.tici.vpn.proxy.master.settings.dns.DNSFragment
-import com.tici.vpn.proxy.master.R
-import com.tici.vpn.proxy.master.dialog.SettingSuccessDialog
-import com.tici.vpn.proxy.master.remoteconfig.AdPlacementId
-import com.tici.vpn.proxy.master.remoteconfig.FirebaseConfigManager
-import com.simple.libads.AdNetworkType
-import com.simple.libads.FrameAds
-import com.simple.libads.base.bannerads.BannerLoader
-import com.simple.libads.config.InterConfig
-import com.simple.libads.manager.BannerManager
+import com.core.baseui.BaseActivity
+import com.core.config.domain.data.IAdPlaceName
 import com.simple.libads.setVisible
-import com.tici.vpn.proxy.master.dialog.CloseAppDialog
+//<<<<<<< HEAD
+//import com.tici.vpn.proxy.master.dialog.CloseAppDialog
+//=======
+import com.tici.vpn.proxy.master.R
+import com.tici.vpn.proxy.master.databinding.ActivityMainBinding
+import com.tici.vpn.proxy.master.feature.feature_exit.DialogFragmentExitApp
+//>>>>>>> feature/08092025_update_core_base
 import com.tici.vpn.proxy.master.home.BackActionBarFragment
 import com.tici.vpn.proxy.master.home.ConnectedFragment
 import com.tici.vpn.proxy.master.home.DisconnectedFragment
+import com.tici.vpn.proxy.master.home.HomeFragment
 import com.tici.vpn.proxy.master.home.ProxyReport
 import com.tici.vpn.proxy.master.network.ProxySpeedTest
+import com.tici.vpn.proxy.master.remoteconfig.FirebaseConfigManager
+import com.tici.vpn.proxy.master.required.ads.AppAdPlaceName
+import com.tici.vpn.proxy.master.settings.SettingFragment
+import com.tici.vpn.proxy.master.settings.appproxy.AppProxyFragment
+import com.tici.vpn.proxy.master.settings.dns.DNSFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import timber.log.Timber
 
 @AndroidEntryPoint
-class MainActivity : ProductActivity<ActivityMainBinding>() {
+class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     var isSettingFragment = false
     var isAppProxyFragment = false
@@ -57,6 +52,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
     private val mainViewModel: MainViewModel by viewModels()
 
     private val mHomeFragment by lazy {
+//<<<<<<< HEAD
         HomeFragment.newInstance(
             showConnected = { proxy ->
                 showConnected(proxy)
@@ -68,7 +64,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
     }
 
     private val mAppProxyFragment by lazy {
-        AppProxyFragment(onSelect = {})
+        AppProxyFragment()
     }
 
     private val mDnsFragment by lazy {
@@ -76,11 +72,7 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
     }
 
     private val mSettingFragment by lazy {
-        SettingFragment(showAppProxy = {
-            showAppProxy()
-        }, showDns = {
-            showDns()
-        })
+        SettingFragment()
     }
 
     private val mConnectedFragment by lazy {
@@ -99,11 +91,30 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
         return ActivityMainBinding.inflate(inflater)
     }
 
-    private var mBannerLoader: BannerLoader? = null
+    override fun providerInterAdPlaceName(): List<IAdPlaceName> {
+        return listOf(
+            AppAdPlaceName.FULLSCREEN_BACK_MAIN
+        )
+    }
 
-    override fun initView() {
+    override fun onBackPressed() {
+        val fragmentCurrent = supportFragmentManager.findFragmentById(binding.frameContainer.id)
+        // Kiểm tra nếu activity đang ở top của stack
+        if (fragmentCurrent == null || fragmentCurrent is HomeFragment) {
+            val dialogFragmentExitApp = DialogFragmentExitApp()
+            dialogFragmentExitApp.show(
+                supportFragmentManager,
+                DialogFragmentExitApp::class.java.simpleName
+            )
+        } else {
+            super.onBackPressed() // Thực hiện hành động back bình thường
+        }
+    }
+
+    override fun initViews(savedInstanceState: Bundle?) {
         requestAdvertisingIdPermission()
         val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
+//<<<<<<< HEAD
 //        val reconnect = intent.getStringExtra("state")
 //        if (reconnect != null && reconnect == "POPUP") {
 ////            SettingSuccessDialog(
@@ -114,6 +125,15 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
 //            isAutoConnect = false
 //        }
 //        intent.removeExtra("state")
+//=======
+//        val reconnect = intent.getStringExtra("state")
+//        if (reconnect != null && reconnect == "POPUP") {
+//            isAutoConnect = true
+//        } else {
+//            isAutoConnect = false
+//        }
+//        intent.removeExtra("state")
+//>>>>>>> feature/08092025_update_core_base
 
         mainViewModel.checkActiveSubscriptions(applicationContext) {
             if (it) {
@@ -129,7 +149,6 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
         mListFragment.add(mDisonnectedFragment)
 
         showFragment(mHomeFragment)
-//        binding.progress.setVisible(true)
         with(binding) {
 
             icBack.scaleX = if (isRTL) -1f else 1f
@@ -141,37 +160,22 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
             }
 
             icBack.setOnClickListener {
+                showInterAd(AppAdPlaceName.FULLSCREEN_BACK_MAIN) {}
                 onBackPressedDispatcher.onBackPressed()
             }
 
             ivBack.setOnClickListener {
+                showInterAd(AppAdPlaceName.FULLSCREEN_BACK_MAIN) {}
                 showFragment(mSettingFragment)
             }
 
             ivBack2.setOnClickListener {
+                showInterAd(AppAdPlaceName.FULLSCREEN_BACK_MAIN) {}
                 showFragment(mHomeFragment)
             }
 
             selectAll.setOnClickListener {
                 selectAll()
-            }
-
-            if (!BaseAppConfig.isSub) {
-                initLoadAds(frameBanner)
-            }
-        }
-
-        SharedData.isSub.observe(this) { it ->
-//            Timber.d("Test_Subscribe isSub main_activity")
-//            Log.i("SuperVpn", "TestRelease isSub main_activity $it")
-            if (it == true) {
-//                Timber.d("Test_Subscribe isSub main_activity true")
-                binding.frameBanner.visibility = View.GONE
-//                Toast.makeText(baseContext, com.tici.vpn.proxy.master.R.string.premium_purchase_success, Toast.LENGTH_SHORT).show()
-            } else {
-//                Timber.d("Test_Subscribe isSub main_activity false")
-                binding.frameBanner.visibility = View.VISIBLE
-                initLoadAds(binding.frameBanner)
             }
         }
 
@@ -191,28 +195,23 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                     } else if (isDisconnectedFragment) {
                         showFragment(mHomeFragment)
                     } else {
-                        CloseAppDialog(
-                            onClose = {
-                                Timber.d("exit finishAffinity")
-                                finishAffinity()
-                            }
-                        ).show(supportFragmentManager, "CloseApp")
+//<<<<<<< HEAD
+//                        CloseAppDialog(
+//                            onClose = {
+//                                Timber.d("exit finishAffinity")
+//                                finishAffinity()
+//                            }
+//                        ).show(supportFragmentManager, "CloseApp")
+//=======
+                        val dialogFragmentExitApp = DialogFragmentExitApp()
+                        dialogFragmentExitApp.show(
+                            supportFragmentManager,
+                            DialogFragmentExitApp::class.java.simpleName
+                        )
+//>>>>>>> feature/08092025_update_core_base
                     }
                 }
             })
-    }
-
-    private fun initLoadAds(frameBanner: FrameAds) {
-        configAd.adBanner.find { it.placementId == AdPlacementId.BANNER_HOME }?.let {
-            mBannerLoader = BannerManager.createLoader(adNetwork = it.adNetwork, bannerId = it.adId)
-            mBannerLoader?.canRequest = true
-            try {
-                mBannerLoader?.loadAds(
-                    context = this@MainActivity, bannerType = it.adType, parent = frameBanner
-                )
-            } catch (_: Exception) {
-            }
-        }
     }
 
     private var mListFragment = arrayListOf<Fragment>()
@@ -277,7 +276,10 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                     lbSetting.text = getString(R.string.setting)
                     homeActionBar.setVisible(false)
                     subActionbar.setVisible(true)
+//<<<<<<< HEAD
                     subActionbar.setBackgroundColor(resources.getColor(R.color.backgroundColor))
+//=======
+//>>>>>>> feature/08092025_update_core_base
                     dnsActionBar.setVisible(false)
                     selectAll.setVisible(false)
                     backActionBar.setVisible(false)
@@ -295,7 +297,10 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
                     homeActionBar.setVisible(false)
                     subActionbar.setVisible(false)
                     dnsActionBar.setVisible(true)
+//<<<<<<< HEAD
                     dnsActionBar.setBackgroundColor(resources.getColor(R.color.backgroundColor))
+//=======
+//>>>>>>> feature/08092025_update_core_base
                     //ivSwitch.isSelected = BaseAppConfig.dnsServer.isNotEmpty()
                     ivSwitch.setVisible(false)
                     selectAll.setVisible(false)
@@ -331,32 +336,55 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
         }
     }
 
-    private fun showAppProxy() {
+//<<<<<<< HEAD
+//    private fun showAppProxy() {
+//=======
+    fun showAppProxy() {
+//>>>>>>> feature/08092025_update_core_base
 //        mainViewModel.getInstalledAppsWithInternetPermission(baseContext)
         showFragment(mAppProxyFragment)
         mAppProxyFragment.loadData()
         mAppProxyFragment.clearUI()
     }
 
-    private fun showDns() {
+//<<<<<<< HEAD
+//    private fun showDns() {
+//=======
+    fun showDns() {
+//>>>>>>> feature/08092025_update_core_base
         if (mDnsFragment.isNeedReload) {
             mDnsFragment.loadData()
         }
         showFragment(mDnsFragment)
     }
 
-    private fun showConnected(proxy: ProxySpeedTest.ProxyConfig?) {
+//<<<<<<< HEAD
+//    private fun showConnected(proxy: ProxySpeedTest.ProxyConfig?) {
+//=======
+    fun showConnected(proxy: ProxySpeedTest.ProxyConfig?) {
+//>>>>>>> feature/08092025_update_core_base
         mConnectedFragment.setCurrentProxy(proxy)
         isConnectedFragment = true
         showFragment(mConnectedFragment)
     }
 
-    private fun showDisconnected(report: ProxyReport) {
+//<<<<<<< HEAD
+//    private fun showDisconnected(report: ProxyReport) {
+//=======
+    fun showDisconnected(report: ProxyReport) {
+//>>>>>>> feature/08092025_update_core_base
         mDisonnectedFragment.loadData(report)
         isDisconnectedFragment = true
         showFragment(mDisonnectedFragment)
     }
 
+//<<<<<<< HEAD
+//=======
+    fun navigateHome() {
+        showFragment(mHomeFragment)
+    }
+
+//>>>>>>> feature/08092025_update_core_base
     private fun selectAll() {
         mAppProxyFragment.checkUncheckAll()
     }
@@ -389,14 +417,17 @@ class MainActivity : ProductActivity<ActivityMainBinding>() {
             }
         }
     }
+//<<<<<<< HEAD
 
-    override fun interConfigs(): List<InterConfig>? {
-        return configAd.adWithoutVideoPlacement.placementIds.map {
-            InterConfig(
-                adid = configAd.adWithVideo.adId,
-                adnetwork = AdNetworkType.ADMOB,
-                placement_id = it
-            )
-        }
-    }
+//    override fun interConfigs(): List<InterConfig>? {
+//        return configAd.adWithoutVideoPlacement.placementIds.map {
+//            InterConfig(
+//                adid = configAd.adWithVideo.adId,
+//                adnetwork = AdNetworkType.ADMOB,
+//                placement_id = it
+//            )
+//        }
+//    }
+//=======
+//>>>>>>> feature/08092025_update_core_base
 }

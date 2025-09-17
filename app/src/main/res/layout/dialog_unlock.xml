@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/bg_feedback_complete"
-    android:gravity="center"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:gravity="bottom"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <LinearLayout
         android:id="@+id/pnTitle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_big"
-        android:orientation="horizontal"
         android:gravity="center_vertical"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto_regular"
             android:text="@string/unlock_premium"
             android:textColor="#000000"
-            android:textStyle="bold"
-            android:textSize="@dimen/text_large" />
+            android:textSize="@dimen/text_large"
+            android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/btnClose"
@@ -35,19 +35,18 @@
             android:layout_marginEnd="@dimen/margin_small"
             android:src="@drawable/ic_close_x" />
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </LinearLayout>
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <LinearLayout
         android:id="@+id/pnContent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="@dimen/size16"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pnTitle">
 
-
-        <androidx.appcompat.widget.LinearLayoutCompat
+        <LinearLayout
             android:id="@+id/pnGroupProxy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -59,8 +58,6 @@
                 android:id="@+id/ivFlag"
                 android:layout_width="@dimen/size24"
                 android:layout_height="@dimen/size24"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
                 android:layout_marginStart="@dimen/size16"
                 android:layout_marginEnd="@dimen/size16"
                 android:scaleType="centerCrop"
@@ -69,7 +66,7 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/countryTitle"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/inter_bold"
@@ -86,10 +83,9 @@
                 android:foreground="?selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_crown" />
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
+        </LinearLayout>
 
-
-        <androidx.appcompat.widget.LinearLayoutCompat
+        <LinearLayout
             android:id="@+id/lnGetPremium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -106,13 +102,14 @@
                 android:drawableStart="@drawable/ic_white_crown"
                 android:drawablePadding="@dimen/margin_big"
                 android:text="@string/get_premium"
-                android:textStyle="bold"
+                android:textColor="@color/white"
                 android:textSize="18sp"
-                android:textColor="@color/white" />
+                android:textStyle="bold" />
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
+        </LinearLayout>
 
-        <androidx.appcompat.widget.LinearLayoutCompat
+        <LinearLayout
+            android:id="@+id/bgLlWatchAds"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/size16"
@@ -129,12 +126,12 @@
                 android:drawableStart="@drawable/ic_watch_video"
                 android:drawablePadding="@dimen/margin_big"
                 android:text="@string/watch_ads"
-                android:textStyle="bold"
+                android:textColor="@color/text_color"
                 android:textSize="18sp"
-                android:textColor="@color/text_color" />
+                android:textStyle="bold" />
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
+        </LinearLayout>
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

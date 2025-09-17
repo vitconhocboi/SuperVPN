@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="@dimen/_10dp"
+    android:background="@drawable/core_bg_button_in_home"
+    android:layout_height="@dimen/_100dp">
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:text="Thử lại"
+        android:scaleType="centerCrop"
+        android:layout_height="match_parent"
+        android:id="@+id/tvRetry" />
+
+</FrameLayout>

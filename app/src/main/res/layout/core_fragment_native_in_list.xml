@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_50dp"
+            android:layout_height="@dimen/_50dp"
+            android:src="@drawable/core_ic_back"
+            android:padding="@dimen/_12dp"
+            android:id="@+id/ivBack"
+            android:background="@drawable/bg_ripple_transparent_oval"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:textSize="@dimen/_16sp"
+            android:textColor="@color/black"
+            android:text="Native in List"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/rcvSimple"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/core_frame_item"
+            android:layout_height="match_parent"/>
+
+        <ProgressBar
+            android:id="@+id/progressLoading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:id="@+id/lnError"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="@color/errorColor"
+                android:text="Có lỗi xảy ra"
+                android:textSize="@dimen/_20dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:text="Thử lại"
+                android:id="@+id/btRetry"
+                android:layout_height="wrap_content"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </FrameLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,68 @@
+<resources>
+    <string name="open_short_cut_action" translatable="false">open.short.cut.Action</string>
+    <string name="core_shortcut_short_label_uninstall">Uninstall</string>
+    <string name="core_shortcut_long_label_uninstall">Uninstall</string>
+    <string name="core_shortcut_short_label_settings">Setting</string>
+    <string name="core_shortcut_long_label_settings">Setting</string>
+    <string name="shortcut_short_label_screen_1">VPN connection</string>
+    <string name="shortcut_long_label_screen_1">VPN connection</string>
+    <string name="shortcut_short_label_screen_2">Discover</string>
+    <string name="shortcut_long_label_screen_2">Discover</string>
+    <string name="exit_the_application">Exit The Application?</string>
+    <string name="are_you_sure_you_want_to_exit">Are you sure you want to exit?</string>
+    <string name="common_yes">Yes</string>
+    <string name="common_no">No</string>
+    <string name="core_apply_language">Apply Language…</string>
+    <string name="core_common_save">Save</string>
+    <string name="core_common_continue">Continue</string>
+
+    <string name="core_onboarding_title_1">Just one touch to connect.</string>
+    <string name="core_onboarding_title_2">Multiple VPN servers in different countries</string>
+    <string name="core_onboarding_title_3">Protect your online privacy</string>
+
+    <string name="core_onboarding_action_get_start">Start</string>
+    <string name="core_onboarding_action_next">Next</string>
+    <string name="core_common_skip">Skip</string>
+
+    <string name="core_back_button_desc">Back</string>
+    <string name="core_feedback_title">What problems you encounter during use</string>
+    <string name="core_feedback_subtitle">We will bring you a better experience.</string>
+    <string name="core_feedback_illustration_desc">Illustration</string>
+    <string name="core_option_1_text">Cannot find the deleted image</string>
+    <string name="core_rescan_button">Rescan</string>
+    <string name="core_option_2_text">Nothing interesting anymore</string>
+    <string name="core_explore_button">Explore</string>
+    <string name="core_dont_uninstall_button">Don\'t uninstall yet</string>
+    <string name="core_still_uninstall_button">Still want to uninstall</string>
+
+    <string name="core_uninstall_feedback_title">Why uninstall All Recovery - Photos, Videos?</string>
+    <string name="core_reason_cant_find_photos">Can\'t find deleted photos</string>
+    <string name="core_reason_doesnt_restore">Doesn\'t correctly restore the desired image</string>
+    <string name="core_reason_difficulty_recovering">Difficulty in recovering other files</string>
+    <string name="core_reason_too_many_ads">Too many ads</string>
+    <string name="core_cancel_button">Cancel</string>
+    <string name="core_uninstall_button">Uninstall</string>
+
+    <string name="shortcut_disabled_msg">This feature is not available.</string>
+    <string name="tv_problems_when_using">Problems You Encounter While Using</string>
+    <string name="tv_better_experience">We will provide you with a better experience</string>
+    <string name="tv_unable_connect_vpn">Unable to connect VPN</string>
+    <string name="tv_no_longer_interesting">No longer interesting</string>
+    <string name="tv_connection_now">Connection Now</string>
+    <string name="tv_shortcut_discover">Discover</string>
+    <string name="tv_dont_want_uninstall">Don\'t uninstall yet</string>
+    <string name="tv_still_want_uninstall">Still want to uninstall</string>
+
+    <string name="tv_reason_uninstall_app">Why uninstall Super VPN</string>
+    <string name="tv_difficult_to_use">It\'s difficult to use</string>
+    <string name="tv_too_many_ads">Too many ads</string>
+    <string name="tv_too_few_vpn">Too few VPN</string>
+    <string name="tv_vpn_not_working">VPN not working</string>
+    <string name="tv_cancel">Cancel</string>
+    <string name="tv_exit_application">Exit Application?</string>
+    <string name="tv_want_to_exit_application">Are you sure you want to exit the application?</string>
+    <string name="tv_exit_new">Exit</string>
+    <string name="tv_no">No</string>
+    <string name="tv_done">Done</string>
+
+</resources>

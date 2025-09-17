@@ -5,26 +5,27 @@ import java.util.GregorianCalendar
 
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.jetbrainsKotlinAndroid)
-    kotlin("kapt")
-    id("com.google.dagger.hilt.android")
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.ksp)
+    alias(libs.plugins.dagger.hilt)
     id("com.google.gms.google-services")
     id("com.google.firebase.crashlytics")
     id("kotlin-parcelize")
+    alias(libs.plugins.android.room)
 }
 
 android {
     namespace = "com.tici.vpn.proxy.master"
-    compileSdk = 35
+    compileSdk = libs.versions.targetSdk.get().toInt()
 
     ndkVersion = "26.1.10909125"
 
     defaultConfig {
         applicationId = "com.tici.vpn.proxy.master"
-        minSdk = 27
-        targetSdk = 35
-        versionCode = 24
-        versionName = "1.24"
+        minSdk = libs.versions.minSdk.get().toInt()
+        targetSdk = libs.versions.targetSdk.get().toInt()
+        versionCode = 25
+        versionName = "1.25"
 //
 //        resourceConfigurations.addAll(
 //            listOf("en", "vi", "ar", "hi", "id", "ms", "ru", "pt", "fr", "de", "es", "ja", "ko")
@@ -100,11 +101,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     packaging {
         resources {
@@ -114,6 +115,18 @@ android {
     buildFeatures {
         viewBinding = true
         buildConfig = true
+    }
+
+    // Define product flavors
+    flavorDimensions.add("root")
+    productFlavors {
+        create("dev") {
+            applicationIdSuffix = ".dev"
+        }
+
+        create("prod") {
+
+        }
     }
 
     sourceSets {
@@ -134,6 +147,10 @@ android {
             enableSplit = false
         }
     }
+
+    room {
+        schemaDirectory("$projectDir/schemas")
+    }
 }
 
 dependencies {
@@ -142,8 +159,6 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(project(":BaseUI"))
-    implementation(project(":libads"))
     implementation (libs.timber)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
@@ -162,35 +177,51 @@ dependencies {
     implementation("androidx.core:core-splashscreen:1.0.1")
     implementation("androidx.room:room-runtime:2.6.1")
     implementation("com.android.billingclient:billing:7.1.1")
-    kapt("androidx.room:room-compiler:2.6.1")
+    ksp("androidx.room:room-compiler:2.6.1")
     implementation(libs.androidx.room.ktx)
     implementation(libs.hilt.android)
     implementation (libs.play.services.ads)
-    kapt(libs.hilt.android.compiler)
+    ksp(libs.hilt.android.compiler)
     implementation(libs.androidx.multidex)
+
     // Add zlib dependency for compression functionality
     implementation("com.jcraft:jzlib:1.1.3")
     implementation(group = ":tun2socks", name="tun2socks", ext = "aar")
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.crashlytics.ktx)
-    implementation(libs.firebase.analytics.ktx)
     implementation(libs.okhttp)
     implementation("com.google.android.gms:play-services-ads-identifier:18.2.0")
     implementation("com.google.android.ump:user-messaging-platform:3.2.0")
     implementation("com.google.android.flexbox:flexbox:3.0.0")
+
+    //Lottie Animation
+    implementation(libs.lottie)
+
+    //BlurView
+    implementation(libs.blurview)
+
+    // Firebase
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.crashlytics)
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.config)
+    implementation(libs.firebase.messaging)
+
     //retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     implementation (libs.logging.interceptor)
     implementation (libs.okhttp)
     implementation(libs.dotsindicator)
-}
+    //implementation(libs.circularprogressbar)
 
-// Allow references to generated code
-kapt {
-    correctErrorTypes = true
-}
+    implementation(project(":BaseUI"))
+    implementation(project(":libads"))
 
-hilt {
-    enableExperimentalClasspathAggregation = true
+    implementation(project(":core:ads"))
+    implementation(project(":core:analytics"))
+    implementation(project(":core:baseui"))
+    implementation(project(":core:config"))
+    implementation(project(":core:preference"))
+    implementation(project(":core:utilities"))
+    implementation(project(":core:billing"))
+    implementation(project(":core:dimens"))
 }

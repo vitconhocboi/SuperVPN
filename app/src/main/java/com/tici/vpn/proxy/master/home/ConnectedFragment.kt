@@ -1,20 +1,32 @@
 package com.tici.vpn.proxy.master.home
 
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
 import com.common.baseui.BaseAppConfig
 import com.common.baseui.extension.context
+import com.core.ads.domain.AdLoadBannerNativeUiResource
+import com.core.baseui.fragment.BaseFragment
+import com.core.baseui.fragment.ScreenType
+import com.core.config.domain.data.IAdPlaceName
 import com.tici.vpn.proxy.master.R
-import com.tici.vpn.proxy.master.base.ProductFragment
 import com.tici.vpn.proxy.master.databinding.FragmentConnectedBinding
 import com.tici.vpn.proxy.master.network.ProxySpeedTest
+import com.tici.vpn.proxy.master.required.ads.AppAdPlaceName
+import com.tici.vpn.proxy.master.required.shortcut.AppScreenType
 import com.tici.vpn.proxy.master.utils.Navigator
 import com.tici.vpn.proxy.master.utils.Utils
+import dagger.hilt.android.AndroidEntryPoint
 
-class ConnectedFragment : BackActionBarFragment, ProductFragment<FragmentConnectedBinding>() {
+@AndroidEntryPoint
+class ConnectedFragment : BackActionBarFragment, BaseFragment<FragmentConnectedBinding>() {
+
+    override val screenType: ScreenType
+        get() = AppScreenType.ConnectedFragment
+
     private var currentProxy: ProxySpeedTest.ProxyConfig? = null
     override fun bindingProvider(
         inflater: LayoutInflater, container: ViewGroup?
@@ -22,11 +34,21 @@ class ConnectedFragment : BackActionBarFragment, ProductFragment<FragmentConnect
         return FragmentConnectedBinding.inflate(inflater, container, false)
     }
 
-    override fun initView() {
-        super.initView()
+    override fun onBannerNativeResult(adResource: AdLoadBannerNativeUiResource) {
+        binding.layoutBannerNative.processAdResource(
+            adResource,
+            AppAdPlaceName.ANCHORED_BOTTOM_CONNECTED_SUCCESS
+        )
+    }
 
+    override fun providerBannerNativeAdPlaceName(): List<IAdPlaceName> {
+        return listOf(
+            AppAdPlaceName.ANCHORED_BOTTOM_CONNECTED_SUCCESS
+        )
+    }
+
+    override fun initViews(savedInstanceState: Bundle?) {
         val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
-
         binding.apply {
             ivIpInfo.scaleX = if (isRTL) -1f else 1f
             pnIpInfo.setOnClickListener {

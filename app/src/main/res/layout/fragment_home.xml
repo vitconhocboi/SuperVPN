@@ -1,274 +1,298 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#11141D"
-    tools:context=".home.HomeFragment">
+    android:orientation="vertical">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/size60"
-        android:gravity="center_horizontal"
-        android:background="@drawable/bg_earth"
-        android:orientation="vertical"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/connectTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/size8"
-            android:fontFamily="@font/inter_normal"
-            android:text="@string/disconnected"
-            android:textColor="#FFFFFFFF"
-            android:textSize="28sp"
-            android:visibility="visible" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/size8"
-            android:fontFamily="@font/inter_normal"
-            android:text="@string/connected"
-            android:textColor="#FFFFFFFF"
-            android:textSize="28sp"
-            android:visibility="gone" />
-
-        <LinearLayout
-            android:id="@+id/lnConnecting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_68"
-            android:visibility="gone">
-
-            <ProgressBar
-                android:id="@+id/customProgressBar"
-                style="?android:attr/spinnerStyle"
-                android:layout_width="@dimen/size16"
-                android:layout_height="@dimen/size16"
-                android:layout_marginBottom="@dimen/size14"
-                android:background="#00000000"
-                android:indeterminate="false"
-                android:indeterminateTint="#03C343"
-                android:max="100"
-                android:progress="50"
-                android:progressDrawable="@drawable/progress_bar" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/size8"
-                android:fontFamily="@font/inter_normal"
-                android:text="@string/connecting"
-                android:textColor="#C4C9D9"
-                android:textSize="12sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/lnConnected"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_68"
-            android:gravity="center_vertical"
-            android:visibility="gone">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/size16"
-                android:layout_height="@dimen/size16"
-                android:src="@drawable/ic_status_connected" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvPrivateInternet"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/size8"
-                android:fontFamily="@font/inter_normal"
-                android:text="@string/private_internet"
-                android:textColor="#0FDD54"
-                android:textSize="12sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/lnDisconnecting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_68"
-            android:gravity="center"
-            android:visibility="gone">
-
-            <ProgressBar
-                android:id="@+id/progressLoadAds"
-                android:layout_width="@dimen/size16"
-                android:layout_height="@dimen/size16"
-                android:layout_marginStart="@dimen/size3"
-                android:indeterminateTint="#0FDD54"
-                android:secondaryProgressTint="#0FDD54" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/size8"
-                android:text="@string/disconnecting"
-                android:textColor="#C4C9D9"
-                android:textSize="12sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/lnDisconnected"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_68"
-            android:gravity="center"
-            android:visibility="visible">
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_normal"
-                android:text="@string/tap_to_connect"
-                android:textColor="#0FDD54"
-                android:textSize="12sp" />
-        </LinearLayout>
+        android:layout_marginBottom="@dimen/_4dp"
+        android:layout_weight="1"
+        android:background="#11141D"
+        android:fillViewport="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ivConnectPanel"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:background="@drawable/bg_round">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/turn_on"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-<!--        <androidx.appcompat.widget.LinearLayoutCompat-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="0dp"-->
-<!--            android:background="@drawable/bg_earth"-->
-<!--            android:gravity="center"-->
-<!--            android:orientation="vertical">-->
-
-<!--        </androidx.appcompat.widget.LinearLayoutCompat>-->
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/pn_ip_info"
-            android:layout_marginHorizontal="@dimen/size16"
-            android:layout_marginBottom="@dimen/size16"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_setting_pro2"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:padding="@dimen/size12">
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/ivLoc"
-                android:layout_width="@dimen/size32"
-                android:layout_height="@dimen/size32"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_location"
-                app:shapeAppearanceOverlay="@style/CircleImageView" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvWhatisMyIp"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/size8"
-                android:fontFamily="@font/inter_bold"
-                android:text="@string/what_is_my_ip"
-                android:textColor="#ECEFF5" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ivIpInfo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/size16"
-                android:layout_marginRight="@dimen/size16"
-                android:src="@drawable/ic_next_arrow" />
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/pn_select_proxy"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#232836"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:padding="@dimen/size12">
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/ivFlag"
-                android:layout_width="@dimen/size32"
-                android:layout_height="@dimen/size32"
-                android:scaleType="centerCrop"
-                android:src="@drawable/flag_us"
-                app:shapeAppearanceOverlay="@style/CircleImageView" />
-
-            <!--            <androidx.appcompat.widget.AppCompatImageView-->
-            <!--                android:id="@+id/ivFlag"-->
-            <!--                android:layout_width="@dimen/size32"-->
-            <!--                android:layout_height="@dimen/size32"-->
-            <!--                android:src="@drawable/flag_us" />-->
+            android:layout_height="match_parent"
+            android:background="#11141D"
+            tools:context=".home.HomeFragment">
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/size60"
+                android:background="@drawable/bg_earth"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tvProxyLocation"
-                    android:layout_width="match_parent"
+                    android:id="@+id/connectTitle"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/size8"
-                    android:fontFamily="@font/inter_bold"
-                    android:text="United States"
-                    android:textColor="#ECEFF5" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tvProxyIp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/size8"
+                    android:layout_marginBottom="@dimen/size8"
                     android:fontFamily="@font/inter_normal"
-                    android:gravity="center_vertical"
-                    android:text="103.23.23.123"
-                    android:textColor="#767C8A"
-                    android:textSize="@dimen/text_normal"
+                    android:text="@string/disconnected"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="28sp"
+                    android:visibility="visible" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/size8"
+                    android:fontFamily="@font/inter_normal"
+                    android:text="@string/connected"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="28sp"
                     android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/lnConnecting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_68"
+                    android:visibility="gone">
+
+                    <ProgressBar
+                        android:id="@+id/customProgressBar"
+                        style="?android:attr/spinnerStyle"
+                        android:layout_width="@dimen/size16"
+                        android:layout_height="@dimen/size16"
+                        android:layout_marginBottom="@dimen/size14"
+                        android:background="#00000000"
+                        android:indeterminate="false"
+                        android:indeterminateTint="#03C343"
+                        android:max="100"
+                        android:progress="50"
+                        android:progressDrawable="@drawable/progress_bar" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/size8"
+                        android:fontFamily="@font/inter_normal"
+                        android:text="@string/connecting"
+                        android:textColor="#C4C9D9"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lnConnected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_68"
+                    android:gravity="center_vertical"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/size16"
+                        android:layout_height="@dimen/size16"
+                        android:src="@drawable/ic_status_connected" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPrivateInternet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/size8"
+                        android:fontFamily="@font/inter_normal"
+                        android:text="@string/private_internet"
+                        android:textColor="#0FDD54"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lnDisconnecting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_68"
+                    android:gravity="center"
+                    android:visibility="gone">
+
+                    <ProgressBar
+                        android:id="@+id/progressLoadAds"
+                        android:layout_width="@dimen/size16"
+                        android:layout_height="@dimen/size16"
+                        android:layout_marginStart="@dimen/size3"
+                        android:indeterminateTint="#0FDD54"
+                        android:secondaryProgressTint="#0FDD54" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/size8"
+                        android:text="@string/disconnecting"
+                        android:textColor="#C4C9D9"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lnDisconnected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_68"
+                    android:gravity="center"
+                    android:visibility="visible">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_normal"
+                        android:text="@string/tap_to_connect"
+                        android:textColor="#0FDD54"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ivConnectPanel"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:background="@drawable/bg_round">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/turn_on"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!--        <androidx.appcompat.widget.LinearLayoutCompat-->
+                <!--            android:layout_width="match_parent"-->
+                <!--            android:layout_height="0dp"-->
+                <!--            android:background="@drawable/bg_earth"-->
+                <!--            android:gravity="center"-->
+                <!--            android:orientation="vertical">-->
+
+                <!--        </androidx.appcompat.widget.LinearLayoutCompat>-->
+
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ivSelectProxy"
-                android:layout_width="wrap_content"
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/size16"
-                android:layout_marginRight="@dimen/size12"
-                android:src="@drawable/ic_next_arrow" />
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent">
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/pn_ip_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/size16"
+                    android:layout_marginBottom="@dimen/size16"
+                    android:background="@drawable/bg_setting_pro2"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/size12">
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
-</androidx.constraintlayout.widget.ConstraintLayout>
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivLoc"
+                        android:layout_width="@dimen/size32"
+                        android:layout_height="@dimen/size32"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_location"
+                        app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvWhatisMyIp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/size8"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_bold"
+                        android:text="@string/what_is_my_ip"
+                        android:textColor="#ECEFF5" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivIpInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/size16"
+                        android:layout_marginRight="@dimen/size16"
+                        android:src="@drawable/ic_next_arrow" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/pn_select_proxy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#232836"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/size12">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivFlag"
+                        android:layout_width="@dimen/size32"
+                        android:layout_height="@dimen/size32"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/flag_us"
+                        app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+                    <!--            <androidx.appcompat.widget.AppCompatImageView-->
+                    <!--                android:id="@+id/ivFlag"-->
+                    <!--                android:layout_width="@dimen/size32"-->
+                    <!--                android:layout_height="@dimen/size32"-->
+                    <!--                android:src="@drawable/flag_us" />-->
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvProxyLocation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/size8"
+                            android:fontFamily="@font/inter_bold"
+                            android:text="United States"
+                            android:textColor="#ECEFF5" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvProxyIp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/size8"
+                            android:fontFamily="@font/inter_normal"
+                            android:gravity="center_vertical"
+                            android:text="103.23.23.123"
+                            android:textColor="#767C8A"
+                            android:textSize="@dimen/text_normal"
+                            android:visibility="gone" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivSelectProxy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/size16"
+                        android:layout_marginRight="@dimen/size12"
+                        android:src="@drawable/ic_next_arrow" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.core.ads.customviews.ads.BannerNativeContainerLayout
+        android:id="@+id/layout_banner_native"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom" />
+</LinearLayout>
+

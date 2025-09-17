@@ -1312,7 +1312,7 @@ int accept_connection(struct client_state * csp, jb_socket fds[])
       linger_options.l_linger = 5;
       if (0 != setsockopt(afd, SOL_SOCKET, SO_LINGER, &linger_options, sizeof(linger_options)))
       {
-         log_error(LOG_LEVEL_ERROR, "Setting SO_LINGER on socket %d failed.", afd);
+         log_error(LOG_LEVEL_ERROR, "SettingFragment SO_LINGER on socket %d failed.", afd);
       }
    }
 #endif

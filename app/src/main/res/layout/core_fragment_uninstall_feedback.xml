@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white">
+
+        <View
+            android:id="@+id/viewClickReturn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/_45dp"
+            android:layout_height="@dimen/_45dp"
+            android:layout_margin="@dimen/_4dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="@dimen/_12dp"
+            android:scaleType="centerCrop"
+            android:scaleX="@integer/locale_mirror_flip"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_back" />
+
+        <TextView
+            android:id="@+id/tvReasonUninstall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_bold"
+            android:maxLines="2"
+            android:text="@string/tv_reason_uninstall_app"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/btnBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnBack"
+            app:layout_constraintTop_toTopOf="@+id/btnBack" />
+
+        <com.tici.vpn.proxy.master.required.view.SafeNestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toTopOf="@+id/tvCancel"
+            app:layout_constraintTop_toBottomOf="@+id/btnBack">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <!-- Option 1 -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/bgClRadio1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/_12dp"
+                    android:paddingStart="@dimen/_16dp"
+                    android:paddingEnd="@dimen/_11dp">
+
+                    <TextView
+                        android:id="@+id/tvOption1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/tv_difficult_to_use"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/radio1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/radio1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/bg_check_question"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:gravity="center"
+                        android:padding="@dimen/_5dp"
+                        android:theme="@style/NoTintRadioButton"
+                        app:buttonTint="@null"
+                        app:layout_constraintBottom_toBottomOf="@id/tvOption1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tvOption1" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Option 2 -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/bgClRadio2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/_12dp"
+                    android:paddingStart="@dimen/_16dp"
+                    android:paddingEnd="@dimen/_11dp">
+
+                    <TextView
+                        android:id="@+id/tvOption2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/tv_too_many_ads"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/radio2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/radio2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/bg_check_question"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:gravity="center"
+                        android:padding="@dimen/_5dp"
+                        android:theme="@style/NoTintRadioButton"
+                        app:buttonTint="@null"
+                        app:layout_constraintBottom_toBottomOf="@id/tvOption2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tvOption2" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Option 3 -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/bgClRadio3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/_12dp"
+                    android:paddingStart="@dimen/_16dp"
+                    android:paddingEnd="@dimen/_11dp">
+
+                    <TextView
+                        android:id="@+id/tvOption3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/tv_too_few_vpn"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/radio3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/radio3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/bg_check_question"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:gravity="center"
+                        android:padding="@dimen/_5dp"
+                        android:theme="@style/NoTintRadioButton"
+                        app:buttonTint="@null"
+                        app:layout_constraintBottom_toBottomOf="@id/tvOption3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tvOption3" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Option 4 -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/bgClRadio4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/_12dp"
+                    android:paddingStart="@dimen/_16dp"
+                    android:paddingEnd="@dimen/_11dp">
+
+                    <TextView
+                        android:id="@+id/tvOption4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/tv_vpn_not_working"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/radio4"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/radio4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/bg_check_question"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:gravity="center"
+                        android:padding="@dimen/_5dp"
+                        android:theme="@style/NoTintRadioButton"
+                        app:buttonTint="@null"
+                        app:layout_constraintBottom_toBottomOf="@id/tvOption4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tvOption4" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+
+        </com.tici.vpn.proxy.master.required.view.SafeNestedScrollView>
+
+
+        <TextView
+            android:id="@+id/tvCancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_16dp"
+            android:layout_marginBottom="@dimen/_25dp"
+            android:background="@drawable/bg_border_button_reject"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_15dp"
+            android:text="@string/tv_cancel"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvUninstall"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvUninstall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_16dp"
+            android:layout_marginBottom="@dimen/_25dp"
+            android:alpha="0.5"
+            android:background="@drawable/bg_border_button_ok"
+            android:enabled="false"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_15dp"
+            android:text="@string/core_uninstall_button"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvCancel" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/ad_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <!-- SDK quảng cáo của bạn sẽ được đặt ở đây -->
+        <com.core.ads.customviews.ads.BannerNativeContainerLayout
+            android:id="@+id/layoutBannerNative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
+</LinearLayout>
+
+

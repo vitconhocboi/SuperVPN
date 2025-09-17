@@ -1,455 +1,476 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="@dimen/size16"
-    android:background="@color/backgroundColor2">
+    android:orientation="vertical">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/backgroundColor2"
+        android:fillViewport="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/premium"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_16"
-            android:background="@drawable/bg_setting_description"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="wrap_content">
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_pro"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_16"
-                android:layout_marginEnd="@dimen/margin_16"
-                android:layout_marginTop="@dimen/margin_20"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:drawableEnd="@drawable/ic_setting_pro"
-                android:drawablePadding="@dimen/margin_medium"
-                android:fontFamily="@font/inter_bold"
-                android:text="@string/setting_vpn_fast_and_safe"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-
-<!--            <androidx.appcompat.widget.AppCompatImageView-->
-<!--                android:id="@+id/ic_pro"-->
-<!--                android:layout_width="@dimen/size55"-->
-<!--                android:layout_height="@dimen/size22"-->
-<!--                android:layout_marginStart="@dimen/margin_12"-->
-<!--                android:src="@drawable/ic_setting_pro"-->
-<!--                app:layout_constraintBottom_toBottomOf="@+id/tv_pro"-->
-<!--                app:layout_constraintStart_toEndOf="@+id/tv_pro"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="@+id/tv_pro" />-->
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_pro_desc"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/margin_16"
-                android:layout_marginTop="@dimen/margin_big"
-                android:ellipsize="middle"
-                android:fontFamily="@font/inter_normal"
-                android:maxLines="2"
-                android:text="@string/setting_vpn_fast_and_safe_desc"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_pro" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/btn_pro"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/premium"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/size42"
-                android:layout_marginHorizontal="@dimen/margin_16"
-                android:layout_marginTop="@dimen/margin_20"
-                android:layout_marginBottom="@dimen/margin_20"
-                android:background="@drawable/bg_3_day_trial"
-                android:ellipsize="middle"
-                android:gravity="center"
-                android:text="@string/setting_upgrade"
-                android:textColor="@color/gray_1"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@id/tv_pro_desc"
-                app:layout_constraintTop_toBottomOf="@id/tv_pro_desc" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/row_app_proxy"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="@dimen/margin_16"
-            android:layout_marginBottom="@dimen/margin_medium"
-            android:background="@drawable/bg_setting_items"
-            android:foreground="?selectableItemBackgroundBorderless"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/premium">
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_app_proxy"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/size18"
-                android:layout_marginBottom="@dimen/margin_16"
-                android:layout_marginStart="@dimen/margin_16"
-                android:drawableStart="@drawable/ic_setting_app_proxy"
-                android:drawableEnd="@drawable/ic_setting_pre"
-                android:drawablePadding="@dimen/margin_16"
-                android:ellipsize="middle"
-                android:text="@string/setting_app_proxy"
-                android:textColor="@color/white"
-                android:textStyle="bold"
+                android:layout_margin="@dimen/margin_16"
+                android:background="@drawable/bg_setting_description"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent">
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_app_proxy_desc"
-                android:layout_width="0dp"
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_pro"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:layout_marginEnd="@dimen/margin_16"
+                    android:drawableEnd="@drawable/ic_setting_pro"
+                    android:drawablePadding="@dimen/margin_medium"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/inter_bold"
+                    android:maxLines="1"
+                    android:text="@string/setting_vpn_fast_and_safe"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--            <androidx.appcompat.widget.AppCompatImageView-->
+                <!--                android:id="@+id/ic_pro"-->
+                <!--                android:layout_width="@dimen/size55"-->
+                <!--                android:layout_height="@dimen/size22"-->
+                <!--                android:layout_marginStart="@dimen/margin_12"-->
+                <!--                android:src="@drawable/ic_setting_pro"-->
+                <!--                app:layout_constraintBottom_toBottomOf="@+id/tv_pro"-->
+                <!--                app:layout_constraintStart_toEndOf="@+id/tv_pro"-->
+                <!--                app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                app:layout_constraintTop_toTopOf="@+id/tv_pro" />-->
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_pro_desc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/margin_big"
+                    android:ellipsize="middle"
+                    android:fontFamily="@font/inter_normal"
+                    android:maxLines="2"
+                    android:text="@string/setting_vpn_fast_and_safe_desc"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_pro" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/btn_pro"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size42"
+                    android:layout_marginHorizontal="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:layout_marginBottom="@dimen/margin_20"
+                    android:background="@drawable/bg_3_day_trial"
+                    android:ellipsize="middle"
+                    android:gravity="center"
+                    android:text="@string/setting_upgrade"
+                    android:textColor="@color/gray_1"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tv_pro_desc"
+                    app:layout_constraintTop_toBottomOf="@id/tv_pro_desc" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/row_app_proxy"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/size50"
-                android:layout_marginBottom="@dimen/margin_16"
-                android:layout_marginEnd="@dimen/margin_16"
-                android:drawablePadding="@dimen/margin_16"
-                android:ellipsize="end"
-                android:gravity="start"
-                android:text="@string/setting_app_proxy_desc"
-                android:textColor="#767C8A"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:background="@drawable/bg_setting_items"
+                android:foreground="?selectableItemBackgroundBorderless"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/btn_action"
-                app:layout_constraintTop_toBottomOf="@id/tv_app_proxy" />
+                app:layout_constraintTop_toBottomOf="@+id/premium">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/btn_action"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="@dimen/margin_16"
-                android:padding="@dimen/margin_small"
-                android:src="@drawable/ic_setting_right_arrow"
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_app_proxy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/size18"
+                    android:layout_marginBottom="@dimen/margin_16"
+                    android:drawableStart="@drawable/ic_setting_app_proxy"
+                    android:drawablePadding="@dimen/margin_16"
+                    android:ellipsize="middle"
+                    android:text="@string/setting_app_proxy"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_app_proxy_desc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size50"
+                    android:layout_marginEnd="@dimen/margin_16"
+                    android:layout_marginBottom="@dimen/margin_16"
+                    android:drawablePadding="@dimen/margin_16"
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    android:text="@string/setting_app_proxy_desc"
+                    android:textColor="#767C8A"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_action"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_app_proxy" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btn_action"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="@dimen/margin_16"
+                    android:padding="@dimen/margin_small"
+                    android:src="@drawable/ic_setting_right_arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/rowAdsBlock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:background="@drawable/bg_setting_items"
+                android:foreground="?selectableItemBackgroundBorderless"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/row_app_proxy">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_ads_block"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/size18"
+                    android:layout_marginBottom="@dimen/margin_16"
+                    android:drawableStart="@drawable/setting_ads_block"
+                    android:drawablePadding="@dimen/margin_16"
+                    android:ellipsize="middle"
+                    android:text="@string/setting_ads_block"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_ads_desc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size50"
+                    android:layout_marginEnd="@dimen/margin_16"
+                    android:layout_marginBottom="@dimen/margin_16"
+                    android:drawablePadding="@dimen/margin_16"
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    android:text="@string/setting_ads_desc"
+                    android:textColor="#767C8A"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_ads_action"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_ads_block" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btn_ads_action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_16"
+                    android:padding="@dimen/margin_small"
+                    android:src="@drawable/ic_button_switch"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/row_dns"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:background="@drawable/bg_setting_items"
+                android:foreground="?selectableItemBackgroundBorderless"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rowAdsBlock">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_dns"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/size18"
+                    android:layout_marginBottom="@dimen/margin_16"
+                    android:drawableStart="@drawable/setting_dns_block"
+                    android:drawablePadding="@dimen/margin_16"
+                    android:ellipsize="middle"
+                    android:text="@string/setting_dns_default"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvDnsStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/margin_16"
+                    android:layout_marginStart="@dimen/margin_16"
+                    android:drawablePadding="@dimen/margin_16"
+                    android:ellipsize="middle"
+                    android:text="@string/status_off"
+                    android:textColor="#767C8A"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btn_dns_action"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btn_dns_action"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="@dimen/margin_16"
+                    android:padding="@dimen/margin_small"
+                    android:src="@drawable/ic_setting_right_arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/row_language"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="@dimen/margin_12"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:background="@drawable/bg_setting_items"
+                android:foreground="?selectableItemBackgroundBorderless"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/row_dns"
+                app:layout_goneMarginTop="@dimen/margin_big">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_language"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/size18"
+                    android:layout_marginBottom="@dimen/margin_16"
+                    android:drawableStart="@drawable/ic_setting_language"
+                    android:drawablePadding="@dimen/margin_16"
+                    android:ellipsize="middle"
+                    android:text="@string/setting_language"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btn_language_action"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="@dimen/margin_16"
+                    android:padding="@dimen/margin_small"
+                    android:src="@drawable/ic_setting_right_arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/row_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="@dimen/margin_12"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:background="@drawable/bg_setting_items"
+                android:foreground="?selectableItemBackgroundBorderless"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/row_language"
+                app:layout_goneMarginTop="@dimen/margin_big">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/size18"
+                    android:layout_marginBottom="@dimen/margin_16"
+                    android:drawableStart="@drawable/ic_setting_rate"
+                    android:drawablePadding="@dimen/margin_16"
+                    android:ellipsize="middle"
+                    android:text="@string/setting_rate"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btn_rate_action"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="@dimen/margin_16"
+                    android:padding="@dimen/margin_small"
+                    android:src="@drawable/ic_setting_right_arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/row_share"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="@dimen/margin_12"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:background="@drawable/bg_setting_items"
+                android:foreground="?selectableItemBackgroundBorderless"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/row_rate"
+                app:layout_goneMarginTop="@dimen/margin_big">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/size18"
+                    android:layout_marginBottom="@dimen/margin_16"
+                    android:drawableStart="@drawable/ic_setting_share"
+                    android:drawablePadding="@dimen/margin_16"
+                    android:ellipsize="middle"
+                    android:text="@string/setting_share"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btn_share_action"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="@dimen/margin_16"
+                    android:padding="@dimen/margin_small"
+                    android:src="@drawable/ic_setting_right_arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/row_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="@dimen/margin_12"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:background="@drawable/bg_setting_items"
+                android:foreground="?selectableItemBackgroundBorderless"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/rowAdsBlock"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="@dimen/margin_16"
-            android:layout_marginBottom="@dimen/margin_medium"
-            android:background="@drawable/bg_setting_items"
-            android:foreground="?selectableItemBackgroundBorderless"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/row_app_proxy">
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_ads_block"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/size18"
-                android:layout_marginBottom="@dimen/margin_16"
-                android:layout_marginStart="@dimen/margin_16"
-                android:drawableStart="@drawable/setting_ads_block"
-                android:drawableEnd="@drawable/ic_setting_pre"
-                android:drawablePadding="@dimen/margin_16"
-                android:ellipsize="middle"
-                android:text="@string/setting_ads_block"
-                android:textColor="@color/white"
-                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/row_share"
+                app:layout_goneMarginTop="@dimen/margin_big">
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_ads_desc"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/size50"
-                android:layout_marginBottom="@dimen/margin_16"
-                android:layout_marginEnd="@dimen/margin_16"
-                android:drawablePadding="@dimen/margin_16"
-                android:ellipsize="end"
-                android:gravity="start"
-                android:text="@string/setting_ads_desc"
-                android:textColor="#767C8A"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/btn_ads_action"
-                app:layout_constraintTop_toBottomOf="@id/tv_ads_block" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_feedback"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/size18"
+                    android:layout_marginBottom="@dimen/margin_16"
+                    android:drawableStart="@drawable/ic_setting_feedback"
+                    android:drawablePadding="@dimen/margin_16"
+                    android:ellipsize="middle"
+                    android:text="@string/setting_feedback"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/btn_ads_action"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/margin_16"
-                android:padding="@dimen/margin_small"
-                android:src="@drawable/ic_button_switch"
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btn_feedback_action"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="@dimen/margin_16"
+                    android:padding="@dimen/margin_small"
+                    android:src="@drawable/ic_setting_right_arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <FrameLayout
+                android:id="@+id/frame_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintVertical_weight="1"
+                tools:layout_editor_absoluteX="-138dp" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/row_dns"
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/layout_ads"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginVertical="@dimen/_6dp">
+
+        <com.core.ads.customviews.ads.BannerNativeContainerLayout
+            android:id="@+id/layout_banner_native"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="@dimen/margin_16"
-            android:layout_marginBottom="@dimen/margin_medium"
-            android:background="@drawable/bg_setting_items"
-            android:foreground="?selectableItemBackgroundBorderless"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rowAdsBlock">
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_dns"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/size18"
-                android:layout_marginBottom="@dimen/margin_16"
-                android:layout_marginStart="@dimen/margin_16"
-                android:drawableStart="@drawable/setting_dns_block"
-                android:drawablePadding="@dimen/margin_16"
-                android:ellipsize="middle"
-                android:text="@string/setting_dns_default"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tvDnsStatus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/margin_16"
-                android:layout_marginStart="@dimen/margin_16"
-                android:drawablePadding="@dimen/margin_16"
-                android:ellipsize="middle"
-                android:text="@string/status_off"
-                android:textColor="#767C8A"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/btn_dns_action"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/btn_dns_action"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="@dimen/margin_16"
-                android:padding="@dimen/margin_small"
-                android:src="@drawable/ic_setting_right_arrow"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/row_language"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="@dimen/margin_12"
-            android:layout_marginBottom="@dimen/margin_medium"
-            android:background="@drawable/bg_setting_items"
-            android:foreground="?selectableItemBackgroundBorderless"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/row_dns"
-            app:layout_goneMarginTop="@dimen/margin_big">
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_language"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/size18"
-                android:layout_marginBottom="@dimen/margin_16"
-                android:layout_marginStart="@dimen/margin_16"
-                android:drawableStart="@drawable/ic_setting_language"
-                android:drawablePadding="@dimen/margin_16"
-                android:ellipsize="middle"
-                android:text="@string/setting_language"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/btn_language_action"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="@dimen/margin_16"
-                android:padding="@dimen/margin_small"
-                android:src="@drawable/ic_setting_right_arrow"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/row_rate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="@dimen/margin_12"
-            android:layout_marginBottom="@dimen/margin_medium"
-            android:background="@drawable/bg_setting_items"
-            android:foreground="?selectableItemBackgroundBorderless"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/row_language"
-            app:layout_goneMarginTop="@dimen/margin_big">
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_rate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/size18"
-                android:layout_marginBottom="@dimen/margin_16"
-                android:layout_marginStart="@dimen/margin_16"
-                android:drawableStart="@drawable/ic_setting_rate"
-                android:drawablePadding="@dimen/margin_16"
-                android:ellipsize="middle"
-                android:text="@string/setting_rate"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/btn_rate_action"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="@dimen/margin_16"
-                android:padding="@dimen/margin_small"
-                android:src="@drawable/ic_setting_right_arrow"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/row_share"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="@dimen/margin_12"
-            android:layout_marginBottom="@dimen/margin_medium"
-            android:background="@drawable/bg_setting_items"
-            android:foreground="?selectableItemBackgroundBorderless"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/row_rate"
-            app:layout_goneMarginTop="@dimen/margin_big">
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_share"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/size18"
-                android:layout_marginBottom="@dimen/margin_16"
-                android:layout_marginStart="@dimen/margin_16"
-                android:drawableStart="@drawable/ic_setting_share"
-                android:drawablePadding="@dimen/margin_16"
-                android:ellipsize="middle"
-                android:text="@string/setting_share"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/btn_share_action"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="@dimen/margin_16"
-                android:padding="@dimen/margin_small"
-                android:src="@drawable/ic_setting_right_arrow"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/row_feedback"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="@dimen/margin_12"
-            android:layout_marginBottom="@dimen/margin_medium"
-            android:background="@drawable/bg_setting_items"
-            android:foreground="?selectableItemBackgroundBorderless"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/row_share"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_goneMarginTop="@dimen/margin_big">
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_feedback"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/size18"
-                android:layout_marginBottom="@dimen/margin_16"
-                android:layout_marginStart="@dimen/margin_16"
-                android:drawableStart="@drawable/ic_setting_feedback"
-                android:drawablePadding="@dimen/margin_16"
-                android:ellipsize="middle"
-                android:text="@string/setting_feedback"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/btn_feedback_action"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="@dimen/margin_16"
-                android:padding="@dimen/margin_small"
-                android:src="@drawable/ic_setting_right_arrow"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <FrameLayout
-            android:id="@+id/frame_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:layout_constraintVertical_weight="1"
-            tools:layout_editor_absoluteX="-138dp" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</LinearLayout>

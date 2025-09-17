@@ -1,26 +1,29 @@
 package com.tici.vpn.proxy.master.settings.appproxy
 
 import android.annotation.SuppressLint
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.tici.vpn.proxy.master.base.ProductFragment
+import com.common.baseui.extension.setVisible
+import com.core.ads.domain.AdLoadBannerNativeUiResource
+import com.core.baseui.fragment.BaseFragment
+import com.core.baseui.fragment.ScreenType
+import com.core.config.domain.data.IAdPlaceName
+import com.tici.vpn.proxy.master.R
 import com.tici.vpn.proxy.master.databinding.FragmentAppProxyBinding
+import com.tici.vpn.proxy.master.dialog.SettingSuccessDialog
+import com.tici.vpn.proxy.master.required.ads.AppAdPlaceName
+import com.tici.vpn.proxy.master.required.shortcut.AppScreenType
 import com.tici.vpn.proxy.master.utils.hideKeyboard
 import com.tici.vpn.proxy.master.utils.textChanges
-import com.common.baseui.extension.setVisible
-import com.tici.vpn.proxy.master.R
-import com.tici.vpn.proxy.master.dialog.SettingSuccessDialog
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 @AndroidEntryPoint
-class AppProxyFragment(
-    val onSelect : () -> Unit
-) :
-    ProductFragment<FragmentAppProxyBinding>() {
+class AppProxyFragment() : BaseFragment<FragmentAppProxyBinding>() {
 
     lateinit var appProxyAdapter: AppProxyAdapter
 
@@ -34,10 +37,25 @@ class AppProxyFragment(
         return FragmentAppProxyBinding.inflate(inflater, container, false)
     }
 
+    override val screenType: ScreenType
+        get() = AppScreenType.AppProxyFragment
+
+    override fun onBannerNativeResult(adResource: AdLoadBannerNativeUiResource) {
+        binding.layoutBannerNative.processAdResource(
+            adResource,
+            AppAdPlaceName.ANCHORED_BOTTOM_APP_PROXY
+        )
+    }
+
+    override fun providerBannerNativeAdPlaceName(): List<IAdPlaceName> {
+        return listOf(
+            AppAdPlaceName.ANCHORED_BOTTOM_APP_PROXY
+        )
+    }
+
     @OptIn(ExperimentalCoroutinesApi::class)
     @SuppressLint("NotifyDataSetChanged")
-    override fun initView() {
-        super.initView()
+    override fun initViews(savedInstanceState: Bundle?) {
 
         binding.edtSearch.clearFocus()
         binding.edtSearch.hideKeyboard()
@@ -60,11 +78,15 @@ class AppProxyFragment(
             btnOk.setOnClickListener {
                 edtSearch.hideKeyboard()
                 val listDisallows = ArrayList<AppProxyUI>()
-                val listFromBaseList = appProxyAdapter.listRecord.filter { !selectedList.contains(it)}
+                val listFromBaseList =
+                    appProxyAdapter.listRecord.filter { !selectedList.contains(it) }
                 listDisallows.addAll(listFromBaseList as Collection<out AppProxyUI>)
                 allowAppViewModel.setDisallowApps(listDisallows)
                 //Toast.makeText(requireContext(), "Save successfully", Toast.LENGTH_SHORT).show()
-                SettingSuccessDialog(R.string.setting_app_proxy_success).show(childFragmentManager, "SettingSuccessDialog")
+                SettingSuccessDialog(R.string.setting_app_proxy_success).show(
+                    childFragmentManager,
+                    "SettingSuccessDialog"
+                )
 //                requireActivity().finish()
 //                Navigator.startMainActivity(requireContext(), "RECONNECT")
             }
@@ -152,7 +174,7 @@ class AppProxyFragment(
                 if (!selectedList.contains(it)) selectedList.add(it!!)
                 it!!.allowed = true
             }
-        } else if (selectedList.isNotEmpty()){
+        } else if (selectedList.isNotEmpty()) {
             selectedList.clear()
             appProxyAdapter.datas.map { it!!.allowed = false }
         } else {

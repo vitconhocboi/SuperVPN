@@ -1,26 +1,53 @@
 package com.tici.vpn.proxy.master
 
-import com.common.baseui.BaseAppConfig
 import com.common.baseui.BaseApplication
-import com.tici.vpn.proxy.master.splash.SplashActivity
+import com.core.ads.BaseAdmobApplication
+import com.core.billing.ProductIdManager
+import com.core.preference.PurchasePreferences
 import dagger.hilt.android.HiltAndroidApp
-import timber.log.Timber
+import javax.inject.Inject
 
 @HiltAndroidApp
-class SuperVpnApplication : BaseApplication() {
+class SuperVpnApplication : BaseAdmobApplication() {
+
+    @Inject
+    lateinit var purchasePreferences: PurchasePreferences
+
+    @Inject
+    lateinit var productIdManager: ProductIdManager
+
+    init {
+        instance = this
+    }
+
+    override fun initOtherConfig() {
+        createOtherShortCut()
+        registerKeyVipList()
+        BaseApplication.attachInstance(this) // gán thủ công
+    }
+
+
+    private fun createOtherShortCut() {
+        //TODO tạo thêm shortcut
+    }
+
+    /**
+     * Đăng ký các key để xác định userVip của ứng dụng (đây là các key lưu trạng thái mua các gói vip trong ứng dụng)
+     */
+    private fun registerKeyVipList() {
+        /*purchasePreferences.registerKeyVipList(
+            keyVipList = mutableListOf(
+                KEY_IS_PRO_LIFE_TIME,
+                KEY_IS_PRO_BY_YEAR,
+                KEY_IS_PRO_BY_MONTH,
+                KEY_IS_PRO_BY_WEEK,
+            )
+        )*/
+    }
 
     companion object {
+
         lateinit var instance: SuperVpnApplication
     }
 
-    override fun onCreate() {
-        super.onCreate()
-        instance = this
-        Timber.d("check_open_splash 0 ${System.currentTimeMillis()}")
-    }
-
-
-    override fun isInitAds(): Boolean {
-        return currentActivity !is SplashActivity && !BaseAppConfig.firstTimeSetup && !BaseAppConfig.isSub
-    }
 }

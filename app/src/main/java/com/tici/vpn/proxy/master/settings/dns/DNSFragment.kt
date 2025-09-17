@@ -1,19 +1,25 @@
 package com.tici.vpn.proxy.master.settings.dns
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
-import com.tici.vpn.proxy.master.base.ProductFragment
-import com.tici.vpn.proxy.master.databinding.FragmentDnsBinding
 import com.common.baseui.extension.setVisible
+import com.core.ads.domain.AdLoadBannerNativeUiResource
+import com.core.baseui.fragment.BaseFragment
+import com.core.baseui.fragment.ScreenType
+import com.core.config.domain.data.IAdPlaceName
 import com.tici.vpn.proxy.master.R
+import com.tici.vpn.proxy.master.databinding.FragmentDnsBinding
 import com.tici.vpn.proxy.master.dialog.SettingSuccessDialog
+import com.tici.vpn.proxy.master.required.ads.AppAdPlaceName
+import com.tici.vpn.proxy.master.required.shortcut.AppScreenType
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class DNSFragment : ProductFragment<FragmentDnsBinding>() {
+class DNSFragment : BaseFragment<FragmentDnsBinding>() {
     private val mDnsModel: DNSViewModel by viewModels()
 
     @Inject
@@ -25,12 +31,27 @@ class DNSFragment : ProductFragment<FragmentDnsBinding>() {
         return FragmentDnsBinding.inflate(inflater, container, false)
     }
 
+    override val screenType: ScreenType
+        get() = AppScreenType.DNSFragment
+
+    override fun onBannerNativeResult(adResource: AdLoadBannerNativeUiResource) {
+        binding.layoutBannerNative.processAdResource(
+            adResource,
+            AppAdPlaceName.ANCHORED_BOTTOM_SETTINGS
+        )
+    }
+
+    override fun providerBannerNativeAdPlaceName(): List<IAdPlaceName> {
+        return listOf(
+            AppAdPlaceName.ANCHORED_BOTTOM_SETTINGS
+        )
+    }
+
     var isChange : Boolean = false
 
     var isNeedReload = false
 
-    override fun initView() {
-        super.initView()
+    override fun initViews(savedInstanceState: Bundle?) {
         with(binding) {
             rcvDns.adapter = mPagerAdapter
             mDnsModel.getAllProxy(requireContext())

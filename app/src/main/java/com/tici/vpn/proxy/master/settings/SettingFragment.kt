@@ -7,24 +7,28 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import androidx.fragment.app.viewModels
-import com.tici.vpn.proxy.master.dialog.DialogFeedback
-import com.tici.vpn.proxy.master.dialog.DialogRate
-import com.tici.vpn.proxy.master.R
-import com.tici.vpn.proxy.master.base.ProductFragment
-import com.tici.vpn.proxy.master.databinding.FragmentSettingBinding
-import com.tici.vpn.proxy.master.utils.Navigator
-import com.tici.vpn.proxy.master.utils.shareApp
 import com.common.baseui.BaseAppConfig
 import com.common.baseui.extension.setOnClickNoDoubleClick
+import com.core.ads.domain.AdLoadBannerNativeUiResource
+import com.core.baseui.fragment.BaseFragment
+import com.core.baseui.fragment.ScreenType
+import com.core.config.domain.data.IAdPlaceName
+import com.tici.vpn.proxy.master.R
+import com.tici.vpn.proxy.master.databinding.FragmentSettingBinding
+import com.tici.vpn.proxy.master.dialog.DialogFeedback
+import com.tici.vpn.proxy.master.dialog.DialogRate
 import com.tici.vpn.proxy.master.dialog.SettingSuccessDialog
+import com.tici.vpn.proxy.master.main.MainActivity
 import com.tici.vpn.proxy.master.main.MainViewModel
 import com.tici.vpn.proxy.master.main.SharedData
+import com.tici.vpn.proxy.master.required.ads.AppAdPlaceName
+import com.tici.vpn.proxy.master.required.shortcut.AppScreenType
+import com.tici.vpn.proxy.master.utils.Navigator
+import com.tici.vpn.proxy.master.utils.shareApp
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SettingFragment(
-    val showAppProxy: () -> Unit, val showDns: () -> Unit = {}
-) : ProductFragment<FragmentSettingBinding>() {
+class SettingFragment() : BaseFragment<FragmentSettingBinding>() {
 
     private val mViewModel: SettingViewModel by viewModels()
     private val mainViewModel: MainViewModel by viewModels()
@@ -36,12 +40,23 @@ class SettingFragment(
         return FragmentSettingBinding.inflate(inflater, container, false)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override val screenType: ScreenType
+        get() = AppScreenType.SettingFragment
+
+    override fun onBannerNativeResult(adResource: AdLoadBannerNativeUiResource) {
+        binding.layoutBannerNative.processAdResource(
+            adResource,
+            AppAdPlaceName.ANCHORED_BOTTOM_DNS_DEFAULT
+        )
     }
 
-    override fun initView() {
-        super.initView()
+    override fun providerBannerNativeAdPlaceName(): List<IAdPlaceName> {
+        return listOf(
+            AppAdPlaceName.ANCHORED_BOTTOM_DNS_DEFAULT
+        )
+    }
+
+    override fun initViews(savedInstanceState: Bundle?) {
         val bitmap = BitmapFactory.decodeResource(resources, R.drawable.ic_setting_pro_bg)
         val roundedDrawable = RoundedBitmapDrawableFactory.create(resources, bitmap)
         roundedDrawable.cornerRadius = 20f  // Adjust your radius
@@ -69,14 +84,10 @@ class SettingFragment(
             }
 
             rowAppProxy.setOnClickListener {
-                if (mainViewModel.isSub()) {
-                    fetchInstalledApps()
-                } else {
-                    Navigator.startPremiumActivity(requireContext())
-                }
+                fetchInstalledApps()
             }
             rowDns.setOnClickListener() {
-                showDns()
+                (activity as? MainActivity)?.showDns()
             }
 
             btnPro.setOnClickListener {
@@ -84,16 +95,12 @@ class SettingFragment(
             }
 
             rowAdsBlock.setOnClickListener {
-                if (mainViewModel.isSub()) {
-                    rowAdsBlock.isSelected = !rowAdsBlock.isSelected
-                    BaseAppConfig.adsBlock = rowAdsBlock.isSelected
-                    SettingSuccessDialog(R.string.setting_ads_limit).show(
-                        childFragmentManager,
-                        "SettingSuccessDialog"
-                    )
-                } else {
-                    Navigator.startPremiumActivity(requireContext())
-                }
+                rowAdsBlock.isSelected = !rowAdsBlock.isSelected
+                BaseAppConfig.adsBlock = rowAdsBlock.isSelected
+                SettingSuccessDialog(R.string.setting_ads_limit).show(
+                    childFragmentManager,
+                    "SettingSuccessDialog"
+                )
             }
 
             if (BaseAppConfig.dnsServer.isNotEmpty()) {
@@ -138,7 +145,7 @@ class SettingFragment(
 
     private fun openAppProxy() {
 //        binding.progress.setVisible(true)
-        showAppProxy()
+        (activity as? MainActivity)?.showAppProxy()
     }
 
     fun showProgress(status: Boolean) {

@@ -1,26 +1,22 @@
 package com.tici.vpn.proxy.master.premium
 
 import android.annotation.SuppressLint
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
-import com.common.baseui.BaseAppConfig
 import com.common.baseui.extension.setVisible
-import com.tici.vpn.proxy.master.base.ProductFragment
+import com.core.baseui.fragment.BaseFragment
+import com.core.baseui.fragment.ScreenType
 import com.tici.vpn.proxy.master.databinding.FragmentPremiumBinding
-import com.tici.vpn.proxy.master.home.ConfirmDnsDialog
 import com.tici.vpn.proxy.master.main.MainViewModel
-import com.tici.vpn.proxy.master.main.SharedData
-import com.tici.vpn.proxy.master.settings.SettingViewModel
-import com.tici.vpn.proxy.master.utils.Navigator
+import com.tici.vpn.proxy.master.required.shortcut.AppScreenType
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
-import kotlin.getValue
 
 @AndroidEntryPoint
-class PremiumFragment : ProductFragment<FragmentPremiumBinding>() {
+class PremiumFragment : BaseFragment<FragmentPremiumBinding>() {
 
     private val premiumViewModel: PremiumViewModel by viewModels()
 
@@ -37,9 +33,12 @@ class PremiumFragment : ProductFragment<FragmentPremiumBinding>() {
         return FragmentPremiumBinding.inflate(inflater, container, false)
     }
 
+    override val screenType: ScreenType
+        get() = AppScreenType.PremiumFragment
+
+
     @SuppressLint("NotifyDataSetChanged")
-    override fun initView() {
-        super.initView()
+    override fun initViews(savedInstanceState: Bundle?) {
 
         premiumViewModel.loadData()
 

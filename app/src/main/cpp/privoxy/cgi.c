@@ -1698,7 +1698,7 @@ struct http_response *finish_http_response(struct client_state *csp, struct http
    else
    {
       /*
-       * Setting "Cache-Control" to "no-cache" and  "Expires" to
+       * SettingFragment "Cache-Control" to "no-cache" and  "Expires" to
        * the current time doesn't exactly forbid caching, it just
        * requires the client to revalidate the cached copy.
        *

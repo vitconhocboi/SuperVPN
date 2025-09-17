@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_100dp"
+    android:layout_margin="@dimen/_10dp"
+    android:id="@+id/viewContainer"
+    android:background="@drawable/core_bg_button_in_home">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivThumb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/_1dp"
+        android:scaleType="centerCrop" />
+
+</FrameLayout>

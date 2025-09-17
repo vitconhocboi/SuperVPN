@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "935888791651",
+    "project_id": "super-vpn-6dfb2",
+    "storage_bucket": "super-vpn-6dfb4.firebasestorage.app.dev"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:935888791652:android:b55630b84d2f3154095111",
+        "android_client_info": {
+          "package_name": "com.tici.vpn.proxy.master.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBACO57PRv1MxxtIs7F-QVDlP4L5D02RgX"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

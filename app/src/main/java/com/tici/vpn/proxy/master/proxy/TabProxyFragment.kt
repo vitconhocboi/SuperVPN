@@ -1,19 +1,25 @@
 package com.tici.vpn.proxy.master.proxy
 
 import android.annotation.SuppressLint
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
 import androidx.viewpager2.widget.ViewPager2
-import com.tici.vpn.proxy.master.base.ProductFragment
-import com.tici.vpn.proxy.master.databinding.TabProxyFragmentBinding
-import com.tici.vpn.proxy.master.utils.Navigator
 import com.common.baseui.view.RadioGroupManager
+import com.core.baseui.fragment.BaseFragment
+import com.core.baseui.fragment.ScreenType
 import com.tici.vpn.proxy.master.R
+import com.tici.vpn.proxy.master.databinding.TabProxyFragmentBinding
 import com.tici.vpn.proxy.master.proxy.fragments.ProxyPageAdapter
+import com.tici.vpn.proxy.master.required.shortcut.AppScreenType
+import com.tici.vpn.proxy.master.utils.Navigator
+import dagger.hilt.android.AndroidEntryPoint
 
-class TabProxyFragment : ProductFragment<TabProxyFragmentBinding>() {
+
+@AndroidEntryPoint
+class TabProxyFragment : BaseFragment<TabProxyFragmentBinding>() {
 
     private val mRadioGroupManager = RadioGroupManager()
 
@@ -26,9 +32,11 @@ class TabProxyFragment : ProductFragment<TabProxyFragmentBinding>() {
         return TabProxyFragmentBinding.inflate(inflater, container, false)
     }
 
+    override val screenType: ScreenType
+        get() = AppScreenType.TabProxyFragment
+
     @SuppressLint("HardwareIds")
-    override fun initView() {
-        super.initView()
+    override fun initViews(savedInstanceState: Bundle?) {
 
         mPagerAdapter =
             ProxyPageAdapter(fragmentManager = childFragmentManager, lifecycle = lifecycle)
@@ -45,7 +53,9 @@ class TabProxyFragment : ProductFragment<TabProxyFragmentBinding>() {
             vpProxies.offscreenPageLimit = 1
 
             mRadioGroupManager.addRadio(RadioGroupManager.Radio().addViewParent(tabFree).setTag(0))
-            mRadioGroupManager.addRadio(RadioGroupManager.Radio().addViewParent(tabPremium).setTag(1))
+            mRadioGroupManager.addRadio(
+                RadioGroupManager.Radio().addViewParent(tabPremium).setTag(1)
+            )
 
             mRadioGroupManager.setRadioChange { view, tag ->
                 onSelectedTab(tag as Int)

@@ -2651,7 +2651,7 @@ static jb_err server_last_modified(struct client_state *csp, char **header)
    else if (0 == strcmpic(newval, "reset-to-request-time"))
    {
       /*
-       * Setting Last-Modified Header to now.
+       * SettingFragment Last-Modified Header to now.
        */
       char buf[30];
       get_http_time(0, buf, sizeof(buf));
