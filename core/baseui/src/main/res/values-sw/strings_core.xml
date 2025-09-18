@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Hakuna muunganisho wa intaneti. Tafadhali wezesha mtandao na ujaribu tena.</string>
+  <string name="all_try_again">Jaribu tena</string>
+  <string name="all_cancel">ghairi</string>
+  <string name="base_no_video_ads_available">Hakuna Matangazo ya Video Yanayopatikana</string>
+  <string name="all_ok">sawa</string>
+  <string name="base_loading_ads">Inapakia matangazo...</string>
+  <string name="base_please_wait">Tafadhali subiri kidogo.</string>
+  <string name="base_ad_load_failed">Imeshindwa kupakia tangazo. Tafadhali jaribu tena baadaye.</string>
+</resources>

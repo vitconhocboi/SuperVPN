@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Нема интернет везе. Молимо вас да омогућите мрежу и покушате поново.</string>
+  <string name="all_try_again">Покушајте поново</string>
+  <string name="all_cancel">поништити, отказати</string>
+  <string name="base_no_video_ads_available">Нема доступних видео огласа</string>
+  <string name="all_ok">У реду</string>
+  <string name="base_loading_ads">Учитавање огласа…</string>
+  <string name="base_please_wait">Молим вас, сачекајте тренутак.</string>
+  <string name="base_ad_load_failed">Учитавање огласа није успело. Молимо покушајте поново касније.</string>
+</resources>

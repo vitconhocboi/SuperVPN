@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">ઇન્ટરનેટ કનેક્શન નથી. કૃપા કરીને નેટવર્ક સક્ષમ કરો અને ફરી પ્રયાસ કરો.</string>
+  <string name="all_try_again">ફરી પ્રયાસ કરો</string>
+  <string name="all_cancel">રદ કરો</string>
+  <string name="base_no_video_ads_available">કોઈ વિડિઓ જાહેરાતો ઉપલબ્ધ નથી</string>
+  <string name="all_ok">બરાબર</string>
+  <string name="base_loading_ads">જાહેરાતો લોડ કરી રહ્યાં છીએ...</string>
+  <string name="base_please_wait">કૃપા કરીને થોડી રાહ જુઓ.</string>
+  <string name="base_ad_load_failed">જાહેરાત લોડ કરવામાં નિષ્ફળ. કૃપા કરીને પછીથી ફરી પ્રયાસ કરો.</string>
+</resources>

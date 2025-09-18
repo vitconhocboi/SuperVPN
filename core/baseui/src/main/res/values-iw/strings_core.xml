@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">אין חיבור לאינטרנט. אנא הפעל את הרשת ונסה שוב.</string>
+  <string name="all_try_again">נסה שוב</string>
+  <string name="all_cancel">לְבַטֵל</string>
+  <string name="base_no_video_ads_available">אין מודעות וידאו זמינות</string>
+  <string name="all_ok">בסדר</string>
+  <string name="base_loading_ads">טוען מודעות...</string>
+  <string name="base_please_wait">אנא המתן רגע.</string>
+  <string name="base_ad_load_failed">טעינת המודעה נכשלה. אנא נסה שוב מאוחר יותר.</string>
+</resources>

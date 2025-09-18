@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Интернет байланысы жоқ. Желіні қосып, әрекетті қайталаңыз.</string>
+  <string name="all_try_again">Қайтадан байқап көріңіз</string>
+  <string name="all_cancel">бас тарту</string>
+  <string name="base_no_video_ads_available">Бейне жарнамалары жоқ</string>
+  <string name="all_ok">Жарайды ма</string>
+  <string name="base_loading_ads">Жарнамалар жүктелуде…</string>
+  <string name="base_please_wait">Сәл күте тұрыңыз.</string>
+  <string name="base_ad_load_failed">Жарнама жүктелмеді. Тағы жасауды сәл кейінірек көріңізді өтінеміз.</string>
+</resources>

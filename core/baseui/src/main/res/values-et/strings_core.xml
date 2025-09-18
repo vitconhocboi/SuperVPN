@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Internetiühendus puudub. Palun luba võrk ja proovi uuesti.</string>
+  <string name="all_try_again">Proovi uuesti</string>
+  <string name="all_cancel">tühistada</string>
+  <string name="base_no_video_ads_available">Videoreklaamid pole saadaval</string>
+  <string name="all_ok">Okei</string>
+  <string name="base_loading_ads">Reklaamide laadimine…</string>
+  <string name="base_please_wait">Palun oota hetk.</string>
+  <string name="base_ad_load_failed">Reklaami laadimine ebaõnnestus. Palun proovige hiljem uuesti.</string>
+</resources>

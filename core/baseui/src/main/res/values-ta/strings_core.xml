@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">இணைய இணைப்பு இல்லை. நெட்வொர்க்கை இயக்கி மீண்டும் முயற்சிக்கவும்.</string>
+  <string name="all_try_again">மீண்டும் முயற்சிக்கவும்</string>
+  <string name="all_cancel">ரத்து செய்</string>
+  <string name="base_no_video_ads_available">வீடியோ விளம்பரங்கள் எதுவும் கிடைக்கவில்லை.</string>
+  <string name="all_ok">சரி</string>
+  <string name="base_loading_ads">விளம்பரங்களை ஏற்றுகிறது…</string>
+  <string name="base_please_wait">தயவுசெய்து ஒரு கணம் காத்திருங்கள்.</string>
+  <string name="base_ad_load_failed">விளம்பரத்தை ஏற்ற முடியவில்லை. பிறகு முயற்சிக்கவும்.</string>
+</resources>

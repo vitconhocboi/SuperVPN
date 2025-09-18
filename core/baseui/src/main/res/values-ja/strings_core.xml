@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">インターネットに接続できません。ネットワークを有効にしてもう一度お試しください。</string>
+  <string name="all_try_again">もう一度やり直してください</string>
+  <string name="all_cancel">キャンセル</string>
+  <string name="base_no_video_ads_available">動画広告はご利用いただけません</string>
+  <string name="all_ok">わかった</string>
+  <string name="base_loading_ads">広告を読み込んでいます…</string>
+  <string name="base_please_wait">少々お待ちください。</string>
+  <string name="base_ad_load_failed">広告の読み込みに失敗しました。しばらくしてからもう一度お試しください。</string>
+</resources>

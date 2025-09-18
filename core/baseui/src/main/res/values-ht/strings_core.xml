@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Pa gen koneksyon entènèt. Tanpri aktive rezo a epi eseye ankò.</string>
+  <string name="all_try_again">Eseye ankò</string>
+  <string name="all_cancel">anile</string>
+  <string name="base_no_video_ads_available">Pa gen piblisite videyo disponib</string>
+  <string name="all_ok">ok</string>
+  <string name="base_loading_ads">Chaje anons...</string>
+  <string name="base_please_wait">Tanpri tann yon ti moman.</string>
+  <string name="base_ad_load_failed">Pa t rive chaje piblisite a. Tanpri eseye ankò pita.</string>
+</resources>

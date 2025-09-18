@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Internet aloqasi yo\'q. Tarmoqni yoqing va qaytadan urining.</string>
+  <string name="all_try_again">Qayta urinib ko\'ring</string>
+  <string name="all_cancel">bekor qilish</string>
+  <string name="base_no_video_ads_available">Hech qanday video reklama mavjud emas</string>
+  <string name="all_ok">ok</string>
+  <string name="base_loading_ads">Reklamalar yuklanmoqda…</string>
+  <string name="base_please_wait">Iltimos, biroz kuting.</string>
+  <string name="base_ad_load_failed">Reklamani yuklab bo‘lmadi. Keyinroq qayta urinib ko‘ring.</string>
+</resources>

@@ -64,7 +64,6 @@ class AdmobOpenAdLoader(adId: String) :
             activity,
             adId,
             adRequest,
-            AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT,
             object : AppOpenAd.AppOpenAdLoadCallback() {
 
                 override fun onAdFailedToLoad(adError: LoadAdError) {

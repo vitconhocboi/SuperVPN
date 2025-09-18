@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AspectRatioFrameLayout">
+        <attr name="AspectRatioFrameLayout_ratio" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="AspectRatioShimmerLayout">
+        <attr name="AspectRatioShimmerLayout_ratio" format="float"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="BannerNativeContainerLayout">
+        <attr name="bnl_backgroundRes" format="reference" />
+        <attr name="bnl_background" format="color" />
+        <attr name="bnl_backgroundAdsNotifyView" format="reference" />
+        <attr name="bnl_isNativeFullscreen" format="boolean" />
+    </declare-styleable>
+</resources>

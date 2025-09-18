@@ -1,3 +1,17 @@
+include(":core:baseui")
+
+
+include(":core:ads")
+
+
+include(":core:billing")
+
+
+include(":core:analytics")
+
+
+include(":core:config")
+
 pluginManagement {
     repositories {
         google {
@@ -9,6 +23,7 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
+        maven(url = uri("https://jitpack.io"))
     }
 }
 dependencyResolutionManagement {
@@ -16,6 +31,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven(url = uri("https://jitpack.io"))
         flatDir {
             dirs("app/libs")
         }
@@ -26,4 +42,9 @@ rootProject.name = "SuperVPN"
 include(":app")
 include(":BaseUI")
 include(":libads")
+include(":core")
+include(":core:preference")
+include(":core:dimens")
+include(":core:utilities")
+
  

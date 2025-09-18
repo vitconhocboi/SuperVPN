@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Ez dago internet konexiorik. Gaitu sarea eta saiatu berriro.</string>
+  <string name="all_try_again">Saiatu berriro</string>
+  <string name="all_cancel">bertan behera utzi</string>
+  <string name="base_no_video_ads_available">Ez dago bideo-iragarkirik eskuragarri</string>
+  <string name="all_ok">Ados</string>
+  <string name="base_loading_ads">Iragarkiak kargatzen…</string>
+  <string name="base_please_wait">Itxaron une bat, mesedez.</string>
+  <string name="base_ad_load_failed">Iragarkia kargatzea huts egin da. Saiatu berriro geroago.</string>
+</resources>

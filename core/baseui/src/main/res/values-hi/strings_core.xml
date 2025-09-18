@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">इंटरनेट कनेक्शन नहीं है। कृपया नेटवर्क चालू करें और पुनः प्रयास करें।</string>
+  <string name="all_try_again">पुनः प्रयास करें</string>
+  <string name="all_cancel">रद्द करना</string>
+  <string name="base_no_video_ads_available">कोई वीडियो विज्ञापन उपलब्ध नहीं है</string>
+  <string name="all_ok">ठीक है</string>
+  <string name="base_loading_ads">विज्ञापन लोड हो रहे हैं…</string>
+  <string name="base_please_wait">कृपया कुछ देर इंतज़ार करें।</string>
+  <string name="base_ad_load_failed">विज्ञापन लोड करने में विफल. कृपया बाद में पुनः प्रयास करें.</string>
+</resources>

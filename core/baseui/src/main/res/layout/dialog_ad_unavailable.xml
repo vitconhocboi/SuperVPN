@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/base_bottom_sheet_background"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
+    android:paddingBottom="24dp"
+    android:paddingTop="8dp">
+
+    <!-- Vùng kéo (Grabber Handle) -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:background="@drawable/grabber_handle_background"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Icon "No Video" -->
+    <ImageView
+        android:layout_width="128dp"
+        android:layout_height="96dp"
+        android:src="@drawable/base_ic_no_video_ads"
+        android:layout_marginBottom="16dp"
+        app:tint="@color/grey_300"
+        android:contentDescription="@string/base_no_video_ads_available" />
+
+    <!-- Dòng chữ thông báo -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/base_no_video_ads_available"
+        android:textColor="@color/grey_600"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Nút chính "TRY AGAIN" -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/tv_reconnect"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/all_try_again"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:backgroundTint="@color/sky_500"
+        app:cornerRadius="@dimen/_10dp"
+        app:elevation="4dp"/>
+
+    <!-- Nút phụ "CANCEL" -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/tvCancel"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/all_cancel"
+        android:textColor="@color/sky_500"
+        android:textSize="16sp"
+        android:fontFamily="@font/inter_medium"
+        app:rippleColor="@color/sky_100"/>
+
+</LinearLayout>

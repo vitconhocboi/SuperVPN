@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#007BFF</color>
+
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#000000</color>
+
+    <color name="neutral_dark_primary">#FCFDFD</color>
+
+    <color name="background_divider">#CBCBCB</color>
+
+    <color name="native_bg_ad_attribution">#F9C200</color>
+    <color name="native_body_text_color">#7F7F7F</color>
+
+    <color name="color_cta_banner_native_ads">@color/colorPrimary</color>
+
+    <color name="shimmer_bg">#676767</color>
+    <color name="shimmer_placeholder">#676767</color>
+    <color name="shimmer_placeholder_light">#A2A2A2</color>
+</resources>

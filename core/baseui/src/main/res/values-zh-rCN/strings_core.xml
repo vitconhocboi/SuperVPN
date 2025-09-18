@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">没有网络连接。请启用网络并重试。</string>
+  <string name="all_try_again">再试一次</string>
+  <string name="all_cancel">取消</string>
+  <string name="base_no_video_ads_available">无视频广告</string>
+  <string name="all_ok">好的</string>
+  <string name="base_loading_ads">正在加载广告...</string>
+  <string name="base_please_wait">请稍等片刻。</string>
+  <string name="base_ad_load_failed">加载广告失败。请稍后重试。</string>
+</resources>

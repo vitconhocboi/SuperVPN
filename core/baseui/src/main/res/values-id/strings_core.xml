@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Tidak ada koneksi internet. Harap aktifkan jaringan dan coba lagi.</string>
+  <string name="all_try_again">Coba lagi</string>
+  <string name="all_cancel">membatalkan</string>
+  <string name="base_no_video_ads_available">Tidak Ada Iklan Video yang Tersedia</string>
+  <string name="all_ok">Oke</string>
+  <string name="base_loading_ads">Memuat iklan…</string>
+  <string name="base_please_wait">Mohon tunggu sebentar.</string>
+  <string name="base_ad_load_failed">Gagal memuat iklan. Coba lagi nanti.</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Žiadne internetové pripojenie. Povoľte sieť a skúste to znova.</string>
+  <string name="all_try_again">Skúste to znova</string>
+  <string name="all_cancel">Zrušiť</string>
+  <string name="base_no_video_ads_available">Nie sú k dispozícii žiadne videoreklamy</string>
+  <string name="all_ok">ok</string>
+  <string name="base_loading_ads">Načítavajú sa reklamy…</string>
+  <string name="base_please_wait">Prosím, počkajte chvíľu.</string>
+  <string name="base_ad_load_failed">Načítanie reklamy zlyhalo. Skúste to znova neskôr.</string>
+</resources>

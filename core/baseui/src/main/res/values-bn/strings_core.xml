@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">ইন্টারনেট সংযোগ নেই। অনুগ্রহ করে নেটওয়ার্ক সক্ষম করুন এবং আবার চেষ্টা করুন।</string>
+  <string name="all_try_again">আবার চেষ্টা করুন</string>
+  <string name="all_cancel">বাতিল</string>
+  <string name="base_no_video_ads_available">কোনও ভিডিও বিজ্ঞাপন উপলব্ধ নেই</string>
+  <string name="all_ok">ঠিক আছে</string>
+  <string name="base_loading_ads">বিজ্ঞাপন লোড হচ্ছে...</string>
+  <string name="base_please_wait">দয়া করে একটু অপেক্ষা করুন।</string>
+  <string name="base_ad_load_failed">বিজ্ঞাপন লোড করা যায়নি। অনুগ্রহ করে পরে আবার চেষ্টা করুন।</string>
+</resources>

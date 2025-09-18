@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--  Heading  -->
+    <style name="Heading48Bold" parent="TextBase.Bold">
+        <item name="android:textSize">@dimen/_48dp</item>
+    </style>
+
+    <style name="Heading24Bold" parent="TextBase.Bold">
+        <item name="android:textSize">@dimen/_24dp</item>
+    </style>
+
+    <style name="Heading24Medium" parent="TextBase.Medium">
+        <item name="android:textSize">@dimen/_24dp</item>
+    </style>
+
+    <style name="Heading18Bold" parent="TextBase.Bold">
+        <item name="android:textSize">@dimen/_18dp</item>
+    </style>
+
+    <!--  Title  -->
+    <style name="Title20Bold" parent="TextBase.Bold">
+        <item name="android:textSize">@dimen/_20dp</item>
+    </style>
+
+    <style name="Title20Medium" parent="TextBase.Medium">
+        <item name="android:textSize">@dimen/_20dp</item>
+    </style>
+
+    <style name="Title18Bold" parent="TextBase.Bold">
+        <item name="android:textSize">@dimen/_18dp</item>
+    </style>
+
+    <style name="Title18Medium" parent="TextBase.Medium">
+        <item name="android:textSize">@dimen/_18dp</item>
+    </style>
+
+    <style name="TitleActionBar" parent="TextBase.Medium">
+        <item name="android:textSize">@dimen/_20dp</item>
+    </style>
+
+    <style name="Title18Regular" parent="TextBase.Regular">
+        <item name="android:textSize">@dimen/_18dp</item>
+    </style>
+
+    <style name="Title16Bold" parent="TextBase.Bold">
+        <item name="android:textSize">@dimen/_16dp</item>
+    </style>
+
+    <style name="Title16Medium" parent="TextBase.Medium">
+        <item name="android:textSize">@dimen/_16dp</item>
+    </style>
+
+    <style name="Title16Regular" parent="TextBase.Regular">
+        <item name="android:textSize">@dimen/_16dp</item>
+    </style>
+
+    <style name="Title12Medium" parent="TextBase.Medium">
+        <item name="android:textSize">@dimen/_12dp</item>
+    </style>
+
+    <style name="Title12Regular" parent="TextBase.Regular">
+        <item name="android:textSize">@dimen/_12dp</item>
+    </style>
+
+    <!--  Body  -->
+    <style name="Body17Bold" parent="TextBase.Bold">
+        <item name="android:textSize">@dimen/_17dp</item>
+    </style>
+
+    <style name="Body17Medium" parent="TextBase.Medium">
+        <item name="android:textSize">@dimen/_17dp</item>
+    </style>
+
+    <style name="Body17Regular" parent="TextBase.Regular">
+        <item name="android:textSize">@dimen/_17dp</item>
+    </style>
+
+    <style name="Body15Bold" parent="TextBase.Bold">
+        <item name="android:textSize">@dimen/_15dp</item>
+    </style>
+
+    <style name="Body15Medium" parent="TextBase.Medium">
+        <item name="android:textSize">@dimen/_15dp</item>
+    </style>
+
+    <style name="Body15Regular" parent="TextBase.Regular">
+        <item name="android:textSize">@dimen/_15dp</item>
+    </style>
+
+    <!--  Body  -->
+    <style name="Body14Bold" parent="TextBase.Bold">
+        <item name="android:textSize">@dimen/_14dp</item>
+    </style>
+
+    <style name="Body14Medium" parent="TextBase.Medium">
+        <item name="android:textSize">@dimen/_14dp</item>
+    </style>
+
+    <style name="Body13Medium" parent="TextBase.Medium">
+        <item name="android:textSize">@dimen/_13dp</item>
+    </style>
+
+    <style name="Body13Regular" parent="TextBase.Regular">
+        <item name="android:textSize">@dimen/_13dp</item>
+    </style>
+
+    <style name="Body12Medium" parent="TextBase.Medium">
+        <item name="android:textSize">@dimen/_12dp</item>
+    </style>
+
+    <style name="Body14Regular" parent="TextBase.Regular">
+        <item name="android:textSize">@dimen/_14dp</item>
+    </style>
+
+    <style name="Body12Regular" parent="TextBase.Regular">
+        <item name="android:textSize">@dimen/_12dp</item>
+    </style>
+
+    <!--  Caption  -->
+    <style name="Caption12Medium" parent="TextBase.Medium">
+        <item name="android:textSize">@dimen/_12dp</item>
+    </style>
+
+    <style name="Caption12Regular" parent="TextBase.Regular">
+        <item name="android:textSize">@dimen/_12dp</item>
+    </style>
+
+    <style name="Caption10Regular" parent="TextBase.Regular">
+        <item name="android:textSize">@dimen/_10dp</item>
+    </style>
+
+    <!--  TextBase  -->
+    <style name="TextBase.Regular" parent="SlTextBase">   <!--400-->
+        <item name="android:fontFamily">@font/inter_regular</item>
+    </style>
+
+    <style name="TextBase.Medium" parent="SlTextBase">    <!--500-->
+        <item name="android:fontFamily">@font/inter_medium</item>
+    </style>
+
+    <style name="TextBase.SemiBold" parent="SlTextBase">    <!--600-->
+        <item name="android:fontFamily">@font/inter_semi_bold</item>
+    </style>
+
+    <style name="TextBase.Bold" parent="SlTextBase">   <!--700-->
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/inter_bold</item>
+    </style>
+
+    <style name="SlTextBase" />
+
+    <style name="AdsNotificationViewStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/gnt_rounded_corners_shape</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">Ad</item>
+        <item name="android:minWidth">@dimen/_16dp</item>
+        <item name="android:minHeight">@dimen/_16dp</item>
+        <item name="android:paddingStart">@dimen/_4dp</item>
+        <item name="android:paddingTop">@dimen/_2dp</item>
+        <item name="android:paddingEnd">@dimen/_5dp</item>
+        <item name="android:paddingBottom">@dimen/_2dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_10dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginLeft">@dimen/_1dp</item>
+        <item name="android:layout_marginTop">@dimen/_1dp</item>
+    </style>
+
+    <style name="AdsTitleTextStyle" parent="TextBase.Bold">
+        <item name="android:lines">1</item>
+        <item name="android:textSize">@dimen/_16dp</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="AdsBodyTextStyle">
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:textSize">@dimen/_14dp</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textColor">@color/native_body_text_color</item>
+    </style>
+
+    <style name="CtaRightViewStyle" parent="TextBase.Bold">
+        <item name="android:textSize">@dimen/_14dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxWidth">@dimen/_120dp</item>
+        <item name="android:minWidth">@dimen/_96dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:paddingStart">@dimen/_14dp</item>
+        <item name="android:paddingTop">@dimen/_9dp</item>
+        <item name="android:paddingEnd">@dimen/_14dp</item>
+        <item name="android:paddingBottom">@dimen/_9dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="CtaRightSmallViewStyle" parent="TextBase.Bold">
+        <item name="android:textSize">@dimen/_12dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxWidth">@dimen/_120dp</item>
+        <item name="android:minWidth">@dimen/_96dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:paddingStart">@dimen/_8dp</item>
+        <item name="android:paddingTop">@dimen/_8dp</item>
+        <item name="android:paddingEnd">@dimen/_8dp</item>
+        <item name="android:paddingBottom">@dimen/_8dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="CtaViewStyle" parent="TextBase.Bold">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/_48dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_18dp</item>
+    </style>
+
+    <style name="CtaCardViewStyle">
+        <item name="android:background">@drawable/core_bg_cta_ads</item>
+<!--        <item name="android:elevation">@dimen/_16dp</item>-->
+    </style>
+
+    <style name="BodyTiny" parent="TextBase.Regular">
+        <item name="android:textSize">@dimen/_11sp</item>
+        <item name="android:lineSpacingExtra">@dimen/_3sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="LabelSmall" parent="TextBase.Medium">
+        <item name="android:textSize">@dimen/_11sp</item>
+        <item name="android:lineSpacingExtra">@dimen/_3sp</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="BodySmall" parent="TextBase.Regular">
+        <item name="android:textSize">@dimen/_12sp</item>
+        <item name="android:lineSpacingExtra">@dimen/_2sp</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="LabelMedium" parent="TextBase.Medium">
+        <item name="android:textSize">@dimen/_12sp</item>
+        <item name="android:lineSpacingExtra">@dimen/_3sp</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="BodyMedium" parent="TextBase.Regular">
+        <item name="android:textSize">@dimen/_14sp</item>
+        <item name="android:lineSpacingExtra">@dimen/_2sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="TitleSmall" parent="TextBase.Medium">
+        <item name="android:textSize">@dimen/_14sp</item>
+        <item name="android:lineSpacingExtra">@dimen/_2sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="BodyLarge" parent="TextBase.Regular">
+        <item name="android:textSize">@dimen/_16sp</item>
+        <item name="android:lineSpacingExtra">@dimen/_3sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="TitleMedium" parent="TextBase.Medium">
+        <item name="android:textSize">@dimen/_16sp</item>
+        <item name="android:lineSpacingExtra">@dimen/_3sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="TitleLarge" parent="TextBase.Medium">
+        <item name="android:textSize">@dimen/_18sp</item>
+        <item name="android:lineSpacingExtra">@dimen/_5sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="HeadlineSmall" parent="TextBase.Medium">
+        <item name="android:textSize">@dimen/_20sp</item>
+        <item name="android:lineSpacingExtra">@dimen/_5sp</item>
+    </style>
+
+    <style name="HeadlineMedium" parent="TextBase.Medium">
+        <item name="android:textSize">@dimen/_24sp</item>
+        <item name="android:lineSpacingExtra">@dimen/_4sp</item>
+    </style>
+
+    <style name="HeadlineLarge" parent="TextBase.SemiBold">
+        <item name="android:textSize">@dimen/_28sp</item>
+        <item name="android:lineSpacingExtra">@dimen/_3sp</item>
+    </style>
+
+</resources>

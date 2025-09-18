@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">ഇന്റർനെറ്റ് കണക്ഷൻ ഇല്ല. നെറ്റ്‌വർക്ക് പ്രവർത്തനക്ഷമമാക്കി വീണ്ടും ശ്രമിക്കുക.</string>
+  <string name="all_try_again">വീണ്ടും ശ്രമിക്കുക</string>
+  <string name="all_cancel">റദ്ദാക്കുക</string>
+  <string name="base_no_video_ads_available">വീഡിയോ പരസ്യങ്ങളൊന്നും ലഭ്യമല്ല.</string>
+  <string name="all_ok">ശരി</string>
+  <string name="base_loading_ads">പരസ്യങ്ങൾ ലോഡ് ചെയ്യുന്നു...</string>
+  <string name="base_please_wait">ദയവായി ഒരു നിമിഷം കാത്തിരിക്കൂ.</string>
+  <string name="base_ad_load_failed">പരസ്യം ലോഡ് ചെയ്യാനായില്ല. പിന്നീട് വീണ്ടും ശ്രമിക്കുക.</string>
+</resources>

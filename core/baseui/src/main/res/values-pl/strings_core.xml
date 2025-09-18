@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Brak połączenia internetowego. Włącz sieć i spróbuj ponownie.</string>
+  <string name="all_try_again">Spróbuj ponownie</string>
+  <string name="all_cancel">anulować</string>
+  <string name="base_no_video_ads_available">Brak dostępnych reklam wideo</string>
+  <string name="all_ok">ok</string>
+  <string name="base_loading_ads">Ładowanie reklam…</string>
+  <string name="base_please_wait">Proszę chwilę poczekać.</string>
+  <string name="base_ad_load_failed">Nie udało się załadować reklamy. Spróbuj ponownie później.</string>
+</resources>

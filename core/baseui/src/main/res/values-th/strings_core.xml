@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">ไม่มีการเชื่อมต่ออินเทอร์เน็ต กรุณาเปิดใช้งานเครือข่ายและลองอีกครั้ง</string>
+  <string name="all_try_again">ลองใหม่อีกครั้ง</string>
+  <string name="all_cancel">ยกเลิก</string>
+  <string name="base_no_video_ads_available">ไม่มีโฆษณาวิดีโอ</string>
+  <string name="all_ok">ตกลง</string>
+  <string name="base_loading_ads">กำลังโหลดโฆษณา…</string>
+  <string name="base_please_wait">กรุณารอสักครู่.</string>
+  <string name="base_ad_load_failed">ไม่สามารถโหลดโฆษณาได้ โปรดลองอีกครั้งในภายหลัง</string>
+</resources>

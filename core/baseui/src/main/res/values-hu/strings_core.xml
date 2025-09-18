@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Nincs internetkapcsolat. Kérjük, engedélyezze a hálózatot, és próbálja újra.</string>
+  <string name="all_try_again">Próbáld újra</string>
+  <string name="all_cancel">megszünteti</string>
+  <string name="base_no_video_ads_available">Nincsenek elérhető videóhirdetések</string>
+  <string name="all_ok">rendben</string>
+  <string name="base_loading_ads">Hirdetések betöltése…</string>
+  <string name="base_please_wait">Kérem, várjon egy pillanatot.</string>
+  <string name="base_ad_load_failed">Nem sikerült betölteni a hirdetést. Kérjük, próbálja meg később.</string>
+</resources>

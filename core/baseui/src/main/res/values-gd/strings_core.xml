@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Gun cheangal eadar-lìn. Cuir an lìonra an gnìomh agus feuch ris a-rithist.</string>
+  <string name="all_try_again">Feuch ris a-rithist</string>
+  <string name="all_cancel">cuir dheth</string>
+  <string name="base_no_video_ads_available">Chan eil sanasan bhidio rim faighinn</string>
+  <string name="all_ok">ceart gu leòr</string>
+  <string name="base_loading_ads">A’ luchdachadh shanasan…</string>
+  <string name="base_please_wait">Feuch an feith thu mionaid.</string>
+  <string name="base_ad_load_failed">Dh’fhàillig luchdachadh an t-sanas. Feuch ris a-rithist nas fhaide air adhart.</string>
+</resources>

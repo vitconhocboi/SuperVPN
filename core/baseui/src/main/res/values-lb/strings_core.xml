@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Keng Internetverbindung. Aktivéiert w.e.g. den Netzwierk a probéiert et nach eng Kéier.</string>
+  <string name="all_try_again">Probéiert nach eng Kéier</string>
+  <string name="all_cancel">annuléieren</string>
+  <string name="base_no_video_ads_available">Keng Videoannoncen verfügbar</string>
+  <string name="all_ok">ok</string>
+  <string name="base_loading_ads">Lueden Annoncen…</string>
+  <string name="base_please_wait">Waart w.e.g. e Moment.</string>
+  <string name="base_ad_load_failed">D\'Annonce konnt net geluede ginn. Probéiert et w.e.g. méi spéit nach eng Kéier.</string>
+</resources>

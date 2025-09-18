@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorSecondary">@color/other_01</color>
+
+    <color name="neutral_white">#F9F9F9</color>
+    <color name="neutral_gray1">#F2F4F6</color>
+    <color name="neutral_gray2">#EFEFEF</color>
+    <color name="neutral_gray3">#9E9E9E</color>
+
+    <color name="other_01">#00C72D</color>
+    <color name="other_02">#FB4B40</color>
+
+    <color name="background">#F6F8FE</color>
+
+    <color name="text1">#22326B</color>
+    <color name="text1_50">#8022326B</color>
+
+    <color name="color_primary_gradient_start">#007BFF</color>
+    <color name="color_primary_gradient_end">#00A4FB</color>
+
+    <color name="neutral_1_1">#333333</color>
+    <color name="neutral_1_2">#4C4C4C</color>
+    <color name="neutral_1_3">#999999</color>
+    <color name="neutral_1_4">#B2B2B2</color>
+    <color name="neutral_1_5">#E5E5E5</color>
+
+    <color name="neutral_2_1">#252B3E</color>
+    <color name="neutral_2_2">#81888F</color>
+    <color name="neutral_2_3">#B3B7BC</color>
+    <color name="neutral_2_4">#E5E7E8</color>
+    <color name="neutral_2_5">#F2F3F4</color>
+    <color name="neutral_50">#777680</color>
+
+    <color name="background_1">#E0E0E0</color>
+    <color name="background_2">#E4E5EA</color>
+    <color name="background_3">#EFEFF4</color>
+    <color name="background_4">#F8F8F8</color>
+
+    <color name="support_01">#EB5757</color>
+    <color name="support_02">#F2994A</color>
+    <color name="support_03">#F2C94C</color>
+    <color name="support_04">#219653</color>
+    <color name="support_05">#27AE60</color>
+    <color name="support_06">#1A73E7</color>
+    <color name="support_07">#2D9CDB</color>
+    <color name="support_08">#9B51E0</color>
+
+    <color name="white_50">#80FFFFFF</color>
+    <color name="background_dialog_dim">#80323232</color>
+
+    <color name="bg_scan_button_progress">#4D007BFF</color>
+    <color name="text_description_rating_dialog">#CC000000</color>
+    <color name="splash_progress_indicator">#00F0FF</color>
+    <color name="splash_progress_track">#060F5E</color>
+
+    <color name="native_primary_text_color">#1D1D1D</color>
+    <color name="gnt_text_color">#000000</color>
+
+    <color name="black_75">#BF000000</color>
+    <color name="black_transparent8">#14000000</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="rating_active">#FFCC00</color>
+
+    <color name="dot_indicator_unselected">#D9D9D9</color>
+
+    <color name="total_memory">#C9C9C9</color>
+    <color name="photo_in_storage">#EA6F09</color>
+    <color name="video_in_storage">#FFCC00</color>
+    <color name="other_in_storage">#504DFF</color>
+    <color name="audio_in_storage">#71D163</color>
+
+    <color name="black_5">#0D000000</color>
+
+    <color name="neutral_light_primary">#000D1A</color>
+    <color name="neutral_light_secondary">#7D8892</color>
+    <color name="neutral_light_tertiary">#BFC3C6</color>
+    <color name="neutral_light_quaternary">#D9DBDD</color>
+    <color name="neutral_light_elementary">#E8E9EA</color>
+
+    <color name="main_blue_light">#007AFF</color>
+    <color name="main_blue_light_accessible">#0040DD</color>
+
+    <color name="semantics_success_green_light">#34C759</color>
+    <color name="semantics_success_green_light_accessible">#248A3D</color>
+
+    <color name="semantic_warning_orange_light">#FF9500</color>
+    <color name="semantic_warning_orange_light_accessible">#C93400</color>
+
+    <color name="semantics_error_red_light">#FF3B30</color>
+    <color name="semantics_error_red_light_accessible">#D70015</color>
+
+    <color name="semantics_other_yellow_light">#FFCC00</color>
+    <color name="semantics_other_mint_light">#00C7BE</color>
+    <color name="semantics_other_teal_light">#30B0C7</color>
+    <color name="semantics_other_cyan_light">#32ADE6</color>
+    <color name="semantics_other_indigo_light">#5856D6</color>
+    <color name="semantics_other_purple_light">#AF52DE</color>
+    <color name="semantics_other_pink_light">#FF2D55</color>
+
+    <color name="overlay_light_overlay_100">#8496AE</color>
+    <color name="overlay_light_overlay_60">#9994A3B8</color>
+    <color name="overlay_light_overlay_48">#7A94A3B8</color>
+    <color name="overlay_light_overlay_36">#5C94A3B8</color>
+    <color name="overlay_light_overlay_24">#3D94A3B8</color>
+    <color name="overlay_light_overlay_16">#2994A3B8</color>
+    <color name="overlay_light_overlay_12">#1F94A3B8</color>
+
+    <color name="system_dark_black">#000000</color>
+    <color name="system_light_background_light">#F5F5F6</color>
+    <color name="system_light_inactive_light">#7F8A94</color>
+    <color name="system_light_icon_light">#383E43</color>
+
+    <color name="neutral_dark">#FCFDFD</color>
+    <color name="neutral_dark_secondary">#8C9298</color>
+    <color name="neutral_dark_tertiary">#59626A</color>
+    <color name="neutral_dark_quaternary">#454E58</color>
+    <color name="neutral_dark_elementary">#31353C</color>
+
+    <color name="main_blue_dark">#0A84FF</color>
+    <color name="main_blue_dark_accessible">#409CE1</color>
+
+    <color name="semantics_success_green_dark">#30D158</color>
+    <color name="semantics_success_green_dark_accessible">#30DB5B</color>
+
+    <color name="semantic_warning_orange_dark">#FF9F0A</color>
+    <color name="semantic_warning_orange_Light_accessible">#FF9500</color>
+
+    <color name="semantics_error_red_dark">#FF453A</color>
+    <color name="semantics_error_red_dark_accessible">#FF6861</color>
+
+    <color name="semantics_other_yellow_dark">#FFD60A</color>
+    <color name="semantics_other_mint_dark">#66D4CF</color>
+    <color name="semantics_other_teal_dark">#40C8E0</color>
+    <color name="semantics_other_cyan_dark">#64D2FF</color>
+    <color name="semantics_other_indigo_dark">#5E5CE6</color>
+    <color name="semantics_other_purple_dark">#BF5AF2</color>
+    <color name="semantics_other_pink_dark">#FF375F</color>
+
+    <color name="overlay_dark_overlay_100">#758BA3</color>
+    <color name="overlay_dark_overlay_60">#A3758BA3</color>
+    <color name="overlay_dark_overlay_48">#85758BA3</color>
+    <color name="overlay_dark_overlay_36">#66758BA3</color>
+    <color name="overlay_dark_overlay_24">#47758BA3</color>
+    <color name="overlay_dark_overlay_16">#33758BA3</color>
+    <color name="overlay_dark_overlay_12">#29758BA3</color>
+
+    <color name="system_light_white">#FFFFFF</color>
+    <color name="system_dark_background_light">#59626A</color>
+    <color name="system_dark_inactive_dark">#788087</color>
+    <color name="system_dark_icon_dark">#ECEDEE</color>
+
+    <color name="intro_blue">#03C6E2</color>
+    <color name="intro_primary">#070A22</color>
+
+    <color name="elevation_dark_6">#2F3034</color>
+
+    <color name="ripple">#929292</color>
+
+    <color name="sky_500">#0EA5E9</color>
+    <color name="sky_100">#E0F2FE</color>
+    <color name="grey_300">#D1D5DB</color>
+    <color name="grey_600">#4B5563</color>
+    <color name="grey_800">#1F2937</color>
+
+    <color name="cyan_500">#06B6D4</color>
+    <color name="cyan_100">#CFFAFE</color>
+    <color name="purple_500">#A855F7</color>
+</resources>

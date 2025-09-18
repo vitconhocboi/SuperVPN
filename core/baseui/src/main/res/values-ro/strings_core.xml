@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Nu există conexiune la internet. Vă rugăm să activați rețeaua și să încercați din nou.</string>
+  <string name="all_try_again">Încearcă din nou</string>
+  <string name="all_cancel">Anulare</string>
+  <string name="base_no_video_ads_available">Nu sunt disponibile reclame video</string>
+  <string name="all_ok">O.K</string>
+  <string name="base_loading_ads">Se încarcă anunțuri...</string>
+  <string name="base_please_wait">Vă rog să așteptați un moment.</string>
+  <string name="base_ad_load_failed">Nu s-a putut încărca anunțul. Vă rugăm să încercați din nou mai târziu.</string>
+</resources>

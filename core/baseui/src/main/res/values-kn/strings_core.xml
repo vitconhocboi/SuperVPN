@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">ಇಂಟರ್ನೆಟ್ ಸಂಪರ್ಕವಿಲ್ಲ. ದಯವಿಟ್ಟು ನೆಟ್‌ವರ್ಕ್ ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ ಮತ್ತು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
+  <string name="all_try_again">ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</string>
+  <string name="all_cancel">ರದ್ದುಮಾಡು</string>
+  <string name="base_no_video_ads_available">ಯಾವುದೇ ವೀಡಿಯೊ ಜಾಹೀರಾತುಗಳು ಲಭ್ಯವಿಲ್ಲ.</string>
+  <string name="all_ok">ಸರಿ</string>
+  <string name="base_loading_ads">ಜಾಹೀರಾತುಗಳನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ...</string>
+  <string name="base_please_wait">ದಯವಿಟ್ಟು ಒಂದು ಕ್ಷಣ ಕಾಯಿರಿ.</string>
+  <string name="base_ad_load_failed">ಜಾಹೀರಾತು ಲೋಡ್ ಮಾಡಲು ವಿಫಲವಾಗಿದೆ. ದಯವಿಟ್ಟು ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
+</resources>

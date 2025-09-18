@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">අන්තර්ජාල සම්බන්ධතාවයක් නැත. කරුණාකර ජාලය සක්‍රීය කර නැවත උත්සාහ කරන්න.</string>
+  <string name="all_try_again">නැවත උත්සාහ කරන්න</string>
+  <string name="all_cancel">අවලංගු කරන්න</string>
+  <string name="base_no_video_ads_available">වීඩියෝ දැන්වීම් නොමැත</string>
+  <string name="all_ok">හරි</string>
+  <string name="base_loading_ads">දැන්වීම් පූරණය වෙමින්...</string>
+  <string name="base_please_wait">කරුණාකර මොහොතක් ඉන්න.</string>
+  <string name="base_ad_load_failed">දැන්වීම පූරණය කිරීමට අසමත් විය. කරුණාකර පසුව නැවත උත්සාහ කරන්න.</string>
+</resources>

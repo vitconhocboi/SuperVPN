@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Няма падключэння да Інтэрнэту. Калі ласка, уключыце сетку і паспрабуйце яшчэ раз.</string>
+  <string name="all_try_again">Паспрабуйце яшчэ раз</string>
+  <string name="all_cancel">адмяніць</string>
+  <string name="base_no_video_ads_available">Відэарэклама недаступная</string>
+  <string name="all_ok">добра</string>
+  <string name="base_loading_ads">Загрузка рэкламы...</string>
+  <string name="base_please_wait">Калі ласка, пачакайце хвілінку.</string>
+  <string name="base_ad_load_failed">Не атрымалася загрузіць рэкламу. Паўтарыце спробу пазней.</string>
+</resources>

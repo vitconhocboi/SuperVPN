@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Aucune connexion Internet. Veuillez activer le réseau et réessayer.</string>
+  <string name="all_try_again">Essayer à nouveau</string>
+  <string name="all_cancel">annuler</string>
+  <string name="base_no_video_ads_available">Aucune publicité vidéo disponible</string>
+  <string name="all_ok">d\'accord</string>
+  <string name="base_loading_ads">Chargement des annonces…</string>
+  <string name="base_please_wait">Veuillez patienter un instant.</string>
+  <string name="base_ad_load_failed">Échec du chargement de l\'annonce. Veuillez réessayer ultérieurement.</string>
+</resources>

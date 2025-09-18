@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">M\'hemm l-ebda konnessjoni tal-internet. Jekk jogħġbok attiva n-netwerk u erġa\' pprova.</string>
+  <string name="all_try_again">Erġa\' pprova</string>
+  <string name="all_cancel">tikkanċella</string>
+  <string name="base_no_video_ads_available">L-ebda Reklami tal-Vidjo Disponibbli</string>
+  <string name="all_ok">kollox sew</string>
+  <string name="base_loading_ads">Tagħbija reklami...</string>
+  <string name="base_please_wait">Jekk jogħġbok stenna ftit.</string>
+  <string name="base_ad_load_failed">Ma rnexxiex ittella\' r-riklam. Jekk jogħġbok erġa\' pprova aktar tard.</string>
+</resources>

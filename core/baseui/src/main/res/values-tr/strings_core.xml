@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">İnternet bağlantısı yok. Lütfen ağı etkinleştirin ve tekrar deneyin.</string>
+  <string name="all_try_again">Tekrar deneyin</string>
+  <string name="all_cancel">iptal etmek</string>
+  <string name="base_no_video_ads_available">Video Reklamı Yok</string>
+  <string name="all_ok">tamam</string>
+  <string name="base_loading_ads">Reklam yükleniyor…</string>
+  <string name="base_please_wait">Lütfen bir dakika bekleyin.</string>
+  <string name="base_ad_load_failed">Reklam yüklenemedi. Lütfen daha sonra tekrar deneyin.</string>
+</resources>

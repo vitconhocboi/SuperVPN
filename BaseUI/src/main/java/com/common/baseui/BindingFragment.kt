@@ -58,9 +58,6 @@ abstract class BindingFragment<VB : ViewBinding> : AdsFragment() {
         _binding = null
     }
 
-    fun updateStatusBarColor(@ColorRes resColor: Int) {
-        (activity as? BindingActivity<*>)?.updateStatusBarColor(resColor)
-    }
 
     fun showLoading(message: String = "Loading...") {
         dialogLoadingAd.showDialog()

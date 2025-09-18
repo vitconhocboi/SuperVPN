@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Tsy misy fifandraisana Internet. Alefaso azafady ny tambajotra ary andramo indray.</string>
+  <string name="all_try_again">Andramo indray mandeha</string>
+  <string name="all_cancel">hanafoana</string>
+  <string name="base_no_video_ads_available">Tsy misy doka video azo</string>
+  <string name="all_ok">ok</string>
+  <string name="base_loading_ads">Mametraka doka…</string>
+  <string name="base_please_wait">Andraso kely azafady.</string>
+  <string name="base_ad_load_failed">Tsy nahomby ny fampidirana doka. Andramo indray rahatrizay.</string>
+</resources>

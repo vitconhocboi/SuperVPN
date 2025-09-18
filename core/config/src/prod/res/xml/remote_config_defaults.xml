@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--is_hide_navigation_bar = tắt navigationBar-->
+<!--is_preload_banner_native_exit = load trước quảng cáo cho dialog exit-->
+<!--is_always_show_intro_and_language_screen = Luôn hiển thị màn hình language và intro - onboarding khi vào app-->
+<!--is_enable_introduction_screen = Cho phép hiển thị màn hình intro - onboarding-->
+<!--is_enable_change_language_screen = Cho phép hiển thị màn hình language-->
+<!--is_enable_app_shortcut = Mở short cut-->
+<!--is_enable_app_shortcut_uninstall = Mở short cut uninstall-->
+<!--is_enable_open_app_ads_from_uninstall_shortcut = Cho phép hiển thị open ads khi từ uninstall short cut-->
+<!--is_enable_open_app_ads_from_shortcut = Cho phép hiển thị open ads khi từ short cut-->
+
+<!--intro data-->
+<!--0 = không có ads-->
+<!--1 = Có ads-->
+<!--2 = Full ads-->
+<defaults>
+    <entry>
+        <key>application_config</key>
+        <value>
+            {
+            "is_hide_navigation_bar": true,
+            "is_preload_banner_native_exit":true,
+            "is_always_preload_banner_native_ads_when_start": true,
+            "is_hide_native_banner_when_network_error": true,
+            "is_always_show_intro_and_language_screen": true,
+            "is_enable_introduction_screen": true,
+            "is_enable_change_language_screen": true,
+            "is_enable_app_shortcut": false,
+            "is_enable_app_shortcut_uninstall": true,
+            "is_enable_open_app_ads_from_uninstall_shortcut": false,
+            "is_enable_open_app_ads_from_shortcut": false,
+            "intro_data": [
+            1,
+            1,
+            1
+            ]
+            }
+        </value>
+    </entry>
+    <entry>
+        <key>prevent_ad_click_config</key>
+        <value>
+            {
+            "max_ad_click_per_session": 6,
+            "time_per_session": 120,
+            "time_disable_ads_when_reached_max_ad_click": 20
+            }
+        </value>
+    </entry>
+    <entry>
+        <key>ads_disabled_by_country</key>
+        <value>
+            [
+            "cx",
+            "cv"
+            ]
+        </value>
+    </entry>
+
+    <!--ad_type_first_open: interstitial hoặc app_open - Lần đầu vào app -->
+    <!--ad_type: interstitial hoặc app_open - Từ lần thứ 2 vào app -->
+    <entry>
+        <key>splash_screen_config</key>
+        <value>
+            {
+            "max_time_to_wait_app_open_ad": 10,
+            "time_skip_app_open_ad_when_not_available": 6,
+            "ad_type_first_open": "interstitial",
+            "ad_type": "app_open",
+            "is_enable_retry": true,
+            "is_load_before_eu_consent": true,
+            "min_time_wait_progress_before_show_ad": 3,
+            "max_retry_count": 1
+            }
+        </value>
+    </entry>
+    <!--với Banner-->
+    <!--ad_type: banner-->
+    <!--banner_size: anchored - inline - standard_medium - standard_large-->
+    <!--is_collapsible: true - false , tắt, mở collapsible banner-->
+
+    <!--với Native-->
+    <!--ad_type: banner - native-->
+    <!--native_template_size:
+    small - small_cta_top - small_cta_bottom - small_cta_right -
+    small_long - small_for_popup - medium - medium_cta_top - medium_cta_bottom -
+    medium_cta_right_top - medium_cta_right - medium_media_right -
+    medium_media_left - full_cta_bottom - full_cta_top - full_cta_right
+    hoặc custom key
+    -->
+    <!--background_color: màu nền-->
+    <!--primary_text_color: màu text primary-->
+    <!--body_text_color: màu text body-->
+    <!--background_cta: -->
+    <!--cta_text_color: -->
+    <!--border_color: -->
+
+    <!--chung-->
+    <!--is_enable: bật tắt ví trí quảng cáo-->
+    <!--ad_id: id quảng cáo-->
+    <!--place_name: ví trí quảng cáo-->
+    <!--is_tracking_click: Bật tắt tracking click vào quảng cáo-->
+    <entry>
+        <key>banner_native_ad_places</key>
+        <value>
+            [
+            {
+            "place_name": "anchored_change_language_bottom",
+            "ad_id": "ca-app-pub-3940256099942544/2014213617",
+            "ad_type": "banner",
+            "banner_size": "anchored",
+            "is_collapsible": true,
+            "native_template_size": "small_cta_bottom",
+            "is_enable": true,
+            "is_tracking_click": true,
+            "background_color": "#F5F6F9",
+            "primary_text_color": "#3B3B3B",
+            "body_text_color": "#828282",
+            "background_cta": "#2CA6FF",
+            "border_color": "#E1E1E1"
+            },
+            {
+            "place_name": "anchored_onboarding_bottom",
+            "ad_id": "ca-app-pub-3940256099942544/2247696110",
+            "ad_type": "native",
+            "is_tracking_click": true,
+            "native_template_size": "small_cta_bottom",
+            "is_enable": true,
+            "background_color": "#242424",
+            "primary_text_color": "#F0F0F0",
+            "body_text_color": "#8A8A8A",
+            "background_cta": "#5E56F5",
+            "border_color": "#242424"
+            },
+            {
+            "place_name": "anchored_full_onboarding",
+            "ad_id": "ca-app-pub-3940256099942544/2247696110",
+            "ad_type": "native",
+            "native_template_size": "full_cta_bottom",
+            "is_enable": true,
+            "background_color": "#242424",
+            "is_tracking_click": true,
+            "primary_text_color": "#F0F0F0",
+            "body_text_color": "#8A8A8A",
+            "background_cta": "#5E56F5",
+            "border_color": "#242424"
+            },
+            {
+            "place_name": "anchored_uninstall_bottom_step_1",
+            "ad_id": "ca-app-pub-3940256099942544/2247696110",
+            "ad_type": "native",
+            "is_tracking_click": true,
+            "native_template_size": "small_cta_bottom",
+            "is_enable": true,
+            "background_color": "#242424",
+            "primary_text_color": "#F0F0F0",
+            "body_text_color": "#8A8A8A",
+            "background_cta": "#5E56F5",
+            "border_color": "#242424"
+            },
+            {
+            "place_name": "anchored_uninstall_bottom_step_2",
+            "ad_id": "ca-app-pub-3940256099942544/2247696110",
+            "ad_type": "native",
+            "is_tracking_click": true,
+            "native_template_size": "small_cta_bottom",
+            "is_enable": true,
+            "background_color": "#242424",
+            "primary_text_color": "#F0F0F0",
+            "body_text_color": "#8A8A8A",
+            "background_cta": "#5E56F5",
+            "border_color": "#242424"
+            },
+            {
+            "place_name": "anchored_native_test",
+            "ad_id": "ca-app-pub-3940256099942544/2247696110",
+            "ad_type": "native",
+            "native_template_size": "medium_cta_bottom",
+            "is_enable": true,
+            "is_tracking_click": true,
+            "background_color": "#242424",
+            "primary_text_color": "#F0F0F0",
+            "body_text_color": "#8A8A8A",
+            "background_cta": "#5E56F5",
+            "border_color": "#242424"
+            },
+            {
+            "place_name": "anchored_exit",
+            "ad_id": "ca-app-pub-3940256099942544/2247696110",
+            "ad_type": "native",
+            "is_tracking_click": true,
+            "native_template_size": "medium_cta_bottom",
+            "is_enable": true,
+            "background_color": "#242424",
+            "primary_text_color": "#F0F0F0",
+            "body_text_color": "#8A8A8A",
+            "background_cta": "#5E56F5",
+            "border_color": "#242424"
+            },
+            {
+            "place_name": "anchored_banner_test",
+            "ad_id": "ca-app-pub-3940256099942544/2014213617",
+            "ad_type": "banner",
+            "is_collapsible": true,
+            "is_tracking_click": true,
+            "banner_size": "anchored",
+            "is_enable": true
+            },
+            {
+            "place_name": "anchored_native_in_list_test",
+            "ad_id": "ca-app-pub-3940256099942544/2247696110",
+            "ad_type": "native",
+            "native_template_size": "small",
+            "is_tracking_click": true,
+            "is_enable": true,
+            "background_color": "#242424",
+            "primary_text_color": "#F0F0F0",
+            "body_text_color": "#8A8A8A",
+            "cta_text_color": "#000000",
+            "background_cta": "#5E56F5",
+            "border_color": "#242424"
+            },
+            {
+            "place_name": "anchored_bottom_home",
+            "ad_id": "ca-app-pub-3940256099942544/9214589741",
+            "ad_type": "banner",
+            "is_tracking_click": true,
+            "banner_size": "anchored",
+            "is_enable": true
+            }
+            ]
+        </value>
+    </entry>
+
+    <!--open_app_first_open: app open đầu tiên vào app-->
+    <!--open_app: app open từ lần thứ 2 vào app-->
+    <!--reopen_app: open khi resumed app-->
+
+    <entry>
+        <key>app_open_ad_places</key>
+        <value>
+            [
+            {
+            "place_name": "open_app_first_open",
+            "ad_id": "ca-app-pub-3940256099942544/9257395921",
+            "ad_type": "app_open",
+            "is_enable": true
+            },
+            {
+            "place_name": "open_app",
+            "ad_id": "ca-app-pub-3940256099942544/9257395921",
+            "ad_type": "app_open",
+            "is_enable": true
+            },
+            {
+            "place_name": "reopen_app",
+            "ad_id": "ca-app-pub-3940256099942544/9257395921",
+            "ad_type": "app_open",
+            "is_enable": true
+            }
+            ]
+        </value>
+    </entry>
+
+    <!--action_app_open_first_open = app open đầu tiên vào app-->-->
+    <!--action_app_open = từ lần thứ 2 vào app->-->
+    <!--is_auto_load_after_dismiss = false app dụng cho màn splash->-->
+    <!--ad_type = interstitial - rewarded-->
+
+    <entry>
+        <key>rewarded_rewardedinter_inter_ad_places</key>
+        <value>
+            [
+            {
+            "place_name": "action_app_open_first_open",
+            "ad_id": "ca-app-pub-3940256099942544/1033173712",
+            "ad_type": "interstitial",
+            "is_enable": true,
+            "is_auto_load_after_dismiss": false
+            },
+            {
+            "place_name": "action_app_open",
+            "ad_id": "ca-app-pub-3940256099942544/1033173712",
+            "ad_type": "interstitial",
+            "is_enable": true,
+            "is_auto_load_after_dismiss": false
+            },
+            {
+            "place_name": "fullscreen_test",
+            "ad_id": "ca-app-pub-3940256099942544/1033173712",
+            "ad_type": "interstitial",
+            "is_enable": true
+            },
+            {
+            "place_name": "fullscreen_show_to_home",
+            "ad_id": "ca-app-pub-3940256099942544/1033173712",
+            "ad_type": "interstitial",
+            "is_enable": true
+            },
+            {
+            "place_name": "reward_test",
+            "ad_id": "ca-app-pub-3940256099942544/5224354917",
+            "ad_type": "rewarded",
+            "is_enable": true
+            }
+            ]
+        </value>
+    </entry>
+    <entry>
+        <key>interstitial_ad_config</key>
+        <value>
+            {
+            "is_wait_load_to_show": false,
+            "ads_per_session": 5,
+            "time_per_session": 600,
+            "time_interval": 3,
+            "is_enable_retry": true,
+            "max_retry_count": 5,
+            "retry_interval_second_list": [
+            1,
+            2,
+            3
+            ]
+            }
+        </value>
+    </entry>
+    <entry>
+        <key>rewarded_ad_config</key>
+        <value>
+            {
+            "is_wait_load_to_show": false,
+            "is_enable_retry": true,
+            "max_retry_count": 5,
+            "retry_interval_second_list": [
+            1,
+            2,
+            3
+            ]
+            }
+        </value>
+    </entry>
+    <entry>
+        <key>app_open_ad_config</key>
+        <value>
+            {
+            "time_interval": 3,
+            "time_millis_delay_before_show": 200,
+            "is_enable_retry": true,
+            "max_retry_count": 5,
+            "retry_interval_second_list": [
+            1,
+            2,
+            3
+            ]
+            }
+        </value>
+    </entry>
+    <entry>
+        <key>native_ad_config</key>
+        <value>
+            {
+            "is_enable_retry": true,
+            "max_retry_count": 5,
+            "retry_interval_second_list": [
+            1,
+            2,
+            3
+            ]
+            }
+        </value>
+    </entry>
+    <entry>
+        <key>banner_ad_config</key>
+        <value>
+            {
+            "is_enable_retry": true,
+            "max_retry_count": 5,
+            "retry_interval_second_list": [
+            1,
+            2,
+            3
+            ]
+            }
+        </value>
+    </entry>
+    <entry>
+        <key>request_consent_config</key>
+        <value>
+            {
+            "is_enable": true,
+            "debug_is_eea": true,
+            "debug_list_test_device_hashed_id": [
+            "460E79ECA70EF328A2F505FFB68470B9"
+            ]
+            }
+        </value>
+    </entry>
+</defaults>

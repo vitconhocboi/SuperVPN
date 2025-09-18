@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">ምንም የበይነመረብ ግንኙነት የለም። እባክህ አውታረ መረቡን አንቃ እና እንደገና ሞክር።</string>
+  <string name="all_try_again">እንደገና ይሞክሩ</string>
+  <string name="all_cancel">መሰረዝ</string>
+  <string name="base_no_video_ads_available">ምንም የቪዲዮ ማስታወቂያዎች አይገኙም።</string>
+  <string name="all_ok">እሺ</string>
+  <string name="base_loading_ads">ማስታወቂያዎችን በመጫን ላይ…</string>
+  <string name="base_please_wait">እባክዎን ትንሽ ይጠብቁ።</string>
+  <string name="base_ad_load_failed">ማስታወቂያ መጫን አልተሳካም። እባክዎ ቆይተው እንደገና ይሞክሩ።</string>
+</resources>

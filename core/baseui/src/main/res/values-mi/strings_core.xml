@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Karekau he hononga ipurangi. Whakahohea koa te whatunga ka ngana ano.</string>
+  <string name="all_try_again">Ngana ano</string>
+  <string name="all_cancel">whakakore</string>
+  <string name="base_no_video_ads_available">Kaore he panui ataata e waatea ana</string>
+  <string name="all_ok">pai</string>
+  <string name="base_loading_ads">Uta ana i nga panui…</string>
+  <string name="base_please_wait">Taihoa koa.</string>
+  <string name="base_ad_load_failed">I rahua te uta panui. Me ngana ano i muri mai.</string>
+</resources>

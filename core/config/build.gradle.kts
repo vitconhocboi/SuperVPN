@@ -1,0 +1,84 @@
+plugins {
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.ksp)
+    alias(libs.plugins.dagger.hilt) // For Dagger Hilt
+}
+
+android {
+    namespace = "com.core.config"
+    compileSdk = libs.versions.targetSdk.get().toInt()
+
+    defaultConfig {
+        minSdk = libs.versions.minSdk.get().toInt()
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+
+    flavorDimensions.add("root")
+
+    productFlavors {
+        create("dev") {
+
+        }
+        create("prod") {
+
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+
+    buildFeatures {
+        buildConfig = true
+    }
+}
+
+dependencies {
+
+    implementation (project(":core:analytics"))
+    implementation (project(":core:preference"))
+    implementation (project(":core:utilities"))
+    
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+
+    // Moshi
+    implementation (libs.moshi.kotlin)
+    implementation (libs.moshi)
+    implementation (libs.moshi.adapters)
+    ksp(libs.moshi.kotlin.codegen)
+
+    //Firebase
+    implementation (platform(libs.firebase.bom))
+    implementation (libs.firebase.config)
+
+    //Hilt
+    implementation (libs.hilt.android)
+    ksp(libs.hilt.android.compiler)
+
+    implementation(libs.kotlin.reflect)
+
+
+
+}

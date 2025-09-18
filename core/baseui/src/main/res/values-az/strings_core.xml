@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">İnternet bağlantısı yoxdur. Şəbəkəni aktiv edin və yenidən cəhd edin.</string>
+  <string name="all_try_again">Yenidən cəhd edin</string>
+  <string name="all_cancel">ləğv edin</string>
+  <string name="base_no_video_ads_available">Heç bir Video Reklam Mövcud deyil</string>
+  <string name="all_ok">tamam</string>
+  <string name="base_loading_ads">Reklamlar yüklənir...</string>
+  <string name="base_please_wait">Zəhmət olmasa bir az gözləyin.</string>
+  <string name="base_ad_load_failed">Reklamı yükləmək alınmadı. Lütfən, sonra yenidən cəhd edin.</string>
+</resources>

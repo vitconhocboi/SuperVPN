@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">ਕੋਈ ਇੰਟਰਨੈੱਟ ਕਨੈਕਸ਼ਨ ਨਹੀਂ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਨੈੱਟਵਰਕ ਚਾਲੂ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
+  <string name="all_try_again">ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
+  <string name="all_cancel">ਰੱਦ ਕਰੋ</string>
+  <string name="base_no_video_ads_available">ਕੋਈ ਵੀਡੀਓ ਵਿਗਿਆਪਨ ਉਪਲਬਧ ਨਹੀਂ ਹਨ</string>
+  <string name="all_ok">ਠੀਕ ਹੈ</string>
+  <string name="base_loading_ads">ਵਿਗਿਆਪਨ ਲੋਡ ਕੀਤੇ ਜਾ ਰਹੇ ਹਨ...</string>
+  <string name="base_please_wait">ਕਿਰਪਾ ਕਰਕੇ ਇੱਕ ਪਲ ਰੁਕੋ।</string>
+  <string name="base_ad_load_failed">ਵਿਗਿਆਪਨ ਲੋਡ ਕਰਨ ਵਿੱਚ ਅਸਫਲ। ਕਿਰਪਾ ਕਰਕੇ ਬਾਅਦ ਵਿੱਚ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
+</resources>

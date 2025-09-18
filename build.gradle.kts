@@ -1,10 +1,19 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
     alias(libs.plugins.android.application) apply false
-    alias(libs.plugins.jetbrainsKotlinAndroid) apply false
-    alias(libs.plugins.androidLibrary) apply false
-    id("com.google.dagger.hilt.android") version "2.50" apply false
-    id("com.google.gms.google-services") version "4.4.2" apply false
-    id("com.google.firebase.crashlytics") version "3.0.2" apply false
-    id("androidx.room") version "2.6.1" apply false
+    alias(libs.plugins.kotlin.android) apply false
+    alias(libs.plugins.android.library) apply false
+
+    //Hilt
+    alias(libs.plugins.dagger.hilt) apply false
+
+    alias(libs.plugins.kotlin.ksp) apply false
+
+    //Firebase service
+    alias(libs.plugins.firebase.crashlytics) apply false
+    alias(libs.plugins.firebase.perf) apply false
+    alias(libs.plugins.google.services) apply false
+
+    //Room Database
+    alias(libs.plugins.android.room) apply false
 }

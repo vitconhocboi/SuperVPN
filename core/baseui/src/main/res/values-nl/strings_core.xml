@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Geen internetverbinding. Schakel het netwerk in en probeer het opnieuw.</string>
+  <string name="all_try_again">Probeer het opnieuw</string>
+  <string name="all_cancel">annuleren</string>
+  <string name="base_no_video_ads_available">Geen videoadvertenties beschikbaar</string>
+  <string name="all_ok">OK</string>
+  <string name="base_loading_ads">Advertenties laden…</string>
+  <string name="base_please_wait">Een moment geduld alstublieft.</string>
+  <string name="base_ad_load_failed">Advertentie laden mislukt. Probeer het later opnieuw.</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">គ្មានការតភ្ជាប់អ៊ីនធឺណិត។ សូមបើកបណ្តាញ ហើយព្យាយាមម្តងទៀត។</string>
+  <string name="all_try_again">ព្យាយាមម្តងទៀត</string>
+  <string name="all_cancel">បោះបង់</string>
+  <string name="base_no_video_ads_available">មិនមានការផ្សាយពាណិជ្ជកម្មតាមវីដេអូទេ។</string>
+  <string name="all_ok">យល់ព្រម</string>
+  <string name="base_loading_ads">កំពុងផ្ទុកការផ្សាយពាណិជ្ជកម្ម...</string>
+  <string name="base_please_wait">សូមរង់ចាំបន្តិច។</string>
+  <string name="base_ad_load_failed">បានបរាជ័យក្នុងការផ្ទុកការផ្សាយពាណិជ្ជកម្ម។ សូមព្យាយាមម្តងទៀតនៅពេលក្រោយ។</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">ఇంటర్నెట్ కనెక్షన్ లేదు. దయచేసి నెట్‌వర్క్‌ను ప్రారంభించి, మళ్లీ ప్రయత్నించండి.</string>
+  <string name="all_try_again">మళ్లీ ప్రయత్నించండి</string>
+  <string name="all_cancel">రద్దు చేయండి</string>
+  <string name="base_no_video_ads_available">వీడియో ప్రకటనలు అందుబాటులో లేవు</string>
+  <string name="all_ok">అలాగే</string>
+  <string name="base_loading_ads">ప్రకటనలను లోడ్ చేస్తోంది…</string>
+  <string name="base_please_wait">దయచేసి ఒక్క క్షణం ఆగు.</string>
+  <string name="base_ad_load_failed">ప్రకటనను లోడ్ చేయడంలో విఫలమైంది. దయచేసి తర్వాత మళ్లీ ప్రయత్నించండి.</string>
+</resources>

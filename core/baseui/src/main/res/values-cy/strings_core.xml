@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Dim cysylltiad rhyngrwyd. Galluogwch y rhwydwaith a cheisiwch eto.</string>
+  <string name="all_try_again">Ceisiwch eto</string>
+  <string name="all_cancel">canslo</string>
+  <string name="base_no_video_ads_available">Dim Hysbysebion Fideo Ar Gael</string>
+  <string name="all_ok">iawn</string>
+  <string name="base_loading_ads">Wrthi\'n llwytho hysbysebion…</string>
+  <string name="base_please_wait">Arhoswch eiliad.</string>
+  <string name="base_ad_load_failed">Methwyd llwytho\'r hysbyseb. Rhowch gynnig arall arni yn nes ymlaen.</string>
+</resources>

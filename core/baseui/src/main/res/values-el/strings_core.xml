@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Δεν υπάρχει σύνδεση στο διαδίκτυο. Ενεργοποιήστε το δίκτυο και δοκιμάστε ξανά.</string>
+  <string name="all_try_again">Προσπαθήστε ξανά</string>
+  <string name="all_cancel">Ματαίωση</string>
+  <string name="base_no_video_ads_available">Δεν υπάρχουν διαθέσιμες διαφημίσεις βίντεο</string>
+  <string name="all_ok">Εντάξει</string>
+  <string name="base_loading_ads">Φόρτωση διαφημίσεων…</string>
+  <string name="base_please_wait">Παρακαλώ περιμένετε λίγο.</string>
+  <string name="base_ad_load_failed">Αποτυχία φόρτωσης διαφήμισης. Δοκιμάστε ξανά αργότερα.</string>
+</resources>

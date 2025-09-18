@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout cho dialog thông báo mất kết nối internet -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="32dp"
+    android:background="@drawable/base_bottom_sheet_background"> <!-- Sử dụng background bo tròn -->
+
+    <!-- Icon Mất kết nối -->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/icon_no_internet"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/base_ic_no_internet"
+        android:layout_marginBottom="16dp"
+        app:tint="@color/purple_500"/>
+
+    <!-- Dòng chữ thông báo -->
+    <TextView
+        android:id="@+id/text_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/base_require_turn_on_internet_title"
+        android:textColor="@color/grey_600"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:lineSpacingExtra="4dp"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Nút chính "TRY AGAIN" -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/tv_reconnect"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/all_try_again"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:backgroundTint="@color/sky_500"
+        app:cornerRadius="@dimen/_10dp"
+        app:elevation="4dp"/>
+
+    <!-- Nút phụ "CANCEL" -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/tvCancel"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/all_cancel"
+        android:textColor="@color/sky_500"
+        android:textSize="16sp"
+        android:fontFamily="@font/inter_medium"
+        app:rippleColor="@color/sky_100"/>
+
+
+</LinearLayout>

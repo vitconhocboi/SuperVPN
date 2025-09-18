@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Ei internetyhteyttä. Ota verkko käyttöön ja yritä uudelleen.</string>
+  <string name="all_try_again">Yritä uudelleen</string>
+  <string name="all_cancel">peruuttaa</string>
+  <string name="base_no_video_ads_available">Ei videomainoksia saatavilla</string>
+  <string name="all_ok">okei</string>
+  <string name="base_loading_ads">Ladataan mainoksia…</string>
+  <string name="base_please_wait">Odota hetki.</string>
+  <string name="base_ad_load_failed">Mainoksen lataaminen epäonnistui. Yritä myöhemmin uudelleen.</string>
+</resources>

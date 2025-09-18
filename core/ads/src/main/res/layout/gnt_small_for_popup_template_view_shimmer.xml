@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.facebook.shimmer.ShimmerFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/native_ad_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_4dp"
+    android:layout_marginTop="@dimen/_10dp"
+    android:layout_marginEnd="@dimen/_4dp"
+    android:layout_marginBottom="@dimen/_10dp">
+
+    <RelativeLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/_14dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/ad_notification_view"
+            style="@style/AdsNotificationViewStyle"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/shimmer_bg"
+            tools:text="" />
+
+        <FrameLayout
+            android:id="@+id/containerIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/layout_cta"
+            android:layout_alignTop="@+id/primary"
+            android:layout_alignBottom="@+id/body">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icon"
+                android:layout_width="@dimen/_46dp"
+                android:layout_height="@dimen/_46dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/_8dp"
+                android:background="@color/shimmer_bg"
+                android:scaleType="fitCenter"
+                android:visibility="visible" />
+        </FrameLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/primary"
+            style="@style/AdsTitleTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ad_notification_view"
+            android:layout_alignEnd="@+id/layout_cta"
+            android:layout_toEndOf="@+id/containerIcon"
+            android:background="@color/shimmer_bg"
+            tools:text="" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/body"
+            style="@style/AdsBodyTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/primary"
+            android:layout_alignStart="@+id/primary"
+            android:layout_alignEnd="@+id/primary"
+            android:background="@color/shimmer_bg"
+            android:gravity="center_vertical"
+            android:lines="2"
+            tools:text="" />
+
+        <FrameLayout
+            android:id="@+id/layout_cta"
+            style="@style/CtaCardViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/body"
+            android:layout_marginStart="@dimen/_14dp"
+            android:layout_marginTop="@dimen/_7dp"
+            android:layout_marginEnd="@dimen/_14dp"
+            android:background="@color/shimmer_bg">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/cta"
+                style="@style/CtaViewStyle"
+                android:background="@color/shimmer_bg"
+                android:paddingTop="@dimen/_8dp"
+                android:paddingBottom="@dimen/_9dp"
+                tools:text="" />
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</com.facebook.shimmer.ShimmerFrameLayout>
+

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Пайвасти интернет нест. Лутфан шабакаро фаъол созед ва дубора кӯшиш кунед.</string>
+  <string name="all_try_again">Як бори дигар санҷед</string>
+  <string name="all_cancel">бекор</string>
+  <string name="base_no_video_ads_available">Ягон таблиғи видеоӣ дастрас нест</string>
+  <string name="all_ok">Хуб</string>
+  <string name="base_loading_ads">Боркунии реклама…</string>
+  <string name="base_please_wait">Лутфан каме интизор шавед.</string>
+  <string name="base_ad_load_failed">Таблиғро бор карда натавонист. Лутфан баъдтар бори дигар кӯшиш кунед.</string>
+</resources>

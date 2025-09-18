@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">קיין אינטערנעט פֿאַרבינדונג. ביטע אַקטיווירן די נעץ און פּרוּווט ווידער.</string>
+  <string name="all_try_again">פּרוּווט ווידער</string>
+  <string name="all_cancel">באָטל מאַכן</string>
+  <string name="base_no_video_ads_available">קיין ווידעא אדווערטייזמענטס נישט פאראן</string>
+  <string name="all_ok">אקעי</string>
+  <string name="base_loading_ads">לאָודינג אַדס...</string>
+  <string name="base_please_wait">ביטע וואַרט אַ מאָמענט.</string>
+  <string name="base_ad_load_failed">נישט געלונגען צו לאָדן די אַד. ביטע פּרוּווט ווידער שפּעטער.</string>
+</resources>

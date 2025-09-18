@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">ບໍ່ມີການເຊື່ອມຕໍ່ອິນເຕີເນັດ. ກະລຸນາເປີດໃຊ້ເຄືອຂ່າຍແລ້ວລອງໃໝ່.</string>
+  <string name="all_try_again">ລອງອີກຄັ້ງ</string>
+  <string name="all_cancel">ຍົກເລີກ</string>
+  <string name="base_no_video_ads_available">ບໍ່ມີໂຄສະນາວິດີໂອທີ່ມີຢູ່</string>
+  <string name="all_ok">ຕົກ​ລົງ</string>
+  <string name="base_loading_ads">ກຳລັງໂຫລດໂຄສະນາ...</string>
+  <string name="base_please_wait">ກະລຸນາລໍຖ້າຈັກໜ່ອຍ.</string>
+  <string name="base_ad_load_failed">ໂຫຼດໂຄສະນາບໍ່ສຳເລັດ. ກະລຸນາລອງໃໝ່ໃນພາຍຫຼັງ.</string>
+</resources>

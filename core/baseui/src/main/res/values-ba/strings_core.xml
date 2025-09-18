@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Интернетҡа тоташыу юҡ. Зинһар, селтәрҙе асығыҙ һәм яңынан тырышығыҙ.</string>
+  <string name="all_try_again">Яңынан тырышып ҡара</string>
+  <string name="all_cancel">Юҡҡа сығарырға</string>
+  <string name="base_no_video_ads_available">Видео иғландар юҡ</string>
+  <string name="all_ok">Ярар</string>
+  <string name="base_loading_ads">Иғландар тейәп...</string>
+  <string name="base_please_wait">Зинһар, бер аҙ көтөп тороғоҙ.</string>
+  <string name="base_ad_load_failed">Иғлан тейәп булманы. Зинһар, һуңынан тағы ла эшләп ҡарағыҙ.</string>
+</resources>

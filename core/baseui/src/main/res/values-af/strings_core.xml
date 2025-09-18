@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Geen internetverbinding nie. Aktiveer asseblief die netwerk en probeer weer.</string>
+  <string name="all_try_again">Probeer weer</string>
+  <string name="all_cancel">kanselleer</string>
+  <string name="base_no_video_ads_available">Geen video-advertensies beskikbaar nie</string>
+  <string name="all_ok">okay</string>
+  <string name="base_loading_ads">Laai tans advertensies …</string>
+  <string name="base_please_wait">Wag asseblief \'n oomblik.</string>
+  <string name="base_ad_load_failed">Kon nie advertensie laai nie. Probeer asseblief later weer.</string>
+</resources>

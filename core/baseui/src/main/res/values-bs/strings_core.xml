@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Nema internet veze. Molimo vas da omogućite mrežu i pokušate ponovo.</string>
+  <string name="all_try_again">Pokušajte ponovo</string>
+  <string name="all_cancel">otkaži</string>
+  <string name="base_no_video_ads_available">Nema dostupnih video oglasa</string>
+  <string name="all_ok">uredu</string>
+  <string name="base_loading_ads">Učitavanje oglasa…</string>
+  <string name="base_please_wait">Molimo pričekajte trenutak.</string>
+  <string name="base_ad_load_failed">Učitavanje oglasa nije uspjelo. Pokušajte ponovo kasnije.</string>
+</resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="native_cta_radius">@dimen/_28dp</dimen>
+    <dimen name="native_cta_right_radius">@dimen/_22dp</dimen>
+</resources>

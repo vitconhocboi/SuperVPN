@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">No hi ha connexió a Internet. Si us plau, activeu la xarxa i torneu-ho a provar.</string>
+  <string name="all_try_again">Torna-ho a provar</string>
+  <string name="all_cancel">cancel · lar</string>
+  <string name="base_no_video_ads_available">No hi ha anuncis de vídeo disponibles</string>
+  <string name="all_ok">D\'acord</string>
+  <string name="base_loading_ads">S\'estan carregant anuncis...</string>
+  <string name="base_please_wait">Si us plau, espereu un moment.</string>
+  <string name="base_ad_load_failed">No s\'ha pogut carregar l\'anunci. Torna-ho a provar més tard.</string>
+</resources>

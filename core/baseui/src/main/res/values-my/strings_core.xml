@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">အင်တာနက်ချိတ်ဆက်မှုမရှိပါ။ ကျေးဇူးပြု၍ ကွန်ရက်ကိုဖွင့်ပြီး ထပ်စမ်းကြည့်ပါ။</string>
+  <string name="all_try_again">ထပ်ကြိုးစားပါ။</string>
+  <string name="all_cancel">ပယ်ဖျက်ပါ။</string>
+  <string name="base_no_video_ads_available">ဗီဒီယိုကြော်ငြာများ မရရှိနိုင်ပါ။</string>
+  <string name="all_ok">အဆင်ပြေလား</string>
+  <string name="base_loading_ads">ကြော်ငြာများကို ဖွင့်နေသည်...</string>
+  <string name="base_please_wait">ခဏစောင့်ပါ။</string>
+  <string name="base_ad_load_failed">ကြော်ငြာတင်ရန် မအောင်မြင်ပါ။ နောက်မှ ထပ်စမ်းကြည့်ပါ။</string>
+</resources>

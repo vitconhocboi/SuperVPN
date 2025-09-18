@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">इंटरनेट कनेक्शन नाही. कृपया नेटवर्क सुरू करा आणि पुन्हा प्रयत्न करा.</string>
+  <string name="all_try_again">पुन्हा प्रयत्न करा</string>
+  <string name="all_cancel">रद्द करा</string>
+  <string name="base_no_video_ads_available">व्हिडिओ जाहिराती उपलब्ध नाहीत</string>
+  <string name="all_ok">ठीक आहे</string>
+  <string name="base_loading_ads">जाहिराती लोड करत आहे...</string>
+  <string name="base_please_wait">कृपया थोडा वेळ थांबा.</string>
+  <string name="base_ad_load_failed">जाहिरात लोड करण्यात अयशस्वी. कृपया नंतर पुन्हा प्रयत्न करा.</string>
+</resources>

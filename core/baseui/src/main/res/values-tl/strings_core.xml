@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">Walang koneksyon sa internet. Mangyaring paganahin ang network at subukang muli.</string>
+  <string name="all_try_again">Subukan muli</string>
+  <string name="all_cancel">kanselahin</string>
+  <string name="base_no_video_ads_available">Walang Magagamit na Mga Video na Ad</string>
+  <string name="all_ok">ok</string>
+  <string name="base_loading_ads">Naglo-load ng mga ad…</string>
+  <string name="base_please_wait">Mangyaring maghintay ng ilang sandali.</string>
+  <string name="base_ad_load_failed">Nabigong i-load ang ad. Pakisubukang muli mamaya.</string>
+</resources>

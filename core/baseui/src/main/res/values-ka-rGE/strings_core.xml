@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="base_require_turn_on_internet_title">ინტერნეტ კავშირი არ არის. გთხოვთ, ჩართოთ ქსელი და ხელახლა სცადოთ.</string>
+  <string name="all_try_again">სცადეთ ხელახლა</string>
+  <string name="all_cancel">გააუქმოს</string>
+  <string name="base_no_video_ads_available">ვიდეო რეკლამები არ არის ხელმისაწვდომი</string>
+  <string name="all_ok">კარგი</string>
+  <string name="base_loading_ads">რეკლამის ჩატვირთვა…</string>
+  <string name="base_please_wait">გთხოვთ, ერთი წუთით მოიცადოთ.</string>
+  <string name="base_ad_load_failed">რეკლამის ჩატვირთვა ვერ მოხერხდა. გთხოვთ, სცადოთ მოგვიანებით.</string>
+</resources>
