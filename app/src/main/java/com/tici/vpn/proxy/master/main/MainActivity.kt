@@ -1,8 +1,11 @@
 package com.tici.vpn.proxy.master.main
 
 import android.annotation.SuppressLint
+import android.app.ComponentCaller
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
@@ -115,7 +118,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         requestAdvertisingIdPermission()
         val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
 //<<<<<<< HEAD
-//        val reconnect = intent.getStringExtra("state")
+        val reconnect = intent.getStringExtra("state")
+        Log.i("SuperVpn", "state $reconnect")
 //        if (reconnect != null && reconnect == "POPUP") {
 ////            SettingSuccessDialog(
 ////                R.string.setting_choose_proxy, R.string.home_reconnect_to_take_effect
@@ -336,7 +340,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         }
     }
 
-//<<<<<<< HEAD
+    //<<<<<<< HEAD
 //    private fun showAppProxy() {
 //=======
     fun showAppProxy() {
@@ -347,7 +351,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         mAppProxyFragment.clearUI()
     }
 
-//<<<<<<< HEAD
+    //<<<<<<< HEAD
 //    private fun showDns() {
 //=======
     fun showDns() {
@@ -358,7 +362,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         showFragment(mDnsFragment)
     }
 
-//<<<<<<< HEAD
+    //<<<<<<< HEAD
 //    private fun showConnected(proxy: ProxySpeedTest.ProxyConfig?) {
 //=======
     fun showConnected(proxy: ProxySpeedTest.ProxyConfig?) {
@@ -368,7 +372,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         showFragment(mConnectedFragment)
     }
 
-//<<<<<<< HEAD
+    //<<<<<<< HEAD
 //    private fun showDisconnected(report: ProxyReport) {
 //=======
     fun showDisconnected(report: ProxyReport) {
@@ -378,13 +382,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         showFragment(mDisonnectedFragment)
     }
 
-//<<<<<<< HEAD
+    //<<<<<<< HEAD
 //=======
     fun navigateHome() {
         showFragment(mHomeFragment)
     }
 
-//>>>>>>> feature/08092025_update_core_base
+    //>>>>>>> feature/08092025_update_core_base
     private fun selectAll() {
         mAppProxyFragment.checkUncheckAll()
     }

@@ -10,6 +10,7 @@ import android.net.VpnService
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -108,6 +109,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             if (result.resultCode == Activity.RESULT_OK) {
                 startVpnService()
             } else {
+                isShowReport = true
                 DialogVpnPermission().show(
                     requireActivity().supportFragmentManager, "DialogVpnPermission"
                 )
@@ -182,7 +184,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 binding.ivConnectPanel.isSelected = false
                 binding.ivConnectPanel.isEnabled = true
                 binding.lnConnected.invisible()
-//                Log.i("SuperVpn", "TestRelease isConnected false from DISCONNECTED")
+                Log.i("SuperVpn", "$state")
                 isConnected = false
                 if (state == "CONNECT") {
                     state = ""
@@ -308,7 +310,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 //        super.initView()
 //        state = activity?.intent?.getStringExtra("state")
     override fun initViews(savedInstanceState: Bundle?) {
-        state = activity?.intent?.getStringExtra("RECONNECT")
+        state = activity?.intent?.getStringExtra("state")
+        Log.i("SuperVpn","startMainActivity with state $state")
 
         val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
         with(binding) {
