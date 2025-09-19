@@ -186,12 +186,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 binding.lnConnected.invisible()
                 Log.i("SuperVpn", "$state")
                 isConnected = false
-                if (state == "CONNECT") {
-                    state = ""
-                    prepareVpn()
-                    handler.post(speedTestRunnable)
-                    handler.post(updateRunnable)
-                }
                 if (!isShowReport) {
                     isShowReport = true
                     val start = context?.getSharedPreferences(
@@ -202,6 +196,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 //                    if (isShowDisconnect) {
                     onShowDisconnected(report)
 //                    }
+                }
+                if (state == "CONNECT") {
+                    isShowReport = false
+                    state = ""
+                    prepareVpn()
+                    handler.post(speedTestRunnable)
+                    handler.post(updateRunnable)
                 }
             }
 
