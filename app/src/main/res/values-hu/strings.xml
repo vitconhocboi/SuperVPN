@@ -15,6 +15,8 @@
   <string name="setting_trial">3 napos ingyenes próbaidőszak</string>
   <string name="setting_upgrade">Frissítés</string>
   <string name="ip_proxy">Szerverek</string>
+  <string name="ip_quick_access">Gyors hozzáférés</string>
+  <string name="ip_all">MINDEN</string>
   <string name="setting_app_proxy">Alkalmazásszűrő</string>
   <string name="setting_app_proxy_desc">Válassza ki, hogy mely alkalmazások csatlakozhatnak az internethez VPN-en keresztül</string>
   <string name="setting_ads_block">Hirdetésblokkoló</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Csatlakozási terület kiválasztása</string>
   <string name="first_fragment_label">Első töredék</string>
   <string name="second_fragment_label">Második töredék</string>
+  <string name="start">INDUL</string>
   <string name="next">következő</string>
   <string name="previous">Előző</string>
   <string name="vn">Việt Nam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">rendben</string>
   <string name="common_ok">rendben</string>
   <string name="btn_save">megment</string>
+  <string name="btn_connect">Csatlakozás</string>
   <string name="btn_cancel">megszünteti</string>
+  <string name="btn_exit">Kijárat</string>
   <string name="btn_reset">Visszaállítás</string>
   <string name="auto">Auto</string>
   <string name="min_60">60 perc</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">VPN kiválasztása</string>
   <string name="dns_only">Csak DNS</string>
   <string name="confirm_dns">VPN nem aktív</string>
-  <string name="confirm_dns_msg">Jelenleg csak DNS-t használ. Biztonságosabb és privátabb kapcsolat érdekében válasszon VPN-kiszolgálót.</string>
+  <string name="confirm_dns_msg">Nincs VPN-kiszolgáló kiválasztva. Kérjük, válasszon egy VPN-kiszolgálót.</string>
   <string name="btn_agree">Egyetért</string>
   <string name="confirm_collect">Az Ön adatainak védelme, az Ön irányítása</string>
   <string name="confirm_accept_msg">Az előfizetésed befejezéséhez ez az alkalmazás begyűjti a hirdetési azonosítódat a regisztráció ellenőrzése, a szolgáltatás minőségének javítása és a csalárd tevékenységek megelőzése érdekében. Elfogadod ezt az adatgyűjtést?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Kérjük, adjon meg további részleteket, hogy gyorsabban azonosíthassuk és megoldhassuk a problémát (legalább 6 karakter)</string>
   <string name="text_thanks_feedback">Köszönjük visszajelzését</string>
   <string name="text_feedback_content">Ezt a problémát egy későbbi verzióban megoldjuk. Elnézést a kellemetlenségért.</string>
+  <string name="no_available_vpn">Nincs elérhető ingyenes vpn, kérjük, lépjen a VPN képernyőre, és válasszon egy szervert.</string>
   <string name="msg_device_does_not_support_this_feature">Ez a funkció nem támogatott ezen az eszközön!</string>
   <string name="search_app">kereső alkalmazás..</string>
+  <string name="exit_app">Kilépés az alkalmazásból?</string>
+  <string name="exit_app_msg">Biztosan kilépsz?</string>
   <string name="free">Ingyenes</string>
   <string name="premium">Prémium</string>
+  <string name="unlock_premium">VPN Prémium feloldása</string>
+  <string name="get_premium">Szerezzen prémiumot</string>
+  <string name="watch_ads">Reklámok megtekintése a kapcsolatfelvételhez</string>
+  <string name="guide_1">Csak egy érintés a csatlakozáshoz.</string>
+  <string name="guide_2">Több VPN-kiszolgáló különböző országokban</string>
+  <string name="guide_3">Védje online adatvédelmét</string>
+  <string name="what_is_my_ip">Mi az ip címem?</string>
+  <string name="ip_address">IP-cím</string>
+  <string name="network_provider">Hálózati szolgáltató</string>
+  <string name="location">Elhelyezkedés</string>
+  <string name="pincode">PIN kód</string>
+  <string name="timezone">Időzóna</string>
+  <string name="duration">Időtartam</string>
+  <string name="connect_success">Összefüggő siker</string>
+  <string name="connect_report">Jelentés összekapcsolása</string>
+  <string name="disconnect">Leválasztás</string>
+  <string name="no_internet">Nincs internetkapcsolat</string>
+  <string name="network_error">Nincs internetkapcsolat</string>
 </resources>

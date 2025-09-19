@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">ຂໍ​ຂອບ​ໃຈ​ທ່ານ​ສໍາ​ລັບ​ການ​ທົບ​ທວນ​ຄືນ​ຂອງ​ທ່ານ​, ແລະ​ກະ​ລຸ​ນາ​ໃຫ້​ພວກ​ເຮົາ​ມີ​ຄໍາ​ຄຶດ​ຄໍາ​ເຫັນ​ບາງ​.</string>
+  <string name="fb_rate_us_good">ຂອບໃຈຫຼາຍໆສຳລັບການທົບທວນຄືນຂອງເຈົ້າ!</string>
+  <string name="fb_rate_us_default">ຖ້າທ່ານໃຫ້ຄະແນນພວກເຮົາ, ພວກເຮົາຂໍຂອບໃຈເປັນຢ່າງຍິ່ງ ແລະຈະສືບຕໍ່ເຮັດວຽກຢ່າງໜັກເພື່ອໃຫ້ປະສົບການທີ່ດີກວ່າແກ່ເຈົ້າ.</string>
+  <string name="fb_feedback_title">ກະລຸນາແຈ້ງໃຫ້ພວກເຮົາຮູ້ກ່ຽວກັບບັນຫາຕ່າງໆທີ່ທ່ານພົບ.</string>
+  <string name="fb_feedback_crash">ອຸປະຕິເຫດ</string>
+  <string name="fb_feedback_feature_quality">ຄຸນ​ນະ​ສົມ​ບັດ​ຄຸນ​ນະ​ສົມ​ບັດ​</string>
+  <string name="fb_feedback_bug">ບັກ</string>
+  <string name="fb_feedback_other">ອື່ນໆ</string>
+  <string name="fb_send">ສົ່ງ</string>
+  <string name="fb_hint_feedback">ກະລຸນາໃຫ້ລາຍລະອຽດເພີ່ມເຕີມເພື່ອຊ່ວຍໃຫ້ພວກເຮົາລະບຸ ແລະແກ້ໄຂບັນຫາຂອງທ່ານໄດ້ໄວຂຶ້ນ (ຢ່າງໜ້ອຍ 6 ຕົວອັກສອນ).</string>
+  <string name="fb_text_feedback_to">ຄໍາຕິຊົມ</string>
+  <string name="fb_best_rate">ຄະແນນສູງສຸດທີ່ພວກເຮົາສາມາດບັນລຸ :)</string>
+  <string name="fb_share_with">ແບ່ງປັນກັບ</string>
+  <string name="fb_feedback_rate">ໃຫ້ຄະແນນດຽວນີ້</string>
+  <string name="fb_rate_on_google_play">ການທົບທວນຄືນໃນ Google Play</string>
+  <string name="fb_thank_for_feedback">ຂໍ​ຂອບ​ໃຈ​ທ່ານ​ສໍາ​ລັບ​ຄໍາ​ຄຶດ​ຄໍາ​ເຫັນ​ຂອງ​ທ່ານ​</string>
+  <string name="fb_sorry_customer">ພວກເຮົາຈະແກ້ໄຂບັນຫານີ້ໃນສະບັບໃນອະນາຄົດ. ຂໍອະໄພໃນຄວາມບໍ່ສະດວກ</string>
+  <string name="fb_common_unable_find_market">ບໍ່ສາມາດຊອກຫາແອັບໃນ Google Play ໄດ້</string>
+  <string name="fb_thanks">ຕົກ​ລົງ</string>
+</resources>

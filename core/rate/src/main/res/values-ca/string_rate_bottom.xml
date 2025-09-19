@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">La millor puntuació per a nosaltres</string>
+  <string name="fb_rate_bottom_default">Estem treballant dur per oferir una millor experiència d\'usuari. Agraïm la teva ressenya.</string>
+  <string name="fb_rate_bottom_bad">Oh no!</string>
+  <string name="fb_rate_bottom_good">Nosaltres també t\'estimem!</string>
+  <string name="fb_rate_bottom_mess_bad">Si us plau, deixeu-nos alguns comentaris</string>
+  <string name="fb_rate_bottom_mess_good">Gràcies pels teus comentaris</string>
+  <string name="fb_rate">Taxa</string>
+</resources>

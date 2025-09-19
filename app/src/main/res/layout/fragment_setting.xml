@@ -19,79 +19,134 @@
             android:layout_height="wrap_content">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/premium"
+                android:id="@+id/bgClVipMember"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_16"
-                android:background="@drawable/bg_setting_description"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginHorizontal="@dimen/_10dp"
+                android:layout_marginTop="@dimen/_20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tv_pro"
-                    android:layout_width="0dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/bgClNoneVipMember"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_16"
-                    android:layout_marginTop="@dimen/margin_20"
-                    android:layout_marginEnd="@dimen/margin_16"
-                    android:drawableEnd="@drawable/ic_setting_pro"
-                    android:drawablePadding="@dimen/margin_medium"
-                    android:ellipsize="end"
-                    android:fontFamily="@font/inter_bold"
-                    android:maxLines="1"
-                    android:text="@string/setting_vpn_fast_and_safe"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/bg_header_setting_vip"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearanceOverlay="@style/rounded_corner" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_pro"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_16"
+                        android:layout_marginTop="@dimen/margin_20"
+                        android:layout_marginEnd="@dimen/margin_16"
+                        android:drawableEnd="@drawable/ic_setting_pro"
+                        android:drawablePadding="@dimen/margin_medium"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/inter_bold"
+                        android:maxLines="1"
+                        android:text="@string/setting_vpn_fast_and_safe"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_pro_desc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_16"
+                        android:layout_marginTop="@dimen/margin_big"
+                        android:ellipsize="middle"
+                        android:fontFamily="@font/inter_normal"
+                        android:maxLines="2"
+                        android:text="@string/setting_vpn_fast_and_safe_desc"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_pro" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/btn_pro"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size42"
+                        android:layout_marginHorizontal="@dimen/margin_16"
+                        android:layout_marginTop="@dimen/margin_20"
+                        android:layout_marginBottom="@dimen/margin_20"
+                        android:background="@drawable/bg_3_day_trial"
+                        android:ellipsize="middle"
+                        android:gravity="center"
+                        android:text="@string/setting_upgrade"
+                        android:textColor="@color/gray_1"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/tv_pro_desc"
+                        app:layout_constraintTop_toBottomOf="@id/tv_pro_desc" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/bgClIsVipMember"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_setting_items"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvIsVipMember"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_16dp"
+                        android:drawablePadding="@dimen/_12dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@string/tv_vip_member"
+                        android:textColor="@color/white"
+                        app:drawableStartCompat="@drawable/ic_setting_top_vip"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/img_pro_setting"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/viewClickBgClVip"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="?attr/selectableItemBackground"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
-
-                <!--            <androidx.appcompat.widget.AppCompatImageView-->
-                <!--                android:id="@+id/ic_pro"-->
-                <!--                android:layout_width="@dimen/size55"-->
-                <!--                android:layout_height="@dimen/size22"-->
-                <!--                android:layout_marginStart="@dimen/margin_12"-->
-                <!--                android:src="@drawable/ic_setting_pro"-->
-                <!--                app:layout_constraintBottom_toBottomOf="@+id/tv_pro"-->
-                <!--                app:layout_constraintStart_toEndOf="@+id/tv_pro"-->
-                <!--                app:layout_constraintEnd_toEndOf="parent"-->
-                <!--                app:layout_constraintTop_toTopOf="@+id/tv_pro" />-->
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tv_pro_desc"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/margin_16"
-                    android:layout_marginTop="@dimen/margin_big"
-                    android:ellipsize="middle"
-                    android:fontFamily="@font/inter_normal"
-                    android:maxLines="2"
-                    android:text="@string/setting_vpn_fast_and_safe_desc"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_pro" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/btn_pro"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/size42"
-                    android:layout_marginHorizontal="@dimen/margin_16"
-                    android:layout_marginTop="@dimen/margin_20"
-                    android:layout_marginBottom="@dimen/margin_20"
-                    android:background="@drawable/bg_3_day_trial"
-                    android:ellipsize="middle"
-                    android:gravity="center"
-                    android:text="@string/setting_upgrade"
-                    android:textColor="@color/gray_1"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="@id/tv_pro_desc"
-                    app:layout_constraintTop_toBottomOf="@id/tv_pro_desc" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -106,7 +161,7 @@
                 android:foreground="?selectableItemBackgroundBorderless"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/premium">
+                app:layout_constraintTop_toBottomOf="@+id/bgClVipMember">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tv_app_proxy"
@@ -315,6 +370,49 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/rowRestore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="@dimen/margin_12"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:background="@drawable/bg_setting_items"
+                android:foreground="?selectableItemBackgroundBorderless"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/row_language"
+                app:layout_goneMarginTop="@dimen/margin_big">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvRestore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/size18"
+                    android:layout_marginBottom="@dimen/margin_16"
+                    android:drawableStart="@drawable/ic_restore_purchase"
+                    android:drawablePadding="@dimen/margin_16"
+                    android:ellipsize="middle"
+                    android:text="@string/tv_restore_purchase"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btn_restore_action"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="@dimen/margin_16"
+                    android:padding="@dimen/margin_small"
+                    android:src="@drawable/ic_setting_right_arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/row_rate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -325,7 +423,7 @@
                 android:foreground="?selectableItemBackgroundBorderless"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/row_language"
+                app:layout_constraintTop_toBottomOf="@+id/rowRestore"
                 app:layout_goneMarginTop="@dimen/margin_big">
 
                 <com.google.android.material.textview.MaterialTextView

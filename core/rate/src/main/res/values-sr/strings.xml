@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Хвала вам на прегледу и пошаљите нам повратне информације.</string>
+  <string name="fb_rate_us_good">Хвала вам пуно на вашој рецензији!</string>
+  <string name="fb_rate_us_default">Ако нас оцените, били бисмо вам веома захвални и наставићемо напорно да радимо како бисмо вам пружили боље искуство.</string>
+  <string name="fb_feedback_title">Обавестите нас о свим проблемима на које сте наишли.</string>
+  <string name="fb_feedback_crash">Црасх</string>
+  <string name="fb_feedback_feature_quality">Квалитет карактеристика</string>
+  <string name="fb_feedback_bug">Буг</string>
+  <string name="fb_feedback_other">Остало</string>
+  <string name="fb_send">Пошаљи</string>
+  <string name="fb_hint_feedback">Наведите додатне детаље како бисте нам помогли да брже идентификујемо и решимо ваш проблем (најмање 6 знакова).</string>
+  <string name="fb_text_feedback_to">Повратне информације</string>
+  <string name="fb_best_rate">Највиша оцена коју можемо да постигнемо :)</string>
+  <string name="fb_share_with">Подели са</string>
+  <string name="fb_feedback_rate">Рате Нов</string>
+  <string name="fb_rate_on_google_play">Рецензије на Гоогле Плаи-у</string>
+  <string name="fb_thank_for_feedback">Хвала вам на повратним информацијама</string>
+  <string name="fb_sorry_customer">Позабавићемо се овим проблемом у будућој верзији. Извините због непријатности</string>
+  <string name="fb_common_unable_find_market">Није могуће пронаћи апликацију на Гоогле Плаи-у</string>
+  <string name="fb_thanks">У реду</string>
+</resources>

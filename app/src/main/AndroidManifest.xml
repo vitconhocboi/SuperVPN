@@ -91,9 +91,11 @@
 
         <activity
             android:name="com.tici.vpn.proxy.master.main.MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true" />
         <activity
             android:name="com.tici.vpn.proxy.master.premium.PremiumActivity"
+            android:screenOrientation="portrait"
             android:exported="true" />
 
     </application>

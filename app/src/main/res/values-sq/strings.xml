@@ -15,6 +15,8 @@
   <string name="setting_trial">Provë falas 3 ditë</string>
   <string name="setting_upgrade">Përmirëso</string>
   <string name="ip_proxy">Serverat</string>
+  <string name="ip_quick_access">Qasje e shpejtë</string>
+  <string name="ip_all">TE GJITHA</string>
   <string name="setting_app_proxy">Filtri i Aplikacionit</string>
   <string name="setting_app_proxy_desc">Zgjidhni cilat aplikacione do të lidhen me internetin përmes VPN-së</string>
   <string name="setting_ads_block">Bllokimi i reklamave</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Zgjidhni zonën e lidhjes</string>
   <string name="first_fragment_label">Fragmenti i Parë</string>
   <string name="second_fragment_label">Fragmenti i Dytë</string>
+  <string name="start">FILLO</string>
   <string name="next">tjetër</string>
   <string name="previous">Mëparshme</string>
   <string name="vn">Việt Nam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">Ne rregull</string>
   <string name="common_ok">Ne rregull</string>
   <string name="btn_save">kurseni</string>
+  <string name="btn_connect">Lidhu</string>
   <string name="btn_cancel">anuloni</string>
+  <string name="btn_exit">Dilni</string>
   <string name="btn_reset">Rivendos</string>
   <string name="auto">Auto</string>
   <string name="min_60">60 minuta</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">Zgjidh VPN-në</string>
   <string name="dns_only">Vetëm DNS</string>
   <string name="confirm_dns">VPN jo aktive</string>
-  <string name="confirm_dns_msg">Aktualisht po përdorni vetëm DNS. Për një lidhje më të sigurt dhe private, zgjidhni një server VPN.</string>
+  <string name="confirm_dns_msg">Nuk është zgjedhur asnjë server VPN. Ju lutemi zgjidhni një server VPN.</string>
   <string name="btn_agree">Pajtohem</string>
   <string name="confirm_collect">Privatësia juaj, Kontrolli juaj</string>
   <string name="confirm_accept_msg">Për të përfunduar abonimin tuaj, ky aplikacion mbledh ID-në tuaj të reklamimit për të verifikuar regjistrimin, për të përmirësuar cilësinë e shërbimit dhe për të parandaluar aktivitetin mashtrues. A jeni dakord me këtë mbledhje të të dhënave?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Ju lutemi, na jepni më shumë detaje që të mund ta identifikojmë dhe zgjidhim problemin tuaj më shpejt (të paktën 6 karaktere)</string>
   <string name="text_thanks_feedback">Faleminderit për komentet tuaja</string>
   <string name="text_feedback_content">Ne do ta rregullojmë këtë problem në një version të ardhshëm. Na vjen keq për shqetësimin.</string>
+  <string name="no_available_vpn">Nuk ka asnjë VPN falas në dispozicion, ju lutemi shkoni te ekrani VPN dhe zgjidhni një server.</string>
   <string name="msg_device_does_not_support_this_feature">Kjo veçori nuk mbështetet për këtë pajisje!</string>
   <string name="search_app">aplikacioni i kërkimit..</string>
+  <string name="exit_app">Të dalësh nga aplikacioni?</string>
+  <string name="exit_app_msg">Je i sigurt që do të dalësh?</string>
   <string name="free">Falas</string>
   <string name="premium">Premium</string>
+  <string name="unlock_premium">Zhbllokoni VPN Premium</string>
+  <string name="get_premium">Merrni premium</string>
+  <string name="watch_ads">Shikoni reklamat për t\'u lidhur</string>
+  <string name="guide_1">Vetëm një prekje për t\'u lidhur.</string>
+  <string name="guide_2">Servera të shumtë VPN në vende të ndryshme</string>
+  <string name="guide_3">Mbroni privatësinë tuaj në internet</string>
+  <string name="what_is_my_ip">Cila është IP-ja ime?</string>
+  <string name="ip_address">Adresa IP</string>
+  <string name="network_provider">Ofruesi i rrjetit</string>
+  <string name="location">Vendndodhja</string>
+  <string name="pincode">Kodi PIN</string>
+  <string name="timezone">Zona kohore</string>
+  <string name="duration">Kohëzgjatja</string>
+  <string name="connect_success">Suksesi i lidhur</string>
+  <string name="connect_report">Raporti i lidhjes</string>
+  <string name="disconnect">Shkëputu</string>
+  <string name="no_internet">Nuk ka lidhje interneti</string>
+  <string name="network_error">Nuk ka lidhje interneti</string>
 </resources>

@@ -15,6 +15,8 @@
   <string name="setting_trial">Тегін сынақ нұсқасы 3 күн</string>
   <string name="setting_upgrade">Жаңарту</string>
   <string name="ip_proxy">Серверлер</string>
+  <string name="ip_quick_access">Жылдам қол жеткізу</string>
+  <string name="ip_all">БАРЛЫҒЫ</string>
   <string name="setting_app_proxy">Қолданба сүзгісі</string>
   <string name="setting_app_proxy_desc">VPN арқылы Интернетке қосылатын қолданбаларды таңдаңыз</string>
   <string name="setting_ads_block">Жарнамаларды блоктау</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Қосылым аймағын таңдаңыз</string>
   <string name="first_fragment_label">Бірінші фрагмент</string>
   <string name="second_fragment_label">Екінші фрагмент</string>
+  <string name="start">БАСТАУ</string>
   <string name="next">келесі</string>
   <string name="previous">Алдыңғы</string>
   <string name="vn">Винт Нам</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">Жарайды ма</string>
   <string name="common_ok">Жарайды ма</string>
   <string name="btn_save">сақтау</string>
+  <string name="btn_connect">Қосылу</string>
   <string name="btn_cancel">бас тарту</string>
+  <string name="btn_exit">Шығу</string>
   <string name="btn_reset">Қалпына келтіру</string>
   <string name="auto">Авто</string>
   <string name="min_60">60 минут</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">VPN таңдаңыз</string>
   <string name="dns_only">Тек DNS</string>
   <string name="confirm_dns">VPN белсенді емес</string>
-  <string name="confirm_dns_msg">Сіз қазір тек DNS пайдаланудасыз. Қауіпсіз және жеке қосылым үшін VPN серверін таңдаңыз.</string>
+  <string name="confirm_dns_msg">Ешбір VPN сервері таңдалмаған. VPN серверін таңдаңыз.</string>
   <string name="btn_agree">Келісемін</string>
   <string name="confirm_collect">Сіздің жеке өміріңіз, сіздің бақылауыңыз</string>
   <string name="confirm_accept_msg">Жазылымыңызды аяқтау үшін бұл қолданба тіркеуді растау, қызмет сапасын жақсарту және алаяқтық әрекеттердің алдын алу үшін сіздің Жарнама идентификаторыңызды жинайды. Сіз бұл деректер жинаумен келісесіз бе?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Мәселеңізді тезірек анықтау және шешу үшін бізге толығырақ мәлімет беріңіз (кемінде 6 таңба)</string>
   <string name="text_thanks_feedback">Пікіріңізге рахмет</string>
   <string name="text_feedback_content">Біз бұл мәселені болашақ нұсқада түзетеміз. Қолайсыздық үшін кешіріңіз.</string>
+  <string name="no_available_vpn">Қолжетімді тегін VPN жоқ, VPN экранына өтіп, серверді таңдаңыз.</string>
   <string name="msg_device_does_not_support_this_feature">Бұл құрылғы үшін бұл мүмкіндікке қолдау көрсетілмейді!</string>
   <string name="search_app">іздеу қолданбасы..</string>
+  <string name="exit_app">Қолданбадан шығу керек пе?</string>
+  <string name="exit_app_msg">Шығыңызға сенімдісіз бе?</string>
   <string name="free">Тегін</string>
   <string name="premium">Премиум</string>
+  <string name="unlock_premium">VPN Premium құлпын ашыңыз</string>
+  <string name="get_premium">Премиум алыңыз</string>
+  <string name="watch_ads">Қосылу үшін жарнамаларды қараңыз</string>
+  <string name="guide_1">Қосылу үшін бір рет түрту.</string>
+  <string name="guide_2">Әртүрлі елдердегі бірнеше VPN серверлері</string>
+  <string name="guide_3">Интернеттегі құпиялылығыңызды қорғаңыз</string>
+  <string name="what_is_my_ip">Менің IP деген не?</string>
+  <string name="ip_address">IP мекенжайы</string>
+  <string name="network_provider">Желі провайдері</string>
+  <string name="location">Орналасқан жері</string>
+  <string name="pincode">PIN коды</string>
+  <string name="timezone">Уақыт белдеуі</string>
+  <string name="duration">Ұзақтығы</string>
+  <string name="connect_success">Байланысты табыс</string>
+  <string name="connect_report">Есепті қосу</string>
+  <string name="disconnect">Ажырату</string>
+  <string name="no_internet">Интернет қосылымы жоқ</string>
+  <string name="network_error">Интернет қосылымы жоқ</string>
 </resources>

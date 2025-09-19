@@ -1,6 +1,7 @@
 package com.core.ads.customviews.ads
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.drawable.GradientDrawable
 import android.util.AttributeSet
 import android.util.TypedValue
@@ -129,8 +130,8 @@ class NativeSmallTemplateView @JvmOverloads constructor(
             binding.primary.textSize = primaryTextSize
         }
 
-        styles.callToActionBackgroundColor?.let {
-            binding.layoutCta.updateBackgroundColor(it)
+         styles.callToActionBackgroundColor?.let {
+             binding.layoutCta.updateBackgroundColor(it)
         }
 
 
@@ -139,11 +140,7 @@ class NativeSmallTemplateView @JvmOverloads constructor(
         }
 
         styles.borderColor?.let {
-            (binding.nativeAdView.background as GradientDrawable).setStroke(
-                resources.getDimensionPixelSize(
-                    R.dimen._1dp
-                ), it.toColorInt()
-            )
+            (binding.nativeAdView.background as GradientDrawable).setStroke(resources.getDimensionPixelSize(R.dimen._1dp), it.toColorInt())
         }
 
         styles.backgroundColor?.let {

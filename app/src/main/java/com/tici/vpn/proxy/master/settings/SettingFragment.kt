@@ -6,13 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import com.common.baseui.BaseAppConfig
 import com.common.baseui.extension.setOnClickNoDoubleClick
 import com.core.ads.domain.AdLoadBannerNativeUiResource
+import com.core.baseui.BillingViewModel
 import com.core.baseui.fragment.BaseFragment
 import com.core.baseui.fragment.ScreenType
+import com.core.baseui.fragment.collectFlowOn
 import com.core.config.domain.data.IAdPlaceName
+import com.core.utilities.setOnSingleClick
+import com.core.utilities.toast
+import com.core.utilities.util.toast.Toasty
 import com.tici.vpn.proxy.master.R
 import com.tici.vpn.proxy.master.databinding.FragmentSettingBinding
 import com.tici.vpn.proxy.master.dialog.DialogFeedback
@@ -20,8 +26,8 @@ import com.tici.vpn.proxy.master.dialog.DialogRate
 import com.tici.vpn.proxy.master.dialog.SettingSuccessDialog
 import com.tici.vpn.proxy.master.main.MainActivity
 import com.tici.vpn.proxy.master.main.MainViewModel
-import com.tici.vpn.proxy.master.main.SharedData
 import com.tici.vpn.proxy.master.required.ads.AppAdPlaceName
+import com.tici.vpn.proxy.master.required.inapp.InAppBillingViewModel
 import com.tici.vpn.proxy.master.required.shortcut.AppScreenType
 import com.tici.vpn.proxy.master.utils.Navigator
 import com.tici.vpn.proxy.master.utils.shareApp
@@ -29,10 +35,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SettingFragment() : BaseFragment<FragmentSettingBinding>() {
-
-    private val mViewModel: SettingViewModel by viewModels()
-    private val mainViewModel: MainViewModel by viewModels()
-
+    private val inAppPurchasedViewModel: BillingViewModel by viewModels<InAppBillingViewModel>()
 
     override fun bindingProvider(
         inflater: LayoutInflater, container: ViewGroup?
@@ -60,10 +63,7 @@ class SettingFragment() : BaseFragment<FragmentSettingBinding>() {
         val bitmap = BitmapFactory.decodeResource(resources, R.drawable.ic_setting_pro_bg)
         val roundedDrawable = RoundedBitmapDrawableFactory.create(resources, bitmap)
         roundedDrawable.cornerRadius = 20f  // Adjust your radius
-
-//        mViewModel.loadingApps.observe(viewLifecycleOwner) {
-//            binding.progress.visibility = if (it) View.VISIBLE else View.GONE
-//        }
+        initEvent()
 
         val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
 
@@ -77,12 +77,6 @@ class SettingFragment() : BaseFragment<FragmentSettingBinding>() {
             btnFeedbackAction.scaleX = if (isRTL) -1f else 1f
             btnAdsAction.scaleX = if (isRTL) -1f else 1f
 
-            if (mainViewModel.isSub()) {
-                premium.visibility = View.GONE
-            } else {
-                premium.background = roundedDrawable
-            }
-
             rowAppProxy.setOnClickListener {
                 fetchInstalledApps()
             }
@@ -92,6 +86,10 @@ class SettingFragment() : BaseFragment<FragmentSettingBinding>() {
 
             btnPro.setOnClickListener {
                 Navigator.startPremiumActivity(requireContext())
+            }
+
+            rowRestore.setOnSingleClick {
+                inAppPurchasedViewModel.restorePurchased(false, true)
             }
 
             rowAdsBlock.setOnClickListener {
@@ -129,12 +127,60 @@ class SettingFragment() : BaseFragment<FragmentSettingBinding>() {
                 DialogFeedback().show(childFragmentManager, "DialogFeedback")
             }
 
-            SharedData.isSub.observe(requireActivity()) {
-                if (mainViewModel.isSub()) {
-                    premium.visibility = View.GONE
+        }
+    }
+
+    override fun handleObservable() {
+        collectFlowOn(inAppPurchasedViewModel.restorePurchaseState) {
+            it?.let {
+                if (purchasePreferences.isUserVip()) {
+                    Toasty.success(requireContext(), this.getString(R.string.text_restore_member))
+                        .show()
                 } else {
-                    premium.background = roundedDrawable
+                    Toasty.normal(
+                        requireContext(),
+                        this.getString(R.string.text_restore_member_failed)
+                    ).show()
                 }
+                updateViewVip()
+            }
+        }
+
+        collectFlowOn(inAppPurchasedViewModel.vipState) {
+            updateViewVip()
+        }
+    }
+
+    private fun initEvent() {
+        binding.viewClickBgClVip.setOnSingleClick {
+            if (purchasePreferences.isProByYear) {
+                toast(
+                    String.format(
+                        "%s %s!",
+                        getString(R.string.text_congrats_to_join),
+                        getString(R.string.text_name_pro),
+                    ), Toasty.INFO
+                )
+            } else {
+                Navigator.startPremiumActivity(requireContext())
+            }
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        updateViewVip()
+    }
+
+
+    fun updateViewVip() {
+        if (isAdded && view != null) {
+            if (purchasePreferences.isUserVip()) {
+                binding.bgClIsVipMember.isVisible = true
+                binding.bgClNoneVipMember.isVisible = false
+            } else {
+                binding.bgClIsVipMember.isVisible = false
+                binding.bgClNoneVipMember.isVisible = true
             }
         }
     }

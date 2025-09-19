@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">Naoty tsara indrindra ho antsika</string>
+  <string name="fb_rate_bottom_default">Miasa mafy izahay mba hanomezana traikefa mpampiasa tsara kokoa. Mankasitraka ny hevitrao izahay.</string>
+  <string name="fb_rate_bottom_bad">Oh Tsia!</string>
+  <string name="fb_rate_bottom_good">Tianay koa ianao!</string>
+  <string name="fb_rate_bottom_mess_bad">Azafady mametraha hevitra ho anay</string>
+  <string name="fb_rate_bottom_mess_good">Misaotra amin\'ny hevitrao</string>
+  <string name="fb_rate">taha</string>
+</resources>

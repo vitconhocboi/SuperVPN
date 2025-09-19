@@ -15,6 +15,8 @@
   <string name="setting_trial">ነጻ ሙከራ 3 ቀናት</string>
   <string name="setting_upgrade">አሻሽል።</string>
   <string name="ip_proxy">አገልጋዮች</string>
+  <string name="ip_quick_access">ፈጣን መዳረሻ</string>
+  <string name="ip_all">ሁሉም</string>
   <string name="setting_app_proxy">የመተግበሪያ ማጣሪያ</string>
   <string name="setting_app_proxy_desc">የትኞቹ መተግበሪያዎች በ VPN በኩል ከበይነመረቡ ጋር እንደሚገናኙ ይምረጡ</string>
   <string name="setting_ads_block">ማስታወቂያዎች አግድ</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">የግንኙነት ቦታ ይምረጡ</string>
   <string name="first_fragment_label">የመጀመሪያ ክፍልፋይ</string>
   <string name="second_fragment_label">ሁለተኛ ክፍልፋይ</string>
+  <string name="start">ጀምር</string>
   <string name="next">ቀጥሎ</string>
   <string name="previous">ቀዳሚ</string>
   <string name="vn">ቪትናም</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">እሺ</string>
   <string name="common_ok">እሺ</string>
   <string name="btn_save">ማስቀመጥ</string>
+  <string name="btn_connect">ተገናኝ</string>
   <string name="btn_cancel">መሰረዝ</string>
+  <string name="btn_exit">ውጣ</string>
   <string name="btn_reset">ዳግም አስጀምር</string>
   <string name="auto">መኪና</string>
   <string name="min_60">60 ደቂቃዎች</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">VPN ን ይምረጡ</string>
   <string name="dns_only">ዲ ኤን ኤስ ብቻ</string>
   <string name="confirm_dns">ቪፒኤን ገቢር አይደለም።</string>
-  <string name="confirm_dns_msg">በአሁኑ ጊዜ ዲኤንኤስ ብቻ እየተጠቀሙ ነው። የበለጠ ደህንነቱ የተጠበቀ እና ግላዊ ግንኙነት ለማግኘት፣ እባክዎ የቪፒኤን አገልጋይ ይምረጡ።</string>
+  <string name="confirm_dns_msg">ምንም የቪፒኤን አገልጋይ አልተመረጠም። እባክዎ የቪፒኤን አገልጋይ ይምረጡ።</string>
   <string name="btn_agree">ተስማማ</string>
   <string name="confirm_collect">የእርስዎ ግላዊነት፣ የእርስዎ ቁጥጥር</string>
   <string name="confirm_accept_msg">ምዝገባዎን ለማጠናቀቅ ይህ መተግበሪያ ምዝገባን ለማረጋገጥ፣ የአገልግሎት ጥራትን ለማሻሻል እና የማጭበርበር ድርጊቶችን ለመከላከል የማስታወቂያ መታወቂያዎን ይሰበስባል። በዚህ መረጃ መሰብሰብ ተስማምተዋል?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">ችግርዎን በፍጥነት ለይተን እንድንፈታ (ቢያንስ 6 ቁምፊዎች) እባክዎን ተጨማሪ ዝርዝሮችን ይስጡን</string>
   <string name="text_thanks_feedback">ለአስተያየትዎ እናመሰግናለን</string>
   <string name="text_feedback_content">ይህንን ጉዳይ በሚቀጥለው ስሪት ውስጥ እናስተካክለዋለን. ለተፈጠረው ችግር ይቅርታ።</string>
+  <string name="no_available_vpn">ነፃ ቪፒኤን የለም፣ እባኮትን ወደ ቪፒኤን ስክሪን ይሂዱ እና አገልጋይ ይምረጡ።</string>
   <string name="msg_device_does_not_support_this_feature">ይህ ባህሪ ለዚህ መሳሪያ አይደገፍም!</string>
   <string name="search_app">መተግበሪያ ፈልግ..</string>
+  <string name="exit_app">ከመተግበሪያ ይውጡ?</string>
+  <string name="exit_app_msg">ለመውጣት እርግጠኛ ነህ?</string>
   <string name="free">ፍርይ</string>
   <string name="premium">ፕሪሚየም</string>
+  <string name="unlock_premium">VPN Premiumን ይክፈቱ</string>
+  <string name="get_premium">ፕሪሚየም ያግኙ</string>
+  <string name="watch_ads">ለመገናኘት ማስታወቂያዎችን ይመልከቱ</string>
+  <string name="guide_1">ለመገናኘት አንድ ንክኪ ብቻ።</string>
+  <string name="guide_2">በተለያዩ አገሮች ውስጥ በርካታ የቪፒኤን አገልጋዮች</string>
+  <string name="guide_3">የመስመር ላይ ግላዊነትዎን ይጠብቁ</string>
+  <string name="what_is_my_ip">የእኔ አይፒ ምንድን ነው?</string>
+  <string name="ip_address">የአይፒ አድራሻ</string>
+  <string name="network_provider">የአውታረ መረብ አቅራቢ</string>
+  <string name="location">አካባቢ</string>
+  <string name="pincode">ፒን ኮድ</string>
+  <string name="timezone">የሰዓት ሰቅ</string>
+  <string name="duration">ቆይታ</string>
+  <string name="connect_success">የተገናኘ ስኬት</string>
+  <string name="connect_report">የግንኙነት ሪፖርት</string>
+  <string name="disconnect">ግንኙነት አቋርጥ</string>
+  <string name="no_internet">የበይነመረብ ግንኙነት የለም።</string>
+  <string name="network_error">የበይነመረብ ግንኙነት የለም።</string>
 </resources>

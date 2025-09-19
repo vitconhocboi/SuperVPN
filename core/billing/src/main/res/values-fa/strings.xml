@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">روز</string>
+  <string name="core_text_inapp_days">روزها</string>
+  <string name="core_text_inapp_weeks">هفته ها</string>
+  <string name="core_text_inapp_month">ماه</string>
+  <string name="core_text_inapp_months">ماه ها</string>
+  <string name="core_text_inapp_year">سال</string>
+  <string name="core_text_inapp_years">سالها</string>
+  <string name="core_auto_renew_after">تمدید خودکار پس از:</string>
+  <string name="core_text_free_trial">آزمایشی رایگان</string>
+</resources>

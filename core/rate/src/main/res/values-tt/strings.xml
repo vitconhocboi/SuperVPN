@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Карап чыкканыгыз өчен рәхмәт, һәм безгә кире кайтыгыз.</string>
+  <string name="fb_rate_us_good">Карап чыкканыгыз өчен бик зур рәхмәт!</string>
+  <string name="fb_rate_us_default">Әгәр дә сез безне бәяләсәгез, без моны бик кадерләр идек һәм сезне яхшырак тәҗрибә белән тәэмин итү өстендә эшләүне дәвам итәрбез.</string>
+  <string name="fb_feedback_title">Зинһар, сез очраткан сораулар турында безгә хәбәр итегез.</string>
+  <string name="fb_feedback_crash">Авария</string>
+  <string name="fb_feedback_feature_quality">Сыйфат сыйфаты</string>
+  <string name="fb_feedback_bug">Хата</string>
+  <string name="fb_feedback_other">Бүтәннәр</string>
+  <string name="fb_send">Sendибәр</string>
+  <string name="fb_hint_feedback">Зинһар, безгә сезнең проблеманы тизрәк ачыкларга һәм чишәргә ярдәм итәр өчен өстәмә мәгълүмат бирегез (минимум 6 символ).</string>
+  <string name="fb_text_feedback_to">Фикер алышу</string>
+  <string name="fb_best_rate">Без ирешә алган иң югары рейтинг :)</string>
+  <string name="fb_share_with">Белән бүлеш</string>
+  <string name="fb_feedback_rate">Хәзер бәяләгез</string>
+  <string name="fb_rate_on_google_play">Google Play\'да күзәтү</string>
+  <string name="fb_thank_for_feedback">Фикерләрегез өчен рәхмәт</string>
+  <string name="fb_sorry_customer">Бу проблеманы без киләчәк версиядә хәл итәрбез. Уңайсызлык өчен гафу итегез</string>
+  <string name="fb_common_unable_find_market">Google Play\'та кушымтаны таба алмый</string>
+  <string name="fb_thanks">Ярар</string>
+</resources>

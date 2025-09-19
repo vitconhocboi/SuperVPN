@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">dagur</string>
+  <string name="core_text_inapp_days">Dagar</string>
+  <string name="core_text_inapp_weeks">Vikur</string>
+  <string name="core_text_inapp_month">Mánuður</string>
+  <string name="core_text_inapp_months">Mánuðir</string>
+  <string name="core_text_inapp_year">Ár</string>
+  <string name="core_text_inapp_years">Ár</string>
+  <string name="core_auto_renew_after">Sjálfvirk endurnýjun eftir:</string>
+  <string name="core_text_free_trial">Ókeypis prufuáskrift</string>
+</resources>

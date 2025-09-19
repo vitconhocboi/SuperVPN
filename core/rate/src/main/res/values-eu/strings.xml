@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Eskerrik asko zure iritziagatik, eta eman iezaguzu iritzia.</string>
+  <string name="fb_rate_us_good">Mila esker zure iritziagatik!</string>
+  <string name="fb_rate_us_default">Baloratuko badiguzu, asko eskertuko genuke eta gogor lanean jarraituko dugu esperientzia hobea izan dezazun.</string>
+  <string name="fb_feedback_title">Mesedez, jakinarazi iezaguzu aurkitu dituzun arazoei buruz.</string>
+  <string name="fb_feedback_crash">Istripua</string>
+  <string name="fb_feedback_feature_quality">Ezaugarrien kalitatea</string>
+  <string name="fb_feedback_bug">Akatsa</string>
+  <string name="fb_feedback_other">Bestela</string>
+  <string name="fb_send">Bidali</string>
+  <string name="fb_hint_feedback">Mesedez, eman xehetasun gehiago zure arazoa azkarrago identifikatzen eta konpontzeko (gutxienez 6 karaktere).</string>
+  <string name="fb_text_feedback_to">Iritzia</string>
+  <string name="fb_best_rate">Lor dezakegun baloraziorik altuena :)</string>
+  <string name="fb_share_with">Partekatu honekin</string>
+  <string name="fb_feedback_rate">Baloratu orain</string>
+  <string name="fb_rate_on_google_play">Iritziak Google Play-n</string>
+  <string name="fb_thank_for_feedback">Eskerrik asko zure iritziagatik</string>
+  <string name="fb_sorry_customer">Arazo hau etorkizuneko bertsio batean jorratuko dugu. Barkatu eragozpenak</string>
+  <string name="fb_common_unable_find_market">Ezin da aurkitu aplikazioa Google Play-n</string>
+  <string name="fb_thanks">Ados</string>
+</resources>

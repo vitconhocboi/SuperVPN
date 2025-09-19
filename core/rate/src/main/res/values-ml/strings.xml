@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">നിങ്ങളുടെ അവലോകനത്തിന് നന്ദി, ദയവായി ഞങ്ങൾക്ക് കുറച്ച് ഫീഡ്‌ബാക്ക് നൽകുക.</string>
+  <string name="fb_rate_us_good">നിങ്ങളുടെ അവലോകനത്തിന് വളരെ നന്ദി!</string>
+  <string name="fb_rate_us_default">നിങ്ങൾ ഞങ്ങളെ റേറ്റ് ചെയ്താൽ, ഞങ്ങൾ അത് വളരെയധികം അഭിനന്ദിക്കുന്നു, നിങ്ങൾക്ക് മികച്ച അനുഭവം നൽകുന്നതിന് ഞങ്ങൾ തുടർന്നും കഠിനമായി പ്രയത്നിക്കും.</string>
+  <string name="fb_feedback_title">നിങ്ങൾക്ക് നേരിട്ട എന്തെങ്കിലും പ്രശ്‌നങ്ങൾ ഉണ്ടെങ്കിൽ ദയവായി ഞങ്ങളെ അറിയിക്കുക.</string>
+  <string name="fb_feedback_crash">ക്രാഷ്</string>
+  <string name="fb_feedback_feature_quality">ഫീച്ചർ നിലവാരം</string>
+  <string name="fb_feedback_bug">ബഗ്</string>
+  <string name="fb_feedback_other">മറ്റുള്ളവ</string>
+  <string name="fb_send">അയക്കുക</string>
+  <string name="fb_hint_feedback">നിങ്ങളുടെ പ്രശ്നം കൂടുതൽ വേഗത്തിൽ തിരിച്ചറിയാനും പരിഹരിക്കാനും ഞങ്ങളെ സഹായിക്കുന്നതിന് കൂടുതൽ വിശദാംശങ്ങൾ നൽകുക (കുറഞ്ഞത് 6 പ്രതീകങ്ങൾ).</string>
+  <string name="fb_text_feedback_to">പ്രതികരണം</string>
+  <string name="fb_best_rate">നമുക്ക് നേടാൻ കഴിയുന്ന ഏറ്റവും ഉയർന്ന റേറ്റിംഗ് :)</string>
+  <string name="fb_share_with">കൂടെ പങ്കിടുക</string>
+  <string name="fb_feedback_rate">ഇപ്പോൾ റേറ്റ് ചെയ്യുക</string>
+  <string name="fb_rate_on_google_play">Google Play-യിലെ അവലോകനങ്ങൾ</string>
+  <string name="fb_thank_for_feedback">നിങ്ങളുടെ ഫീഡ്‌ബാക്കിന് നന്ദി</string>
+  <string name="fb_sorry_customer">ഭാവി പതിപ്പിൽ ഞങ്ങൾ ഈ പ്രശ്നം പരിഹരിക്കും. അസൗകര്യത്തിൽ ക്ഷമചോദിക്കുന്നു</string>
+  <string name="fb_common_unable_find_market">Google Play-യിൽ ആപ്പ് കണ്ടെത്താനായില്ല</string>
+  <string name="fb_thanks">ശരി</string>
+</resources>

@@ -15,6 +15,8 @@
   <string name="setting_trial">Бесплатная пробная версия 3 дня</string>
   <string name="setting_upgrade">Обновление</string>
   <string name="ip_proxy">Серверы</string>
+  <string name="ip_quick_access">Быстрый доступ</string>
+  <string name="ip_all">ВСЕ</string>
   <string name="setting_app_proxy">Фильтр приложений</string>
   <string name="setting_app_proxy_desc">Выберите, какие приложения будут подключаться к Интернету через VPN</string>
   <string name="setting_ads_block">Блокировка рекламы</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Выберите область подключения</string>
   <string name="first_fragment_label">Первый Фрагмент</string>
   <string name="second_fragment_label">Второй Фрагмент</string>
+  <string name="start">НАЧИНАТЬ</string>
   <string name="next">следующий</string>
   <string name="previous">Предыдущий</string>
   <string name="vn">Вьетнам</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">Ok</string>
   <string name="common_ok">Ok</string>
   <string name="btn_save">спасти</string>
+  <string name="btn_connect">Соединять</string>
   <string name="btn_cancel">отменить</string>
+  <string name="btn_exit">Выход</string>
   <string name="btn_reset">Перезагрузить</string>
   <string name="auto">Авто</string>
   <string name="min_60">60 минут</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">Выбрать VPN</string>
   <string name="dns_only">только DNS</string>
   <string name="confirm_dns">VPN не активен</string>
-  <string name="confirm_dns_msg">В настоящее время вы используете только DNS. Для более безопасного и приватного соединения выберите VPN-сервер.</string>
+  <string name="confirm_dns_msg">VPN-сервер не выбран. Выберите VPN-сервер.</string>
   <string name="btn_agree">Соглашаться</string>
   <string name="confirm_collect">Ваша конфиденциальность, ваш контроль</string>
   <string name="confirm_accept_msg">Для завершения подписки это приложение собирает ваш рекламный идентификатор для подтверждения регистрации, повышения качества обслуживания и предотвращения мошенничества. Вы согласны на сбор этих данных?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Пожалуйста, предоставьте нам более подробную информацию, чтобы мы могли быстрее определить и решить вашу проблему (не менее 6 символов)</string>
   <string name="text_thanks_feedback">Спасибо за ваш отзыв.</string>
   <string name="text_feedback_content">Мы исправим эту проблему в будущей версии. Извините за неудобства.</string>
+  <string name="no_available_vpn">Доступного бесплатного VPN нет, перейдите на экран VPN и выберите сервер.</string>
   <string name="msg_device_does_not_support_this_feature">Эта функция не поддерживается для этого устройства!</string>
   <string name="search_app">приложение поиска..</string>
+  <string name="exit_app">Выйти из приложения?</string>
+  <string name="exit_app_msg">Вы уверены, что хотите выйти?</string>
   <string name="free">Бесплатно</string>
   <string name="premium">Премиум</string>
+  <string name="unlock_premium">Разблокировать VPN Premium</string>
+  <string name="get_premium">Получить премиум</string>
+  <string name="watch_ads">Смотрите рекламу, чтобы подключиться</string>
+  <string name="guide_1">Для подключения достаточно одного касания.</string>
+  <string name="guide_2">Несколько VPN-серверов в разных странах</string>
+  <string name="guide_3">Защитите свою конфиденциальность в Интернете</string>
+  <string name="what_is_my_ip">Какой у меня IP?</string>
+  <string name="ip_address">IP-адрес</string>
+  <string name="network_provider">Сетевой провайдер</string>
+  <string name="location">Расположение</string>
+  <string name="pincode">ПИН-код</string>
+  <string name="timezone">Часовой пояс</string>
+  <string name="duration">Продолжительность</string>
+  <string name="connect_success">Связанный успех</string>
+  <string name="connect_report">Подключить отчет</string>
+  <string name="disconnect">Отключить</string>
+  <string name="no_internet">Нет подключения к Интернету</string>
+  <string name="network_error">Нет подключения к Интернету</string>
 </resources>

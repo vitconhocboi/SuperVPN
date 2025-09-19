@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Zahvaljujemo se vam za vašo oceno in nam pošljite povratne informacije.</string>
+  <string name="fb_rate_us_good">Najlepša hvala za vašo oceno!</string>
+  <string name="fb_rate_us_default">Če nas ocenite, bomo zelo hvaležni in se bomo še naprej trudili, da vam zagotovimo boljšo izkušnjo.</string>
+  <string name="fb_feedback_title">Sporočite nam morebitne težave, na katere ste naleteli.</string>
+  <string name="fb_feedback_crash">Strmoglavljenje</string>
+  <string name="fb_feedback_feature_quality">Kakovost funkcij</string>
+  <string name="fb_feedback_bug">Napaka</string>
+  <string name="fb_feedback_other">drugo</string>
+  <string name="fb_send">Pošlji</string>
+  <string name="fb_hint_feedback">Navedite dodatne podrobnosti, ki nam bodo pomagale hitreje prepoznati in rešiti vašo težavo (najmanj 6 znakov).</string>
+  <string name="fb_text_feedback_to">Povratne informacije</string>
+  <string name="fb_best_rate">Najvišja ocena, ki jo lahko dosežemo :)</string>
+  <string name="fb_share_with">Delite z</string>
+  <string name="fb_feedback_rate">Ocenite zdaj</string>
+  <string name="fb_rate_on_google_play">Mnenja v Googlu Play</string>
+  <string name="fb_thank_for_feedback">Hvala za vaše povratne informacije</string>
+  <string name="fb_sorry_customer">To težavo bomo obravnavali v prihodnji različici. Oprostite za nevšečnosti</string>
+  <string name="fb_common_unable_find_market">Aplikacije ni mogoče najti v Googlu Play</string>
+  <string name="fb_thanks">v redu</string>
+</resources>

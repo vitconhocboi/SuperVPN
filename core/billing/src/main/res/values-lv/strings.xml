@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">diena</string>
+  <string name="core_text_inapp_days">Dienas</string>
+  <string name="core_text_inapp_weeks">Nedēļas</string>
+  <string name="core_text_inapp_month">Mēnesis</string>
+  <string name="core_text_inapp_months">Mēneši</string>
+  <string name="core_text_inapp_year">gads</string>
+  <string name="core_text_inapp_years">Gadiem</string>
+  <string name="core_auto_renew_after">Automātiska atjaunošana pēc:</string>
+  <string name="core_text_free_trial">Bezmaksas izmēģinājuma versija</string>
+</resources>

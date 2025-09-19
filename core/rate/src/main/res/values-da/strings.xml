@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Tak for din anmeldelse, og giv os gerne feedback.</string>
+  <string name="fb_rate_us_good">Mange tak for din anmeldelse!</string>
+  <string name="fb_rate_us_default">Hvis du bedømmer os, vil vi sætte stor pris på det og vil fortsætte med at arbejde hårdt for at give dig en bedre oplevelse.</string>
+  <string name="fb_feedback_title">Fortæl os venligst om eventuelle problemer, du stødte på.</string>
+  <string name="fb_feedback_crash">Krak</string>
+  <string name="fb_feedback_feature_quality">Funktionskvalitet</string>
+  <string name="fb_feedback_bug">Bug</string>
+  <string name="fb_feedback_other">Andre</string>
+  <string name="fb_send">Sende</string>
+  <string name="fb_hint_feedback">Angiv yderligere oplysninger for at hjælpe os med at identificere og løse dit problem hurtigere (minimum 6 tegn).</string>
+  <string name="fb_text_feedback_to">Feedback</string>
+  <string name="fb_best_rate">Den højeste vurdering vi kan opnå :)</string>
+  <string name="fb_share_with">Del med</string>
+  <string name="fb_feedback_rate">Bedøm nu</string>
+  <string name="fb_rate_on_google_play">Anmeldelser på Google Play</string>
+  <string name="fb_thank_for_feedback">Tak for din feedback</string>
+  <string name="fb_sorry_customer">Vi vil behandle dette problem i en fremtidig version. Beklager ulejligheden</string>
+  <string name="fb_common_unable_find_market">Kan ikke finde appen i Google Play</string>
+  <string name="fb_thanks">Okay</string>
+</resources>

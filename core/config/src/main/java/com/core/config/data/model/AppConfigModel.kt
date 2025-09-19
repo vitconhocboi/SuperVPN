@@ -15,6 +15,9 @@ internal data class AppConfigModel(
     @Json(name = "is_always_show_intro_and_language_screen")
     val isAlwaysShowIntroAndLanguageScreen : Boolean?,
 
+    @Json(name = "is_always_show_intro_and_language_screen_with_interval")
+    val isAlwaysShowIntroAndLanguageScreenWithInterval : Boolean?,
+
     @Json(name = "is_enable_introduction_screen")
     val isEnableIntroductionScreen : Boolean?,
 

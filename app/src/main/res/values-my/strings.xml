@@ -15,6 +15,8 @@
   <string name="setting_trial">အခမဲ့ အစမ်းသုံးကာလ ၃ ရက်</string>
   <string name="setting_upgrade">အဆင့်မြှင့်ပါ။</string>
   <string name="ip_proxy">ဆာဗာများ</string>
+  <string name="ip_quick_access">အမြန်ဝင်ရောက်ပါ။</string>
+  <string name="ip_all">အားလုံး</string>
   <string name="setting_app_proxy">အက်ပ်စစ်ထုတ်မှု</string>
   <string name="setting_app_proxy_desc">VPN မှတစ်ဆင့် အင်တာနက်သို့ ချိတ်ဆက်မည့်အက်ပ်များကို ရွေးပါ။</string>
   <string name="setting_ads_block">ကြော်ငြာများပိတ်ဆို့</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">ချိတ်ဆက်မှုဧရိယာကို ရွေးပါ။</string>
   <string name="first_fragment_label">ပထမအပိုင်း</string>
   <string name="second_fragment_label">ဒုတိယအပိုင်း</string>
+  <string name="start">စတင်ပါ။</string>
   <string name="next">နောက်တစ်ခု</string>
   <string name="previous">အရင်</string>
   <string name="vn">ဗီယက်နမ်</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">အဆင်ပြေလား</string>
   <string name="common_ok">အဆင်ပြေလား</string>
   <string name="btn_save">ကယ်တင်ပါ။</string>
+  <string name="btn_connect">ချိတ်ဆက်ပါ။</string>
   <string name="btn_cancel">ပယ်ဖျက်ပါ။</string>
+  <string name="btn_exit">ထွက်ပေါက်</string>
   <string name="btn_reset">ပြန်လည်သတ်မှတ်ပါ။</string>
   <string name="auto">အော်တို</string>
   <string name="min_60">မိနစ် 60</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">VPN ကို ရွေးပါ။</string>
   <string name="dns_only">DNS သာ</string>
   <string name="confirm_dns">VPN သည် Active မဖြစ်ပါ။</string>
-  <string name="confirm_dns_msg">သင်သည် လက်ရှိ DNS ကိုသာ အသုံးပြုနေပါသည်။ ပိုမိုလုံခြုံပြီး သီးသန့်ချိတ်ဆက်မှုအတွက်၊ ကျေးဇူးပြု၍ VPN ဆာဗာကို ရွေးချယ်ပါ။</string>
+  <string name="confirm_dns_msg">VPN ဆာဗာကို ရွေးချယ်ထားခြင်းမရှိပါ။ ကျေးဇူးပြု၍ VPN ဆာဗာကို ရွေးချယ်ပါ။</string>
   <string name="btn_agree">သဘောတူတယ်။</string>
   <string name="confirm_collect">သင်၏ကိုယ်ရေးကိုယ်တာ၊ သင်၏ထိန်းချုပ်မှု</string>
   <string name="confirm_accept_msg">သင်၏စာရင်းသွင်းမှုကို အပြီးသတ်ရန်၊ ဤအက်ပ်သည် မှတ်ပုံတင်ခြင်းကို အတည်ပြုရန်၊ ဝန်ဆောင်မှုအရည်အသွေးကို မြှင့်တင်ရန်နှင့် လိမ်လည်လုပ်ဆောင်မှုများကို ကာကွယ်ရန် သင်၏ကြော်ငြာ ID ကို စုဆောင်းပါသည်။ ဤဒေတာစုဆောင်းခြင်းကို သင်သဘောတူပါသလား။</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">သင့်ပြဿနာကို ပိုမိုမြန်ဆန်စွာ ဖော်ထုတ်ဖြေရှင်းနိုင်စေရန်အတွက် ကျွန်ုပ်တို့အား နောက်ထပ်အသေးစိတ်အချက်အလက်များကို ပေးပါ။ (အနည်းဆုံး စာလုံး 6 လုံး)</string>
   <string name="text_thanks_feedback">သင့်အကြံပြုချက်အတွက် ကျေးဇူးတင်ပါသည်။</string>
   <string name="text_feedback_content">ကျွန်ုပ်တို့သည် အနာဂတ်ဗားရှင်းတွင် ဤပြဿနာကို ဖြေရှင်းပါမည်။ အဆင်မပြေမှုအတွက်တောင်းပန်ပါတယ်။</string>
+  <string name="no_available_vpn">အခမဲ့ vpn မရနိုင်ပါ၊ ကျေးဇူးပြု၍ VPN မျက်နှာပြင်သို့သွား၍ ဆာဗာတစ်ခုကို ရွေးချယ်ပါ။</string>
   <string name="msg_device_does_not_support_this_feature">ဤအင်္ဂါရပ်ကို ဤစက်ပစ္စည်းအတွက် ပံ့ပိုးမထားပါ။</string>
   <string name="search_app">ရှာဖွေရေးအက်ပ်။ ။</string>
+  <string name="exit_app">အက်ပ်မှ ထွက်မလား။</string>
+  <string name="exit_app_msg">ထွက်ရန်သေချာပါသလား။</string>
   <string name="free">အခမဲ့</string>
   <string name="premium">ပရီမီယံ</string>
+  <string name="unlock_premium">VPN ပရီမီယံကို လော့ခ်ဖွင့်ပါ။</string>
+  <string name="get_premium">ပရီမီယံကိုရယူပါ။</string>
+  <string name="watch_ads">ချိတ်ဆက်ရန် ကြော်ငြာများကို ကြည့်ရှုပါ။</string>
+  <string name="guide_1">ချိတ်ဆက်ရန် တစ်ချက်ထိရုံ။</string>
+  <string name="guide_2">နိုင်ငံအသီးသီးရှိ VPN ဆာဗာများစွာ</string>
+  <string name="guide_3">သင်၏အွန်လိုင်း privacy ကိုကာကွယ်ပါ။</string>
+  <string name="what_is_my_ip">ငါ့ ip ကဘာလဲ။</string>
+  <string name="ip_address">IP လိပ်စာ</string>
+  <string name="network_provider">ကွန်ရက်ပံ့ပိုးသူ</string>
+  <string name="location">တည်နေရာ</string>
+  <string name="pincode">ပင်နံပါတ်</string>
+  <string name="timezone">အချိန်ဇုန်</string>
+  <string name="duration">သင်တန်းကာလ</string>
+  <string name="connect_success">ချိတ်ဆက်အောင်မြင်မည်။</string>
+  <string name="connect_report">အစီရင်ခံစာကိုချိတ်ဆက်ပါ။</string>
+  <string name="disconnect">အဆက်အသွယ်ဖြတ်ပါ။</string>
+  <string name="no_internet">အင်တာနက်ချိတ်ဆက်မှု မရှိပါ။</string>
+  <string name="network_error">အင်တာနက်ချိတ်ဆက်မှု မရှိပါ။</string>
 </resources>

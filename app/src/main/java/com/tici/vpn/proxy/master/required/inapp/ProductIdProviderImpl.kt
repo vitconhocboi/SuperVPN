@@ -6,9 +6,9 @@ import javax.inject.Inject
 class ProductIdProviderImpl @Inject constructor(): ProductIdProvider {
     companion object {
         const val PRO = "key_10"
-        const val PRO_BY_YEAR = "pro_by_year"
-        const val PRO_BY_MONTH = "pro_by_month"
-        const val PRO_BY_WEEK = "pro_by_week"
+        const val PRO_BY_YEAR = "yearly"
+        const val PRO_BY_MONTH = "monthly"
+        const val PRO_BY_WEEK = "weekly"
     }
 
     /** Bao gồm các gói thuê bao theo tháng, năm, tuần, 3 ngày*/

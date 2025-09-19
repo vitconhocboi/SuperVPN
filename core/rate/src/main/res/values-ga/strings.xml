@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Go raibh maith agat as do léirmheas, agus tabhair roinnt aiseolais dúinn le do thoil.</string>
+  <string name="fb_rate_us_good">Go raibh míle maith agat as do léirmheas!</string>
+  <string name="fb_rate_us_default">Má thugann tú rátáil dúinn, bheimis an-bhuíoch as agus leanfaimid orainn ag obair go dian chun taithí níos fearr a sholáthar duit.</string>
+  <string name="fb_feedback_title">Cuir in iúl dúinn le do thoil faoi aon saincheisteanna a tháinig tú trasna.</string>
+  <string name="fb_feedback_crash">tuairteála</string>
+  <string name="fb_feedback_feature_quality">Caighdeán gné</string>
+  <string name="fb_feedback_bug">fabht</string>
+  <string name="fb_feedback_other">Eile</string>
+  <string name="fb_send">Seol</string>
+  <string name="fb_hint_feedback">Tabhair sonraí breise le do thoil chun cabhrú linn do cheist a aithint agus a réiteach níos tapúla (6 charachtar ar a laghad).</string>
+  <string name="fb_text_feedback_to">Aiseolas</string>
+  <string name="fb_best_rate">An rátáil is airde is féidir linn a bhaint amach :)</string>
+  <string name="fb_share_with">Comhroinn Le</string>
+  <string name="fb_feedback_rate">Ráta Anois</string>
+  <string name="fb_rate_on_google_play">Léirmheasanna ar Google Play</string>
+  <string name="fb_thank_for_feedback">Go raibh maith agat as do chuid aiseolais</string>
+  <string name="fb_sorry_customer">Tabharfaimid aghaidh ar an gceist seo i leagan amach anseo. Gabh mo leithscéal as an míchaoithiúlacht</string>
+  <string name="fb_common_unable_find_market">Ní féidir an aip a aimsiú ar Google Play</string>
+  <string name="fb_thanks">ceart go leor</string>
+</resources>

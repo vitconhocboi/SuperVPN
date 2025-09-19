@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">Beschte Bewäertung fir eis</string>
+  <string name="fb_rate_bottom_default">Mir schaffen haart fir eng besser Benotzererfarung ze bidden. Mir schätzen op Är Iwwerpréiwung.</string>
+  <string name="fb_rate_bottom_bad">Oh nee!</string>
+  <string name="fb_rate_bottom_good">Mir hunn dech och gär!</string>
+  <string name="fb_rate_bottom_mess_bad">Weg loosst eis e puer Feedback</string>
+  <string name="fb_rate_bottom_mess_good">Merci fir Äre Feedback</string>
+  <string name="fb_rate">Taux</string>
+</resources>

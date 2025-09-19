@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">給我們最好的評價</string>
+  <string name="fb_rate_bottom_default">我們正在努力提供更好的用戶體驗。我們感謝您的評論。</string>
+  <string name="fb_rate_bottom_bad">哦不！</string>
+  <string name="fb_rate_bottom_good">我們也愛你！</string>
+  <string name="fb_rate_bottom_mess_bad">請給我們留下一些反饋</string>
+  <string name="fb_rate_bottom_mess_good">感謝您的回饋</string>
+  <string name="fb_rate">速度</string>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Dankie vir jou resensie, en gee ons asseblief \'n bietjie terugvoer.</string>
+  <string name="fb_rate_us_good">Baie dankie vir jou resensie!</string>
+  <string name="fb_rate_us_default">As jy ons gradeer, sal ons dit baie waardeer en sal voortgaan om hard te werk om jou \'n beter ervaring te bied.</string>
+  <string name="fb_feedback_title">Laat weet ons asseblief van enige probleme wat jy teëgekom het.</string>
+  <string name="fb_feedback_crash">Ineenstorting</string>
+  <string name="fb_feedback_feature_quality">Kenmerk kwaliteit</string>
+  <string name="fb_feedback_bug">Gogga</string>
+  <string name="fb_feedback_other">Ander</string>
+  <string name="fb_send">Stuur</string>
+  <string name="fb_hint_feedback">Verskaf asseblief bykomende besonderhede om ons te help om jou probleem vinniger te identifiseer en op te los (minimum van 6 karakters).</string>
+  <string name="fb_text_feedback_to">Terugvoer</string>
+  <string name="fb_best_rate">Die hoogste gradering wat ons kan behaal :)</string>
+  <string name="fb_share_with">Deel Met</string>
+  <string name="fb_feedback_rate">Beoordeel nou</string>
+  <string name="fb_rate_on_google_play">Resensies op Google Play</string>
+  <string name="fb_thank_for_feedback">Dankie vir jou terugvoer</string>
+  <string name="fb_sorry_customer">Ons sal hierdie probleem in \'n toekomstige weergawe aanspreek. Jammer vir die ongerief</string>
+  <string name="fb_common_unable_find_market">Kan nie die toepassing op Google Play vind nie</string>
+  <string name="fb_thanks">okay</string>
+</resources>

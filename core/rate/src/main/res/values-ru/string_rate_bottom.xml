@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">Лучшая оценка для нас</string>
+  <string name="fb_rate_bottom_default">Мы прилагаем все усилия, чтобы обеспечить лучший пользовательский опыт. Мы ценим ваш отзыв.</string>
+  <string name="fb_rate_bottom_bad">О, нет!</string>
+  <string name="fb_rate_bottom_good">Мы тоже тебя любим!</string>
+  <string name="fb_rate_bottom_mess_bad">Пожалуйста, оставьте нам отзыв.</string>
+  <string name="fb_rate_bottom_mess_good">Спасибо за ваш отзыв.</string>
+  <string name="fb_rate">Ставка</string>
+</resources>

@@ -15,6 +15,8 @@
   <string name="setting_trial">Gratis Testphase vun 3 Deeg</string>
   <string name="setting_upgrade">Upgrade</string>
   <string name="ip_proxy">Serveren</string>
+  <string name="ip_quick_access">Schnellzougang</string>
+  <string name="ip_all">ALL</string>
   <string name="setting_app_proxy">App-Filter</string>
   <string name="setting_app_proxy_desc">Wielt wéi eng Apps iwwer VPN mam Internet verbannen</string>
   <string name="setting_ads_block">Reklammeblock</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Verbindungsberäich auswielen</string>
   <string name="first_fragment_label">Éischt Fragment</string>
   <string name="second_fragment_label">Zweet Fragment</string>
+  <string name="start">START</string>
   <string name="next">nächste</string>
   <string name="previous">Virdrun</string>
   <string name="vn">Vietnam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">ok</string>
   <string name="common_ok">ok</string>
   <string name="btn_save">späicheren</string>
+  <string name="btn_connect">Verbannen</string>
   <string name="btn_cancel">annuléieren</string>
+  <string name="btn_exit">Sortie</string>
   <string name="btn_reset">Zrécksetzen</string>
   <string name="auto">Auto</string>
   <string name="min_60">60 Minutten</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">VPN auswielen</string>
   <string name="dns_only">Nëmmen DNS</string>
   <string name="confirm_dns">VPN net aktiv</string>
-  <string name="confirm_dns_msg">Dir benotzt am Moment nëmmen DNS. Fir eng méi sécher a privat Verbindung, wielt w.e.g. e VPN-Server.</string>
+  <string name="confirm_dns_msg">Kee VPN-Server ausgewielt. Wielt w. e. g. e VPN-Server.</string>
   <string name="btn_agree">Zoustëmmen</string>
   <string name="confirm_collect">Är Privatsphär, Är Kontroll</string>
   <string name="confirm_accept_msg">Fir Äert Abonnement ofzeschléissen, sammelt dës App Är Reklamm-ID fir d\'Aschreiwung ze verifizéieren, d\'Servicequalitéit ze verbesseren an betrügeresch Aktivitéiten ze verhënneren. Sidd Dir dëser Datenerfassung averstanen?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Gitt eis w.e.g. méi Detailer fir datt mir Äert Problem méi séier identifizéieren an léisen (op d\'mannst 6 Zeechen)</string>
   <string name="text_thanks_feedback">Merci fir Äre Feedback</string>
   <string name="text_feedback_content">Mir fixen dëst Thema an enger zukünfteg Versioun. Entschëllegt fir d\'Onbequemlechkeet.</string>
+  <string name="no_available_vpn">Et gëtt kee gratis VPN verfügbar, gitt w. e. g. op de VPN-Bildschierm a wielt e Server aus.</string>
   <string name="msg_device_does_not_support_this_feature">Dës Funktioun gëtt fir dësen Apparat net ënnerstëtzt!</string>
   <string name="search_app">Sich-App..</string>
+  <string name="exit_app">App verloossen?</string>
+  <string name="exit_app_msg">Bass du sécher, datt s du erausgoe wëlls?</string>
   <string name="free">Gratis</string>
   <string name="premium">Premium</string>
+  <string name="unlock_premium">VPN Premium opmaachen</string>
+  <string name="get_premium">Kréien Premium</string>
+  <string name="watch_ads">Kuckt Reklammen fir ze verbannen</string>
+  <string name="guide_1">Just een Touch fir ze verbannen.</string>
+  <string name="guide_2">Verschidde VPN-Serveren a verschiddene Länner</string>
+  <string name="guide_3">Schützt Är Online-Privatsphär</string>
+  <string name="what_is_my_ip">Wat ass meng IP-Adress?</string>
+  <string name="ip_address">IP-Adress</string>
+  <string name="network_provider">Netzwierkprovider</string>
+  <string name="location">Standuert</string>
+  <string name="pincode">PIN Code</string>
+  <string name="timezone">Zäitzon</string>
+  <string name="duration">Dauer</string>
+  <string name="connect_success">Verbonnen Erfolleg</string>
+  <string name="connect_report">Connect-Rapport</string>
+  <string name="disconnect">Trennen</string>
+  <string name="no_internet">Keng Internetverbindung</string>
+  <string name="network_error">Keng Internetverbindung</string>
 </resources>

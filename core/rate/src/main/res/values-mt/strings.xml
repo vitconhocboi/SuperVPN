@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Grazzi għar-reviżjoni tiegħek, u jekk jogħġbok agħtina xi feedback.</string>
+  <string name="fb_rate_us_good">Grazzi ħafna għar-reviżjoni tiegħek!</string>
+  <string name="fb_rate_us_default">Jekk tikklassifikana, napprezzawha ħafna u nkomplu naħdmu ħafna biex nipprovdulek esperjenza aħjar.</string>
+  <string name="fb_feedback_title">Jekk jogħġbok għarrafna dwar kwalunkwe kwistjoni li ltqajt magħhom.</string>
+  <string name="fb_feedback_crash">Crash</string>
+  <string name="fb_feedback_feature_quality">Kwalità tal-karatteristika</string>
+  <string name="fb_feedback_bug">Bug</string>
+  <string name="fb_feedback_other">Oħrajn</string>
+  <string name="fb_send">Ibgħat</string>
+  <string name="fb_hint_feedback">Jekk jogħġbok ipprovdi dettalji addizzjonali biex tgħinna nidentifikaw u nsolvu l-kwistjoni tiegħek aktar malajr (minimu ta\' 6 karattri).</string>
+  <string name="fb_text_feedback_to">Feedback</string>
+  <string name="fb_best_rate">L-ogħla klassifikazzjoni li nistgħu niksbu :)</string>
+  <string name="fb_share_with">Aqsam Ma\'</string>
+  <string name="fb_feedback_rate">Rata Issa</string>
+  <string name="fb_rate_on_google_play">Reviżjonijiet fuq Google Play</string>
+  <string name="fb_thank_for_feedback">Grazzi għall-feedback tiegħek</string>
+  <string name="fb_sorry_customer">Se nindirizzaw din il-kwistjoni f\'verżjoni futura. Jiddispjacini għall-inkonvenjent</string>
+  <string name="fb_common_unable_find_market">Ma tistax issib l-app fuq Google Play</string>
+  <string name="fb_thanks">kollox sew</string>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">သင့်သုံးသပ်ချက်အတွက် ကျေးဇူးတင်ရှိပြီး တုံ့ပြန်ချက်အချို့ကို ကျေးဇူးပြု၍ ပေးပါ။</string>
+  <string name="fb_rate_us_good">သင့်သုံးသပ်ချက်အတွက် ကျေးဇူးအများကြီးတင်ပါတယ်။</string>
+  <string name="fb_rate_us_default">အကယ်၍ သင်သည် ကျွန်ုပ်တို့အား အဆင့်သတ်မှတ်မည်ဆိုပါက ကျွန်ုပ်တို့သည် ၎င်းကို အလွန်ကျေးဇူးတင်မည်ဖြစ်ပြီး သင့်အား ပိုမိုကောင်းမွန်သော အတွေ့အကြုံများပေးရန် ဆက်လက်ကြိုးစားသွားပါမည်။</string>
+  <string name="fb_feedback_title">သင်ကြုံတွေ့ခဲ့ရသည့် ပြဿနာများအကြောင်း ကျွန်ုပ်တို့အား အသိပေးပါ။</string>
+  <string name="fb_feedback_crash">ပျက်ကျ</string>
+  <string name="fb_feedback_feature_quality">အင်္ဂါရပ်အရည်အသွေး</string>
+  <string name="fb_feedback_bug">ပိုးကောင်</string>
+  <string name="fb_feedback_other">တခြား</string>
+  <string name="fb_send">ပို့ပါ။</string>
+  <string name="fb_hint_feedback">သင့်ပြဿနာကို ပိုမိုလျင်မြန်စွာ ရှာဖွေဖော်ထုတ်ရန်နှင့် ဖြေရှင်းရန် ကူညီပေးရန်အတွက် ကျေးဇူးပြု၍ နောက်ထပ်အသေးစိတ်အချက်အလက်များကို ပေးဆောင်ပါ (အနည်းဆုံး စာလုံး 6 လုံး)။</string>
+  <string name="fb_text_feedback_to">တုံ့ပြန်ချက်</string>
+  <string name="fb_best_rate">ကျွန်ုပ်တို့ ရရှိနိုင်သော အမြင့်ဆုံး အဆင့်သတ်မှတ်ချက် :)</string>
+  <string name="fb_share_with">မျှဝေပါ။</string>
+  <string name="fb_feedback_rate">ယခု အဆင့်သတ်မှတ်ပါ။</string>
+  <string name="fb_rate_on_google_play">Google Play ရှိ သုံးသပ်ချက်များ</string>
+  <string name="fb_thank_for_feedback">သင့်အကြံပြုချက်အတွက် ကျေးဇူးတင်ပါသည်။</string>
+  <string name="fb_sorry_customer">ကျွန်ုပ်တို့သည် ဤပြဿနာကို အနာဂတ်ဗားရှင်းတွင် ဖြေရှင်းပါမည်။ အဆင်မပြေမှုအတွက်တောင်းပန်ပါတယ်</string>
+  <string name="fb_common_unable_find_market">Google Play တွင် အက်ပ်ကို ရှာမတွေ့ပါ။</string>
+  <string name="fb_thanks">အဆင်ပြေလား</string>
+</resources>

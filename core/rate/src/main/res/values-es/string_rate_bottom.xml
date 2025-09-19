@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">La mejor calificación para nosotros</string>
+  <string name="fb_rate_bottom_default">Nos esforzamos por ofrecer una mejor experiencia de usuario. Agradecemos su reseña.</string>
+  <string name="fb_rate_bottom_bad">¡Oh, no!</string>
+  <string name="fb_rate_bottom_good">¡Nosotros también te amamos!</string>
+  <string name="fb_rate_bottom_mess_bad">Por favor déjenos algún comentario</string>
+  <string name="fb_rate_bottom_mess_good">Gracias por tus comentarios.</string>
+  <string name="fb_rate">Tasa</string>
+</resources>

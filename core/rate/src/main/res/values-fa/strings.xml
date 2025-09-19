@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">از نقد شما متشکریم و لطفاً نظرات خود را در اختیار ما قرار دهید.</string>
+  <string name="fb_rate_us_good">از نظر شما بسیار متشکرم!</string>
+  <string name="fb_rate_us_default">اگر به ما امتیاز دهید، بسیار قدردان آن خواهیم بود و به سختی به کار خود ادامه خواهیم داد تا تجربه بهتری برای شما فراهم کنیم.</string>
+  <string name="fb_feedback_title">لطفا در مورد هر مشکلی که با آن برخورد کردید به ما اطلاع دهید.</string>
+  <string name="fb_feedback_crash">سقوط</string>
+  <string name="fb_feedback_feature_quality">کیفیت ویژگی</string>
+  <string name="fb_feedback_bug">اشکال</string>
+  <string name="fb_feedback_other">دیگر</string>
+  <string name="fb_send">ارسال کنید</string>
+  <string name="fb_hint_feedback">لطفاً جزئیات بیشتری ارائه دهید تا به ما کمک کند مشکل شما را سریعتر شناسایی و حل کنیم (حداقل 6 نویسه).</string>
+  <string name="fb_text_feedback_to">بازخورد</string>
+  <string name="fb_best_rate">بالاترین رتبه ای که می توانیم کسب کنیم :)</string>
+  <string name="fb_share_with">اشتراک گذاری با</string>
+  <string name="fb_feedback_rate">اکنون امتیاز دهید</string>
+  <string name="fb_rate_on_google_play">نظرات در Google Play</string>
+  <string name="fb_thank_for_feedback">از بازخورد شما متشکرم</string>
+  <string name="fb_sorry_customer">در نسخه بعدی به این مشکل خواهیم پرداخت. با عرض پوزش برای ناراحتی</string>
+  <string name="fb_common_unable_find_market">نمی توان برنامه را در Google Play پیدا کرد</string>
+  <string name="fb_thanks">خوب</string>
+</resources>

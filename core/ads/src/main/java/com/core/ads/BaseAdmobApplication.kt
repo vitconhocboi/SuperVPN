@@ -3,7 +3,6 @@ package com.core.ads
 import android.app.Application
 import android.os.Build
 import android.text.TextUtils
-import android.util.Log
 import android.webkit.WebView
 import androidx.appcompat.app.AppCompatDelegate
 import com.core.ads.extensions.getAndroidId
@@ -35,7 +34,7 @@ abstract class BaseAdmobApplication : Application() {
 
         SharedPrefs.init(context = this, name = "Core")
 
-        if (appPreferences.systemLanguageCode.isBlank()) {
+        if(appPreferences.systemLanguageCode.isBlank()) {
             appPreferences.systemLanguageCode = Locale.getDefault().language
         }
 
@@ -70,9 +69,7 @@ abstract class BaseAdmobApplication : Application() {
      * @param isDebug = true cho thiết bị thành thành thiết bị test -> hiển thị quảng cáo test
      */
     open fun setupDeviceTest() {
-        Log.d("setupDeviceTest", "setupDeviceTest: 1")
         if (BuildConfig.DEBUG) {
-            Log.d("setupDeviceTest", "setupDeviceTest: 2")
             deviceTestList.add(md5(getAndroidId(this)).uppercase())
             deviceTestList.add("161B90FEB622DEDE256FE344E5585390")
 

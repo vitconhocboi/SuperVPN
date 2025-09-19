@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">Besta einkunn fyrir okkur</string>
+  <string name="fb_rate_bottom_default">Við erum að vinna hörðum höndum að því að veita betri notendaupplifun. Við kunnum að meta umsögn þína.</string>
+  <string name="fb_rate_bottom_bad">Ó nei!</string>
+  <string name="fb_rate_bottom_good">Við elskum þig líka!</string>
+  <string name="fb_rate_bottom_mess_bad">Vinsamlegast skildu eftir okkur athugasemdir</string>
+  <string name="fb_rate_bottom_mess_good">Takk fyrir álit þitt</string>
+  <string name="fb_rate">Gefa</string>
+</resources>

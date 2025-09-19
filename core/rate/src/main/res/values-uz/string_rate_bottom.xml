@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">Biz uchun eng yaxshi reyting</string>
+  <string name="fb_rate_bottom_default">Biz yaxshi foydalanuvchi tajribasini taqdim etish uchun qattiq ishlayapmiz. Biz sizning sharhingizni qadrlaymiz.</string>
+  <string name="fb_rate_bottom_bad">Yo\'q!</string>
+  <string name="fb_rate_bottom_good">Biz ham sizni yaxshi ko\'ramiz!</string>
+  <string name="fb_rate_bottom_mess_bad">Iltimos, bizga fikr-mulohazalaringizni qoldiring</string>
+  <string name="fb_rate_bottom_mess_good">Fikr-mulohazangiz uchun rahmat</string>
+  <string name="fb_rate">Baho</string>
+</resources>

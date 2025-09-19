@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Yorumunuz için teşekkür ederiz, lütfen bize geri bildirimde bulunun.</string>
+  <string name="fb_rate_us_good">Yorumunuz için çok teşekkür ederim!</string>
+  <string name="fb_rate_us_default">Bizi puanlarsanız çok seviniriz ve size daha iyi bir deneyim sunmak için çalışmaya devam ederiz.</string>
+  <string name="fb_feedback_title">Karşılaştığınız herhangi bir sorunu lütfen bize bildirin.</string>
+  <string name="fb_feedback_crash">Kaza</string>
+  <string name="fb_feedback_feature_quality">Özellik kalitesi</string>
+  <string name="fb_feedback_bug">Böcek</string>
+  <string name="fb_feedback_other">Diğer</string>
+  <string name="fb_send">Göndermek</string>
+  <string name="fb_hint_feedback">Lütfen sorununuzu daha hızlı tespit edip çözmemize yardımcı olacak ek bilgiler sağlayın (en az 6 karakter).</string>
+  <string name="fb_text_feedback_to">Geri bildirim</string>
+  <string name="fb_best_rate">Alabileceğimiz en yüksek puan :)</string>
+  <string name="fb_share_with">Paylaş</string>
+  <string name="fb_feedback_rate">Şimdi Puanla</string>
+  <string name="fb_rate_on_google_play">Google Play\'deki yorumlar</string>
+  <string name="fb_thank_for_feedback">Geri bildiriminiz için teşekkür ederiz</string>
+  <string name="fb_sorry_customer">Bu sorunu gelecekteki bir sürümde ele alacağız. Rahatsızlıktan dolayı özür dileriz</string>
+  <string name="fb_common_unable_find_market">Uygulamayı Google Play\'de bulamıyorum</string>
+  <string name="fb_thanks">tamam</string>
+</resources>

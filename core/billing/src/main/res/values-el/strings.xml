@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">ημέρα</string>
+  <string name="core_text_inapp_days">Μέρες</string>
+  <string name="core_text_inapp_weeks">Εβδομάδες</string>
+  <string name="core_text_inapp_month">Μήνας</string>
+  <string name="core_text_inapp_months">Μήνες</string>
+  <string name="core_text_inapp_year">Ετος</string>
+  <string name="core_text_inapp_years">Χρόνια</string>
+  <string name="core_auto_renew_after">Αυτόματη Ανανέωση Μετά από:</string>
+  <string name="core_text_free_trial">Δωρεάν δοκιμή</string>
+</resources>

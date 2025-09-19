@@ -15,6 +15,8 @@
   <string name="setting_trial">Andrana maimaim-poana 3 andro</string>
   <string name="setting_upgrade">hanatsarana</string>
   <string name="ip_proxy">LOHAMILINA</string>
+  <string name="ip_quick_access">Fidirana haingana</string>
+  <string name="ip_all">rEHETRA</string>
   <string name="setting_app_proxy">App Filter</string>
   <string name="setting_app_proxy_desc">Fidio izay fampiharana hifandray amin\'ny Internet amin\'ny VPN</string>
   <string name="setting_ads_block">Sakana doka</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Safidio ny faritra mifandray</string>
   <string name="first_fragment_label">Sombiny voalohany</string>
   <string name="second_fragment_label">Sombiny faharoa</string>
+  <string name="start">fanombohana</string>
   <string name="next">Manaraka</string>
   <string name="previous">Teo aloha</string>
   <string name="vn">Việt Nam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">ok</string>
   <string name="common_ok">ok</string>
   <string name="btn_save">afa-tsy</string>
+  <string name="btn_connect">Connect</string>
   <string name="btn_cancel">hanafoana</string>
+  <string name="btn_exit">Fivoahana</string>
   <string name="btn_reset">Avereno</string>
   <string name="auto">fiara</string>
   <string name="min_60">60 minitra</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">Mifidiana VPN</string>
   <string name="dns_only">DNS ihany</string>
   <string name="confirm_dns">VPN tsy mavitrika</string>
-  <string name="confirm_dns_msg">Mampiasa DNS fotsiny ianao amin\'izao fotoana izao. Raha mila fifandraisana azo antoka kokoa sy manokana, misafidiana mpizara VPN azafady.</string>
+  <string name="confirm_dns_msg">Tsy misy mpizara VPN voafidy. Mifidiana mpizara VPN azafady.</string>
   <string name="btn_agree">manaiky</string>
   <string name="confirm_collect">Ny tsiambaratelonao, ny fifehezanao</string>
   <string name="confirm_accept_msg">Mba hamenoana ny famandrihanao, ity app ity dia manangona ny ID Advertising anao hanamarina ny fisoratana anarana, hanatsara ny kalitaon\'ny serivisy ary hisorohana ny asa hosoka. Manaiky an\'ity fanangonana angona ity ve ianao?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Mba omeo antsipiriany bebe kokoa izahay mba hahafahanay mamantatra sy mamaha ny olanao haingana kokoa (karazana 6 farafahakeliny)</string>
   <string name="text_thanks_feedback">Misaotra amin\'ny hevitrao</string>
   <string name="text_feedback_content">Hamboarinay amin\'ny dikan-teny ho avy io olana io. Miala tsiny amin\'ny fanelingelenana.</string>
+  <string name="no_available_vpn">Tsy misy vpn maimaim-poana, mandehana any amin\'ny efijery VPN ary mifidiana mpizara.</string>
   <string name="msg_device_does_not_support_this_feature">Ity endri-javatra ity dia tsy tohana amin\'ity fitaovana ity!</string>
   <string name="search_app">app fikarohana..</string>
+  <string name="exit_app">Hivoaka ny fampiharana?</string>
+  <string name="exit_app_msg">Tena hivoaka ve ianao?</string>
   <string name="free">maimaim-poana</string>
   <string name="premium">Premium</string>
+  <string name="unlock_premium">Sokafy ny VPN Premium</string>
+  <string name="get_premium">Mahazoa premium</string>
+  <string name="watch_ads">Jereo ny doka amin\'ny Connect</string>
+  <string name="guide_1">Kikisana iray monja hifandraisana.</string>
+  <string name="guide_2">Mpizara VPN marobe any amin\'ny firenena samihafa</string>
+  <string name="guide_3">Arovy ny fiainanao manokana an-tserasera</string>
+  <string name="what_is_my_ip">Inona ny ip-ko?</string>
+  <string name="ip_address">adiresy IP</string>
+  <string name="network_provider">Mpanome tambajotra</string>
+  <string name="location">Toerana</string>
+  <string name="pincode">PIN code</string>
+  <string name="timezone">Faritra ora</string>
+  <string name="duration">Faharetana</string>
+  <string name="connect_success">Fahombiazana mifandray</string>
+  <string name="connect_report">Connect tatitra</string>
+  <string name="disconnect">elektrônika</string>
+  <string name="no_internet">Tsy misy fifandraisana Internet</string>
+  <string name="network_error">Tsy misy fifandraisana Internet</string>
 </resources>

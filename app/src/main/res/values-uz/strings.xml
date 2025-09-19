@@ -15,6 +15,8 @@
   <string name="setting_trial">Bepul sinov muddati 3 kun</string>
   <string name="setting_upgrade">Yangilash</string>
   <string name="ip_proxy">Serverlar</string>
+  <string name="ip_quick_access">Tez kirish</string>
+  <string name="ip_all">HAMMA</string>
   <string name="setting_app_proxy">Ilova filtri</string>
   <string name="setting_app_proxy_desc">Qaysi ilovalar VPN orqali internetga ulanishini tanlang</string>
   <string name="setting_ads_block">Reklama bloki</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Ulanish maydonini tanlang</string>
   <string name="first_fragment_label">Birinchi fragment</string>
   <string name="second_fragment_label">Ikkinchi fragment</string>
+  <string name="start">START</string>
   <string name="next">Keyingisi</string>
   <string name="previous">Oldingi</string>
   <string name="vn">Việt Nam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">ok</string>
   <string name="common_ok">ok</string>
   <string name="btn_save">saqlash</string>
+  <string name="btn_connect">Ulanish</string>
   <string name="btn_cancel">bekor qilish</string>
+  <string name="btn_exit">Chiqish</string>
   <string name="btn_reset">Qayta tiklash</string>
   <string name="auto">Avtomatik</string>
   <string name="min_60">60 daqiqa</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">VPN-ni tanlang</string>
   <string name="dns_only">Faqat DNS</string>
   <string name="confirm_dns">VPN faol emas</string>
-  <string name="confirm_dns_msg">Siz hozir faqat DNS dan foydalanyapsiz. Xavfsizroq va shaxsiy ulanish uchun VPN serverini tanlang.</string>
+  <string name="confirm_dns_msg">Hech qanday VPN server tanlanmagan. Iltimos, VPN serverini tanlang.</string>
   <string name="btn_agree">Rozi</string>
   <string name="confirm_collect">Sizning maxfiyligingiz, sizning nazoratingiz</string>
   <string name="confirm_accept_msg">Obunangizni yakunlash uchun ushbu ilova roʻyxatdan oʻtishni tasdiqlash, xizmat sifatini oshirish va firibgarlik harakatlarini oldini olish uchun reklama identifikatoringizni toʻplaydi. Ushbu ma\'lumotlar to\'plamiga rozimisiz?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Muammoni tezroq aniqlashimiz va hal qilishimiz uchun bizga batafsil ma\'lumot bering (kamida 6 belgi)</string>
   <string name="text_thanks_feedback">Fikr-mulohazangiz uchun rahmat</string>
   <string name="text_feedback_content">Bu muammoni keyingi versiyada tuzatamiz. Noqulayliklar uchun uzr so\'raymiz.</string>
+  <string name="no_available_vpn">Bepul VPN yo\'q, iltimos, VPN ekraniga o\'ting va serverni tanlang.</string>
   <string name="msg_device_does_not_support_this_feature">Ushbu xususiyat ushbu qurilmada qo\'llab-quvvatlanmaydi!</string>
   <string name="search_app">qidiruv ilovasi..</string>
+  <string name="exit_app">Ilovadan chiqasizmi?</string>
+  <string name="exit_app_msg">Chiqishingizga ishonchingiz komilmi?</string>
   <string name="free">Bepul</string>
   <string name="premium">Premium</string>
+  <string name="unlock_premium">VPN Premium qulfini oching</string>
+  <string name="get_premium">Premium oling</string>
+  <string name="watch_ads">Ulanish uchun reklamalarni tomosha qiling</string>
+  <string name="guide_1">Ulanish uchun bir marta bosish kifoya.</string>
+  <string name="guide_2">Turli mamlakatlarda bir nechta VPN serverlari</string>
+  <string name="guide_3">Onlayn maxfiyligingizni himoya qiling</string>
+  <string name="what_is_my_ip">Mening ipim nima?</string>
+  <string name="ip_address">IP manzili</string>
+  <string name="network_provider">Tarmoq provayderi</string>
+  <string name="location">Joylashuv</string>
+  <string name="pincode">PIN kod</string>
+  <string name="timezone">Vaqt mintaqasi</string>
+  <string name="duration">Davomiyligi</string>
+  <string name="connect_success">Ulangan muvaffaqiyat</string>
+  <string name="connect_report">Hisobotni ulash</string>
+  <string name="disconnect">Ulanishni uzing</string>
+  <string name="no_internet">Internetga ulanmagan</string>
+  <string name="network_error">Internetga ulanmagan</string>
 </resources>

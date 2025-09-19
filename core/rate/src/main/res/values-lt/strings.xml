@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Dėkojame už atsiliepimą ir pateikite atsiliepimų.</string>
+  <string name="fb_rate_us_good">Labai ačiū už atsiliepimą!</string>
+  <string name="fb_rate_us_default">Jei mus įvertinsite, būtume labai dėkingi ir toliau sunkiai dirbsime, kad suteiktume jums geresnę patirtį.</string>
+  <string name="fb_feedback_title">Praneškite mums apie visas problemas, su kuriomis susidūrėte.</string>
+  <string name="fb_feedback_crash">Avarija</string>
+  <string name="fb_feedback_feature_quality">Funkcijos kokybė</string>
+  <string name="fb_feedback_bug">Klaida</string>
+  <string name="fb_feedback_other">Kita</string>
+  <string name="fb_send">Siųsti</string>
+  <string name="fb_hint_feedback">Pateikite papildomos informacijos, kad galėtume greičiau nustatyti ir išspręsti jūsų problemą (mažiausiai 6 simboliai).</string>
+  <string name="fb_text_feedback_to">Atsiliepimai</string>
+  <string name="fb_best_rate">Aukščiausias įvertinimas, kurį galime pasiekti :)</string>
+  <string name="fb_share_with">Bendrinti su</string>
+  <string name="fb_feedback_rate">Įvertink dabar</string>
+  <string name="fb_rate_on_google_play">Atsiliepimai „Google Play“.</string>
+  <string name="fb_thank_for_feedback">Dėkojame už atsiliepimą</string>
+  <string name="fb_sorry_customer">Šią problemą spręsime būsimoje versijoje. Atsiprašome už nepatogumus</string>
+  <string name="fb_common_unable_find_market">Nepavyko rasti programos „Google Play“.</string>
+  <string name="fb_thanks">Gerai</string>
+</resources>

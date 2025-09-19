@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Salamat sa iyong pagsusuri, at mangyaring bigyan kami ng ilang feedback.</string>
+  <string name="fb_rate_us_good">Maraming salamat sa iyong pagsusuri!</string>
+  <string name="fb_rate_us_default">Kung ire-rate mo kami, lubos naming pahahalagahan ito at patuloy kaming magsusumikap para mabigyan ka ng mas magandang karanasan.</string>
+  <string name="fb_feedback_title">Mangyaring ipaalam sa amin ang tungkol sa anumang mga isyung naranasan mo.</string>
+  <string name="fb_feedback_crash">Bumagsak</string>
+  <string name="fb_feedback_feature_quality">kalidad ng tampok</string>
+  <string name="fb_feedback_bug">Bug</string>
+  <string name="fb_feedback_other">Iba pa</string>
+  <string name="fb_send">Ipadala</string>
+  <string name="fb_hint_feedback">Mangyaring magbigay ng mga karagdagang detalye upang matulungan kaming matukoy at malutas ang iyong isyu nang mas mabilis (minimum na 6 na character).</string>
+  <string name="fb_text_feedback_to">Feedback</string>
+  <string name="fb_best_rate">Ang pinakamataas na rating na maaari naming makamit :)</string>
+  <string name="fb_share_with">Ibahagi kay</string>
+  <string name="fb_feedback_rate">I-rate Ngayon</string>
+  <string name="fb_rate_on_google_play">Mga review sa Google Play</string>
+  <string name="fb_thank_for_feedback">Salamat sa iyong feedback</string>
+  <string name="fb_sorry_customer">Tatalakayin namin ang isyung ito sa isang bersyon sa hinaharap. Paumanhin para sa abala</string>
+  <string name="fb_common_unable_find_market">Hindi mahanap ang app sa Google Play</string>
+  <string name="fb_thanks">ok</string>
+</resources>

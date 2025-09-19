@@ -1,7 +1,5 @@
 package com.core.baseui.ext
 
-import android.content.Context
-import android.content.ContextWrapper
 import android.os.SystemClock
 import android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON
 import androidx.appcompat.app.AppCompatActivity
@@ -175,7 +173,6 @@ inline fun <T : Any?> collectFlowOnNullable(
     }
 }
 
-
 inline fun <T : Any> collectFlowOn(
     stateFlow: StateFlow<T>,
     lifecycleScope: LifecycleCoroutineScope,
@@ -191,7 +188,6 @@ inline fun <T : Any> collectFlowOn(
         }
     }
 }
-
 
 inline fun <T : Any> collectFlowOn(
     sharedFlow: SharedFlow<T>,
@@ -209,4 +205,16 @@ inline fun <T : Any> collectFlowOn(
     }
 }
 
-
+inline fun <T : Any> AppCompatActivity.collectFlowOn(
+    flow: Flow<T>,
+    lifecycleState: Lifecycle.State = Lifecycle.State.CREATED,
+    crossinline onResult: (t: T) -> Unit,
+) {
+    lifecycleScope.launch {
+        repeatOnLifecycle(lifecycleState) {
+            flow.collect {
+                onResult.invoke(it)
+            }
+        }
+    }
+}

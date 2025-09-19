@@ -15,6 +15,8 @@
   <string name="setting_trial">Prueba gratuita de 3 días</string>
   <string name="setting_upgrade">Mejora</string>
   <string name="ip_proxy">Servidores</string>
+  <string name="ip_quick_access">Acceso rápido</string>
+  <string name="ip_all">TODO</string>
   <string name="setting_app_proxy">Filtro de aplicaciones</string>
   <string name="setting_app_proxy_desc">Elija qué aplicaciones se conectarán a Internet a través de VPN</string>
   <string name="setting_ads_block">Bloqueo de anuncios</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Seleccionar área de conexión</string>
   <string name="first_fragment_label">Primer fragmento</string>
   <string name="second_fragment_label">Segundo Fragmento</string>
+  <string name="start">COMENZAR</string>
   <string name="next">próximo</string>
   <string name="previous">Anterior</string>
   <string name="vn">Vietnam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">OK</string>
   <string name="common_ok">OK</string>
   <string name="btn_save">ahorrar</string>
+  <string name="btn_connect">Conectar</string>
   <string name="btn_cancel">cancelar</string>
+  <string name="btn_exit">Salida</string>
   <string name="btn_reset">Reiniciar</string>
   <string name="auto">Auto</string>
   <string name="min_60">60 minutos</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">Seleccionar VPN</string>
   <string name="dns_only">Sólo DNS</string>
   <string name="confirm_dns">VPN no activa</string>
-  <string name="confirm_dns_msg">Actualmente solo usas DNS. Para una conexión más segura y privada, selecciona un servidor VPN.</string>
+  <string name="confirm_dns_msg">No se ha seleccionado ningún servidor VPN. Seleccione un servidor VPN.</string>
   <string name="btn_agree">Aceptar</string>
   <string name="confirm_collect">Tu privacidad, tu control</string>
   <string name="confirm_accept_msg">Para completar tu suscripción, esta aplicación recopila tu ID de publicidad para verificar el registro, mejorar la calidad del servicio y evitar actividades fraudulentas. ¿Aceptas esta recopilación de datos?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Proporciónanos más detalles para que podamos identificar y resolver tu problema más rápidamente (al menos 6 caracteres)</string>
   <string name="text_thanks_feedback">Gracias por tus comentarios.</string>
   <string name="text_feedback_content">Solucionaremos este problema en una próxima versión. Disculpen las molestias.</string>
+  <string name="no_available_vpn">No hay ninguna VPN gratuita disponible, vaya a la pantalla VPN y elija un servidor.</string>
   <string name="msg_device_does_not_support_this_feature">¡Esta función no es compatible con este dispositivo!</string>
   <string name="search_app">aplicación de búsqueda..</string>
+  <string name="exit_app">¿Salir de la aplicación?</string>
+  <string name="exit_app_msg">¿Estas seguro de salir?</string>
   <string name="free">Gratis</string>
   <string name="premium">De primera calidad</string>
+  <string name="unlock_premium">Desbloquear VPN Premium</string>
+  <string name="get_premium">Obtener premium</string>
+  <string name="watch_ads">Mira anuncios para conectar</string>
+  <string name="guide_1">Sólo un toque para conectarse.</string>
+  <string name="guide_2">Múltiples servidores VPN en diferentes países</string>
+  <string name="guide_3">Proteja su privacidad en línea</string>
+  <string name="what_is_my_ip">¿Cual es mi ip?</string>
+  <string name="ip_address">Dirección IP</string>
+  <string name="network_provider">Proveedor de red</string>
+  <string name="location">Ubicación</string>
+  <string name="pincode">Código PIN</string>
+  <string name="timezone">Huso horario</string>
+  <string name="duration">Duración</string>
+  <string name="connect_success">Éxito conectado</string>
+  <string name="connect_report">Informe de conexión</string>
+  <string name="disconnect">Desconectar</string>
+  <string name="no_internet">Sin conexión a Internet</string>
+  <string name="network_error">Sin conexión a Internet</string>
 </resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Faleminderit për vlerësimin tuaj dhe ju lutemi na jepni disa komente.</string>
+  <string name="fb_rate_us_good">Faleminderit shumë për vlerësimin tuaj!</string>
+  <string name="fb_rate_us_default">Nëse na vlerësoni, ne do ta vlerësojmë shumë dhe do të vazhdojmë të punojmë shumë për t\'ju ofruar një përvojë më të mirë.</string>
+  <string name="fb_feedback_title">Ju lutemi na njoftoni për çdo problem që keni hasur.</string>
+  <string name="fb_feedback_crash">Përplasje</string>
+  <string name="fb_feedback_feature_quality">Cilësia e veçorive</string>
+  <string name="fb_feedback_bug">Bug</string>
+  <string name="fb_feedback_other">Të tjera</string>
+  <string name="fb_send">Dërgo</string>
+  <string name="fb_hint_feedback">Ju lutemi jepni detaje shtesë për të na ndihmuar të identifikojmë dhe zgjidhim problemin tuaj më shpejt (minimumi 6 karaktere).</string>
+  <string name="fb_text_feedback_to">Feedback</string>
+  <string name="fb_best_rate">Vlerësimi më i lartë që mund të arrijmë :)</string>
+  <string name="fb_share_with">Ndaje me</string>
+  <string name="fb_feedback_rate">Vlerësoni tani</string>
+  <string name="fb_rate_on_google_play">Komentet në Google Play</string>
+  <string name="fb_thank_for_feedback">Faleminderit për komentet tuaja</string>
+  <string name="fb_sorry_customer">Ne do ta trajtojmë këtë çështje në një version të ardhshëm. Na falni për shqetësimin</string>
+  <string name="fb_common_unable_find_market">Aplikacioni nuk mund të gjendet në Google Play</string>
+  <string name="fb_thanks">Ne rregull</string>
+</resources>

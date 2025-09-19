@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">Біз үшін ең жақсы рейтинг</string>
+  <string name="fb_rate_bottom_default">Біз пайдаланушы тәжірибесін жақсарту үшін көп жұмыс істеп жатырмыз. Біз сіздің пікіріңізді бағалаймыз.</string>
+  <string name="fb_rate_bottom_bad">О, жоқ!</string>
+  <string name="fb_rate_bottom_good">Біз де сені жақсы көреміз!</string>
+  <string name="fb_rate_bottom_mess_bad">Бізге кері байланыс қалдырыңыз</string>
+  <string name="fb_rate_bottom_mess_good">Пікіріңізге рахмет</string>
+  <string name="fb_rate">Бағалау</string>
+</resources>

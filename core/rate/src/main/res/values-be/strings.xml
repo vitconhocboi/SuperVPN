@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Дзякуй за ваш агляд і, калі ласка, дайце нам водгук.</string>
+  <string name="fb_rate_us_good">Вялікі дзякуй за ваш агляд!</string>
+  <string name="fb_rate_us_default">Калі вы ацаніце нас, мы будзем вельмі ўдзячныя і будзем працягваць упарта працаваць, каб забяспечыць вам лепшы вопыт.</string>
+  <string name="fb_feedback_title">Калі ласка, дайце нам ведаць аб любых праблемах, з якімі вы сутыкнуліся.</string>
+  <string name="fb_feedback_crash">Збой</string>
+  <string name="fb_feedback_feature_quality">Якасць функцый</string>
+  <string name="fb_feedback_bug">Памылка</string>
+  <string name="fb_feedback_other">Іншае</string>
+  <string name="fb_send">Адправіць</string>
+  <string name="fb_hint_feedback">Дайце дадатковую інфармацыю, каб дапамагчы нам хутчэй вызначыць і вырашыць вашу праблему (мінімум 6 сімвалаў).</string>
+  <string name="fb_text_feedback_to">Зваротная сувязь</string>
+  <string name="fb_best_rate">Самы высокі рэйтынг, які мы можам дасягнуць :)</string>
+  <string name="fb_share_with">Падзяліцца з</string>
+  <string name="fb_feedback_rate">Ацаніце зараз</string>
+  <string name="fb_rate_on_google_play">Водгукі на Google Play</string>
+  <string name="fb_thank_for_feedback">Дзякуй за ваш водгук</string>
+  <string name="fb_sorry_customer">Мы разгледзім гэтую праблему ў наступнай версіі. Прабачце за нязручнасці</string>
+  <string name="fb_common_unable_find_market">Немагчыма знайсці праграму ў Google Play</string>
+  <string name="fb_thanks">добра</string>
+</resources>

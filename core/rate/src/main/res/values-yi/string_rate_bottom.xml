@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">בעסטער שאַץ פֿאַר אונדז</string>
+  <string name="fb_rate_bottom_default">מיר אַרבעטן שווער צו צושטעלן אַ בעסער באַניצער דערפאַרונג. מיר אָפּשאַצן דיין רעצענזיע.</string>
+  <string name="fb_rate_bottom_bad">אוי ניין!</string>
+  <string name="fb_rate_bottom_good">מיר ליבע איר אויך!</string>
+  <string name="fb_rate_bottom_mess_bad">ביטע לאָזן אונדז עטלעכע באַמערקונגען</string>
+  <string name="fb_rate_bottom_mess_good">דאַנקען פֿאַר דיין באַמערקונגען</string>
+  <string name="fb_rate">קורס</string>
+</resources>

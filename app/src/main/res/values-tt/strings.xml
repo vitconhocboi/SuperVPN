@@ -15,6 +15,8 @@
   <string name="setting_trial">Бушлай сынау 3 көн</string>
   <string name="setting_upgrade">Яңарту</string>
   <string name="ip_proxy">Серверлар</string>
+  <string name="ip_quick_access">Тиз керү</string>
+  <string name="ip_all">БАРЫ</string>
   <string name="setting_app_proxy">Кушымта фильтры</string>
   <string name="setting_app_proxy_desc">Кайсы кушымталар VPN аша Интернетка тоташачагын сайлагыз</string>
   <string name="setting_ads_block">Реклама блок</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Бәйләнеш өлкәсен сайлагыз</string>
   <string name="first_fragment_label">Беренче фрагмент</string>
   <string name="second_fragment_label">Икенче фрагмент</string>
+  <string name="start">Старт</string>
   <string name="next">киләсе</string>
   <string name="previous">Алдагы</string>
   <string name="vn">Việt Nam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">Ярар</string>
   <string name="common_ok">Ярар</string>
   <string name="btn_save">саклагыз</string>
+  <string name="btn_connect">Бәйләнегез</string>
   <string name="btn_cancel">бетерү</string>
+  <string name="btn_exit">Чык</string>
   <string name="btn_reset">Бетерү</string>
   <string name="auto">Авто</string>
   <string name="min_60">60 минут</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">VPN сайлагыз</string>
   <string name="dns_only">DNS гына</string>
   <string name="confirm_dns">VPN актив түгел</string>
-  <string name="confirm_dns_msg">Сез хәзер DNS гына кулланасыз. Куркынычсыз һәм шәхси тоташу өчен VPN серверын сайлагыз.</string>
+  <string name="confirm_dns_msg">VPN серверы сайланмаган. Зинһар, VPN серверын сайлагыз.</string>
   <string name="btn_agree">Килешегез</string>
   <string name="confirm_collect">Сезнең хосусыйлык, сезнең контроль</string>
   <string name="confirm_accept_msg">Подпискагызны тәмамлау өчен, бу кушымта сезнең Реклама ID-егезне җыя, теркәлүне тикшерү, хезмәт сыйфатын күтәрү һәм алдау эшчәнлеген булдырмау өчен. Сез бу мәгълүмат җыюга ризамы?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Зинһар, безгә тулырак мәгълүмат бирегез, шуңа күрә без сезнең проблеманы тизрәк ачыклый алабыз (ким дигәндә 6 символ)</string>
   <string name="text_thanks_feedback">Фикерләрегез өчен рәхмәт</string>
   <string name="text_feedback_content">Без бу проблеманы киләчәк версиядә хәл итәрбез. Уңайсызлык өчен гафу итегез.</string>
+  <string name="no_available_vpn">Бушлай vpn юк, зинһар, VPN экранына керегез һәм сервер сайлагыз.</string>
   <string name="msg_device_does_not_support_this_feature">Бу үзенчәлек бу җайланма өчен булмый!</string>
   <string name="search_app">эзләү кушымтасы ..</string>
+  <string name="exit_app">Кушымтадан чыгу?</string>
+  <string name="exit_app_msg">Сез чыгасызмы?</string>
   <string name="free">Бушлай</string>
   <string name="premium">Премиум</string>
+  <string name="unlock_premium">VPN Premium ачу</string>
+  <string name="get_premium">Премия алыгыз</string>
+  <string name="watch_ads">Бәйләнү өчен реклама карагыз</string>
+  <string name="guide_1">Бәйләнү өчен бер генә кагылу.</string>
+  <string name="guide_2">Төрле илләрдә берничә VPN серверы</string>
+  <string name="guide_3">Онлайн хосусыйлыгыгызны саклагыз</string>
+  <string name="what_is_my_ip">Минем ip нәрсә ул?</string>
+  <string name="ip_address">IP адрес</string>
+  <string name="network_provider">Челтәр тәэмин итүчесе</string>
+  <string name="location">Урын</string>
+  <string name="pincode">PIN-код</string>
+  <string name="timezone">Вакыт зонасы</string>
+  <string name="duration">Озынлыгы</string>
+  <string name="connect_success">Уңыш</string>
+  <string name="connect_report">Докладны тоташтырыгыз</string>
+  <string name="disconnect">Аерыгыз</string>
+  <string name="no_internet">Интернетка тоташу юк</string>
+  <string name="network_error">Интернетка тоташу юк</string>
 </resources>

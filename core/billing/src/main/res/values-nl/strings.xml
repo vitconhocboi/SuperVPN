@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">dag</string>
+  <string name="core_text_inapp_days">Dagen</string>
+  <string name="core_text_inapp_weeks">Weken</string>
+  <string name="core_text_inapp_month">Maand</string>
+  <string name="core_text_inapp_months">Maanden</string>
+  <string name="core_text_inapp_year">Jaar</string>
+  <string name="core_text_inapp_years">Jaren</string>
+  <string name="core_auto_renew_after">Automatisch verlengen na:</string>
+  <string name="core_text_free_trial">Gratis proefperiode</string>
+</resources>

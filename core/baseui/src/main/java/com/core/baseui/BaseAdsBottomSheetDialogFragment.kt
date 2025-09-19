@@ -3,12 +3,14 @@ package com.core.baseui
 import android.content.res.Configuration
 import android.content.res.Resources
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.graphics.drawable.toDrawable
+import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
@@ -40,8 +42,7 @@ import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 
 
-abstract class BaseAdsBottomSheetDialogFragment<B : ViewBinding> : BottomSheetDialogFragment(),
-    CoroutineScope {
+abstract class BaseAdsBottomSheetDialogFragment<B : ViewBinding> : BottomSheetDialogFragment(), CoroutineScope {
 
     open val isHideNavigationBar: Boolean by lazy {
         remoteConfigRepository.getAppConfig().isHideNavigationBar
@@ -132,8 +133,6 @@ abstract class BaseAdsBottomSheetDialogFragment<B : ViewBinding> : BottomSheetDi
         isVip = purchasePreferences.isUserVip()
         previousNetworkConnection = requireActivity().isNetworkConnected()
 
-        initViews(savedInstanceState)
-        handleObservable()
         contextAds = object : ContextAds(
             adsManager = adsManager,
             lifecycleOwner = this,
@@ -150,6 +149,8 @@ abstract class BaseAdsBottomSheetDialogFragment<B : ViewBinding> : BottomSheetDi
                 this@BaseAdsBottomSheetDialogFragment.onBannerNativeResult(adResource)
             }
         }
+        initViews(savedInstanceState)
+        handleObservable()
         displayFirstData()
         preloadData()
         handleNetworkChange()
@@ -251,8 +252,8 @@ abstract class BaseAdsBottomSheetDialogFragment<B : ViewBinding> : BottomSheetDi
      * @param adPlaceName Tên vị trí quảng cáo.
      * @param oneTimeLoad Chỉ tải quảng cáo một lần nếu true.
      */
-    fun loadBannerOrNativeAds(adPlaceName: IAdPlaceName, oneTimeLoad: Boolean) {
-        contextAds?.loadBannerOrNativeAds(adPlaceName, oneTimeLoad)
+    fun loadBannerOrNativeAds(adPlaceName: IAdPlaceName, oneTimeLoad: Boolean, isReload: Boolean = false) {
+        contextAds?.loadBannerOrNativeAds(adPlaceName, oneTimeLoad, isReload = isReload)
     }
 
     /**

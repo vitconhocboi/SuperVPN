@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">A legjobb értékelés számunkra</string>
+  <string name="fb_rate_bottom_default">Keményen dolgozunk a jobb felhasználói élmény biztosítása érdekében. Nagyra értékeljük véleményét.</string>
+  <string name="fb_rate_bottom_bad">Ó, nem!</string>
+  <string name="fb_rate_bottom_good">Mi is szeretünk téged!</string>
+  <string name="fb_rate_bottom_mess_bad">Kérjük, hagyjon nekünk néhány visszajelzést</string>
+  <string name="fb_rate_bottom_mess_good">Köszönjük visszajelzését</string>
+  <string name="fb_rate">Arány</string>
+</resources>

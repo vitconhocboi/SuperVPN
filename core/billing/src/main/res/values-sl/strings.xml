@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">dan</string>
+  <string name="core_text_inapp_days">dni</string>
+  <string name="core_text_inapp_weeks">tednov</string>
+  <string name="core_text_inapp_month">mesec</string>
+  <string name="core_text_inapp_months">meseci</string>
+  <string name="core_text_inapp_year">leto</string>
+  <string name="core_text_inapp_years">leta</string>
+  <string name="core_auto_renew_after">Samodejno podaljšanje po:</string>
+  <string name="core_text_free_trial">Brezplačna preizkusna različica</string>
+</resources>

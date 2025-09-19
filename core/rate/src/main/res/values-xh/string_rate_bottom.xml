@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">Eyona nto intle kuthi</string>
+  <string name="fb_rate_bottom_default">Sisebenza nzima ukubonelela ngamava omsebenzisi angcono. Siyalubulela uphononongo lwakho.</string>
+  <string name="fb_rate_bottom_bad">Oh hayi!</string>
+  <string name="fb_rate_bottom_good">Nathi siyakuthanda!</string>
+  <string name="fb_rate_bottom_mess_bad">Nceda usishiyele ingxelo</string>
+  <string name="fb_rate_bottom_mess_good">Enkosi ngempendulo yakho</string>
+  <string name="fb_rate">Ixabiso</string>
+</resources>

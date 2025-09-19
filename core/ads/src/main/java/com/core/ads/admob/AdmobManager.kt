@@ -80,7 +80,6 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 private const val TAG = "AdmobManager"
-
 @Singleton
 class AdmobManager @Inject constructor(
     @ApplicationContext private val context: Context,
@@ -155,13 +154,6 @@ class AdmobManager @Inject constructor(
 
         val adPlace = remoteConfigRepository.getAdPlaceBy(adPlaceName)
         if (adPlace.isNotValidToLoad()) {
-            remoteConfigRepository.getAdPlaces().forEach {
-                Log.d(
-                    TAG,
-                    "isNotAbleToVisibleAdsToUser: adType = " + it.adType + ", placeName = " + it.placeName
-                )
-            }
-            Log.d(TAG, "isNotAbleToVisibleAdsToUser: name = " + adPlaceName.name)
             Log.d(TAG, "isNotAbleToVisibleAdsToUser: isNotValidToLoad")
             return true
         }
@@ -231,7 +223,7 @@ class AdmobManager @Inject constructor(
                                 Timber.e("requestConsentInfoUpdate running")
                                 if (!requestConsentConfig.isEnable) {
                                     onEuConsentComplete()
-                                    cont.resume(true) { _, _, _ -> }
+                                    cont.resume(true) { _, _, _ ->}
                                     return@requestConsentInfoUpdate
                                 }
                                 if (consentInformation.isConsentFormAvailable) {
@@ -239,12 +231,12 @@ class AdmobManager @Inject constructor(
                                 } else {
                                     onEuConsentComplete()
                                 }
-                                cont.resume(true) { _, _, _ -> }
+                                cont.resume(true) { _, _, _ ->}
                             },
                             {
                                 Timber.e("requestConsentInfoUpdate onEuConsentComplete")
                                 onEuConsentComplete()
-                                cont.resume(false) { _, _, _ -> }
+                                cont.resume(false) { _, _, _ ->}
                             }
                         )
                     }
@@ -425,6 +417,7 @@ class AdmobManager @Inject constructor(
         activity: Activity,
         adPlaceName: IAdPlaceName,
         isPreload: Boolean,
+        isReload: Boolean,
         identifier: String
     ) {
         Log.d(TAG, "loadBannerNativeAd: ")
@@ -436,6 +429,7 @@ class AdmobManager @Inject constructor(
             loadNativeAdIfNeed(
                 activity = activity,
                 adHolder = adHolder as NativeAdHolder,
+                isReload = isReload
             )
             return
         }
@@ -493,7 +487,7 @@ class AdmobManager @Inject constructor(
                         adHolder.isShowing = true
                         activity.showLoader()
                         notifyAdFullScreenSucceedToShow(placeName)
-                        if (adHolder.adPlace.isTrackingShow) {
+                        if(adHolder.adPlace.isTrackingShow) {
                             sendEventShow(adHolder.adPlace.placeName)
                         }
                     }
@@ -527,7 +521,7 @@ class AdmobManager @Inject constructor(
 
                     override fun onAdClicked() {
                         super.onAdClicked()
-                        if (adHolder.adPlace.isTrackingClick) {
+                        if(adHolder.adPlace.isTrackingClick) {
                             sendEventClick(adHolder.adPlace.placeName)
                         }
                         increaseAdClickedCount()
@@ -577,7 +571,7 @@ class AdmobManager @Inject constructor(
                         adHolder.isShowing = true
                         activity.showLoader()
                         notifyAdFullScreenSucceedToShow(placeName)
-                        if (adHolder.adPlace.isTrackingShow) {
+                        if(adHolder.adPlace.isTrackingShow) {
                             sendEventShow(adHolder.adPlace.placeName)
                         }
                     }
@@ -603,7 +597,7 @@ class AdmobManager @Inject constructor(
 
                     override fun onAdClicked() {
                         super.onAdClicked()
-                        if (adHolder.adPlace.isTrackingClick) {
+                        if(adHolder.adPlace.isTrackingClick) {
                             sendEventClick(adHolder.adPlace.placeName)
                         }
                         increaseAdClickedCount()
@@ -656,7 +650,7 @@ class AdmobManager @Inject constructor(
                     adHolder.isShowing = true
                     activity.showLoader()
                     notifyAdFullScreenSucceedToShow(placeName)
-                    if (adHolder.adPlace.isTrackingShow) {
+                    if(adHolder.adPlace.isTrackingShow) {
                         sendEventShow(adHolder.adPlace.placeName)
                     }
                 }
@@ -681,7 +675,7 @@ class AdmobManager @Inject constructor(
 
                 override fun onAdClicked() {
                     super.onAdClicked()
-                    if (adHolder.adPlace.isTrackingClick) {
+                    if(adHolder.adPlace.isTrackingClick) {
                         sendEventClick(adHolder.adPlace.placeName)
                     }
                     increaseAdClickedCount()
@@ -1049,6 +1043,7 @@ class AdmobManager @Inject constructor(
     private fun loadNativeAdIfNeed(
         activity: Activity,
         adHolder: NativeAdHolder,
+        isReload: Boolean
     ) {
         val placeName = adHolder.adPlace.placeName
         if (isNotAbleToVisibleAdsToUser(placeName)) {
@@ -1059,10 +1054,11 @@ class AdmobManager @Inject constructor(
         val nativeAdPlace = adHolder.adPlace as NativeAdPlace
 
         val nativeAd = adHolder.nativeAd
-        if (nativeAd != null) {
+        if (nativeAd != null && !isReload) {
             notifyNativeLoaded(nativeAd, nativeAdPlace)
             return
         }
+        Log.d(TAG, "loadNativeAdIfNeed: isReload $isReload")
 
         if (activity.isDestroyed) {
 //            notifyBannerNativeFailedToLoad(placeName)
@@ -1094,7 +1090,7 @@ class AdmobManager @Inject constructor(
                         Log.i(TAG, "Native loaded $placeName")
                         adHolder.nativeAd = ad
                         notifyNativeLoaded(ad, nativeAdPlace)
-                        if (adHolder.adPlace.isTrackingShow) {
+                        if(adHolder.adPlace.isTrackingShow) {
                             sendEventShow(adHolder.adPlace.placeName)
                         }
                     }
@@ -1134,7 +1130,7 @@ class AdmobManager @Inject constructor(
                                                     TAG,
                                                     "Native retry load ${adHolder.retryCount} $placeName"
                                                 )
-                                                loadNativeAdIfNeed(activity, adHolder)
+                                                loadNativeAdIfNeed(activity, adHolder, isReload)
                                             } else {
                                                 Log.i(
                                                     TAG,
@@ -1160,7 +1156,7 @@ class AdmobManager @Inject constructor(
 
                         override fun onAdClicked() {
                             super.onAdClicked()
-                            if (adHolder.adPlace.isTrackingClick) {
+                            if(adHolder.adPlace.isTrackingClick) {
                                 analyticsManager.logEvent(adHolder.adPlace.placeName.name + "_Clicked")
                             }
                             increaseAdClickedCount()
@@ -1171,8 +1167,7 @@ class AdmobManager @Inject constructor(
                             .setRequestCustomMuteThisAd(true)
                             .setAdChoicesPlacement(NativeAdOptions.ADCHOICES_TOP_RIGHT)
                             .setVideoOptions(
-                                VideoOptions.Builder().setStartMuted(true)
-                                    .setCustomControlsRequested(true).build()
+                                VideoOptions.Builder().setStartMuted(true).setCustomControlsRequested(true).build()
                             )
                             .build()
                     )
@@ -1205,12 +1200,12 @@ class AdmobManager @Inject constructor(
         }
 
         // nếu là collapsible banner thì không được preload banner vì nó sẽ không hiện collapsible khi load trước
-        if (bannerAdPlace.isCollapsible && isPreload) {
+        if(bannerAdPlace.isCollapsible && isPreload) {
             adHolder.reset()
             return
         }
 
-        if (bannerAdPlace.isCollapsible && bannerAd != null && identifier == adHolder.identifier && !bannerAdPlace.autoReloadCollapsible) {
+        if(bannerAdPlace.isCollapsible && bannerAd != null && identifier == adHolder.identifier && !bannerAdPlace.autoReloadCollapsible) {
             return
         }
 
@@ -1286,12 +1281,7 @@ class AdmobManager @Inject constructor(
                                             TAG,
                                             "Banner retry load ${adHolder.retryCount} $placeName"
                                         )
-                                        loadBannerAdIfNeed(
-                                            activity,
-                                            adHolder,
-                                            isPreload,
-                                            identifier
-                                        )
+                                        loadBannerAdIfNeed(activity, adHolder, isPreload, identifier)
                                     } else {
                                         Log.i(
                                             TAG,
@@ -1321,7 +1311,7 @@ class AdmobManager @Inject constructor(
                     adHolder.isLoading = false
                     adHolder.bannerAd = bannerAd
                     notifyBannerLoaded(this@apply, bannerAdPlace)
-                    if (adHolder.adPlace.isTrackingShow) {
+                    if(adHolder.adPlace.isTrackingShow) {
                         sendEventShow(adHolder.adPlace.placeName)
                     }
                 }
@@ -1333,7 +1323,7 @@ class AdmobManager @Inject constructor(
 
                 override fun onAdClicked() {
                     super.onAdClicked()
-                    if (adHolder.adPlace.isTrackingClick) {
+                    if(adHolder.adPlace.isTrackingClick) {
                         sendEventClick(adHolder.adPlace.placeName)
                     }
                     increaseAdClickedCount()
@@ -1370,7 +1360,7 @@ class AdmobManager @Inject constructor(
     }
 
     private fun onEuConsentComplete() {
-        if (isConsentCompleted) return
+        if(isConsentCompleted) return
         isConsentCompleted = true
         isConsentRequesting = false
         MobileAds.initialize(context) { initializationStatus ->
@@ -1378,10 +1368,7 @@ class AdmobManager @Inject constructor(
                 initializationStatus.adapterStatusMap
             for (adapterClass in statusMap.keys) {
                 val status = statusMap[adapterClass]
-                Log.d(
-                    TAG,
-                    "Adapter name: $adapterClass, Description: ${status!!.description}, Latency: ${status.initializationState}"
-                )
+                Log.d(TAG, "Adapter name: $adapterClass, Description: ${status!!.description}, Latency: ${status.initializationState}")
             }
 
             applicationScope.launch {
@@ -1435,7 +1422,7 @@ class AdmobManager @Inject constructor(
     }
 
     override fun getNativeHolder(activity: Activity, adPlaceName: IAdPlaceName): NativeAdHolder? {
-        if (activity.isDestroyed) return null
+        if(activity.isDestroyed) return null
         return adHolderMap[adPlaceName] as? NativeAdHolder
     }
 
@@ -1601,19 +1588,9 @@ class AdmobManager @Inject constructor(
         }
     }
 
-    private fun notifyAdFullScreenCompleted(
-        adPlaceName: IAdPlaceName,
-        isShown: Boolean,
-        isEarnedReward: Boolean = true
-    ) {
+    private fun notifyAdFullScreenCompleted(adPlaceName: IAdPlaceName, isShown: Boolean, isEarnedReward: Boolean = true) {
         applicationScope.launch {
-            _adFullScreenFlow.emit(
-                AdFullScreenUiResource.AdCompleted(
-                    adPlaceName,
-                    isShown,
-                    isEarnedReward
-                )
-            )
+            _adFullScreenFlow.emit(AdFullScreenUiResource.AdCompleted(adPlaceName, isShown, isEarnedReward))
         }
     }
 

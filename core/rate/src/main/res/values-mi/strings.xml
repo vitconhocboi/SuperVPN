@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Mauruuru koe mo to arotake, me tuku mai he urupare.</string>
+  <string name="fb_rate_us_good">Ka nui te mihi ki a koe mo to arotake!</string>
+  <string name="fb_rate_us_default">Mena ka whakatau koe i a maatau, ka tino maioha ki a maatau ka whakapau kaha ki te whakarato wheako pai ake.</string>
+  <string name="fb_feedback_title">Tena koa whakamohio mai mo etahi take i pa ki a koe.</string>
+  <string name="fb_feedback_crash">Tutuki</string>
+  <string name="fb_feedback_feature_quality">Te kounga o te ahua</string>
+  <string name="fb_feedback_bug">Bug</string>
+  <string name="fb_feedback_other">Ētahi atu</string>
+  <string name="fb_send">Tukua</string>
+  <string name="fb_hint_feedback">Tena koa homai etahi atu taipitopito hei awhina i a maatau ki te tautuhi me te whakatau tere ake i to take (te iti rawa kia 6 nga tohu).</string>
+  <string name="fb_text_feedback_to">Urupare</string>
+  <string name="fb_best_rate">Ko te reanga teitei ka taea e tatou te eke :)</string>
+  <string name="fb_share_with">Tiri Ki</string>
+  <string name="fb_feedback_rate">Reiti Inaianei</string>
+  <string name="fb_rate_on_google_play">Nga arotake i runga i te Google Play</string>
+  <string name="fb_thank_for_feedback">Mauruuru koe mo to urupare</string>
+  <string name="fb_sorry_customer">Ka whakatikahia e matou tenei take i roto i te putanga a meake nei. Aroha mai mo te raruraru</string>
+  <string name="fb_common_unable_find_market">Kaore i kitea te taupānga i runga i a Google Play</string>
+  <string name="fb_thanks">pai</string>
+</resources>

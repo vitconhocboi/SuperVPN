@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.android.library) // Corrected alias
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     id("maven-publish")
 }
@@ -7,6 +7,7 @@ plugins {
 android {
     namespace = "com.core"
     compileSdk = libs.versions.targetSdk.get().toInt()
+    // version: 15.09.2025
 
     defaultConfig {
         minSdk = libs.versions.minSdk.get().toInt()

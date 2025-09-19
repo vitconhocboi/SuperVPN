@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">మీ సమీక్షకు ధన్యవాదాలు మరియు దయచేసి మాకు కొంత అభిప్రాయాన్ని అందించండి.</string>
+  <string name="fb_rate_us_good">మీ సమీక్షకు చాలా ధన్యవాదాలు!</string>
+  <string name="fb_rate_us_default">మీరు మాకు రేటింగ్ ఇస్తే, మేము దానిని ఎంతో అభినందిస్తాము మరియు మీకు మెరుగైన అనుభవాన్ని అందించడానికి కృషి చేస్తూనే ఉంటాము.</string>
+  <string name="fb_feedback_title">మీరు ఎదుర్కొన్న ఏవైనా సమస్యల గురించి దయచేసి మాకు తెలియజేయండి.</string>
+  <string name="fb_feedback_crash">క్రాష్</string>
+  <string name="fb_feedback_feature_quality">ఫీచర్ నాణ్యత</string>
+  <string name="fb_feedback_bug">బగ్</string>
+  <string name="fb_feedback_other">ఇతర</string>
+  <string name="fb_send">పంపండి</string>
+  <string name="fb_hint_feedback">మీ సమస్యను మరింత త్వరగా గుర్తించి పరిష్కరించడానికి మాకు సహాయపడటానికి దయచేసి అదనపు వివరాలను అందించండి (కనీసం 6 అక్షరాలు).</string>
+  <string name="fb_text_feedback_to">అభిప్రాయం</string>
+  <string name="fb_best_rate">మనం సాధించగల అత్యధిక రేటింగ్ :)</string>
+  <string name="fb_share_with">వీరితో భాగస్వామ్యం చేయండి</string>
+  <string name="fb_feedback_rate">ఇప్పుడే రేట్ చేయండి</string>
+  <string name="fb_rate_on_google_play">Google Playలో సమీక్షలు</string>
+  <string name="fb_thank_for_feedback">మీ అభిప్రాయానికి ధన్యవాదాలు</string>
+  <string name="fb_sorry_customer">మేము ఈ సమస్యను భవిష్యత్ సంస్కరణలో పరిష్కరిస్తాము. అసౌకర్యానికి క్షమించండి</string>
+  <string name="fb_common_unable_find_market">Google Playలో యాప్‌ని కనుగొనడం సాధ్యపడలేదు</string>
+  <string name="fb_thanks">అలాగే</string>
+</resources>

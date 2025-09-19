@@ -15,6 +15,8 @@
   <string name="setting_trial">3 ದಿನಗಳ ಉಚಿತ ಪ್ರಯೋಗ</string>
   <string name="setting_upgrade">ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಿ</string>
   <string name="ip_proxy">ಸರ್ವರ್‌ಗಳು</string>
+  <string name="ip_quick_access">ತ್ವರಿತ ಪ್ರವೇಶ</string>
+  <string name="ip_all">ಎಲ್ಲಾ</string>
   <string name="setting_app_proxy">ಅಪ್ಲಿಕೇಶನ್ ಫಿಲ್ಟರ್</string>
   <string name="setting_app_proxy_desc">VPN ಮೂಲಕ ಇಂಟರ್ನೆಟ್‌ಗೆ ಯಾವ ಅಪ್ಲಿಕೇಶನ್‌ಗಳು ಸಂಪರ್ಕಗೊಳ್ಳುತ್ತವೆ ಎಂಬುದನ್ನು ಆರಿಸಿ</string>
   <string name="setting_ads_block">ಜಾಹೀರಾತುಗಳ ನಿರ್ಬಂಧ</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">ಸಂಪರ್ಕ ಪ್ರದೇಶವನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
   <string name="first_fragment_label">ಮೊದಲ ತುಣುಕು</string>
   <string name="second_fragment_label">ಎರಡನೇ ತುಣುಕು</string>
+  <string name="start">ಪ್ರಾರಂಭಿಸಿ</string>
   <string name="next">ಮುಂದೆ</string>
   <string name="previous">ಹಿಂದಿನದು</string>
   <string name="vn">ವಿಯೆಟ್ ನಾಮ್</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">ಸರಿ</string>
   <string name="common_ok">ಸರಿ</string>
   <string name="btn_save">ಉಳಿಸಿ</string>
+  <string name="btn_connect">ಸಂಪರ್ಕಿಸಿ</string>
   <string name="btn_cancel">ರದ್ದುಮಾಡು</string>
+  <string name="btn_exit">ನಿರ್ಗಮಿಸಿ</string>
   <string name="btn_reset">ಮರುಹೊಂದಿಸಿ</string>
   <string name="auto">ಆಟೋ</string>
   <string name="min_60">60 ನಿಮಿಷಗಳು</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">VPN ಆಯ್ಕೆಮಾಡಿ</string>
   <string name="dns_only">DNS ಮಾತ್ರ</string>
   <string name="confirm_dns">VPN ಸಕ್ರಿಯವಾಗಿಲ್ಲ</string>
-  <string name="confirm_dns_msg">ನೀವು ಪ್ರಸ್ತುತ DNS ಅನ್ನು ಮಾತ್ರ ಬಳಸುತ್ತಿದ್ದೀರಿ. ಹೆಚ್ಚು ಸುರಕ್ಷಿತ ಮತ್ತು ಖಾಸಗಿ ಸಂಪರ್ಕಕ್ಕಾಗಿ, ದಯವಿಟ್ಟು VPN ಸರ್ವರ್ ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ.</string>
+  <string name="confirm_dns_msg">ಯಾವುದೇ VPN ಸರ್ವರ್ ಆಯ್ಕೆ ಮಾಡಿಲ್ಲ. ದಯವಿಟ್ಟು VPN ಸರ್ವರ್ ಆಯ್ಕೆಮಾಡಿ.</string>
   <string name="btn_agree">ಒಪ್ಪುತ್ತೇನೆ</string>
   <string name="confirm_collect">ನಿಮ್ಮ ಗೌಪ್ಯತೆ, ನಿಮ್ಮ ನಿಯಂತ್ರಣ</string>
   <string name="confirm_accept_msg">ನಿಮ್ಮ ಚಂದಾದಾರಿಕೆಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಲು, ನೋಂದಣಿಯನ್ನು ಪರಿಶೀಲಿಸಲು, ಸೇವಾ ಗುಣಮಟ್ಟವನ್ನು ಹೆಚ್ಚಿಸಲು ಮತ್ತು ವಂಚನೆಯ ಚಟುವಟಿಕೆಯನ್ನು ತಡೆಯಲು ಈ ಅಪ್ಲಿಕೇಶನ್ ನಿಮ್ಮ ಜಾಹೀರಾತು ಐಡಿಯನ್ನು ಸಂಗ್ರಹಿಸುತ್ತದೆ. ಈ ಡೇಟಾ ಸಂಗ್ರಹಣೆಗೆ ನೀವು ಒಪ್ಪುತ್ತೀರಾ?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">ದಯವಿಟ್ಟು ನಮಗೆ ಹೆಚ್ಚಿನ ವಿವರಗಳನ್ನು ನೀಡಿ ಇದರಿಂದ ನಾವು ನಿಮ್ಮ ಸಮಸ್ಯೆಯನ್ನು ವೇಗವಾಗಿ ಗುರುತಿಸಿ ಪರಿಹರಿಸಬಹುದು (ಕನಿಷ್ಠ 6 ಅಕ್ಷರಗಳು)</string>
   <string name="text_thanks_feedback">ನಿಮ್ಮ ಪ್ರತಿಕ್ರಿಯೆಗೆ ಧನ್ಯವಾದಗಳು.</string>
   <string name="text_feedback_content">ನಾವು ಈ ಸಮಸ್ಯೆಯನ್ನು ಮುಂದಿನ ಆವೃತ್ತಿಯಲ್ಲಿ ಸರಿಪಡಿಸುತ್ತೇವೆ. ಅನಾನುಕೂಲತೆಗಾಗಿ ಕ್ಷಮಿಸಿ.</string>
+  <string name="no_available_vpn">ಉಚಿತ VPN ಲಭ್ಯವಿಲ್ಲ, ದಯವಿಟ್ಟು VPN ಪರದೆಗೆ ಹೋಗಿ ಸರ್ವರ್ ಆಯ್ಕೆಮಾಡಿ.</string>
   <string name="msg_device_does_not_support_this_feature">ಈ ಸಾಧನಕ್ಕೆ ಈ ವೈಶಿಷ್ಟ್ಯವು ಬೆಂಬಲಿತವಾಗಿಲ್ಲ!</string>
   <string name="search_app">ಹುಡುಕಾಟ ಅಪ್ಲಿಕೇಶನ್..</string>
+  <string name="exit_app">ಅಪ್ಲಿಕೇಶನ್‌ನಿಂದ ನಿರ್ಗಮಿಸುವುದೇ?</string>
+  <string name="exit_app_msg">ನೀವು ನಿರ್ಗಮಿಸುವುದು ಖಚಿತವೇ?</string>
   <string name="free">ಉಚಿತ</string>
   <string name="premium">ಪ್ರೀಮಿಯಂ</string>
+  <string name="unlock_premium">VPN ಪ್ರೀಮಿಯಂ ಅನ್ನು ಅನ್‌ಲಾಕ್ ಮಾಡಿ</string>
+  <string name="get_premium">ಪ್ರೀಮಿಯಂ ಪಡೆಯಿರಿ</string>
+  <string name="watch_ads">ಸಂಪರ್ಕಿಸಲು ಜಾಹೀರಾತುಗಳನ್ನು ವೀಕ್ಷಿಸಿ</string>
+  <string name="guide_1">ಸಂಪರ್ಕಿಸಲು ಕೇವಲ ಒಂದು ಸ್ಪರ್ಶ.</string>
+  <string name="guide_2">ವಿವಿಧ ದೇಶಗಳಲ್ಲಿ ಬಹು VPN ಸರ್ವರ್‌ಗಳು</string>
+  <string name="guide_3">ನಿಮ್ಮ ಆನ್‌ಲೈನ್ ಗೌಪ್ಯತೆಯನ್ನು ರಕ್ಷಿಸಿ</string>
+  <string name="what_is_my_ip">ನನ್ನ ಐಪಿ ಏನು?</string>
+  <string name="ip_address">ಐಪಿ ವಿಳಾಸ</string>
+  <string name="network_provider">ನೆಟ್‌ವರ್ಕ್ ಪೂರೈಕೆದಾರರು</string>
+  <string name="location">ಸ್ಥಳ</string>
+  <string name="pincode">ಪಿನ್ ಕೋಡ್</string>
+  <string name="timezone">ಸಮಯ ವಲಯ</string>
+  <string name="duration">ಅವಧಿ</string>
+  <string name="connect_success">ಸಂಪರ್ಕಿತ ಯಶಸ್ಸು</string>
+  <string name="connect_report">ವರದಿಯನ್ನು ಸಂಪರ್ಕಿಸಿ</string>
+  <string name="disconnect">ಸಂಪರ್ಕ ಕಡಿತಗೊಳಿಸಿ</string>
+  <string name="no_internet">ಇಂಟರ್ನೆಟ್ ಸಂಪರ್ಕವಿಲ್ಲ</string>
+  <string name="network_error">ಇಂಟರ್ನೆಟ್ ಸಂಪರ್ಕವಿಲ್ಲ</string>
 </resources>

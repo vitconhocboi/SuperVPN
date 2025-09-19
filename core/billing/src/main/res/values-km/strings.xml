@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">ថ្ងៃ</string>
+  <string name="core_text_inapp_days">ថ្ងៃ</string>
+  <string name="core_text_inapp_weeks">សប្តាហ៍</string>
+  <string name="core_text_inapp_month">ខែ</string>
+  <string name="core_text_inapp_months">ខែ</string>
+  <string name="core_text_inapp_year">ឆ្នាំ</string>
+  <string name="core_text_inapp_years">ឆ្នាំ</string>
+  <string name="core_auto_renew_after">បន្តដោយស្វ័យប្រវត្តិបន្ទាប់ពី៖</string>
+  <string name="core_text_free_trial">ការសាកល្បងឥតគិតថ្លៃ</string>
+</resources>

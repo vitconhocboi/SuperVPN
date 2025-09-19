@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">hari</string>
+  <string name="core_text_inapp_days">Hari</string>
+  <string name="core_text_inapp_weeks">Minggu</string>
+  <string name="core_text_inapp_month">Bulan</string>
+  <string name="core_text_inapp_months">Bulan</string>
+  <string name="core_text_inapp_year">Tahun</string>
+  <string name="core_text_inapp_years">Bertahun-tahun</string>
+  <string name="core_auto_renew_after">Perpanjangan Otomatis Setelah:</string>
+  <string name="core_text_free_trial">Uji Coba Gratis</string>
+</resources>

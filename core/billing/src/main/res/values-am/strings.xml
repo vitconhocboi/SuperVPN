@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">ቀን</string>
+  <string name="core_text_inapp_days">ቀናት</string>
+  <string name="core_text_inapp_weeks">ሳምንታት</string>
+  <string name="core_text_inapp_month">ወር</string>
+  <string name="core_text_inapp_months">ወራት</string>
+  <string name="core_text_inapp_year">አመት</string>
+  <string name="core_text_inapp_years">ዓመታት</string>
+  <string name="core_auto_renew_after">በኋላ ራስ-አድስ</string>
+  <string name="core_text_free_trial">ነጻ ሙከራ</string>
+</resources>

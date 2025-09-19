@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">દિવસ</string>
+  <string name="core_text_inapp_days">દિવસો</string>
+  <string name="core_text_inapp_weeks">અઠવાડિયા</string>
+  <string name="core_text_inapp_month">મહિનો</string>
+  <string name="core_text_inapp_months">મહિનાઓ</string>
+  <string name="core_text_inapp_year">વર્ષ</string>
+  <string name="core_text_inapp_years">વર્ષ</string>
+  <string name="core_auto_renew_after">આ પછી ઓટો રિન્યૂ:</string>
+  <string name="core_text_free_trial">મફત અજમાયશ</string>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Asante kwa ukaguzi wako, na tafadhali tupe maoni kadhaa.</string>
+  <string name="fb_rate_us_good">Asante sana kwa ukaguzi wako!</string>
+  <string name="fb_rate_us_default">Ukitupa kiwango, tutashukuru sana na tutaendelea kufanya kazi kwa bidii ili kukupa matumizi bora zaidi.</string>
+  <string name="fb_feedback_title">Tafadhali tujulishe kuhusu masuala yoyote uliyokumbana nayo.</string>
+  <string name="fb_feedback_crash">Kuanguka</string>
+  <string name="fb_feedback_feature_quality">Ubora wa kipengele</string>
+  <string name="fb_feedback_bug">Mdudu</string>
+  <string name="fb_feedback_other">Nyingine</string>
+  <string name="fb_send">Tuma</string>
+  <string name="fb_hint_feedback">Tafadhali toa maelezo ya ziada ili kutusaidia kutambua na kutatua suala lako kwa haraka zaidi (chini ya vibambo 6).</string>
+  <string name="fb_text_feedback_to">Maoni</string>
+  <string name="fb_best_rate">Ukadiriaji wa juu zaidi tunaweza kufikia :)</string>
+  <string name="fb_share_with">Shiriki Na</string>
+  <string name="fb_feedback_rate">Kadiria Sasa</string>
+  <string name="fb_rate_on_google_play">Maoni kwenye Google Play</string>
+  <string name="fb_thank_for_feedback">Asante kwa maoni yako</string>
+  <string name="fb_sorry_customer">Tutashughulikia suala hili katika toleo la baadaye. Pole kwa usumbufu</string>
+  <string name="fb_common_unable_find_market">Haijaweza kupata programu kwenye Google Play</string>
+  <string name="fb_thanks">sawa</string>
+</resources>

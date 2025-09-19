@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">နေ့</string>
+  <string name="core_text_inapp_days">နေ့ရက်များ</string>
+  <string name="core_text_inapp_weeks">ပတ်</string>
+  <string name="core_text_inapp_month">လ</string>
+  <string name="core_text_inapp_months">လ</string>
+  <string name="core_text_inapp_year">တစ်နှစ်</string>
+  <string name="core_text_inapp_years">နှစ်တွေ</string>
+  <string name="core_auto_renew_after">အလိုအလျောက် သက်တမ်းတိုးပြီးနောက်-</string>
+  <string name="core_text_free_trial">အခမဲ့ အစမ်းသုံးပါ။</string>
+</resources>

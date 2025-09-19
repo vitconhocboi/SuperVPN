@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="StarImage">
+        <item name="android:layout_height">@dimen/fb_star_size</item>
+        <item name="android:layout_width">@dimen/fb_star_size</item>
+        <item name="android:background">@drawable/fb_bg_click_star</item>
+        <item name="android:padding">@dimen/fb_star_padding</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:src">@drawable/fb_ic_star_selector</item>
+    </style>
+
+    <style name="StarImageBottom" parent="StarImage">
+        <item name="android:visibility">visible</item>
+    </style>
+
+    <style name="TitleFeedback" parent="BaseTitleFeedback">
+
+    </style>
+
+    <style name="BaseTitleFeedback">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">40dp</item>
+        <item name="android:layout_marginEnd">40dp</item>
+        <item name="android:layout_marginTop">40dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">@string/fb_feedback_title</item>
+        <item name="android:textColor">@color/fb_feedback_title</item>
+        <item name="android:textSize">@dimen/fb_text_size_feedback_title</item>
+    </style>
+
+    <style name="LogoFeedback" parent="BaseLogoFeedback">
+
+    </style>
+
+    <style name="BaseLogoFeedback">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">100dp</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">-32dp</item>
+        <item name="android:src">@drawable/fb_ic_feedback_screen</item>
+    </style>
+
+    <style name="LogoThanks" parent="BaseLogoThanks">
+
+    </style>
+
+
+    <style name="BaseLogoThanks">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">100dp</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:src">@drawable/fb_ic_feedback_thank</item>
+    </style>
+
+    <style name="TextMatter" parent="BaseTextMatter">
+
+    </style>
+
+    <style name="BaseTextMatter">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:background">@drawable/fb_bg_option_feedback</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:textColor">@color/fb_feedback_title_selector</item>
+        <item name="android:textSize">@dimen/fb_text_size_feedback_matter</item>
+    </style>
+
+    <style name="FB_TextType" parent="BaseTextType">
+
+
+    </style>
+
+    <style name="BaseTextType">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">12dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:text">@string/fb_type</item>
+        <item name="android:textColor">@color/fb_text_color_text_type</item>
+        <item name="android:textSize">@dimen/fb_text_size_type</item>
+    </style>
+
+    <style name="FB_SmileImage" parent="BaseSmileImage">
+        <item name="android:layout_width">140dp</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="srcCompat">@drawable/fb_ic_smile_1</item>
+    </style>
+
+    <style name="FB_SmileImageBottom" parent="BaseSmileImage">
+
+    </style>
+
+    <style name="BaseSmileImage">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="srcCompat">@drawable/fb_ic_smile_bottom_0</item>
+    </style>
+</resources>

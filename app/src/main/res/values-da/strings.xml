@@ -15,6 +15,8 @@
   <string name="setting_trial">Gratis prøveperiode i 3 dage</string>
   <string name="setting_upgrade">Opgrader</string>
   <string name="ip_proxy">Servere</string>
+  <string name="ip_quick_access">Hurtig adgang</string>
+  <string name="ip_all">ALLE</string>
   <string name="setting_app_proxy">App-filter</string>
   <string name="setting_app_proxy_desc">Vælg hvilke apps der skal oprette forbindelse til internettet via VPN</string>
   <string name="setting_ads_block">Annonceblokering</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Vælg forbindelsesområde</string>
   <string name="first_fragment_label">Første fragment</string>
   <string name="second_fragment_label">Andet fragment</string>
+  <string name="start">STARTE</string>
   <string name="next">næste</string>
   <string name="previous">Tidligere</string>
   <string name="vn">Việt Nam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">Okay</string>
   <string name="common_ok">Okay</string>
   <string name="btn_save">Gemme</string>
+  <string name="btn_connect">Forbinde</string>
   <string name="btn_cancel">afbestille</string>
+  <string name="btn_exit">Udgang</string>
   <string name="btn_reset">Nulstil</string>
   <string name="auto">Auto</string>
   <string name="min_60">60 minutter</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">Vælg VPN</string>
   <string name="dns_only">Kun DNS</string>
   <string name="confirm_dns">VPN ikke aktiv</string>
-  <string name="confirm_dns_msg">Du bruger i øjeblikket kun DNS. For en mere sikker og privat forbindelse, vælg venligst en VPN-server.</string>
+  <string name="confirm_dns_msg">Ingen VPN-server valgt. Vælg venligst en VPN-server.</string>
   <string name="btn_agree">Enig</string>
   <string name="confirm_collect">Dit privatliv, din kontrol</string>
   <string name="confirm_accept_msg">For at fuldføre dit abonnement indsamler denne app dit annoncerings-ID for at bekræfte registreringen, forbedre servicekvaliteten og forhindre svigagtig aktivitet. Accepterer du denne dataindsamling?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Giv os venligst flere detaljer, så vi kan identificere og løse dit problem hurtigere (mindst 6 tegn)</string>
   <string name="text_thanks_feedback">Tak for din feedback</string>
   <string name="text_feedback_content">Vi løser dette problem i en fremtidig version. Beklager ulejligheden.</string>
+  <string name="no_available_vpn">Der er ingen gratis VPN tilgængelig. Gå venligst til VPN-skærmen og vælg en server.</string>
   <string name="msg_device_does_not_support_this_feature">Denne funktion understøttes ikke på denne enhed!</string>
   <string name="search_app">søgeapp..</string>
+  <string name="exit_app">Luk appen?</string>
+  <string name="exit_app_msg">Er du sikker på at du vil afslutte?</string>
   <string name="free">Gratis</string>
   <string name="premium">Præmie</string>
+  <string name="unlock_premium">Lås op for VPN Premium</string>
+  <string name="get_premium">Få præmie</string>
+  <string name="watch_ads">Se annoncer for at få kontakt</string>
+  <string name="guide_1">Bare et enkelt tryk for at oprette forbindelse.</string>
+  <string name="guide_2">Flere VPN-servere i forskellige lande</string>
+  <string name="guide_3">Beskyt dit privatliv online</string>
+  <string name="what_is_my_ip">Hvad er min ip-adresse?</string>
+  <string name="ip_address">IP-adresse</string>
+  <string name="network_provider">Netværksudbyder</string>
+  <string name="location">Beliggenhed</string>
+  <string name="pincode">PIN-kode</string>
+  <string name="timezone">Tidszone</string>
+  <string name="duration">Varighed</string>
+  <string name="connect_success">Forbundet succes</string>
+  <string name="connect_report">Forbind rapport</string>
+  <string name="disconnect">Afbryde</string>
+  <string name="no_internet">Ingen internetforbindelse</string>
+  <string name="network_error">Ingen internetforbindelse</string>
 </resources>

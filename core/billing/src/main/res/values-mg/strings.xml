@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">andro</string>
+  <string name="core_text_inapp_days">Andro</string>
+  <string name="core_text_inapp_weeks">HERINANDRON\'NY</string>
+  <string name="core_text_inapp_month">VOLANA</string>
+  <string name="core_text_inapp_months">VOLANA</string>
+  <string name="core_text_inapp_year">TAOM-</string>
+  <string name="core_text_inapp_years">Taona</string>
+  <string name="core_auto_renew_after">Fanavaozana mandeha ho azy aorian\'ny:</string>
+  <string name="core_text_free_trial">Andrana maimaim-poana</string>
+</resources>

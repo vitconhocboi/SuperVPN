@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Terima kasih atas ulasan Anda, dan berikan kami masukan.</string>
+  <string name="fb_rate_us_good">Terima kasih banyak atas ulasan Anda!</string>
+  <string name="fb_rate_us_default">Jika Anda memberi kami penilaian, kami akan sangat menghargainya dan akan terus bekerja keras untuk memberi Anda pengalaman yang lebih baik.</string>
+  <string name="fb_feedback_title">Harap beri tahu kami tentang masalah yang Anda temui.</string>
+  <string name="fb_feedback_crash">Menabrak</string>
+  <string name="fb_feedback_feature_quality">Kualitas fitur</string>
+  <string name="fb_feedback_bug">Serangga</string>
+  <string name="fb_feedback_other">Lainnya</string>
+  <string name="fb_send">Mengirim</string>
+  <string name="fb_hint_feedback">Harap berikan detail tambahan untuk membantu kami mengidentifikasi dan menyelesaikan masalah Anda lebih cepat (minimal 6 karakter).</string>
+  <string name="fb_text_feedback_to">Masukan</string>
+  <string name="fb_best_rate">Rating tertinggi yang bisa kami raih :)</string>
+  <string name="fb_share_with">Bagikan Dengan</string>
+  <string name="fb_feedback_rate">Nilai Sekarang</string>
+  <string name="fb_rate_on_google_play">Ulasan di Google Play</string>
+  <string name="fb_thank_for_feedback">Terima kasih atas masukan Anda</string>
+  <string name="fb_sorry_customer">Kami akan mengatasi masalah ini di versi mendatang. Mohon maaf atas ketidaknyamanannya.</string>
+  <string name="fb_common_unable_find_market">Tidak dapat menemukan aplikasi di Google Play</string>
+  <string name="fb_thanks">Oke</string>
+</resources>

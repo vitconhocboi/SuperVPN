@@ -130,6 +130,7 @@ class InAppBillingViewModel @Inject constructor(
                         if(purchasePreferences.isUserVip()) {
                             restorePurchased(requiredRefresh = false, isNotifyRestore = false)
                         }
+                        loadSubscription(ProductIdProviderImpl.Companion.PRO_BY_WEEK)
                         loadSubscription(ProductIdProviderImpl.Companion.PRO_BY_MONTH)
                         loadSubscription(ProductIdProviderImpl.Companion.PRO_BY_YEAR)
                         loadInAppProduct(ProductIdProviderImpl.Companion.PRO)
@@ -156,6 +157,10 @@ class InAppBillingViewModel @Inject constructor(
 
                         ProductIdProviderImpl.Companion.PRO_BY_MONTH -> {
                             _productMonthly.emit(it)
+                        }
+
+                        ProductIdProviderImpl.Companion.PRO_BY_WEEK -> {
+                            _productWeekly.emit(it)
                         }
                     }
                 }

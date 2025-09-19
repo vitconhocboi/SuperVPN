@@ -15,6 +15,8 @@
   <string name="setting_trial">Deuchainn an-asgaidh 3 latha</string>
   <string name="setting_upgrade">Àrdaich</string>
   <string name="ip_proxy">Frithealaichean</string>
+  <string name="ip_quick_access">Ruigsinneachd Luath</string>
+  <string name="ip_all">UILE</string>
   <string name="setting_app_proxy">Criathrag Aplacaid</string>
   <string name="setting_app_proxy_desc">Tagh dè na h-aplacaidean a cheanglas ris an eadar-lìon tro VPN</string>
   <string name="setting_ads_block">Bloc sanasan</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Tagh raon ceangail</string>
   <string name="first_fragment_label">A’ Chiad Bhloigh</string>
   <string name="second_fragment_label">An Dàrna Bloigh</string>
+  <string name="start">Tòiseachadh</string>
   <string name="next">an ath</string>
   <string name="previous">Roimhe seo</string>
   <string name="vn">Bhietnam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">ceart gu leòr</string>
   <string name="common_ok">ceart gu leòr</string>
   <string name="btn_save">sàbhail</string>
+  <string name="btn_connect">Ceangail</string>
   <string name="btn_cancel">cuir dheth</string>
+  <string name="btn_exit">Ar-a-mach</string>
   <string name="btn_reset">Ath-shuidheachadh</string>
   <string name="auto">Auto</string>
   <string name="min_60">60 Mionaid</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">Tagh VPN</string>
   <string name="dns_only">DNS a-mhàin</string>
   <string name="confirm_dns">VPN Gun Ghnìomh</string>
-  <string name="confirm_dns_msg">Chan eil thu a’ cleachdadh ach DNS an-dràsta. Airson ceangal nas tèarainte agus nas prìobhaideach, tagh frithealaiche VPN.</string>
+  <string name="confirm_dns_msg">Cha deach frithealaiche VPN a thaghadh. Tagh frithealaiche VPN, ma \'s e do thoil e.</string>
   <string name="btn_agree">Aontaich</string>
   <string name="confirm_collect">Do Phrìobhaideachd, Do Smachd</string>
   <string name="confirm_accept_msg">Gus crìoch a chur air an fho-sgrìobhadh agad, bidh an aplacaid seo a’ tional an ID Sanasachd agad gus clàradh a dhearbhadh, càileachd na seirbheis a leasachadh, agus casg a chur air gnìomhachd meallta. A bheil thu ag aontachadh ris a’ chruinneachadh dàta seo?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Feuch an toir thu dhuinn barrachd fiosrachaidh gus an aithnich sinn agus fuasgladh fhaighinn air a’ chùis agad nas luaithe (co-dhiù 6 caractaran)</string>
   <string name="text_thanks_feedback">Tapadh leibh airson ur fios air ais</string>
   <string name="text_feedback_content">Ceartaichidh sinn a’ chùis seo ann an dreach san àm ri teachd. Duilich airson an mì-ghoireasachd.</string>
+  <string name="no_available_vpn">Chan eil vpn an-asgaidh ri fhaighinn, rach gu scrion VPN agus tagh frithealaiche.</string>
   <string name="msg_device_does_not_support_this_feature">Chan eil an feart seo ri fhaighinn air an inneal seo!</string>
   <string name="search_app">aplacaid rannsachaidh. .</string>
+  <string name="exit_app">Fàg an aplacaid?</string>
+  <string name="exit_app_msg">A bheil thu cinnteach gun tèid thu a-mach?</string>
   <string name="free">Saor an-asgaidh</string>
   <string name="premium">Prìomh-inbhe</string>
+  <string name="unlock_premium">Fuasgail VPN Premium</string>
+  <string name="get_premium">Faigh premium</string>
+  <string name="watch_ads">Coimhead air sanasan gus ceangal a dhèanamh</string>
+  <string name="guide_1">Dìreach aon suathadh airson ceangal.</string>
+  <string name="guide_2">Iomadh frithealaiche VPN ann an diofar dhùthchannan</string>
+  <string name="guide_3">Dìon do phrìobhaideachd air-loidhne</string>
+  <string name="what_is_my_ip">Dè an seòladh IP agam?</string>
+  <string name="ip_address">Seòladh IP</string>
+  <string name="network_provider">Solaraiche lìonra</string>
+  <string name="location">Àite</string>
+  <string name="pincode">Còd PIN</string>
+  <string name="timezone">Crios-ama</string>
+  <string name="duration">Fad</string>
+  <string name="connect_success">Soirbheachas ceangailte</string>
+  <string name="connect_report">Aithisg ceangail</string>
+  <string name="disconnect">Dì-cheangail</string>
+  <string name="no_internet">Gun cheangal eadar-lìn</string>
+  <string name="network_error">Gun cheangal eadar-lìn</string>
 </resources>

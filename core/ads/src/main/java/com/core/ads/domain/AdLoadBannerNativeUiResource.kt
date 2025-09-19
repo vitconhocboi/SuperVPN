@@ -1,6 +1,5 @@
 package com.core.ads.domain
 
-import android.util.Size
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.nativead.NativeAd
 import com.core.config.domain.data.BannerAdPlace
@@ -34,5 +33,4 @@ sealed class AdLoadBannerNativeUiResource(val commonAdPlaceName: IAdPlaceName) {
         val adPlaceName: IAdPlaceName,
         val nativeAdPlace: NativeAdPlace
     ) : AdLoadBannerNativeUiResource(adPlaceName)
-
 }

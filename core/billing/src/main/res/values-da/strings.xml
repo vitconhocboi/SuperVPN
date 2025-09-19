@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">dag</string>
+  <string name="core_text_inapp_days">dage</string>
+  <string name="core_text_inapp_weeks">Uger</string>
+  <string name="core_text_inapp_month">Måned</string>
+  <string name="core_text_inapp_months">måneder</string>
+  <string name="core_text_inapp_year">År</string>
+  <string name="core_text_inapp_years">år</string>
+  <string name="core_auto_renew_after">Automatisk fornyelse efter:</string>
+  <string name="core_text_free_trial">Gratis prøveversion</string>
+</resources>

@@ -15,6 +15,8 @@
   <string name="setting_trial">Perioadă de încercare gratuită de 3 zile</string>
   <string name="setting_upgrade">Upgrade</string>
   <string name="ip_proxy">Servere</string>
+  <string name="ip_quick_access">Acces rapid</string>
+  <string name="ip_all">TOATE</string>
   <string name="setting_app_proxy">Filtru de aplicații</string>
   <string name="setting_app_proxy_desc">Alegeți ce aplicații se vor conecta la internet prin VPN</string>
   <string name="setting_ads_block">Blocarea reclamelor</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Selectați zona de conectare</string>
   <string name="first_fragment_label">Primul fragment</string>
   <string name="second_fragment_label">Al doilea fragment</string>
+  <string name="start">ÎNCEPUT</string>
   <string name="next">Următorul</string>
   <string name="previous">Anterior</string>
   <string name="vn">Việt Nam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">O.K</string>
   <string name="common_ok">O.K</string>
   <string name="btn_save">Salvați</string>
+  <string name="btn_connect">Conectează-te</string>
   <string name="btn_cancel">Anulare</string>
+  <string name="btn_exit">Ieșire</string>
   <string name="btn_reset">Resetare</string>
   <string name="auto">Auto</string>
   <string name="min_60">60 de minute</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">Selectați VPN-ul</string>
   <string name="dns_only">Numai DNS</string>
   <string name="confirm_dns">VPN nu este activ</string>
-  <string name="confirm_dns_msg">În prezent, utilizați doar DNS. Pentru o conexiune mai sigură și mai privată, selectați un server VPN.</string>
+  <string name="confirm_dns_msg">Niciun server VPN selectat. Selectați un server VPN.</string>
   <string name="btn_agree">De acord</string>
   <string name="confirm_collect">Confidențialitatea ta, controlul tău</string>
   <string name="confirm_accept_msg">Pentru a finaliza abonamentul, această aplicație colectează ID-ul dvs. de publicitate pentru a verifica înregistrarea, a îmbunătăți calitatea serviciilor și a preveni activitățile frauduloase. Sunteți de acord cu această colectare de date?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Vă rugăm să ne oferiți mai multe detalii pentru a vă putea identifica și rezolva problema mai rapid (cel puțin 6 caractere)</string>
   <string name="text_thanks_feedback">Vă mulțumim pentru feedback</string>
   <string name="text_feedback_content">Vom rezolva această problemă într-o versiune viitoare. Îmi pare rău pentru neplăcerile create.</string>
+  <string name="no_available_vpn">Nu există un VPN gratuit disponibil, vă rugăm să accesați ecranul VPN și să alegeți un server.</string>
   <string name="msg_device_does_not_support_this_feature">Această funcție nu este compatibilă cu acest dispozitiv!</string>
   <string name="search_app">aplicație de căutare..</string>
+  <string name="exit_app">Ieși din aplicație?</string>
+  <string name="exit_app_msg">Sigur ieși?</string>
   <string name="free">Gratuit</string>
   <string name="premium">Premium</string>
+  <string name="unlock_premium">Deblocați VPN-ul Premium</string>
+  <string name="get_premium">Obțineți premium</string>
+  <string name="watch_ads">Urmărește reclame pentru a te conecta</string>
+  <string name="guide_1">Doar o atingere pentru conectare.</string>
+  <string name="guide_2">Mai multe servere VPN în diferite țări</string>
+  <string name="guide_3">Protejați-vă confidențialitatea online</string>
+  <string name="what_is_my_ip">Care este IP-ul meu?</string>
+  <string name="ip_address">Adresă IP</string>
+  <string name="network_provider">Furnizor de rețea</string>
+  <string name="location">Locaţie</string>
+  <string name="pincode">codul PIN</string>
+  <string name="timezone">Fus orar</string>
+  <string name="duration">Durată</string>
+  <string name="connect_success">Succes conectat</string>
+  <string name="connect_report">Raport de conectare</string>
+  <string name="disconnect">Deconecta</string>
+  <string name="no_internet">Fără conexiune la internet</string>
+  <string name="network_error">Fără conexiune la internet</string>
 </resources>

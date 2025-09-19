@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Enkosi ngohlolo lwakho, kwaye nceda usinike ingxelo.</string>
+  <string name="fb_rate_us_good">Enkosi kakhulu ngophononongo lwakho!</string>
+  <string name="fb_rate_us_default">Ukuba uyasilinganisela, siya kuyixabisa kakhulu kwaye siya kuqhubeka sisebenza nzima ukuze sikubonelele ngamava angcono.</string>
+  <string name="fb_feedback_title">Nceda usazise ngayo nayiphi na imiba odibene nayo.</string>
+  <string name="fb_feedback_crash">Ukuphahlazeka</string>
+  <string name="fb_feedback_feature_quality">Umgangatho wophawu</string>
+  <string name="fb_feedback_bug">Bug</string>
+  <string name="fb_feedback_other">Okunye</string>
+  <string name="fb_send">Thumela</string>
+  <string name="fb_hint_feedback">Nceda usinike iinkcukacha ezongezelelweyo ukusinceda ukuba sichonge kwaye sisombulule ingxaki yakho ngokukhawuleza (ubuncinane bamagama ama-6).</string>
+  <string name="fb_text_feedback_to">Ingxelo</string>
+  <string name="fb_best_rate">Elona nqanaba liphezulu esinokulifumana :)</string>
+  <string name="fb_share_with">Yabelana Na</string>
+  <string name="fb_feedback_rate">Ireyithi ngoku</string>
+  <string name="fb_rate_on_google_play">Uphononongo kuDlalo lukaGoogle</string>
+  <string name="fb_thank_for_feedback">Enkosi ngempendulo yakho</string>
+  <string name="fb_sorry_customer">Siza kujongana nalo mba kuguqulelo oluzayo. Uxolo ngokwenzela ingxaki</string>
+  <string name="fb_common_unable_find_market">Ayikwazanga kufumana usetyenziso kuDlalo lukaGoogle</string>
+  <string name="fb_thanks">Kulungile</string>
+</resources>

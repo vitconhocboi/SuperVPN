@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">ขอขอบคุณสำหรับการทบทวนของคุณและโปรดให้ข้อเสนอแนะแก่เรา</string>
+  <string name="fb_rate_us_good">ขอบคุณมากสำหรับการทบทวนของคุณ!</string>
+  <string name="fb_rate_us_default">หากคุณให้คะแนนเรา เราจะขอบคุณอย่างยิ่งและจะทำงานต่อไปอย่างหนักเพื่อมอบประสบการณ์ที่ดีกว่าให้กับคุณ</string>
+  <string name="fb_feedback_title">โปรดแจ้งให้เราทราบเกี่ยวกับปัญหาใดๆ ที่คุณพบ</string>
+  <string name="fb_feedback_crash">ชน</string>
+  <string name="fb_feedback_feature_quality">คุณสมบัติคุณภาพ</string>
+  <string name="fb_feedback_bug">แมลง</string>
+  <string name="fb_feedback_other">อื่น</string>
+  <string name="fb_send">ส่ง</string>
+  <string name="fb_hint_feedback">โปรดให้รายละเอียดเพิ่มเติมเพื่อช่วยให้เราระบุและแก้ไขปัญหาของคุณได้รวดเร็วยิ่งขึ้น (ขั้นต่ำ 6 อักขระ)</string>
+  <string name="fb_text_feedback_to">ข้อเสนอแนะ</string>
+  <string name="fb_best_rate">คะแนนสูงสุดที่เราสามารถทำได้ :)</string>
+  <string name="fb_share_with">แบ่งปันกับ</string>
+  <string name="fb_feedback_rate">ให้คะแนนตอนนี้</string>
+  <string name="fb_rate_on_google_play">รีวิวบน Google Play</string>
+  <string name="fb_thank_for_feedback">ขอขอบคุณสำหรับคำติชมของคุณ</string>
+  <string name="fb_sorry_customer">เราจะแก้ไขปัญหานี้ในเวอร์ชันถัดไป ขออภัยในความไม่สะดวก</string>
+  <string name="fb_common_unable_find_market">ไม่สามารถค้นหาแอปบน Google Play ได้</string>
+  <string name="fb_thanks">ตกลง</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">рӯз</string>
+  <string name="core_text_inapp_days">Рузхо</string>
+  <string name="core_text_inapp_weeks">Ҳафтаҳо</string>
+  <string name="core_text_inapp_month">Моҳ</string>
+  <string name="core_text_inapp_months">Моххо</string>
+  <string name="core_text_inapp_year">Соли</string>
+  <string name="core_text_inapp_years">Солхо</string>
+  <string name="core_auto_renew_after">Навсозии худкор Баъд аз:</string>
+  <string name="core_text_free_trial">Озмоиши ройгон</string>
+</resources>

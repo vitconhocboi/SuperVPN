@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Sharhingiz uchun tashakkur va bizga fikr-mulohazalaringizni bildiring.</string>
+  <string name="fb_rate_us_good">Sharhingiz uchun katta rahmat!</string>
+  <string name="fb_rate_us_default">Agar bizni baholasangiz, biz buni juda qadrlaymiz va sizga yaxshiroq tajriba taqdim etish uchun qattiq ishlashda davom etamiz.</string>
+  <string name="fb_feedback_title">Iltimos, duch kelgan muammolar haqida bizga xabar bering.</string>
+  <string name="fb_feedback_crash">Halokat</string>
+  <string name="fb_feedback_feature_quality">Xususiyat sifati</string>
+  <string name="fb_feedback_bug">Xato</string>
+  <string name="fb_feedback_other">Boshqa</string>
+  <string name="fb_send">Yuborish</string>
+  <string name="fb_hint_feedback">Muammoni tezroq aniqlash va hal qilishimizga yordam berish uchun qo‘shimcha ma’lumotlarni taqdim eting (kamida 6 ta belgi).</string>
+  <string name="fb_text_feedback_to">Fikr-mulohaza</string>
+  <string name="fb_best_rate">Biz erisha oladigan eng yuqori reyting :)</string>
+  <string name="fb_share_with">Bilan ulashing</string>
+  <string name="fb_feedback_rate">Hozir baho bering</string>
+  <string name="fb_rate_on_google_play">Google Play-da sharhlar</string>
+  <string name="fb_thank_for_feedback">Fikr-mulohazangiz uchun rahmat</string>
+  <string name="fb_sorry_customer">Biz bu muammoni keyingi versiyada ko\'rib chiqamiz. noqulayliklar uchun uzr so\'raymiz</string>
+  <string name="fb_common_unable_find_market">Ilovani Google Play\'da topib bo\'lmadi</string>
+  <string name="fb_thanks">ok</string>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">感谢您的评论，请向我们提供一些反馈。</string>
+  <string name="fb_rate_us_good">非常感谢您的评论！</string>
+  <string name="fb_rate_us_default">如果您对我们进行评价，我们将不胜感激，并将继续努力为您提供更好的体验。</string>
+  <string name="fb_feedback_title">请让我们知道您遇到的任何问题。</string>
+  <string name="fb_feedback_crash">碰撞</string>
+  <string name="fb_feedback_feature_quality">特征质量</string>
+  <string name="fb_feedback_bug">漏洞</string>
+  <string name="fb_feedback_other">其他</string>
+  <string name="fb_send">发送</string>
+  <string name="fb_hint_feedback">请提供更多详细信息以帮助我们更快地识别和解决您的问题（至少 6 个字符）。</string>
+  <string name="fb_text_feedback_to">反馈</string>
+  <string name="fb_best_rate">我们可以获得的最高评分:)</string>
+  <string name="fb_share_with">分享</string>
+  <string name="fb_feedback_rate">立即评分</string>
+  <string name="fb_rate_on_google_play">Google Play 上的评价</string>
+  <string name="fb_thank_for_feedback">感谢您的反馈</string>
+  <string name="fb_sorry_customer">我们将在后续版本中解决此问题。抱歉给您带来不便</string>
+  <string name="fb_common_unable_find_market">无法在 Google Play 上找到该应用</string>
+  <string name="fb_thanks">好的</string>
+</resources>

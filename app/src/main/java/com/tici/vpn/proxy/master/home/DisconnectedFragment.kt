@@ -95,7 +95,11 @@ class DisconnectedFragment : BackActionBarFragment, BaseFragment<FragmentDisconn
     }
 
     override fun getTitle(): String {
-        return getString(R.string.connect_report)
+        return try {
+            resources.getString(R.string.connect_report)
+        } catch (e: Exception) {
+            "Connect report"
+        }
     }
 
     fun loadData(report: ProxyReport) {

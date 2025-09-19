@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Grazas pola túa opinión e envíanos algúns comentarios.</string>
+  <string name="fb_rate_us_good">Moitas grazas pola túa crítica!</string>
+  <string name="fb_rate_us_default">Se nos valoras, agradeceríamos moito e seguiremos traballando duro para ofrecerche unha mellor experiencia.</string>
+  <string name="fb_feedback_title">Infórmanos de calquera problema que atopou.</string>
+  <string name="fb_feedback_crash">Choque</string>
+  <string name="fb_feedback_feature_quality">Calidade das características</string>
+  <string name="fb_feedback_bug">Erro</string>
+  <string name="fb_feedback_other">Outros</string>
+  <string name="fb_send">Enviar</string>
+  <string name="fb_hint_feedback">Proporciona detalles adicionais para axudarnos a identificar e resolver o teu problema máis rápido (mínimo de 6 caracteres).</string>
+  <string name="fb_text_feedback_to">Comentarios</string>
+  <string name="fb_best_rate">A puntuación máis alta que podemos acadar :)</string>
+  <string name="fb_share_with">Compartir con</string>
+  <string name="fb_feedback_rate">Valora agora</string>
+  <string name="fb_rate_on_google_play">Recensións en Google Play</string>
+  <string name="fb_thank_for_feedback">Grazas polos teus comentarios</string>
+  <string name="fb_sorry_customer">Abordaremos este problema nunha versión futura. Desculpen as molestias</string>
+  <string name="fb_common_unable_find_market">Non se puido atopar a aplicación en Google Play</string>
+  <string name="fb_thanks">Ok</string>
+</resources>

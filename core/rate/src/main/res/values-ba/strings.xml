@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Рәхмәт һеҙгә һеҙҙең өсөн тикшерелгән, һәм беҙгә ҡайһы бер кире бәйләнештәр бирергә.</string>
+  <string name="fb_rate_us_good">Рецензияғыҙ өсөн ҙур рәхмәт!</string>
+  <string name="fb_rate_us_default">Әгәр һеҙ беҙгә баһа бирһәгеҙ, беҙ уны ҙур ҡәҙерләп ҡабул итер инек һәм һеҙгә яҡшыраҡ тәжрибә бирер өсөн тырышып эшләүҙе дауам итәсәкбеҙ.</string>
+  <string name="fb_feedback_title">Зинһар, беҙгә осраған мәсьәләләр тураһында хәбәр итегеҙ.</string>
+  <string name="fb_feedback_crash">Авария</string>
+  <string name="fb_feedback_feature_quality">Функция сифаты</string>
+  <string name="fb_feedback_bug">Ҡуңыҙ</string>
+  <string name="fb_feedback_other">Икенсе</string>
+  <string name="fb_send">Ебәрергә</string>
+  <string name="fb_hint_feedback">Зинһар, өҫтәмә мәғлүмәттәр бирегеҙ, беҙгә ярҙам итеү өсөн асыҡлау һәм һеҙҙең мәсьәләне тиҙерәк хәл итеү (минимум 6 символ).</string>
+  <string name="fb_text_feedback_to">Һөрәнләнеш</string>
+  <string name="fb_best_rate">Иң юғары рейтинг беҙ өлгәшә ала :)</string>
+  <string name="fb_share_with">менән бүлешергә</string>
+  <string name="fb_feedback_rate">Хәҙер баһа</string>
+  <string name="fb_rate_on_google_play">Google Play-ҙа фекерҙәр</string>
+  <string name="fb_thank_for_feedback">Рәхмәт һеҙгә фекерҙәрегеҙ өсөн</string>
+  <string name="fb_sorry_customer">Был мәсьәләне киләсәк вариантта ҡараясаҡбыҙ. Уңайһыҙлыҡтар өсөн ғәфү итегеҙ</string>
+  <string name="fb_common_unable_find_market">Google Play-ҙа ҡушымтаны таба алмайбыҙ</string>
+  <string name="fb_thanks">Ярар</string>
+</resources>

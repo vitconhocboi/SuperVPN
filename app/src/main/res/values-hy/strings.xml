@@ -15,6 +15,8 @@
   <string name="setting_trial">Անվճար փորձաշրջան 3 օր</string>
   <string name="setting_upgrade">Թարմացնել</string>
   <string name="ip_proxy">Սերվերներ</string>
+  <string name="ip_quick_access">Արագ մուտք</string>
+  <string name="ip_all">ԲՈԼՈՐ</string>
   <string name="setting_app_proxy">Հավելվածի ֆիլտր</string>
   <string name="setting_app_proxy_desc">Ընտրեք, թե որ հավելվածները կմիանան ինտերնետին VPN-ի միջոցով</string>
   <string name="setting_ads_block">Գովազդի արգելափակում</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Ընտրեք միացման տարածքը</string>
   <string name="first_fragment_label">Առաջին հատված</string>
   <string name="second_fragment_label">Երկրորդ հատված</string>
+  <string name="start">ՍԿՍԵԼ</string>
   <string name="next">հաջորդ</string>
   <string name="previous">Նախորդը</string>
   <string name="vn">Việt Nam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">լավ</string>
   <string name="common_ok">լավ</string>
   <string name="btn_save">փրկել</string>
+  <string name="btn_connect">Միանալ</string>
   <string name="btn_cancel">չեղարկել</string>
+  <string name="btn_exit">Ելք</string>
   <string name="btn_reset">Վերագործարկում</string>
   <string name="auto">Ավտոմատ</string>
   <string name="min_60">60 րոպե</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">Ընտրեք VPN</string>
   <string name="dns_only">Միայն DNS</string>
   <string name="confirm_dns">VPN-ը ակտիվ չէ</string>
-  <string name="confirm_dns_msg">Դուք ներկայումս օգտագործում եք միայն DNS: Ավելի անվտանգ և գաղտնի կապի համար, խնդրում ենք ընտրել VPN սերվեր:</string>
+  <string name="confirm_dns_msg">VPN սերվեր ընտրված չէ։ Խնդրում ենք ընտրել VPN սերվեր։</string>
   <string name="btn_agree">Համաձայն եմ</string>
   <string name="confirm_collect">Ձեր գաղտնիությունը, ձեր վերահսկողությունը</string>
   <string name="confirm_accept_msg">Ձեր բաժանորդագրությունն ավարտելու համար այս հավելվածը հավաքում է ձեր գովազդային ID-ն՝ գրանցումը հաստատելու, ծառայության որակը բարելավելու և խարդախությունը կանխելու համար: Համաձա՞յն եք տվյալների այս հավաքագրմանը:</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Խնդրում ենք տրամադրել մեզ ավելի շատ մանրամասներ, որպեսզի մենք կարողանանք ավելի արագ բացահայտել և լուծել ձեր խնդիրը (առնվազն 6 նիշ)</string>
   <string name="text_thanks_feedback">Շնորհակալություն արձագանքի համար</string>
   <string name="text_feedback_content">Մենք կլուծենք այս խնդիրը հետագա տարբերակում: Կներեք անհարմարության համար։</string>
+  <string name="no_available_vpn">Անվճար VPN չկա, խնդրում ենք մտնել VPN էկրան և ընտրել սերվեր։</string>
   <string name="msg_device_does_not_support_this_feature">Այս գործառույթը չի աջակցվում այս սարքի համար։</string>
   <string name="search_app">որոնման հավելվածը ..</string>
+  <string name="exit_app">Փակե՞լ հավելվածը։</string>
+  <string name="exit_app_msg">Վստա՞հ եք դուրս գալուց։</string>
   <string name="free">Անվճար</string>
   <string name="premium">Պրեմիում</string>
+  <string name="unlock_premium">Բացեք VPN Premium-ը</string>
+  <string name="get_premium">Ստացեք պրեմիում</string>
+  <string name="watch_ads">Դիտեք գովազդները՝ կապ հաստատելու համար</string>
+  <string name="guide_1">Միանալու համար ընդամենը մեկ հպում։</string>
+  <string name="guide_2">Բազմաթիվ VPN սերվերներ տարբեր երկրներում</string>
+  <string name="guide_3">Պաշտպանեք ձեր առցանց գաղտնիությունը</string>
+  <string name="what_is_my_ip">Ի՞նչ է իմ IP-ն։</string>
+  <string name="ip_address">IP հասցե</string>
+  <string name="network_provider">Ցանցի մատակարար</string>
+  <string name="location">Գտնվելու վայրը</string>
+  <string name="pincode">PIN կոդը</string>
+  <string name="timezone">Ժամային գոտի</string>
+  <string name="duration">Տևողություն</string>
+  <string name="connect_success">Կապակցված հաջողություն</string>
+  <string name="connect_report">Կապի հաշվետվություն</string>
+  <string name="disconnect">Անջատել</string>
+  <string name="no_internet">Ինտերնետ կապ չկա</string>
+  <string name="network_error">Ինտերնետ կապ չկա</string>
 </resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Vielen Dank für Ihre Bewertung und geben Sie uns bitte Feedback.</string>
+  <string name="fb_rate_us_good">Vielen Dank für Ihre Bewertung!</string>
+  <string name="fb_rate_us_default">Wenn Sie uns bewerten, würden wir das sehr schätzen und werden weiterhin hart daran arbeiten, Ihnen ein besseres Erlebnis zu bieten.</string>
+  <string name="fb_feedback_title">Bitte teilen Sie uns alle aufgetretenen Probleme mit.</string>
+  <string name="fb_feedback_crash">Absturz</string>
+  <string name="fb_feedback_feature_quality">Featurequalität</string>
+  <string name="fb_feedback_bug">Insekt</string>
+  <string name="fb_feedback_other">Andere</string>
+  <string name="fb_send">Schicken</string>
+  <string name="fb_hint_feedback">Bitte geben Sie zusätzliche Details an, damit wir Ihr Problem schneller identifizieren und lösen können (mindestens 6 Zeichen).</string>
+  <string name="fb_text_feedback_to">Rückmeldung</string>
+  <string name="fb_best_rate">Die höchste Bewertung die wir erreichen können :)</string>
+  <string name="fb_share_with">Teilen mit</string>
+  <string name="fb_feedback_rate">Jetzt bewerten</string>
+  <string name="fb_rate_on_google_play">Rezensionen bei Google Play</string>
+  <string name="fb_thank_for_feedback">Vielen Dank für Ihr Feedback</string>
+  <string name="fb_sorry_customer">Wir werden dieses Problem in einer zukünftigen Version beheben. Entschuldigen Sie die Unannehmlichkeiten</string>
+  <string name="fb_common_unable_find_market">Die App kann bei Google Play nicht gefunden werden.</string>
+  <string name="fb_thanks">OK</string>
+</resources>

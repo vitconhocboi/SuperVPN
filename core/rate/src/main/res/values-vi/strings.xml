@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="fb_rate_us_bad">Cảm ơn bạn đã đánh giá. Vui lòng cung cấp thêm phản hồi cho chúng tôi.</string>
+  <string name="fb_rate_us_good">Cảm ơn bạn rất nhiều vì đánh giá của bạn!</string>
+  <string name="fb_rate_us_default">Nếu bạn đánh giá ứng dụng, chúng tôi sẽ rất biết ơn và sẽ tiếp tục nỗ lực mang đến trải nghiệm tốt hơn cho bạn.</string>
+  <string name="fb_feedback_title">Vui lòng cho chúng tôi biết về bất kỳ vấn đề nào bạn gặp phải.</string>
+  <string name="fb_feedback_crash">Lỗi sập ứng dụng</string>
+  <string name="fb_feedback_feature_quality">Chất lượng tính năng</string>
+  <string name="fb_feedback_bug">Lỗi</string>
+  <string name="fb_feedback_other">Khác</string>
+  <string name="fb_send">Gửi</string>
+  <string name="fb_hint_feedback">Vui lòng cung cấp thêm chi tiết để giúp chúng tôi xác định và giải quyết vấn đề nhanh hơn (tối thiểu 6 ký tự).</string>
+  <string name="fb_text_feedback_to">Phản hồi</string>
+  <string name="fb_best_rate">Xếp hạng cao nhất mà chúng tôi có thể đạt được :)</string>
+  <string name="fb_share_with">Chia sẻ với</string>
+  <string name="fb_feedback_rate">Đánh giá ngay</string>
+
+  <string name="fb_rate_on_google_play">Đánh giá trên Google Play</string>
+  <string name="fb_thank_for_feedback">Cảm ơn bạn đã phản hồi</string>
+  <string name="fb_sorry_customer">Chúng tôi sẽ khắc phục vấn đề này trong phiên bản sắp tới. Xin lỗi vì sự bất tiện này</string>
+  <string name="fb_common_unable_find_market">Không thể tìm thấy ứng dụng trên Google Play</string>
+  <string name="fb_thanks">OK</string>
+</resources>

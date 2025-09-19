@@ -129,9 +129,6 @@ abstract class BaseAdsDialogFragment<B : ViewBinding> : DialogFragment(), Corout
         }
         isVip = purchasePreferences.isUserVip()
         previousNetworkConnection = requireActivity().isNetworkConnected()
-
-        initViews(savedInstanceState)
-        handleObservable()
         contextAds = object : ContextAds(
             adsManager = adsManager,
             lifecycleOwner = this,
@@ -148,6 +145,8 @@ abstract class BaseAdsDialogFragment<B : ViewBinding> : DialogFragment(), Corout
                 this@BaseAdsDialogFragment.onBannerNativeResult(adResource)
             }
         }
+        initViews(savedInstanceState)
+        handleObservable()
         displayFirstData()
         preloadData()
         handleNetworkChange()
@@ -249,8 +248,8 @@ abstract class BaseAdsDialogFragment<B : ViewBinding> : DialogFragment(), Corout
      * @param adPlaceName Tên vị trí quảng cáo.
      * @param oneTimeLoad Chỉ tải quảng cáo một lần nếu true.
      */
-    fun loadBannerOrNativeAds(adPlaceName: IAdPlaceName, oneTimeLoad: Boolean) {
-        contextAds?.loadBannerOrNativeAds(adPlaceName, oneTimeLoad)
+    fun loadBannerOrNativeAds(adPlaceName: IAdPlaceName, oneTimeLoad: Boolean, isReload: Boolean = false) {
+        contextAds?.loadBannerOrNativeAds(adPlaceName, oneTimeLoad, isReload = isReload)
     }
 
     /**

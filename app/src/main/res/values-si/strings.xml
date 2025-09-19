@@ -15,6 +15,8 @@
   <string name="setting_trial">නොමිලේ අත්හදා බැලීම දින 3 යි</string>
   <string name="setting_upgrade">උත්ශ්‍රේණි කරන්න</string>
   <string name="ip_proxy">සේවාදායකයන්</string>
+  <string name="ip_quick_access">ඉක්මන් ප්‍රවේශය</string>
+  <string name="ip_all">සියලුම</string>
   <string name="setting_app_proxy">යෙදුම් පෙරහන</string>
   <string name="setting_app_proxy_desc">VPN හරහා අන්තර්ජාලයට සම්බන්ධ වන්නේ කුමන යෙදුම්ද යන්න තෝරන්න</string>
   <string name="setting_ads_block">දැන්වීම් අවහිර කිරීම</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">සම්බන්ධතා ප්‍රදේශය තෝරන්න</string>
   <string name="first_fragment_label">පළමු කොටස</string>
   <string name="second_fragment_label">දෙවන කොටස</string>
+  <string name="start">ආරම්භ කරන්න</string>
   <string name="next">ඊළඟ</string>
   <string name="previous">පෙර</string>
   <string name="vn">වියට්නාම්</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">හරි</string>
   <string name="common_ok">හරි</string>
   <string name="btn_save">සුරකින්න</string>
+  <string name="btn_connect">සම්බන්ධ කරන්න</string>
   <string name="btn_cancel">අවලංගු කරන්න</string>
+  <string name="btn_exit">පිටවෙන්න</string>
   <string name="btn_reset">නැවත සකසන්න</string>
   <string name="auto">ඔටෝ</string>
   <string name="min_60">මිනිත්තු 60 යි</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">VPN තෝරන්න</string>
   <string name="dns_only">DNS පමණි</string>
   <string name="confirm_dns">VPN ක්‍රියාකාරී නොවේ</string>
-  <string name="confirm_dns_msg">ඔබ දැනට DNS පමණක් භාවිතා කරයි. වඩාත් ආරක්ෂිත සහ පුද්ගලික සම්බන්ධතාවයක් සඳහා, කරුණාකර VPN සේවාදායකයක් තෝරන්න.</string>
+  <string name="confirm_dns_msg">VPN සේවාදායකයක් තෝරාගෙන නැත. කරුණාකර VPN සේවාදායකයක් තෝරන්න.</string>
   <string name="btn_agree">එකඟයි</string>
   <string name="confirm_collect">ඔබේ පෞද්ගලිකත්වය, ඔබේ පාලනය</string>
   <string name="confirm_accept_msg">ඔබගේ දායකත්වය සම්පූර්ණ කිරීම සඳහා, ලියාපදිංචිය සත්‍යාපනය කිරීමට, සේවා ගුණාත්මකභාවය වැඩි දියුණු කිරීමට සහ වංචනික ක්‍රියාකාරකම් වැළැක්වීමට මෙම යෙදුම ඔබගේ වෙළඳ දැන්වීම් හැඳුනුම්පත රැස් කරයි. මෙම දත්ත රැස් කිරීමට ඔබ එකඟද?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">කරුණාකර අපට වැඩි විස්තර ලබා දෙන්න, එවිට අපට ඔබේ ගැටලුව ඉක්මනින් හඳුනාගෙන විසඳා ගත හැකිය (අවම වශයෙන් අක්ෂර 6ක්)</string>
   <string name="text_thanks_feedback">ඔබගේ ප්‍රතිපෝෂණයට ස්තූතියි.</string>
   <string name="text_feedback_content">අපි මෙම ගැටළුව අනාගත අනුවාදයකින් විසඳන්නෙමු. අපහසුතාවයට සමාවෙන්න.</string>
+  <string name="no_available_vpn">නොමිලේ VPN එකක් නොමැත, කරුණාකර VPN තිරයට ගොස් සේවාදායකයක් තෝරන්න.</string>
   <string name="msg_device_does_not_support_this_feature">මෙම උපාංගය සඳහා මෙම විශේෂාංගය සහාය නොදක්වයි!</string>
   <string name="search_app">සෙවුම් යෙදුම..</string>
+  <string name="exit_app">යෙදුමෙන් ඉවත් වන්නද?</string>
+  <string name="exit_app_msg">ඔබට පිටවීමට විශ්වාසද?</string>
   <string name="free">නොමිලේ</string>
   <string name="premium">වාරික</string>
+  <string name="unlock_premium">VPN වාරිකය අගුළු හරින්න</string>
+  <string name="get_premium">වාරික ලබා ගන්න</string>
+  <string name="watch_ads">සම්බන්ධ වීමට දැන්වීම් නරඹන්න</string>
+  <string name="guide_1">සම්බන්ධ වීමට එක් ස්පර්ශයක් පමණි.</string>
+  <string name="guide_2">විවිධ රටවල බහු VPN සේවාදායක</string>
+  <string name="guide_3">ඔබගේ සබැඳි පෞද්ගලිකත්වය ආරක්ෂා කරන්න</string>
+  <string name="what_is_my_ip">මගේ ip එක මොකක්ද?</string>
+  <string name="ip_address">IP ලිපිනය</string>
+  <string name="network_provider">ජාල සැපයුම්කරු</string>
+  <string name="location">ස්ථානය</string>
+  <string name="pincode">PIN කේතය</string>
+  <string name="timezone">වේලා කලාපය</string>
+  <string name="duration">කාල සීමාව</string>
+  <string name="connect_success">සම්බන්ධිත සාර්ථකත්වය</string>
+  <string name="connect_report">වාර්තාව සම්බන්ධ කරන්න</string>
+  <string name="disconnect">විසන්ධි කරන්න</string>
+  <string name="no_internet">අන්තර්ජාල සම්බන්ධතාවයක් නොමැත</string>
+  <string name="network_error">අන්තර්ජාල සම්බන්ධතාවයක් නොමැත</string>
 </resources>

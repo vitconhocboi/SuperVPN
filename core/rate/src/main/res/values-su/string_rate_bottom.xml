@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">rating pangalusna pikeun urang</string>
+  <string name="fb_rate_bottom_default">Kami kerja keras pikeun nyayogikeun pangalaman pangguna anu langkung saé. Kami ngahargaan ulasan anjeun.</string>
+  <string name="fb_rate_bottom_bad">Oh henteu!</string>
+  <string name="fb_rate_bottom_good">Urang bogoh ka anjeun ogé!</string>
+  <string name="fb_rate_bottom_mess_bad">Mangga ninggalkeun kami sababaraha eupan balik</string>
+  <string name="fb_rate_bottom_mess_good">Hatur nuhun eupan balik anjeun</string>
+  <string name="fb_rate">Ongkoh</string>
+</resources>

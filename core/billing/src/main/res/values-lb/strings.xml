@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">Dag</string>
+  <string name="core_text_inapp_days">Deeg</string>
+  <string name="core_text_inapp_weeks">Wochen</string>
+  <string name="core_text_inapp_month">Mount</string>
+  <string name="core_text_inapp_months">Méint</string>
+  <string name="core_text_inapp_year">Joer</string>
+  <string name="core_text_inapp_years">Joer</string>
+  <string name="core_auto_renew_after">Automatesch Erneierung no:</string>
+  <string name="core_text_free_trial">Gratis Prouf</string>
+</resources>

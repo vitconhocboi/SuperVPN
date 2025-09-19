@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">den</string>
+  <string name="core_text_inapp_days">Dny</string>
+  <string name="core_text_inapp_weeks">týdny</string>
+  <string name="core_text_inapp_month">Měsíc</string>
+  <string name="core_text_inapp_months">měsíce</string>
+  <string name="core_text_inapp_year">Rok</string>
+  <string name="core_text_inapp_years">let</string>
+  <string name="core_auto_renew_after">Automatické obnovení po:</string>
+  <string name="core_text_free_trial">Bezplatná zkušební verze</string>
+</resources>

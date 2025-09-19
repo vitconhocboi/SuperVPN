@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Köszönjük értékelését, és kérjük, küldjön visszajelzést.</string>
+  <string name="fb_rate_us_good">Köszönöm szépen értékelését!</string>
+  <string name="fb_rate_us_default">Ha értékel minket, azt nagyra értékelnénk, és továbbra is keményen dolgozunk, hogy jobb élményben legyen részed.</string>
+  <string name="fb_feedback_title">Kérjük, ossza meg velünk a felmerült problémákat.</string>
+  <string name="fb_feedback_crash">Összeomlás</string>
+  <string name="fb_feedback_feature_quality">Funkció minősége</string>
+  <string name="fb_feedback_bug">Bogár</string>
+  <string name="fb_feedback_other">Más</string>
+  <string name="fb_send">Elküld</string>
+  <string name="fb_hint_feedback">Kérjük, adjon meg további részleteket a probléma gyorsabb azonosítása és megoldása érdekében (legalább 6 karakter).</string>
+  <string name="fb_text_feedback_to">Visszacsatolás</string>
+  <string name="fb_best_rate">A legmagasabb értékelés, amit elérhetünk :)</string>
+  <string name="fb_share_with">Megosztás a következővel</string>
+  <string name="fb_feedback_rate">Értékelje most</string>
+  <string name="fb_rate_on_google_play">Vélemények a Google Playen</string>
+  <string name="fb_thank_for_feedback">Köszönjük visszajelzését</string>
+  <string name="fb_sorry_customer">Ezzel a problémával egy későbbi verzióban foglalkozunk. Elnézést a kellemetlenségért</string>
+  <string name="fb_common_unable_find_market">Nem található az alkalmazás a Google Playen</string>
+  <string name="fb_thanks">rendben</string>
+</resources>

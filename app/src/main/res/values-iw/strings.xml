@@ -15,6 +15,8 @@
   <string name="setting_trial">תקופת ניסיון בחינם 3 ימים</string>
   <string name="setting_upgrade">שדרוג</string>
   <string name="ip_proxy">שרתים</string>
+  <string name="ip_quick_access">גישה מהירה</string>
+  <string name="ip_all">כֹּל</string>
   <string name="setting_app_proxy">מסנן אפליקציות</string>
   <string name="setting_app_proxy_desc">בחר אילו אפליקציות יתחברו לאינטרנט דרך VPN</string>
   <string name="setting_ads_block">חסימת מודעות</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">בחירת אזור חיבור</string>
   <string name="first_fragment_label">פרגמנט ראשון</string>
   <string name="second_fragment_label">פרגמנט שני</string>
+  <string name="start">הַתחָלָה</string>
   <string name="next">הַבָּא</string>
   <string name="previous">קוֹדֵם</string>
   <string name="vn">ויט נאם</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">בסדר</string>
   <string name="common_ok">בסדר</string>
   <string name="btn_save">לשמור</string>
+  <string name="btn_connect">לְחַבֵּר</string>
   <string name="btn_cancel">לְבַטֵל</string>
+  <string name="btn_exit">יְצִיאָה</string>
   <string name="btn_reset">אִתחוּל</string>
   <string name="auto">אוטומטי</string>
   <string name="min_60">60 דקות</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">בחר VPN</string>
   <string name="dns_only">DNS בלבד</string>
   <string name="confirm_dns">VPN לא פעיל</string>
-  <string name="confirm_dns_msg">אתה משתמש כרגע ב-DNS בלבד. לחיבור מאובטח ופרטי יותר, אנא בחר שרת VPN.</string>
+  <string name="confirm_dns_msg">לא נבחר שרת VPN. אנא בחר שרת VPN.</string>
   <string name="btn_agree">לְהַסכִּים</string>
   <string name="confirm_collect">הפרטיות שלך, השליטה שלך</string>
   <string name="confirm_accept_msg">כדי להשלים את המנוי שלך, אפליקציה זו אוספת את מזהה הפרסום שלך כדי לאמת את ההרשמה, לשפר את איכות השירות ולמנוע פעילות הונאה. האם אתה מסכים לאיסוף נתונים זה?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">אנא ספק לנו פרטים נוספים כדי שנוכל לזהות ולפתור את הבעיה שלך מהר יותר (לפחות 6 תווים)</string>
   <string name="text_thanks_feedback">תודה על המשוב שלך</string>
   <string name="text_feedback_content">אנו נתקן בעיה זו בגרסה עתידית. סליחה על אי הנוחות.</string>
+  <string name="no_available_vpn">אין VPN חינמי זמין, אנא עבור למסך VPN ובחר שרת.</string>
   <string name="msg_device_does_not_support_this_feature">תכונה זו אינה נתמכת עבור מכשיר זה!</string>
   <string name="search_app">אפליקציית חיפוש..</string>
+  <string name="exit_app">לצאת מהאפליקציה?</string>
+  <string name="exit_app_msg">האם אתה בטוח לצאת?</string>
   <string name="free">לְשַׁחְרֵר</string>
   <string name="premium">פּרֶמיָה</string>
+  <string name="unlock_premium">נעילת VPN פרימיום</string>
+  <string name="get_premium">קבל פרימיום</string>
+  <string name="watch_ads">צפה בפרסומות כדי להתחבר</string>
+  <string name="guide_1">רק נגיעה אחת כדי להתחבר.</string>
+  <string name="guide_2">מספר שרתי VPN במדינות שונות</string>
+  <string name="guide_3">הגן על הפרטיות שלך באינטרנט</string>
+  <string name="what_is_my_ip">מה ה-IP שלי?</string>
+  <string name="ip_address">כתובת IP</string>
+  <string name="network_provider">ספק רשת</string>
+  <string name="location">מִקוּם</string>
+  <string name="pincode">קוד PIN</string>
+  <string name="timezone">אזור זמן</string>
+  <string name="duration">מֶשֶׁך</string>
+  <string name="connect_success">הצלחה מחוברת</string>
+  <string name="connect_report">דוח חיבור</string>
+  <string name="disconnect">לְנַתֵק</string>
+  <string name="no_internet">אין חיבור לאינטרנט</string>
+  <string name="network_error">אין חיבור לאינטרנט</string>
 </resources>

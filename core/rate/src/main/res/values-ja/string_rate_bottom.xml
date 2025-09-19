@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">私たちにとって最高の評価</string>
+  <string name="fb_rate_bottom_default">より良いユーザーエクスペリエンスの提供に努めてまいります。レビューをいただき、ありがとうございます。</string>
+  <string name="fb_rate_bottom_bad">なんてこった！</string>
+  <string name="fb_rate_bottom_good">私たちもあなたを愛しています！</string>
+  <string name="fb_rate_bottom_mess_bad">フィードバックをお寄せください</string>
+  <string name="fb_rate_bottom_mess_good">フィードバックありがとうございます</string>
+  <string name="fb_rate">レート</string>
+</resources>

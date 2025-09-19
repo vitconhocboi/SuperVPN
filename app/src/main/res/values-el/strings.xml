@@ -15,6 +15,8 @@
   <string name="setting_trial">Δωρεάν δοκιμή 3 ημερών</string>
   <string name="setting_upgrade">Αναβαθμίζω</string>
   <string name="ip_proxy">Διακομιστές</string>
+  <string name="ip_quick_access">Γρήγορη πρόσβαση</string>
+  <string name="ip_all">ΟΛΟΙ</string>
   <string name="setting_app_proxy">Φίλτρο εφαρμογής</string>
   <string name="setting_app_proxy_desc">Επιλέξτε ποιες εφαρμογές θα συνδέονται στο Διαδίκτυο μέσω VPN</string>
   <string name="setting_ads_block">Αποκλεισμός διαφημίσεων</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Επιλογή περιοχής σύνδεσης</string>
   <string name="first_fragment_label">Πρώτο Θραύσμα</string>
   <string name="second_fragment_label">Δεύτερο Απόσπασμα</string>
+  <string name="start">ΑΡΧΗ</string>
   <string name="next">επόμενος</string>
   <string name="previous">Προηγούμενος</string>
   <string name="vn">Việt Nam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">Εντάξει</string>
   <string name="common_ok">Εντάξει</string>
   <string name="btn_save">αποθηκεύσετε</string>
+  <string name="btn_connect">Συνδέω</string>
   <string name="btn_cancel">Ματαίωση</string>
+  <string name="btn_exit">Εξοδος</string>
   <string name="btn_reset">Επαναφορά</string>
   <string name="auto">Αυτο</string>
   <string name="min_60">60 λεπτά</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">Επιλογή VPN</string>
   <string name="dns_only">Μόνο DNS</string>
   <string name="confirm_dns">Το VPN δεν είναι ενεργό</string>
-  <string name="confirm_dns_msg">Αυτήν τη στιγμή χρησιμοποιείτε μόνο DNS. Για μια πιο ασφαλή και ιδιωτική σύνδεση, επιλέξτε έναν διακομιστή VPN.</string>
+  <string name="confirm_dns_msg">Δεν έχει επιλεγεί διακομιστής VPN. Επιλέξτε έναν διακομιστή VPN.</string>
   <string name="btn_agree">Συμφωνώ</string>
   <string name="confirm_collect">Το απόρρητό σας, ο έλεγχός σας</string>
   <string name="confirm_accept_msg">Για να ολοκληρώσετε τη συνδρομή σας, αυτή η εφαρμογή συλλέγει το αναγνωριστικό διαφήμισης για να επαληθεύσει την εγγραφή, να βελτιώσει την ποιότητα των υπηρεσιών και να αποτρέψει δόλιες δραστηριότητες. Συμφωνείτε με αυτήν τη συλλογή δεδομένων;</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Δώστε μας περισσότερες λεπτομέρειες για να μπορέσουμε να εντοπίσουμε και να επιλύσουμε το πρόβλημά σας πιο γρήγορα (τουλάχιστον 6 χαρακτήρες)</string>
   <string name="text_thanks_feedback">Ευχαριστώ για τα σχόλιά σας</string>
   <string name="text_feedback_content">Θα διορθώσουμε αυτό το ζήτημα σε μελλοντική έκδοση. Συγγνώμη για την ταλαιπωρία.</string>
+  <string name="no_available_vpn">Δεν υπάρχει διαθέσιμο δωρεάν VPN, μεταβείτε στην οθόνη VPN και επιλέξτε έναν διακομιστή.</string>
   <string name="msg_device_does_not_support_this_feature">Αυτή η λειτουργία δεν υποστηρίζεται για αυτήν τη συσκευή!</string>
   <string name="search_app">εφαρμογή αναζήτησης..</string>
+  <string name="exit_app">Έξοδος από την εφαρμογή;</string>
+  <string name="exit_app_msg">Είστε σίγουροι ότι θέλετε να βγείτε;</string>
   <string name="free">Δωρεάν</string>
   <string name="premium">Ασφάλιστρο</string>
+  <string name="unlock_premium">Ξεκλειδώστε το VPN Premium</string>
+  <string name="get_premium">Αποκτήστε premium</string>
+  <string name="watch_ads">Παρακολουθήστε διαφημίσεις για να συνδεθείτε</string>
+  <string name="guide_1">Μόνο ένα άγγιγμα για σύνδεση.</string>
+  <string name="guide_2">Πολλαπλοί διακομιστές VPN σε διαφορετικές χώρες</string>
+  <string name="guide_3">Προστατέψτε το διαδικτυακό σας απόρρητο</string>
+  <string name="what_is_my_ip">Ποια είναι η IP μου;</string>
+  <string name="ip_address">Διεύθυνση IP</string>
+  <string name="network_provider">Πάροχος δικτύου</string>
+  <string name="location">Τοποθεσία</string>
+  <string name="pincode">Κωδικός PIN</string>
+  <string name="timezone">Ζώνη ώρας</string>
+  <string name="duration">Διάρκεια</string>
+  <string name="connect_success">Συνδεδεμένη επιτυχία</string>
+  <string name="connect_report">Αναφορά σύνδεσης</string>
+  <string name="disconnect">Αποσυνδέω</string>
+  <string name="no_internet">Χωρίς σύνδεση στο Διαδίκτυο</string>
+  <string name="network_error">Χωρίς σύνδεση στο Διαδίκτυο</string>
 </resources>

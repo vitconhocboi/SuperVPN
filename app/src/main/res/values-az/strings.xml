@@ -15,6 +15,8 @@
   <string name="setting_trial">Pulsuz sınaq 3 gün</string>
   <string name="setting_upgrade">Təkmilləşdirin</string>
   <string name="ip_proxy">Serverlər</string>
+  <string name="ip_quick_access">Sürətli giriş</string>
+  <string name="ip_all">HAMISI</string>
   <string name="setting_app_proxy">Tətbiq Filtri</string>
   <string name="setting_app_proxy_desc">Hansı proqramların VPN vasitəsilə İnternetə qoşulacağını seçin</string>
   <string name="setting_ads_block">Reklam bloku</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Bağlantı sahəsini seçin</string>
   <string name="first_fragment_label">Birinci fraqment</string>
   <string name="second_fragment_label">İkinci fraqment</string>
+  <string name="start">START</string>
   <string name="next">növbəti</string>
   <string name="previous">Əvvəlki</string>
   <string name="vn">Việt Nam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">tamam</string>
   <string name="common_ok">tamam</string>
   <string name="btn_save">yadda saxla</string>
+  <string name="btn_connect">Qoşun</string>
   <string name="btn_cancel">ləğv edin</string>
+  <string name="btn_exit">Çıx</string>
   <string name="btn_reset">Sıfırlayın</string>
   <string name="auto">Avtomatik</string>
   <string name="min_60">60 Dəqiqə</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">VPN seçin</string>
   <string name="dns_only">Yalnız DNS</string>
   <string name="confirm_dns">VPN Aktiv deyil</string>
-  <string name="confirm_dns_msg">Hazırda yalnız DNS istifadə edirsiniz. Daha təhlükəsiz və şəxsi əlaqə üçün VPN serveri seçin.</string>
+  <string name="confirm_dns_msg">Heç bir VPN Server seçilmədi. Zəhmət olmasa VPN server seçin.</string>
   <string name="btn_agree">Razılaşın</string>
   <string name="confirm_collect">Məxfiliyiniz, Nəzarətiniz</string>
   <string name="confirm_accept_msg">Abunəliyinizi tamamlamaq üçün bu proqram qeydiyyatı yoxlamaq, xidmət keyfiyyətini artırmaq və saxtakarlığın qarşısını almaq üçün Reklam ID-nizi toplayır. Bu məlumatların toplanması ilə razısınızmı?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Probleminizi daha tez müəyyən edib həll etmək üçün bizə ətraflı məlumat verin (ən azı 6 simvol)</string>
   <string name="text_thanks_feedback">Rəyiniz üçün təşəkkür edirik</string>
   <string name="text_feedback_content">Gələcək versiyada bu problemi həll edəcəyik. Narahatçılığa görə üzr istəyirik.</string>
+  <string name="no_available_vpn">Pulsuz VPN yoxdur, zəhmət olmasa VPN ekranına keçin və server seçin.</string>
   <string name="msg_device_does_not_support_this_feature">Bu funksiya bu cihaz üçün dəstəklənmir!</string>
   <string name="search_app">axtarış proqramı. .</string>
+  <string name="exit_app">Tətbiqdən çıxın?</string>
+  <string name="exit_app_msg">Çıxacağınıza əminsiniz?</string>
   <string name="free">Pulsuz</string>
   <string name="premium">Premium</string>
+  <string name="unlock_premium">VPN Premium kilidini açın</string>
+  <string name="get_premium">Premium alın</string>
+  <string name="watch_ads">Qoşulmaq üçün reklamlara baxın</string>
+  <string name="guide_1">Qoşulmaq üçün sadəcə bir toxunuş.</string>
+  <string name="guide_2">Müxtəlif ölkələrdə çoxlu VPN serverləri</string>
+  <string name="guide_3">Onlayn məxfiliyinizi qoruyun</string>
+  <string name="what_is_my_ip">Mənim ipim nədir?</string>
+  <string name="ip_address">IP ünvanı</string>
+  <string name="network_provider">Şəbəkə provayderi</string>
+  <string name="location">Məkan</string>
+  <string name="pincode">PIN kodu</string>
+  <string name="timezone">Saat qurşağı</string>
+  <string name="duration">Müddət</string>
+  <string name="connect_success">Bağlı uğur</string>
+  <string name="connect_report">Hesabatı birləşdirin</string>
+  <string name="disconnect">Bağlantını kəsin</string>
+  <string name="no_internet">İnternet bağlantısı yoxdur</string>
+  <string name="network_error">İnternet bağlantısı yoxdur</string>
 </resources>

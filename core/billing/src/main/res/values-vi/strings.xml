@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">ngày</string>
+  <string name="core_text_inapp_days">Ngày</string>
+  <string name="core_text_inapp_weeks">Tuần</string>
+  <string name="core_text_inapp_month">Tháng</string>
+  <string name="core_text_inapp_months">Tháng</string>
+  <string name="core_text_inapp_year">Năm</string>
+  <string name="core_text_inapp_years">Năm</string>
+  <string name="core_auto_renew_after">Tự động gia hạn sau:</string>
+  <string name="core_text_free_trial">Dùng thử miễn phí</string>
+</resources>

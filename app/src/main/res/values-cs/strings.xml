@@ -15,6 +15,8 @@
   <string name="setting_trial">Bezplatná zkušební doba 3 dny</string>
   <string name="setting_upgrade">Upgrade</string>
   <string name="ip_proxy">Servery</string>
+  <string name="ip_quick_access">Rychlý přístup</string>
+  <string name="ip_all">VŠE</string>
   <string name="setting_app_proxy">Filtr aplikací</string>
   <string name="setting_app_proxy_desc">Vyberte, které aplikace se budou připojovat k internetu přes VPN</string>
   <string name="setting_ads_block">Blok reklam</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Vyberte oblast připojení</string>
   <string name="first_fragment_label">První fragment</string>
   <string name="second_fragment_label">Druhý fragment</string>
+  <string name="start">START</string>
   <string name="next">další</string>
   <string name="previous">Předchozí</string>
   <string name="vn">Việt Nam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">OK</string>
   <string name="common_ok">OK</string>
   <string name="btn_save">Uložit</string>
+  <string name="btn_connect">Připojit</string>
   <string name="btn_cancel">zrušení</string>
+  <string name="btn_exit">Výstup</string>
   <string name="btn_reset">Obnovit</string>
   <string name="auto">Auto</string>
   <string name="min_60">60 minut</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">Vyberte VPN</string>
   <string name="dns_only">Pouze DNS</string>
   <string name="confirm_dns">VPN není aktivní</string>
-  <string name="confirm_dns_msg">Momentálně používáte pouze DNS. Pro bezpečnější a soukromější připojení vyberte server VPN.</string>
+  <string name="confirm_dns_msg">Není vybrán žádný VPN server. Vyberte prosím VPN server.</string>
   <string name="btn_agree">Souhlasím</string>
   <string name="confirm_collect">Vaše soukromí, vaše kontrola</string>
   <string name="confirm_accept_msg">Aby tato aplikace dokončila vaše předplatné, shromažďuje vaše reklamní ID za účelem ověření registrace, zlepšení kvality služeb a zabránění podvodným aktivitám. Souhlasíte s tímto shromažďováním údajů?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Uveďte prosím více podrobností, abychom mohli váš problém identifikovat a vyřešit rychleji (alespoň 6 znaků)</string>
   <string name="text_thanks_feedback">Děkujeme za vaši zpětnou vazbu</string>
   <string name="text_feedback_content">Tento problém opravíme v budoucí verzi. Omlouváme se za nepříjemnosti.</string>
+  <string name="no_available_vpn">Není k dispozici žádná bezplatná VPN, přejděte prosím na obrazovku VPN a vyberte server.</string>
   <string name="msg_device_does_not_support_this_feature">Tato funkce není na tomto zařízení podporována!</string>
   <string name="search_app">vyhledávací aplikace..</string>
+  <string name="exit_app">Ukončit aplikaci?</string>
+  <string name="exit_app_msg">Jste si jistý/á, že chcete odejít?</string>
   <string name="free">Uvolnit</string>
   <string name="premium">Pojistné</string>
+  <string name="unlock_premium">Odemkněte prémiovou VPN</string>
+  <string name="get_premium">Získejte prémii</string>
+  <string name="watch_ads">Sledujte reklamy a spojte se</string>
+  <string name="guide_1">Stačí jeden dotyk pro připojení.</string>
+  <string name="guide_2">Více VPN serverů v různých zemích</string>
+  <string name="guide_3">Chraňte své online soukromí</string>
+  <string name="what_is_my_ip">Jaká je moje IP adresa?</string>
+  <string name="ip_address">IP adresa</string>
+  <string name="network_provider">Poskytovatel sítě</string>
+  <string name="location">Umístění</string>
+  <string name="pincode">PIN kód</string>
+  <string name="timezone">Časové pásmo</string>
+  <string name="duration">Trvání</string>
+  <string name="connect_success">Propojený úspěch</string>
+  <string name="connect_report">Připojit zprávu</string>
+  <string name="disconnect">Odpojit</string>
+  <string name="no_internet">Žádné připojení k internetu</string>
+  <string name="network_error">Žádné připojení k internetu</string>
 </resources>

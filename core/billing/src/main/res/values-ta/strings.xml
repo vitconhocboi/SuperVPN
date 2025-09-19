@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">நாள்</string>
+  <string name="core_text_inapp_days">நாட்கள்</string>
+  <string name="core_text_inapp_weeks">வாரங்கள்</string>
+  <string name="core_text_inapp_month">மாதம்</string>
+  <string name="core_text_inapp_months">மாதங்கள்</string>
+  <string name="core_text_inapp_year">ஆண்டு</string>
+  <string name="core_text_inapp_years">ஆண்டுகள்</string>
+  <string name="core_auto_renew_after">தானியங்கி புதுப்பித்தல் பிறகு:</string>
+  <string name="core_text_free_trial">இலவச சோதனை</string>
+</resources>

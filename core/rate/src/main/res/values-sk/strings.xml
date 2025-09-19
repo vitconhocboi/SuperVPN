@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Ďakujeme za vašu recenziu a poskytnite nám spätnú väzbu.</string>
+  <string name="fb_rate_us_good">Ďakujeme veľmi pekne za vašu recenziu!</string>
+  <string name="fb_rate_us_default">Ak nás ohodnotíte, veľmi si to vážime a budeme naďalej tvrdo pracovať, aby sme vám poskytli lepší zážitok.</string>
+  <string name="fb_feedback_title">Dajte nám vedieť o akýchkoľvek problémoch, s ktorými ste sa stretli.</string>
+  <string name="fb_feedback_crash">Zrútiť sa</string>
+  <string name="fb_feedback_feature_quality">Kvalita funkcií</string>
+  <string name="fb_feedback_bug">Bug</string>
+  <string name="fb_feedback_other">Iné</string>
+  <string name="fb_send">Odoslať</string>
+  <string name="fb_hint_feedback">Uveďte ďalšie podrobnosti, ktoré nám pomôžu rýchlejšie identifikovať a vyriešiť váš problém (minimálne 6 znakov).</string>
+  <string name="fb_text_feedback_to">Spätná väzba</string>
+  <string name="fb_best_rate">Najvyššie hodnotenie aké môžeme dosiahnuť :)</string>
+  <string name="fb_share_with">Zdieľať s</string>
+  <string name="fb_feedback_rate">Ohodnotiť</string>
+  <string name="fb_rate_on_google_play">Recenzie na Google Play</string>
+  <string name="fb_thank_for_feedback">ďakujeme za spätnú väzbu</string>
+  <string name="fb_sorry_customer">Tomuto problému sa budeme venovať v budúcej verzii. Ospravedlňujeme sa za nepríjemnosti</string>
+  <string name="fb_common_unable_find_market">Aplikáciu nie je možné nájsť v službe Google Play</string>
+  <string name="fb_thanks">ok</string>
+</resources>

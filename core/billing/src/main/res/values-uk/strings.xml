@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">день</string>
+  <string name="core_text_inapp_days">днів</string>
+  <string name="core_text_inapp_weeks">тижнів</string>
+  <string name="core_text_inapp_month">місяць</string>
+  <string name="core_text_inapp_months">Місяці</string>
+  <string name="core_text_inapp_year">рік</string>
+  <string name="core_text_inapp_years">років</string>
+  <string name="core_auto_renew_after">Автоматичне поновлення після:</string>
+  <string name="core_text_free_trial">Безкоштовна пробна версія</string>
+</resources>

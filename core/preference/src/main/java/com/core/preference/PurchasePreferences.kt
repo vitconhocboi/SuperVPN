@@ -11,7 +11,6 @@ import javax.inject.Singleton
 class PurchasePreferences @Inject constructor(@ApplicationContext private val applicationContext: Context) {
     private val currentKeyVipList = mutableListOf<String>()
 
-
     val changeVipState = MutableLiveData<Boolean>()
     private val prefs = SharedPrefs(applicationContext, name = "Purchase", gson = Gson())
 
@@ -69,7 +68,6 @@ class PurchasePreferences @Inject constructor(@ApplicationContext private val ap
         currentKeyVipList.addAll(keyVipList)
     }
 
-
     companion object {
         private const val KEY_IS_PRO_LIFE_TIME = "CORE_KEY_IS_PRO_LIFE_TIME"
 
@@ -78,6 +76,5 @@ class PurchasePreferences @Inject constructor(@ApplicationContext private val ap
         private const val KEY_IS_PRO_BY_MONTH = "CORE_KEY_IS_PRO_BY_MONTH"
 
         private const val KEY_IS_PRO_BY_WEEK = "CORE_KEY_IS_PRO_BY_WEEK"
-
     }
 }

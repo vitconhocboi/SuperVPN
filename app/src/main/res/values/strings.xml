@@ -224,4 +224,7 @@
     <string name="connect_success">Connected success</string>
     <string name="connect_report">Connect report</string>
     <string name="disconnect">Disconnect</string>
+
+    <string name="no_internet">No internet connection</string>
+    <string name="network_error">No internet connection</string>
 </resources>

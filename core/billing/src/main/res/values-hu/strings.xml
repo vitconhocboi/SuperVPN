@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">nap</string>
+  <string name="core_text_inapp_days">Napok</string>
+  <string name="core_text_inapp_weeks">Hetek</string>
+  <string name="core_text_inapp_month">Hónap</string>
+  <string name="core_text_inapp_months">Hónapok</string>
+  <string name="core_text_inapp_year">Év</string>
+  <string name="core_text_inapp_years">Évek</string>
+  <string name="core_auto_renew_after">Automatikus megújítás ezután:</string>
+  <string name="core_text_free_trial">Ingyenes próbaverzió</string>
+</resources>

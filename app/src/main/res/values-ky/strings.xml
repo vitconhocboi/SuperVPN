@@ -15,6 +15,8 @@
   <string name="setting_trial">Акысыз сыноо 3 күн</string>
   <string name="setting_upgrade">Жаңыртуу</string>
   <string name="ip_proxy">Серверлер</string>
+  <string name="ip_quick_access">Ыкчам жетүү</string>
+  <string name="ip_all">БААРЫ</string>
   <string name="setting_app_proxy">Колдонмо чыпкасы</string>
   <string name="setting_app_proxy_desc">Кайсы колдонмолор VPN аркылуу Интернетке туташа турганын тандаңыз</string>
   <string name="setting_ads_block">Жарнамаларды бөгөттөө</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Туташуу аймагын тандаңыз</string>
   <string name="first_fragment_label">Биринчи фрагмент</string>
   <string name="second_fragment_label">Экинчи фрагмент</string>
+  <string name="start">START</string>
   <string name="next">кийинки</string>
   <string name="previous">Мурунку</string>
   <string name="vn">Вьетнам</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">макул</string>
   <string name="common_ok">макул</string>
   <string name="btn_save">сактоо</string>
+  <string name="btn_connect">Туташуу</string>
   <string name="btn_cancel">жокко чыгаруу</string>
+  <string name="btn_exit">Чыгыңыз</string>
   <string name="btn_reset">Калыбына келтирүү</string>
   <string name="auto">Авто</string>
   <string name="min_60">60 мүнөт</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">VPN тандаңыз</string>
   <string name="dns_only">DNS гана</string>
   <string name="confirm_dns">VPN активдүү эмес</string>
-  <string name="confirm_dns_msg">Учурда сиз DNS гана колдонуп жатасыз. Кооптуураак жана купуя байланыш үчүн VPN серверин тандаңыз.</string>
+  <string name="confirm_dns_msg">VPN сервери тандалган жок. Сураныч, VPN серверин тандаңыз.</string>
   <string name="btn_agree">макул</string>
   <string name="confirm_collect">Сиздин купуялыгыңыз, сиздин көзөмөлүңүз</string>
   <string name="confirm_accept_msg">Жазылууңузду аяктоо үчүн бул колдонмо каттоону ырастоо, кызматтын сапатын жогорулатуу жана алдамчылык аракеттерди алдын алуу үчүн Жарнама ID\'ңизди чогултат. Бул маалыматтарды чогултууга макулсузбу?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Маселеңизди тезирээк аныктап чечишибиз үчүн бизге кененирээк маалымат бериңиз (кеминде 6 белги)</string>
   <string name="text_thanks_feedback">Пикириңиз үчүн рахмат</string>
   <string name="text_feedback_content">Бул маселени келечектеги версияда оңдойбуз. Ыңгайсыздык үчүн кечирим сурайбыз.</string>
+  <string name="no_available_vpn">Акысыз VPN жок, VPN экранына өтүп, серверди тандаңыз.</string>
   <string name="msg_device_does_not_support_this_feature">Бул функция бул түзмөктө колдоого алынбайт!</string>
   <string name="search_app">издөө колдонмо..</string>
+  <string name="exit_app">Колдонмодон чыгасызбы?</string>
+  <string name="exit_app_msg">Чын эле чыгасызбы?</string>
   <string name="free">бекер</string>
   <string name="premium">Premium</string>
+  <string name="unlock_premium">VPN Premium кулпусун ачуу</string>
+  <string name="get_premium">Премиум алыңыз</string>
+  <string name="watch_ads">Туташуу үчүн жарнамаларды көрүңүз</string>
+  <string name="guide_1">Туташуу үчүн бир гана тийүү.</string>
+  <string name="guide_2">Ар кайсы өлкөлөрдө бир нече VPN серверлери</string>
+  <string name="guide_3">Онлайн купуялыгыңызды коргоңуз</string>
+  <string name="what_is_my_ip">Менин IP деген эмне?</string>
+  <string name="ip_address">IP дареги</string>
+  <string name="network_provider">Тармак камсыздоочу</string>
+  <string name="location">Жайгашкан жер</string>
+  <string name="pincode">PIN код</string>
+  <string name="timezone">Убакыт алкагы</string>
+  <string name="duration">Узактыгы</string>
+  <string name="connect_success">Байланышкан ийгилик</string>
+  <string name="connect_report">Туташуу отчету</string>
+  <string name="disconnect">Ажыратуу</string>
+  <string name="no_internet">Интернет байланышы жок</string>
+  <string name="network_error">Интернет байланышы жок</string>
 </resources>

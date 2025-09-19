@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">Bästa betyg för oss</string>
+  <string name="fb_rate_bottom_default">Vi arbetar hårt för att ge en bättre användarupplevelse. Vi uppskattar din recension.</string>
+  <string name="fb_rate_bottom_bad">Nej då!</string>
+  <string name="fb_rate_bottom_good">Vi älskar dig också!</string>
+  <string name="fb_rate_bottom_mess_bad">Lämna gärna feedback till oss</string>
+  <string name="fb_rate_bottom_mess_good">Tack för din feedback</string>
+  <string name="fb_rate">Hastighet</string>
+</resources>

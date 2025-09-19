@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">latha</string>
+  <string name="core_text_inapp_days">Làithean</string>
+  <string name="core_text_inapp_weeks">Seachdainean</string>
+  <string name="core_text_inapp_month">Mìos</string>
+  <string name="core_text_inapp_months">Mìosan</string>
+  <string name="core_text_inapp_year">Bliadhna</string>
+  <string name="core_text_inapp_years">Bliadhnaichean</string>
+  <string name="core_auto_renew_after">Ùrachadh fèin-ghluasadach às dèidh:</string>
+  <string name="core_text_free_trial">Trial an-asgaidh</string>
+</resources>

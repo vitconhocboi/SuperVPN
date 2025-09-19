@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <queries>
+        <package android:name="com.samsung.android.email.provider"/>
+        <package android:name="com.yahoo.mobile.client.android.mail"/>
+        <package android:name="ch.protonmail.android"/>
+        <package android:name="me.bluemail.mail"/>
+        <package android:name="org.kman.AquaMail"/>
+        <package android:name="com.zoho.mail"/>
+        <package android:name="com.easilydo.mail"/>
+        <package android:name="com.readdle.spark"/>
+        <package android:name="eu.faircode.email"/>
+        <package android:name="com.microsoft.office.outlook" />
+        <package android:name="com.google.android.gm" />
+    </queries>
+
+    <application>
+        <activity
+            android:name="com.core.rate.feedback.FeedbackActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"
+            android:exported="true"/>
+    </application>
+
+</manifest>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Täname teid arvustuse eest ja andke meile tagasisidet.</string>
+  <string name="fb_rate_us_good">Suur tänu arvustuse eest!</string>
+  <string name="fb_rate_us_default">Kui annate meile hinnangu, oleksime selle eest väga tänulikud ja jätkame kõvasti tööd, et pakkuda teile paremat kogemust.</string>
+  <string name="fb_feedback_title">Andke meile teada kõigist tekkinud probleemidest.</string>
+  <string name="fb_feedback_crash">Krahh</string>
+  <string name="fb_feedback_feature_quality">Funktsiooni kvaliteet</string>
+  <string name="fb_feedback_bug">Viga</string>
+  <string name="fb_feedback_other">muud</string>
+  <string name="fb_send">Saada</string>
+  <string name="fb_hint_feedback">Sisestage lisateavet, mis aitab meil teie probleemi kiiremini tuvastada ja lahendada (vähemalt 6 tähemärki).</string>
+  <string name="fb_text_feedback_to">Tagasiside</string>
+  <string name="fb_best_rate">Kõrgeim hinnang, mida suudame saavutada :)</string>
+  <string name="fb_share_with">Jaga koos</string>
+  <string name="fb_feedback_rate">Hinda kohe</string>
+  <string name="fb_rate_on_google_play">Arvustused Google Plays</string>
+  <string name="fb_thank_for_feedback">Täname teid tagasiside eest</string>
+  <string name="fb_sorry_customer">Seda probleemi käsitleme tulevases versioonis. Vabandame ebamugavuste pärast</string>
+  <string name="fb_common_unable_find_market">Rakendust ei leitud Google Playst</string>
+  <string name="fb_thanks">Okei</string>
+</resources>

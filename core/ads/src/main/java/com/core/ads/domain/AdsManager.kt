@@ -47,7 +47,7 @@ interface AdsManager {
         isRequestFromExternal: Boolean = true
     )
 
-    fun loadBannerNativeAd(activity: Activity, adPlaceName: IAdPlaceName, isPreload: Boolean, identifier: String)
+    fun loadBannerNativeAd(activity: Activity, adPlaceName: IAdPlaceName, isPreload: Boolean, isReload: Boolean, identifier: String)
 
     fun showAd(activity: Activity, adPlaceName: IAdPlaceName, isWaitLoadToShow: Boolean = false)
 

@@ -15,6 +15,8 @@
   <string name="setting_trial">Libreng pagsubok 3 araw</string>
   <string name="setting_upgrade">Mag-upgrade</string>
   <string name="ip_proxy">Mga server</string>
+  <string name="ip_quick_access">Mabilis na Access</string>
+  <string name="ip_all">LAHAT</string>
   <string name="setting_app_proxy">Filter ng App</string>
   <string name="setting_app_proxy_desc">Piliin kung aling mga app ang kumonekta sa Internet sa pamamagitan ng VPN</string>
   <string name="setting_ads_block">Mga ad block</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Piliin ang lugar ng koneksyon</string>
   <string name="first_fragment_label">Unang Fragment</string>
   <string name="second_fragment_label">Pangalawang Fragment</string>
+  <string name="start">MAGSIMULA</string>
   <string name="next">susunod</string>
   <string name="previous">Nakaraang</string>
   <string name="vn">Việt Nam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">ok</string>
   <string name="common_ok">ok</string>
   <string name="btn_save">iligtas</string>
+  <string name="btn_connect">Kumonekta</string>
   <string name="btn_cancel">kanselahin</string>
+  <string name="btn_exit">Lumabas</string>
   <string name="btn_reset">I-reset</string>
   <string name="auto">Auto</string>
   <string name="min_60">60 Minuto</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">Piliin ang VPN</string>
   <string name="dns_only">DNS lang</string>
   <string name="confirm_dns">Hindi Aktibo ang VPN</string>
-  <string name="confirm_dns_msg">Kasalukuyan kang gumagamit ng DNS lamang. Para sa mas secure at pribadong koneksyon, mangyaring pumili ng VPN server.</string>
+  <string name="confirm_dns_msg">Walang napiling VPN Server. Mangyaring pumili ng isang VPN server.</string>
   <string name="btn_agree">Sumang-ayon</string>
   <string name="confirm_collect">Iyong Privacy, Iyong Kontrol</string>
   <string name="confirm_accept_msg">Upang makumpleto ang iyong subscription, kinokolekta ng app na ito ang iyong Advertising ID upang i-verify ang pagpaparehistro, pahusayin ang kalidad ng serbisyo, at maiwasan ang mapanlinlang na aktibidad. Sumasang-ayon ka ba sa pagkolekta ng data na ito?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Mangyaring bigyan kami ng higit pang mga detalye upang mas mabilis naming matukoy at malutas ang iyong isyu (hindi bababa sa 6 na character)</string>
   <string name="text_thanks_feedback">Salamat sa iyong feedback</string>
   <string name="text_feedback_content">Aayusin namin ang isyung ito sa isang bersyon sa hinaharap. Paumanhin para sa abala.</string>
+  <string name="no_available_vpn">Walang magagamit na libreng vpn, mangyaring pumunta sa screen ng VPN at pumili ng isang server.</string>
   <string name="msg_device_does_not_support_this_feature">Hindi sinusuportahan ang feature na ito para sa device na ito!</string>
   <string name="search_app">search app..</string>
+  <string name="exit_app">Lumabas sa app?</string>
+  <string name="exit_app_msg">Sigurado ka bang lalabas?</string>
   <string name="free">Libre</string>
   <string name="premium">Premium</string>
+  <string name="unlock_premium">I-unlock ang VPN Premium</string>
+  <string name="get_premium">Kumuha ng premium</string>
+  <string name="watch_ads">Manood ng mga ad sa Connect</string>
+  <string name="guide_1">Isang pindot lang para kumonekta.</string>
+  <string name="guide_2">Maramihang mga server ng VPN sa iba\'t ibang bansa</string>
+  <string name="guide_3">Protektahan ang iyong online na privacy</string>
+  <string name="what_is_my_ip">Ano ang aking ip?</string>
+  <string name="ip_address">IP address</string>
+  <string name="network_provider">Network provider</string>
+  <string name="location">Lokasyon</string>
+  <string name="pincode">PIN code</string>
+  <string name="timezone">Time zone</string>
+  <string name="duration">Tagal</string>
+  <string name="connect_success">Konektadong tagumpay</string>
+  <string name="connect_report">Ikonekta ang ulat</string>
+  <string name="disconnect">Idiskonekta</string>
+  <string name="no_internet">Walang Koneksyon sa Internet</string>
+  <string name="network_error">Walang Koneksyon sa Internet</string>
 </resources>

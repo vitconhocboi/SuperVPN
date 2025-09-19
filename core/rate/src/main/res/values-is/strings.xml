@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Þakka þér fyrir umsögn þína og vinsamlegast gefðu okkur athugasemdir.</string>
+  <string name="fb_rate_us_good">Þakka þér kærlega fyrir umsögn þína!</string>
+  <string name="fb_rate_us_default">Ef þú gefur okkur einkunn myndum við þakka það mjög og munum halda áfram að vinna hörðum höndum að því að veita þér betri upplifun.</string>
+  <string name="fb_feedback_title">Vinsamlegast láttu okkur vita um öll vandamál sem þú hefur lent í.</string>
+  <string name="fb_feedback_crash">Hrun</string>
+  <string name="fb_feedback_feature_quality">Eiginleikagæði</string>
+  <string name="fb_feedback_bug">Bug</string>
+  <string name="fb_feedback_other">Annað</string>
+  <string name="fb_send">Senda</string>
+  <string name="fb_hint_feedback">Vinsamlegast gefðu upp frekari upplýsingar til að hjálpa okkur að bera kennsl á og leysa vandamál þitt hraðar (að lágmarki 6 stafir).</string>
+  <string name="fb_text_feedback_to">Endurgjöf</string>
+  <string name="fb_best_rate">Hæsta einkunn sem við getum náð :)</string>
+  <string name="fb_share_with">Deila með</string>
+  <string name="fb_feedback_rate">Gefðu einkunn núna</string>
+  <string name="fb_rate_on_google_play">Umsagnir á Google Play</string>
+  <string name="fb_thank_for_feedback">Þakka þér fyrir álit þitt</string>
+  <string name="fb_sorry_customer">Við munum taka á þessu vandamáli í framtíðarútgáfu. Afsakið óþægindin</string>
+  <string name="fb_common_unable_find_market">Ekki er hægt að finna forritið á Google Play</string>
+  <string name="fb_thanks">allt í lagi</string>
+</resources>

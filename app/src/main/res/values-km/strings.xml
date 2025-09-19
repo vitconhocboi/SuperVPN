@@ -15,6 +15,8 @@
   <string name="setting_trial">ការសាកល្បងឥតគិតថ្លៃ 3 ថ្ងៃ។</string>
   <string name="setting_upgrade">ធ្វើឱ្យប្រសើរឡើង</string>
   <string name="ip_proxy">ម៉ាស៊ីនមេ</string>
+  <string name="ip_quick_access">ការចូលប្រើរហ័ស</string>
+  <string name="ip_all">ទាំងអស់។</string>
   <string name="setting_app_proxy">តម្រងកម្មវិធី</string>
   <string name="setting_app_proxy_desc">ជ្រើសរើសកម្មវិធីណាមួយដែលនឹងភ្ជាប់អ៊ីនធឺណិតតាមរយៈ VPN</string>
   <string name="setting_ads_block">ប្លុកការផ្សាយពាណិជ្ជកម្ម</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">ជ្រើសរើសតំបន់តភ្ជាប់</string>
   <string name="first_fragment_label">បំណែកទីមួយ</string>
   <string name="second_fragment_label">បំណែកទីពីរ</string>
+  <string name="start">ចាប់ផ្តើម</string>
   <string name="next">បន្ទាប់</string>
   <string name="previous">មុន</string>
   <string name="vn">វៀតណាម</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">យល់ព្រម</string>
   <string name="common_ok">យល់ព្រម</string>
   <string name="btn_save">រក្សាទុក</string>
+  <string name="btn_connect">ភ្ជាប់</string>
   <string name="btn_cancel">បោះបង់</string>
+  <string name="btn_exit">ចេញ</string>
   <string name="btn_reset">កំណត់ឡើងវិញ</string>
   <string name="auto">ស្វ័យប្រវត្តិ</string>
   <string name="min_60">60 នាទី។</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">ជ្រើសរើស VPN</string>
   <string name="dns_only">DNS តែប៉ុណ្ណោះ</string>
   <string name="confirm_dns">VPN មិនសកម្ម</string>
-  <string name="confirm_dns_msg">បច្ចុប្បន្នអ្នកកំពុងប្រើតែ DNS ប៉ុណ្ណោះ។ សម្រាប់ការតភ្ជាប់ដែលមានសុវត្ថិភាព និងឯកជនជាងមុន សូមជ្រើសរើសម៉ាស៊ីនមេ VPN ។</string>
+  <string name="confirm_dns_msg">មិនបានជ្រើសរើសម៉ាស៊ីនមេ VPN ទេ។ សូមជ្រើសរើសម៉ាស៊ីនមេ VPN ។</string>
   <string name="btn_agree">យល់ព្រម</string>
   <string name="confirm_collect">ភាពឯកជនរបស់អ្នក ការគ្រប់គ្រងរបស់អ្នក។</string>
   <string name="confirm_accept_msg">ដើម្បីបញ្ចប់ការជាវរបស់អ្នក កម្មវិធីនេះប្រមូលលេខសម្គាល់ការផ្សាយពាណិជ្ជកម្មរបស់អ្នក ដើម្បីផ្ទៀងផ្ទាត់ការចុះឈ្មោះ បង្កើនគុណភាពសេវាកម្ម និងការពារសកម្មភាពក្លែងបន្លំ។ តើអ្នកយល់ព្រមចំពោះការប្រមូលទិន្នន័យនេះទេ?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">សូមផ្តល់ឱ្យយើងនូវព័ត៌មានលម្អិតបន្ថែមទៀត ដូច្នេះយើងអាចកំណត់អត្តសញ្ញាណ និងដោះស្រាយបញ្ហារបស់អ្នកបានលឿនជាងមុន (យ៉ាងហោចណាស់ 6 តួអក្សរ)</string>
   <string name="text_thanks_feedback">អរគុណសម្រាប់មតិកែលម្អរបស់អ្នក។</string>
   <string name="text_feedback_content">យើងនឹងដោះស្រាយបញ្ហានេះនៅក្នុងកំណែនាពេលអនាគត។ សូមអភ័យទោសចំពោះការរអាក់រអួល។</string>
+  <string name="no_available_vpn">មិនមាន vpn ឥតគិតថ្លៃទេ សូមចូលទៅកាន់អេក្រង់ VPN ហើយជ្រើសរើសម៉ាស៊ីនមេ។</string>
   <string name="msg_device_does_not_support_this_feature">មុខងារនេះមិនត្រូវបានគាំទ្រសម្រាប់ឧបករណ៍នេះទេ!</string>
   <string name="search_app">កម្មវិធីស្វែងរក..</string>
+  <string name="exit_app">ចាកចេញពីកម្មវិធី?</string>
+  <string name="exit_app_msg">តើអ្នកប្រាកដក្នុងការចាកចេញទេ?</string>
   <string name="free">ឥតគិតថ្លៃ</string>
   <string name="premium">បុព្វលាភ</string>
+  <string name="unlock_premium">ដោះសោ VPN Premium</string>
+  <string name="get_premium">ទទួលបានបុព្វលាភ</string>
+  <string name="watch_ads">មើលការផ្សាយពាណិជ្ជកម្មដើម្បីភ្ជាប់</string>
+  <string name="guide_1">គ្រាន់តែប៉ះមួយដើម្បីភ្ជាប់។</string>
+  <string name="guide_2">ម៉ាស៊ីនមេ VPN ជាច្រើននៅក្នុងប្រទេសផ្សេងៗគ្នា</string>
+  <string name="guide_3">ការពារភាពឯកជនលើអ៊ីនធឺណិតរបស់អ្នក។</string>
+  <string name="what_is_my_ip">តើ IP របស់ខ្ញុំជាអ្វី?</string>
+  <string name="ip_address">អាសយដ្ឋាន IP</string>
+  <string name="network_provider">អ្នកផ្តល់បណ្តាញ</string>
+  <string name="location">ទីតាំង</string>
+  <string name="pincode">កូដ PIN</string>
+  <string name="timezone">តំបន់ពេលវេលា</string>
+  <string name="duration">រយៈពេល</string>
+  <string name="connect_success">ជោគជ័យដែលបានភ្ជាប់</string>
+  <string name="connect_report">ភ្ជាប់របាយការណ៍</string>
+  <string name="disconnect">ផ្តាច់</string>
+  <string name="no_internet">គ្មានការភ្ជាប់អ៊ីនធឺណិត</string>
+  <string name="network_error">គ្មានការភ្ជាប់អ៊ីនធឺណិត</string>
 </resources>

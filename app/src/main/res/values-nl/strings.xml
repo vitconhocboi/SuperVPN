@@ -15,6 +15,8 @@
   <string name="setting_trial">Gratis proefperiode van 3 dagen</string>
   <string name="setting_upgrade">Upgrade</string>
   <string name="ip_proxy">Servers</string>
+  <string name="ip_quick_access">Snelle toegang</string>
+  <string name="ip_all">ALLE</string>
   <string name="setting_app_proxy">App-filter</string>
   <string name="setting_app_proxy_desc">Kies welke apps verbinding maken met internet via VPN</string>
   <string name="setting_ads_block">Advertentieblok</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Selecteer verbindingsgebied</string>
   <string name="first_fragment_label">Eerste fragment</string>
   <string name="second_fragment_label">Tweede fragment</string>
+  <string name="start">BEGIN</string>
   <string name="next">volgende</string>
   <string name="previous">Vorig</string>
   <string name="vn">Vietnam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">OK</string>
   <string name="common_ok">OK</string>
   <string name="btn_save">opslaan</string>
+  <string name="btn_connect">Verbinden</string>
   <string name="btn_cancel">annuleren</string>
+  <string name="btn_exit">Uitgang</string>
   <string name="btn_reset">Reset</string>
   <string name="auto">Auto</string>
   <string name="min_60">60 minuten</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">Selecteer VPN</string>
   <string name="dns_only">Alleen DNS</string>
   <string name="confirm_dns">VPN niet actief</string>
-  <string name="confirm_dns_msg">U gebruikt momenteel alleen DNS. Voor een veiligere en meer private verbinding selecteert u een VPN-server.</string>
+  <string name="confirm_dns_msg">Geen VPN-server geselecteerd. Selecteer een VPN-server.</string>
   <string name="btn_agree">Mee eens zijn</string>
   <string name="confirm_collect">Uw privacy, uw controle</string>
   <string name="confirm_accept_msg">Om uw abonnement te voltooien, verzamelt deze app uw advertentie-ID om uw registratie te verifiëren, de servicekwaliteit te verbeteren en frauduleuze activiteiten te voorkomen. Gaat u akkoord met deze gegevensverzameling?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Geef ons meer details zodat we uw probleem sneller kunnen identificeren en oplossen (minimaal 6 tekens)</string>
   <string name="text_thanks_feedback">Bedankt voor je feedback</string>
   <string name="text_feedback_content">We zullen dit probleem in een toekomstige versie oplossen. Excuses voor het ongemak.</string>
+  <string name="no_available_vpn">Er is geen gratis VPN beschikbaar. Ga naar het VPN-scherm en kies een server.</string>
   <string name="msg_device_does_not_support_this_feature">Deze functie wordt niet ondersteund voor dit apparaat!</string>
   <string name="search_app">zoek-app..</string>
+  <string name="exit_app">App afsluiten?</string>
+  <string name="exit_app_msg">Weet u zeker dat u wilt afsluiten?</string>
   <string name="free">Vrij</string>
   <string name="premium">Premie</string>
+  <string name="unlock_premium">Ontgrendel VPN Premium</string>
+  <string name="get_premium">Krijg premium</string>
+  <string name="watch_ads">Bekijk advertenties om verbinding te maken</string>
+  <string name="guide_1">Met één aanraking verbinding maken.</string>
+  <string name="guide_2">Meerdere VPN-servers in verschillende landen</string>
+  <string name="guide_3">Bescherm uw online privacy</string>
+  <string name="what_is_my_ip">Wat is mijn IP?</string>
+  <string name="ip_address">IP-adres</string>
+  <string name="network_provider">Netwerkaanbieder</string>
+  <string name="location">Locatie</string>
+  <string name="pincode">Pincode</string>
+  <string name="timezone">Tijdzone</string>
+  <string name="duration">Duur</string>
+  <string name="connect_success">Verbonden succes</string>
+  <string name="connect_report">Verbindingsrapport</string>
+  <string name="disconnect">Loskoppelen</string>
+  <string name="no_internet">Geen internetverbinding</string>
+  <string name="network_error">Geen internetverbinding</string>
 </resources>

@@ -15,6 +15,8 @@
   <string name="setting_trial">免費試用 3 天</string>
   <string name="setting_upgrade">升級</string>
   <string name="ip_proxy">伺服器</string>
+  <string name="ip_quick_access">快速存取</string>
+  <string name="ip_all">全部</string>
   <string name="setting_app_proxy">應用程式過濾器</string>
   <string name="setting_app_proxy_desc">選擇哪些應用程式將透過 VPN 連接到互聯網</string>
   <string name="setting_ads_block">廣告攔截</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">選擇連接區域</string>
   <string name="first_fragment_label">第一個片段</string>
   <string name="second_fragment_label">第二片段</string>
+  <string name="start">開始</string>
   <string name="next">下一個</string>
   <string name="previous">以前的</string>
   <string name="vn">越南</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">好的</string>
   <string name="common_ok">好的</string>
   <string name="btn_save">節省</string>
+  <string name="btn_connect">連接</string>
   <string name="btn_cancel">取消</string>
+  <string name="btn_exit">出口</string>
   <string name="btn_reset">重置</string>
   <string name="auto">汽車</string>
   <string name="min_60">60分鐘</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">選擇 VPN</string>
   <string name="dns_only">僅 DNS</string>
   <string name="confirm_dns">VPN未啟用</string>
-  <string name="confirm_dns_msg">您目前僅使用 DNS。為了獲得更安全、更私密的連接，請選擇 VPN 伺服器。</string>
+  <string name="confirm_dns_msg">未選擇 VPN 伺服器。請選擇 VPN 伺服器。</string>
   <string name="btn_agree">同意</string>
   <string name="confirm_collect">您的隱私，您的控制</string>
   <string name="confirm_accept_msg">為了完成您的訂閱，此應用程式會收集您的廣告 ID，以驗證註冊資訊、提升服務品質並防止詐欺行為。您是否同意此資料收集？</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">請向我們提供更多詳細信息，以便我們更快地識別和解決您的問題（至少 6 個字元）</string>
   <string name="text_thanks_feedback">感謝您的回饋</string>
   <string name="text_feedback_content">我們將在未來版本中修復此問題。帶來不便敬請諒解。</string>
+  <string name="no_available_vpn">沒有可用的免費 vpn，請前往 VPN 畫面並選擇伺服器。</string>
   <string name="msg_device_does_not_support_this_feature">此設備不支援此功能！</string>
   <string name="search_app">搜尋應用程式..</string>
+  <string name="exit_app">退出應用程式？</string>
+  <string name="exit_app_msg">您確定要退出嗎？</string>
   <string name="free">自由的</string>
   <string name="premium">優質的</string>
+  <string name="unlock_premium">解鎖 VPN Premium</string>
+  <string name="get_premium">獲得溢價</string>
+  <string name="watch_ads">觀看廣告即可連接</string>
+  <string name="guide_1">只需輕輕一觸即可連接。</string>
+  <string name="guide_2">不同國家的多個 VPN 伺服器</string>
+  <string name="guide_3">保護您的線上隱私</string>
+  <string name="what_is_my_ip">我的IP位址是多少？</string>
+  <string name="ip_address">IP 位址</string>
+  <string name="network_provider">網路供應商</string>
+  <string name="location">地點</string>
+  <string name="pincode">PIN 碼</string>
+  <string name="timezone">時區</string>
+  <string name="duration">期間</string>
+  <string name="connect_success">連線成功</string>
+  <string name="connect_report">連接報告</string>
+  <string name="disconnect">斷開</string>
+  <string name="no_internet">無網路連線</string>
+  <string name="network_error">無網路連線</string>
 </resources>

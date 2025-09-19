@@ -15,6 +15,8 @@
   <string name="setting_trial">3일 무료 체험</string>
   <string name="setting_upgrade">치받이</string>
   <string name="ip_proxy">서버</string>
+  <string name="ip_quick_access">빠른 접근</string>
+  <string name="ip_all">모두</string>
   <string name="setting_app_proxy">앱 필터</string>
   <string name="setting_app_proxy_desc">VPN을 통해 인터넷에 연결할 앱을 선택하세요</string>
   <string name="setting_ads_block">광고 차단</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">연결 영역 선택</string>
   <string name="first_fragment_label">첫 번째 조각</string>
   <string name="second_fragment_label">두 번째 조각</string>
+  <string name="start">시작</string>
   <string name="next">다음</string>
   <string name="previous">이전의</string>
   <string name="vn">베트남</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">좋아요</string>
   <string name="common_ok">좋아요</string>
   <string name="btn_save">저장</string>
+  <string name="btn_connect">연결하다</string>
   <string name="btn_cancel">취소</string>
+  <string name="btn_exit">출구</string>
   <string name="btn_reset">다시 놓기</string>
   <string name="auto">자동차</string>
   <string name="min_60">60분</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">VPN을 선택하세요</string>
   <string name="dns_only">DNS만</string>
   <string name="confirm_dns">VPN이 활성화되지 않음</string>
-  <string name="confirm_dns_msg">현재 DNS만 사용하고 있습니다. 더욱 안전하고 비공개적인 연결을 원하시면 VPN 서버를 선택하세요.</string>
+  <string name="confirm_dns_msg">VPN 서버를 선택하지 않았습니다. VPN 서버를 선택해 주세요.</string>
   <string name="btn_agree">동의하다</string>
   <string name="confirm_collect">귀하의 개인 정보 보호, 귀하의 통제</string>
   <string name="confirm_accept_msg">구독을 완료하기 위해 이 앱은 등록 확인, 서비스 품질 향상, 사기 방지를 위해 광고 ID를 수집합니다. 이러한 데이터 수집에 동의하시겠습니까?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">문제를 더 빨리 식별하고 해결할 수 있도록 자세한 내용을 알려주십시오(최소 6자)</string>
   <string name="text_thanks_feedback">귀하의 피드백에 감사드립니다</string>
   <string name="text_feedback_content">이 문제는 향후 버전에서 수정하겠습니다. 불편을 끼쳐드려 죄송합니다.</string>
+  <string name="no_available_vpn">무료 VPN을 사용할 수 없습니다. VPN 화면으로 가서 서버를 선택하세요.</string>
   <string name="msg_device_does_not_support_this_feature">이 기능은 이 기기에서 지원되지 않습니다!</string>
   <string name="search_app">검색 앱..</string>
+  <string name="exit_app">앱을 종료하시겠습니까?</string>
+  <string name="exit_app_msg">종료하시겠습니까?</string>
   <string name="free">무료</string>
   <string name="premium">프리미엄</string>
+  <string name="unlock_premium">VPN 프리미엄 잠금 해제</string>
+  <string name="get_premium">프리미엄을 받으세요</string>
+  <string name="watch_ads">광고를 시청하여 연결하세요</string>
+  <string name="guide_1">한 번만 터치하면 연결됩니다.</string>
+  <string name="guide_2">다양한 국가에 있는 여러 VPN 서버</string>
+  <string name="guide_3">온라인 개인 정보를 보호하세요</string>
+  <string name="what_is_my_ip">내 IP는 무엇인가요?</string>
+  <string name="ip_address">IP 주소</string>
+  <string name="network_provider">네트워크 제공자</string>
+  <string name="location">위치</string>
+  <string name="pincode">핀코드</string>
+  <string name="timezone">시간대</string>
+  <string name="duration">지속</string>
+  <string name="connect_success">연결된 성공</string>
+  <string name="connect_report">연결 보고서</string>
+  <string name="disconnect">연결 해제</string>
+  <string name="no_internet">인터넷 연결 없음</string>
+  <string name="network_error">인터넷 연결 없음</string>
 </resources>

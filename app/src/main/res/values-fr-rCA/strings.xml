@@ -15,6 +15,8 @@
   <string name="setting_trial">Essai gratuit 3 jours</string>
   <string name="setting_upgrade">Mise à niveau</string>
   <string name="ip_proxy">Serveurs</string>
+  <string name="ip_quick_access">Accès rapide</string>
+  <string name="ip_all">TOUS</string>
   <string name="setting_app_proxy">Filtre d\'application</string>
   <string name="setting_app_proxy_desc">Choisissez les applications qui se connecteront à Internet via VPN</string>
   <string name="setting_ads_block">Blocage des publicités</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Sélectionnez la zone de connexion</string>
   <string name="first_fragment_label">Premier fragment</string>
   <string name="second_fragment_label">Deuxième fragment</string>
+  <string name="start">COMMENCER</string>
   <string name="next">suivant</string>
   <string name="previous">Précédent</string>
   <string name="vn">Vietnam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">d\'accord</string>
   <string name="common_ok">d\'accord</string>
   <string name="btn_save">enregistrer</string>
+  <string name="btn_connect">Connecter</string>
   <string name="btn_cancel">annuler</string>
+  <string name="btn_exit">Sortie</string>
   <string name="btn_reset">Réinitialiser</string>
   <string name="auto">Auto</string>
   <string name="min_60">60 minutes</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">Sélectionnez VPN</string>
   <string name="dns_only">DNS uniquement</string>
   <string name="confirm_dns">VPN non actif</string>
-  <string name="confirm_dns_msg">Vous utilisez actuellement uniquement DNS. Pour une connexion plus sécurisée et privée, veuillez sélectionner un serveur VPN.</string>
+  <string name="confirm_dns_msg">Aucun serveur VPN sélectionné. Veuillez sélectionner un serveur VPN.</string>
   <string name="btn_agree">Accepter</string>
   <string name="confirm_collect">Votre vie privée, votre contrôle</string>
   <string name="confirm_accept_msg">Pour finaliser votre inscription, cette application collecte votre identifiant publicitaire afin de vérifier votre inscription, d\'améliorer la qualité du service et de prévenir les activités frauduleuses. Acceptez-vous cette collecte de données ?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Veuillez nous donner plus de détails afin que nous puissions identifier et résoudre votre problème plus rapidement (au moins 6 caractères)</string>
   <string name="text_thanks_feedback">Merci pour vos commentaires</string>
   <string name="text_feedback_content">Nous corrigerons ce problème dans une prochaine version. Veuillez nous excuser pour la gêne occasionnée.</string>
+  <string name="no_available_vpn">Il n\'y a pas de VPN gratuit disponible, veuillez accéder à l\'écran VPN et choisir un serveur.</string>
   <string name="msg_device_does_not_support_this_feature">Cette fonctionnalité n\'est pas prise en charge pour cet appareil !</string>
   <string name="search_app">application de recherche..</string>
+  <string name="exit_app">Quitter l\'application ?</string>
+  <string name="exit_app_msg">Etes-vous sûr de vouloir quitter?</string>
   <string name="free">Gratuit</string>
   <string name="premium">Prime</string>
+  <string name="unlock_premium">Débloquer VPN Premium</string>
+  <string name="get_premium">Obtenez la prime</string>
+  <string name="watch_ads">Regardez les publicités pour vous connecter</string>
+  <string name="guide_1">Une seule touche pour se connecter.</string>
+  <string name="guide_2">Plusieurs serveurs VPN dans différents pays</string>
+  <string name="guide_3">Protégez votre confidentialité en ligne</string>
+  <string name="what_is_my_ip">Quelle est mon IP?</string>
+  <string name="ip_address">adresse IP</string>
+  <string name="network_provider">Fournisseur de réseau</string>
+  <string name="location">Emplacement</string>
+  <string name="pincode">Code PIN</string>
+  <string name="timezone">Fuseau horaire</string>
+  <string name="duration">Durée</string>
+  <string name="connect_success">Succès connecté</string>
+  <string name="connect_report">Rapport de connexion</string>
+  <string name="disconnect">Déconnecter</string>
+  <string name="no_internet">Pas de connexion Internet</string>
+  <string name="network_error">Pas de connexion Internet</string>
 </resources>

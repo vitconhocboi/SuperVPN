@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">dan</string>
+  <string name="core_text_inapp_days">Dani</string>
+  <string name="core_text_inapp_weeks">Sedmice</string>
+  <string name="core_text_inapp_month">Mjesec</string>
+  <string name="core_text_inapp_months">Mjeseci</string>
+  <string name="core_text_inapp_year">Godina</string>
+  <string name="core_text_inapp_years">Godine</string>
+  <string name="core_auto_renew_after">Automatsko obnavljanje nakon:</string>
+  <string name="core_text_free_trial">Free Trial</string>
+</resources>

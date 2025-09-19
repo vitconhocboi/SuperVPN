@@ -15,6 +15,8 @@
   <string name="setting_trial">Esè gratis 3 jou</string>
   <string name="setting_upgrade">Mizajou</string>
   <string name="ip_proxy">Sèvè</string>
+  <string name="ip_quick_access">Aksè rapid</string>
+  <string name="ip_all">TOUT</string>
   <string name="setting_app_proxy">Filtè Aplikasyon</string>
   <string name="setting_app_proxy_desc">Chwazi ki aplikasyon ki pral konekte ak Entènèt la atravè VPN lan</string>
   <string name="setting_ads_block">Blòk piblisite</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Chwazi zòn koneksyon an</string>
   <string name="first_fragment_label">Premye Fragman</string>
   <string name="second_fragment_label">Dezyèm Fragman</string>
+  <string name="start">KÒMANSE</string>
   <string name="next">pwochen</string>
   <string name="previous">Anvan</string>
   <string name="vn">Việt Nam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">ok</string>
   <string name="common_ok">ok</string>
   <string name="btn_save">sove</string>
+  <string name="btn_connect">Konekte</string>
   <string name="btn_cancel">anile</string>
+  <string name="btn_exit">Sòti</string>
   <string name="btn_reset">Reyajiste</string>
   <string name="auto">Oto</string>
   <string name="min_60">60 Minit</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">Chwazi VPN</string>
   <string name="dns_only">DNS sèlman</string>
   <string name="confirm_dns">VPN pa aktif</string>
-  <string name="confirm_dns_msg">Kounye a, w ap sèlman itilize DNS. Pou yon koneksyon ki pi an sekirite e prive, tanpri chwazi yon sèvè VPN.</string>
+  <string name="confirm_dns_msg">Pa gen sèvè VPN ki chwazi. Tanpri chwazi yon sèvè VPN.</string>
   <string name="btn_agree">Dakò</string>
   <string name="confirm_collect">Konfidansyalite w, Kontwòl ou</string>
   <string name="confirm_accept_msg">Pou konplete abònman ou an, aplikasyon sa a kolekte ID Piblisite ou pou verifye enskripsyon an, amelyore kalite sèvis la, epi anpeche aktivite fwod. Èske ou dakò ak koleksyon done sa a?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Tanpri ban nou plis detay pou nou ka idantifye ak rezoud pwoblèm ou pi vit (omwen 6 karaktè)</string>
   <string name="text_thanks_feedback">Mèsi pou fidbak ou</string>
   <string name="text_feedback_content">Nou pral ranje pwoblèm sa a nan yon vèsyon nan lavni. Padon pou deranjman an.</string>
+  <string name="no_available_vpn">Pa gen okenn vpn gratis ki disponib, tanpri ale nan ekran VPN lan epi chwazi yon sèvè.</string>
   <string name="msg_device_does_not_support_this_feature">Fonksyonalite sa a pa konpatib ak aparèy sa a!</string>
   <string name="search_app">aplikasyon rechèch..</string>
+  <string name="exit_app">Kite aplikasyon an?</string>
+  <string name="exit_app_msg">Èske ou sèten ou pral soti?</string>
   <string name="free">Gratis</string>
   <string name="premium">Prim</string>
+  <string name="unlock_premium">Debloke VPN Premium</string>
+  <string name="get_premium">Jwenn prim</string>
+  <string name="watch_ads">Gade piblisite yo pou konekte</string>
+  <string name="guide_1">Jis yon sèl touche pou konekte.</string>
+  <string name="guide_2">Plizyè sèvè VPN nan diferan peyi</string>
+  <string name="guide_3">Pwoteje vi prive ou sou entènèt la</string>
+  <string name="what_is_my_ip">Ki IP mwen an?</string>
+  <string name="ip_address">Adrès IP</string>
+  <string name="network_provider">Founisè rezo</string>
+  <string name="location">Kote</string>
+  <string name="pincode">Kòd PIN</string>
+  <string name="timezone">Zòn tan</string>
+  <string name="duration">Dire</string>
+  <string name="connect_success">Siksè konekte</string>
+  <string name="connect_report">Konekte rapò</string>
+  <string name="disconnect">Dekonekte</string>
+  <string name="no_internet">Pa gen koneksyon entènèt</string>
+  <string name="network_error">Pa gen koneksyon entènèt</string>
 </resources>

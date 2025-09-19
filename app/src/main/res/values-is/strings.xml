@@ -15,6 +15,8 @@
   <string name="setting_trial">Ókeypis prufutímabil í 3 daga</string>
   <string name="setting_upgrade">Uppfærsla</string>
   <string name="ip_proxy">Þjónar</string>
+  <string name="ip_quick_access">Fljótleg aðgangur</string>
+  <string name="ip_all">ALLT</string>
   <string name="setting_app_proxy">Forritsía</string>
   <string name="setting_app_proxy_desc">Veldu hvaða forrit munu tengjast internetinu í gegnum VPN</string>
   <string name="setting_ads_block">Auglýsingablokk</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Veldu tengisvæði</string>
   <string name="first_fragment_label">Fyrsta brotið</string>
   <string name="second_fragment_label">Annað brot</string>
+  <string name="start">BYRJA</string>
   <string name="next">næst</string>
   <string name="previous">Fyrri</string>
   <string name="vn">Việt Nam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">allt í lagi</string>
   <string name="common_ok">allt í lagi</string>
   <string name="btn_save">vista</string>
+  <string name="btn_connect">Tengjast</string>
   <string name="btn_cancel">hætta við</string>
+  <string name="btn_exit">Hætta</string>
   <string name="btn_reset">Endurstilla</string>
   <string name="auto">Sjálfvirk</string>
   <string name="min_60">60 mínútur</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">Veldu VPN</string>
   <string name="dns_only">Aðeins DNS</string>
   <string name="confirm_dns">VPN ekki virkt</string>
-  <string name="confirm_dns_msg">Þú notar eingöngu DNS. Til að fá öruggari og einkarekin tengingu skaltu velja VPN-þjón.</string>
+  <string name="confirm_dns_msg">Enginn VPN-þjónn valinn. Veldu VPN-þjón.</string>
   <string name="btn_agree">Sammála</string>
   <string name="confirm_collect">Þín friðhelgi, þín stjórn</string>
   <string name="confirm_accept_msg">Til að ljúka áskriftinni safnar þetta forrit auglýsingakenni þínu til að staðfesta skráningu, auka þjónustugæði og koma í veg fyrir sviksamlega starfsemi. Samþykkir þú þessa gagnasöfnun?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Vinsamlegast gefðu okkur frekari upplýsingar svo við getum greint og leyst vandamál þitt hraðar (að minnsta kosti 6 stafir)</string>
   <string name="text_thanks_feedback">Takk fyrir álit þitt</string>
   <string name="text_feedback_content">Við munum laga þetta mál í framtíðarútgáfu. Afsakið óþægindin.</string>
+  <string name="no_available_vpn">Það er ekkert ókeypis VPN í boði, vinsamlegast farðu á VPN skjáinn og veldu netþjón.</string>
   <string name="msg_device_does_not_support_this_feature">Þessi eiginleiki er ekki studdur fyrir þetta tæki!</string>
   <string name="search_app">leitarforrit..</string>
+  <string name="exit_app">Hætta í forritinu?</string>
+  <string name="exit_app_msg">Ertu viss um að þú viljir hætta?</string>
   <string name="free">Ókeypis</string>
   <string name="premium">Premium</string>
+  <string name="unlock_premium">Opnaðu VPN Premium</string>
+  <string name="get_premium">Fáðu aukagjald</string>
+  <string name="watch_ads">Horfðu á auglýsingar til að tengjast</string>
+  <string name="guide_1">Bara ein snerting til að tengjast.</string>
+  <string name="guide_2">Margir VPN netþjónar í mismunandi löndum</string>
+  <string name="guide_3">Verndaðu friðhelgi þína á netinu</string>
+  <string name="what_is_my_ip">Hvað er IP-talan mín?</string>
+  <string name="ip_address">IP-tala</string>
+  <string name="network_provider">Netveita</string>
+  <string name="location">Staðsetning</string>
+  <string name="pincode">PIN-númer</string>
+  <string name="timezone">Tímabelti</string>
+  <string name="duration">Tímalengd</string>
+  <string name="connect_success">Tengdur árangur</string>
+  <string name="connect_report">Tengingarskýrsla</string>
+  <string name="disconnect">Aftengja</string>
+  <string name="no_internet">Engin nettenging</string>
+  <string name="network_error">Engin nettenging</string>
 </resources>

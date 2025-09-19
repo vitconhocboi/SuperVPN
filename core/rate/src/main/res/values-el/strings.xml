@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Σας ευχαριστούμε για την κριτική σας και παρακαλούμε να μας δώσετε κάποια σχόλια.</string>
+  <string name="fb_rate_us_good">Σας ευχαριστούμε πολύ για την κριτική σας!</string>
+  <string name="fb_rate_us_default">Αν μας αξιολογήσετε, θα το εκτιμούσαμε πολύ και θα συνεχίσουμε να εργαζόμαστε σκληρά για να σας προσφέρουμε μια καλύτερη εμπειρία.</string>
+  <string name="fb_feedback_title">Ενημερώστε μας για τυχόν προβλήματα που αντιμετωπίσατε.</string>
+  <string name="fb_feedback_crash">Σύγκρουση</string>
+  <string name="fb_feedback_feature_quality">Ποιότητα χαρακτηριστικών</string>
+  <string name="fb_feedback_bug">Εντομο</string>
+  <string name="fb_feedback_other">Αλλος</string>
+  <string name="fb_send">Στέλνω</string>
+  <string name="fb_hint_feedback">Δώστε πρόσθετες λεπτομέρειες για να μας βοηθήσετε να εντοπίσουμε και να επιλύσουμε το πρόβλημά σας πιο γρήγορα (τουλάχιστον 6 χαρακτήρες).</string>
+  <string name="fb_text_feedback_to">Ανατροφοδότηση</string>
+  <string name="fb_best_rate">Η υψηλότερη βαθμολογία που μπορούμε να πετύχουμε :)</string>
+  <string name="fb_share_with">Κοινή χρήση με</string>
+  <string name="fb_feedback_rate">Βαθμολογήστε τώρα</string>
+  <string name="fb_rate_on_google_play">Κριτικές στο Google Play</string>
+  <string name="fb_thank_for_feedback">Σας ευχαριστούμε για τα σχόλιά σας</string>
+  <string name="fb_sorry_customer">Θα αντιμετωπίσουμε αυτό το ζήτημα σε μελλοντική έκδοση. Συγγνώμη για την ταλαιπωρία</string>
+  <string name="fb_common_unable_find_market">Δεν είναι δυνατή η εύρεση της εφαρμογής στο Google Play</string>
+  <string name="fb_thanks">Εντάξει</string>
+</resources>

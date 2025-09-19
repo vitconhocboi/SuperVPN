@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Misaotra anao tamin\'ny famerenanao, ary mba omeo hevitra izahay.</string>
+  <string name="fb_rate_us_good">Misaotra betsaka tamin\'ny famerenanao!</string>
+  <string name="fb_rate_us_default">Raha manome lanja anay ianao dia mankasitraka izany ary hanohy hiasa mafy mba hanomezana traikefa tsara kokoa ho anao.</string>
+  <string name="fb_feedback_title">Azafady ampahafantaro anay ny olana sendra anao.</string>
+  <string name="fb_feedback_crash">fahasimbana</string>
+  <string name="fb_feedback_feature_quality">Ny kalitaon\'ny endri-javatra</string>
+  <string name="fb_feedback_bug">bibikely</string>
+  <string name="fb_feedback_other">hafa</string>
+  <string name="fb_send">Alefaso</string>
+  <string name="fb_hint_feedback">Manomeza antsipiriany fanampiny mba hanampiana anay hamantatra sy hamahana haingana kokoa ny olanao (karazana 6 farafahakeliny).</string>
+  <string name="fb_text_feedback_to">Feedback</string>
+  <string name="fb_best_rate">Ny naoty ambony indrindra azontsika tratrarina :)</string>
+  <string name="fb_share_with">Zarao amin\'ny</string>
+  <string name="fb_feedback_rate">Naoty izao</string>
+  <string name="fb_rate_on_google_play">Hevitra ao amin\'ny Google Play</string>
+  <string name="fb_thank_for_feedback">Misaotra anao amin\'ny hevitrao</string>
+  <string name="fb_sorry_customer">Hiresaka momba ity olana ity isika amin\'ny dikan-teny ho avy. miala tsiny amin\'ny fanelingelenana</string>
+  <string name="fb_common_unable_find_market">Tsy hita ny fampiharana ao amin\'ny Google Play</string>
+  <string name="fb_thanks">ok</string>
+</resources>

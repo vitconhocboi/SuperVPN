@@ -15,6 +15,8 @@
   <string name="setting_trial">Uji coba gratis 3 dinten</string>
   <string name="setting_upgrade">Ningkatkeun</string>
   <string name="ip_proxy">Palayan</string>
+  <string name="ip_quick_access">Aksés Gancang</string>
+  <string name="ip_all">KABEH</string>
   <string name="setting_app_proxy">Filter Aplikasi</string>
   <string name="setting_app_proxy_desc">Pilih aplikasi mana anu bakal nyambung ka Internét ngalangkungan VPN</string>
   <string name="setting_ads_block">Blok iklan</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Pilih wewengkon sambungan</string>
   <string name="first_fragment_label">Fragmen munggaran</string>
   <string name="second_fragment_label">Fragmen Kadua</string>
+  <string name="start">MULAI</string>
   <string name="next">Teras</string>
   <string name="previous">saméméhna</string>
   <string name="vn">Việt Nam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">OKÉ</string>
   <string name="common_ok">OKÉ</string>
   <string name="btn_save">nyalametkeun</string>
+  <string name="btn_connect">Nyambung</string>
   <string name="btn_cancel">ngabatalkeun</string>
+  <string name="btn_exit">Kaluar</string>
   <string name="btn_reset">Reset</string>
   <string name="auto">Otomatis</string>
   <string name="min_60">60 Menit</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">Pilih VPN</string>
   <string name="dns_only">DNS wungkul</string>
   <string name="confirm_dns">VPN Henteu Aktif</string>
-  <string name="confirm_dns_msg">Anjeun ayeuna nganggo DNS wungkul. Pikeun sambungan anu langkung aman sareng pribadi, mangga pilih pangladén VPN.</string>
+  <string name="confirm_dns_msg">Taya VPN Server dipilih. Mangga pilih server VPN.</string>
   <string name="btn_agree">satuju</string>
   <string name="confirm_collect">Privasi anjeun, Kontrol anjeun</string>
   <string name="confirm_accept_msg">Pikeun ngarengsekeun langganan anjeun, aplikasi ieu ngumpulkeun ID Iklan anjeun pikeun pariksa pendaptaran, ningkatkeun kualitas layanan, sareng nyegah kagiatan panipuan. Naha anjeun satuju kana ngumpulkeun data ieu?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Punten pasihan kami langkung rinci supados urang tiasa ngaidentipikasi sareng ngabéréskeun masalah anjeun langkung gancang (sahenteuna 6 karakter)</string>
   <string name="text_thanks_feedback">Hatur nuhun eupan balik anjeun</string>
   <string name="text_feedback_content">Kami bakal ngalereskeun masalah ieu dina versi anu bakal datang. Punten ngarépotkeun.</string>
+  <string name="no_available_vpn">Henteu aya vpn gratis anu sayogi, mangga angkat ka layar VPN sareng pilih server.</string>
   <string name="msg_device_does_not_support_this_feature">Fitur ieu teu dirojong pikeun alat ieu!</string>
   <string name="search_app">milarian aplikasi..</string>
+  <string name="exit_app">Kaluar aplikasi?</string>
+  <string name="exit_app_msg">Anjeun yakin kaluar?</string>
   <string name="free">Gratis</string>
   <string name="premium">Premium</string>
+  <string name="unlock_premium">Buka konci VPN Premium</string>
+  <string name="get_premium">Kéngingkeun premium</string>
+  <string name="watch_ads">Nonton iklan pikeun Sambungkeun</string>
+  <string name="guide_1">Ngan hiji touch pikeun nyambungkeun.</string>
+  <string name="guide_2">Sababaraha server VPN di nagara béda</string>
+  <string name="guide_3">Jaga privasi online anjeun</string>
+  <string name="what_is_my_ip">Naon ip kuring?</string>
+  <string name="ip_address">alamat IP</string>
+  <string name="network_provider">Panyadia jaringan</string>
+  <string name="location">Lokasi</string>
+  <string name="pincode">Kodeu PIN</string>
+  <string name="timezone">Zona waktu</string>
+  <string name="duration">Lilana</string>
+  <string name="connect_success">Kasuksésan disambungkeun</string>
+  <string name="connect_report">Sambungkeun laporan</string>
+  <string name="disconnect">Pegatkeun sambungan</string>
+  <string name="no_internet">Taya Konéksi Internét</string>
+  <string name="network_error">Taya Konéksi Internét</string>
 </resources>

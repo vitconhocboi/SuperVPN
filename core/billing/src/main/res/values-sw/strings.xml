@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">siku</string>
+  <string name="core_text_inapp_days">Siku</string>
+  <string name="core_text_inapp_weeks">Wiki</string>
+  <string name="core_text_inapp_month">Mwezi</string>
+  <string name="core_text_inapp_months">Miezi</string>
+  <string name="core_text_inapp_year">Mwaka</string>
+  <string name="core_text_inapp_years">Miaka</string>
+  <string name="core_auto_renew_after">Sasisha Kiotomatiki Baada ya:</string>
+  <string name="core_text_free_trial">Jaribio la Bure</string>
+</resources>

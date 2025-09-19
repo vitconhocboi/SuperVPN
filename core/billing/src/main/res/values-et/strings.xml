@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">päeval</string>
+  <string name="core_text_inapp_days">Päevad</string>
+  <string name="core_text_inapp_weeks">Nädalad</string>
+  <string name="core_text_inapp_month">Kuu</string>
+  <string name="core_text_inapp_months">Kuud</string>
+  <string name="core_text_inapp_year">aasta</string>
+  <string name="core_text_inapp_years">Aastaid</string>
+  <string name="core_auto_renew_after">Automaatne uuendamine pärast:</string>
+  <string name="core_text_free_trial">Tasuta prooviversioon</string>
+</resources>

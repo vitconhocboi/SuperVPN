@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">rā</string>
+  <string name="core_text_inapp_days">Nga ra</string>
+  <string name="core_text_inapp_weeks">Nga wiki</string>
+  <string name="core_text_inapp_month">Marama</string>
+  <string name="core_text_inapp_months">Marama</string>
+  <string name="core_text_inapp_year">Tau</string>
+  <string name="core_text_inapp_years">Nga tau</string>
+  <string name="core_auto_renew_after">Whakahou Aunoa i muri:</string>
+  <string name="core_text_free_trial">Whakamatautau kore utu</string>
+</resources>

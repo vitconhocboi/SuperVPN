@@ -15,6 +15,8 @@
   <string name="setting_trial">Treial am ddim 3 diwrnod</string>
   <string name="setting_upgrade">Uwchraddio</string>
   <string name="ip_proxy">Gweinyddion</string>
+  <string name="ip_quick_access">Mynediad Cyflym</string>
+  <string name="ip_all">PAWB</string>
   <string name="setting_app_proxy">Hidlo Apiau</string>
   <string name="setting_app_proxy_desc">Dewiswch pa apiau fydd yn cysylltu â\'r Rhyngrwyd trwy VPN</string>
   <string name="setting_ads_block">Bloc hysbysebion</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Dewiswch ardal cysylltu</string>
   <string name="first_fragment_label">Darn Cyntaf</string>
   <string name="second_fragment_label">Ail Darn</string>
+  <string name="start">DECHRAU</string>
   <string name="next">nesaf</string>
   <string name="previous">Blaenorol</string>
   <string name="vn">Việt Nam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">iawn</string>
   <string name="common_ok">iawn</string>
   <string name="btn_save">arbed</string>
+  <string name="btn_connect">Cysylltu</string>
   <string name="btn_cancel">canslo</string>
+  <string name="btn_exit">Ymadael</string>
   <string name="btn_reset">Ailosod</string>
   <string name="auto">Auto</string>
   <string name="min_60">60 Munud</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">Dewiswch VPN</string>
   <string name="dns_only">DNS yn unig</string>
   <string name="confirm_dns">VPN Ddim yn Weithredol</string>
-  <string name="confirm_dns_msg">Rydych chi\'n defnyddio DNS yn unig ar hyn o bryd. Am gysylltiad mwy diogel a phreifat, dewiswch weinydd VPN.</string>
+  <string name="confirm_dns_msg">Dim Gweinydd VPN wedi\'i ddewis. Dewiswch weinydd VPN.</string>
   <string name="btn_agree">Cytuno</string>
   <string name="confirm_collect">Eich Preifatrwydd, Eich Rheolaeth</string>
   <string name="confirm_accept_msg">I gwblhau eich tanysgrifiad, mae\'r ap hwn yn casglu eich ID Hysbysebu i wirio cofrestru, gwella ansawdd gwasanaeth ac atal gweithgaredd twyllodrus. Ydych chi\'n cytuno i\'r casgliad data hwn?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Rhowch fwy o fanylion i ni fel y gallwn nodi a datrys eich mater yn gyflymach (o leiaf 6 nod)</string>
   <string name="text_thanks_feedback">Diolch am eich adborth</string>
   <string name="text_feedback_content">Byddwn yn trwsio\'r mater hwn mewn fersiwn yn y dyfodol. Ymddiheuriadau am yr anghyfleustra.</string>
+  <string name="no_available_vpn">Nid oes vpn am ddim ar gael, ewch i\'r sgrin VPN a dewiswch weinydd.</string>
   <string name="msg_device_does_not_support_this_feature">Nid yw\'r nodwedd hon yn cael ei chefnogi ar gyfer y ddyfais hon!</string>
   <string name="search_app">ap chwilio..</string>
+  <string name="exit_app">Gadael yr ap?</string>
+  <string name="exit_app_msg">Ydych chi\'n siŵr eich bod chi am adael?</string>
   <string name="free">Am ddim</string>
   <string name="premium">Premiwm</string>
+  <string name="unlock_premium">Datgloi VPN Premiwm</string>
+  <string name="get_premium">Cael premiwm</string>
+  <string name="watch_ads">Gwyliwch hysbysebion i Gysylltu</string>
+  <string name="guide_1">Dim ond un cyffyrddiad i gysylltu.</string>
+  <string name="guide_2">Gweinyddion VPN lluosog mewn gwahanol wledydd</string>
+  <string name="guide_3">Diogelu eich preifatrwydd ar-lein</string>
+  <string name="what_is_my_ip">Beth yw fy nghyfeiriad IP?</string>
+  <string name="ip_address">Cyfeiriad IP</string>
+  <string name="network_provider">Darparwr rhwydwaith</string>
+  <string name="location">Lleoliad</string>
+  <string name="pincode">Cod PIN</string>
+  <string name="timezone">Parth amser</string>
+  <string name="duration">Hyd</string>
+  <string name="connect_success">Llwyddiant cysylltiedig</string>
+  <string name="connect_report">Adroddiad cysylltu</string>
+  <string name="disconnect">Datgysylltu</string>
+  <string name="no_internet">Dim Cysylltiad Rhyngrwyd</string>
+  <string name="network_error">Dim Cysylltiad Rhyngrwyd</string>
 </resources>

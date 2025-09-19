@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">Лепшы рэйтынг для нас</string>
+  <string name="fb_rate_bottom_default">Мы прыкладаем усе намаганні, каб забяспечыць лепшы карыстацкі досвед. Мы цэнім ваш водгук.</string>
+  <string name="fb_rate_bottom_bad">О не!</string>
+  <string name="fb_rate_bottom_good">Мы таксама цябе любім!</string>
+  <string name="fb_rate_bottom_mess_bad">Калі ласка, пакіньце нам водгук</string>
+  <string name="fb_rate_bottom_mess_good">Дзякуй за ваш водгук</string>
+  <string name="fb_rate">Стаўка</string>
+</resources>

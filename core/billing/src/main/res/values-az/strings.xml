@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">gün</string>
+  <string name="core_text_inapp_days">Günlər</string>
+  <string name="core_text_inapp_weeks">həftələr</string>
+  <string name="core_text_inapp_month">ay</string>
+  <string name="core_text_inapp_months">aylar</string>
+  <string name="core_text_inapp_year">il</string>
+  <string name="core_text_inapp_years">İllər</string>
+  <string name="core_auto_renew_after">Sonra Avtomatik Yeniləmə:</string>
+  <string name="core_text_free_trial">Pulsuz sınaq</string>
+</resources>

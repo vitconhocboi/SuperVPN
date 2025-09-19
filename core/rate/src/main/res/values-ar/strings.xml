@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">نشكرك على المراجعة الخاصة بك، ويرجى تزويدنا ببعض التعليقات.</string>
+  <string name="fb_rate_us_good">شكرا جزيلا لمراجعتك!</string>
+  <string name="fb_rate_us_default">إذا قمت بتقييمنا، فإننا نقدر ذلك كثيرًا وسنواصل العمل الجاد لتزويدك بتجربة أفضل.</string>
+  <string name="fb_feedback_title">يرجى إعلامنا بأي مشاكل واجهتك.</string>
+  <string name="fb_feedback_crash">يتحطم</string>
+  <string name="fb_feedback_feature_quality">جودة الميزة</string>
+  <string name="fb_feedback_bug">حشرة</string>
+  <string name="fb_feedback_other">آخر</string>
+  <string name="fb_send">يرسل</string>
+  <string name="fb_hint_feedback">يرجى تقديم تفاصيل إضافية لمساعدتنا في تحديد مشكلتك وحلها بشكل أسرع (بحد أدنى 6 أحرف).</string>
+  <string name="fb_text_feedback_to">تعليق</string>
+  <string name="fb_best_rate">أعلى تصنيف يمكننا تحقيقه :)</string>
+  <string name="fb_share_with">شارك مع</string>
+  <string name="fb_feedback_rate">قيم الآن</string>
+  <string name="fb_rate_on_google_play">التعليقات على Google Play</string>
+  <string name="fb_thank_for_feedback">شكرا لك على تعليقك</string>
+  <string name="fb_sorry_customer">سوف نتناول هذه المشكلة في إصدار مستقبلي. نأسف للإزعاج</string>
+  <string name="fb_common_unable_find_market">تعذر العثور على التطبيق على Google Play</string>
+  <string name="fb_thanks">موافق</string>
+</resources>

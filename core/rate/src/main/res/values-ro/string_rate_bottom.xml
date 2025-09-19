@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">Cel mai bun rating pentru noi</string>
+  <string name="fb_rate_bottom_default">Lucrăm din greu pentru a oferi o experiență mai bună pentru utilizator. Apreciem recenzia dvs.</string>
+  <string name="fb_rate_bottom_bad">Oh, nu!</string>
+  <string name="fb_rate_bottom_good">Și noi te iubim!</string>
+  <string name="fb_rate_bottom_mess_bad">Vă rugăm să ne lăsați câteva feedback</string>
+  <string name="fb_rate_bottom_mess_good">Vă mulțumim pentru feedback</string>
+  <string name="fb_rate">Rata</string>
+</resources>

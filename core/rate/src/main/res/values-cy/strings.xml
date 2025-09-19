@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Diolch am eich adolygiad, a rhowch ychydig o adborth i ni.</string>
+  <string name="fb_rate_us_good">Diolch yn fawr iawn am eich adolygiad!</string>
+  <string name="fb_rate_us_default">Os ydych chi\'n ein graddio ni, byddem yn ei werthfawrogi\'n fawr a byddwn yn parhau i weithio\'n galed i roi profiad gwell i chi.</string>
+  <string name="fb_feedback_title">Rhowch wybod i ni am unrhyw faterion y daethoch ar eu traws.</string>
+  <string name="fb_feedback_crash">Cwymp</string>
+  <string name="fb_feedback_feature_quality">Ansawdd nodwedd</string>
+  <string name="fb_feedback_bug">Byg</string>
+  <string name="fb_feedback_other">Arall</string>
+  <string name="fb_send">Anfon</string>
+  <string name="fb_hint_feedback">Darparwch fanylion ychwanegol i\'n helpu i nodi a datrys eich problem yn gyflymach (lleiafswm o 6 nod).</string>
+  <string name="fb_text_feedback_to">Adborth</string>
+  <string name="fb_best_rate">Y sgôr uchaf y gallwn ei gyflawni :)</string>
+  <string name="fb_share_with">Rhannu Gyda</string>
+  <string name="fb_feedback_rate">Cyfradd Nawr</string>
+  <string name="fb_rate_on_google_play">Adolygiadau ar Google Play</string>
+  <string name="fb_thank_for_feedback">Diolch am eich adborth</string>
+  <string name="fb_sorry_customer">Byddwn yn mynd i\'r afael â\'r mater hwn mewn fersiwn yn y dyfodol. Ymddiheuriadau am yr anghyfleustra</string>
+  <string name="fb_common_unable_find_market">Methu dod o hyd i\'r ap ar Google Play</string>
+  <string name="fb_thanks">iawn</string>
+</resources>

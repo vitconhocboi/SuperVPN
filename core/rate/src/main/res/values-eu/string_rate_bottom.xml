@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">Guretzat baloraziorik onena</string>
+  <string name="fb_rate_bottom_default">Gogor ari gara lanean erabiltzaile esperientzia hobea eskaintzeko. Zure iritzia eskertzen dugu.</string>
+  <string name="fb_rate_bottom_bad">Ai ez!</string>
+  <string name="fb_rate_bottom_good">Guk ere maite zaitugu!</string>
+  <string name="fb_rate_bottom_mess_bad">Mesedez, utzi iezaguzu iritzia</string>
+  <string name="fb_rate_bottom_mess_good">Eskerrik asko zure iritziarengatik</string>
+  <string name="fb_rate">Tarifa</string>
+</resources>

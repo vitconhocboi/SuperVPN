@@ -295,13 +295,6 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity(), CoroutineSco
             // Trả về windowInsets để các view con có thể tiếp tục xử lý
             windowInsets // Hoặc windowInsets nếu muốn các view con tiếp tục nhận
         }
-        showFirstScreen()
-        init(savedInstanceState)
-        if (!isAwaitCallInitView) {
-            initViews(savedInstanceState)
-        }
-        preloadData()
-        handleObservable()
         contextAds = object : ContextAds(
             adsManager = adsManager,
             lifecycleOwner = this,
@@ -319,6 +312,14 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity(), CoroutineSco
                 this@BaseActivity.onBannerNativeResult(adResource)
             }
         }
+        showFirstScreen()
+        init(savedInstanceState)
+        if (!isAwaitCallInitView) {
+            initViews(savedInstanceState)
+        }
+        preloadData()
+        handleObservable()
+
         handleNetworkChange()
 
         bindLiveData(purchasePreferences.changeVipState) { state ->
@@ -512,8 +513,8 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity(), CoroutineSco
      * @param adPlaceName Tên vị trí quảng cáo.
      * @param oneTimeLoad Chỉ tải quảng cáo một lần nếu true.
      */
-    fun loadBannerOrNativeAds(adPlaceName: IAdPlaceName, oneTimeLoad: Boolean) {
-        contextAds?.loadBannerOrNativeAds(adPlaceName, oneTimeLoad)
+    fun loadBannerOrNativeAds(adPlaceName: IAdPlaceName, oneTimeLoad: Boolean, isReload: Boolean = false) {
+        contextAds?.loadBannerOrNativeAds(adPlaceName, oneTimeLoad, isReload = isReload)
     }
 
     /**

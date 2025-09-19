@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">សូម​អរគុណ​ចំពោះ​ការ​ពិនិត្យ​មើល​របស់​អ្នក ហើយ​សូម​ផ្ដល់​មតិ​កែលម្អ​ខ្លះ​ដល់​យើង។</string>
+  <string name="fb_rate_us_good">អរគុណច្រើនសម្រាប់ការវាយតម្លៃរបស់អ្នក!</string>
+  <string name="fb_rate_us_default">ប្រសិនបើអ្នកវាយតម្លៃយើង យើងនឹងពេញចិត្តចំពោះវា ហើយនឹងបន្តខិតខំប្រឹងប្រែងដើម្បីផ្តល់ឱ្យអ្នកនូវបទពិសោធន៍កាន់តែប្រសើរឡើង។</string>
+  <string name="fb_feedback_title">សូមប្រាប់ពួកយើងអំពីបញ្ហាដែលអ្នកជួបប្រទះ។</string>
+  <string name="fb_feedback_crash">គាំង</string>
+  <string name="fb_feedback_feature_quality">គុណភាពលក្ខណៈពិសេស</string>
+  <string name="fb_feedback_bug">កំហុស</string>
+  <string name="fb_feedback_other">ផ្សេងៗ</string>
+  <string name="fb_send">ផ្ញើ</string>
+  <string name="fb_hint_feedback">សូមផ្តល់ព័ត៌មានលម្អិតបន្ថែម ដើម្បីជួយយើងកំណត់អត្តសញ្ញាណ និងដោះស្រាយបញ្ហារបស់អ្នកកាន់តែលឿន (យ៉ាងហោចណាស់ 6 តួអក្សរ)។</string>
+  <string name="fb_text_feedback_to">មតិកែលម្អ</string>
+  <string name="fb_best_rate">ការវាយតម្លៃខ្ពស់បំផុតដែលយើងអាចសម្រេចបាន :)</string>
+  <string name="fb_share_with">ចែករំលែកជាមួយ</string>
+  <string name="fb_feedback_rate">វាយតម្លៃឥឡូវនេះ</string>
+  <string name="fb_rate_on_google_play">ការវាយតម្លៃនៅលើ Google Play</string>
+  <string name="fb_thank_for_feedback">សូមអរគុណចំពោះមតិកែលម្អរបស់អ្នក។</string>
+  <string name="fb_sorry_customer">យើងនឹងដោះស្រាយបញ្ហានេះនៅក្នុងកំណែនាពេលអនាគត។ សូមអភ័យទោសចំពោះការរអាក់រអួល</string>
+  <string name="fb_common_unable_find_market">មិនអាចស្វែងរកកម្មវិធីនៅលើ Google Play បានទេ។</string>
+  <string name="fb_thanks">យល់ព្រម</string>
+</resources>

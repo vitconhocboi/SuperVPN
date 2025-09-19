@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Շնորհակալություն ձեր կարծիքի համար և խնդրում ենք տրամադրել մեզ որոշ կարծիքներ:</string>
+  <string name="fb_rate_us_good">Շատ շնորհակալ եմ ձեր կարծիքի համար:</string>
+  <string name="fb_rate_us_default">Եթե ​​դուք գնահատում եք մեզ, մենք շատ կգնահատենք դա և կշարունակենք քրտնաջան աշխատել՝ ձեզ ավելի լավ փորձ տրամադրելու համար:</string>
+  <string name="fb_feedback_title">Խնդրում ենք տեղեկացնել մեզ ձեր հանդիպած բոլոր խնդիրների մասին:</string>
+  <string name="fb_feedback_crash">Վթար</string>
+  <string name="fb_feedback_feature_quality">Հատկանիշի որակ</string>
+  <string name="fb_feedback_bug">Սխալ</string>
+  <string name="fb_feedback_other">Այլ</string>
+  <string name="fb_send">Ուղարկել</string>
+  <string name="fb_hint_feedback">Խնդրում ենք տրամադրել լրացուցիչ մանրամասներ, որոնք կօգնեն մեզ ավելի արագ բացահայտել և լուծել ձեր խնդիրը (առնվազն 6 նիշ):</string>
+  <string name="fb_text_feedback_to">Հետադարձ կապ</string>
+  <string name="fb_best_rate">Ամենաբարձր վարկանիշը, որին կարող ենք հասնել :)</string>
+  <string name="fb_share_with">Կիսվել հետ</string>
+  <string name="fb_feedback_rate">Գնահատեք հիմա</string>
+  <string name="fb_rate_on_google_play">Կարծիքներ Google Play-ում</string>
+  <string name="fb_thank_for_feedback">Շնորհակալություն արձագանքի համար</string>
+  <string name="fb_sorry_customer">Այս հարցին մենք կանդրադառնանք հետագա տարբերակում: Կներեք անհարմարության համար</string>
+  <string name="fb_common_unable_find_market">Չհաջողվեց գտնել հավելվածը Google Play-ում</string>
+  <string name="fb_thanks">լավ</string>
+</resources>

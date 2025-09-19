@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">dinten</string>
+  <string name="core_text_inapp_days">Poé</string>
+  <string name="core_text_inapp_weeks">Minggu-minggu</string>
+  <string name="core_text_inapp_month">bulan</string>
+  <string name="core_text_inapp_months">sabulan</string>
+  <string name="core_text_inapp_year">Taun</string>
+  <string name="core_text_inapp_years">Mangtaun-taun</string>
+  <string name="core_auto_renew_after">Otomatis Anyarkeun Saatos:</string>
+  <string name="core_text_free_trial">Uji coba gratis</string>
+</resources>

@@ -18,7 +18,7 @@
             style="@style/IconOnActionBar"
             android:layout_marginStart="@dimen/_10dp"
             android:src="@drawable/core_ic_back"
-            android:tint="#011540"
+            android:tint="@color/white"
             android:visibility="gone" />
 
         <androidx.appcompat.widget.AppCompatTextView

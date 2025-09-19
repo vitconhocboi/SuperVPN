@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">آپ کے جائزے کا شکریہ، اور براہ کرم ہمیں کچھ تاثرات فراہم کریں۔</string>
+  <string name="fb_rate_us_good">آپ کے جائزے کے لیے بہت شکریہ!</string>
+  <string name="fb_rate_us_default">اگر آپ ہمیں درجہ دیتے ہیں تو ہم اس کی بہت تعریف کریں گے اور آپ کو بہتر تجربہ فراہم کرنے کے لیے سخت محنت جاری رکھیں گے۔</string>
+  <string name="fb_feedback_title">براہ کرم ہمیں آپ کو درپیش کسی بھی مسئلے کے بارے میں بتائیں۔</string>
+  <string name="fb_feedback_crash">کریش</string>
+  <string name="fb_feedback_feature_quality">خصوصیت کا معیار</string>
+  <string name="fb_feedback_bug">بگ</string>
+  <string name="fb_feedback_other">دیگر</string>
+  <string name="fb_send">بھیجیں۔</string>
+  <string name="fb_hint_feedback">براہ کرم مزید تفصیلات فراہم کریں تاکہ آپ کے مسئلے کی جلد شناخت اور اسے حل کرنے میں ہماری مدد کی جا سکے (کم از کم 6 حروف)۔</string>
+  <string name="fb_text_feedback_to">تاثرات</string>
+  <string name="fb_best_rate">اعلی ترین درجہ بندی جو ہم حاصل کر سکتے ہیں :)</string>
+  <string name="fb_share_with">کے ساتھ اشتراک کریں۔</string>
+  <string name="fb_feedback_rate">ابھی درجہ بندی کریں۔</string>
+  <string name="fb_rate_on_google_play">Google Play پر جائزے</string>
+  <string name="fb_thank_for_feedback">آپ کی رائے کا شکریہ</string>
+  <string name="fb_sorry_customer">ہم مستقبل کے ورژن میں اس مسئلے کو حل کریں گے۔ زحمت کے لیے معذرت</string>
+  <string name="fb_common_unable_find_market">Google Play پر ایپ تلاش کرنے سے قاصر</string>
+  <string name="fb_thanks">ٹھیک ہے</string>
+</resources>

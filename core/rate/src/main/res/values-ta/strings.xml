@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">உங்கள் மதிப்பாய்வுக்கு நன்றி, மேலும் சில கருத்துக்களை எங்களுக்கு வழங்கவும்.</string>
+  <string name="fb_rate_us_good">உங்கள் விமர்சனத்திற்கு மிக்க நன்றி!</string>
+  <string name="fb_rate_us_default">நீங்கள் எங்களை மதிப்பிட்டால், நாங்கள் அதை மிகவும் பாராட்டுவோம், மேலும் உங்களுக்கு சிறந்த அனுபவத்தை வழங்க தொடர்ந்து கடினமாக உழைப்போம்.</string>
+  <string name="fb_feedback_title">நீங்கள் சந்தித்த ஏதேனும் சிக்கல்கள் குறித்து எங்களுக்குத் தெரியப்படுத்துங்கள்.</string>
+  <string name="fb_feedback_crash">விபத்து</string>
+  <string name="fb_feedback_feature_quality">அம்சத்தின் தரம்</string>
+  <string name="fb_feedback_bug">பிழை</string>
+  <string name="fb_feedback_other">மற்றவை</string>
+  <string name="fb_send">அனுப்பு</string>
+  <string name="fb_hint_feedback">உங்கள் சிக்கலை விரைவாகக் கண்டறிந்து தீர்க்க எங்களுக்கு உதவ கூடுதல் விவரங்களை வழங்கவும் (குறைந்தபட்சம் 6 எழுத்துகள்).</string>
+  <string name="fb_text_feedback_to">பின்னூட்டம்</string>
+  <string name="fb_best_rate">நாம் பெறக்கூடிய மிக உயர்ந்த மதிப்பீடு :)</string>
+  <string name="fb_share_with">உடன் பகிரவும்</string>
+  <string name="fb_feedback_rate">இப்போது மதிப்பிடவும்</string>
+  <string name="fb_rate_on_google_play">Google Play இல் மதிப்புரைகள்</string>
+  <string name="fb_thank_for_feedback">உங்கள் கருத்துக்கு நன்றி</string>
+  <string name="fb_sorry_customer">எதிர்கால பதிப்பில் இந்த சிக்கலை நாங்கள் தீர்ப்போம். சிரமத்திற்கு மன்னிக்கவும்</string>
+  <string name="fb_common_unable_find_market">Google Play இல் பயன்பாட்டைக் கண்டறிய முடியவில்லை</string>
+  <string name="fb_thanks">சரி</string>
+</resources>

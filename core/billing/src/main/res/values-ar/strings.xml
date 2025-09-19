@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">يوم</string>
+  <string name="core_text_inapp_days">أيام</string>
+  <string name="core_text_inapp_weeks">اسابيع</string>
+  <string name="core_text_inapp_month">شهر</string>
+  <string name="core_text_inapp_months">شهور</string>
+  <string name="core_text_inapp_year">سنة</string>
+  <string name="core_text_inapp_years">سنين</string>
+  <string name="core_auto_renew_after">التجديد التلقائي بعد:</string>
+  <string name="core_text_free_trial">نسخة تجريبية مجانية</string>
+</resources>

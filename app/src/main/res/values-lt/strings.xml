@@ -15,6 +15,8 @@
   <string name="setting_trial">Nemokamas bandomasis laikotarpis 3 dienos</string>
   <string name="setting_upgrade">Atnaujinti</string>
   <string name="ip_proxy">Serveriai</string>
+  <string name="ip_quick_access">Greita prieiga</string>
+  <string name="ip_all">VISI</string>
   <string name="setting_app_proxy">Programų filtras</string>
   <string name="setting_app_proxy_desc">Pasirinkite, kurios programos jungsis prie interneto per VPN</string>
   <string name="setting_ads_block">Skelbimų blokavimas</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Pasirinkite ryšio sritį</string>
   <string name="first_fragment_label">Pirmasis fragmentas</string>
   <string name="second_fragment_label">Antrasis fragmentas</string>
+  <string name="start">PRADĖTI</string>
   <string name="next">kitas</string>
   <string name="previous">Ankstesnis</string>
   <string name="vn">Việt Nam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">Gerai</string>
   <string name="common_ok">Gerai</string>
   <string name="btn_save">sutaupyti</string>
+  <string name="btn_connect">Prisijungti</string>
   <string name="btn_cancel">atšaukti</string>
+  <string name="btn_exit">Išeiti</string>
   <string name="btn_reset">Atstatyti</string>
   <string name="auto">Auto</string>
   <string name="min_60">60 minučių</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">Pasirinkite VPN</string>
   <string name="dns_only">Tik DNS</string>
   <string name="confirm_dns">VPN neaktyvus</string>
-  <string name="confirm_dns_msg">Šiuo metu naudojate tik DNS. Norėdami užtikrinti saugesnį ir privatesnį ryšį, pasirinkite VPN serverį.</string>
+  <string name="confirm_dns_msg">Nepasirinktas VPN serveris. Pasirinkite VPN serverį.</string>
   <string name="btn_agree">Sutinku</string>
   <string name="confirm_collect">Jūsų privatumas, jūsų kontrolė</string>
   <string name="confirm_accept_msg">Kad užbaigtų jūsų prenumeratą, ši programėlė renka jūsų reklamos ID, kad patvirtintų registraciją, pagerintų paslaugų kokybę ir užkirstų kelią nesąžiningai veiklai. Ar sutinkate su šiuo duomenų rinkimu?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Pateikite daugiau informacijos, kad galėtume greičiau nustatyti ir išspręsti jūsų problemą (mažiausiai 6 simboliai)</string>
   <string name="text_thanks_feedback">Dėkojame už atsiliepimą</string>
   <string name="text_feedback_content">Šią problemą išspręsime būsimoje versijoje. Atsiprašome už nepatogumus.</string>
+  <string name="no_available_vpn">Nėra nemokamo VPN, eikite į VPN ekraną ir pasirinkite serverį.</string>
   <string name="msg_device_does_not_support_this_feature">Ši funkcija nepalaikoma šiame įrenginyje!</string>
   <string name="search_app">paieškos programėlė..</string>
+  <string name="exit_app">Išeiti iš programėlės?</string>
+  <string name="exit_app_msg">Ar tikrai norite išeiti?</string>
   <string name="free">Nemokama</string>
   <string name="premium">Premium</string>
+  <string name="unlock_premium">Atrakinkite VPN Premium</string>
+  <string name="get_premium">Gaukite premium</string>
+  <string name="watch_ads">Žiūrėkite skelbimus, kad susisiektumėte</string>
+  <string name="guide_1">Vos vienas prisilietimas, kad prisijungtumėte.</string>
+  <string name="guide_2">Keli VPN serveriai skirtingose ​​šalyse</string>
+  <string name="guide_3">Apsaugokite savo privatumą internete</string>
+  <string name="what_is_my_ip">Koks mano IP adresas?</string>
+  <string name="ip_address">IP adresas</string>
+  <string name="network_provider">Tinklo tiekėjas</string>
+  <string name="location">Vieta</string>
+  <string name="pincode">PIN kodas</string>
+  <string name="timezone">Laiko juosta</string>
+  <string name="duration">Trukmė</string>
+  <string name="connect_success">Susijusi sėkmė</string>
+  <string name="connect_report">Prisijungimo ataskaita</string>
+  <string name="disconnect">Atjungti</string>
+  <string name="no_internet">Nėra interneto ryšio</string>
+  <string name="network_error">Nėra interneto ryšio</string>
 </resources>

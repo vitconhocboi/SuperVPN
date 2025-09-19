@@ -71,7 +71,7 @@ class UnlockDialog(
                         callBackConnectVpn()
                         closeDialog()
                     } else if (isShown) {
-                        context.toast(R.string.connect_error)
+                        activity?.toast(R.string.connect_error)
                     } else {
                         //
                     }

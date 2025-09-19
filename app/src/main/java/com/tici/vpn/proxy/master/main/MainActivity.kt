@@ -3,6 +3,7 @@ package com.tici.vpn.proxy.master.main
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
@@ -13,15 +14,12 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.whenResumed
 import com.common.baseui.BaseAppConfig
 import com.core.baseui.BaseActivity
+import com.core.baseui.BillingViewModel
 import com.core.config.domain.data.IAdPlaceName
 import com.simple.libads.setVisible
-//<<<<<<< HEAD
-//import com.tici.vpn.proxy.master.dialog.CloseAppDialog
-//=======
 import com.tici.vpn.proxy.master.R
 import com.tici.vpn.proxy.master.databinding.ActivityMainBinding
 import com.tici.vpn.proxy.master.feature.feature_exit.DialogFragmentExitApp
-//>>>>>>> feature/08092025_update_core_base
 import com.tici.vpn.proxy.master.home.BackActionBarFragment
 import com.tici.vpn.proxy.master.home.ConnectedFragment
 import com.tici.vpn.proxy.master.home.DisconnectedFragment
@@ -30,6 +28,7 @@ import com.tici.vpn.proxy.master.home.ProxyReport
 import com.tici.vpn.proxy.master.network.ProxySpeedTest
 import com.tici.vpn.proxy.master.remoteconfig.FirebaseConfigManager
 import com.tici.vpn.proxy.master.required.ads.AppAdPlaceName
+import com.tici.vpn.proxy.master.required.inapp.InAppBillingViewModel
 import com.tici.vpn.proxy.master.settings.SettingFragment
 import com.tici.vpn.proxy.master.settings.appproxy.AppProxyFragment
 import com.tici.vpn.proxy.master.settings.dns.DNSFragment
@@ -45,6 +44,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     var isConnectedFragment = false
     var isDisconnectedFragment = false
 
+    private val inAppBillingViewModel: BillingViewModel by viewModels<InAppBillingViewModel>()
+
 //    var isAutoConnect = false
 
     private var configAd: FirebaseConfigManager = FirebaseConfigManager.get()
@@ -52,15 +53,15 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     private val mainViewModel: MainViewModel by viewModels()
 
     private val mHomeFragment by lazy {
-//<<<<<<< HEAD
-        HomeFragment.newInstance(
+        /*HomeFragment.newInstance(
             showConnected = { proxy ->
                 showConnected(proxy)
             },
             showDisconnected = { report ->
                 showDisconnected(report)
             }
-        )
+        )*/
+        HomeFragment()
     }
 
     private val mAppProxyFragment by lazy {
@@ -115,7 +116,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         requestAdvertisingIdPermission()
         val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
 //<<<<<<< HEAD
-//        val reconnect = intent.getStringExtra("state")
+        val reconnect = intent.getStringExtra("state")
 //        if (reconnect != null && reconnect == "POPUP") {
 ////            SettingSuccessDialog(
 ////                R.string.setting_choose_proxy, R.string.home_reconnect_to_take_effect
@@ -134,12 +135,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 //        }
 //        intent.removeExtra("state")
 //>>>>>>> feature/08092025_update_core_base
-
-        mainViewModel.checkActiveSubscriptions(applicationContext) {
-            if (it) {
-                binding.frameBanner.visibility = View.GONE
-            }
-        }
 
         mListFragment.add(mHomeFragment)
         mListFragment.add(mSettingFragment)
@@ -336,7 +331,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         }
     }
 
-//<<<<<<< HEAD
+    //<<<<<<< HEAD
 //    private fun showAppProxy() {
 //=======
     fun showAppProxy() {
@@ -347,7 +342,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         mAppProxyFragment.clearUI()
     }
 
-//<<<<<<< HEAD
+    //<<<<<<< HEAD
 //    private fun showDns() {
 //=======
     fun showDns() {
@@ -358,33 +353,27 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         showFragment(mDnsFragment)
     }
 
-//<<<<<<< HEAD
-//    private fun showConnected(proxy: ProxySpeedTest.ProxyConfig?) {
-//=======
     fun showConnected(proxy: ProxySpeedTest.ProxyConfig?) {
-//>>>>>>> feature/08092025_update_core_base
         mConnectedFragment.setCurrentProxy(proxy)
         isConnectedFragment = true
         showFragment(mConnectedFragment)
     }
 
-//<<<<<<< HEAD
-//    private fun showDisconnected(report: ProxyReport) {
-//=======
     fun showDisconnected(report: ProxyReport) {
-//>>>>>>> feature/08092025_update_core_base
         mDisonnectedFragment.loadData(report)
         isDisconnectedFragment = true
         showFragment(mDisonnectedFragment)
     }
 
-//<<<<<<< HEAD
-//=======
     fun navigateHome() {
         showFragment(mHomeFragment)
     }
 
-//>>>>>>> feature/08092025_update_core_base
+    override fun onResume() {
+        super.onResume()
+        inAppBillingViewModel.restorePurchasedIfVipReady(false, false)
+    }
+
     private fun selectAll() {
         mAppProxyFragment.checkUncheckAll()
     }

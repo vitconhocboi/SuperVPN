@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">ကျွန်ုပ်တို့အတွက် အကောင်းဆုံး အဆင့်သတ်မှတ်ချက်</string>
+  <string name="fb_rate_bottom_default">ပိုမိုကောင်းမွန်သော အသုံးပြုသူအတွေ့အကြုံကို ပေးဆောင်ရန် ကျွန်ုပ်တို့ ကြိုးစားလုပ်ဆောင်နေပါသည်။ သင့်သုံးသပ်ချက်ကို ကျွန်ုပ်တို့ ကျေးဇူးတင်ပါသည်။</string>
+  <string name="fb_rate_bottom_bad">အိုး မဟုတ်ဘူး!</string>
+  <string name="fb_rate_bottom_good">ငါတို့လည်းမင်းကိုချစ်တယ်။</string>
+  <string name="fb_rate_bottom_mess_bad">ကျေးဇူးပြု၍ ကျွန်ုပ်တို့အား တုံ့ပြန်ချက်အချို့ ချန်ထားခဲ့ပါ။</string>
+  <string name="fb_rate_bottom_mess_good">သင့်အကြံပြုချက်အတွက် ကျေးဇူးတင်ပါသည်။</string>
+  <string name="fb_rate">နှုန်းထား</string>
+</resources>

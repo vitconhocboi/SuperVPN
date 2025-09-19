@@ -15,6 +15,8 @@
   <string name="setting_trial">3 ਦਿਨ ਮੁਫ਼ਤ ਟ੍ਰਾਇਲ</string>
   <string name="setting_upgrade">ਅੱਪਗ੍ਰੇਡ ਕਰੋ</string>
   <string name="ip_proxy">ਸਰਵਰ</string>
+  <string name="ip_quick_access">ਤੇਜ਼ ਪਹੁੰਚ</string>
+  <string name="ip_all">ਸਾਰੇ</string>
   <string name="setting_app_proxy">ਐਪ ਫਿਲਟਰ</string>
   <string name="setting_app_proxy_desc">ਚੁਣੋ ਕਿ ਕਿਹੜੀਆਂ ਐਪਾਂ VPN ਰਾਹੀਂ ਇੰਟਰਨੈੱਟ ਨਾਲ ਜੁੜਨਗੀਆਂ</string>
   <string name="setting_ads_block">ਇਸ਼ਤਿਹਾਰ ਬਲਾਕ</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">ਕਨੈਕਸ਼ਨ ਖੇਤਰ ਚੁਣੋ</string>
   <string name="first_fragment_label">ਪਹਿਲਾ ਟੁਕੜਾ</string>
   <string name="second_fragment_label">ਦੂਜਾ ਟੁਕੜਾ</string>
+  <string name="start">START</string>
   <string name="next">ਅਗਲਾ</string>
   <string name="previous">ਪਿਛਲਾ</string>
   <string name="vn">ਵੀਅਤਨਾਮ</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">ਠੀਕ ਹੈ</string>
   <string name="common_ok">ਠੀਕ ਹੈ</string>
   <string name="btn_save">ਬਚਾਓ</string>
+  <string name="btn_connect">ਜੁੜੋ</string>
   <string name="btn_cancel">ਰੱਦ ਕਰੋ</string>
+  <string name="btn_exit">ਨਿਕਾਸ</string>
   <string name="btn_reset">ਰੀਸੈੱਟ</string>
   <string name="auto">ਆਟੋ</string>
   <string name="min_60">60 ਮਿੰਟ</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">VPN ਚੁਣੋ</string>
   <string name="dns_only">ਸਿਰਫ਼ DNS</string>
   <string name="confirm_dns">VPN ਕਿਰਿਆਸ਼ੀਲ ਨਹੀਂ ਹੈ</string>
-  <string name="confirm_dns_msg">ਤੁਸੀਂ ਇਸ ਵੇਲੇ ਸਿਰਫ਼ DNS ਦੀ ਵਰਤੋਂ ਕਰ ਰਹੇ ਹੋ। ਵਧੇਰੇ ਸੁਰੱਖਿਅਤ ਅਤੇ ਨਿੱਜੀ ਕਨੈਕਸ਼ਨ ਲਈ, ਕਿਰਪਾ ਕਰਕੇ ਇੱਕ VPN ਸਰਵਰ ਚੁਣੋ।</string>
+  <string name="confirm_dns_msg">ਕੋਈ VPN ਸਰਵਰ ਨਹੀਂ ਚੁਣਿਆ ਗਿਆ। ਕਿਰਪਾ ਕਰਕੇ ਇੱਕ VPN ਸਰਵਰ ਚੁਣੋ।</string>
   <string name="btn_agree">ਸਹਿਮਤ</string>
   <string name="confirm_collect">ਤੁਹਾਡੀ ਗੋਪਨੀਯਤਾ, ਤੁਹਾਡਾ ਨਿਯੰਤਰਣ</string>
   <string name="confirm_accept_msg">ਤੁਹਾਡੀ ਗਾਹਕੀ ਨੂੰ ਪੂਰਾ ਕਰਨ ਲਈ, ਇਹ ਐਪ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਦੀ ਪੁਸ਼ਟੀ ਕਰਨ, ਸੇਵਾ ਦੀ ਗੁਣਵੱਤਾ ਵਧਾਉਣ ਅਤੇ ਧੋਖਾਧੜੀ ਵਾਲੀ ਗਤੀਵਿਧੀ ਨੂੰ ਰੋਕਣ ਲਈ ਤੁਹਾਡੀ ਇਸ਼ਤਿਹਾਰਬਾਜ਼ੀ ਆਈਡੀ ਇਕੱਠੀ ਕਰਦੀ ਹੈ। ਕੀ ਤੁਸੀਂ ਇਸ ਡੇਟਾ ਸੰਗ੍ਰਹਿ ਨਾਲ ਸਹਿਮਤ ਹੋ?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">ਕਿਰਪਾ ਕਰਕੇ ਸਾਨੂੰ ਹੋਰ ਵੇਰਵੇ ਦਿਓ ਤਾਂ ਜੋ ਅਸੀਂ ਤੁਹਾਡੀ ਸਮੱਸਿਆ ਨੂੰ ਤੇਜ਼ੀ ਨਾਲ ਪਛਾਣ ਸਕੀਏ ਅਤੇ ਹੱਲ ਕਰ ਸਕੀਏ (ਘੱਟੋ-ਘੱਟ 6 ਅੱਖਰ)</string>
   <string name="text_thanks_feedback">ਤੁਹਾਡੇ ਫੀਡਬੈਕ ਲਈ ਧੰਨਵਾਦ।</string>
   <string name="text_feedback_content">ਅਸੀਂ ਇਸ ਸਮੱਸਿਆ ਨੂੰ ਭਵਿੱਖ ਦੇ ਸੰਸਕਰਣ ਵਿੱਚ ਹੱਲ ਕਰਾਂਗੇ। ਅਸੁਵਿਧਾ ਲਈ ਮਾਫ਼ੀ।</string>
+  <string name="no_available_vpn">ਕੋਈ ਮੁਫ਼ਤ ਵੀਪੀਐਨ ਉਪਲਬਧ ਨਹੀਂ ਹੈ, ਕਿਰਪਾ ਕਰਕੇ ਵੀਪੀਐਨ ਸਕ੍ਰੀਨ ਤੇ ਜਾਓ ਅਤੇ ਇੱਕ ਸਰਵਰ ਚੁਣੋ।</string>
   <string name="msg_device_does_not_support_this_feature">ਇਹ ਵਿਸ਼ੇਸ਼ਤਾ ਇਸ ਡਿਵਾਈਸ ਲਈ ਸਮਰਥਿਤ ਨਹੀਂ ਹੈ!</string>
   <string name="search_app">ਖੋਜ ਐਪ..</string>
+  <string name="exit_app">ਕੀ ਐਪ ਤੋਂ ਬਾਹਰ ਨਿਕਲਣਾ ਹੈ?</string>
+  <string name="exit_app_msg">ਕੀ ਤੁਸੀਂ ਪੱਕਾ ਬਾਹਰ ਨਿਕਲਣਾ ਚਾਹੁੰਦੇ ਹੋ?</string>
   <string name="free">ਮੁਫ਼ਤ</string>
   <string name="premium">ਪ੍ਰੀਮੀਅਮ</string>
+  <string name="unlock_premium">VPN ਪ੍ਰੀਮੀਅਮ ਨੂੰ ਅਨਲੌਕ ਕਰੋ</string>
+  <string name="get_premium">ਪ੍ਰੀਮੀਅਮ ਪ੍ਰਾਪਤ ਕਰੋ</string>
+  <string name="watch_ads">ਕਨੈਕਟ ਕਰਨ ਲਈ ਇਸ਼ਤਿਹਾਰ ਦੇਖੋ</string>
+  <string name="guide_1">ਜੁੜਨ ਲਈ ਸਿਰਫ਼ ਇੱਕ ਛੋਹ।</string>
+  <string name="guide_2">ਵੱਖ-ਵੱਖ ਦੇਸ਼ਾਂ ਵਿੱਚ ਕਈ VPN ਸਰਵਰ</string>
+  <string name="guide_3">ਆਪਣੀ ਔਨਲਾਈਨ ਗੋਪਨੀਯਤਾ ਦੀ ਰੱਖਿਆ ਕਰੋ</string>
+  <string name="what_is_my_ip">ਮੇਰਾ ਆਈਪੀ ਕੀ ਹੈ?</string>
+  <string name="ip_address">IP ਪਤਾ</string>
+  <string name="network_provider">ਨੈੱਟਵਰਕ ਪ੍ਰਦਾਤਾ</string>
+  <string name="location">ਟਿਕਾਣਾ</string>
+  <string name="pincode">ਪਿੰਨ ਕੋਡ</string>
+  <string name="timezone">ਸਮਾਂ ਖੇਤਰ</string>
+  <string name="duration">ਮਿਆਦ</string>
+  <string name="connect_success">ਜੁੜੀ ਹੋਈ ਸਫਲਤਾ</string>
+  <string name="connect_report">ਕਨੈਕਟ ਰਿਪੋਰਟ</string>
+  <string name="disconnect">ਡਿਸਕਨੈਕਟ ਕਰੋ</string>
+  <string name="no_internet">ਕੋਈ ਇੰਟਰਨੈਟ ਕਨੈਕਸ਼ਨ ਨਹੀਂ</string>
+  <string name="network_error">ਕੋਈ ਇੰਟਰਨੈਟ ਕਨੈਕਸ਼ਨ ਨਹੀਂ</string>
 </resources>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">dina</string>
+  <string name="core_text_inapp_days">Dina</string>
+  <string name="core_text_inapp_weeks">Minggu</string>
+  <string name="core_text_inapp_month">wulan</string>
+  <string name="core_text_inapp_months">wulan</string>
+  <string name="core_text_inapp_year">taun</string>
+  <string name="core_text_inapp_years">taun</string>
+  <string name="core_auto_renew_after">Nganyari Otomatis Sawise:</string>
+  <string name="core_text_free_trial">Uji coba gratis</string>
+</resources>

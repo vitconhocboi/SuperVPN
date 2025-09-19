@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:935888791652:android:b55630b84d2f3154095111",
         "android_client_info": {
-          "package_name": "com.tici.vpn.proxy.master.dev"
+          "package_name": "com.tici.vpn.proxy.master"
         }
       },
       "oauth_client": [],

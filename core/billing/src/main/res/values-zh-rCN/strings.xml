@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">天</string>
+  <string name="core_text_inapp_days">天</string>
+  <string name="core_text_inapp_weeks">周数</string>
+  <string name="core_text_inapp_month">月</string>
+  <string name="core_text_inapp_months">月份</string>
+  <string name="core_text_inapp_year">年</string>
+  <string name="core_text_inapp_years">年</string>
+  <string name="core_auto_renew_after">自动续订时间：</string>
+  <string name="core_text_free_trial">免费试用</string>
+</resources>

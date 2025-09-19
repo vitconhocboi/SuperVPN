@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Hvala vam na ocjeni i molimo vas da nam pošaljete neke povratne informacije.</string>
+  <string name="fb_rate_us_good">Hvala vam puno na vašoj recenziji!</string>
+  <string name="fb_rate_us_default">Ako nas ocijenite, bili bismo veoma zahvalni i nastavit ćemo naporno raditi kako bismo vam pružili bolje iskustvo.</string>
+  <string name="fb_feedback_title">Obavijestite nas o svim problemima na koje ste naišli.</string>
+  <string name="fb_feedback_crash">Crash</string>
+  <string name="fb_feedback_feature_quality">Kvaliteta karakteristika</string>
+  <string name="fb_feedback_bug">Bug</string>
+  <string name="fb_feedback_other">Ostalo</string>
+  <string name="fb_send">Pošalji</string>
+  <string name="fb_hint_feedback">Navedite dodatne detalje kako biste nam pomogli da brže identificiramo i riješimo vaš problem (najmanje 6 znakova).</string>
+  <string name="fb_text_feedback_to">Povratne informacije</string>
+  <string name="fb_best_rate">Najviša ocjena koju možemo postići :)</string>
+  <string name="fb_share_with">Podijeli sa</string>
+  <string name="fb_feedback_rate">Rate Now</string>
+  <string name="fb_rate_on_google_play">Recenzije na Google Play</string>
+  <string name="fb_thank_for_feedback">Hvala vam na povratnim informacijama</string>
+  <string name="fb_sorry_customer">Ovaj problem ćemo pozabaviti u budućoj verziji. Izvinite zbog neprijatnosti</string>
+  <string name="fb_common_unable_find_market">Nije moguće pronaći aplikaciju na Google Playu</string>
+  <string name="fb_thanks">uredu</string>
+</resources>

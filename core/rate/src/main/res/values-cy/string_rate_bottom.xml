@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">Y sgôr orau i ni</string>
+  <string name="fb_rate_bottom_default">Rydym yn gweithio\'n galed i ddarparu profiad gwell i ddefnyddwyr. Rydym yn gwerthfawrogi eich adolygiad.</string>
+  <string name="fb_rate_bottom_bad">O Na!</string>
+  <string name="fb_rate_bottom_good">Rydyn ni\'n caru chi hefyd!</string>
+  <string name="fb_rate_bottom_mess_bad">Gadewch ychydig o adborth i ni</string>
+  <string name="fb_rate_bottom_mess_good">Diolch am eich adborth</string>
+  <string name="fb_rate">Cyfradd</string>
+</resources>

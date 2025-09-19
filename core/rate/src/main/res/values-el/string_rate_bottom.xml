@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">Η καλύτερη βαθμολογία για εμάς</string>
+  <string name="fb_rate_bottom_default">Εργαζόμαστε σκληρά για να παρέχουμε καλύτερη εμπειρία χρήστη. Εκτιμούμε την κριτική σας.</string>
+  <string name="fb_rate_bottom_bad">Ω Όχι!</string>
+  <string name="fb_rate_bottom_good">Κι εμείς σας αγαπάμε!</string>
+  <string name="fb_rate_bottom_mess_bad">Αφήστε μας μερικά σχόλια</string>
+  <string name="fb_rate_bottom_mess_good">Ευχαριστώ για τα σχόλιά σας</string>
+  <string name="fb_rate">Τιμή</string>
+</resources>

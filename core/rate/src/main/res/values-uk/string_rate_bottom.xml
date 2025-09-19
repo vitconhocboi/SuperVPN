@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">Найкраща оцінка для нас</string>
+  <string name="fb_rate_bottom_default">Ми наполегливо працюємо, щоб забезпечити кращий досвід користувачів. Ми цінуємо ваш відгук.</string>
+  <string name="fb_rate_bottom_bad">О ні!</string>
+  <string name="fb_rate_bottom_good">Ми теж тебе любимо!</string>
+  <string name="fb_rate_bottom_mess_bad">Будь ласка, залиште нам відгук</string>
+  <string name="fb_rate_bottom_mess_good">Дякуємо за відгук</string>
+  <string name="fb_rate">Оцінка</string>
+</resources>

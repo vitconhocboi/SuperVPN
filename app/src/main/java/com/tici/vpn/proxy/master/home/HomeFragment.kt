@@ -10,6 +10,7 @@ import android.net.VpnService
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -61,9 +62,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private val handler = Handler(Looper.getMainLooper())
     private var state: String? = null
 
-    private lateinit var onShowConnected: (proxy: ProxySpeedTest.ProxyConfig?) -> Unit
-    private lateinit var onShowDisconnected: (report: ProxyReport) -> Unit
-
     override fun providerInterAdPlaceName(): List<IAdPlaceName> {
         return listOf(
             AppAdPlaceName.FULLSCREEN_SELECTED_PROXY_HOME
@@ -87,8 +85,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             showDisconnected: (report: ProxyReport) -> Unit
         ): HomeFragment {
             val fragment = HomeFragment()
-            fragment.onShowConnected = showConnected
-            fragment.onShowDisconnected = showDisconnected
+            /*fragment.onShowConnected = showConnected
+            fragment.onShowDisconnected = showDisconnected*/
             return fragment
         }
     }
@@ -108,6 +106,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             if (result.resultCode == Activity.RESULT_OK) {
                 startVpnService()
             } else {
+                isShowReport = true
                 DialogVpnPermission().show(
                     requireActivity().supportFragmentManager, "DialogVpnPermission"
                 )
@@ -151,7 +150,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                     binding.lnConnected.visible()
                     if (!isShowReport) {
                         isShowReport = true
-                        onShowConnected(currentProxy)
+                        (activity as? MainActivity)?.showConnected(currentProxy)
                     }
                 }
             }
@@ -182,14 +181,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 binding.ivConnectPanel.isSelected = false
                 binding.ivConnectPanel.isEnabled = true
                 binding.lnConnected.invisible()
-//                Log.i("SuperVpn", "TestRelease isConnected false from DISCONNECTED")
                 isConnected = false
-                if (state == "CONNECT") {
-                    state = ""
-                    prepareVpn()
-                    handler.post(speedTestRunnable)
-                    handler.post(updateRunnable)
-                }
+//                if (state == "CONNECT") {
+//                    state = ""
+//                    prepareVpn()
+//                    handler.post(speedTestRunnable)
+//                    handler.post(updateRunnable)
+//                }
                 if (!isShowReport) {
                     isShowReport = true
                     val start = context?.getSharedPreferences(
@@ -197,9 +195,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                     )?.getInt("start", 0)
                     val diff = System.currentTimeMillis().toInt() / 1000 - start!!
                     report.duration = formatSecondsToTime(diff)
-//                    if (isShowDisconnect) {
-                    onShowDisconnected(report)
-//                    }
+                    (activity as? MainActivity)?.showDisconnected(report)
+                }
+                if (state == "CONNECT") {
+                    isShowReport = false
+                    state = ""
+                    prepareVpn()
+                    handler.post(speedTestRunnable)
+                    handler.post(updateRunnable)
                 }
             }
 
@@ -212,7 +215,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 binding.ivConnectPanel.isSelected = false
                 binding.ivConnectPanel.isEnabled = false
                 binding.lnConnected.invisible()
-//                Log.i("SuperVpn", "TestRelease isConnected false from ERROR")
                 isConnected = false
             }
         }
@@ -304,12 +306,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         return String.format("%02d:%02d:%02d", hours, minutes, secs)
     }
 
-//    override fun initView() {
+    //    override fun initView() {
 //        super.initView()
 //        state = activity?.intent?.getStringExtra("state")
     override fun initViews(savedInstanceState: Bundle?) {
-        state = activity?.intent?.getStringExtra("RECONNECT")
-
+        state = activity?.intent?.getStringExtra("state")
+        Log.d("SuperVPN", "state from main $state")
         val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
         with(binding) {
             ivSelectProxy.scaleX = if (isRTL) -1f else 1f
@@ -395,8 +397,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 //            }
 //
             ivConnectPanel.setOnClickListener {
-                isShowDisconnect = false
-                actionConnectProxy()
+                if (NetworkUtils.isInternetAvailable(requireActivity())) {
+                    isShowDisconnect = false
+                    actionConnectProxy()
+                } else {
+                    Toast.makeText(
+                        requireContext(), getString(R.string.no_internet), Toast.LENGTH_SHORT
+                    ).show()
+                }
 //>>>>>>> feature/08092025_update_core_base
             }
 
@@ -420,13 +428,19 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 //                        })
 //                } else {
 //                    Toast.makeText(
-//                        requireContext(), "No internet connection", Toast.LENGTH_SHORT
+//                        requireContext(), getString(R.string.no_internet), Toast.LENGTH_SHORT
 //                    ).show()
 //                }
 //=======
             pnSelectProxy.setOnClickListener {
-
-                showInterAdsFullSelectedProxy()
+                if (NetworkUtils.isInternetAvailable(requireActivity())) {
+                    showInterAdsFullSelectedProxy()
+                } else {
+                    Toast.makeText(
+                        requireContext(), getString(R.string.no_internet), Toast.LENGTH_SHORT
+                    ).show()
+                }
+//                showInterAdsFullSelectedProxy()
 //>>>>>>> feature/08092025_update_core_base
             }
 
@@ -435,7 +449,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                     Navigator.startProxyInfoActivity(requireContext(), currentProxy)
                 } else {
                     Toast.makeText(
-                        requireContext(), "No internet connection", Toast.LENGTH_SHORT
+                        requireContext(), getString(R.string.no_internet), Toast.LENGTH_SHORT
                     ).show()
                 }
             }
@@ -512,13 +526,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         }
 
         proxyViewModel.isConnected.observe(viewLifecycleOwner) { status ->
+
             updateUI(status)
         }
 
         proxyViewModel.isError.observe(viewLifecycleOwner) { isError ->
             if (isError == true) {
                 Toast.makeText(
-                    requireContext(), "Connection error. Please try again.", Toast.LENGTH_SHORT
+                    requireContext(), getString(R.string.network_error), Toast.LENGTH_SHORT
                 ).show()
             }
         }
@@ -555,18 +570,19 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     private fun actionConnectProxy() {
         if (!isConnected) {
-            isShowReport = false
-            if (BaseAppConfig.proxy.isNotEmpty()) {
-                prepareVpn()
-            } else {
-//                        ConfirmDnsDialog(requireActivity(), onContinue = {
-//                            prepareVpn()
-//                        }, selectVpn = {
-//                            Navigator.startProxyActivity(requireContext(), null)
-//                        }).show()
-                lifecycleScope.launch {
-                    proxyViewModel.getRandomFreeProxy()
+            if (NetworkUtils.isInternetAvailable(requireActivity())) {
+                isShowReport = false
+                if (BaseAppConfig.proxy.isNotEmpty()) {
+                    prepareVpn()
+                } else {
+                    lifecycleScope.launch {
+                        proxyViewModel.getRandomFreeProxy()
+                    }
                 }
+            } else {
+                Toast.makeText(
+                    requireContext(), getString(R.string.no_internet), Toast.LENGTH_SHORT
+                ).show()
             }
         } else {
             DisconnectConfirmDialog(onConfirm = {
@@ -577,7 +593,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                     stopVpnService()
                 } else {
                     Toast.makeText(
-                        requireContext(), "No internet connection", Toast.LENGTH_SHORT
+                        requireContext(), getString(R.string.no_internet), Toast.LENGTH_SHORT
                     ).show()
                 }
             }).show(childFragmentManager, "DialogConfirm")
@@ -609,7 +625,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 stopVpnService()
             } else {
                 Toast.makeText(
-                    requireContext(), "No internet connection", Toast.LENGTH_SHORT
+                    requireContext(), getString(R.string.no_internet), Toast.LENGTH_SHORT
                 ).show()
             }
         }
@@ -654,7 +670,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             }
         } else {
             Toast.makeText(
-                requireContext(), "No internet connection", Toast.LENGTH_SHORT
+                requireContext(), getString(R.string.no_internet), Toast.LENGTH_SHORT
             ).show()
         }
     }
@@ -711,7 +727,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                         allowApp = rs.map { it.packageName })
                 } catch (_: Exception) {
                     Toast.makeText(
-                        requireContext(), "Network error. Please try again", Toast.LENGTH_SHORT
+                        requireContext(), getString(R.string.network_error), Toast.LENGTH_SHORT
                     ).show()
                 }
             })

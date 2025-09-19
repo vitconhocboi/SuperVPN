@@ -7,16 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
-import com.common.baseui.extension.context
 import com.tici.vpn.proxy.master.databinding.DialogRateCompleteBinding
-import com.common.baseui.extension.setOnClickNoDoubleClick
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.tici.vpn.proxy.master.R
 import com.tici.vpn.proxy.master.databinding.DialogCloseAppBinding
-import com.tici.vpn.proxy.master.databinding.DialogUnlockBinding
-import com.tici.vpn.proxy.master.proxy.ProxyGroupUI
-import com.tici.vpn.proxy.master.utils.Navigator
-import com.tici.vpn.proxy.master.utils.Utils
 
 class CloseAppDialog(
     val onClose: () -> Unit

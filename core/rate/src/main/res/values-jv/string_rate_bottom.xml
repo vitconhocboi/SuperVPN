@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">Rating paling apik kanggo kita</string>
+  <string name="fb_rate_bottom_default">Kita kerja keras kanggo nyedhiyakake pengalaman pangguna sing luwih apik. We appreciate review Panjenengan.</string>
+  <string name="fb_rate_bottom_bad">Oh ora!</string>
+  <string name="fb_rate_bottom_good">Kita uga tresna sampeyan!</string>
+  <string name="fb_rate_bottom_mess_bad">Mangga ninggalake kita sawetara saran</string>
+  <string name="fb_rate_bottom_mess_good">Matur nuwun kanggo saran sampeyan</string>
+  <string name="fb_rate">Rate</string>
+</resources>

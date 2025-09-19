@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">lá</string>
+  <string name="core_text_inapp_days">Laethanta</string>
+  <string name="core_text_inapp_weeks">Seachtainí</string>
+  <string name="core_text_inapp_month">Mí</string>
+  <string name="core_text_inapp_months">Míonna</string>
+  <string name="core_text_inapp_year">Bliain</string>
+  <string name="core_text_inapp_years">Blianta</string>
+  <string name="core_auto_renew_after">Athnuachan Uathoibríoch Tar éis:</string>
+  <string name="core_text_free_trial">Triail Saor in Aisce</string>
+</resources>

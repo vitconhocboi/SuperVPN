@@ -15,6 +15,8 @@
   <string name="setting_trial">Үнэгүй туршилт 3 хоног</string>
   <string name="setting_upgrade">Сайжруулах</string>
   <string name="ip_proxy">Серверүүд</string>
+  <string name="ip_quick_access">Түргэн нэвтрэх</string>
+  <string name="ip_all">БҮГД</string>
   <string name="setting_app_proxy">Апп шүүлтүүр</string>
   <string name="setting_app_proxy_desc">VPN-ээр дамжуулан ямар программууд интернетэд холбогдохыг сонгоно уу</string>
   <string name="setting_ads_block">Зар хориглох</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Холболтын хэсгийг сонгоно уу</string>
   <string name="first_fragment_label">Эхний фрагмент</string>
   <string name="second_fragment_label">Хоёр дахь фрагмент</string>
+  <string name="start">START</string>
   <string name="next">дараагийн</string>
   <string name="previous">Өмнөх</string>
   <string name="vn">Винт Нам</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">болж байна уу</string>
   <string name="common_ok">болж байна уу</string>
   <string name="btn_save">хадгалах</string>
+  <string name="btn_connect">Холбох</string>
   <string name="btn_cancel">цуцлах</string>
+  <string name="btn_exit">Гарах</string>
   <string name="btn_reset">Дахин тохируулах</string>
   <string name="auto">Автомат</string>
   <string name="min_60">60 минут</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">VPN сонгоно уу</string>
   <string name="dns_only">Зөвхөн DNS</string>
   <string name="confirm_dns">VPN Идэвхгүй байна</string>
-  <string name="confirm_dns_msg">Та одоогоор зөвхөн DNS ашиглаж байна. Илүү найдвартай, хувийн холболт хийхийн тулд VPN серверийг сонгоно уу.</string>
+  <string name="confirm_dns_msg">Ямар ч VPN сервер сонгогдоогүй байна. VPN сервер сонгоно уу.</string>
   <string name="btn_agree">Зөвшөөрч байна</string>
   <string name="confirm_collect">Таны хувийн нууц, таны хяналт</string>
   <string name="confirm_accept_msg">Таны бүртгэлийг дуусгахын тулд энэ апп бүртгэлийг баталгаажуулах, үйлчилгээний чанарыг сайжруулах, залилан мэхлэх үйлдлээс урьдчилан сэргийлэх зорилгоор таны сурталчилгааны ID-г цуглуулдаг. Та энэ мэдээлэл цуглуулахыг зөвшөөрч байна уу?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Бидэнд илүү дэлгэрэнгүй мэдээлэл өгнө үү, ингэснээр бид таны асуудлыг хурдан тодорхойлж, шийдвэрлэх боломжтой (дор хаяж 6 тэмдэгт)</string>
   <string name="text_thanks_feedback">Санал хүсэлтээ өгсөнд баярлалаа</string>
   <string name="text_feedback_content">Бид дараагийн хувилбарт энэ асуудлыг засах болно. Төвөг учруулсанд уучлаарай.</string>
+  <string name="no_available_vpn">Үнэгүй vpn байхгүй тул VPN дэлгэц рүү очоод серверээ сонгоно уу.</string>
   <string name="msg_device_does_not_support_this_feature">Энэ функцийг энэ төхөөрөмжид дэмждэггүй!</string>
   <string name="search_app">хайлтын програм..</string>
+  <string name="exit_app">Апп-аас гарах уу?</string>
+  <string name="exit_app_msg">Та гарахдаа итгэлтэй байна уу?</string>
   <string name="free">Үнэгүй</string>
   <string name="premium">Дээд зэрэглэлийн</string>
+  <string name="unlock_premium">VPN Premium-ийн түгжээг тайл</string>
+  <string name="get_premium">Дээд зэрэглэл авах</string>
+  <string name="watch_ads">Холбохын тулд зар үзэх</string>
+  <string name="guide_1">Холбохын тулд нэг л удаа дарна уу.</string>
+  <string name="guide_2">Өөр өөр улс орнуудад олон VPN серверүүд</string>
+  <string name="guide_3">Онлайн хувийн нууцаа хамгаалаарай</string>
+  <string name="what_is_my_ip">Миний IP гэж юу вэ?</string>
+  <string name="ip_address">IP хаяг</string>
+  <string name="network_provider">Сүлжээний үйлчилгээ үзүүлэгч</string>
+  <string name="location">Байршил</string>
+  <string name="pincode">ПИН код</string>
+  <string name="timezone">Цагийн бүс</string>
+  <string name="duration">Үргэлжлэх хугацаа</string>
+  <string name="connect_success">Холбогдсон амжилт</string>
+  <string name="connect_report">Тайлан холбох</string>
+  <string name="disconnect">Салгах</string>
+  <string name="no_internet">Интернет холболт байхгүй</string>
+  <string name="network_error">Интернет холболт байхгүй</string>
 </resources>

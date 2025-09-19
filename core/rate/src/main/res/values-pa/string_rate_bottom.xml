@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">ਸਾਡੇ ਲਈ ਸਭ ਤੋਂ ਵਧੀਆ ਰੇਟਿੰਗ</string>
+  <string name="fb_rate_bottom_default">ਅਸੀਂ ਇੱਕ ਬਿਹਤਰ ਉਪਭੋਗਤਾ ਅਨੁਭਵ ਪ੍ਰਦਾਨ ਕਰਨ ਲਈ ਸਖ਼ਤ ਮਿਹਨਤ ਕਰ ਰਹੇ ਹਾਂ। ਅਸੀਂ ਤੁਹਾਡੀ ਸਮੀਖਿਆ ਦੀ ਕਦਰ ਕਰਦੇ ਹਾਂ।</string>
+  <string name="fb_rate_bottom_bad">ਓਹ ਨਹੀਂ!</string>
+  <string name="fb_rate_bottom_good">ਅਸੀਂ ਵੀ ਤੁਹਾਨੂੰ ਪਿਆਰ ਕਰਦੇ ਹਾਂ!</string>
+  <string name="fb_rate_bottom_mess_bad">ਕਿਰਪਾ ਕਰਕੇ ਸਾਨੂੰ ਕੁਝ ਫੀਡਬੈਕ ਦਿਓ।</string>
+  <string name="fb_rate_bottom_mess_good">ਤੁਹਾਡੇ ਫੀਡਬੈਕ ਲਈ ਧੰਨਵਾਦ।</string>
+  <string name="fb_rate">ਰੇਟ ਕਰੋ</string>
+</resources>

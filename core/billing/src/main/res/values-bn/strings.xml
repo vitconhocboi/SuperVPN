@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">দিন</string>
+  <string name="core_text_inapp_days">দিন</string>
+  <string name="core_text_inapp_weeks">সপ্তাহ</string>
+  <string name="core_text_inapp_month">মাস</string>
+  <string name="core_text_inapp_months">মাস</string>
+  <string name="core_text_inapp_year">বছর</string>
+  <string name="core_text_inapp_years">বছর</string>
+  <string name="core_auto_renew_after">এর পরে স্বয়ংক্রিয় পুনর্নবীকরণ:</string>
+  <string name="core_text_free_trial">বিনামূল্যে ট্রায়াল</string>
+</resources>

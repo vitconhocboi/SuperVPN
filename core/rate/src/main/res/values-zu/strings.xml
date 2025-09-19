@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Siyabonga ngesibuyekezo sakho, futhi sicela usinikeze impendulo ethile.</string>
+  <string name="fb_rate_us_good">Siyabonga kakhulu ngesibuyekezo sakho!</string>
+  <string name="fb_rate_us_default">Uma usilinganisela, singakuthokozela kakhulu futhi sizoqhubeka nokusebenza kanzima ukuze sikunikeze umuzwa ongcono.</string>
+  <string name="fb_feedback_title">Sicela usazise nganoma yiziphi izinkinga ohlangabezane nazo.</string>
+  <string name="fb_feedback_crash">Ukuphahlazeka</string>
+  <string name="fb_feedback_feature_quality">Ikhwalithi yesici</string>
+  <string name="fb_feedback_bug">Isiphazamisi</string>
+  <string name="fb_feedback_other">Okunye</string>
+  <string name="fb_send">Thumela</string>
+  <string name="fb_hint_feedback">Sicela unikeze imininingwane eyengeziwe ukuze usisize sikhombe futhi sixazulule inkinga yakho ngokushesha okukhulu (ubuncane bezinhlamvu ezingu-6).</string>
+  <string name="fb_text_feedback_to">Impendulo</string>
+  <string name="fb_best_rate">Isilinganiso esiphezulu kakhulu esingasifinyelela :)</string>
+  <string name="fb_share_with">Yabelana No</string>
+  <string name="fb_feedback_rate">Linganisa Manje</string>
+  <string name="fb_rate_on_google_play">Izibuyekezo ku-Google Play</string>
+  <string name="fb_thank_for_feedback">Siyabonga ngempendulo yakho</string>
+  <string name="fb_sorry_customer">Sizoyilungisa le nkinga enguqulweni ezayo. Ngiyaxolisa ngesiphazamiso</string>
+  <string name="fb_common_unable_find_market">Ayikwazi ukuthola uhlelo lokusebenza ku-Google Play</string>
+  <string name="fb_thanks">kulungile</string>
+</resources>

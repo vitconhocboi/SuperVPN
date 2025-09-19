@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">usuku</string>
+  <string name="core_text_inapp_days">Iintsuku</string>
+  <string name="core_text_inapp_weeks">Iiveki</string>
+  <string name="core_text_inapp_month">Inyanga</string>
+  <string name="core_text_inapp_months">Iinyanga</string>
+  <string name="core_text_inapp_year">Unyaka</string>
+  <string name="core_text_inapp_years">Iminyaka</string>
+  <string name="core_auto_renew_after">Hlaziya Okuzenzekelayo Emva:</string>
+  <string name="core_text_free_trial">Uzamo lasimahla</string>
+</resources>

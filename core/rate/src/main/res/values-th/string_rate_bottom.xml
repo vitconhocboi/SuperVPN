@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">คะแนนที่ดีที่สุดสำหรับเรา</string>
+  <string name="fb_rate_bottom_default">เรากำลังทำงานอย่างหนักเพื่อมอบประสบการณ์ผู้ใช้ที่ดีขึ้น เรายินดีรับการรีวิวของคุณ</string>
+  <string name="fb_rate_bottom_bad">ไม่นะ!</string>
+  <string name="fb_rate_bottom_good">เราก็รักคุณเหมือนกัน!</string>
+  <string name="fb_rate_bottom_mess_bad">กรุณาแสดงความเห็นของคุณ</string>
+  <string name="fb_rate_bottom_mess_good">ขอขอบคุณสำหรับคำติชมของคุณ</string>
+  <string name="fb_rate">ประเมิน</string>
+</resources>

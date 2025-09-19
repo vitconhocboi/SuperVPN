@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Hatur nuhun pikeun ulasan anjeun, sareng punten pasihan kami sababaraha eupan balik.</string>
+  <string name="fb_rate_us_good">Hatur nuhun pisan pikeun ulasan anjeun!</string>
+  <string name="fb_rate_us_default">Upami anjeun meunteun kami, kami bakal ngahargaan pisan sareng bakal terus kerja keras pikeun masihan anjeun pangalaman anu langkung saé.</string>
+  <string name="fb_feedback_title">Mangga wartosan kami ngeunaan sagala masalah anjeun encountered.</string>
+  <string name="fb_feedback_crash">Kacilakaan</string>
+  <string name="fb_feedback_feature_quality">Kualitas fitur</string>
+  <string name="fb_feedback_bug">Bug</string>
+  <string name="fb_feedback_other">Lain</string>
+  <string name="fb_send">Ngirimkeun</string>
+  <string name="fb_hint_feedback">Punten masihan detil tambahan pikeun ngabantosan kami ngaidentipikasi sareng ngabéréskeun masalah anjeun langkung gancang (minimal 6 karakter).</string>
+  <string name="fb_text_feedback_to">Eupan balik</string>
+  <string name="fb_best_rate">Peunteun pangluhurna anu tiasa urang raih :)</string>
+  <string name="fb_share_with">Bagikeun Jeung</string>
+  <string name="fb_feedback_rate">Meunteun Ayeuna</string>
+  <string name="fb_rate_on_google_play">Harita dina Google Play</string>
+  <string name="fb_thank_for_feedback">Hatur nuhun pikeun eupan balik anjeun</string>
+  <string name="fb_sorry_customer">Urang bakal alamat masalah ieu dina versi hareup. Punten ngarépotkeun</string>
+  <string name="fb_common_unable_find_market">Teu bisa manggihan aplikasi dina Google Play</string>
+  <string name="fb_thanks">OKÉ</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">Paras arvosana meille</string>
+  <string name="fb_rate_bottom_default">Teemme kovasti töitä tarjotaksemme paremman käyttökokemuksen. Arvostamme arvosteluasi.</string>
+  <string name="fb_rate_bottom_bad">Voi ei!</string>
+  <string name="fb_rate_bottom_good">Me rakastamme sinua myös!</string>
+  <string name="fb_rate_bottom_mess_bad">Jätä meille palautetta</string>
+  <string name="fb_rate_bottom_mess_good">Kiitos palautteestasi</string>
+  <string name="fb_rate">Rate</string>
+</resources>

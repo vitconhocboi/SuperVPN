@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">Beste gradering vir ons</string>
+  <string name="fb_rate_bottom_default">Ons werk hard om \'n beter gebruikerservaring te bied. Ons waardeer jou resensie.</string>
+  <string name="fb_rate_bottom_bad">O nee!</string>
+  <string name="fb_rate_bottom_good">Ons is ook lief vir jou!</string>
+  <string name="fb_rate_bottom_mess_bad">Laat asseblief vir ons \'n bietjie terugvoer</string>
+  <string name="fb_rate_bottom_mess_good">Dankie vir jou terugvoer</string>
+  <string name="fb_rate">Beoordeel</string>
+</resources>

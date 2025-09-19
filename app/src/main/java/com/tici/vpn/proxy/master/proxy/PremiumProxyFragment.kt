@@ -15,6 +15,7 @@ import com.common.baseui.extension.bindFlowCreate
 import com.common.baseui.extension.setVisible
 import com.core.baseui.fragment.BaseFragment
 import com.core.baseui.fragment.ScreenType
+import com.tici.vpn.proxy.master.R
 import com.tici.vpn.proxy.master.databinding.FragmentProxyBinding
 import com.tici.vpn.proxy.master.dialog.UnlockDialog
 import com.tici.vpn.proxy.master.main.MainViewModel
@@ -64,7 +65,7 @@ class PremiumProxyFragment : BaseFragment<FragmentProxyBinding>() {
     override fun initViews(savedInstanceState: Bundle?) {
 //        Log.i("TestRelease", "getAllPremiumProxy initView")
 
-//        callBackResult()
+        callBackResult()
         val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
         with(binding) {
             ivBack.scaleX = if (isRTL) -1f else 1f
@@ -103,7 +104,7 @@ class PremiumProxyFragment : BaseFragment<FragmentProxyBinding>() {
                         progress.setVisible(false)
                         Toast.makeText(
                             requireContext(),
-                            "Cannot get proxy",
+                            getString(R.string.network_error),
                             Toast.LENGTH_LONG
                         ).show()
                     }
@@ -138,16 +139,14 @@ class PremiumProxyFragment : BaseFragment<FragmentProxyBinding>() {
 
             btnConnect.setOnClickListener {
                 try {
-                    Log.d("SuperVPN", "SuperVPN come here showLoading 1")
                     lifecycleScope.launch {
-                        Log.d("SuperVPN", "SuperVPN come here showLoading 2")
                         showLoading()
                         try {
                             if (selectedItem.active) {
                                 if (selectedItem.type != "free" && !mainViewModel.isSub()) {
                                     UnlockDialog(data = selectedItem).show(
-                                        parentFragmentManager,
-                                        "unlock_dialog"
+                                        childFragmentManager,
+                                        UnlockDialog::class.java.simpleName
                                     )
                                     return@launch
                                 }
@@ -156,9 +155,7 @@ class PremiumProxyFragment : BaseFragment<FragmentProxyBinding>() {
                                 if (selectedItem.country != BaseAppConfig.proxyCountry || !selectedItem.active || !LocalVpnService.IsRunning) {
                                     if (LocalVpnService.IsRunning) "RECONNECT" else "CONNECT"
                                 } else ""
-//                            Log.i("SUPPERVPN", "initView: connectState $connectState")
                             val deviceId = mainViewModel.getDeviceId(requireContext())
-                            Log.d("SuperVPN", "SuperVPN come here showLoading 2 $deviceId ${selectedItem.active}")
                             if (selectedItem.active) {
                                 mProxyViewModel.setActiveProxy(
                                     selectedItem,
@@ -181,7 +178,7 @@ class PremiumProxyFragment : BaseFragment<FragmentProxyBinding>() {
                             e.printStackTrace()
                             Toast.makeText(
                                 requireContext(),
-                                "An error occur. Please try again",
+                                getString(R.string.network_error),
                                 Toast.LENGTH_SHORT
                             ).show()
                         }
@@ -190,7 +187,7 @@ class PremiumProxyFragment : BaseFragment<FragmentProxyBinding>() {
                     e.printStackTrace()
                     Toast.makeText(
                         requireContext(),
-                        "Cannot get proxy: ${e.message}",
+                        getString(R.string.network_error),
                         Toast.LENGTH_SHORT
                     ).show()
                 } finally {
@@ -205,69 +202,75 @@ class PremiumProxyFragment : BaseFragment<FragmentProxyBinding>() {
         }
 
         mProxyViewModel.isError.observe(viewLifecycleOwner) { isError ->
-            Timber.d("isError PremiumFragment $isError")
             if (isError == true) {
                 Toast.makeText(
-                    requireContext(),
-                    "Connection error PremiumFragment. Please try again.",
-                    Toast.LENGTH_SHORT
+                    requireContext(), getString(R.string.network_error), Toast.LENGTH_SHORT
                 ).show()
-//<<<<<<< HEAD
-//=======
-//            }
-//        }
-//    }
-//
-//    private suspend fun connectVPN() {
-//        selected = true
-//        if (selectedType == 1) {
-//            mQuickAccessAdapter.notifyDataSetChanged()
-//        } else if (selectedType == 2) {
-//            mPagerAdapter.notifyDataSetChanged()
-//        }
-//        val deviceId = mainViewModel.getDeviceId(requireContext())
-//        val reconnect =
-//            if (selectedItem.country != BaseAppConfig.proxyCountry || !selectedItem.active) "RECONNECT" else ""
-//        if (selectedItem.country == BaseAppConfig.proxyCountry) {
-//            selectedItem.active = false
-//        }
-//        try {
-//            if (selectedItem.active) {
-//                mProxyViewModel.setActiveProxy(
-//                    selectedItem,
-//                    deviceId,
-//                    selectedItem.type
-//                )
-//            } else {
-//                mProxyViewModel.setActiveProxy(
-//                    null,
-//                    deviceId,
-//                    selectedItem.type
-//                )
-//            }
-//            requireActivity().finish()
-//            Navigator.startMainActivity(requireContext(), "POPUP")
-//        } catch (e: Exception) {
-//            e.printStackTrace()
-//            Toast.makeText(
-//                requireContext(),
-//                "An error occur. Please try again",
-//                Toast.LENGTH_SHORT
-//            ).show()
-//        }
-//        selected = false
-//    }
-//
-//    private fun callBackResult() {
-//        childFragmentManager.setFragmentResultListener(
-//            KEY_RESULT_CONNECT_VPN,
-//            this
-//        ) { _, bundle ->
-//            if (view != null && isAdded) {
-//                lifecycleScope.launch {
-//                    connectVPN()
-//                }
-//>>>>>>> feature/08092025_update_core_base
+            }
+        }
+    }
+
+    private fun connectVPN() {
+        try {
+            Timber.tag("SuperVPN").d("SuperVPN come here showLoading 1")
+            lifecycleScope.launch {
+                Timber.tag("SuperVPN").d("SuperVPN come here showLoading 2")
+                showLoading()
+                try {
+                    connectState =
+                        if (selectedItem.country != BaseAppConfig.proxyCountry || !selectedItem.active || !LocalVpnService.IsRunning) {
+                            if (LocalVpnService.IsRunning) "RECONNECT" else "CONNECT"
+                        } else ""
+                    val deviceId = mainViewModel.getDeviceId(requireContext())
+                    Timber.tag("SuperVPN")
+                        .d("SuperVPN come here showLoading 2 $deviceId ${selectedItem.active}")
+                    if (selectedItem.active) {
+                        mProxyViewModel.setActiveProxy(
+                            selectedItem,
+                            deviceId,
+                            selectedItem.type
+                        )
+                    } else {
+                        mProxyViewModel.setActiveProxy(
+                            null,
+                            deviceId,
+                            selectedItem.type
+                        )
+                    }
+                    requireActivity().finish()
+                    Timber.tag("SuperVpn").i("startMainActivity with state $connectState")
+                    Navigator.startMainActivity(
+                        requireContext(),
+                        connectState
+                    )
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                    Toast.makeText(
+                        requireContext(),
+                        "An error occur. Please try again",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Toast.makeText(
+                requireContext(),
+                "Cannot get proxy: ${e.message}",
+                Toast.LENGTH_SHORT
+            ).show()
+        } finally {
+            hideLoading()
+        }
+    }
+
+    private fun callBackResult() {
+        childFragmentManager.setFragmentResultListener(
+            KEY_RESULT_CONNECT_VPN,
+            this
+        ) { _, bundle ->
+            if (view != null && isAdded) {
+                connectVPN()
             }
         }
     }

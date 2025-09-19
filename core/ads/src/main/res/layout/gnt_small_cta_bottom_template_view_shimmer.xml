@@ -75,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/body"
             android:layout_marginStart="@dimen/_14dp"
-            android:layout_marginTop="@dimen/_7dp"
+            android:layout_marginTop="@dimen/_14dp"
             android:layout_marginEnd="@dimen/_14dp"
             android:background="@color/shimmer_bg">
 

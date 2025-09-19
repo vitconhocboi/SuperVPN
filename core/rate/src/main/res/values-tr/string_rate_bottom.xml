@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">Bizim için en iyi derecelendirme</string>
+  <string name="fb_rate_bottom_default">Daha iyi bir kullanıcı deneyimi sağlamak için çok çalışıyoruz. Yorumunuzu takdir ediyoruz.</string>
+  <string name="fb_rate_bottom_bad">Aman Tanrım!</string>
+  <string name="fb_rate_bottom_good">Biz de sizi seviyoruz!</string>
+  <string name="fb_rate_bottom_mess_bad">Lütfen bize geri bildirim bırakın</string>
+  <string name="fb_rate_bottom_mess_good">Geri bildiriminiz için teşekkürler</string>
+  <string name="fb_rate">Oran</string>
+</resources>

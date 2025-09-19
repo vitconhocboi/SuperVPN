@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">ስለግምገማችሁ እናመሰግናለን፣ እና እባኮትን አንዳንድ አስተያየቶችን ይስጡን።</string>
+  <string name="fb_rate_us_good">ለግምገማዎ በጣም እናመሰግናለን!</string>
+  <string name="fb_rate_us_default">ደረጃ ከሰጡን፣ እኛ በጣም እናደንቀዋለን እና የተሻለ ተሞክሮ ለእርስዎ ለመስጠት ጠንክረን እንቀጥላለን።</string>
+  <string name="fb_feedback_title">እባክዎን ስላጋጠሙዎት ማንኛውም ጉዳዮች ያሳውቁን።</string>
+  <string name="fb_feedback_crash">ብልሽት</string>
+  <string name="fb_feedback_feature_quality">የባህሪ ጥራት</string>
+  <string name="fb_feedback_bug">ሳንካ</string>
+  <string name="fb_feedback_other">ሌላ</string>
+  <string name="fb_send">ላክ</string>
+  <string name="fb_hint_feedback">እባክዎን ችግርዎን በፍጥነት ለመለየት እና ለመፍታት እንዲረዳን ተጨማሪ ዝርዝሮችን ያቅርቡ (ቢያንስ 6 ቁምፊዎች)።</string>
+  <string name="fb_text_feedback_to">ግብረ መልስ</string>
+  <string name="fb_best_rate">እኛ ማግኘት የምንችለው ከፍተኛው ደረጃ :)</string>
+  <string name="fb_share_with">ሼር በማድረግ ያካፍሉ።</string>
+  <string name="fb_feedback_rate">አሁን ደረጃ ይስጡ</string>
+  <string name="fb_rate_on_google_play">በGoogle Play ላይ ያሉ ግምገማዎች</string>
+  <string name="fb_thank_for_feedback">ለአስተያየትዎ እናመሰግናለን</string>
+  <string name="fb_sorry_customer">ይህንን ጉዳይ በሚቀጥለው እትም እንፈታዋለን። ለተፈጠረው ችግር ይቅርታ</string>
+  <string name="fb_common_unable_find_market">መተግበሪያውን በGoogle Play ላይ ማግኘት አልተቻለም</string>
+  <string name="fb_thanks">እሺ</string>
+</resources>

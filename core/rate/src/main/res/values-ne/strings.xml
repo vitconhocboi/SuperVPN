@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">तपाईंको समीक्षाको लागि धन्यवाद, र कृपया हामीलाई केही प्रतिक्रिया प्रदान गर्नुहोस्।</string>
+  <string name="fb_rate_us_good">तपाईको समीक्षाको लागि धेरै धेरै धन्यवाद!</string>
+  <string name="fb_rate_us_default">यदि तपाईंले हामीलाई मूल्याङ्कन गर्नुभयो भने, हामी यसको धेरै कदर गर्नेछौं र तपाईंलाई राम्रो अनुभव प्रदान गर्न कडा परिश्रम गरिरहनेछौं।</string>
+  <string name="fb_feedback_title">तपाईंले सामना गर्नुभएको कुनै पनि समस्याको बारेमा हामीलाई जानकारी दिनुहोस्।</string>
+  <string name="fb_feedback_crash">दुर्घटना</string>
+  <string name="fb_feedback_feature_quality">सुविधा गुणस्तर</string>
+  <string name="fb_feedback_bug">बग</string>
+  <string name="fb_feedback_other">अन्य</string>
+  <string name="fb_send">पठाउनुहोस्</string>
+  <string name="fb_hint_feedback">तपाईंको समस्या छिटो पहिचान गर्न र समाधान गर्न हामीलाई मद्दत गर्न कृपया थप विवरणहरू प्रदान गर्नुहोस् (न्यूनतम ६ वर्णहरू)।</string>
+  <string name="fb_text_feedback_to">प्रतिक्रिया</string>
+  <string name="fb_best_rate">हामीले प्राप्त गर्न सक्ने उच्चतम मूल्याङ्कन :)</string>
+  <string name="fb_share_with">सँग साझेदारी गर्नुहोस्</string>
+  <string name="fb_feedback_rate">अहिले मूल्याङ्कन गर्नुहोस्</string>
+  <string name="fb_rate_on_google_play">Google Play मा समीक्षाहरू</string>
+  <string name="fb_thank_for_feedback">तपाईंको प्रतिक्रियाको लागि धन्यवाद</string>
+  <string name="fb_sorry_customer">हामी भविष्यको संस्करणमा यस मुद्दालाई सम्बोधन गर्नेछौं। असुविधाको लागि माफ गर्नुहोस्</string>
+  <string name="fb_common_unable_find_market">Google Play मा एप फेला पार्न असमर्थ</string>
+  <string name="fb_thanks">ठिक छ</string>
+</resources>

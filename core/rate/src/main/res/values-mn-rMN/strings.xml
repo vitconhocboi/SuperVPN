@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Шалгасанд баярлалаа, бидэнд санал хүсэлтээ өгнө үү.</string>
+  <string name="fb_rate_us_good">Үнэлгээ өгсөнд маш их баярлалаа!</string>
+  <string name="fb_rate_us_default">Хэрэв та бидэнд үнэлгээ өгвөл бид маш их талархах бөгөөд танд илүү сайн туршлага өгөхийн тулд шаргуу ажиллах болно.</string>
+  <string name="fb_feedback_title">Танд тулгарсан аливаа асуудлын талаар бидэнд мэдэгдэнэ үү.</string>
+  <string name="fb_feedback_crash">Сүйрэл</string>
+  <string name="fb_feedback_feature_quality">Онцлог чанар</string>
+  <string name="fb_feedback_bug">Алдаа</string>
+  <string name="fb_feedback_other">Бусад</string>
+  <string name="fb_send">Илгээх</string>
+  <string name="fb_hint_feedback">Таны асуудлыг илүү хурдан тодорхойлж, шийдвэрлэхэд туслах нэмэлт мэдээлэл өгнө үү (хамгийн багадаа 6 тэмдэгт).</string>
+  <string name="fb_text_feedback_to">Санал хүсэлт</string>
+  <string name="fb_best_rate">Бидний хүрч чадах хамгийн өндөр үнэлгээ :)</string>
+  <string name="fb_share_with">Хуваалцах</string>
+  <string name="fb_feedback_rate">Одоо үнэлгээ өгнө үү</string>
+  <string name="fb_rate_on_google_play">Google Play дээрх шүүмж</string>
+  <string name="fb_thank_for_feedback">Санал хүсэлтээ өгсөнд баярлалаа</string>
+  <string name="fb_sorry_customer">Бид энэ асуудлыг дараагийн хувилбарт авч үзэх болно. Төвөг учруулсанд уучлаарай</string>
+  <string name="fb_common_unable_find_market">Google Play дээрээс програмыг олох боломжгүй байна</string>
+  <string name="fb_thanks">болж байна уу</string>
+</resources>

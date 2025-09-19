@@ -21,6 +21,7 @@ sealed class CoreAdPlaceName(
     object ANCHORED_CHANGE_LANGUAGE_BOTTOM : CoreAdPlaceName("anchored_change_language_bottom")
     object ANCHORED_UNINSTALL_BOTTOM_STEP_1 : CoreAdPlaceName("anchored_uninstall_bottom_step_1")
     object ANCHORED_UNINSTALL_BOTTOM_STEP_2 : CoreAdPlaceName("anchored_uninstall_bottom_step_2")
+
     object ACTION_OPEN_APP_FIRST_OPEN : CoreAdPlaceName("action_app_open_first_open")
     object ACTION_OPEN_APP : CoreAdPlaceName("action_app_open")
     object APP_OPEN_FIRST_OPEN : CoreAdPlaceName("open_app_first_open")

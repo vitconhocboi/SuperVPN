@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Kiitos arvostelustasi ja anna meille palautetta.</string>
+  <string name="fb_rate_us_good">Kiitos paljon arvostelustasi!</string>
+  <string name="fb_rate_us_default">Jos arvioit meitä, arvostamme sitä suuresti ja jatkamme kovasti työtä tarjotaksemme sinulle paremman kokemuksen.</string>
+  <string name="fb_feedback_title">Kerro meille kaikista kohtaamistasi ongelmista.</string>
+  <string name="fb_feedback_crash">Crash</string>
+  <string name="fb_feedback_feature_quality">Ominaisuuden laatu</string>
+  <string name="fb_feedback_bug">Bug</string>
+  <string name="fb_feedback_other">muu</string>
+  <string name="fb_send">Lähetä</string>
+  <string name="fb_hint_feedback">Anna lisätietoja, jotta voimme tunnistaa ja ratkaista ongelmasi nopeammin (vähintään 6 merkkiä).</string>
+  <string name="fb_text_feedback_to">Palaute</string>
+  <string name="fb_best_rate">Korkein arvosana, jonka voimme saavuttaa :)</string>
+  <string name="fb_share_with">Jaa kanssa</string>
+  <string name="fb_feedback_rate">Arvioi nyt</string>
+  <string name="fb_rate_on_google_play">Arvostelut Google Playssa</string>
+  <string name="fb_thank_for_feedback">Kiitos palautteestasi</string>
+  <string name="fb_sorry_customer">Käsittelemme tätä ongelmaa tulevassa versiossa. Pahoittelemme häiriötä</string>
+  <string name="fb_common_unable_find_market">Sovellusta ei löydy Google Playsta</string>
+  <string name="fb_thanks">okei</string>
+</resources>

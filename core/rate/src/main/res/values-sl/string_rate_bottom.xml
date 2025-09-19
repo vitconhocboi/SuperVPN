@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">Najboljša ocena za nas</string>
+  <string name="fb_rate_bottom_default">Trdo delamo, da bi zagotovili boljšo uporabniško izkušnjo. Cenimo vašo oceno.</string>
+  <string name="fb_rate_bottom_bad">Oh ne!</string>
+  <string name="fb_rate_bottom_good">Tudi mi te imamo radi!</string>
+  <string name="fb_rate_bottom_mess_bad">Pustite nam povratne informacije</string>
+  <string name="fb_rate_bottom_mess_good">Hvala za vaše povratne informacije</string>
+  <string name="fb_rate">Ocenite</string>
+</resources>

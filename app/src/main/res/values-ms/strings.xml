@@ -15,6 +15,8 @@
   <string name="setting_trial">Percubaan percuma 3 hari</string>
   <string name="setting_upgrade">Naik taraf</string>
   <string name="ip_proxy">Pelayan</string>
+  <string name="ip_quick_access">Akses Pantas</string>
+  <string name="ip_all">SEMUA</string>
   <string name="setting_app_proxy">Penapis Apl</string>
   <string name="setting_app_proxy_desc">Pilih apl yang akan disambungkan ke Internet melalui VPN</string>
   <string name="setting_ads_block">Blok iklan</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Pilih kawasan sambungan</string>
   <string name="first_fragment_label">Serpihan Pertama</string>
   <string name="second_fragment_label">Serpihan Kedua</string>
+  <string name="start">MULAKAN</string>
   <string name="next">seterusnya</string>
   <string name="previous">Sebelumnya</string>
   <string name="vn">Việt Nam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">okey</string>
   <string name="common_ok">okey</string>
   <string name="btn_save">jimat</string>
+  <string name="btn_connect">Sambung</string>
   <string name="btn_cancel">batalkan</string>
+  <string name="btn_exit">Keluar</string>
   <string name="btn_reset">Tetapkan semula</string>
   <string name="auto">Auto</string>
   <string name="min_60">60 Minit</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">Pilih VPN</string>
   <string name="dns_only">DNS sahaja</string>
   <string name="confirm_dns">VPN Tidak Aktif</string>
-  <string name="confirm_dns_msg">Anda sedang menggunakan DNS sahaja. Untuk sambungan yang lebih selamat dan peribadi, sila pilih pelayan VPN.</string>
+  <string name="confirm_dns_msg">Tiada Pelayan VPN dipilih. Sila pilih pelayan VPN.</string>
   <string name="btn_agree">Setuju</string>
   <string name="confirm_collect">Privasi Anda, Kawalan Anda</string>
   <string name="confirm_accept_msg">Untuk melengkapkan langganan anda, apl ini mengumpul ID Pengiklanan anda untuk mengesahkan pendaftaran, meningkatkan kualiti perkhidmatan dan mencegah aktiviti penipuan. Adakah anda bersetuju dengan pengumpulan data ini?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Sila berikan kami butiran lanjut supaya kami dapat mengenal pasti dan menyelesaikan isu anda dengan lebih cepat (sekurang-kurangnya 6 aksara)</string>
   <string name="text_thanks_feedback">Terima kasih atas maklum balas anda</string>
   <string name="text_feedback_content">Kami akan membetulkan isu ini dalam versi akan datang. Maaf atas kesulitan ini.</string>
+  <string name="no_available_vpn">Tiada vpn percuma tersedia, sila pergi ke skrin VPN dan pilih pelayan.</string>
   <string name="msg_device_does_not_support_this_feature">Ciri ini tidak disokong untuk peranti ini!</string>
   <string name="search_app">aplikasi carian..</string>
+  <string name="exit_app">Keluar dari apl?</string>
+  <string name="exit_app_msg">Adakah anda pasti untuk keluar?</string>
   <string name="free">Percuma</string>
   <string name="premium">Premium</string>
+  <string name="unlock_premium">Buka kunci VPN Premium</string>
+  <string name="get_premium">Dapatkan premium</string>
+  <string name="watch_ads">Tonton iklan untuk Connect</string>
+  <string name="guide_1">Hanya satu sentuhan untuk menyambung.</string>
+  <string name="guide_2">Berbilang pelayan VPN di negara yang berbeza</string>
+  <string name="guide_3">Lindungi privasi dalam talian anda</string>
+  <string name="what_is_my_ip">Apakah ip saya?</string>
+  <string name="ip_address">alamat IP</string>
+  <string name="network_provider">Pembekal rangkaian</string>
+  <string name="location">Lokasi</string>
+  <string name="pincode">Kod PIN</string>
+  <string name="timezone">Zon masa</string>
+  <string name="duration">Tempoh</string>
+  <string name="connect_success">Kejayaan yang disambungkan</string>
+  <string name="connect_report">Sambung laporan</string>
+  <string name="disconnect">Putuskan sambungan</string>
+  <string name="no_internet">Tiada Sambungan Internet</string>
+  <string name="network_error">Tiada Sambungan Internet</string>
 </resources>

@@ -197,7 +197,8 @@ internal class RemoteConfigRepositoryImpl @Inject constructor(
                 introData = arrayListOf(DEFINE_INTRO_HAVE_ADS,DEFINE_INTRO_HAVE_ADS,DEFINE_INTRO_HAVE_ADS),
                 isAlwaysPreloadBannerNativeAdsWhenStart = true,
                 isPreloadBannerNativeExit = false,
-                intervalDayAlwaysShowIntroAndLanguage = 3
+                intervalDayAlwaysShowIntroAndLanguage = 3,
+                isAlwaysShowIntroAndLanguageScreenWithInterval = false
             )
         } else {
             appConfigModelMapper.toData(model)

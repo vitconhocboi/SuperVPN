@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Paldies par atsauksmi. Lūdzu, sniedziet mums dažas atsauksmes.</string>
+  <string name="fb_rate_us_good">Liels paldies par atsauksmi!</string>
+  <string name="fb_rate_us_default">Ja jūs mūs novērtēsiet, mēs to ļoti novērtētu un turpināsim smagi strādāt, lai sniegtu jums labāku pieredzi.</string>
+  <string name="fb_feedback_title">Lūdzu, informējiet mūs par visām problēmām, ar kurām saskārāties.</string>
+  <string name="fb_feedback_crash">Avārija</string>
+  <string name="fb_feedback_feature_quality">Funkciju kvalitāte</string>
+  <string name="fb_feedback_bug">Kļūda</string>
+  <string name="fb_feedback_other">Cits</string>
+  <string name="fb_send">Sūtīt</string>
+  <string name="fb_hint_feedback">Lūdzu, sniedziet papildu informāciju, lai palīdzētu mums ātrāk identificēt un atrisināt jūsu problēmu (vismaz 6 rakstzīmes).</string>
+  <string name="fb_text_feedback_to">Atsauksmes</string>
+  <string name="fb_best_rate">Augstākais vērtējums, ko varam sasniegt :)</string>
+  <string name="fb_share_with">Kopīgot ar</string>
+  <string name="fb_feedback_rate">Novērtējiet tūlīt</string>
+  <string name="fb_rate_on_google_play">Atsauksmes pakalpojumā Google Play</string>
+  <string name="fb_thank_for_feedback">Paldies par atsauksmēm</string>
+  <string name="fb_sorry_customer">Mēs risināsim šo problēmu nākamajā versijā. Atvainojiet par sagādātajām neērtībām</string>
+  <string name="fb_common_unable_find_market">Nevar atrast lietotni pakalpojumā Google Play</string>
+  <string name="fb_thanks">labi</string>
+</resources>

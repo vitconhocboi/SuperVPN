@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Gràcies per la teva opinió, i si us plau, fes-nos arribar alguns comentaris.</string>
+  <string name="fb_rate_us_good">Moltes gràcies per la teva ressenya!</string>
+  <string name="fb_rate_us_default">Si ens valora, t\'ho agrairem molt i seguirem treballant dur per oferir-te una millor experiència.</string>
+  <string name="fb_feedback_title">Si us plau, fes-nos saber qualsevol problema que hagis trobat.</string>
+  <string name="fb_feedback_crash">Crash</string>
+  <string name="fb_feedback_feature_quality">Qualitat de les característiques</string>
+  <string name="fb_feedback_bug">Error</string>
+  <string name="fb_feedback_other">Altres</string>
+  <string name="fb_send">Enviar</string>
+  <string name="fb_hint_feedback">Proporcioneu detalls addicionals per ajudar-nos a identificar i resoldre el vostre problema més ràpidament (mínim de 6 caràcters).</string>
+  <string name="fb_text_feedback_to">Feedback</string>
+  <string name="fb_best_rate">La valoració més alta que podem aconseguir :)</string>
+  <string name="fb_share_with">Comparteix amb</string>
+  <string name="fb_feedback_rate">Valoreu ara</string>
+  <string name="fb_rate_on_google_play">Ressenyes a Google Play</string>
+  <string name="fb_thank_for_feedback">Gràcies pels teus comentaris</string>
+  <string name="fb_sorry_customer">Tractarem aquest problema en una versió futura. Disculpeu les molèsties</string>
+  <string name="fb_common_unable_find_market">No es pot trobar l\'aplicació a Google Play</string>
+  <string name="fb_thanks">D\'acord</string>
+</resources>

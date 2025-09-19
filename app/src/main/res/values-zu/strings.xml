@@ -15,6 +15,8 @@
   <string name="setting_trial">Isivivinyo samahhala izinsuku ezi-3</string>
   <string name="setting_upgrade">Thuthukisa</string>
   <string name="ip_proxy">Amaseva</string>
+  <string name="ip_quick_access">Ukufinyelela Ngokushesha</string>
+  <string name="ip_all">KONKE</string>
   <string name="setting_app_proxy">Isihlungi Sohlelo Lokusebenza</string>
   <string name="setting_app_proxy_desc">Khetha ukuthi iziphi izinhlelo zokusebenza ezizoxhumeka ku-inthanethi nge-VPN</string>
   <string name="setting_ads_block">Vimba izikhangiso</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Khetha indawo yokuxhumana</string>
   <string name="first_fragment_label">Isiqephu sokuqala</string>
   <string name="second_fragment_label">Ucezu Lwesibili</string>
+  <string name="start">QALA</string>
   <string name="next">Olandelayo</string>
   <string name="previous">Ngaphambilini</string>
   <string name="vn">Việt Nam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">kulungile</string>
   <string name="common_ok">kulungile</string>
   <string name="btn_save">gcina</string>
+  <string name="btn_connect">Xhuma</string>
   <string name="btn_cancel">khansela</string>
+  <string name="btn_exit">Phuma</string>
   <string name="btn_reset">Setha kabusha</string>
   <string name="auto">Okuzenzakalelayo</string>
   <string name="min_60">60 Amaminithi</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">Khetha i-VPN</string>
   <string name="dns_only">I-DNS kuphela</string>
   <string name="confirm_dns">I-VPN Ayisebenzi</string>
-  <string name="confirm_dns_msg">Okwamanje usebenzisa i-DNS kuphela. Ukuze uthole uxhumano oluvikeleke kakhulu noluyimfihlo, sicela ukhethe iseva ye-VPN.</string>
+  <string name="confirm_dns_msg">Ayikho iseva ye-VPN ekhethiwe. Sicela ukhethe iseva ye-VPN.</string>
   <string name="btn_agree">Vuma</string>
   <string name="confirm_collect">Ubumfihlo Bakho, Ukulawula Kwakho</string>
   <string name="confirm_accept_msg">Ukuze uqedele ukubhalisa kwakho, lolu hlelo lokusebenza luqoqa i-ID yakho yokukhangisa ukuze kuqinisekiswe ukubhaliswa, kuthuthukise ikhwalithi yesevisi, futhi kunqandwe umsebenzi wokukhwabanisa. Uyavumelana nalokhu kuqoqwa kwedatha?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Sicela usinikeze imininingwane eyengeziwe ukuze sikwazi ukuhlonza futhi sixazulule inkinga yakho ngokushesha (okungenani izinhlamvu ezingu-6)</string>
   <string name="text_thanks_feedback">Siyabonga ngempendulo yakho</string>
   <string name="text_feedback_content">Sizolungisa le nkinga enguqulweni ezayo. Ngiyaxolisa ngesiphazamiso.</string>
+  <string name="no_available_vpn">Ayikho i-vpn yamahhala etholakalayo, sicela uye esikrinini se-VPN bese ukhetha iseva.</string>
   <string name="msg_device_does_not_support_this_feature">Lesi sici asisekelwe kule divayisi!</string>
   <string name="search_app">sesha uhlelo lokusebenza..</string>
+  <string name="exit_app">Phuma kuhlelo lokusebenza?</string>
+  <string name="exit_app_msg">Uqinisekile ukuthi uyaphuma?</string>
   <string name="free">Mahhala</string>
   <string name="premium">I-Premium</string>
+  <string name="unlock_premium">Vula i-VPN Premium</string>
+  <string name="get_premium">Thola i-premium</string>
+  <string name="watch_ads">Buka izikhangiso ukuze uxhume</string>
+  <string name="guide_1">Ukuthinta okukodwa nje ukuze uxhume.</string>
+  <string name="guide_2">Amaseva amaningi e-VPN emazweni ahlukene</string>
+  <string name="guide_3">Vikela ubumfihlo bakho ku-inthanethi</string>
+  <string name="what_is_my_ip">Ithini i-ip yami?</string>
+  <string name="ip_address">Ikheli le-IP</string>
+  <string name="network_provider">Umhlinzeki wenethiwekhi</string>
+  <string name="location">Indawo</string>
+  <string name="pincode">I-PIN khodi</string>
+  <string name="timezone">Indawo yesikhathi</string>
+  <string name="duration">Ubude besikhathi</string>
+  <string name="connect_success">Impumelelo exhunyiwe</string>
+  <string name="connect_report">Xhuma umbiko</string>
+  <string name="disconnect">Nqamula</string>
+  <string name="no_internet">Alukho Uxhumo Lwe-inthanethi</string>
+  <string name="network_error">Alukho Uxhumo Lwe-inthanethi</string>
 </resources>

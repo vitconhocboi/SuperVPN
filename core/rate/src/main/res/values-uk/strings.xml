@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Дякуємо за ваш відгук і надішліть нам відгук.</string>
+  <string name="fb_rate_us_good">Дуже дякую за відгук!</string>
+  <string name="fb_rate_us_default">Якщо ви оціните нас, ми будемо дуже вдячні за це та продовжуватимемо наполегливо працювати, щоб надати вам кращий досвід.</string>
+  <string name="fb_feedback_title">Повідомте нам про будь-які проблеми, з якими ви зіткнулися.</string>
+  <string name="fb_feedback_crash">Збій</string>
+  <string name="fb_feedback_feature_quality">Якість функцій</string>
+  <string name="fb_feedback_bug">помилка</string>
+  <string name="fb_feedback_other">інше</string>
+  <string name="fb_send">Надіслати</string>
+  <string name="fb_hint_feedback">Будь ласка, надайте додаткові відомості, щоб допомогти нам швидше визначити та вирішити вашу проблему (мінімум 6 символів).</string>
+  <string name="fb_text_feedback_to">Зворотній зв\'язок</string>
+  <string name="fb_best_rate">Найвищий рейтинг, який ми можемо отримати :)</string>
+  <string name="fb_share_with">Поділіться з</string>
+  <string name="fb_feedback_rate">Оцініть зараз</string>
+  <string name="fb_rate_on_google_play">Відгуки в Google Play</string>
+  <string name="fb_thank_for_feedback">Дякуємо за відгук</string>
+  <string name="fb_sorry_customer">Ми розглянемо це питання в наступній версії. Вибачте за незручності</string>
+  <string name="fb_common_unable_find_market">Не вдалося знайти програму в Google Play</string>
+  <string name="fb_thanks">в порядку</string>
+</resources>

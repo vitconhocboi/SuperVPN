@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">Най-добра оценка за нас</string>
+  <string name="fb_rate_bottom_default">Работим усилено, за да осигурим по-добро потребителско изживяване. Оценяваме отзива ви.</string>
+  <string name="fb_rate_bottom_bad">О, не!</string>
+  <string name="fb_rate_bottom_good">И ние те обичаме!</string>
+  <string name="fb_rate_bottom_mess_bad">Моля, оставете ни отзиви</string>
+  <string name="fb_rate_bottom_mess_good">Благодаря за обратната връзка</string>
+  <string name="fb_rate">Оценете</string>
+</resources>

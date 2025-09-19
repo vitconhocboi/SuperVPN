@@ -15,6 +15,8 @@
   <string name="setting_trial">३ दिवस मोफत चाचणी</string>
   <string name="setting_upgrade">अपग्रेड करा</string>
   <string name="ip_proxy">सर्व्हर्स</string>
+  <string name="ip_quick_access">जलद प्रवेश</string>
+  <string name="ip_all">सर्व</string>
   <string name="setting_app_proxy">अ‍ॅप फिल्टर</string>
   <string name="setting_app_proxy_desc">VPN द्वारे कोणते अ‍ॅप्स इंटरनेटशी कनेक्ट होतील ते निवडा</string>
   <string name="setting_ads_block">जाहिराती ब्लॉक</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">कनेक्शन क्षेत्र निवडा</string>
   <string name="first_fragment_label">पहिला तुकडा</string>
   <string name="second_fragment_label">दुसरा तुकडा</string>
+  <string name="start">सुरू करा</string>
   <string name="next">पुढील</string>
   <string name="previous">मागील</string>
   <string name="vn">व्हिएतनाम</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">ठीक आहे</string>
   <string name="common_ok">ठीक आहे</string>
   <string name="btn_save">जतन करा</string>
+  <string name="btn_connect">कनेक्ट करा</string>
   <string name="btn_cancel">रद्द करा</string>
+  <string name="btn_exit">बाहेर पडा</string>
   <string name="btn_reset">रीसेट करा</string>
   <string name="auto">ऑटो</string>
   <string name="min_60">६० मिनिटे</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">VPN निवडा</string>
   <string name="dns_only">फक्त DNS</string>
   <string name="confirm_dns">VPN सक्रिय नाही</string>
-  <string name="confirm_dns_msg">तुम्ही सध्या फक्त DNS वापरत आहात. अधिक सुरक्षित आणि खाजगी कनेक्शनसाठी, कृपया VPN सर्व्हर निवडा.</string>
+  <string name="confirm_dns_msg">कोणताही VPN सर्व्हर निवडलेला नाही. कृपया VPN सर्व्हर निवडा.</string>
   <string name="btn_agree">सहमत</string>
   <string name="confirm_collect">तुमची गोपनीयता, तुमचे नियंत्रण</string>
   <string name="confirm_accept_msg">तुमचे सदस्यत्व पूर्ण करण्यासाठी, हे अॅप नोंदणी सत्यापित करण्यासाठी, सेवेची गुणवत्ता वाढविण्यासाठी आणि फसव्या क्रियाकलापांना प्रतिबंध करण्यासाठी तुमचा जाहिरात आयडी गोळा करते. तुम्ही या डेटा संकलनाशी सहमत आहात का?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">कृपया आम्हाला अधिक तपशील द्या जेणेकरून आम्ही तुमची समस्या जलद ओळखू शकू आणि सोडवू शकू (किमान ६ वर्ण)</string>
   <string name="text_thanks_feedback">तुमच्या अभिप्रायाबद्दल धन्यवाद.</string>
   <string name="text_feedback_content">आम्ही ही समस्या भविष्यातील आवृत्तीत सोडवू. गैरसोयीबद्दल क्षमस्व.</string>
+  <string name="no_available_vpn">मोफत व्हीपीएन उपलब्ध नाही, कृपया व्हीपीएन स्क्रीनवर जा आणि सर्व्हर निवडा.</string>
   <string name="msg_device_does_not_support_this_feature">हे वैशिष्ट्य या डिव्हाइससाठी समर्थित नाही!</string>
   <string name="search_app">शोध अॅप..</string>
+  <string name="exit_app">अ‍ॅपमधून बाहेर पडायचे का?</string>
+  <string name="exit_app_msg">तुम्हाला नक्की बाहेर पडायचे आहे का?</string>
   <string name="free">मोफत</string>
   <string name="premium">प्रीमियम</string>
+  <string name="unlock_premium">VPN प्रीमियम अनलॉक करा</string>
+  <string name="get_premium">प्रीमियम मिळवा</string>
+  <string name="watch_ads">कनेक्ट करण्यासाठी जाहिराती पहा</string>
+  <string name="guide_1">कनेक्ट करण्यासाठी फक्त एक स्पर्श.</string>
+  <string name="guide_2">वेगवेगळ्या देशांमध्ये अनेक VPN सर्व्हर</string>
+  <string name="guide_3">तुमची ऑनलाइन गोपनीयता सुरक्षित ठेवा</string>
+  <string name="what_is_my_ip">माझा आयपी काय आहे?</string>
+  <string name="ip_address">आयपी पत्ता</string>
+  <string name="network_provider">नेटवर्क प्रदाता</string>
+  <string name="location">स्थान</string>
+  <string name="pincode">पिन कोड</string>
+  <string name="timezone">वेळ क्षेत्र</string>
+  <string name="duration">कालावधी</string>
+  <string name="connect_success">कनेक्टेड यश</string>
+  <string name="connect_report">अहवाल कनेक्ट करा</string>
+  <string name="disconnect">डिस्कनेक्ट करा</string>
+  <string name="no_internet">इंटरनेट कनेक्शन नाही</string>
+  <string name="network_error">इंटरनेट कनेक्शन नाही</string>
 </resources>

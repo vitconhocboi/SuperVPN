@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">תודה על הביקורת שלך, ותן לנו משוב.</string>
+  <string name="fb_rate_us_good">תודה רבה על הביקורת שלך!</string>
+  <string name="fb_rate_us_default">אם תדרג אותנו, נודה על כך מאוד ונמשיך לעבוד קשה כדי לספק לך חוויה טובה יותר.</string>
+  <string name="fb_feedback_title">אנא הודע לנו על כל בעיה שנתקלת בה.</string>
+  <string name="fb_feedback_crash">לְהִתְרַסֵק</string>
+  <string name="fb_feedback_feature_quality">איכות תכונה</string>
+  <string name="fb_feedback_bug">חֶרֶק</string>
+  <string name="fb_feedback_other">אַחֵר</string>
+  <string name="fb_send">לִשְׁלוֹחַ</string>
+  <string name="fb_hint_feedback">אנא ספק פרטים נוספים כדי לעזור לנו לזהות ולפתור את הבעיה שלך מהר יותר (מינימום 6 תווים).</string>
+  <string name="fb_text_feedback_to">מָשׁוֹב</string>
+  <string name="fb_best_rate">הדירוג הגבוה ביותר שנוכל להשיג :)</string>
+  <string name="fb_share_with">שתף עם</string>
+  <string name="fb_feedback_rate">דרג עכשיו</string>
+  <string name="fb_rate_on_google_play">ביקורות ב-Google Play</string>
+  <string name="fb_thank_for_feedback">תודה על המשוב שלך</string>
+  <string name="fb_sorry_customer">נטפל בנושא זה בגרסה עתידית. סליחה על אי הנוחות</string>
+  <string name="fb_common_unable_find_market">לא ניתן למצוא את האפליקציה ב-Google Play</string>
+  <string name="fb_thanks">בסדר</string>
+</resources>

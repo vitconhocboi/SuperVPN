@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">दिन</string>
+  <string name="core_text_inapp_days">दिन</string>
+  <string name="core_text_inapp_weeks">हफ्तों</string>
+  <string name="core_text_inapp_month">महीना</string>
+  <string name="core_text_inapp_months">महीने</string>
+  <string name="core_text_inapp_year">वर्ष</string>
+  <string name="core_text_inapp_years">साल</string>
+  <string name="core_auto_renew_after">स्वतः नवीनीकरण के बाद:</string>
+  <string name="core_text_free_trial">मुफ्त परीक्षण</string>
+</resources>

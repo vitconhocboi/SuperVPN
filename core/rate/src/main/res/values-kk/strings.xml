@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Пікіріңіз үшін рахмет және бізге біраз пікір қалдырыңыз.</string>
+  <string name="fb_rate_us_good">Пікіріңіз үшін көп рахмет!</string>
+  <string name="fb_rate_us_default">Егер сіз бізге баға берсеңіз, біз оны өте бағалаймыз және сізге жақсырақ тәжірибе беру үшін бар күшімізді саламыз.</string>
+  <string name="fb_feedback_title">Кез келген мәселелер туралы бізге хабарлаңыз.</string>
+  <string name="fb_feedback_crash">Апат</string>
+  <string name="fb_feedback_feature_quality">Мүмкіндік сапасы</string>
+  <string name="fb_feedback_bug">Қате</string>
+  <string name="fb_feedback_other">Басқа</string>
+  <string name="fb_send">Жіберу</string>
+  <string name="fb_hint_feedback">Мәселені тезірек анықтауға және шешуге көмектесу үшін қосымша мәліметтерді беріңіз (кемінде 6 таңба).</string>
+  <string name="fb_text_feedback_to">Кері байланыс</string>
+  <string name="fb_best_rate">Біз қол жеткізе алатын ең жоғары рейтинг :)</string>
+  <string name="fb_share_with">Бөлісу</string>
+  <string name="fb_feedback_rate">Қазір бағалаңыз</string>
+  <string name="fb_rate_on_google_play">Google Play сайтындағы шолулар</string>
+  <string name="fb_thank_for_feedback">Пікіріңізге рахмет</string>
+  <string name="fb_sorry_customer">Біз бұл мәселені болашақ нұсқада қарастырамыз. Қолайсыздық үшін кешірім сұраймыз</string>
+  <string name="fb_common_unable_find_market">Қолданбаны Google Play дүкенінен табу мүмкін емес</string>
+  <string name="fb_thanks">Жарайды ма</string>
+</resources>

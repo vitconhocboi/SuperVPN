@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Merci fir Är Iwwerpréiwung, a gitt eis e puer Feedback.</string>
+  <string name="fb_rate_us_good">Villmools Merci fir Är Iwwerpréiwung!</string>
+  <string name="fb_rate_us_default">Wann Dir eis bewäert, wäerte mir et immens appreciéieren a wäerte weider haart schaffen fir Iech eng besser Erfahrung ze bidden.</string>
+  <string name="fb_feedback_title">Loosst eis w.e.g. wëssen iwwer all Probleemer déi Dir begéint hutt.</string>
+  <string name="fb_feedback_crash">Crash</string>
+  <string name="fb_feedback_feature_quality">Feature Qualitéit</string>
+  <string name="fb_feedback_bug">Käfer</string>
+  <string name="fb_feedback_other">Aner</string>
+  <string name="fb_send">Schécken</string>
+  <string name="fb_hint_feedback">Gitt w.e.g. zousätzlech Detailer fir eis ze hëllefen Äert Problem méi séier z\'identifizéieren an ze léisen (minimum 6 Zeechen).</string>
+  <string name="fb_text_feedback_to">Feedback</string>
+  <string name="fb_best_rate">Déi héchst Bewäertung déi mir erreechen kënnen :)</string>
+  <string name="fb_share_with">Deelen mat</string>
+  <string name="fb_feedback_rate">Bewäert elo</string>
+  <string name="fb_rate_on_google_play">Rezensiounen op Google Play</string>
+  <string name="fb_thank_for_feedback">Merci fir Äre Feedback</string>
+  <string name="fb_sorry_customer">Mir wäerten dëst Thema an enger zukünfteger Versioun adresséieren. Entschëllegt fir d\'Onbequemlechkeet</string>
+  <string name="fb_common_unable_find_market">Kann d\'App net op Google Play fannen</string>
+  <string name="fb_thanks">ok</string>
+</resources>

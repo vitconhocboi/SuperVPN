@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">Whakatauranga pai mo tatou</string>
+  <string name="fb_rate_bottom_default">Kei te whakapau kaha matou ki te whakarato i te wheako kaiwhakamahi pai ake. Ka mihi matou ki to arotake.</string>
+  <string name="fb_rate_bottom_bad">Aue Kao!</string>
+  <string name="fb_rate_bottom_good">Ka aroha hoki matou ki a koe!</string>
+  <string name="fb_rate_bottom_mess_bad">Tena koa waiho mai etahi urupare</string>
+  <string name="fb_rate_bottom_mess_good">Mauruuru mo to korero</string>
+  <string name="fb_rate">Reiti</string>
+</resources>

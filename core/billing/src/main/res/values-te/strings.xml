@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">రోజు</string>
+  <string name="core_text_inapp_days">రోజులు</string>
+  <string name="core_text_inapp_weeks">వారాలు</string>
+  <string name="core_text_inapp_month">నెల</string>
+  <string name="core_text_inapp_months">నెలలు</string>
+  <string name="core_text_inapp_year">సంవత్సరం</string>
+  <string name="core_text_inapp_years">సంవత్సరాలు</string>
+  <string name="core_auto_renew_after">తర్వాత ఆటో పునరుద్ధరణ:</string>
+  <string name="core_text_free_trial">ఉచిత ట్రయల్</string>
+</resources>

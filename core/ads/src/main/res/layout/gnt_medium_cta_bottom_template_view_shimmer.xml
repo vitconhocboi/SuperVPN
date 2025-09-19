@@ -87,7 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/media_view"
             android:layout_marginStart="@dimen/_14dp"
-            android:layout_marginTop="@dimen/_5dp"
+            android:layout_marginTop="@dimen/_10dp"
             android:layout_marginEnd="@dimen/_14dp"
             android:background="@color/shimmer_bg">
 
@@ -96,10 +96,7 @@
                 style="@style/CtaViewStyle"
                 android:background="@color/shimmer_bg"
                 tools:text="" />
-
         </FrameLayout>
-
     </RelativeLayout>
-
 </com.facebook.shimmer.ShimmerFrameLayout>
 

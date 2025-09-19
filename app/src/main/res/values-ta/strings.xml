@@ -15,6 +15,8 @@
   <string name="setting_trial">இலவச சோதனை 3 நாட்கள்</string>
   <string name="setting_upgrade">மேம்படுத்து</string>
   <string name="ip_proxy">சேவையகங்கள்</string>
+  <string name="ip_quick_access">விரைவான அணுகல்</string>
+  <string name="ip_all">அனைத்து</string>
   <string name="setting_app_proxy">பயன்பாட்டு வடிகட்டி</string>
   <string name="setting_app_proxy_desc">VPN மூலம் இணையத்துடன் இணைக்க வேண்டிய பயன்பாடுகளைத் தேர்வுசெய்யவும்.</string>
   <string name="setting_ads_block">விளம்பரத் தடுப்பு</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">இணைப்புப் பகுதியைத் தேர்ந்தெடுக்கவும்</string>
   <string name="first_fragment_label">முதல் துண்டு</string>
   <string name="second_fragment_label">இரண்டாவது துண்டு</string>
+  <string name="start">START</string>
   <string name="next">அடுத்தது</string>
   <string name="previous">முந்தையது</string>
   <string name="vn">வியட்நாம்</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">சரி</string>
   <string name="common_ok">சரி</string>
   <string name="btn_save">சேமிக்க</string>
+  <string name="btn_connect">இணைக்கவும்</string>
   <string name="btn_cancel">ரத்து செய்</string>
+  <string name="btn_exit">வெளியேறு</string>
   <string name="btn_reset">மீட்டமைக்கவும்</string>
   <string name="auto">ஆட்டோ</string>
   <string name="min_60">60 நிமிடங்கள்</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">VPN ஐத் தேர்ந்தெடுக்கவும்</string>
   <string name="dns_only">DNS மட்டும்</string>
   <string name="confirm_dns">VPN செயலில் இல்லை</string>
-  <string name="confirm_dns_msg">நீங்கள் தற்போது DNS ஐ மட்டுமே பயன்படுத்துகிறீர்கள். மிகவும் பாதுகாப்பான மற்றும் தனிப்பட்ட இணைப்பிற்கு, தயவுசெய்து ஒரு VPN சேவையகத்தைத் தேர்ந்தெடுக்கவும்.</string>
+  <string name="confirm_dns_msg">VPN சேவையகம் எதுவும் தேர்ந்தெடுக்கப்படவில்லை. தயவுசெய்து ஒரு VPN சேவையகத்தைத் தேர்ந்தெடுக்கவும்.</string>
   <string name="btn_agree">ஒப்புக்கொள்கிறேன்</string>
   <string name="confirm_collect">உங்கள் தனியுரிமை, உங்கள் கட்டுப்பாடு</string>
   <string name="confirm_accept_msg">உங்கள் சந்தாவை முடிக்க, பதிவைச் சரிபார்க்கவும், சேவை தரத்தை மேம்படுத்தவும், மோசடி நடவடிக்கைகளைத் தடுக்கவும் இந்தப் பயன்பாடு உங்கள் விளம்பர ஐடியைச் சேகரிக்கிறது. இந்தத் தரவு சேகரிப்பை நீங்கள் ஒப்புக்கொள்கிறீர்களா?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">உங்கள் சிக்கலை விரைவாகக் கண்டறிந்து தீர்க்க, எங்களுக்கு கூடுதல் விவரங்களைத் தரவும் (குறைந்தது 6 எழுத்துகள்)</string>
   <string name="text_thanks_feedback">உங்கள் கருத்துக்கு நன்றி.</string>
   <string name="text_feedback_content">எதிர்கால பதிப்பில் இந்த சிக்கலை நாங்கள் சரிசெய்வோம். சிரமத்திற்கு மன்னிக்கவும்.</string>
+  <string name="no_available_vpn">இலவச VPN எதுவும் கிடைக்கவில்லை, தயவுசெய்து VPN திரைக்குச் சென்று ஒரு சேவையகத்தைத் தேர்ந்தெடுக்கவும்.</string>
   <string name="msg_device_does_not_support_this_feature">இந்த அம்சம் இந்த சாதனத்தில் ஆதரிக்கப்படவில்லை!</string>
   <string name="search_app">தேடல் பயன்பாடு..</string>
+  <string name="exit_app">பயன்பாட்டிலிருந்து வெளியேறவா?</string>
+  <string name="exit_app_msg">நீங்க வெளியேறணும்னு நிச்சயமா இருக்கீங்களா?</string>
   <string name="free">இலவசம்</string>
   <string name="premium">பிரீமியம்</string>
+  <string name="unlock_premium">VPN பிரீமியத்தைத் திறக்கவும்</string>
+  <string name="get_premium">பிரீமியத்தைப் பெறுங்கள்</string>
+  <string name="watch_ads">இணைக்க விளம்பரங்களைப் பாருங்கள்</string>
+  <string name="guide_1">இணைக்க ஒரே ஒரு தொடுதல் போதும்.</string>
+  <string name="guide_2">வெவ்வேறு நாடுகளில் பல VPN சேவையகங்கள்</string>
+  <string name="guide_3">உங்கள் ஆன்லைன் தனியுரிமையைப் பாதுகாக்கவும்</string>
+  <string name="what_is_my_ip">என்னுடைய ஐபி என்ன?</string>
+  <string name="ip_address">ஐபி முகவரி</string>
+  <string name="network_provider">பிணைய வழங்குநர்</string>
+  <string name="location">இடம்</string>
+  <string name="pincode">பின் குறியீடு</string>
+  <string name="timezone">நேர மண்டலம்</string>
+  <string name="duration">கால அளவு</string>
+  <string name="connect_success">இணைக்கப்பட்ட வெற்றி</string>
+  <string name="connect_report">அறிக்கையை இணைக்கவும்</string>
+  <string name="disconnect">துண்டி</string>
+  <string name="no_internet">இணைய இணைப்பு இல்லை</string>
+  <string name="network_error">இணைய இணைப்பு இல்லை</string>
 </resources>

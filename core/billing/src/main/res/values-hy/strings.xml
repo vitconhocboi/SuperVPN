@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">օր</string>
+  <string name="core_text_inapp_days">Օրեր</string>
+  <string name="core_text_inapp_weeks">Շաբաթներ</string>
+  <string name="core_text_inapp_month">Ամիս</string>
+  <string name="core_text_inapp_months">Ամիսներ</string>
+  <string name="core_text_inapp_year">Տարի</string>
+  <string name="core_text_inapp_years">Տարիներ</string>
+  <string name="core_auto_renew_after">Ավտոմատ երկարաձգում հետևյալից հետո՝</string>
+  <string name="core_text_free_trial">Անվճար փորձարկում</string>
+</resources>

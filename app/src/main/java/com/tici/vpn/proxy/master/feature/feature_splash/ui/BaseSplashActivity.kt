@@ -194,6 +194,12 @@ abstract class BaseSplashActivity<VB : ViewBinding> : CoreActivity<VB>() {
         }
     }
 
+    override fun providerRewardAdPlaceName(): List<IAdPlaceName> {
+        return listOf(
+            AppAdPlaceName.REWARDED_CONNECT_VPN
+        )
+    }
+
     override fun providerPreloadBannerNativeAdPlaceName(): List<IAdPlaceName> {
         val isLoadLanguage =
             getCurrentLanguageCode().isBlank() || isAlwaysShowIntroAndLanguageScreen

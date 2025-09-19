@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Matur nuwun kanggo review Panjenengan, lan please menehi kita sawetara saran.</string>
+  <string name="fb_rate_us_good">Matur nuwun ingkang sanget kanggo review Panjenengan!</string>
+  <string name="fb_rate_us_default">Yen sampeyan menehi rating, kita bakal ngormati banget lan bakal terus kerja keras kanggo menehi pengalaman sing luwih apik.</string>
+  <string name="fb_feedback_title">Mangga menehi katrangan babagan masalah sing sampeyan temoni.</string>
+  <string name="fb_feedback_crash">Kacilakan</string>
+  <string name="fb_feedback_feature_quality">Kualitas fitur</string>
+  <string name="fb_feedback_bug">bug</string>
+  <string name="fb_feedback_other">Liyane</string>
+  <string name="fb_send">Ngirim</string>
+  <string name="fb_hint_feedback">Mangga wenehi rincian tambahan kanggo mbantu ngenali lan ngatasi masalah sampeyan kanthi luwih cepet (minimal 6 karakter).</string>
+  <string name="fb_text_feedback_to">Umpan balik</string>
+  <string name="fb_best_rate">Rating paling dhuwur sing bisa kita raih :)</string>
+  <string name="fb_share_with">Enggo bareng karo</string>
+  <string name="fb_feedback_rate">Rate Saiki</string>
+  <string name="fb_rate_on_google_play">Ulasan ing Google Play</string>
+  <string name="fb_thank_for_feedback">Matur nuwun kanggo saran sampeyan</string>
+  <string name="fb_sorry_customer">Kita bakal ngatasi masalah iki ing versi sing bakal teka. Nuwun sewu</string>
+  <string name="fb_common_unable_find_market">Ora bisa nemokake app ing Google Play</string>
+  <string name="fb_thanks">oke</string>
+</resources>

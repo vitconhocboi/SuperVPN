@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">तुमच्या पुनरावलोकनाबद्दल धन्यवाद, आणि कृपया आम्हाला काही अभिप्राय द्या.</string>
+  <string name="fb_rate_us_good">आपल्या पुनरावलोकनाबद्दल खूप खूप धन्यवाद!</string>
+  <string name="fb_rate_us_default">जर तुम्ही आम्हाला रेटिंग दिले तर आम्ही त्याचे खूप आभारी राहू आणि तुम्हाला अधिक चांगला अनुभव देण्यासाठी कठोर परिश्रम करत राहू.</string>
+  <string name="fb_feedback_title">तुम्हाला आलेल्या कोणत्याही समस्यांबद्दल कृपया आम्हाला कळवा.</string>
+  <string name="fb_feedback_crash">क्रॅश</string>
+  <string name="fb_feedback_feature_quality">वैशिष्ट्य गुणवत्ता</string>
+  <string name="fb_feedback_bug">बग</string>
+  <string name="fb_feedback_other">इतर</string>
+  <string name="fb_send">पाठवा</string>
+  <string name="fb_hint_feedback">तुमची समस्या अधिक जलद ओळखण्यात आणि सोडवण्यात आम्हाला मदत करण्यासाठी कृपया अतिरिक्त तपशील द्या (किमान ६ वर्ण).</string>
+  <string name="fb_text_feedback_to">अभिप्राय</string>
+  <string name="fb_best_rate">आम्ही मिळवू शकणारे सर्वोच्च रेटिंग :)</string>
+  <string name="fb_share_with">सोबत शेअर करा</string>
+  <string name="fb_feedback_rate">आता रेट करा</string>
+  <string name="fb_rate_on_google_play">Google Play वरील पुनरावलोकने</string>
+  <string name="fb_thank_for_feedback">तुमच्या अभिप्रायाबद्दल धन्यवाद</string>
+  <string name="fb_sorry_customer">आम्ही भविष्यातील आवृत्तीमध्ये या समस्येचे निराकरण करू. गैरसोयीबद्दल क्षमस्व</string>
+  <string name="fb_common_unable_find_market">Google Play वर ॲप शोधण्यात अक्षम</string>
+  <string name="fb_thanks">ठीक आहे</string>
+</resources>

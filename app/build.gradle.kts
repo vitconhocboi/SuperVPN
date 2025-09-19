@@ -24,8 +24,8 @@ android {
         applicationId = "com.tici.vpn.proxy.master"
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
-        versionCode = 25
-        versionName = "1.25"
+        versionCode = 28
+        versionName = "1.28"
 //
 //        resourceConfigurations.addAll(
 //            listOf("en", "vi", "ar", "hi", "id", "ms", "ru", "pt", "fr", "de", "es", "ja", "ko")
@@ -121,7 +121,7 @@ android {
     flavorDimensions.add("root")
     productFlavors {
         create("dev") {
-            applicationIdSuffix = ".dev"
+          /*  applicationIdSuffix = ".dev"*/
         }
 
         create("prod") {

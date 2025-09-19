@@ -1,6 +1,89 @@
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="core_shortcut_short_label_uninstall">Gỡ cài đặt</string>
-    <string name="core_shortcut_long_label_uninstall">Gỡ cài đặt</string>
-    <string name="core_shortcut_short_label_settings">Cài đặt</string>
-    <string name="core_shortcut_long_label_settings">Cài đặt</string>
+  <string name="core_shortcut_short_label_uninstall">Gỡ cài đặt</string>
+  <string name="core_shortcut_long_label_uninstall">Gỡ cài đặt</string>
+  <string name="core_shortcut_short_label_settings">Cài đặt</string>
+  <string name="core_shortcut_long_label_settings">Cài đặt</string>
+  <string name="shortcut_short_label_screen_1">Kết nối VPN</string>
+  <string name="shortcut_long_label_screen_1">Kết nối VPN</string>
+  <string name="shortcut_short_label_screen_2">Khám phá</string>
+  <string name="shortcut_long_label_screen_2">Khám phá</string>
+  <string name="exit_the_application">Thoát ứng dụng?</string>
+  <string name="are_you_sure_you_want_to_exit">Bạn có chắc chắn muốn thoát không?</string>
+  <string name="common_yes">Có</string>
+  <string name="common_no">Không</string>
+  <string name="core_apply_language">Áp dụng ngôn ngữ…</string>
+  <string name="core_common_save">Lưu</string>
+  <string name="core_common_continue">Tiếp tục</string>
+
+  <string name="core_onboarding_title_1">Chỉ một chạm để kết nối.</string>
+  <string name="core_onboarding_title_2">Nhiều máy chủ VPN ở các quốc gia khác nhau</string>
+  <string name="core_onboarding_title_3">Bảo vệ quyền riêng tư trực tuyến của bạn</string>
+
+  <string name="core_onboarding_action_get_start">Bắt đầu</string>
+  <string name="core_onboarding_action_next">Tiếp theo</string>
+  <string name="core_common_skip">Bỏ qua</string>
+
+  <string name="core_back_button_desc">Quay lại</string>
+  <string name="core_feedback_title">Bạn gặp vấn đề gì khi sử dụng?</string>
+  <string name="core_feedback_subtitle">Chúng tôi sẽ mang đến cho bạn trải nghiệm tốt hơn.</string>
+  <string name="core_feedback_illustration_desc">Minh họa</string>
+  <string name="core_option_1_text">Không tìm thấy ảnh đã xóa</string>
+  <string name="core_rescan_button">Quét lại</string>
+  <string name="core_option_2_text">Không còn gì thú vị nữa</string>
+  <string name="core_explore_button">Khám phá</string>
+  <string name="core_dont_uninstall_button">Don\'t uninstall yet</string>
+  <string name="core_still_uninstall_button">Vẫn muốn gỡ cài đặt</string>
+
+  <string name="core_uninstall_feedback_title">Tại sao gỡ cài đặt All Recovery - Ảnh, Video?</string>
+  <string name="core_reason_cant_find_photos">Can\'t find deleted photos</string>
+  <string name="core_reason_doesnt_restore">Doesn\'t correctly restore the desired image</string>
+  <string name="core_reason_difficulty_recovering">Khó khăn khi khôi phục các tệp khác</string>
+  <string name="core_reason_too_many_ads">Quá nhiều quảng cáo</string>
+  <string name="core_cancel_button">Hủy</string>
+  <string name="core_uninstall_button">Gỡ cài đặt</string>
+
+  <string name="shortcut_disabled_msg">Tính năng này không khả dụng.</string>
+  <string name="tv_problems_when_using">Các vấn đề bạn gặp phải khi sử dụng</string>
+  <string name="tv_better_experience">Chúng tôi sẽ mang đến trải nghiệm tốt hơn</string>
+  <string name="tv_unable_connect_vpn">Không thể kết nối VPN</string>
+  <string name="tv_no_longer_interesting">Không còn thú vị nữa</string>
+  <string name="tv_connection_now">Kết nối ngay</string>
+  <string name="tv_shortcut_discover">Khám phá</string>
+  <string name="tv_dont_want_uninstall">Don\'t uninstall yet</string>
+  <string name="tv_still_want_uninstall">Vẫn muốn gỡ cài đặt</string>
+
+  <string name="tv_reason_uninstall_app">Tại sao gỡ cài đặt Super VPN</string>
+  <string name="tv_difficult_to_use">It\'s difficult to use</string>
+  <string name="tv_too_many_ads">Quá nhiều quảng cáo</string>
+  <string name="tv_too_few_vpn">Too few VPN servers</string>
+  <string name="tv_vpn_not_working">VPN không hoạt động</string>
+  <string name="tv_cancel">Hủy</string>
+  <string name="tv_exit_application">Thoát ứng dụng?</string>
+  <string name="tv_want_to_exit_application">Bạn có chắc chắn muốn thoát ứng dụng không?</string>
+  <string name="tv_exit_new">Thoát</string>
+  <string name="tv_no">Không</string>
+  <string name="tv_done">Hoàn tất</string>
+
+  <string name="text_inapp_day">Ngày</string>
+  <string name="text_inapp_days">Ngày</string>
+  <string name="text_inapp_weeks">Tuần</string>
+  <string name="text_inapp_month">Tháng</string>
+  <string name="text_inapp_months">Tháng</string>
+  <string name="text_inapp_year">Năm</string>
+  <string name="text_inapp_years">Năm</string>
+
+  <string name="msg_check_ch_play">Vui lòng kiểm tra tài khoản Google Play Store của bạn</string>
+  <string name="text_please_update_playstore_app">Vui lòng cập nhật ứng dụng Play Store</string>
+  <string name="tv_continue_premium">Tiếp tục</string>
+  <string name="tv_join_now_premium">Tham gia ngay</string>
+  <string name="tv_vip_member">Thành viên VIP</string>
+  <string name="text_restore_member_failed">Bạn chưa phải là thành viên VIP.</string>
+  <string name="text_restore_member">Khôi phục thành công</string>
+  <string name="text_congrats_to_join">Chúc mừng bạn đã trở thành thành viên</string>
+  <string name="text_enjoy_full_experience_now">Tận hưởng đầy đủ trải nghiệm ngay bây giờ</string>
+  <string name="text_name_pro">VPN Pro</string>
+
+  <string name="tv_restore_purchase">Khôi phục mua hàng</string>
+  <string name="tv_restore">Khôi phục</string>
 </resources>

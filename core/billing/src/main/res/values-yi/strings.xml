@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">טאָג</string>
+  <string name="core_text_inapp_days">טעג</string>
+  <string name="core_text_inapp_weeks">וואָכן</string>
+  <string name="core_text_inapp_month">חודש</string>
+  <string name="core_text_inapp_months">חדשים</string>
+  <string name="core_text_inapp_year">יאָר</string>
+  <string name="core_text_inapp_years">יאָרן</string>
+  <string name="core_auto_renew_after">אויטאָמאַטיש באַנייַען נאָך:</string>
+  <string name="core_text_free_trial">פריי פּראָצעס</string>
+</resources>

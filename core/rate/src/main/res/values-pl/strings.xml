@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Dziękujemy za opinię. Prosimy o przekazanie nam swoich uwag.</string>
+  <string name="fb_rate_us_good">Dziękujemy bardzo za opinię!</string>
+  <string name="fb_rate_us_default">Jeśli nas ocenisz, będziemy bardzo wdzięczni i dołożymy wszelkich starań, aby zapewnić Ci lepsze doświadczenia.</string>
+  <string name="fb_feedback_title">Prosimy o poinformowanie nas o wszelkich napotkanych problemach.</string>
+  <string name="fb_feedback_crash">Rozbić się</string>
+  <string name="fb_feedback_feature_quality">Jakość funkcji</string>
+  <string name="fb_feedback_bug">Błąd</string>
+  <string name="fb_feedback_other">Inny</string>
+  <string name="fb_send">Wysłać</string>
+  <string name="fb_hint_feedback">Podaj dodatkowe szczegóły, które pomogą nam szybciej zidentyfikować i rozwiązać Twój problem (minimum 6 znaków).</string>
+  <string name="fb_text_feedback_to">Informacja zwrotna</string>
+  <string name="fb_best_rate">Najwyższa ocena jaką udało nam się osiągnąć :)</string>
+  <string name="fb_share_with">Podziel się z</string>
+  <string name="fb_feedback_rate">Oceń teraz</string>
+  <string name="fb_rate_on_google_play">Recenzje w Google Play</string>
+  <string name="fb_thank_for_feedback">Dziękujemy za opinię</string>
+  <string name="fb_sorry_customer">Zajmiemy się tym problemem w przyszłej wersji. Przepraszamy za niedogodności</string>
+  <string name="fb_common_unable_find_market">Nie można znaleźć aplikacji w Google Play</string>
+  <string name="fb_thanks">ok</string>
+</resources>

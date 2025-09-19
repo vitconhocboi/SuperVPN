@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Terima kasih atas ulasan anda, dan sila berikan kami maklum balas.</string>
+  <string name="fb_rate_us_good">Terima kasih banyak atas ulasan anda!</string>
+  <string name="fb_rate_us_default">Jika anda menilai kami, kami amat menghargainya dan akan terus bekerja keras untuk memberikan anda pengalaman yang lebih baik.</string>
+  <string name="fb_feedback_title">Sila maklumkan kepada kami tentang sebarang isu yang anda hadapi.</string>
+  <string name="fb_feedback_crash">ranap</string>
+  <string name="fb_feedback_feature_quality">Kualiti ciri</string>
+  <string name="fb_feedback_bug">pepijat</string>
+  <string name="fb_feedback_other">Lain-lain</string>
+  <string name="fb_send">Hantar</string>
+  <string name="fb_hint_feedback">Sila berikan butiran tambahan untuk membantu kami mengenal pasti dan menyelesaikan isu anda dengan lebih cepat (minimum 6 aksara).</string>
+  <string name="fb_text_feedback_to">Maklum balas</string>
+  <string name="fb_best_rate">Rating tertinggi yang boleh kami capai :)</string>
+  <string name="fb_share_with">Kongsi Dengan</string>
+  <string name="fb_feedback_rate">Nilai Sekarang</string>
+  <string name="fb_rate_on_google_play">Ulasan di Google Play</string>
+  <string name="fb_thank_for_feedback">Terima kasih atas maklum balas anda</string>
+  <string name="fb_sorry_customer">Kami akan menangani isu ini dalam versi akan datang. Maaf atas kesulitan ini</string>
+  <string name="fb_common_unable_find_market">Tidak dapat mencari apl di Google Play</string>
+  <string name="fb_thanks">okey</string>
+</resources>

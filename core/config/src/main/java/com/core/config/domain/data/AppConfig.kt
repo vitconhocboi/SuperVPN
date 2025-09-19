@@ -5,6 +5,7 @@ data class AppConfig(
     val isHideNativeBannerWhenNetworkError : Boolean,
 
     val isAlwaysShowIntroAndLanguageScreen: Boolean,
+    val isAlwaysShowIntroAndLanguageScreenWithInterval: Boolean,
     val isEnableIntroductionScreen : Boolean,
     val isEnableChangeLanguageScreen : Boolean,
 

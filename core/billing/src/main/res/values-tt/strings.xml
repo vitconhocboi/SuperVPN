@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">көн</string>
+  <string name="core_text_inapp_days">Көннәр</string>
+  <string name="core_text_inapp_weeks">Атналар</string>
+  <string name="core_text_inapp_month">Ай</string>
+  <string name="core_text_inapp_months">Айлар</string>
+  <string name="core_text_inapp_year">Ел</string>
+  <string name="core_text_inapp_years">Еллар</string>
+  <string name="core_auto_renew_after">Соңыннан автомат яңарту:</string>
+  <string name="core_text_free_trial">Түләүсез сынау</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">dia</string>
+  <string name="core_text_inapp_days">Dias</string>
+  <string name="core_text_inapp_weeks">Semanas</string>
+  <string name="core_text_inapp_month">Mês</string>
+  <string name="core_text_inapp_months">Meses</string>
+  <string name="core_text_inapp_year">Ano</string>
+  <string name="core_text_inapp_years">Anos</string>
+  <string name="core_auto_renew_after">Renovação automática após:</string>
+  <string name="core_text_free_trial">Teste grátis</string>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Mèsi pou revizyon ou, epi tanpri ban nou kèk fidbak.</string>
+  <string name="fb_rate_us_good">Mèsi anpil pou revizyon ou!</string>
+  <string name="fb_rate_us_default">Si ou evalye nou, nou ta anpil apresye li epi yo pral kontinye travay di pou ba ou yon pi bon eksperyans.</string>
+  <string name="fb_feedback_title">Tanpri fè nou konnen nenpòt pwoblèm ou rankontre.</string>
+  <string name="fb_feedback_crash">Aksidan</string>
+  <string name="fb_feedback_feature_quality">Kalite karakteristik</string>
+  <string name="fb_feedback_bug">Ensèk</string>
+  <string name="fb_feedback_other">Lòt</string>
+  <string name="fb_send">Voye</string>
+  <string name="fb_hint_feedback">Tanpri bay plis detay pou ede nou idantifye ak rezoud pwoblèm ou pi vit (minimòm 6 karaktè).</string>
+  <string name="fb_text_feedback_to">Feedback</string>
+  <string name="fb_best_rate">Evalyasyon ki pi wo nou ka reyalize :)</string>
+  <string name="fb_share_with">Pataje Ak</string>
+  <string name="fb_feedback_rate">To kounye a</string>
+  <string name="fb_rate_on_google_play">Revizyon sou Google Play</string>
+  <string name="fb_thank_for_feedback">Mèsi pou fidbak ou</string>
+  <string name="fb_sorry_customer">Nou pral adrese pwoblèm sa a nan yon vèsyon nan lavni. Padon pou deranjman an</string>
+  <string name="fb_common_unable_find_market">Pa ka jwenn aplikasyon an sou Google Play</string>
+  <string name="fb_thanks">ok</string>
+</resources>

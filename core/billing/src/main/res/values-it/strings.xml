@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">giorno</string>
+  <string name="core_text_inapp_days">Giorni</string>
+  <string name="core_text_inapp_weeks">Settimane</string>
+  <string name="core_text_inapp_month">Mese</string>
+  <string name="core_text_inapp_months">Mesi</string>
+  <string name="core_text_inapp_year">Anno</string>
+  <string name="core_text_inapp_years">Anni</string>
+  <string name="core_auto_renew_after">Rinnovo automatico dopo:</string>
+  <string name="core_text_free_trial">Prova gratuita</string>
+</resources>

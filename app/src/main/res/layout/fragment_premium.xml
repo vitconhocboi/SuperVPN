@@ -12,24 +12,6 @@
         android:background="@color/black"
         android:orientation="vertical">
 
-        <FrameLayout
-            android:id="@+id/frame_corner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/pre_corner"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ic_pre"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:scaleType="centerInside"
-                android:src="@drawable/ic_premium"
-                android:visibility="invisible" />
-
-        </FrameLayout>
-
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/bgImg"
             android:layout_width="0dp"
@@ -42,16 +24,30 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/tvRestorePurchase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_16dp"
+            android:background="@drawable/bg_border_btn_restore"
+            android:fontFamily="@font/roboto_medium"
+            android:paddingHorizontal="@dimen/_12dp"
+            android:paddingVertical="@dimen/_8dp"
+            android:text="@string/tv_restore"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btn_close" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/btn_close"
             android:layout_width="@dimen/size32"
             android:layout_height="@dimen/size32"
             android:layout_marginTop="@dimen/margin_16"
-            android:layout_marginEnd="@dimen/margin_16"
+            android:layout_marginStart="@dimen/margin_16"
             android:foreground="?selectableItemBackgroundBorderless"
             android:src="@drawable/ic_close"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -127,18 +123,227 @@
             app:layout_constraintStart_toStartOf="@+id/tv_sub2"
             app:layout_constraintTop_toBottomOf="@+id/tv_sub3" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rcvSkus"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bgClViewPackagePremium"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:orientation="vertical"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_marginTop="@dimen/_16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_sub4"
-            tools:listitem="@layout/adapter_sku_item" />
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bgClPro1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16dp"
+                android:layout_marginBottom="@dimen/_8dp"
+                android:background="@drawable/bg_check_border_buy_premium"
+                app:layout_constraintBottom_toTopOf="@+id/bgClPro2">
+
+                <CheckBox
+                    android:id="@+id/checkBoxPro1"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12dp"
+                    android:checked="true"
+                    android:paddingVertical="@dimen/_18dp"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvTimePro1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12dp"
+                    android:layout_marginBottom="@dimen/_3dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto_medium"
+                    android:maxLines="1"
+                    android:text="@string/text_inapp_weeks"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toTopOf="@+id/tvTimerFreeTrialPro1"
+                    app:layout_constraintEnd_toStartOf="@+id/tvPrice1"
+                    app:layout_constraintStart_toEndOf="@+id/checkBoxPro1"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTimerFreeTrialPro1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/tvTimerFreeTrialPro1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvPrice1"
+                    app:layout_constraintStart_toStartOf="@+id/tvTimePro1"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTimePro1"
+                    tools:text="Auto Renew After 3 Day Free Trial" />
+
+                <TextView
+                    android:id="@+id/tvPrice1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3dp"
+                    android:layout_marginEnd="@dimen/_12dp"
+                    android:paddingStart="@dimen/_10dp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="RtlSymmetry"
+                    tools:text="550,000đ" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bgClPro2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16dp"
+                android:layout_marginBottom="@dimen/_8dp"
+                android:background="@drawable/bg_check_border_buy_premium"
+                app:layout_constraintBottom_toTopOf="@+id/bgClPro3">
+
+                <CheckBox
+                    android:id="@+id/checkBoxPro2"
+                    android:layout_width="@dimen/_1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12dp"
+                    android:paddingVertical="18dp"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvTimePro2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12dp"
+                    android:layout_marginBottom="@dimen/_3dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto_medium"
+                    android:maxLines="1"
+                    android:text="@string/text_inapp_month"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toTopOf="@+id/tvTimerFreeTrialPro2"
+                    app:layout_constraintEnd_toStartOf="@+id/tvPrice2"
+                    app:layout_constraintStart_toEndOf="@+id/checkBoxPro2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/tvTimerFreeTrialPro2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvPrice2"
+                    app:layout_constraintStart_toStartOf="@+id/tvTimePro2"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTimePro2"
+                    tools:text="Auto renew after a 3 day free trial" />
+
+                <TextView
+                    android:id="@+id/tvPrice2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3dp"
+                    android:layout_marginEnd="@dimen/_12dp"
+                    android:paddingStart="@dimen/_10dp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="RtlSymmetry"
+                    tools:text="550,000đ" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bgClPro3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16dp"
+                android:layout_marginBottom="@dimen/_19dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@drawable/bg_check_border_buy_premium">
+
+                <CheckBox
+                    android:id="@+id/checkBoxPro3"
+                    android:layout_width="@dimen/_1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12dp"
+                    android:paddingVertical="@dimen/_18dp"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvTimePro3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12dp"
+                    android:layout_marginBottom="@dimen/_3dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto_medium"
+                    android:maxLines="1"
+                    android:text="@string/text_inapp_year"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toTopOf="@+id/tvTimerFreeTrialPro3"
+                    app:layout_constraintEnd_toStartOf="@+id/tvPrice3"
+                    app:layout_constraintStart_toEndOf="@+id/checkBoxPro3"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/tvTimerFreeTrialPro3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvPrice3"
+                    app:layout_constraintStart_toStartOf="@+id/tvTimePro3"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTimePro3"
+                    tools:text="Auto renew after a 3 day free trial" />
+
+                <TextView
+                    android:id="@+id/tvPrice3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3dp"
+                    android:layout_marginEnd="@dimen/_12dp"
+                    android:paddingStart="@dimen/_10dp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="RtlSymmetry"
+                    tools:text="550,000đ" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_desc"
@@ -154,11 +359,11 @@
             android:textSize="@dimen/text_normal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rcvSkus" />
+            app:layout_constraintTop_toBottomOf="@+id/bgClViewPackagePremium" />
 
 
         <LinearLayout
-            android:id="@+id/start_trial"
+            android:id="@+id/tvBuyPremium"
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_marginHorizontal="@dimen/margin_16"
@@ -177,7 +382,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ellipsize="middle"
-                android:text="@string/premium_start_trial"
+                android:text="@string/tv_continue_premium"
                 android:textAllCaps="true"
                 android:textAppearance="@style/App_TextAppearanceTitle2"
                 android:textColor="@color/text_gray_1" />
@@ -197,7 +402,7 @@
             android:textSize="@dimen/text_normal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/start_trial" />
+            app:layout_constraintTop_toBottomOf="@+id/tvBuyPremium" />
 
         <ProgressBar
             android:id="@+id/progress"

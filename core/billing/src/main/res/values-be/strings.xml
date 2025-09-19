@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">дзень</string>
+  <string name="core_text_inapp_days">дзён</string>
+  <string name="core_text_inapp_weeks">тыднямі</string>
+  <string name="core_text_inapp_month">Месяц</string>
+  <string name="core_text_inapp_months">месяцы</string>
+  <string name="core_text_inapp_year">год</string>
+  <string name="core_text_inapp_years">гады</string>
+  <string name="core_auto_renew_after">Аўтаматычнае падаўжэнне пасля:</string>
+  <string name="core_text_free_trial">Бясплатная пробная версія</string>
+</resources>

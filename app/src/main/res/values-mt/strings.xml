@@ -15,6 +15,8 @@
   <string name="setting_trial">Prova bla ħlas ta\' 3 ijiem</string>
   <string name="setting_upgrade">Taġġorna</string>
   <string name="ip_proxy">Servers</string>
+  <string name="ip_quick_access">Aċċess Rapidu</string>
+  <string name="ip_all">KOLLHA</string>
   <string name="setting_app_proxy">Filtru tal-App</string>
   <string name="setting_app_proxy_desc">Agħżel liema apps se jikkonnettjaw mal-Internet permezz ta\' VPN</string>
   <string name="setting_ads_block">Blokk tar-reklami</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Agħżel iż-żona tal-konnessjoni</string>
   <string name="first_fragment_label">L-Ewwel Framment</string>
   <string name="second_fragment_label">It-Tieni Framment</string>
+  <string name="start">BIDU</string>
   <string name="next">jmiss</string>
   <string name="previous">Preċedenti</string>
   <string name="vn">Il-Vjetnam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">kollox sew</string>
   <string name="common_ok">kollox sew</string>
   <string name="btn_save">ħlief</string>
+  <string name="btn_connect">Qabbad</string>
   <string name="btn_cancel">tikkanċella</string>
+  <string name="btn_exit">Ħruġ</string>
   <string name="btn_reset">Irrisettja</string>
   <string name="auto">Auto</string>
   <string name="min_60">60 Minuta</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">Agħżel VPN</string>
   <string name="dns_only">DNS biss</string>
   <string name="confirm_dns">VPN Mhux Attiv</string>
-  <string name="confirm_dns_msg">Bħalissa qed tuża DNS biss. Għal konnessjoni aktar sigura u privata, jekk jogħġbok agħżel server VPN.</string>
+  <string name="confirm_dns_msg">Ma ntgħażel l-ebda Server VPN. Jekk jogħġbok agħżel server VPN.</string>
   <string name="btn_agree">Naqbel</string>
   <string name="confirm_collect">Il-Privatezza Tiegħek, il-Kontroll Tiegħek</string>
   <string name="confirm_accept_msg">Biex tlesti l-abbonament tiegħek, din l-app tiġbor l-ID tar-Reklamar tiegħek biex tivverifika r-reġistrazzjoni, ittejjeb il-kwalità tas-servizz, u tipprevjeni attività frodulenti. Taqbel ma\' dan il-ġbir tad-dejta?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Jekk jogħġbok agħtina aktar dettalji sabiex inkunu nistgħu nidentifikaw u nsolvu l-kwistjoni tiegħek aktar malajr (mill-inqas 6 karattri)</string>
   <string name="text_thanks_feedback">Grazzi għall-feedback tiegħek</string>
   <string name="text_feedback_content">Se nirranġaw din il-kwistjoni f\'verżjoni futura. Jiddispjacini għall-inkonvenjent.</string>
+  <string name="no_available_vpn">M\'hemm l-ebda vpn b\'xejn disponibbli, jekk jogħġbok mur fl-iskrin tal-VPN u agħżel server.</string>
   <string name="msg_device_does_not_support_this_feature">Din il-karatteristika mhijiex appoġġjata għal dan l-apparat!</string>
   <string name="search_app">app tat-tiftix..</string>
+  <string name="exit_app">Toħroġ mill-app?</string>
+  <string name="exit_app_msg">Żgur li se toħroġ?</string>
   <string name="free">B\'xejn</string>
   <string name="premium">Primjum</string>
+  <string name="unlock_premium">Nisfruttaw VPN Premium</string>
+  <string name="get_premium">Ikseb premium</string>
+  <string name="watch_ads">Ara r-reklami biex tikkonnettja</string>
+  <string name="guide_1">Mess wieħed biss biex tikkonnettja.</string>
+  <string name="guide_2">Servers VPN multipli f\'pajjiżi differenti</string>
+  <string name="guide_3">Ipproteġi l-privatezza online tiegħek</string>
+  <string name="what_is_my_ip">X\'inhu l-IP tiegħi?</string>
+  <string name="ip_address">Indirizz tal-IP</string>
+  <string name="network_provider">Fornitur tan-netwerk</string>
+  <string name="location">Post</string>
+  <string name="pincode">Kodiċi PIN</string>
+  <string name="timezone">Żona tal-ħin</string>
+  <string name="duration">Tul ta\' żmien</string>
+  <string name="connect_success">Suċċess konness</string>
+  <string name="connect_report">Rapport ta\' konnessjoni</string>
+  <string name="disconnect">Skonnettja</string>
+  <string name="no_internet">Ebda Konnessjoni tal-Internet</string>
+  <string name="network_error">Ebda Konnessjoni tal-Internet</string>
 </resources>

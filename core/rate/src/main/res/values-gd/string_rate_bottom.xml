@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">An rangachadh as fheàrr dhuinn</string>
+  <string name="fb_rate_bottom_default">Tha sinn ag obair gu cruaidh gus eòlas cleachdaiche nas fheàrr a thoirt seachad. Tha sinn a’ cur luach air an lèirmheas agad.</string>
+  <string name="fb_rate_bottom_bad">O Chan eil!</string>
+  <string name="fb_rate_bottom_good">Tha gaol againn ort cuideachd!</string>
+  <string name="fb_rate_bottom_mess_bad">Feuch an fhàg thu beagan fios air ais thugainn</string>
+  <string name="fb_rate_bottom_mess_good">Tapadh leibh airson ur fios air ais</string>
+  <string name="fb_rate">Ìre</string>
+</resources>

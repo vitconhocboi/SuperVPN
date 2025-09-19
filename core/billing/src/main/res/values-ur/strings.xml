@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">دن</string>
+  <string name="core_text_inapp_days">دن</string>
+  <string name="core_text_inapp_weeks">ہفتے</string>
+  <string name="core_text_inapp_month">مہینہ</string>
+  <string name="core_text_inapp_months">مہینوں</string>
+  <string name="core_text_inapp_year">سال</string>
+  <string name="core_text_inapp_years">سال</string>
+  <string name="core_auto_renew_after">بعد از خود تجدید:</string>
+  <string name="core_text_free_trial">مفت آزمائش</string>
+</resources>

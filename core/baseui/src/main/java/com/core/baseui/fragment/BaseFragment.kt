@@ -314,6 +314,8 @@ abstract class BaseFragment<B : ViewBinding>(
         } catch (_: Exception) {
         }
         super.onDestroyView()
+        contextAds?.onDestroy()
+        contextAds = null
         Log.i(TAG, "$screenType onDestroyView")
     }
 
@@ -332,16 +334,6 @@ abstract class BaseFragment<B : ViewBinding>(
     open fun handleObservable() {}
 
     //region Ads implement
-
-    /**
-     * Tải quảng cáo banner hoặc native.
-     *
-     * @param adPlaceName Tên vị trí quảng cáo.
-     * @param oneTimeLoad Chỉ tải quảng cáo một lần nếu true.
-     */
-    fun loadBannerOrNativeAds(adPlaceName: IAdPlaceName, oneTimeLoad: Boolean) {
-        contextAds?.loadBannerOrNativeAds(adPlaceName, oneTimeLoad)
-    }
 
     /**
      * Tải quảng cáo interstitial.

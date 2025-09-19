@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">דאנק איר פֿאַר דיין אָפּשאַצונג, און ביטע געבן אונדז עטלעכע באַמערקונגען.</string>
+  <string name="fb_rate_us_good">דאַנקען דיר אַזוי פיל פֿאַר דיין אָפּשאַצונג!</string>
+  <string name="fb_rate_us_default">אויב איר אָפּשאַצן אונדז, מיר וואָלט זייער אָפּשאַצן עס און וועלן פאָרזעצן צו אַרבעטן שווער צו צושטעלן איר אַ בעסער דערפאַרונג.</string>
+  <string name="fb_feedback_title">ביטע לאָזן אונדז וויסן וועגן קיין ישוז וואָס איר האָט געפּלאָנטערט.</string>
+  <string name="fb_feedback_crash">קראַך</string>
+  <string name="fb_feedback_feature_quality">שטריך קוואַליטעט</string>
+  <string name="fb_feedback_bug">זשוק</string>
+  <string name="fb_feedback_other">אנדערע</string>
+  <string name="fb_send">שיקן</string>
+  <string name="fb_hint_feedback">ביטע צושטעלן נאָך דעטאַילס צו העלפֿן אונדז ידענטיפיצירן און סאָלווע דיין פּראָבלעם שנעלער (מינימום 6 אותיות).</string>
+  <string name="fb_text_feedback_to">באַמערקונגען</string>
+  <string name="fb_best_rate">די העכסטן ראַנג מיר קענען דערגרייכן :)</string>
+  <string name="fb_share_with">ייַנטיילן מיט</string>
+  <string name="fb_feedback_rate">קורס איצט</string>
+  <string name="fb_rate_on_google_play">באריכטן אויף Google פּלייַ</string>
+  <string name="fb_thank_for_feedback">דאנק איר פֿאַר דיין באַמערקונגען</string>
+  <string name="fb_sorry_customer">מיר וועלן אַדרעס דעם אַרויסגעבן אין אַ צוקונפֿט ווערסיע. אנטשולדיגט פֿאַר די ינקאַנוויניאַנס</string>
+  <string name="fb_common_unable_find_market">ניט געקענט געפֿינען די אַפּ אויף Google פּלייַ</string>
+  <string name="fb_thanks">אקעי</string>
+</resources>

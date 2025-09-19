@@ -14,6 +14,7 @@ internal class AppConfigModelMapper @Inject constructor(
         return AppConfig(
             isHideNavigationBar = model.isHideNavigationBar ?: false,
             isAlwaysShowIntroAndLanguageScreen = model.isAlwaysShowIntroAndLanguageScreen ?: false,
+            isAlwaysShowIntroAndLanguageScreenWithInterval = model.isAlwaysShowIntroAndLanguageScreenWithInterval ?: false,
             isEnableIntroductionScreen = model.isEnableIntroductionScreen ?: true,
             isEnableChangeLanguageScreen = model.isEnableChangeLanguageScreen ?: true,
             isEnableAppShortCut = model.isEnableAppShortCut ?: false,

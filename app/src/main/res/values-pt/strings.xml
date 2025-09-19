@@ -15,6 +15,8 @@
   <string name="setting_trial">Teste grátis por 3 dias</string>
   <string name="setting_upgrade">Atualizar</string>
   <string name="ip_proxy">Servidores</string>
+  <string name="ip_quick_access">Acesso rápido</string>
+  <string name="ip_all">TODOS</string>
   <string name="setting_app_proxy">Filtro de aplicativo</string>
   <string name="setting_app_proxy_desc">Escolha quais aplicativos se conectarão à Internet por meio de VPN</string>
   <string name="setting_ads_block">Bloco de anúncios</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Selecione a área de conexão</string>
   <string name="first_fragment_label">Primeiro Fragmento</string>
   <string name="second_fragment_label">Segundo Fragmento</string>
+  <string name="start">COMEÇAR</string>
   <string name="next">próximo</string>
   <string name="previous">Anterior</string>
   <string name="vn">Vietnã</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">OK</string>
   <string name="common_ok">OK</string>
   <string name="btn_save">Salve </string>
+  <string name="btn_connect">Conectar</string>
   <string name="btn_cancel">cancelar</string>
+  <string name="btn_exit">Saída</string>
   <string name="btn_reset">Reiniciar</string>
   <string name="auto">Auto</string>
   <string name="min_60">60 minutos</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">Selecione VPN</string>
   <string name="dns_only">Somente DNS</string>
   <string name="confirm_dns">VPN não ativa</string>
-  <string name="confirm_dns_msg">No momento, você está usando apenas DNS. Para uma conexão mais segura e privada, selecione um servidor VPN.</string>
+  <string name="confirm_dns_msg">Nenhum servidor VPN selecionado. Selecione um servidor VPN.</string>
   <string name="btn_agree">Concordar</string>
   <string name="confirm_collect">Sua privacidade, seu controle</string>
   <string name="confirm_accept_msg">Para concluir sua assinatura, este aplicativo coleta seu ID de publicidade para verificar o cadastro, aprimorar a qualidade do serviço e prevenir atividades fraudulentas. Você concorda com essa coleta de dados?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Por favor, nos dê mais detalhes para que possamos identificar e resolver seu problema mais rapidamente (pelo menos 6 caracteres)</string>
   <string name="text_thanks_feedback">Obrigado pelo seu feedback</string>
   <string name="text_feedback_content">Nós consertaremos esse problema em uma versão futura. Desculpe pela inconveniência.</string>
+  <string name="no_available_vpn">Não há VPN gratuita disponível, vá para a tela VPN e escolha um servidor.</string>
   <string name="msg_device_does_not_support_this_feature">Este recurso não é suportado neste dispositivo!</string>
   <string name="search_app">aplicativo de pesquisa..</string>
+  <string name="exit_app">Sair do aplicativo?</string>
+  <string name="exit_app_msg">Tem certeza de que deseja sair?</string>
   <string name="free">Livre</string>
   <string name="premium">Prêmio</string>
+  <string name="unlock_premium">Desbloqueie VPN Premium</string>
+  <string name="get_premium">Obtenha premium</string>
+  <string name="watch_ads">Assista aos anúncios para se conectar</string>
+  <string name="guide_1">Basta um toque para conectar.</string>
+  <string name="guide_2">Vários servidores VPN em diferentes países</string>
+  <string name="guide_3">Proteja sua privacidade online</string>
+  <string name="what_is_my_ip">Qual é meu IP?</string>
+  <string name="ip_address">Endereço IP</string>
+  <string name="network_provider">Provedor de rede</string>
+  <string name="location">Localização</string>
+  <string name="pincode">Código PIN</string>
+  <string name="timezone">Fuso horário</string>
+  <string name="duration">Duração</string>
+  <string name="connect_success">Sucesso conectado</string>
+  <string name="connect_report">Relatório de conexão</string>
+  <string name="disconnect">Desconectar</string>
+  <string name="no_internet">Sem conexão com a Internet</string>
+  <string name="network_error">Sem conexão com a Internet</string>
 </resources>

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">Pinakamahusay na rating para sa amin</string>
+  <string name="fb_rate_bottom_default">Nagsusumikap kami nang husto para makapagbigay ng mas magandang karanasan ng user. Pinahahalagahan namin ang iyong pagsusuri.</string>
+  <string name="fb_rate_bottom_bad">Ay Hindi!</string>
+  <string name="fb_rate_bottom_good">mahal ka rin namin!</string>
+  <string name="fb_rate_bottom_mess_bad">Mangyaring mag-iwan sa amin ng ilang feedback</string>
+  <string name="fb_rate_bottom_mess_good">Salamat sa iyong feedback</string>
+  <string name="fb_rate">Rate</string>
+</resources>

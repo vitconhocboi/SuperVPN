@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">jou</string>
+  <string name="core_text_inapp_days">Jou</string>
+  <string name="core_text_inapp_weeks">Semèn</string>
+  <string name="core_text_inapp_month">Mwa</string>
+  <string name="core_text_inapp_months">Mwa</string>
+  <string name="core_text_inapp_year">Ane</string>
+  <string name="core_text_inapp_years">Ane</string>
+  <string name="core_auto_renew_after">Renouvèlman Otomatik Apre:</string>
+  <string name="core_text_free_trial">Esè gratis</string>
+</resources>

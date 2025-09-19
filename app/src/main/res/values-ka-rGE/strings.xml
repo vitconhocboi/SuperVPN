@@ -15,6 +15,8 @@
   <string name="setting_trial">უფასო საცდელი პერიოდი 3 დღე</string>
   <string name="setting_upgrade">განახლება</string>
   <string name="ip_proxy">სერვერები</string>
+  <string name="ip_quick_access">სწრაფი წვდომა</string>
+  <string name="ip_all">ყველა</string>
   <string name="setting_app_proxy">აპლიკაციის ფილტრი</string>
   <string name="setting_app_proxy_desc">აირჩიეთ, რომელი აპლიკაციები დაუკავშირდება ინტერნეტს VPN-ის საშუალებით</string>
   <string name="setting_ads_block">რეკლამების ბლოკი</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">კავშირის არეალის არჩევა</string>
   <string name="first_fragment_label">პირველი ფრაგმენტი</string>
   <string name="second_fragment_label">მეორე ფრაგმენტი</string>
+  <string name="start">დაწყება</string>
   <string name="next">შემდეგი</string>
   <string name="previous">წინა</string>
   <string name="vn">Việt Nam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">კარგი</string>
   <string name="common_ok">კარგი</string>
   <string name="btn_save">გადარჩენა</string>
+  <string name="btn_connect">დაკავშირება</string>
   <string name="btn_cancel">გააუქმოს</string>
+  <string name="btn_exit">გასვლა</string>
   <string name="btn_reset">გადატვირთვა</string>
   <string name="auto">ავტო</string>
   <string name="min_60">60 წუთი</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">აირჩიეთ VPN</string>
   <string name="dns_only">მხოლოდ DNS</string>
   <string name="confirm_dns">VPN არ არის აქტიური</string>
-  <string name="confirm_dns_msg">ამჟამად მხოლოდ DNS-ს იყენებთ. უფრო უსაფრთხო და კონფიდენციალური კავშირისთვის, გთხოვთ, აირჩიოთ VPN სერვერი.</string>
+  <string name="confirm_dns_msg">VPN სერვერი არ არის არჩეული. გთხოვთ, აირჩიოთ VPN სერვერი.</string>
   <string name="btn_agree">ვეთანხმები</string>
   <string name="confirm_collect">თქვენი კონფიდენციალურობა, თქვენი კონტროლი</string>
   <string name="confirm_accept_msg">თქვენი გამოწერის დასასრულებლად, ეს აპლიკაცია აგროვებს თქვენს სარეკლამო ID-ს რეგისტრაციის დასადასტურებლად, მომსახურების ხარისხის გასაუმჯობესებლად და თაღლითური საქმიანობის თავიდან ასაცილებლად. ეთანხმებით თუ არა მონაცემთა ამ შეგროვებას?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">გთხოვთ მოგვაწოდოთ მეტი დეტალი, რათა უფრო სწრაფად დავადგინოთ და მოვაგვაროთ თქვენი პრობლემა (მინიმუმ 6 სიმბოლო)</string>
   <string name="text_thanks_feedback">გმადლობთ თქვენი გამოხმაურებისთვის</string>
   <string name="text_feedback_content">ჩვენ მოვაგვარებთ ამ პრობლემას მომავალ ვერსიაში. ბოდიშს გიხდით უხერხულობისთვის.</string>
+  <string name="no_available_vpn">უფასო VPN არ არის ხელმისაწვდომი, გთხოვთ, გადახვიდეთ VPN ეკრანზე და აირჩიოთ სერვერი.</string>
   <string name="msg_device_does_not_support_this_feature">ეს ფუნქცია ამ მოწყობილობაზე მხარდაჭერილი არ არის!</string>
   <string name="search_app">საძიებო აპლიკაცია..</string>
+  <string name="exit_app">აპლიკაციიდან გასვლა?</string>
+  <string name="exit_app_msg">დარწმუნებული ხარ, რომ გადიხარ?</string>
   <string name="free">უფასო</string>
   <string name="premium">პრემიუმ</string>
+  <string name="unlock_premium">VPN Premium-ის განბლოკვა</string>
+  <string name="get_premium">მიიღეთ პრემია</string>
+  <string name="watch_ads">უყურეთ რეკლამებს დასაკავშირებლად</string>
+  <string name="guide_1">დასაკავშირებლად მხოლოდ ერთი შეხებაა საჭირო.</string>
+  <string name="guide_2">მრავალი VPN სერვერი სხვადასხვა ქვეყანაში</string>
+  <string name="guide_3">დაიცავით თქვენი ონლაინ კონფიდენციალურობა</string>
+  <string name="what_is_my_ip">რა არის ჩემი IP?</string>
+  <string name="ip_address">IP მისამართი</string>
+  <string name="network_provider">ქსელის პროვაიდერი</string>
+  <string name="location">მდებარეობა</string>
+  <string name="pincode">PIN კოდი</string>
+  <string name="timezone">დროის სარტყელი</string>
+  <string name="duration">ხანგრძლივობა</string>
+  <string name="connect_success">დაკავშირებული წარმატება</string>
+  <string name="connect_report">დაკავშირების ანგარიში</string>
+  <string name="disconnect">გათიშვა</string>
+  <string name="no_internet">არ არის ინტერნეტ კავშირი</string>
+  <string name="network_error">არ არის ინტერნეტ კავშირი</string>
 </resources>

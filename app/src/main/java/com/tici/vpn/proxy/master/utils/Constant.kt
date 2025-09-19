@@ -12,4 +12,10 @@ object Constant {
         const val REASON_UNINSTALL = "reason_uninstall_"
     }
 
+    object ModeProTime {
+        const val WEEK_PRO = 0
+        const val MONTH_PRO = 1
+        const val YEAR_PRO = 2
+    }
+
 }

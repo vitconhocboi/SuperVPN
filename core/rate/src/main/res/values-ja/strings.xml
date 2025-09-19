@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">レビューをいただきありがとうございます。フィードバックもぜひお寄せください。</string>
+  <string name="fb_rate_us_good">レビューをありがとうございます！</string>
+  <string name="fb_rate_us_default">評価していただければ大変ありがたく思います。今後もより良い体験を提供できるよう努力してまいります。</string>
+  <string name="fb_feedback_title">何か問題がございましたらお知らせください。</string>
+  <string name="fb_feedback_crash">クラッシュ</string>
+  <string name="fb_feedback_feature_quality">機能の品質</string>
+  <string name="fb_feedback_bug">バグ</string>
+  <string name="fb_feedback_other">他の</string>
+  <string name="fb_send">送信</string>
+  <string name="fb_hint_feedback">問題をより迅速に特定して解決できるように、追加の詳細を入力してください (最低 6 文字)。</string>
+  <string name="fb_text_feedback_to">フィードバック</string>
+  <string name="fb_best_rate">私たちが達成できる最高の評価です :)</string>
+  <string name="fb_share_with">シェアする</string>
+  <string name="fb_feedback_rate">今すぐ評価</string>
+  <string name="fb_rate_on_google_play">Google Playのレビュー</string>
+  <string name="fb_thank_for_feedback">ご意見ありがとうございます</string>
+  <string name="fb_sorry_customer">この問題は今後のバージョンで対処する予定です。ご不便をおかけして申し訳ございません。</string>
+  <string name="fb_common_unable_find_market">Google Playでアプリが見つかりません</string>
+  <string name="fb_thanks">わかった</string>
+</resources>

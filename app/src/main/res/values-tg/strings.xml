@@ -15,6 +15,8 @@
   <string name="setting_trial">Озмоиши ройгон 3 рӯз</string>
   <string name="setting_upgrade">Навсозӣ</string>
   <string name="ip_proxy">Серверҳо</string>
+  <string name="ip_quick_access">Дастрасии зуд</string>
+  <string name="ip_all">ҲАМАИ</string>
   <string name="setting_app_proxy">Филтри барнома</string>
   <string name="setting_app_proxy_desc">Интихоб кунед, ки кадом барномаҳо тавассути VPN ба Интернет пайваст мешаванд</string>
   <string name="setting_ads_block">Блоки реклама</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Минтақаи пайвастшавӣ интихоб кунед</string>
   <string name="first_fragment_label">Фрагменти аввал</string>
   <string name="second_fragment_label">Фрагменти дуюм</string>
+  <string name="start">САР</string>
   <string name="next">Баъдӣ</string>
   <string name="previous">Гузашта</string>
   <string name="vn">Винт Нам</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">Хуб</string>
   <string name="common_ok">Хуб</string>
   <string name="btn_save">захира кунед</string>
+  <string name="btn_connect">Пайваст кунед</string>
   <string name="btn_cancel">бекор</string>
+  <string name="btn_exit">Баромадгоҳ</string>
   <string name="btn_reset">Бозсозӣ</string>
   <string name="auto">Авто</string>
   <string name="min_60">60 дақиқа</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">VPN-ро интихоб кунед</string>
   <string name="dns_only">Танҳо DNS</string>
   <string name="confirm_dns">VPN фаъол нест</string>
-  <string name="confirm_dns_msg">Шумо ҳоло танҳо DNS-ро истифода мебаред. Барои пайвасти бехатар ва хусусӣ, лутфан сервери VPN-ро интихоб кунед.</string>
+  <string name="confirm_dns_msg">Ягон сервери VPN интихоб нашудааст. Лутфан сервери VPN-ро интихоб кунед.</string>
   <string name="btn_agree">розӣ</string>
   <string name="confirm_collect">Махфияти шумо, назорати шумо</string>
   <string name="confirm_accept_msg">Барои анҷом додани обунаи шумо, ин барнома ID-и таблиғотии шуморо ҷамъоварӣ мекунад, то сабти номро тасдиқ кунад, сифати хидматро беҳтар кунад ва аз фаъолияти қаллобӣ пешгирӣ кунад. Оё шумо ба ин ҷамъоварии маълумот розӣ ҳастед?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Лутфан ба мо тафсилоти бештар диҳед, то мо мушкили шуморо зудтар муайян ва ҳал кунем (ҳадди ақал 6 аломат)</string>
   <string name="text_thanks_feedback">Ташаккур барои фикру мулоҳизаатон</string>
   <string name="text_feedback_content">Мо ин масъаларо дар версияи оянда ҳал хоҳем кард. Узр барои заҳмати нохоста.</string>
+  <string name="no_available_vpn">Ягон VPN-и ройгон мавҷуд нест, лутфан ба экрани VPN гузаред ва серверро интихоб кунед.</string>
   <string name="msg_device_does_not_support_this_feature">Ин хусусият барои ин дастгоҳ дастгирӣ намешавад!</string>
   <string name="search_app">барнома ҷустуҷӯ..</string>
+  <string name="exit_app">Баромади барнома?</string>
+  <string name="exit_app_msg">Оё мутмаин ҳастед, ки берун меравед?</string>
   <string name="free">Озод</string>
   <string name="premium">Премиум</string>
+  <string name="unlock_premium">VPN Premium-ро кушоед</string>
+  <string name="get_premium">Мукофот гиред</string>
+  <string name="watch_ads">Барои пайваст шудан таблиғҳоро тамошо кунед</string>
+  <string name="guide_1">Барои пайвастшавӣ танҳо як ламс.</string>
+  <string name="guide_2">Серверҳои сершумори VPN дар кишварҳои гуногун</string>
+  <string name="guide_3">Махфияти онлайни худро ҳифз кунед</string>
+  <string name="what_is_my_ip">IP ман чист?</string>
+  <string name="ip_address">Суроғаи IP</string>
+  <string name="network_provider">Провайдери шабака</string>
+  <string name="location">Ҷойгиршавӣ</string>
+  <string name="pincode">Рамзи PIN</string>
+  <string name="timezone">Минтақаи вақт</string>
+  <string name="duration">Давомнокӣ</string>
+  <string name="connect_success">Муваффақияти пайваст</string>
+  <string name="connect_report">Ҳисоботи пайвастшавӣ</string>
+  <string name="disconnect">Қатъ кунед</string>
+  <string name="no_internet">Пайвасти интернет нест</string>
+  <string name="network_error">Пайвасти интернет нест</string>
 </resources>

@@ -15,6 +15,8 @@
   <string name="setting_trial">Бясплатная пробная версія 3 дні</string>
   <string name="setting_upgrade">Абнаўленне</string>
   <string name="ip_proxy">Серверы</string>
+  <string name="ip_quick_access">Хуткі доступ</string>
+  <string name="ip_all">УСЕ</string>
   <string name="setting_app_proxy">Фільтр праграм</string>
   <string name="setting_app_proxy_desc">Выберыце, якія праграмы будуць падключацца да Інтэрнэту праз VPN</string>
   <string name="setting_ads_block">Блок рэкламы</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Выберыце вобласць падключэння</string>
   <string name="first_fragment_label">Першы фрагмент</string>
   <string name="second_fragment_label">Другі фрагмент</string>
+  <string name="start">СТАРТ</string>
   <string name="next">наступны</string>
   <string name="previous">Папярэдні</string>
   <string name="vn">В\'етнам</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">добра</string>
   <string name="common_ok">добра</string>
   <string name="btn_save">захаваць</string>
+  <string name="btn_connect">Падключыцца</string>
   <string name="btn_cancel">адмяніць</string>
+  <string name="btn_exit">Выхад</string>
   <string name="btn_reset">Скінуць</string>
   <string name="auto">Аўто</string>
   <string name="min_60">60 хвілін</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">Выберыце VPN</string>
   <string name="dns_only">Толькі DNS</string>
   <string name="confirm_dns">VPN неактыўны</string>
-  <string name="confirm_dns_msg">Вы зараз выкарыстоўваеце толькі DNS. Для больш бяспечнага і прыватнага падключэння, калі ласка, абярыце VPN-сервер.</string>
+  <string name="confirm_dns_msg">VPN-сервер не выбраны. Калі ласка, выберыце VPN-сервер.</string>
   <string name="btn_agree">Згодзен</string>
   <string name="confirm_collect">Ваша прыватнасць, ваш кантроль</string>
   <string name="confirm_accept_msg">Каб завяршыць падпіску, гэта дадатак збірае ваш рэкламны ідэнтыфікатар для праверкі рэгістрацыі, павышэння якасці абслугоўвання і прадухілення махлярскай дзейнасці. Вы згодныя на гэты збор дадзеных?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Дайце нам больш падрабязную інфармацыю, каб мы маглі хутчэй вызначыць і вырашыць вашу праблему (не менш за 6 сімвалаў)</string>
   <string name="text_thanks_feedback">Дзякуй за ваш водгук</string>
   <string name="text_feedback_content">Мы выправім гэтую праблему ў наступнай версіі. Прабачце за нязручнасці.</string>
+  <string name="no_available_vpn">Няма даступнага бясплатнага VPN, калі ласка, перайдзіце на экран VPN і абярыце сервер.</string>
   <string name="msg_device_does_not_support_this_feature">Гэтая функцыя не падтрымліваецца на гэтай прыладзе!</string>
   <string name="search_app">праграма для пошуку..</string>
+  <string name="exit_app">Выйсці з праграмы?</string>
+  <string name="exit_app_msg">Вы ўпэўненыя, што хочаце выйсці?</string>
   <string name="free">Бясплатна</string>
   <string name="premium">Прэміум</string>
+  <string name="unlock_premium">Разблакуйце прэміум-VPN</string>
+  <string name="get_premium">Атрымайце прэміум</string>
+  <string name="watch_ads">Глядзіце рэкламу, каб звязацца</string>
+  <string name="guide_1">Усяго адзін дотык для падключэння.</string>
+  <string name="guide_2">Некалькі VPN-сервераў у розных краінах</string>
+  <string name="guide_3">Абараніце сваю прыватнасць у інтэрнэце</string>
+  <string name="what_is_my_ip">Які мой IP-адрас?</string>
+  <string name="ip_address">IP-адрас</string>
+  <string name="network_provider">Пастаўшчык сеткі</string>
+  <string name="location">Месцазнаходжанне</string>
+  <string name="pincode">ПІН-код</string>
+  <string name="timezone">Гадзінны пояс</string>
+  <string name="duration">Працягласць</string>
+  <string name="connect_success">Сувязны поспех</string>
+  <string name="connect_report">Падключыць справаздачу</string>
+  <string name="disconnect">Адключыцца</string>
+  <string name="no_internet">Няма падключэння да Інтэрнэту</string>
+  <string name="network_error">Няма падключэння да Інтэрнэту</string>
 </resources>

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">An rátáil is fearr dúinn</string>
+  <string name="fb_rate_bottom_default">Táimid ag obair go dian chun eispéireas úsáideora níos fearr a sholáthar. Táimid buíoch as do léirmheas.</string>
+  <string name="fb_rate_bottom_bad">Ó Níl!</string>
+  <string name="fb_rate_bottom_good">Is breá linn tú freisin!</string>
+  <string name="fb_rate_bottom_mess_bad">Fág roinnt aiseolais dúinn le do thoil</string>
+  <string name="fb_rate_bottom_mess_good">Go raibh maith agat as do chuid aiseolais</string>
+  <string name="fb_rate">Ráta</string>
+</resources>

@@ -175,9 +175,6 @@ class BannerNativeContainerLayout @JvmOverloads constructor(
 
     fun onAdLoaded(adView: AdView) {
         try {
-            if(findOldAdView() != adView) {
-                findOldAdView()?.destroy()
-            }
             removeAllViewInChildViewIfNeed()
             val parentAdView = adView.parent
             if (parentAdView != null) {
@@ -370,55 +367,4 @@ class BannerNativeContainerLayout @JvmOverloads constructor(
         }
     }
 
-    fun pause() {
-        try {
-            when (adLoadBannerNativeUiResource) {
-                is AdLoadBannerNativeUiResource.BannerAdLoaded -> {
-                    (adLoadBannerNativeUiResource as? AdLoadBannerNativeUiResource.BannerAdLoaded)?.bannerAd?.pause()
-                }
-
-                else -> {
-
-                }
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-    }
-
-    fun resume() {
-        try {
-            when (adLoadBannerNativeUiResource) {
-                is AdLoadBannerNativeUiResource.BannerAdLoaded -> {
-                    (adLoadBannerNativeUiResource as? AdLoadBannerNativeUiResource.BannerAdLoaded)?.bannerAd?.resume()
-                }
-
-                else -> {
-
-                }
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-    }
-
-    fun destroy() {
-        try {
-            when (adLoadBannerNativeUiResource) {
-                is AdLoadBannerNativeUiResource.BannerAdLoaded -> {
-                    (adLoadBannerNativeUiResource as? AdLoadBannerNativeUiResource.BannerAdLoaded)?.bannerAd?.destroy()
-                }
-
-                is AdLoadBannerNativeUiResource.NativeAdLoaded -> {
-                    (adLoadBannerNativeUiResource as? AdLoadBannerNativeUiResource.NativeAdLoaded)?.nativeAd?.destroy()
-                }
-
-                else -> {
-
-                }
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-    }
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">感謝您的評論，請向我們提供一些回饋。</string>
+  <string name="fb_rate_us_good">非常感謝您的評論！</string>
+  <string name="fb_rate_us_default">如果您對我們進行評價，我們將不勝感激，並將繼續努力為您提供更好的體驗。</string>
+  <string name="fb_feedback_title">請讓我們知道您遇到的任何問題。</string>
+  <string name="fb_feedback_crash">碰撞</string>
+  <string name="fb_feedback_feature_quality">特徵品質</string>
+  <string name="fb_feedback_bug">漏洞</string>
+  <string name="fb_feedback_other">其他</string>
+  <string name="fb_send">傳送</string>
+  <string name="fb_hint_feedback">請提供更多詳細資訊以幫助我們更快地識別和解決您的問題（至少 6 個字元）。</string>
+  <string name="fb_text_feedback_to">回饋</string>
+  <string name="fb_best_rate">我們可以獲得的最高分:)</string>
+  <string name="fb_share_with">分享給</string>
+  <string name="fb_feedback_rate">立即評分</string>
+  <string name="fb_rate_on_google_play">Google Play 上的評論</string>
+  <string name="fb_thank_for_feedback">感謝您的回饋</string>
+  <string name="fb_sorry_customer">我們將在未來的版本中解決這個問題。帶來不便敬請諒解</string>
+  <string name="fb_common_unable_find_market">無法在 Google Play 上找到該應用程式</string>
+  <string name="fb_thanks">好的</string>
+</resources>

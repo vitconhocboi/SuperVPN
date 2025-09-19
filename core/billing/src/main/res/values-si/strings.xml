@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">දවස</string>
+  <string name="core_text_inapp_days">දින</string>
+  <string name="core_text_inapp_weeks">සති</string>
+  <string name="core_text_inapp_month">මාසය</string>
+  <string name="core_text_inapp_months">මාස</string>
+  <string name="core_text_inapp_year">වර්ෂය</string>
+  <string name="core_text_inapp_years">අවුරුදු</string>
+  <string name="core_auto_renew_after">ස්වයංක්‍රීයව අලුත් කිරීම:</string>
+  <string name="core_text_free_trial">නොමිලේ අත්හදා බැලීම</string>
+</resources>

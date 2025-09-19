@@ -15,6 +15,8 @@
   <string name="setting_trial">3 ദിവസത്തെ സൗജന്യ ട്രയൽ</string>
   <string name="setting_upgrade">അപ്‌ഗ്രേഡ് ചെയ്യുക</string>
   <string name="ip_proxy">സെർവറുകൾ</string>
+  <string name="ip_quick_access">ദ്രുത ആക്‌സസ്</string>
+  <string name="ip_all">എല്ലാം</string>
   <string name="setting_app_proxy">ആപ്പ് ഫിൽട്ടർ</string>
   <string name="setting_app_proxy_desc">VPN വഴി ഇന്റർനെറ്റിലേക്ക് കണക്റ്റ് ചെയ്യേണ്ട ആപ്പുകൾ ഏതൊക്കെയാണെന്ന് തിരഞ്ഞെടുക്കുക.</string>
   <string name="setting_ads_block">പരസ്യ ബ്ലോക്ക്</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">കണക്ഷൻ ഏരിയ തിരഞ്ഞെടുക്കുക</string>
   <string name="first_fragment_label">ആദ്യ ഭാഗം</string>
   <string name="second_fragment_label">രണ്ടാമത്തെ ശകലം</string>
+  <string name="start">ആരംഭിക്കുക</string>
   <string name="next">അടുത്തത്</string>
   <string name="previous">മുമ്പത്തേത്</string>
   <string name="vn">വിയറ്റ് നാം</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">ശരി</string>
   <string name="common_ok">ശരി</string>
   <string name="btn_save">രക്ഷിക്കും</string>
+  <string name="btn_connect">ബന്ധിപ്പിക്കുക</string>
   <string name="btn_cancel">റദ്ദാക്കുക</string>
+  <string name="btn_exit">പുറത്ത്</string>
   <string name="btn_reset">റീസെറ്റ്</string>
   <string name="auto">ഓട്ടോ</string>
   <string name="min_60">60 മിനിറ്റ്</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">VPN തിരഞ്ഞെടുക്കുക</string>
   <string name="dns_only">DNS മാത്രം</string>
   <string name="confirm_dns">VPN സജീവമല്ല</string>
-  <string name="confirm_dns_msg">നിങ്ങൾ നിലവിൽ DNS മാത്രമാണ് ഉപയോഗിക്കുന്നത്. കൂടുതൽ സുരക്ഷിതവും സ്വകാര്യവുമായ കണക്ഷന്, ദയവായി ഒരു VPN സെർവർ തിരഞ്ഞെടുക്കുക.</string>
+  <string name="confirm_dns_msg">ഒരു VPN സെർവറും തിരഞ്ഞെടുത്തിട്ടില്ല. ദയവായി ഒരു VPN സെർവർ തിരഞ്ഞെടുക്കുക.</string>
   <string name="btn_agree">സമ്മതിക്കുന്നു</string>
   <string name="confirm_collect">നിങ്ങളുടെ സ്വകാര്യത, നിങ്ങളുടെ നിയന്ത്രണം</string>
   <string name="confirm_accept_msg">നിങ്ങളുടെ സബ്‌സ്‌ക്രിപ്‌ഷൻ പൂർത്തിയാക്കുന്നതിന്, രജിസ്ട്രേഷൻ പരിശോധിക്കുന്നതിനും സേവന നിലവാരം മെച്ചപ്പെടുത്തുന്നതിനും വഞ്ചനാപരമായ പ്രവർത്തനങ്ങൾ തടയുന്നതിനും ഈ ആപ്പ് നിങ്ങളുടെ പരസ്യ ഐഡി ശേഖരിക്കുന്നു. ഈ ഡാറ്റ ശേഖരണത്തോട് നിങ്ങൾ യോജിക്കുന്നുണ്ടോ?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">നിങ്ങളുടെ പ്രശ്നം വേഗത്തിൽ തിരിച്ചറിയാനും പരിഹരിക്കാനും (കുറഞ്ഞത് 6 പ്രതീകങ്ങളെങ്കിലും) കൂടുതൽ വിശദാംശങ്ങൾ ഞങ്ങൾക്ക് നൽകുക.</string>
   <string name="text_thanks_feedback">നിങ്ങളുടെ ഫീഡ്‌ബാക്കിന് നന്ദി.</string>
   <string name="text_feedback_content">ഭാവിയിലെ ഒരു പതിപ്പിൽ ഞങ്ങൾ ഈ പ്രശ്നം പരിഹരിക്കും. അസൗകര്യത്തിന് ക്ഷമിക്കണം.</string>
+  <string name="no_available_vpn">സൗജന്യ VPN ലഭ്യമല്ല, ദയവായി VPN സ്ക്രീനിലേക്ക് പോയി ഒരു സെർവർ തിരഞ്ഞെടുക്കുക.</string>
   <string name="msg_device_does_not_support_this_feature">ഈ ഉപകരണത്തിൽ ഈ സവിശേഷത പിന്തുണയ്ക്കുന്നില്ല!</string>
   <string name="search_app">തിരയൽ ആപ്പ്..</string>
+  <string name="exit_app">ആപ്പിൽ നിന്ന് പുറത്തുകടക്കണോ?</string>
+  <string name="exit_app_msg">പുറത്തുകടക്കണമെന്ന് ഉറപ്പാണോ?</string>
   <string name="free">സൗ ജന്യം</string>
   <string name="premium">പ്രീമിയം</string>
+  <string name="unlock_premium">VPN പ്രീമിയം അൺലോക്ക് ചെയ്യുക</string>
+  <string name="get_premium">പ്രീമിയം നേടൂ</string>
+  <string name="watch_ads">കണക്റ്റുചെയ്യാൻ പരസ്യങ്ങൾ കാണുക</string>
+  <string name="guide_1">ബന്ധിപ്പിക്കാൻ ഒരു സ്പർശം മാത്രം.</string>
+  <string name="guide_2">വിവിധ രാജ്യങ്ങളിലെ ഒന്നിലധികം VPN സെർവറുകൾ</string>
+  <string name="guide_3">നിങ്ങളുടെ ഓൺലൈൻ സ്വകാര്യത സംരക്ഷിക്കുക</string>
+  <string name="what_is_my_ip">എന്റെ ഐപി എന്താണ്?</string>
+  <string name="ip_address">ഐപി വിലാസം</string>
+  <string name="network_provider">നെറ്റ്‌വർക്ക് ദാതാവ്</string>
+  <string name="location">സ്ഥലം</string>
+  <string name="pincode">പിൻ കോഡ്</string>
+  <string name="timezone">സമയ മേഖല</string>
+  <string name="duration">ദൈർഘ്യം</string>
+  <string name="connect_success">ബന്ധിപ്പിച്ച വിജയം</string>
+  <string name="connect_report">റിപ്പോർട്ട് ബന്ധിപ്പിക്കുക</string>
+  <string name="disconnect">വിച്ഛേദിക്കുക</string>
+  <string name="no_internet">ഇൻ്റർനെറ്റ് കണക്ഷനില്ല</string>
+  <string name="network_error">ഇൻ്റർനെറ്റ് കണക്ഷനില്ല</string>
 </resources>

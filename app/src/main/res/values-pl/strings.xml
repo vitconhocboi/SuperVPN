@@ -15,6 +15,8 @@
   <string name="setting_trial">Bezpłatny okres próbny 3 dni</string>
   <string name="setting_upgrade">Aktualizacja</string>
   <string name="ip_proxy">Serwery</string>
+  <string name="ip_quick_access">Szybki dostęp</string>
+  <string name="ip_all">WSZYSTKO</string>
   <string name="setting_app_proxy">Filtr aplikacji</string>
   <string name="setting_app_proxy_desc">Wybierz aplikacje, które będą łączyć się z Internetem za pośrednictwem VPN</string>
   <string name="setting_ads_block">Blokada reklam</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Wybierz obszar połączenia</string>
   <string name="first_fragment_label">Pierwszy fragment</string>
   <string name="second_fragment_label">Drugi fragment</string>
+  <string name="start">START</string>
   <string name="next">Następny</string>
   <string name="previous">Poprzedni</string>
   <string name="vn">Wietnam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">ok</string>
   <string name="common_ok">ok</string>
   <string name="btn_save">ratować</string>
+  <string name="btn_connect">Łączyć</string>
   <string name="btn_cancel">anulować</string>
+  <string name="btn_exit">Wyjście</string>
   <string name="btn_reset">Nastawić</string>
   <string name="auto">Automatyczny</string>
   <string name="min_60">60 minut</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">Wybierz VPN</string>
   <string name="dns_only">Tylko DNS</string>
   <string name="confirm_dns">VPN nieaktywny</string>
-  <string name="confirm_dns_msg">Obecnie używasz tylko DNS. Aby uzyskać bezpieczniejsze i prywatne połączenie, wybierz serwer VPN.</string>
+  <string name="confirm_dns_msg">Nie wybrano serwera VPN. Wybierz serwer VPN.</string>
   <string name="btn_agree">Zgadzać się</string>
   <string name="confirm_collect">Twoja prywatność, Twoja kontrola</string>
   <string name="confirm_accept_msg">Aby dokończyć subskrypcję, ta aplikacja zbiera Twój identyfikator reklamowy, aby zweryfikować rejestrację, poprawić jakość usług i zapobiec oszustwom. Czy wyrażasz zgodę na gromadzenie tych danych?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Podaj nam więcej szczegółów, abyśmy mogli szybciej zidentyfikować i rozwiązać Twój problem (co najmniej 6 znaków)</string>
   <string name="text_thanks_feedback">Dziękujemy za opinię</string>
   <string name="text_feedback_content">Naprawimy ten problem w przyszłej wersji. Przepraszamy za niedogodności.</string>
+  <string name="no_available_vpn">Brak dostępnej darmowej sieci VPN. Przejdź do ekranu VPN i wybierz serwer.</string>
   <string name="msg_device_does_not_support_this_feature">Ta funkcja nie jest obsługiwana na tym urządzeniu!</string>
   <string name="search_app">wyszukaj aplikację..</string>
+  <string name="exit_app">Wyjść z aplikacji?</string>
+  <string name="exit_app_msg">Czy na pewno chcesz wyjść?</string>
   <string name="free">Bezpłatny</string>
   <string name="premium">Premia</string>
+  <string name="unlock_premium">Odblokuj VPN Premium</string>
+  <string name="get_premium">Zdobądź premium</string>
+  <string name="watch_ads">Oglądaj reklamy, aby się połączyć</string>
+  <string name="guide_1">Wystarczy jedno dotknięcie, aby nawiązać połączenie.</string>
+  <string name="guide_2">Wiele serwerów VPN w różnych krajach</string>
+  <string name="guide_3">Chroń swoją prywatność w sieci</string>
+  <string name="what_is_my_ip">Jaki jest mój adres IP?</string>
+  <string name="ip_address">Adres IP</string>
+  <string name="network_provider">Dostawca sieci</string>
+  <string name="location">Lokalizacja</string>
+  <string name="pincode">Kod PIN</string>
+  <string name="timezone">Strefa czasowa</string>
+  <string name="duration">Czas trwania</string>
+  <string name="connect_success">Połączony sukces</string>
+  <string name="connect_report">Połącz raport</string>
+  <string name="disconnect">Odłączyć</string>
+  <string name="no_internet">Brak połączenia internetowego</string>
+  <string name="network_error">Brak połączenia internetowego</string>
 </resources>

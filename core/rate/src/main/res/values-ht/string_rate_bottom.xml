@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">Pi bon evalyasyon pou nou</string>
+  <string name="fb_rate_bottom_default">Nou ap travay di pou bay yon pi bon eksperyans itilizatè. Nou apresye revizyon ou.</string>
+  <string name="fb_rate_bottom_bad">Oh non!</string>
+  <string name="fb_rate_bottom_good">Nou renmen ou tou!</string>
+  <string name="fb_rate_bottom_mess_bad">Tanpri kite nou kèk fidbak</string>
+  <string name="fb_rate_bottom_mess_good">Mèsi pou fidbak ou</string>
+  <string name="fb_rate">Pousantaj</string>
+</resources>

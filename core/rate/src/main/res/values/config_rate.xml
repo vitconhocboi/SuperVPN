@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fb_text_size_feedback_title">25sp</dimen>
+    <dimen name="fb_text_size_feedback_matter">15sp</dimen>
+    <dimen name="fb_text_size_button_send">20sp</dimen>
+    <dimen name="fb_text_size_button_rate_now">20sp</dimen>
+    <dimen name="fb_text_size_title_dialog_rate">20sp</dimen>
+    <dimen name="fb_text_size_title_dialog_rate_bottom">19sp</dimen>
+    <dimen name="fb_text_size_title_dialog_thanks">20sp</dimen>
+    <dimen name="fb_text_size_title_dialog_feedback">20sp</dimen>
+    <dimen name="fb_text_size_body_dialog_thanks">16sp</dimen>
+    <dimen name="fb_star_size">54dp</dimen>
+    <dimen name="fb_star_padding">11dp</dimen>
+    <dimen name="fb_radius_submit_size">10dp</dimen>
+    <dimen name="fb_button_feedback_matter_radius">8dp</dimen>
+    <dimen name="fb_top_margin_button_submit_feedback">-70dp</dimen>
+    <dimen name="fb_bottom_padding_input">75dp</dimen>
+    <dimen name="fb_padding_bottom_feedback">30dp</dimen>
+    <dimen name="fb_text_size_best_rate">14sp</dimen>
+    <dimen name="fb_text_size_type">14sp</dimen>
+    <dimen name="fb_radius_edit_feedback">8dp</dimen>
+    <dimen name="fb_matter_marginTop">10dp</dimen>
+    <dimen name="fb_thank_feedback_title_marginTop">20dp</dimen>
+    <dimen name="fb_button_send_height">48dp</dimen>
+    <dimen name="fb_button_rate_now_height">48dp</dimen>
+    <dimen name="fb_button_thank_height">48dp</dimen>
+    <dimen name="fb_dialog_rate_bottom_height">180dp</dimen>
+    <dimen name="fb_dialog_rate_bottom_background_layout_marginTop">22dp</dimen>
+    <dimen name="fb_button_send_margin_bottom">20dp</dimen>
+    <dimen name="fb_button_send_margin_top">20dp</dimen>
+
+    <color name="fb_bg_feedback">#ffffff</color>
+    <color name="fb_feedback_title">#000000</color>
+    <color name="fb_color_button_submit_enable">#0989eb</color>
+    <color name="fb_color_button_submit_disable">#800989EB</color>
+    <color name="fb_bg_feedback_matter_selected">#D2F5FF</color>
+    <color name="fb_bg_feedback_matter_unselected">#F8F8F8</color>
+    <color name="fb_text_feedback_matter_unselected">#000000</color>
+    <color name="fb_text_feedback_matter_selected">#000000</color>
+    <color name="fb_text_color_best_rate">#2CA6FF</color>
+    <color name="fb_bg_input_feedback">#F8F8F8</color>
+    <color name="fb_text_color_text_type">#969696</color>
+
+    <bool name="fb_button_submit_feedback_inside_input">false</bool>
+    <bool name="fb_show_text_type_in_feedback">false</bool>
+    <bool name="fb_matter_feedback_flex_ui">false</bool>
+    <bool name="fb_show_header_thank_feedback">false</bool>
+
+    <drawable name="fb_bg_click_star">@drawable/fb__bg_click_star</drawable>
+    <drawable name="fb_image_header">@drawable/fb__image_header</drawable>
+    <drawable name="fb_bg_dialog_review">@drawable/fb__bg_dialog_review</drawable>
+    <drawable name="fb_bg_dialog_bottom_rate">@drawable/fb__bg_dialog_bottom_rate</drawable>
+    <drawable name="fb_bg_dialog_thanks">@drawable/fb__bg_dialog_thanks</drawable>
+    <drawable name="fb_bg_edit_feedback">@drawable/fb__bg_edit_feedback</drawable>
+    <drawable name="fb_bg_option_feedback">@drawable/fb__bg_option_feedback</drawable>
+    <drawable name="fb_bg_rate_us_button">@drawable/fb__bg_rate_us_button</drawable>
+    <drawable name="fb_ic_back_feedback">@drawable/fb__ic_back_feedback</drawable>
+    <drawable name="fb_ic_end_star">@drawable/fb__ic_end_star</drawable>
+    <drawable name="fb_ic_feedback_screen">@drawable/fb__ic_feedback_screen</drawable>
+    <drawable name="fb_ic_feedback_thank">@drawable/fb__ic_feedback_thank</drawable>
+    <drawable name="fb_ic_hand">@drawable/fb__ic_hand</drawable>
+    <drawable name="fb_ic_smile_1">@drawable/fb__ic_smile_1</drawable>
+    <drawable name="fb_ic_smile_2">@drawable/fb__ic_smile_2</drawable>
+    <drawable name="fb_ic_smile_3">@drawable/fb__ic_smile_3</drawable>
+    <drawable name="fb_ic_smile_4">@drawable/fb__ic_smile_4</drawable>
+    <drawable name="fb_ic_smile_5">@drawable/fb__ic_smile_5</drawable>
+    <drawable name="fb_ic_smile_bottom_0">@drawable/fb__ic_smile_bottom_0</drawable>
+    <drawable name="fb_ic_smile_bottom_1">@drawable/fb__ic_smile_bottom_1</drawable>
+    <drawable name="fb_ic_smile_bottom_2">@drawable/fb__ic_smile_bottom_2</drawable>
+    <drawable name="fb_ic_smile_bottom_3">@drawable/fb__ic_smile_bottom_3</drawable>
+    <drawable name="fb_ic_smile_bottom_4">@drawable/fb__ic_smile_bottom_4</drawable>
+    <drawable name="fb_ic_smile_bottom_5">@drawable/fb__ic_smile_bottom_5</drawable>
+    <drawable name="fb_ic_oval">@drawable/fb__ic_oval</drawable>
+    <drawable name="fb_ic_arrow">@drawable/fb__ic_arrow</drawable>
+    <drawable name="fb_ic_star">@drawable/fb__ic_star</drawable>
+    <drawable name="fb_ic_star_fill">@drawable/fb__ic_star_fill</drawable>
+    <drawable name="fb_ic_star_selector">@drawable/fb__ic_star_selector</drawable>
+
+    <color name="fb_color_oval">#2AA4EA</color>
+    <color name="fb_color_arrow">#2AA4EA</color>
+
+    <string name="fb_email_feedback" translatable="false">kunkunnapps@gmail.com</string>
+
+
+</resources>

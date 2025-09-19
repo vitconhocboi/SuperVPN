@@ -4,16 +4,15 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.common.baseui.BaseAppConfig
-import com.tici.vpn.proxy.master.databinding.AdapterProxyGroupBinding
-import com.tici.vpn.proxy.master.utils.Utils
 import com.common.baseui.adapter.BaseAdapter
 import com.common.baseui.adapter.BaseViewHolder
 import com.common.baseui.extension.context
-import com.common.baseui.extension.setOnClickNoDoubleClick
+import com.core.preference.PurchasePreferences
+import com.tici.vpn.proxy.master.databinding.AdapterProxyGroupBinding
+import com.tici.vpn.proxy.master.utils.Utils
 import javax.inject.Inject
 
-class ProxyGroupAdapter @Inject constructor() :
+class ProxyGroupAdapter @Inject constructor(val purchasePreferences: PurchasePreferences) :
     BaseAdapter<ProxyGroupUI, BaseViewHolder<ProxyGroupUI>>() {
 
     override fun onCreateViewHolder(
@@ -40,7 +39,7 @@ class ProxyGroupAdapter @Inject constructor() :
                 tvTitle.text =
                     getStringSafely(context = context, name = data.country) ?: "undefined"
 
-                if (data.type == "premium" && !BaseAppConfig.isSub) {
+                if (data.type == "premium" && !purchasePreferences.isUserVip()) {
                     icCrown.visibility = View.VISIBLE
                 } else {
                     icCrown.visibility = View.INVISIBLE

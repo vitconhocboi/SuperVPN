@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">გმადლობთ თქვენი მიმოხილვისთვის და გთხოვთ მოგვაწოდოთ გარკვეული გამოხმაურება.</string>
+  <string name="fb_rate_us_good">დიდი მადლობა თქვენი მიმოხილვისთვის!</string>
+  <string name="fb_rate_us_default">თუ შეგვაფასებთ, ჩვენ დიდად ვაფასებთ ამას და გავაგრძელებთ მუშაობას, რათა მოგაწოდოთ უკეთესი გამოცდილება.</string>
+  <string name="fb_feedback_title">გთხოვთ შეგვატყობინოთ ნებისმიერი პრობლემის შესახებ, რომელიც შეგხვდათ.</string>
+  <string name="fb_feedback_crash">ავარია</string>
+  <string name="fb_feedback_feature_quality">მახასიათებლის ხარისხი</string>
+  <string name="fb_feedback_bug">ბაგი</string>
+  <string name="fb_feedback_other">სხვა</string>
+  <string name="fb_send">გაგზავნა</string>
+  <string name="fb_hint_feedback">გთხოვთ, მოგვაწოდოთ დამატებითი დეტალები, რათა დაგვეხმაროთ თქვენი პრობლემის უფრო სწრაფად ამოცნობასა და მოგვარებაში (მინიმუმ 6 სიმბოლო).</string>
+  <string name="fb_text_feedback_to">კავშირი</string>
+  <string name="fb_best_rate">ყველაზე მაღალი შეფასება, რისი მიღწევაც შეგვიძლია :)</string>
+  <string name="fb_share_with">გაზიარება</string>
+  <string name="fb_feedback_rate">შეაფასეთ ახლა</string>
+  <string name="fb_rate_on_google_play">მიმოხილვები Google Play-ზე</string>
+  <string name="fb_thank_for_feedback">გმადლობთ გამოხმაურებისთვის</string>
+  <string name="fb_sorry_customer">ამ საკითხს მომავალ ვერსიაში განვიხილავთ. ბოდიშს გიხდით უხერხულობისთვის</string>
+  <string name="fb_common_unable_find_market">Google Play-ზე აპის პოვნა შეუძლებელია</string>
+  <string name="fb_thanks">კარგი</string>
+</resources>

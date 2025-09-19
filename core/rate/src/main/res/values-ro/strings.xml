@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Vă mulțumim pentru recenzie și vă rugăm să ne oferiți câteva feedback.</string>
+  <string name="fb_rate_us_good">Vă mulțumesc mult pentru recenzie!</string>
+  <string name="fb_rate_us_default">Dacă ne evaluați, am aprecia foarte mult acest lucru și vom continua să muncim din greu pentru a vă oferi o experiență mai bună.</string>
+  <string name="fb_feedback_title">Vă rugăm să ne informați despre orice probleme pe care le-ați întâlnit.</string>
+  <string name="fb_feedback_crash">Prăbușire</string>
+  <string name="fb_feedback_feature_quality">Calitate caracteristică</string>
+  <string name="fb_feedback_bug">Bug</string>
+  <string name="fb_feedback_other">Alte</string>
+  <string name="fb_send">Trimite</string>
+  <string name="fb_hint_feedback">Vă rugăm să furnizați detalii suplimentare pentru a ne ajuta să identificăm și să vă rezolvăm problema mai rapid (minimum 6 caractere).</string>
+  <string name="fb_text_feedback_to">Feedback</string>
+  <string name="fb_best_rate">Cea mai mare evaluare pe care o putem obține :)</string>
+  <string name="fb_share_with">Distribuie cu</string>
+  <string name="fb_feedback_rate">Evaluați acum</string>
+  <string name="fb_rate_on_google_play">Recenzii pe Google Play</string>
+  <string name="fb_thank_for_feedback">Vă mulțumim pentru feedback</string>
+  <string name="fb_sorry_customer">Vom aborda această problemă într-o versiune viitoare. Îmi pare rău pentru neplăcerile create</string>
+  <string name="fb_common_unable_find_market">Imposibil de găsit aplicația pe Google Play</string>
+  <string name="fb_thanks">O.K</string>
+</resources>

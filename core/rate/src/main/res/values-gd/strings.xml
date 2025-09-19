@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Tapadh leibh airson do lèirmheas, agus feuch an toir thu dhuinn beagan fios air ais.</string>
+  <string name="fb_rate_us_good">Mòran taing airson do lèirmheas!</string>
+  <string name="fb_rate_us_default">Ma tha thu gam meas, bhitheamaid gu mòr an sàs ann agus cumaidh sinn oirnn ag obair gu cruaidh gus eòlas nas fheàrr a thoirt dhut.</string>
+  <string name="fb_feedback_title">Feuch an leig thu fios dhuinn mu chùisean sam bith a choinnich thu.</string>
+  <string name="fb_feedback_crash">Tuiteam</string>
+  <string name="fb_feedback_feature_quality">Càileachd feart</string>
+  <string name="fb_feedback_bug">Bug</string>
+  <string name="fb_feedback_other">Eile</string>
+  <string name="fb_send">Seol</string>
+  <string name="fb_hint_feedback">Feuch an toir thu seachad fiosrachadh a bharrachd gus ar cuideachadh le bhith ag aithneachadh agus a’ fuasgladh na cùise agad nas luaithe (caractaran 6 aig a’ char as lugha).</string>
+  <string name="fb_text_feedback_to">Fios air ais</string>
+  <string name="fb_best_rate">An ìre as àirde as urrainn dhuinn a choileanadh :)</string>
+  <string name="fb_share_with">Roinn le</string>
+  <string name="fb_feedback_rate">Ìre a-nis</string>
+  <string name="fb_rate_on_google_play">Lèirmheasan air Google Play</string>
+  <string name="fb_thank_for_feedback">Tapadh leibh airson ur fios air ais</string>
+  <string name="fb_sorry_customer">Bheir sinn aghaidh air a’ chùis seo ann an dreach san àm ri teachd. Duilich airson an mì-ghoireasachd</string>
+  <string name="fb_common_unable_find_market">Cha deach an aplacaid a lorg air Google Play</string>
+  <string name="fb_thanks">ceart gu leòr</string>
+</resources>

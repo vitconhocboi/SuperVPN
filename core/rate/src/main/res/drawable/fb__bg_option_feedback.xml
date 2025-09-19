@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple android:color="#9AC2C2C2"  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <selector>
+            <item android:state_selected="true">
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/fb_bg_feedback_matter_selected"/>
+                    <corners android:radius="@dimen/fb_button_feedback_matter_radius"/>
+                </shape>
+            </item>
+
+            <item android:state_selected="false">
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/fb_bg_feedback_matter_unselected"/>
+                    <corners android:radius="@dimen/fb_button_feedback_matter_radius"/>
+                </shape>
+            </item>
+        </selector>
+    </item>
+
+</ripple>

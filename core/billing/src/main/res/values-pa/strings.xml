@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">ਦਿਨ</string>
+  <string name="core_text_inapp_days">ਦਿਨ</string>
+  <string name="core_text_inapp_weeks">ਹਫ਼ਤੇ</string>
+  <string name="core_text_inapp_month">ਮਹੀਨਾ</string>
+  <string name="core_text_inapp_months">ਮਹੀਨੇ</string>
+  <string name="core_text_inapp_year">ਸਾਲ</string>
+  <string name="core_text_inapp_years">ਸਾਲ</string>
+  <string name="core_auto_renew_after">ਇਸ ਤੋਂ ਬਾਅਦ ਆਟੋ ਰੀਨਿਊ:</string>
+  <string name="core_text_free_trial">ਮੁਫ਼ਤ ਅਜ਼ਮਾਇਸ਼</string>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Ташаккур ба шумо барои баррасии шумо, ва лутфан ба мо каме фикру мулоҳиза пешниҳод кунед.</string>
+  <string name="fb_rate_us_good">Ташаккури зиёд барои баррасии шумо!</string>
+  <string name="fb_rate_us_default">Агар шумо ба мо баҳо диҳед, мо онро хеле қадр хоҳем кард ва кӯшиш мекунем, ки ба шумо таҷрибаи беҳтареро пешкаш кунем.</string>
+  <string name="fb_feedback_title">Лутфан дар бораи ҳама гуна мушкилоте, ки шумо дучор шудаед, ба мо хабар диҳед.</string>
+  <string name="fb_feedback_crash">Суқути</string>
+  <string name="fb_feedback_feature_quality">Сифати хусусият</string>
+  <string name="fb_feedback_bug">хато</string>
+  <string name="fb_feedback_other">Дигар</string>
+  <string name="fb_send">Ирсол</string>
+  <string name="fb_hint_feedback">Лутфан тафсилоти иловагиро пешниҳод кунед, то ба мо кӯмак кунад, ки мушкили шуморо зудтар муайян ва ҳал кунад (ҳадди ақал 6 аломат).</string>
+  <string name="fb_text_feedback_to">Алоқа</string>
+  <string name="fb_best_rate">Баландтарин рейтинге, ки мо метавонем ба даст орем :)</string>
+  <string name="fb_share_with">Мубодила бо</string>
+  <string name="fb_feedback_rate">Ҳоло баҳо диҳед</string>
+  <string name="fb_rate_on_google_play">Баррасиҳо дар Google Play</string>
+  <string name="fb_thank_for_feedback">Ташаккур ба шумо барои фикру мулоҳизаатон</string>
+  <string name="fb_sorry_customer">Мо ин масъаларо дар версияи оянда баррасӣ хоҳем кард. Узр барои заҳмати нохоста</string>
+  <string name="fb_common_unable_find_market">Дар Google Play барнома пайдо карда натавонист</string>
+  <string name="fb_thanks">Хуб</string>
+</resources>

@@ -15,6 +15,8 @@
   <string name="setting_trial">Jaribio la bure kwa siku 3</string>
   <string name="setting_upgrade">Boresha</string>
   <string name="ip_proxy">Seva</string>
+  <string name="ip_quick_access">Ufikiaji wa Haraka</string>
+  <string name="ip_all">YOTE</string>
   <string name="setting_app_proxy">Kichujio cha Programu</string>
   <string name="setting_app_proxy_desc">Chagua ni programu zipi zitaunganishwa kwenye Mtandao kupitia VPN</string>
   <string name="setting_ads_block">Kizuizi cha matangazo</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Chagua eneo la uunganisho</string>
   <string name="first_fragment_label">Sehemu ya Kwanza</string>
   <string name="second_fragment_label">Sehemu ya Pili</string>
+  <string name="start">ANZA</string>
   <string name="next">ijayo</string>
   <string name="previous">Iliyotangulia</string>
   <string name="vn">Việt Nam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">sawa</string>
   <string name="common_ok">sawa</string>
   <string name="btn_save">kuokoa</string>
+  <string name="btn_connect">Unganisha</string>
   <string name="btn_cancel">ghairi</string>
+  <string name="btn_exit">Utgång</string>
   <string name="btn_reset">Weka upya</string>
   <string name="auto">Otomatiki</string>
   <string name="min_60">Dakika 60</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">Chagua VPN</string>
   <string name="dns_only">DNS pekee</string>
   <string name="confirm_dns">VPN Haitumiki</string>
-  <string name="confirm_dns_msg">Kwa sasa unatumia DNS pekee. Kwa muunganisho salama zaidi na wa faragha, tafadhali chagua seva ya VPN.</string>
+  <string name="confirm_dns_msg">Hakuna Seva ya VPN iliyochaguliwa. Tafadhali chagua seva ya VPN.</string>
   <string name="btn_agree">Kubali</string>
   <string name="confirm_collect">Faragha Yako, Udhibiti Wako</string>
   <string name="confirm_accept_msg">Ili kukamilisha usajili wako, programu hii hukusanya Kitambulisho chako cha Mtangazaji ili kuthibitisha usajili, kuboresha ubora wa huduma na kuzuia shughuli za ulaghai. Je, unakubali ukusanyaji huu wa data?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Tafadhali tupe maelezo zaidi ili tuweze kutambua na kutatua suala lako haraka (angalau vibambo 6)</string>
   <string name="text_thanks_feedback">Asante kwa maoni yako</string>
   <string name="text_feedback_content">Tutarekebisha suala hili katika toleo la baadaye. Pole kwa usumbufu.</string>
+  <string name="no_available_vpn">Hakuna vpn ya bure inayopatikana, tafadhali nenda kwenye skrini ya VPN na uchague seva.</string>
   <string name="msg_device_does_not_support_this_feature">Kipengele hiki hakitumiki kwa kifaa hiki!</string>
   <string name="search_app">tafuta programu..</string>
+  <string name="exit_app">Ungependa kufunga programu?</string>
+  <string name="exit_app_msg">Je, una uhakika wa kuondoka?</string>
   <string name="free">Bure</string>
   <string name="premium">Premium</string>
+  <string name="unlock_premium">Fungua VPN Premium</string>
+  <string name="get_premium">Pata malipo</string>
+  <string name="watch_ads">Tazama matangazo ili Kuunganisha</string>
+  <string name="guide_1">Mguso mmoja tu wa kuunganisha.</string>
+  <string name="guide_2">Seva nyingi za VPN katika nchi tofauti</string>
+  <string name="guide_3">Linda faragha yako mtandaoni</string>
+  <string name="what_is_my_ip">IP yangu ni nini?</string>
+  <string name="ip_address">Anwani ya IP</string>
+  <string name="network_provider">Mtoa huduma wa mtandao</string>
+  <string name="location">Mahali</string>
+  <string name="pincode">Msimbo wa PIN</string>
+  <string name="timezone">Saa za eneo</string>
+  <string name="duration">Muda</string>
+  <string name="connect_success">Mafanikio yaliyounganishwa</string>
+  <string name="connect_report">Unganisha ripoti</string>
+  <string name="disconnect">Tenganisha</string>
+  <string name="no_internet">Hakuna Muunganisho wa Mtandao</string>
+  <string name="network_error">Hakuna Muunganisho wa Mtandao</string>
 </resources>

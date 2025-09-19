@@ -48,7 +48,7 @@ abstract class ContextAds(
     private val _timeWaitRetryOnContext by lazy {
         max(2000, remoteConfigRepository.getRewardedAdConfig().timeWaitRetryOnContext)
     }
-    private var dialogLoadingAds: LoadingDialogFragment? = null
+    private var dialogLoadingAds: LoadingDialogFragment ?= null
 
     private fun showDialogLoadingAds() {
         if (!fragmentManager.isStateSaved) {
@@ -62,7 +62,6 @@ abstract class ContextAds(
             dialogLoadingAds?.safeDismiss()
         }
     }
-
     private var adBannerOrNativeAll = mutableSetOf<IAdPlaceName>()
     private var adBannerOrNativePreload = mutableSetOf<IAdPlaceName>()
     private var adInterstitialLazyLoad = mutableSetOf<IAdPlaceName>()
@@ -82,12 +81,34 @@ abstract class ContextAds(
     init {
         adBannerOrNativePreload.addAll(initPreloadBannerNativeAdPlaceName)
         adBannerOrNativeAll.addAll(initBannerNativeAdPlaceName)
-        adBannerOrNativeAll.forEach {
-            Log.d(TAG, ": name = " + it.name)
-        }
         adInterstitialAll.addAll(initInterstitialAdPlaceName)
         adRewardAll.addAll(initRewardAdPlaceName)
         handleObservableAds()
+    }
+
+    fun onDestroy() {
+        runCatching { dismissDialogLoadingAds() }
+        if (!fragmentManager.isStateSaved) {
+            fragmentManager.fragments.forEach { f ->
+                when (f) {
+                    is LoadingDialogFragment -> runCatching { f.dismissAllowingStateLoss() }
+                    is RetryLoadRewardBottomSheetFragment -> runCatching { f.dismissAllowingStateLoss() }
+                    is RequireTurnOnNetworkBottomSheetFragment -> runCatching { f.dismissAllowingStateLoss() }
+                }
+            }
+        }
+        listHandleFullAds.clear()
+        listHandleRewardAds.clear()
+        adBannerOrNativeAll.clear()
+        adBannerOrNativePreload.clear()
+        adInterstitialLazyLoad.clear()
+        adInterstitialAll.clear()
+        adRewardLazyLoad.clear()
+        adRewardAll.clear()
+        adRewardWithoutAutoRetry.clear()
+        _retryLoadReward = 0
+        _isDisableAdDueManyClickFlow = null
+        activityRef.clear()
     }
 
     fun handleObservableAds() {
@@ -127,9 +148,9 @@ abstract class ContextAds(
 
     }
 
-    fun loadBannerOrNativeAds(adPlaceName: IAdPlaceName, oneTimeLoad: Boolean) {
+    fun loadBannerOrNativeAds(adPlaceName: IAdPlaceName, oneTimeLoad: Boolean, isReload: Boolean) {
         activityRef.get()?.let { activity ->
-            adsManager.loadBannerNativeAd(activity, adPlaceName, isPreload = false, identifier)
+            adsManager.loadBannerNativeAd(activity, adPlaceName, isPreload = false, isReload, identifier)
             if (!oneTimeLoad) {
                 adBannerOrNativeAll.add(adPlaceName)
             }
@@ -181,11 +202,11 @@ abstract class ContextAds(
     private fun preloadBannerNative() {
         activityRef.get()?.let { activity ->
             adBannerOrNativeAll.forEach {
-                adsManager.loadBannerNativeAd(activity, it, false, identifier)
+                adsManager.loadBannerNativeAd(activity, it, false, isReload = false, identifier)
             }
 
             adBannerOrNativePreload.forEach {
-                adsManager.loadBannerNativeAd(activity, it, true, identifier)
+                adsManager.loadBannerNativeAd(activity, it, true, isReload = false, identifier)
             }
         }
     }
@@ -313,7 +334,7 @@ abstract class ContextAds(
         onHandleCompleted: ((isShown: Boolean, isEarnedReward: Boolean) -> Unit),
         autoRetry: Boolean = true
     ) {
-        if (!autoRetry) {
+        if(!autoRetry) {
             adRewardWithoutAutoRetry.add(adPlaceName)
         } else {
             adRewardWithoutAutoRetry.remove(adPlaceName)
@@ -366,7 +387,6 @@ fun FragmentActivity.runWhenResumed(block: () -> Unit) {
                     }
                 }
             }
-
             override fun onDestroy(owner: LifecycleOwner) {
                 activity.lifecycle.removeObserver(this)
             }

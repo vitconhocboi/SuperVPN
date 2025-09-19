@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="core_text_inapp_day">ದಿನ</string>
+  <string name="core_text_inapp_days">ದಿನಗಳು</string>
+  <string name="core_text_inapp_weeks">ವಾರಗಳು</string>
+  <string name="core_text_inapp_month">ತಿಂಗಳು</string>
+  <string name="core_text_inapp_months">ತಿಂಗಳುಗಳು</string>
+  <string name="core_text_inapp_year">ವರ್ಷ</string>
+  <string name="core_text_inapp_years">ವರ್ಷಗಳು</string>
+  <string name="core_auto_renew_after">ನಂತರ ಸ್ವಯಂ ನವೀಕರಣ:</string>
+  <string name="core_text_free_trial">ಉಚಿತ ಪ್ರಯೋಗ</string>
+</resources>

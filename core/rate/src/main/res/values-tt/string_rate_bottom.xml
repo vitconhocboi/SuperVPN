@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">Безнең өчен иң яхшы рейтинг</string>
+  <string name="fb_rate_bottom_default">Яхшырак кулланучы тәҗрибәсе белән тәэмин итү өчен без бик тырышабыз. Сезнең күзәтүегез өчен без бик рәхмәтле.</string>
+  <string name="fb_rate_bottom_bad">Әйе!</string>
+  <string name="fb_rate_bottom_good">Без дә сине яратабыз!</string>
+  <string name="fb_rate_bottom_mess_bad">Зинһар, безгә кире кайтыгыз</string>
+  <string name="fb_rate_bottom_mess_good">Фикерләрегез өчен рәхмәт</string>
+  <string name="fb_rate">Ставка</string>
+</resources>

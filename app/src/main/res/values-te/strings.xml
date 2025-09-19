@@ -15,6 +15,8 @@
   <string name="setting_trial">ఉచిత ట్రయల్ 3 రోజులు</string>
   <string name="setting_upgrade">అప్‌గ్రేడ్ చేయండి</string>
   <string name="ip_proxy">సర్వర్లు</string>
+  <string name="ip_quick_access">త్వరిత యాక్సెస్</string>
+  <string name="ip_all">అన్ని</string>
   <string name="setting_app_proxy">యాప్ ఫిల్టర్</string>
   <string name="setting_app_proxy_desc">VPN ద్వారా ఇంటర్నెట్‌కు కనెక్ట్ అయ్యే యాప్‌లను ఎంచుకోండి</string>
   <string name="setting_ads_block">ప్రకటనల బ్లాక్</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">కనెక్షన్ ప్రాంతాన్ని ఎంచుకోండి</string>
   <string name="first_fragment_label">మొదటి భాగం</string>
   <string name="second_fragment_label">రెండవ భాగం</string>
+  <string name="start">START</string>
   <string name="next">తదుపరి</string>
   <string name="previous">మునుపటి</string>
   <string name="vn">వియత్నాం</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">అలాగే</string>
   <string name="common_ok">అలాగే</string>
   <string name="btn_save">సేవ్</string>
+  <string name="btn_connect">కనెక్ట్</string>
   <string name="btn_cancel">రద్దు చేయండి</string>
+  <string name="btn_exit">నిష్క్రమించు</string>
   <string name="btn_reset">తిరిగి నిర్దారించు</string>
   <string name="auto">ఆటో</string>
   <string name="min_60">60 నిమిషాలు</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">VPN ని ఎంచుకోండి</string>
   <string name="dns_only">DNS మాత్రమే</string>
   <string name="confirm_dns">VPN యాక్టివ్‌గా లేదు</string>
-  <string name="confirm_dns_msg">మీరు ప్రస్తుతం DNS మాత్రమే ఉపయోగిస్తున్నారు. మరింత సురక్షితమైన మరియు ప్రైవేట్ కనెక్షన్ కోసం, దయచేసి VPN సర్వర్‌ను ఎంచుకోండి.</string>
+  <string name="confirm_dns_msg">VPN సర్వర్ ఎంచుకోబడలేదు. దయచేసి VPN సర్వర్‌ను ఎంచుకోండి.</string>
   <string name="btn_agree">అంగీకరిస్తున్నారు</string>
   <string name="confirm_collect">మీ గోప్యత, మీ నియంత్రణ</string>
   <string name="confirm_accept_msg">మీ సభ్యత్వాన్ని పూర్తి చేయడానికి, రిజిస్ట్రేషన్‌ను ధృవీకరించడానికి, సేవా నాణ్యతను మెరుగుపరచడానికి మరియు మోసపూరిత కార్యకలాపాలను నిరోధించడానికి ఈ యాప్ మీ ప్రకటన IDని సేకరిస్తుంది. మీరు ఈ డేటా సేకరణకు అంగీకరిస్తున్నారా?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">దయచేసి మాకు మరిన్ని వివరాలు ఇవ్వండి, తద్వారా మేము మీ సమస్యను వేగంగా గుర్తించి పరిష్కరించగలము (కనీసం 6 అక్షరాలు)</string>
   <string name="text_thanks_feedback">మీ అభిప్రాయానికి ధన్యవాదాలు.</string>
   <string name="text_feedback_content">మేము ఈ సమస్యను భవిష్యత్తు వెర్షన్‌లో పరిష్కరిస్తాము. అసౌకర్యానికి క్షమించండి.</string>
+  <string name="no_available_vpn">ఉచిత VPN అందుబాటులో లేదు, దయచేసి VPN స్క్రీన్‌కి వెళ్లి సర్వర్‌ను ఎంచుకోండి.</string>
   <string name="msg_device_does_not_support_this_feature">ఈ పరికరంలో ఈ ఫీచర్‌కు మద్దతు లేదు!</string>
   <string name="search_app">శోధన యాప్..</string>
+  <string name="exit_app">యాప్ నుండి నిష్క్రమించాలా?</string>
+  <string name="exit_app_msg">మీరు ఖచ్చితంగా నిష్క్రమించాలనుకుంటున్నారా?</string>
   <string name="free">ఉచితం</string>
   <string name="premium">ప్రీమియం</string>
+  <string name="unlock_premium">VPN ప్రీమియంను అన్‌లాక్ చేయండి</string>
+  <string name="get_premium">ప్రీమియం పొందండి</string>
+  <string name="watch_ads">కనెక్ట్ అవ్వడానికి ప్రకటనలను చూడండి</string>
+  <string name="guide_1">కనెక్ట్ అవ్వడానికి ఒక్క టచ్ చాలు.</string>
+  <string name="guide_2">వివిధ దేశాలలో బహుళ VPN సర్వర్లు</string>
+  <string name="guide_3">మీ ఆన్‌లైన్ గోప్యతను రక్షించండి</string>
+  <string name="what_is_my_ip">నా ఐపీ ఏమిటి?</string>
+  <string name="ip_address">IP చిరునామా</string>
+  <string name="network_provider">నెట్‌వర్క్ ప్రొవైడర్</string>
+  <string name="location">స్థానం</string>
+  <string name="pincode">పిన్ కోడ్</string>
+  <string name="timezone">సమయ మండలం</string>
+  <string name="duration">వ్యవధి</string>
+  <string name="connect_success">కనెక్ట్ చేయబడిన విజయం</string>
+  <string name="connect_report">నివేదికను కనెక్ట్ చేయండి</string>
+  <string name="disconnect">డిస్‌కనెక్ట్ చేయండి</string>
+  <string name="no_internet">ఇంటర్నెట్ కనెక్షన్ లేదు</string>
+  <string name="network_error">ఇంటర్నెట్ కనెక్షన్ లేదు</string>
 </resources>

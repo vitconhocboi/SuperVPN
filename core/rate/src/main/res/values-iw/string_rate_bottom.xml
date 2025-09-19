@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">הדירוג הטוב ביותר עבורנו</string>
+  <string name="fb_rate_bottom_default">אנחנו עובדים קשה כדי לספק חווית משתמש טובה יותר. אנו מעריכים את הביקורת שלך.</string>
+  <string name="fb_rate_bottom_bad">הו לא!</string>
+  <string name="fb_rate_bottom_good">גם אנחנו אוהבים אותך!</string>
+  <string name="fb_rate_bottom_mess_bad">אנא השאר לנו משוב</string>
+  <string name="fb_rate_bottom_mess_good">תודה על המשוב שלך</string>
+  <string name="fb_rate">קֶצֶב</string>
+</resources>

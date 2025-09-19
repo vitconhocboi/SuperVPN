@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">Beste beoordeling voor ons</string>
+  <string name="fb_rate_bottom_default">We werken hard aan een betere gebruikerservaring. We stellen uw beoordeling op prijs.</string>
+  <string name="fb_rate_bottom_bad">Oh nee!</string>
+  <string name="fb_rate_bottom_good">Wij houden ook van jou!</string>
+  <string name="fb_rate_bottom_mess_bad">Laat ons alstublieft wat feedback achter</string>
+  <string name="fb_rate_bottom_mess_good">Bedankt voor je feedback</string>
+  <string name="fb_rate">Tarief</string>
+</resources>

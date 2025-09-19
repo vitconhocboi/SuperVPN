@@ -15,6 +15,8 @@
   <string name="setting_trial">Gratis provperiod i 3 dagar</string>
   <string name="setting_upgrade">Uppgradera</string>
   <string name="ip_proxy">Servrar</string>
+  <string name="ip_quick_access">Snabbåtkomst</string>
+  <string name="ip_all">ALLA</string>
   <string name="setting_app_proxy">Appfilter</string>
   <string name="setting_app_proxy_desc">Välj vilka appar som ska ansluta till internet via VPN</string>
   <string name="setting_ads_block">Annonsblock</string>
@@ -27,6 +29,7 @@
   <string name="select_connection_area">Välj anslutningsområde</string>
   <string name="first_fragment_label">Första fragmentet</string>
   <string name="second_fragment_label">Andra fragmentet</string>
+  <string name="start">START</string>
   <string name="next">nästa</string>
   <string name="previous">Tidigare</string>
   <string name="vn">Việt Nam</string>
@@ -105,7 +108,9 @@
   <string name="btn_ok">ok</string>
   <string name="common_ok">ok</string>
   <string name="btn_save">spara</string>
+  <string name="btn_connect">Ansluta</string>
   <string name="btn_cancel">Avbryt</string>
+  <string name="btn_exit">Utgång</string>
   <string name="btn_reset">Återställa</string>
   <string name="auto">Bil</string>
   <string name="min_60">60 minuter</string>
@@ -124,7 +129,7 @@
   <string name="select_vpn">Välj VPN</string>
   <string name="dns_only">Endast DNS</string>
   <string name="confirm_dns">VPN inte aktivt</string>
-  <string name="confirm_dns_msg">Du använder för närvarande endast DNS. För en säkrare och mer privat anslutning, vänligen välj en VPN-server.</string>
+  <string name="confirm_dns_msg">Ingen VPN-server vald. Välj en VPN-server.</string>
   <string name="btn_agree">Komma överens</string>
   <string name="confirm_collect">Din integritet, din kontroll</string>
   <string name="confirm_accept_msg">För att slutföra din prenumeration samlar den här appen in ditt annons-ID för att verifiera registreringen, förbättra tjänstekvaliteten och förhindra bedrägerier. Godkänner du denna datainsamling?</string>
@@ -175,8 +180,29 @@
   <string name="text_feedback_hint">Ge oss mer information så att vi kan identifiera och lösa ditt problem snabbare (minst 6 tecken)</string>
   <string name="text_thanks_feedback">Tack för din feedback</string>
   <string name="text_feedback_content">Vi kommer att åtgärda det här problemet i en framtida version. Ursäkta besväret.</string>
+  <string name="no_available_vpn">Det finns ingen gratis VPN tillgänglig, gå till VPN-skärmen och välj en server.</string>
   <string name="msg_device_does_not_support_this_feature">Den här funktionen stöds inte för den här enheten!</string>
   <string name="search_app">sök-appen..</string>
+  <string name="exit_app">Avsluta appen?</string>
+  <string name="exit_app_msg">Är du säker på att du vill avsluta?</string>
   <string name="free">Gratis</string>
   <string name="premium">Premie</string>
+  <string name="unlock_premium">Lås upp VPN Premium</string>
+  <string name="get_premium">Få premium</string>
+  <string name="watch_ads">Titta på annonser för att få kontakt</string>
+  <string name="guide_1">Bara en knapptryckning för att ansluta.</string>
+  <string name="guide_2">Flera VPN-servrar i olika länder</string>
+  <string name="guide_3">Skydda din integritet online</string>
+  <string name="what_is_my_ip">Vad är min IP-adress?</string>
+  <string name="ip_address">IP-adress</string>
+  <string name="network_provider">Nätleverantör</string>
+  <string name="location">Plats</string>
+  <string name="pincode">PIN-kod</string>
+  <string name="timezone">Tidszon</string>
+  <string name="duration">Varaktighet</string>
+  <string name="connect_success">Uppkopplad framgång</string>
+  <string name="connect_report">Anslut rapport</string>
+  <string name="disconnect">Koppla från</string>
+  <string name="no_internet">Ingen Internetanslutning</string>
+  <string name="network_error">Ingen Internetanslutning</string>
 </resources>

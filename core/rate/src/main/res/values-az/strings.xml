@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="fb_rate_us_bad">Rəyinizə görə təşəkkür edirik və bizə bəzi rəy bildirməyinizi xahiş edirik.</string>
+  <string name="fb_rate_us_good">Rəyiniz üçün çox sağ olun!</string>
+  <string name="fb_rate_us_default">Bizi qiymətləndirsəniz, biz bunu çox yüksək qiymətləndirərdik və sizə daha yaxşı təcrübə təqdim etmək üçün çox çalışacağıq.</string>
+  <string name="fb_feedback_title">Qarşılaşdığınız hər hansı problem barədə bizə bildirin.</string>
+  <string name="fb_feedback_crash">Qəza</string>
+  <string name="fb_feedback_feature_quality">Xüsusiyyət keyfiyyəti</string>
+  <string name="fb_feedback_bug">Bug</string>
+  <string name="fb_feedback_other">Digər</string>
+  <string name="fb_send">Göndər</string>
+  <string name="fb_hint_feedback">Probleminizi daha tez müəyyən etmək və həll etmək üçün bizə əlavə təfərrüatlar təqdim edin (minimum 6 simvol).</string>
+  <string name="fb_text_feedback_to">Əlaqə</string>
+  <string name="fb_best_rate">Əldə edə biləcəyimiz ən yüksək reytinq :)</string>
+  <string name="fb_share_with">Paylaşın</string>
+  <string name="fb_feedback_rate">İndi Qiymətləndirin</string>
+  <string name="fb_rate_on_google_play">Google Play-də rəylər</string>
+  <string name="fb_thank_for_feedback">Rəyiniz üçün təşəkkür edirik</string>
+  <string name="fb_sorry_customer">Gələcək versiyada bu məsələyə toxunacağıq. Narahatçılığa görə üzr istəyirik</string>
+  <string name="fb_common_unable_find_market">Tətbiqi Google Play-də tapmaq mümkün deyil</string>
+  <string name="fb_thanks">tamam</string>
+</resources>

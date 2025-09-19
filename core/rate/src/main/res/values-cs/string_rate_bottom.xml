@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="fb_best_rating_for_us">Pro nás nejlepší hodnocení</string>
+  <string name="fb_rate_bottom_default">Usilovně pracujeme na poskytování lepší uživatelské zkušenosti. Vážíme si vaší recenze.</string>
+  <string name="fb_rate_bottom_bad">Ach ne!</string>
+  <string name="fb_rate_bottom_good">My tě taky milujeme!</string>
+  <string name="fb_rate_bottom_mess_bad">Zanechte nám prosím zpětnou vazbu</string>
+  <string name="fb_rate_bottom_mess_good">Děkujeme za vaši zpětnou vazbu</string>
+  <string name="fb_rate">Hodnotit</string>
+</resources>
