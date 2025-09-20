@@ -1,6 +1,8 @@
 package com.tici.vpn.proxy.master.main
 
 import android.annotation.SuppressLint
+import android.app.ComponentCaller
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
@@ -115,26 +117,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun initViews(savedInstanceState: Bundle?) {
         requestAdvertisingIdPermission()
         val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
-//<<<<<<< HEAD
         val reconnect = intent.getStringExtra("state")
-//        if (reconnect != null && reconnect == "POPUP") {
-////            SettingSuccessDialog(
-////                R.string.setting_choose_proxy, R.string.home_reconnect_to_take_effect
-////            ).show(supportFragmentManager, "SettingSuccessDialog")
-//            isAutoConnect = true
-//        } else {
-//            isAutoConnect = false
-//        }
-//        intent.removeExtra("state")
-//=======
-//        val reconnect = intent.getStringExtra("state")
-//        if (reconnect != null && reconnect == "POPUP") {
-//            isAutoConnect = true
-//        } else {
-//            isAutoConnect = false
-//        }
-//        intent.removeExtra("state")
-//>>>>>>> feature/08092025_update_core_base
 
         mListFragment.add(mHomeFragment)
         mListFragment.add(mSettingFragment)

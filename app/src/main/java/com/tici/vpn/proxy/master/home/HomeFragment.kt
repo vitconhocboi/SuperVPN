@@ -182,12 +182,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 binding.ivConnectPanel.isEnabled = true
                 binding.lnConnected.invisible()
                 isConnected = false
-//                if (state == "CONNECT") {
-//                    state = ""
-//                    prepareVpn()
-//                    handler.post(speedTestRunnable)
-//                    handler.post(updateRunnable)
-//                }
                 if (!isShowReport) {
                     isShowReport = true
                     val start = context?.getSharedPreferences(
@@ -196,6 +190,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                     val diff = System.currentTimeMillis().toInt() / 1000 - start!!
                     report.duration = formatSecondsToTime(diff)
                     (activity as? MainActivity)?.showDisconnected(report)
+                }
+                if (state == "CONNECT") {
+                    isShowReport = false
+                    state = ""
+                    prepareVpn()
+                    handler.post(speedTestRunnable)
+                    handler.post(updateRunnable)
                 }
                 if (state == "CONNECT") {
                     isShowReport = false
@@ -311,7 +312,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 //        state = activity?.intent?.getStringExtra("state")
     override fun initViews(savedInstanceState: Bundle?) {
         state = activity?.intent?.getStringExtra("state")
-        Log.d("SuperVPN", "state from main $state")
         val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
         with(binding) {
             ivSelectProxy.scaleX = if (isRTL) -1f else 1f

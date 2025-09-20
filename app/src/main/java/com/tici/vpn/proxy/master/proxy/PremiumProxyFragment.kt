@@ -170,6 +170,7 @@ class PremiumProxyFragment : BaseFragment<FragmentProxyBinding>() {
                                 )
                             }
                             requireActivity().finish()
+                            Log.i("SuperVpn","startMainActivity with state $connectState")
                             Navigator.startMainActivity(
                                 requireContext(),
                                 connectState
