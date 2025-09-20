@@ -104,6 +104,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private val vpnPermissionLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
+                isShowReport = false
                 startVpnService()
             } else {
                 isShowReport = true
@@ -182,7 +183,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 binding.ivConnectPanel.isEnabled = true
                 binding.lnConnected.invisible()
                 isConnected = false
-                if (!isShowReport) {
+                if (state != "CONNECT" && !isShowReport) {
                     isShowReport = true
                     val start = context?.getSharedPreferences(
                         "privoxy_traffic", Context.MODE_PRIVATE
@@ -662,6 +663,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         if (NetworkUtils.isInternetAvailable(requireActivity())) {
             val intent = VpnService.prepare(context)
             if (intent != null) {
+                isShowReport = true
                 vpnPermissionLauncher.launch(intent)
             } else {
                 startVpnService()

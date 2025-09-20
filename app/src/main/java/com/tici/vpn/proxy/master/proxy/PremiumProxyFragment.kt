@@ -12,6 +12,7 @@ import androidx.lifecycle.lifecycleScope
 import com.common.baseui.BaseAppConfig
 import com.common.baseui.ResultData
 import com.common.baseui.extension.bindFlowCreate
+import com.common.baseui.extension.setOnClickNoDoubleClick
 import com.common.baseui.extension.setVisible
 import com.core.baseui.fragment.BaseFragment
 import com.core.baseui.fragment.ScreenType
@@ -137,7 +138,7 @@ class PremiumProxyFragment : BaseFragment<FragmentProxyBinding>() {
                 mPagerAdapter.notifyDataSetChanged()
             }
 
-            btnConnect.setOnClickListener {
+            btnConnect.setOnClickNoDoubleClick {
                 try {
                     lifecycleScope.launch {
                         showLoading()
