@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">VPN-ja është duke u ekzekutuar, ju lutemi prisni…</string>
   <string name="ads_message_open">Mirë se vini përsëri në SuperVPN</string>
   <string name="ads_message_notice">Ky veprim mund të përmbajë reklama</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Serverat</string>
   <string name="ip_quick_access">Qasje e shpejtë</string>
   <string name="ip_all">TE GJITHA</string>
+  <string name="ip_game">Lojë</string>
+  <string name="ip_streaming">Transmetim</string>
+  <string name="recommend">Rekomandoj</string>
   <string name="setting_app_proxy">Filtri i Aplikacionit</string>
   <string name="setting_app_proxy_desc">Zgjidhni cilat aplikacione do të lidhen me internetin përmes VPN-së</string>
   <string name="setting_ads_block">Bllokimi i reklamave</string>

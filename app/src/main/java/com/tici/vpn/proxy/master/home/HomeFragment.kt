@@ -10,7 +10,6 @@ import android.net.VpnService
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -117,7 +116,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private fun updateUI(status: String?) {
         when (status) {
             CONNECTING -> {
-                showInterAd(AppAdPlaceName.FULLSCREEN_SELECTED_PROXY_HOME) {}
                 binding.connectTitle.invisible()
                 binding.tvTime.visible()
                 binding.lnDisconnecting.invisible()
@@ -199,13 +197,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                     handler.post(speedTestRunnable)
                     handler.post(updateRunnable)
                 }
-                if (state == "CONNECT") {
-                    isShowReport = false
-                    state = ""
-                    prepareVpn()
-                    handler.post(speedTestRunnable)
-                    handler.post(updateRunnable)
-                }
             }
 
             ERROR -> {
@@ -261,7 +252,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private val speedTestRunnable = object : Runnable {
         override fun run() {
             if (BaseAppConfig.proxy.isNotEmpty()) {
-                ProxySpeedTest.Instance.startSpeedTest(currentProxy,
+                ProxySpeedTest.Instance.startSpeedTest(
+                    currentProxy,
                     callback = { download, upload ->
                         try {
                             if (download.isNotEmpty()) report.download = download
@@ -284,22 +276,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         }
     }
 
-//    @SuppressLint("DefaultLocale")
-//    fun formatBytes(bytes: Int): String {
-//        if (bytes < 1024) return "$bytes B"
-//        val units = arrayOf("KB", "MB", "GB", "TB", "PB")
-//        var value = bytes.toDouble()
-//        var index = 0
-//
-//        while (value >= 1024 && index < units.lastIndex) {
-//            value /= 1024
-//            index++
-//        }
-//
-//        return String.format("%.2f %s", value, units[index])
-//    }
-//
-
     @SuppressLint("DefaultLocale")
     fun formatSecondsToTime(seconds: Int): String {
         val hours = seconds / 3600
@@ -308,9 +284,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         return String.format("%02d:%02d:%02d", hours, minutes, secs)
     }
 
-    //    override fun initView() {
-//        super.initView()
-//        state = activity?.intent?.getStringExtra("state")
     override fun initViews(savedInstanceState: Bundle?) {
         state = activity?.intent?.getStringExtra("state")
         val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
@@ -319,7 +292,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             ivIpInfo.scaleX = if (isRTL) -1f else 1f
 
             allowAppViewModel.getAllowApp()
-//            Timber.d("Test_Subscribe allowAppViewModel")
             bindFlowCreate(allowAppViewModel.allowApp) { result ->
                 processResultData(result, onSuccess = {
                     allowApp = it
@@ -330,119 +302,32 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
             }
 
-//<<<<<<< HEAD
-//            ivConnectPanel.setOnClickNoDoubleClick {
-//                if (!isConnected) {
-//                    isShowReport = false
-////                    pnSelectProxy.isClickable = false
-////                    pnIpInfo.isEnabled = false
-//                    if (BaseAppConfig.proxy.isNotEmpty()) {
-//                        prepareVpn()
-//                    } else {
-////                        ConfirmDnsDialog(requireActivity(), onContinue = {
-////                            prepareVpn()
-////                        }, selectVpn = {
-////                            Navigator.startProxyActivity(requireContext(), null)
-////                        }).show()
-//                        lifecycleScope.launch {
-//                            proxyViewModel.getRandomFreeProxy()
-//                        }
-//                    }
-//                } else {
-//                    DisconnectConfirmDialog(onConfirm = {
-//                        isShowReport = false
-////                        if (NetworkUtils.isInternetAvailable(requireActivity())) {
-//                        stopSpeedTest()
-//                        vpnPermissionLauncher.unregister()
-//                        stopVpnService()
-////                        } else {
-////                            Toast.makeText(
-////                                requireContext(), "No internet connection", Toast.LENGTH_SHORT
-////                            ).show()
-////                        }
-//                    }).show(childFragmentManager, "DialogConfirm")
-//                }
-//=======
-//            ivConnect.apply {
-//                progress = 0f
-//                progressMax = 100f
-//                roundBorder = true
-//                startAngle = 1f
-//
-//                onProgressChangeListener = { progress ->
-////                    Log.d("SuperVPN", "initView: progress: $progress")
-//                    if (lastProcess > 90 && lastProcess < 100 && progress == 100f) {
-//                        binding.ivConnectPanel.background = ResourcesCompat.getDrawable(
-//                            resources, R.drawable.bg_round_active, null
-//                        )
-//                        if (!isShowReport) {
-//                            isShowReport = true
-//                            (activity as? MainActivity)?.showConnected(currentProxy)
-//                        }
-//                    } else if (lastProcess > 0 && lastProcess < 10 && progress == 0f) {
-//                        binding.ivConnectPanel.background = ResourcesCompat.getDrawable(
-//                            resources, R.drawable.bg_round, null
-//                        )
-//                        if (!isShowReport) {
-//                            isShowReport = true
-//                            val start = context?.getSharedPreferences(
-//                                "privoxy_traffic", Context.MODE_PRIVATE
-//                            )?.getInt("start", 0)
-//                            val diff = System.currentTimeMillis().toInt() / 1000 - start!!
-//                            report.duration = formatSecondsToTime(diff)
-//                            (activity as? MainActivity)?.showDisconnected(report)
-//                        }
-//                    }
-//                    lastProcess = progress
-//                }
-//            }
-//
             ivConnectPanel.setOnClickListener {
                 if (NetworkUtils.isInternetAvailable(requireActivity())) {
-                    isShowDisconnect = false
-                    actionConnectProxy()
+                    if (isConnected) {
+                        showInterAd(AppAdPlaceName.FULLSCREEN_SELECTED_PROXY_HOME) {
+                            isShowDisconnect = false
+                            actionConnectProxy()
+                        }
+                    } else {
+                        isShowDisconnect = false
+                        actionConnectProxy()
+                    }
                 } else {
                     Toast.makeText(
                         requireContext(), getString(R.string.no_internet), Toast.LENGTH_SHORT
                     ).show()
                 }
-//>>>>>>> feature/08092025_update_core_base
             }
 
-//            proxyViewModel.currentProxy.observe(viewLifecycleOwner) { it ->
-//                if (it != null) {
-//                    tvProxyIp.setVisible(true)
-//                    tvProxyIp.text = it.host
-//                    val typeface = ResourcesCompat.getFont(context, R.font.inter_bold)
-//                    tvProxyLocation.typeface = typeface
-//                    tvProxyLocation.setTextColor(resources.getColor(R.color.language_item_text_color))
-//                }
-//            }
-
-//<<<<<<< HEAD
-//            pnSelectProxy.setOnClickNoDoubleClick {
-//                if (NetworkUtils.isInternetAvailable(requireActivity())) {
-//                    showInterAds(placementId = AdPlacementId.INTER_ART_HOME,
-//                        impressedCallBack = {},
-//                        showCallBack = {
-//                            Navigator.startProxyActivity(requireContext(), null)
-//                        })
-//                } else {
-//                    Toast.makeText(
-//                        requireContext(), getString(R.string.no_internet), Toast.LENGTH_SHORT
-//                    ).show()
-//                }
-//=======
             pnSelectProxy.setOnClickListener {
                 if (NetworkUtils.isInternetAvailable(requireActivity())) {
-                    showInterAdsFullSelectedProxy()
+                    Navigator.startProxyActivity(requireContext(), null)
                 } else {
                     Toast.makeText(
                         requireContext(), getString(R.string.no_internet), Toast.LENGTH_SHORT
                     ).show()
                 }
-//                showInterAdsFullSelectedProxy()
-//>>>>>>> feature/08092025_update_core_base
             }
 
             pnIpInfo.setOnClickNoDoubleClick {
@@ -455,64 +340,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 }
             }
 
-//            SharedData.isSub.observe(viewLifecycleOwner) { it ->
-//                if (it == false) {
-//                    if (isConnected) {
-//                        if (BaseAppConfig.proxy.isNotEmpty()) { //neu chi dung dns thi giu nguyen
-//                            if (NetworkUtils.isInternetAvailable(requireActivity())) {
-//                                stopSpeedTest()
-//                                vpnPermissionLauncher.unregister()
-//                                stopVpnService()
-//                            }
-//                        }
-//                    }
-//                    with(binding) {
-//                        if (BaseAppConfig.proxy.isNotEmpty()) {
-//                            ivConnect.isSelected = false
-//                            if (!isConnected) {
-//                                BaseAppConfig.proxy = ""
-//                                BaseAppConfig.proxyHost = ""
-//                                BaseAppConfig.proxyCountry = ""
-//                            }
-//                        }
-//                        ivFlag.setImageResource(R.drawable.ic_earth)
-//                        tvProxyLocation.text = getString(R.string.ip_proxy)
-//                        tvProxyIp.setVisible(false)
-//                        val typeface = ResourcesCompat.getFont(context, R.font.inter_normal)
-//                        tvProxyLocation.typeface = typeface
-//                        tvProxyLocation.setTextColor(resources.getColor(R.color.green_1))
-//                        currentProxy = null
-//                    }
-//                } else {
             if (BaseAppConfig.proxy.isNotEmpty()) {
                 showIpCountry()
-//                ivFlag.setImageResource(Utils.getFlag(BaseAppConfig.proxyCountry))
-//                tvProxyLocation.text = requireContext().safeGetString(BaseAppConfig.proxyCountry)
-//                engine.Engine.decodeString(BaseAppConfig.proxy).split(":").let { parts ->
-//                    if (parts.size >= 2) {
-//                        BaseAppConfig.proxyHost = parts[1]
-//                        currentProxy = ProxySpeedTest.ProxyConfig(
-//                            host = parts[1],
-//                            port = parts[2].toInt(),
-//                            username = parts.getOrNull(3) ?: "",
-//                            password = parts.getOrNull(4) ?: "",
-//                            type = parts.getOrNull(0) ?: "http"
-//                        )
-//                    } else {
-//                        currentProxy = null
-//                    }
-//                }
-//
-//                tvProxyIp.setVisible(true)
-//                tvProxyIp.text = currentProxy?.host
-//                val typeface = ResourcesCompat.getFont(context, R.font.inter_bold)
-//                tvProxyLocation.typeface = typeface
-//                tvProxyLocation.setTextColor(resources.getColor(R.color.language_item_text_color))
             } else {
                 ivFlag.setImageResource(R.drawable.ic_earth)
                 BaseAppConfig.proxy = ""
                 BaseAppConfig.proxyHost = ""
                 BaseAppConfig.proxyCountry = ""
+                BaseAppConfig.proxyGroup = ""
                 tvProxyLocation.text = getString(R.string.ip_proxy)
                 tvProxyIp.setVisible(false)
                 val typeface = ResourcesCompat.getFont(context, R.font.inter_normal)
@@ -520,8 +355,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 tvProxyLocation.setTextColor(resources.getColor(R.color.green_1))
                 currentProxy = null
             }
-//                }
-//            }
 
             proxyId = arguments?.getString("id", null)
         }
@@ -553,19 +386,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 ).show()
             }
         }
-//        val reconnect = activity?.intent?.getStringExtra("state")
-//        if (reconnect != null && reconnect == "POPUP") {
-////            SettingSuccessDialog(
-////                R.string.setting_choose_proxy, R.string.home_reconnect_to_take_effect
-////            ).show(supportFragmentManager, "SettingSuccessDialog")
-//            isAutoConnect = true
-//        } else {
-//            isAutoConnect = false
-//        }
-//        if ( reconnect == "POPUP") {
-//            Toast.makeText(requireContext(), R.string.connection_request, Toast.LENGTH_LONG).show()
-//            binding.ivConnectPanel.callOnClick()
-//        }
 
     }
 
@@ -703,8 +523,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
     private fun stopSpeedTest() {
-//        binding.tvTrafficDownload.text = "--"
-//        binding.tvTrafficUpload.text = "--"
         handler.removeCallbacks(speedTestRunnable)
         handler.removeCallbacks(updateRunnable)
         ProxySpeedTest.Instance.stopProxyTest()
@@ -717,14 +535,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         bindFlowCreate(allowAppViewModel.allowApp) { result ->
             processResultData(result, onSuccess = { rs ->
                 try {
-//<<<<<<< HEAD
-//                    binding.ivConnect.setProgressWithAnimation(99f, 10000)
-                    proxyViewModel.startProxy(mainViewModel.getDeviceId(requireContext()),
-//=======
-//                    binding.ivConnect.setProgressWithAnimation(99f, 10000)
-//                    proxyViewModel.startProxy(
-//                        mainViewModel.getDeviceId(requireContext()),
-//>>>>>>> feature/08092025_update_core_base
+                    proxyViewModel.startProxy(
+                        mainViewModel.getDeviceId(requireContext()),
                         context,
                         allowApp = rs.map { it.packageName })
                 } catch (_: Exception) {

@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">De VPN leeft, waart w.e.g.…</string>
   <string name="ads_message_open">Wëllkomm zeréck bei SuperVPN</string>
   <string name="ads_message_notice">Dës Aktioun kann Annoncen enthalen</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Serveren</string>
   <string name="ip_quick_access">Schnellzougang</string>
   <string name="ip_all">ALL</string>
+  <string name="ip_game">Spill</string>
+  <string name="ip_streaming">Streaming</string>
+  <string name="recommend">Recommandéieren</string>
   <string name="setting_app_proxy">App-Filter</string>
   <string name="setting_app_proxy_desc">Wielt wéi eng Apps iwwer VPN mam Internet verbannen</string>
   <string name="setting_ads_block">Reklammeblock</string>

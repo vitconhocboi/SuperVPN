@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">VPN töötab, palun oodake…</string>
   <string name="ads_message_open">Tere tulemast tagasi SuperVPN-i</string>
   <string name="ads_message_notice">See toiming võib sisaldada reklaame</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Serverid</string>
   <string name="ip_quick_access">Kiire juurdepääs</string>
   <string name="ip_all">KÕIK</string>
+  <string name="ip_game">Mäng</string>
+  <string name="ip_streaming">Voogesitus</string>
+  <string name="recommend">Soovita</string>
   <string name="setting_app_proxy">Rakenduste filter</string>
   <string name="setting_app_proxy_desc">Valige, millised rakendused loovad VPN-i kaudu internetiühenduse</string>
   <string name="setting_ads_block">Reklaamide blokeerimine</string>

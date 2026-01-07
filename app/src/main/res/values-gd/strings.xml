@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">Tha VPN a’ ruith, feuch an feith thu…</string>
   <string name="ads_message_open">Fàilte air ais gu SuperVPN</string>
   <string name="ads_message_notice">Faodaidh sanasan a bhith san ghnìomh seo</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Frithealaichean</string>
   <string name="ip_quick_access">Ruigsinneachd Luath</string>
   <string name="ip_all">UILE</string>
+  <string name="ip_game">Geama</string>
+  <string name="ip_streaming">Sruthadh</string>
+  <string name="recommend">Molaibh</string>
   <string name="setting_app_proxy">Criathrag Aplacaid</string>
   <string name="setting_app_proxy_desc">Tagh dè na h-aplacaidean a cheanglas ris an eadar-lìon tro VPN</string>
   <string name="setting_ads_block">Bloc sanasan</string>

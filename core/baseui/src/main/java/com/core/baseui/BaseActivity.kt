@@ -108,7 +108,7 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity(), CoroutineSco
                 hideNavigationBar()
             }
 
-            if(isHideStatusBar) {
+            if (isHideStatusBar) {
                 window?.let {
                     hideSystemBars(it)
                 }
@@ -230,7 +230,10 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity(), CoroutineSco
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (isRegisterOnKeyboardListener) {
-            keyboardHeightProvider = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) KeyboardHeightProviderApi30Plus(this) else KeyboardHeightProviderApi30Below(this)
+            keyboardHeightProvider =
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) KeyboardHeightProviderApi30Plus(
+                    this
+                ) else KeyboardHeightProviderApi30Below(this)
             keyboardHeightProvider?.addKeyboardListener(getKeyboardListener())
         }
         isVip = purchasePreferences.isUserVip()
@@ -278,7 +281,12 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity(), CoroutineSco
             val topPadding =
                 if (isSpaceDisplayCutout && cutoutInsets.top > 0) cutoutInsets.top else if (isSpaceStatusBar) systemBarInsets.top else 0
             val bottomPadding = if (isHideNavigationBar) 0 else systemBarInsets.bottom
-            getSurfaceView().setPadding(systemBarInsets.left, topPadding, systemBarInsets.right, bottomPadding)
+            getSurfaceView().setPadding(
+                systemBarInsets.left,
+                topPadding,
+                systemBarInsets.right,
+                bottomPadding
+            )
 
             insetsViewModel.updateInsets(
                 InsetsViewModel.WrapInsets(
@@ -373,7 +381,7 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity(), CoroutineSco
             hideNavigationBar()
         }
 
-        if(isHideStatusBar) {
+        if (isHideStatusBar) {
             window?.let {
                 hideSystemBars(it)
             }
@@ -453,7 +461,12 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity(), CoroutineSco
     }
 
     override fun onPause() {
-        super.onPause()
+        try {
+            super.onPause()
+        } catch (e: Exception) {
+            e.printStackTrace()
+            analyticsManager.logEvent("transaction_error_${this.javaClass.simpleName}")
+        }
         Timber.d("${this::class.java.simpleName} onPause")
         keyboardHeightProvider?.onPause()
     }
@@ -513,7 +526,11 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity(), CoroutineSco
      * @param adPlaceName Tên vị trí quảng cáo.
      * @param oneTimeLoad Chỉ tải quảng cáo một lần nếu true.
      */
-    fun loadBannerOrNativeAds(adPlaceName: IAdPlaceName, oneTimeLoad: Boolean, isReload: Boolean = false) {
+    fun loadBannerOrNativeAds(
+        adPlaceName: IAdPlaceName,
+        oneTimeLoad: Boolean,
+        isReload: Boolean = false
+    ) {
         contextAds?.loadBannerOrNativeAds(adPlaceName, oneTimeLoad, isReload = isReload)
     }
 

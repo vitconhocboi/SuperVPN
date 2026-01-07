@@ -26,7 +26,8 @@ data class AppConfig(
     <!--1 = Có ads-->
     <!--2 = Full ads-->
      */
-    val introData: List<Int>
+    val introData: List<Int>,
+    val introDataV2: List<Int>,
 ) {
     override fun toString(): String {
         val builder = StringBuilder()

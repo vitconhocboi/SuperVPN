@@ -177,12 +177,6 @@ abstract class BaseFragment<B : ViewBinding>(
                 _onBackPressedCallback
             )
         }
-
-        init(savedInstanceState)
-        if (!isAwaitCallInitView) {
-            initViews(savedInstanceState)
-        }
-        handleObservable()
         contextAds = object : ContextAds(
             adsManager = adsManager,
             lifecycleOwner = this,
@@ -196,9 +190,14 @@ abstract class BaseFragment<B : ViewBinding>(
             initPreloadBannerNativeAdPlaceName = providerPreloadBannerNativeAdPlaceName(),
         ) {
             override fun onBannerNativeResult(adResource: AdLoadBannerNativeUiResource) {
-                 this@BaseFragment.onBannerNativeResult(adResource)
+                this@BaseFragment.onBannerNativeResult(adResource)
             }
         }
+        init(savedInstanceState)
+        if (!isAwaitCallInitView) {
+            initViews(savedInstanceState)
+        }
+        handleObservable()
         displayFirstData()
         preloadData()
         handleNetworkChange()
@@ -334,6 +333,16 @@ abstract class BaseFragment<B : ViewBinding>(
     open fun handleObservable() {}
 
     //region Ads implement
+
+    /**
+     * Tải quảng cáo banner hoặc native.
+     *
+     * @param adPlaceName Tên vị trí quảng cáo.
+     * @param oneTimeLoad Chỉ tải quảng cáo một lần nếu true.
+     */
+    fun loadBannerOrNativeAds(adPlaceName: IAdPlaceName, oneTimeLoad: Boolean, isReload: Boolean = false) {
+        contextAds?.loadBannerOrNativeAds(adPlaceName, oneTimeLoad, isReload = isReload)
+    }
 
     /**
      * Tải quảng cáo interstitial.

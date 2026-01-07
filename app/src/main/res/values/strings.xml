@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SuperVPN</string>
+    <string name="app_name" translatable="false">SuperVPN</string>
     <string name="ads_message_inter">VPN is running, please wait…</string>
     <string name="ads_message_open">Welcome back to SuperVPN</string>
     <string name="ads_message_notice">This action can contains ads</string>
@@ -19,6 +19,11 @@
 
     <string name="ip_quick_access">Quick Access</string>
     <string name="ip_all">All</string>
+
+    <string name="ip_game">Game</string>
+    <string name="ip_streaming">Streaming</string>
+
+    <string name="recommend">Recommend</string>
 
     <string name="setting_app_proxy">App Filter</string>
     <string name="setting_app_proxy_desc">Choose which apps will connect to the Internet through VPN</string>
@@ -101,6 +106,10 @@
     <string name="bolivia">Bolivia</string>
     <string name="paraguay">Paraguay</string>
     <string name="uruguay">Uruguay</string>
+    <string name="nigeria">Nigeria</string>
+    <string name="mozambique">Mozambique</string>
+    <string name="morocco">Morocco</string>
+    <string name="south_africa">South Africa</string>
 
     <string name="connecting">Connecting…</string>
     <string name="connected">Connected</string>

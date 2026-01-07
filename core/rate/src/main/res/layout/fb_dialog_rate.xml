@@ -130,7 +130,7 @@
             android:layout_weight="1"
             android:textAlignment="viewEnd"
             android:text="@string/fb_best_rate"
-            android:textColor="@color/fb_text_color_best_rate"
+            android:textColor="#0EC74B"
             android:textSize="@dimen/fb_text_size_best_rate"
             app:layout_constraintEnd_toStartOf="@+id/ivHand"
             app:layout_constraintStart_toStartOf="@id/lnStar"

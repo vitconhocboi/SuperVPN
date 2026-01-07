@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">סופר-VPN</string>
   <string name="ads_message_inter">ה-VPN פועל, אנא המתן...</string>
   <string name="ads_message_open">ברוכים השבים ל-SuperVPN</string>
   <string name="ads_message_notice">פעולה זו יכולה להכיל מודעות</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">שרתים</string>
   <string name="ip_quick_access">גישה מהירה</string>
   <string name="ip_all">כֹּל</string>
+  <string name="ip_game">מִשְׂחָק</string>
+  <string name="ip_streaming">נְהִירָה</string>
+  <string name="recommend">לְהַמלִיץ</string>
   <string name="setting_app_proxy">מסנן אפליקציות</string>
   <string name="setting_app_proxy_desc">בחר אילו אפליקציות יתחברו לאינטרנט דרך VPN</string>
   <string name="setting_ads_block">חסימת מודעות</string>

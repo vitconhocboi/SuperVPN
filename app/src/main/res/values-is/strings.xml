@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">VPN er í gangi, vinsamlegast bíðið…</string>
   <string name="ads_message_open">Velkomin aftur til SuperVPN</string>
   <string name="ads_message_notice">Þessi aðgerð getur innihaldið auglýsingar</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Þjónar</string>
   <string name="ip_quick_access">Fljótleg aðgangur</string>
   <string name="ip_all">ALLT</string>
+  <string name="ip_game">Leikur</string>
+  <string name="ip_streaming">Streymi</string>
+  <string name="recommend">Mæla með</string>
   <string name="setting_app_proxy">Forritsía</string>
   <string name="setting_app_proxy_desc">Veldu hvaða forrit munu tengjast internetinu í gegnum VPN</string>
   <string name="setting_ads_block">Auglýsingablokk</string>

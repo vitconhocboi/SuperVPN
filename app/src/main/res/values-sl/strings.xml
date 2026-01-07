@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">VPN deluje, prosimo počakajte ...</string>
   <string name="ads_message_open">Dobrodošli nazaj v SuperVPN</string>
   <string name="ads_message_notice">To dejanje lahko vsebuje oglase</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Strežniki</string>
   <string name="ip_quick_access">Hitri dostop</string>
   <string name="ip_all">VSE</string>
+  <string name="ip_game">Igra</string>
+  <string name="ip_streaming">Pretočno predvajanje</string>
+  <string name="recommend">Priporočam</string>
   <string name="setting_app_proxy">Filter aplikacij</string>
   <string name="setting_app_proxy_desc">Izberite, katere aplikacije se bodo povezale z internetom prek VPN-ja</string>
   <string name="setting_ads_block">Blok oglasov</string>

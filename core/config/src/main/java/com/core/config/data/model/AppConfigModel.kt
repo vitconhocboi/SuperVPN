@@ -54,6 +54,8 @@ internal data class AppConfigModel(
         <!--2 = Full ads-->
      */
     @Json(name = "intro_data")
-    val introData: List<Int>?
+    val introData: List<Int>?,
+    @Json(name = "intro_data_v2")
+    val intro_data_v2: List<Int>?
 
 )

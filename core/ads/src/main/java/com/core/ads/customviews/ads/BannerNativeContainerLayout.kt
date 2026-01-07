@@ -69,7 +69,9 @@ class BannerNativeContainerLayout @JvmOverloads constructor(
         if (placeHolderView == null) {
             initPlaceHolder(R.layout.banner_adapter_small_shimmer)
         }
-        addView(placeHolderView)
+        runCatching {
+            addView(placeHolderView)
+        }
         placeHolderView?.startShimmer()
     }
 
@@ -139,7 +141,9 @@ class BannerNativeContainerLayout @JvmOverloads constructor(
 
         if(findOldAdView() == null) {
             removeAllViewInChildViewIfNeed()
-            addView(placeHolderView)
+            runCatching {
+                addView(placeHolderView)
+            }
             placeHolderView?.startShimmer()
         }
     }
@@ -175,17 +179,18 @@ class BannerNativeContainerLayout @JvmOverloads constructor(
 
     fun onAdLoaded(adView: AdView) {
         try {
-            removeAllViewInChildViewIfNeed()
-            val parentAdView = adView.parent
-            if (parentAdView != null) {
-                (parentAdView as ViewGroup).endViewTransition(adView)
-                parentAdView.layoutTransition = null
-                parentAdView.removeView(adView)
-                return
+            if (adView.parent == this) return
+            (adView.parent as? ViewGroup)?.let { oldParent ->
+                // tránh animation/transition giữ child
+                try { oldParent.endViewTransition(adView) } catch (e: Throwable) {Timber.d("onAdLoaded error ${e.message}")}
+                oldParent.layoutTransition = null
+                oldParent.removeView(adView)
             }
+            removeAllViewInChildViewIfNeed()
             addView(adView)
         } catch (e: Exception) {
             // do nothing
+            Timber.d("onAdLoaded error ${e.message}")
         }
 
     }
@@ -233,6 +238,7 @@ class BannerNativeContainerLayout @JvmOverloads constructor(
             .withCtaBorderColor(nativeAdPlace.ctaBorderColor)
             .withBorderColor(borderColor)
             .withBackgroundColor(nativeAdPlace.backgroundColor)
+            .withBackgroundFullColor(nativeAdPlace.backgroundFullColor)
             .withPrimaryTextTypefaceColor(nativeAdPlace.primaryTextColor)
             .withTertiaryTextTypefaceColor(nativeAdPlace.bodyTextColor)
             .withBackgroundResource(backgroundRes)
@@ -279,7 +285,9 @@ class BannerNativeContainerLayout @JvmOverloads constructor(
 
             is NativeTemplateSize.CustomKey -> customNativeAds.createNativeAds(context, nativeAdPlace)
         }
-        addView(nativeTemplateView)
+        runCatching {
+            addView(nativeTemplateView)
+        }
 
         nativeTemplateView.applyStyles(style)
         nativeTemplateView.setNativeAd(nativeAd)

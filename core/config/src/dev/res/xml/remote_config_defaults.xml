@@ -23,7 +23,7 @@
             "is_preload_banner_native_exit":true,
             "is_always_preload_banner_native_ads_when_start": true,
             "is_hide_native_banner_when_network_error": true,
-            "is_always_show_intro_and_language_screen": false,
+            "is_always_show_intro_and_language_screen": true,
             "is_always_show_intro_and_language_screen_with_interval": true,
             "is_enable_introduction_screen": true,
             "is_enable_change_language_screen": true,
@@ -33,8 +33,17 @@
             "is_enable_open_app_ads_from_shortcut": false,
             "interval_day_always_show_intro_and_language": 1,
             "intro_data": [
-            1,
-            1,
+            0,
+            2,
+            0,
+            2,
+            1
+            ],
+            "intro_data_v2": [
+            0,
+            2,
+            0,
+            2,
             1
             ]
             }
@@ -136,17 +145,48 @@
             "border_color": "#242424"
             },
             {
+            "place_name": "anchored_onboarding_bottom_v2",
+            "ad_id": "ca-app-pub-3940256099942544/2247696110",
+            "ad_type": "native",
+            "is_tracking_click": true,
+            "native_template_size": "small_cta_bottom",
+            "is_enable": true,
+            "background_color": "#ffffff",
+            "primary_text_color": "#1D1D1D",
+            "body_text_color": "#404040",
+            "background_cta": "#F59E0B,#EF4444",
+            "border_color": "#D1D1D1",
+            "cta_radius_dp": 12
+            },
+            {
             "place_name": "anchored_full_onboarding",
             "ad_id": "ca-app-pub-3940256099942544/2247696110",
             "ad_type": "native",
             "native_template_size": "full_cta_bottom",
             "is_enable": true,
-            "background_color": "#242424",
+            "background_color": "#FFFFFF",
+            "background_full_color": "#FFFFFF",
             "is_tracking_click": true,
-            "primary_text_color": "#F0F0F0",
-            "body_text_color": "#8A8A8A",
-            "background_cta": "#5E56F5",
-            "border_color": "#242424"
+            "primary_text_color": "#1D1D1D",
+            "body_text_color": "#404040",
+            "background_cta": "#F59E0B,#EF4444",
+            "border_color": "#D1D1D1",
+            "cta_radius_dp": 12
+            },
+            {
+            "place_name": "anchored_full_onboarding_v2",
+            "ad_id": "ca-app-pub-3940256099942544/2247696110",
+            "ad_type": "native",
+            "native_template_size": "full_cta_bottom",
+            "is_enable": true,
+            "background_color": "#FFFFFF",
+            "background_full_color": "#000",
+            "is_tracking_click": true,
+            "primary_text_color": "#1D1D1D",
+            "body_text_color": "#404040",
+            "background_cta": "#F59E0B,#EF4444",
+            "border_color": "#D1D1D1",
+            "cta_radius_dp": 12
             },
             {
             "place_name": "anchored_uninstall_bottom_step_1",
@@ -401,6 +441,15 @@
             "debug_list_test_device_hashed_id": [
             "460E79ECA70EF328A2F505FFB68470B9"
             ]
+            }
+        </value>
+    </entry>
+
+    <entry>
+        <key>onboarding_config</key>
+        <value>
+            {
+            "version": 2
             }
         </value>
     </entry>

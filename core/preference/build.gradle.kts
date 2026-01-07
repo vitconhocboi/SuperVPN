@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.ksp) // For Kotlin Kapt
+    alias(libs.plugins.kotlin.ksp)
     alias(libs.plugins.dagger.hilt) // For Dagger Hilt
 /*    alias(libs.plugins.kotlin.parcelize) // For Kotlin Parcelize*/
     id("kotlin-parcelize")

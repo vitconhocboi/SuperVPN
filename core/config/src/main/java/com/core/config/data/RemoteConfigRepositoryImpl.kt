@@ -24,6 +24,7 @@ import com.core.config.domain.data.IAdPlaceName
 import com.core.config.domain.data.AdType
 import com.core.config.domain.data.AppConfig
 import com.core.config.domain.data.AppConfig.Companion.DEFINE_INTRO_HAVE_ADS
+import com.core.config.domain.data.AppConfig.Companion.DEFINE_INTRO_NO_ADS
 import com.core.config.domain.data.AppOpenAdTypeConfig
 import com.core.config.domain.data.BannerAdTypeConfig
 import com.core.config.domain.data.IapConfig
@@ -198,7 +199,8 @@ internal class RemoteConfigRepositoryImpl @Inject constructor(
                 isAlwaysPreloadBannerNativeAdsWhenStart = true,
                 isPreloadBannerNativeExit = false,
                 intervalDayAlwaysShowIntroAndLanguage = 3,
-                isAlwaysShowIntroAndLanguageScreenWithInterval = false
+                isAlwaysShowIntroAndLanguageScreenWithInterval = false,
+                introDataV2 = arrayListOf(DEFINE_INTRO_NO_ADS,DEFINE_INTRO_NO_ADS,DEFINE_INTRO_HAVE_ADS)
             )
         } else {
             appConfigModelMapper.toData(model)
@@ -275,6 +277,7 @@ internal class RemoteConfigRepositoryImpl @Inject constructor(
                 isEnableRetry = ConfigParam.RETRY_IS_ENABLE_RETRY,
                 maxRetryCount = ConfigParam.RETRY_MAX_RETRY_COUNT,
                 retryIntervalSecondList = ConfigParam.RETRY_INTERVAL_LIST,
+                expiredTimeSecond = ConfigParam.EXPIRED_NATIVE_TIME_DEFAULT
             )
         } else {
             nativeAdConfigModelMapper.toData(model)

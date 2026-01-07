@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">VPN inafanya kazi, tafadhali subiri...</string>
   <string name="ads_message_open">Karibu tena kwenye SuperVPN</string>
   <string name="ads_message_notice">Kitendo hiki kinaweza kuwa na matangazo</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Seva</string>
   <string name="ip_quick_access">Ufikiaji wa Haraka</string>
   <string name="ip_all">YOTE</string>
+  <string name="ip_game">Mchezo</string>
+  <string name="ip_streaming">Kutiririsha</string>
+  <string name="recommend">Pendekeza</string>
   <string name="setting_app_proxy">Kichujio cha Programu</string>
   <string name="setting_app_proxy_desc">Chagua ni programu zipi zitaunganishwa kwenye Mtandao kupitia VPN</string>
   <string name="setting_ads_block">Kizuizi cha matangazo</string>

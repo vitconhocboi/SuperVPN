@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">સુપરવીપીએન</string>
   <string name="ads_message_inter">VPN ચાલી રહ્યું છે, કૃપા કરીને રાહ જુઓ...</string>
   <string name="ads_message_open">સુપરવીપીએન પર આપનું સ્વાગત છે.</string>
   <string name="ads_message_notice">આ ક્રિયામાં જાહેરાતો હોઈ શકે છે</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">સર્વર્સ</string>
   <string name="ip_quick_access">ઝડપી પ્રવેશ</string>
   <string name="ip_all">બધા</string>
+  <string name="ip_game">રમત</string>
+  <string name="ip_streaming">સ્ટ્રીમિંગ</string>
+  <string name="recommend">ભલામણ કરો</string>
   <string name="setting_app_proxy">એપ્લિકેશન ફિલ્ટર</string>
   <string name="setting_app_proxy_desc">VPN દ્વારા કઈ એપ્સ ઇન્ટરનેટથી કનેક્ટ થશે તે પસંદ કરો</string>
   <string name="setting_ads_block">જાહેરાતો અવરોધિત કરો</string>

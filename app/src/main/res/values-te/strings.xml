@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">సూపర్‌విపిఎన్</string>
   <string name="ads_message_inter">VPN రన్ అవుతోంది, దయచేసి వేచి ఉండండి…</string>
   <string name="ads_message_open">సూపర్‌విపిఎన్‌కు తిరిగి స్వాగతం.</string>
   <string name="ads_message_notice">ఈ చర్యలో ప్రకటనలు ఉండవచ్చు</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">సర్వర్లు</string>
   <string name="ip_quick_access">త్వరిత యాక్సెస్</string>
   <string name="ip_all">అన్ని</string>
+  <string name="ip_game">ఆట</string>
+  <string name="ip_streaming">స్ట్రీమింగ్</string>
+  <string name="recommend">సిఫార్సు చేయండి</string>
   <string name="setting_app_proxy">యాప్ ఫిల్టర్</string>
   <string name="setting_app_proxy_desc">VPN ద్వారా ఇంటర్నెట్‌కు కనెక్ట్ అయ్యే యాప్‌లను ఎంచుకోండి</string>
   <string name="setting_ads_block">ప్రకటనల బ్లాక్</string>

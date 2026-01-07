@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">СуперВПН</string>
   <string name="ads_message_inter">VPN е активен, почекајте…</string>
   <string name="ads_message_open">Добредојдовте назад во SuperVPN</string>
   <string name="ads_message_notice">Оваа акција може да содржи реклами</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Сервери</string>
   <string name="ip_quick_access">Брз пристап</string>
   <string name="ip_all">СИТЕ</string>
+  <string name="ip_game">Игра</string>
+  <string name="ip_streaming">Стриминг</string>
+  <string name="recommend">Препорачај</string>
   <string name="setting_app_proxy">Филтер за апликации</string>
   <string name="setting_app_proxy_desc">Изберете кои апликации ќе се поврзат на интернет преку VPN</string>
   <string name="setting_ads_block">Блок на реклами</string>

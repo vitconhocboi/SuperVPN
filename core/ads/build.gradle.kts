@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.ksp) // For Kotlin Kapt
-    alias(libs.plugins.dagger.hilt) // For Dagger Hilt
+    alias(libs.plugins.kotlin.ksp)
+    alias(libs.plugins.dagger.hilt)
 }
 android {
     namespace = "com.core.ads"
@@ -53,20 +53,17 @@ dependencies {
     implementation(project(":core:dimens"))
     implementation(project(":core:preference"))
     implementation(project(":core:utilities"))
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
     // Google play service
     implementation(libs.play.services.ads)
-//    implementation "com.google.android.gms:play-services-ads-lite:$rootProject.ext.lib_versions.fb_ads"
-    implementation(libs.play.services.basement)
-    implementation(libs.play.services.base)
-    implementation(libs.play.services.ads.identifier)
-    implementation(libs.user.messaging.platform)
 
     //Hilt
     implementation(libs.hilt.android)
@@ -82,7 +79,7 @@ dependencies {
 
     //For Load Image
     api(libs.glide)
-    ksp(libs.glide.compiler)
+    ksp(libs.glide.ksp)
 
     implementation(libs.gson)
 }

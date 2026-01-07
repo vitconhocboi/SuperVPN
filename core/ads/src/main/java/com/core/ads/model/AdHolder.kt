@@ -1,5 +1,6 @@
 package com.core.ads.model
 
+import android.os.SystemClock
 import android.view.ViewGroup
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.appopen.AppOpenAd
@@ -85,11 +86,13 @@ internal data class BannerAdHolder(
     override fun reset() {
         isLoading = false
         isWaitLoadToShow = false
-        val parentAdView = bannerAd?.parent
-        if (parentAdView != null) {
-            (parentAdView as ViewGroup).endViewTransition(bannerAd)
-            parentAdView.layoutTransition = null
-            parentAdView.removeView(bannerAd)
+        runCatching {
+            val parentAdView = bannerAd?.parent
+            if (parentAdView != null) {
+                (parentAdView as ViewGroup).endViewTransition(bannerAd)
+                parentAdView.layoutTransition = null
+                parentAdView.removeView(bannerAd)
+            }
         }
         // Calling this method might cause a crash in admob built-in classes:
         // java.lang.IllegalStateException: The specified child already has a parent
@@ -105,6 +108,7 @@ internal data class BannerAdHolder(
 data class NativeAdHolder(
     override var adPlace: AdPlace,
     var nativeAd: NativeAd? = null,
+    var loadedAtMs: Long = 0L,
 ): AdHolder() {
     override fun reset() {
         isLoading = false
@@ -113,6 +117,10 @@ data class NativeAdHolder(
         nativeAd = null
         retryCount = 0
 //        needRetry = true // native don't need reset this field
+    }
+
+    fun isAdExpired(ttlMs: Long): Boolean {
+        return SystemClock.elapsedRealtime() - loadedAtMs > ttlMs
     }
 
     override fun isAdLoaded() = nativeAd != null

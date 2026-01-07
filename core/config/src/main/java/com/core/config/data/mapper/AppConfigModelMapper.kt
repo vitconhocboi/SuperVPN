@@ -3,6 +3,7 @@ package com.core.config.data.mapper
 import com.core.config.data.model.AppConfigModel
 import com.core.config.domain.data.AppConfig
 import com.core.config.domain.data.AppConfig.Companion.DEFINE_INTRO_HAVE_ADS
+import com.core.config.domain.data.AppConfig.Companion.DEFINE_INTRO_NO_ADS
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -27,6 +28,10 @@ internal class AppConfigModelMapper @Inject constructor(
             introData = model.introData ?: arrayListOf(
                 DEFINE_INTRO_HAVE_ADS,
                 DEFINE_INTRO_HAVE_ADS,
+                DEFINE_INTRO_HAVE_ADS
+            ), introDataV2 = model.intro_data_v2 ?: arrayListOf(
+                DEFINE_INTRO_NO_ADS,
+                DEFINE_INTRO_NO_ADS,
                 DEFINE_INTRO_HAVE_ADS
             ),
             isAlwaysPreloadBannerNativeAdsWhenStart = model.isAlwaysPreloadBannerNativeAdsWhenStart ?: true,

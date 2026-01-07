@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <com.tici.vpn.proxy.master.feature.feature_onboarding.ui.FitWidthImageView
+        android:id="@+id/iv_introduction"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@+id/layoutContent"
+        android:layout_alignParentTop="true"
+        android:adjustViewBounds="true"
+        android:background="@color/black"
+        android:scaleType="fitCenter"
+        tools:src="@drawable/guide1" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layoutContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="@dimen/_10dp"
+        android:layout_marginBottom="@dimen/_10dp"
+        android:background="@drawable/core_bg_content_onboarding_v2"
+        android:backgroundTint="@color/black"
+        android:orientation="vertical"
+        android:padding="@dimen/_15dp"
+        android:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            style="@style/Title18Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/core_onboarding_title_1"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle2"
+            style="@style/Title16Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5dp"
+            android:gravity="center"
+            android:text="@string/core_onboarding_title_1"
+            android:textColor="@color/white"  />
+
+        <com.tici.vpn.proxy.master.feature.feature_onboarding.ui.OutlineTextView
+            android:id="@+id/tvNext"
+            style="@style/CtaViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15dp"
+            android:background="@drawable/bg_start_trial"
+            android:fontFamily="@font/roboto"
+            android:gravity="center"
+            android:minHeight="@dimen/_45dp"
+            android:paddingTop="@dimen/_8dp"
+            android:paddingBottom="@dimen/_9dp"
+            android:text="@string/tv_continue_premium"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</RelativeLayout>

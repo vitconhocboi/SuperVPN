@@ -11,4 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:bnl_isNativeFullscreen="true" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/_32dp"
+        android:layout_height="@dimen/_32dp"
+        android:layout_alignParentEnd="true"
+        android:padding="@dimen/_2dp"
+        android:id="@+id/ivClose"
+        android:background="@drawable/bg_button_gray"
+        android:layout_margin="@dimen/_15dp"
+        android:src="@drawable/ic_rounded_close"/>
 </RelativeLayout>

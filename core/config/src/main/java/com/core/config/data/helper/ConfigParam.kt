@@ -39,6 +39,7 @@ internal sealed class ConfigParam<T : Any> {
 
         const val RETRY_IS_ENABLE_RETRY = false
         const val RETRY_MAX_RETRY_COUNT = 5
+        const val EXPIRED_NATIVE_TIME_DEFAULT = 60
         val RETRY_INTERVAL_LIST = listOf(3L, 6L, 9L, 12L, 15L)
 
         const val TIME_WAIT_RETRY_ON_CONTEXT = 5

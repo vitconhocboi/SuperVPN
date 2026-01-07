@@ -23,6 +23,7 @@ import com.tici.vpn.proxy.master.feature.feature_uninstall.ui.navigate.Uninstall
 import com.tici.vpn.proxy.master.main.MainActivity
 import com.tici.vpn.proxy.master.required.shortcut.AppScreenType
 import com.tici.vpn.proxy.master.utils.Constant
+import com.tici.vpn.proxy.master.utils.Navigator
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -107,6 +108,10 @@ class UninstallFeedbackChildOfHostFragment:
 
             btnBack.setOnClickListener {
                 hostViewModel.navigateActionBack()
+            }
+
+            tvCancel.setOnClickListener {
+                Navigator.navigateToMainActivity(requireActivity())
             }
         }
         collectFlowOn(insetsViewModel.systemInsets) { systemInsets ->

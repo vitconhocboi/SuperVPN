@@ -20,7 +20,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class DisconnectedFragment : BackActionBarFragment, BaseFragment<FragmentDisconnectedBinding>() {
+class DisconnectedFragment : BaseFragment<FragmentDisconnectedBinding>() {
 
     var report: ProxyReport? = null
     var countryTitle: String = ""
@@ -94,13 +94,13 @@ class DisconnectedFragment : BackActionBarFragment, BaseFragment<FragmentDisconn
         }
     }
 
-    override fun getTitle(): String {
-        return try {
-            resources.getString(R.string.connect_report)
-        } catch (e: Exception) {
-            "Connect report"
-        }
-    }
+//    override fun getTitle(): String {
+//        return try {
+//            resources.getString(R.string.connect_report)
+//        } catch (e: Exception) {
+//            resources.getString(R.string.connect_report)
+//        }
+//    }
 
     fun loadData(report: ProxyReport) {
         this.report = report;

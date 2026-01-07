@@ -50,7 +50,7 @@ dependencies {
 
     //For Load Image
     implementation (libs.glide)
-    ksp(libs.glide.compiler)
+    ksp(libs.glide.ksp)
 
     implementation (libs.lottie)
 

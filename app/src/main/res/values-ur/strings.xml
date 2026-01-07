@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">سپر وی پی این</string>
   <string name="ads_message_inter">VPN چل رہا ہے، براہ کرم انتظار کریں…</string>
   <string name="ads_message_open">SuperVPN میں دوبارہ خوش آمدید</string>
   <string name="ads_message_notice">اس کارروائی میں اشتہارات شامل ہو سکتے ہیں۔</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">سرورز</string>
   <string name="ip_quick_access">فوری رسائی</string>
   <string name="ip_all">تمام</string>
+  <string name="ip_game">کھیل</string>
+  <string name="ip_streaming">سلسلہ بندی</string>
+  <string name="recommend">تجویز کریں۔</string>
   <string name="setting_app_proxy">ایپ فلٹر</string>
   <string name="setting_app_proxy_desc">منتخب کریں کہ کون سی ایپس VPN کے ذریعے انٹرنیٹ سے منسلک ہوں گی۔</string>
   <string name="setting_ads_block">اشتہارات بلاک</string>

@@ -141,6 +141,7 @@ class NativeFullCtaTopTemplateView @JvmOverloads constructor(
         binding.nativeAdView.destroy()
     }
 
+
     override fun applyStyles(styles: NativeTemplateStyle) {
         styles.mainBackgroundColor?.let {
             binding.background.background = it
@@ -182,6 +183,7 @@ class NativeFullCtaTopTemplateView @JvmOverloads constructor(
             binding.primary.textSize = primaryTextSize
         }
 
+
         val tertiaryTextSize = styles.tertiaryTextSize
         if (tertiaryTextSize > 0) {
             binding.body.textSize = tertiaryTextSize
@@ -191,20 +193,26 @@ class NativeFullCtaTopTemplateView @JvmOverloads constructor(
             binding.layoutCta.updateBackgroundColor(it)
         }
 
+        styles.backgroundResource?.let {
+            binding.background.setBackgroundResource(it)
+        }
+
+
         styles.callToActionRadius?.let {
-            binding.layoutCta.updateRadius(dpToPx(it.toFloat()).toFloat())
+            binding.layoutCta.updateRadius(it.toFloat())
         }
 
         styles.borderColor?.let {
-            (binding.background.background as GradientDrawable).setStroke(resources.getDimensionPixelSize(R.dimen._1dp), it.toColorInt())
+            (binding.background.background as GradientDrawable).setStroke(resources.getDimensionPixelSize(com.core.dimens.R.dimen._1dp), it.toColorInt())
         }
+
 
         styles.backgroundColor?.let {
-            binding.nativeAdView.setBackgroundColor(it.toColorInt())
+            binding.background.updateBackgroundColor(it)
         }
 
-        styles.backgroundResource?.let {
-            binding.background.setBackgroundResource(it)
+        styles.backgroundFullColor?.let {
+            binding.nativeAdView.setBackgroundColor(runCatching { it.toColorInt() }.getOrNull() ?: Color.WHITE)
         }
 
         styles.backgroundAdsNotifyView?.let {
@@ -238,7 +246,7 @@ class NativeFullCtaTopTemplateView @JvmOverloads constructor(
         styles.callToActionBorderColor?.let {
             (binding.layoutCta.background as? GradientDrawable)?.setStroke(
                 resources.getDimensionPixelSize(
-                    R.dimen._1dp
+                    com.core.dimens.R.dimen._1dp
                 ), it.toColorInt()
             )
         }

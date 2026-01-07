@@ -2,7 +2,6 @@ package com.tici.vpn.proxy.master.proxy
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,11 +15,13 @@ import com.common.baseui.extension.setOnClickNoDoubleClick
 import com.common.baseui.extension.setVisible
 import com.core.baseui.fragment.BaseFragment
 import com.core.baseui.fragment.ScreenType
+import com.core.config.domain.data.IAdPlaceName
 import com.tici.vpn.proxy.master.R
 import com.tici.vpn.proxy.master.databinding.FragmentProxyBinding
 import com.tici.vpn.proxy.master.dialog.UnlockDialog
 import com.tici.vpn.proxy.master.main.MainViewModel
 import com.tici.vpn.proxy.master.network.LocalVpnService
+import com.tici.vpn.proxy.master.required.ads.AppAdPlaceName
 import com.tici.vpn.proxy.master.required.shortcut.AppScreenType
 import com.tici.vpn.proxy.master.utils.Constant.KEY_RESULT_CONNECT_VPN
 import com.tici.vpn.proxy.master.utils.Navigator
@@ -49,6 +50,7 @@ class PremiumProxyFragment : BaseFragment<FragmentProxyBinding>() {
     companion object {
         private var selected = false
         private const val PREMIUM = "premium"
+        private const val ALL = "all"
 //        private const val FREE = "free"
     }
 
@@ -57,6 +59,12 @@ class PremiumProxyFragment : BaseFragment<FragmentProxyBinding>() {
         inflater: LayoutInflater, container: ViewGroup?
     ): FragmentProxyBinding {
         return FragmentProxyBinding.inflate(inflater, container, false)
+    }
+
+    override fun providerInterAdPlaceName(): List<IAdPlaceName> {
+        return listOf(
+            AppAdPlaceName.FULLSCREEN_CONNECTED_PROXY
+        )
     }
 
     override val screenType: ScreenType
@@ -69,7 +77,7 @@ class PremiumProxyFragment : BaseFragment<FragmentProxyBinding>() {
         callBackResult()
         val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
         with(binding) {
-            ivBack.scaleX = if (isRTL) -1f else 1f
+//            ivBack.scaleX = if (isRTL) -1f else 1f
             rcvGroupProxy.adapter = mPagerAdapter
 
             rcvQuickAccess.adapter = mQuickAccessAdapter
@@ -88,12 +96,16 @@ class PremiumProxyFragment : BaseFragment<FragmentProxyBinding>() {
                     ResultData.State.SUCCESS -> {
                         val data = result.data ?: arrayListOf()
                         if (data.isNotEmpty()) {
-                            mPagerAdapter.updateData(data)
+                            mPagerAdapter.updateData(data.filter {
+                                it.proxy_group == ALL
+                            })
+                            mPagerAdapter.sortByTitle(requireContext())
                             if (mProxyViewModel.getLastUsedVpn().isNotEmpty()) {
                                 tvQuickAccess.visibility = View.VISIBLE
                                 mQuickAccessAdapter.updateData(data.filter {
-                                    mProxyViewModel.getLastUsedVpn().contains(it.country)
+                                    mProxyViewModel.getLastUsedVpn().contains(it.country) && it.proxy_group == ALL
                                 })
+                                mQuickAccessAdapter.sortByTitle(requireContext())
                             } else {
                                 tvQuickAccess.visibility = View.GONE
                             }
@@ -120,7 +132,7 @@ class PremiumProxyFragment : BaseFragment<FragmentProxyBinding>() {
                 } else {
                     btnConnect.visibility = View.GONE
                 }
-                mPagerAdapter.datas.find { it?.country == item.country }?.active = item.active
+                mPagerAdapter.datas.find { it?.country == item.country && item.proxy_group == ALL}?.active = item.active
                 mQuickAccessAdapter.notifyDataSetChanged()
                 mPagerAdapter.notifyDataSetChanged()
             }
@@ -133,74 +145,21 @@ class PremiumProxyFragment : BaseFragment<FragmentProxyBinding>() {
                 } else {
                     btnConnect.visibility = View.GONE
                 }
-                mQuickAccessAdapter.datas.find { it?.country == item.country }?.active = item.active
+                mQuickAccessAdapter.datas.find { it?.country == item.country && item.proxy_group == ALL}?.active = item.active
                 mQuickAccessAdapter.notifyDataSetChanged()
                 mPagerAdapter.notifyDataSetChanged()
             }
 
             btnConnect.setOnClickNoDoubleClick {
-                try {
-                    lifecycleScope.launch {
-                        showLoading()
-                        try {
-                            if (selectedItem.active) {
-                                if (selectedItem.type != "free" && !mainViewModel.isSub()) {
-                                    UnlockDialog(data = selectedItem).show(
-                                        childFragmentManager,
-                                        UnlockDialog::class.java.simpleName
-                                    )
-                                    return@launch
-                                }
-                            }
-                            connectState =
-                                if (selectedItem.country != BaseAppConfig.proxyCountry || !selectedItem.active || !LocalVpnService.IsRunning) {
-                                    if (LocalVpnService.IsRunning) "RECONNECT" else "CONNECT"
-                                } else ""
-                            val deviceId = mainViewModel.getDeviceId(requireContext())
-                            if (selectedItem.active) {
-                                mProxyViewModel.setActiveProxy(
-                                    selectedItem,
-                                    deviceId,
-                                    selectedItem.type
-                                )
-                            } else {
-                                mProxyViewModel.setActiveProxy(
-                                    null,
-                                    deviceId,
-                                    selectedItem.type
-                                )
-                            }
-                            requireActivity().finish()
-                            Log.i("SuperVpn","startMainActivity with state $connectState")
-                            Navigator.startMainActivity(
-                                requireContext(),
-                                connectState
-                            )
-                        } catch (e: Exception) {
-                            e.printStackTrace()
-                            Toast.makeText(
-                                requireContext(),
-                                getString(R.string.network_error),
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
-                    }
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                    Toast.makeText(
-                        requireContext(),
-                        getString(R.string.network_error),
-                        Toast.LENGTH_SHORT
-                    ).show()
-                } finally {
-                    hideLoading()
+                showInterAd(AppAdPlaceName.FULLSCREEN_CONNECTED_PROXY) {
+                    actionConnectProxy()
                 }
             }
 
-            ivBack.setOnClickListener {
-                Navigator.startMainActivity(requireActivity())
-                activity?.finish()
-            }
+//            ivBack.setOnClickListener {
+//                Navigator.startMainActivity(requireActivity())
+//                activity?.finish()
+//            }
         }
 
         mProxyViewModel.isError.observe(viewLifecycleOwner) { isError ->
@@ -209,6 +168,64 @@ class PremiumProxyFragment : BaseFragment<FragmentProxyBinding>() {
                     requireContext(), getString(R.string.network_error), Toast.LENGTH_SHORT
                 ).show()
             }
+        }
+    }
+
+    private fun actionConnectProxy() {
+        try {
+            lifecycleScope.launch {
+                showLoading()
+                try {
+                    if (selectedItem.active) {
+                        if (selectedItem.type != "free" && !mainViewModel.isSub()) {
+                            UnlockDialog(data = selectedItem).show(
+                                childFragmentManager,
+                                UnlockDialog::class.java.simpleName
+                            )
+                            return@launch
+                        }
+                    }
+                    connectState =
+                        if (selectedItem.country != BaseAppConfig.proxyCountry || !selectedItem.active || !LocalVpnService.IsRunning) {
+                            if (LocalVpnService.IsRunning) "RECONNECT" else "CONNECT"
+                        } else ""
+                    val deviceId = mainViewModel.getDeviceId(requireContext())
+                    if (selectedItem.active) {
+                        mProxyViewModel.setActiveProxy(
+                            selectedItem,
+                            deviceId,
+                            selectedItem.type
+                        )
+                    } else {
+                        mProxyViewModel.setActiveProxy(
+                            null,
+                            deviceId,
+                            selectedItem.type
+                        )
+                    }
+                    requireActivity().finish()
+                    Navigator.startMainActivity(
+                        requireContext(),
+                        connectState
+                    )
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                    Toast.makeText(
+                        requireContext(),
+                        getString(R.string.network_error),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Toast.makeText(
+                requireContext(),
+                getString(R.string.network_error),
+                Toast.LENGTH_SHORT
+            ).show()
+        } finally {
+            hideLoading()
         }
     }
 

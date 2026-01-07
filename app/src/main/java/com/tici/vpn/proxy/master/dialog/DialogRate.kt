@@ -18,6 +18,7 @@ import com.common.baseui.extension.setVisible
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import androidx.core.net.toUri
+import com.common.baseui.extension.screenWidth
 
 class DialogRate : BottomSheetDialogFragment() {
     var onDislike: () -> Unit = {}
@@ -28,13 +29,14 @@ class DialogRate : BottomSheetDialogFragment() {
     private var _binding: DialogRateBinding? = null
     private val binding get() = _binding!!
 
+
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dialog = super.onCreateDialog(savedInstanceState)
         dialog.setOnShowListener { dialogInterface ->
             val bottomSheetDialog = dialogInterface as BottomSheetDialog
             val bottomSheet = bottomSheetDialog.findViewById<View>(com.google.android.material.R.id.design_bottom_sheet)
             bottomSheet?.setBackgroundColor(Color.TRANSPARENT)
-            val width = (resources.displayMetrics.widthPixels * 0.9).toInt() // 85% of screen width
+            val width = (resources.screenWidth() * 0.9).toInt() // 85% of screen width
             val height = WindowManager.LayoutParams.WRAP_CONTENT
             bottomSheet?.layoutParams?.width = width
             bottomSheet?.layoutParams?.height = height
@@ -65,12 +67,27 @@ class DialogRate : BottomSheetDialogFragment() {
         super.onStart()
 
         // Adjust the width of the dialog
-        val width = (resources.displayMetrics.widthPixels * 0.9).toInt() // 85% of screen width
-        val height = WindowManager.LayoutParams.WRAP_CONTENT
-        dialog?.window?.apply {
-            setLayout(width, height)
-            setBackgroundDrawableResource(android.R.color.transparent)
+//        val width = (resources.screenWidth() * 0.9).toInt() // 85% of screen width
+//        val height = WindowManager.LayoutParams.WRAP_CONTENT
+//        dialog?.window?.apply {
+//            setLayout(width, height)
+//            setBackgroundDrawableResource(android.R.color.transparent)
+//        }
+
+        val bottomSheetDialog = dialog as? BottomSheetDialog
+        val bottomSheet =
+            bottomSheetDialog?.findViewById<View>(com.google.android.material.R.id.design_bottom_sheet)
+        bottomSheet?.let {
+            val layoutParams = it.layoutParams
+            layoutParams.width = (resources.screenWidth() * 0.9).toInt()
+            layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT
+            it.layoutParams = layoutParams
+            it.setBackgroundColor(Color.TRANSPARENT)
         }
+
+        // prevent animation flickers on layout updates
+        binding.root.layoutTransition = null
+
     }
 
     fun initView() {

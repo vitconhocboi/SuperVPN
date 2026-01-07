@@ -1,5 +1,6 @@
 package com.tici.vpn.proxy.master.proxy
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import com.common.baseui.adapter.BaseAdapter
 import com.common.baseui.adapter.BaseViewHolder
 import com.common.baseui.extension.context
 import com.core.preference.PurchasePreferences
+import com.tici.vpn.proxy.master.R
 import com.tici.vpn.proxy.master.databinding.AdapterProxyGroupBinding
 import com.tici.vpn.proxy.master.utils.Utils
 import javax.inject.Inject
@@ -39,11 +41,13 @@ class ProxyGroupAdapter @Inject constructor(val purchasePreferences: PurchasePre
                 tvTitle.text =
                     getStringSafely(context = context, name = data.country) ?: "undefined"
 
-                if (data.type == "premium" && !purchasePreferences.isUserVip()) {
+               /* if (data.type == "premium" && !purchasePreferences.isUserVip()) {
                     icCrown.visibility = View.VISIBLE
+                    icCrown.setImageResource(R.drawable.ic_watch_video)
                 } else {
-                    icCrown.visibility = View.INVISIBLE
-                }
+                    icCrown.visibility = View.VISIBLE
+                    icCrown.setImageResource(R.drawable.free)
+                }*/
 
                 lnMain.isSelected = data.active
 
@@ -54,25 +58,6 @@ class ProxyGroupAdapter @Inject constructor(val purchasePreferences: PurchasePre
 //                    }
                     onItemClick?.invoke(position, data)
                 }
-
-
-//                ivCollapse.setImageResource(if (data.collapsed) R.drawable.ic_arrow_down else R.drawable.ic_next_arrow)
-
-//                var mDailyAdapter = ProxyAdapter().apply {
-//                    updateData(data.list)
-//                }
-
-//                mDailyAdapter.onItemClick = { position, item ->
-//                    onProxyClick?.invoke(position, item)
-//                }
-//                rcvProxyItems.adapter = mDailyAdapter
-//                rcvProxyItems.setVisible(data.collapsed)
-//
-//                pnGroupProxy.setOnClickNoDoubleClick {
-//                    data.collapsed = !data.collapsed
-//                    ivCollapse.setImageResource(if (data.collapsed) R.drawable.ic_arrow_down else R.drawable.ic_next_arrow)
-//                    rcvProxyItems.setVisible(data.collapsed)
-//                }
             }
         }
     }
@@ -85,5 +70,13 @@ class ProxyGroupAdapter @Inject constructor(val purchasePreferences: PurchasePre
                 item.active = false
             }
         }
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun sortByTitle(context: Context) {
+        datas.sortWith(compareBy { item ->
+            getStringSafely(context, item?.country ?: "")?.lowercase() ?: ""
+        })
+        notifyDataSetChanged()
     }
 }

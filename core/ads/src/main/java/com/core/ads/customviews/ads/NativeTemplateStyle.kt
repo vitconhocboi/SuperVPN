@@ -35,6 +35,9 @@ class NativeTemplateStyle {
     var backgroundColor: String? = null
         private set
 
+    var backgroundFullColor: String? = null
+        private set
+
     var backgroundResource: Int? = null
         private set
 
@@ -146,6 +149,11 @@ class NativeTemplateStyle {
 
         fun withBackgroundColor(bgColor: String?): Builder {
             styles.backgroundColor = bgColor/* ?: "#FFFFFF"*/
+            return this
+        }
+
+        fun withBackgroundFullColor(bgColor: String?): Builder {
+            styles.backgroundFullColor = bgColor/* ?: "#FFFFFF"*/
             return this
         }
 

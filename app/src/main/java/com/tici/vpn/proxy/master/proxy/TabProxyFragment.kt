@@ -10,9 +10,11 @@ import androidx.viewpager2.widget.ViewPager2
 import com.common.baseui.view.RadioGroupManager
 import com.core.baseui.fragment.BaseFragment
 import com.core.baseui.fragment.ScreenType
+import com.core.config.domain.data.IAdPlaceName
 import com.tici.vpn.proxy.master.R
 import com.tici.vpn.proxy.master.databinding.TabProxyFragmentBinding
 import com.tici.vpn.proxy.master.proxy.fragments.ProxyPageAdapter
+import com.tici.vpn.proxy.master.required.ads.AppAdPlaceName
 import com.tici.vpn.proxy.master.required.shortcut.AppScreenType
 import com.tici.vpn.proxy.master.utils.Navigator
 import dagger.hilt.android.AndroidEntryPoint
@@ -32,23 +34,34 @@ class TabProxyFragment : BaseFragment<TabProxyFragmentBinding>() {
         return TabProxyFragmentBinding.inflate(inflater, container, false)
     }
 
+    override fun providerInterAdPlaceName(): List<IAdPlaceName> {
+        return listOf(
+            AppAdPlaceName.FULLSCREEN_BACK_TAB_PROXY
+        )
+    }
+
     override val screenType: ScreenType
         get() = AppScreenType.TabProxyFragment
 
     @SuppressLint("HardwareIds")
     override fun initViews(savedInstanceState: Bundle?) {
 
+        val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
+
         mPagerAdapter =
             ProxyPageAdapter(fragmentManager = childFragmentManager, lifecycle = lifecycle)
 
         mPagerAdapter.updateData(
             arrayListOf(
-                FreeProxyFragment(),
-                PremiumProxyFragment()
+                PremiumProxyFragment(),
+                GameProxyFragment()
             )
         )
 
         with(binding) {
+
+            ivBack.scaleX = if (isRTL) -1f else 1f
+
             vpProxies.adapter = mPagerAdapter
             vpProxies.offscreenPageLimit = 1
 
@@ -72,7 +85,10 @@ class TabProxyFragment : BaseFragment<TabProxyFragmentBinding>() {
             })
 
             ivBack.setOnClickListener {
-                Navigator.startMainActivity(requireActivity())
+                showInterAd(AppAdPlaceName.FULLSCREEN_BACK_TAB_PROXY) {
+                    Navigator.startMainActivity(requireActivity())
+                    activity?.finish()
+                }
             }
         }
     }
@@ -88,21 +104,25 @@ class TabProxyFragment : BaseFragment<TabProxyFragmentBinding>() {
 
             when (tag) {
                 0 -> {
-                    tabFree.setTypeface(typeBold)
-                    tabFree.setTextColor(requireContext().getColor(R.color.textColor))
-                    lnFree.visibility = View.VISIBLE
-                    tabPremium.setTypeface(typeNormal)
-                    tabPremium.setTextColor(requireContext().getColor(R.color.text_gray_2))
-                    lnPremium.visibility = View.INVISIBLE
+                    tabAll.isSelected = true
+                    tabRecommend.isSelected = false
+//                    tabFree.setTypeface(typeBold)
+//                    tabFree.setTextColor(requireContext().getColor(R.color.textColor))
+//                    tabPremium.setTypeface(typeNormal)
+//                    tabPremium.setTextColor(requireContext().getColor(R.color.text_gray_2))
+//                    lnFree.visibility = View.VISIBLE
+//                    lnPremium.visibility = View.INVISIBLE
                 }
 
                 1 -> {
-                    tabPremium.setTypeface(typeBold)
-                    tabPremium.setTextColor(requireContext().getColor(R.color.textColor))
-                    lnPremium.visibility = View.VISIBLE
-                    tabFree.setTypeface(typeNormal)
-                    tabFree.setTextColor(requireContext().getColor(R.color.text_gray_2))
-                    lnFree.visibility = View.INVISIBLE
+                    tabAll.isSelected = false
+                    tabRecommend.isSelected = true
+//                    tabPremium.setTypeface(typeBold)
+//                    tabPremium.setTextColor(requireContext().getColor(R.color.textColor))
+//                    tabFree.setTypeface(typeNormal)
+//                    tabFree.setTextColor(requireContext().getColor(R.color.text_gray_2))
+//                    lnPremium.visibility = View.VISIBLE
+//                    lnFree.visibility = View.INVISIBLE
                 }
             }
         }

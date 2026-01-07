@@ -16,26 +16,32 @@ import com.core.baseui.fragment.BaseFragment
 import com.core.baseui.fragment.ScreenType
 import com.core.baseui.fragment.collectFlowOn
 import com.core.config.domain.data.IAdPlaceName
+import com.core.rate.RateInApp
 import com.core.utilities.setOnSingleClick
 import com.core.utilities.toast
 import com.core.utilities.util.toast.Toasty
+import com.google.firebase.Firebase
+import com.google.firebase.analytics.analytics
 import com.tici.vpn.proxy.master.R
 import com.tici.vpn.proxy.master.databinding.FragmentSettingBinding
 import com.tici.vpn.proxy.master.dialog.DialogFeedback
-import com.tici.vpn.proxy.master.dialog.DialogRate
 import com.tici.vpn.proxy.master.dialog.SettingSuccessDialog
 import com.tici.vpn.proxy.master.main.MainActivity
-import com.tici.vpn.proxy.master.main.MainViewModel
 import com.tici.vpn.proxy.master.required.ads.AppAdPlaceName
 import com.tici.vpn.proxy.master.required.inapp.InAppBillingViewModel
+import com.tici.vpn.proxy.master.required.preferences.CoreAppPreferences
 import com.tici.vpn.proxy.master.required.shortcut.AppScreenType
 import com.tici.vpn.proxy.master.utils.Navigator
 import com.tici.vpn.proxy.master.utils.shareApp
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class SettingFragment() : BaseFragment<FragmentSettingBinding>() {
     private val inAppPurchasedViewModel: BillingViewModel by viewModels<InAppBillingViewModel>()
+
+    @Inject
+    lateinit var coreAppPreferences: CoreAppPreferences
 
     override fun bindingProvider(
         inflater: LayoutInflater, container: ViewGroup?
@@ -114,9 +120,16 @@ class SettingFragment() : BaseFragment<FragmentSettingBinding>() {
             }
 
             rowRate.setOnClickNoDoubleClick {
-//                BaseAppConfig.isSub = false
-//                SharedData.isSub.postValue(false)
-                DialogRate().show(childFragmentManager, "DialogRate")
+                activity?.let {
+                    RateInApp.instance.showDialogRateAndFeedback(
+                        context = it,
+                        onRated = {
+                            Firebase.analytics.logEvent("rate_app", Bundle())
+                            coreAppPreferences.isEnableRateLogic = false
+                        },
+                        forceShow = true
+                    )
+                }
             }
 
             rowShare.setOnClickNoDoubleClick {

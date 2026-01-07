@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">슈퍼VPN</string>
   <string name="ads_message_inter">VPN이 실행 중입니다. 잠시만 기다려 주세요.</string>
   <string name="ads_message_open">SuperVPN에 다시 오신 것을 환영합니다</string>
   <string name="ads_message_notice">이 작업에는 광고가 포함될 수 있습니다.</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">서버</string>
   <string name="ip_quick_access">빠른 접근</string>
   <string name="ip_all">모두</string>
+  <string name="ip_game">게임</string>
+  <string name="ip_streaming">스트리밍</string>
+  <string name="recommend">추천하다</string>
   <string name="setting_app_proxy">앱 필터</string>
   <string name="setting_app_proxy_desc">VPN을 통해 인터넷에 연결할 앱을 선택하세요</string>
   <string name="setting_ads_block">광고 차단</string>

@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">සුපිරි VPN</string>
   <string name="ads_message_inter">VPN ක්‍රියාත්මකයි, කරුණාකර රැඳී සිටින්න...</string>
   <string name="ads_message_open">SuperVPN වෙත නැවත සාදරයෙන් පිළිගනිමු.</string>
   <string name="ads_message_notice">මෙම ක්‍රියාවෙහි දැන්වීම් අඩංගු විය හැක</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">සේවාදායකයන්</string>
   <string name="ip_quick_access">ඉක්මන් ප්‍රවේශය</string>
   <string name="ip_all">සියලුම</string>
+  <string name="ip_game">ක්‍රීඩාව</string>
+  <string name="ip_streaming">ප්‍රවාහය</string>
+  <string name="recommend">නිර්දේශ කරන්න</string>
   <string name="setting_app_proxy">යෙදුම් පෙරහන</string>
   <string name="setting_app_proxy_desc">VPN හරහා අන්තර්ජාලයට සම්බන්ධ වන්නේ කුමන යෙදුම්ද යන්න තෝරන්න</string>
   <string name="setting_ads_block">දැන්වීම් අවහිර කිරීම</string>

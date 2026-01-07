@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">VPN veikia, palaukite…</string>
   <string name="ads_message_open">Sveiki sugrįžę į „SuperVPN“</string>
   <string name="ads_message_notice">Šiame veiksme gali būti skelbimų</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Serveriai</string>
   <string name="ip_quick_access">Greita prieiga</string>
   <string name="ip_all">VISI</string>
+  <string name="ip_game">Žaidimas</string>
+  <string name="ip_streaming">Srautinis transliavimas</string>
+  <string name="recommend">Rekomenduoti</string>
   <string name="setting_app_proxy">Programų filtras</string>
   <string name="setting_app_proxy_desc">Pasirinkite, kurios programos jungsis prie interneto per VPN</string>
   <string name="setting_ads_block">Skelbimų blokavimas</string>

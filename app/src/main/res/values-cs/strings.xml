@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">VPN je spuštěná, čekejte prosím…</string>
   <string name="ads_message_open">Vítejte zpět u SuperVPN</string>
   <string name="ads_message_notice">Tato akce může obsahovat reklamy</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Servery</string>
   <string name="ip_quick_access">Rychlý přístup</string>
   <string name="ip_all">VŠE</string>
+  <string name="ip_game">Hra</string>
+  <string name="ip_streaming">Streamování</string>
+  <string name="recommend">Doporučit</string>
   <string name="setting_app_proxy">Filtr aplikací</string>
   <string name="setting_app_proxy_desc">Vyberte, které aplikace se budou připojovat k internetu přes VPN</string>
   <string name="setting_ads_block">Blok reklam</string>

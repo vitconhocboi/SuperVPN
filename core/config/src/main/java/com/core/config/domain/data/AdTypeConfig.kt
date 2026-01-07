@@ -9,6 +9,7 @@ class BannerAdTypeConfig(
 class NativeAdTypeConfig(
     val isEnableRetry: Boolean,
     val maxRetryCount: Int,
+    val expiredTimeSecond: Int,
     val retryIntervalSecondList: List<Long>,
 )
 

@@ -5,5 +5,6 @@ data class ProxyGroupUI(
     var active: Boolean = false,
     var list: List<ProxyUI> = mutableListOf(),
 //    var isQuickAccess: Boolean = false,
-    var type: String
+    var type: String,
+    var proxy_group: String? = "all"
 )

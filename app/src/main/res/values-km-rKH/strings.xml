@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">VPN កំពុងដំណើរការ សូមរង់ចាំ...</string>
   <string name="ads_message_open">សូមស្វាគមន៍មកកាន់ SuperVPN</string>
   <string name="ads_message_notice">សកម្មភាពនេះអាចផ្ទុកការផ្សាយពាណិជ្ជកម្ម</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">ម៉ាស៊ីនមេ</string>
   <string name="ip_quick_access">ការចូលប្រើរហ័ស</string>
   <string name="ip_all">ទាំងអស់។</string>
+  <string name="ip_game">ហ្គេម</string>
+  <string name="ip_streaming">ស្ទ្រីម</string>
+  <string name="recommend">ណែនាំ</string>
   <string name="setting_app_proxy">តម្រងកម្មវិធី</string>
   <string name="setting_app_proxy_desc">ជ្រើសរើសកម្មវិធីណាមួយដែលនឹងភ្ជាប់អ៊ីនធឺណិតតាមរយៈ VPN</string>
   <string name="setting_ads_block">ប្លុកការផ្សាយពាណិជ្ជកម្ម</string>

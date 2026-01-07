@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">スーパーVPN</string>
   <string name="ads_message_inter">VPN が実行中です。お待ちください…</string>
   <string name="ads_message_open">SuperVPNへようこそ</string>
   <string name="ads_message_notice">このアクションには広告が含まれる場合があります</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">サーバー</string>
   <string name="ip_quick_access">クイックアクセス</string>
   <string name="ip_all">全て</string>
+  <string name="ip_game">ゲーム</string>
+  <string name="ip_streaming">ストリーミング</string>
+  <string name="recommend">推薦する</string>
   <string name="setting_app_proxy">アプリフィルター</string>
   <string name="setting_app_proxy_desc">VPN経由でインターネットに接続するアプリを選択する</string>
   <string name="setting_ads_block">広告ブロック</string>

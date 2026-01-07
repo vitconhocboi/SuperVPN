@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">VPN nan ap fonksyone, tanpri tann...</string>
   <string name="ads_message_open">Byenveni ankò nan SuperVPN</string>
   <string name="ads_message_notice">Aksyon sa a kapab genyen piblisite</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Sèvè</string>
   <string name="ip_quick_access">Aksè rapid</string>
   <string name="ip_all">TOUT</string>
+  <string name="ip_game">Jwèt</string>
+  <string name="ip_streaming">Difizyon</string>
+  <string name="recommend">Rekòmande</string>
   <string name="setting_app_proxy">Filtè Aplikasyon</string>
   <string name="setting_app_proxy_desc">Chwazi ki aplikasyon ki pral konekte ak Entènèt la atravè VPN lan</string>
   <string name="setting_ads_block">Blòk piblisite</string>

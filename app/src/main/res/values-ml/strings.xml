@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">സൂപ്പർവിപിഎൻ</string>
   <string name="ads_message_inter">VPN പ്രവർത്തിക്കുന്നു, ദയവായി കാത്തിരിക്കുക…</string>
   <string name="ads_message_open">SuperVPN-ലേക്ക് വീണ്ടും സ്വാഗതം.</string>
   <string name="ads_message_notice">ഈ പ്രവർത്തനത്തിൽ പരസ്യങ്ങൾ അടങ്ങിയിരിക്കാം</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">സെർവറുകൾ</string>
   <string name="ip_quick_access">ദ്രുത ആക്‌സസ്</string>
   <string name="ip_all">എല്ലാം</string>
+  <string name="ip_game">കളി</string>
+  <string name="ip_streaming">സ്ട്രീമിംഗ്</string>
+  <string name="recommend">ശുപാർശ ചെയ്യുക</string>
   <string name="setting_app_proxy">ആപ്പ് ഫിൽട്ടർ</string>
   <string name="setting_app_proxy_desc">VPN വഴി ഇന്റർനെറ്റിലേക്ക് കണക്റ്റ് ചെയ്യേണ്ട ആപ്പുകൾ ഏതൊക്കെയാണെന്ന് തിരഞ്ഞെടുക്കുക.</string>
   <string name="setting_ads_block">പരസ്യ ബ്ലോക്ക്</string>

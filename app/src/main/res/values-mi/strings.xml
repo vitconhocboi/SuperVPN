@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">Kei te haere te VPN, tatari koa…</string>
   <string name="ads_message_open">Nau mai hoki mai ki SuperVPN</string>
   <string name="ads_message_notice">Kei roto i tenei mahi nga panui</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Tūmau</string>
   <string name="ip_quick_access">Uru Tere</string>
   <string name="ip_all">KATOA</string>
+  <string name="ip_game">kēmu</string>
+  <string name="ip_streaming">Rererenga</string>
+  <string name="recommend">Tohutohu</string>
   <string name="setting_app_proxy">Tātari Taupānga</string>
   <string name="setting_app_proxy_desc">Kōwhiria ko ēhea taupānga ka tūhono ki te Ipurangi mā te VPN</string>
   <string name="setting_ads_block">Paraka panui</string>

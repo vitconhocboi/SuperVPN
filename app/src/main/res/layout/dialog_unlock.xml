@@ -81,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_big"
                 android:foreground="?selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_crown" />
+                android:src="@drawable/ic_watch_video" />
 
         </LinearLayout>
 

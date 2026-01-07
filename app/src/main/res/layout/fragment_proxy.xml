@@ -8,34 +8,34 @@
     android:background="@color/backgroundColor2"
     tools:context=".proxy.PremiumProxyFragment">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/proxyActionBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="@dimen/size16"
-        android:background="@color/black"
-        android:gravity="center_vertical"
-        app:layout_constraintTop_toTopOf="parent">
+<!--    <androidx.appcompat.widget.LinearLayoutCompat-->
+<!--        android:id="@+id/proxyActionBar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:paddingHorizontal="@dimen/size16"-->
+<!--        android:background="@color/black"-->
+<!--        android:gravity="center_vertical"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/size16"
-            android:src="@drawable/back"
-            android:foreground="?selectableItemBackgroundBorderless" />
+<!--        <androidx.appcompat.widget.AppCompatImageView-->
+<!--            android:id="@+id/ivBack"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginVertical="@dimen/size16"-->
+<!--            android:src="@drawable/back"-->
+<!--            android:foreground="?selectableItemBackgroundBorderless" />-->
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/size16"
-            android:layout_weight="1"
-            android:fontFamily="@font/inter_bold"
-            android:text="@string/ip_proxy"
-            android:textColor="@color/textColor"
-            android:textSize="@dimen/text_medium" />
+<!--        <androidx.appcompat.widget.AppCompatTextView-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/size16"-->
+<!--            android:layout_weight="1"-->
+<!--            android:fontFamily="@font/inter_bold"-->
+<!--            android:text="@string/ip_proxy"-->
+<!--            android:textColor="@color/textColor"-->
+<!--            android:textSize="@dimen/text_medium" />-->
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+<!--    </androidx.appcompat.widget.LinearLayoutCompat>-->
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvQuickAccess"
@@ -50,7 +50,7 @@
         android:visibility="gone"
         android:textSize="@dimen/text_medium"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/proxyActionBar"/>
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvQuickAccess"

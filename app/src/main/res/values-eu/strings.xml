@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">VPN martxan dago, itxaron mesedez…</string>
   <string name="ads_message_open">Ongi etorri berriro SuperVPN-ra</string>
   <string name="ads_message_notice">Ekintza honek iragarkiak izan ditzake</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Zerbitzariak</string>
   <string name="ip_quick_access">Sarbide azkarra</string>
   <string name="ip_all">GUZTIAK</string>
+  <string name="ip_game">Jokoa</string>
+  <string name="ip_streaming">Streaming-a</string>
+  <string name="recommend">Gomendatu</string>
   <string name="setting_app_proxy">Aplikazioen iragazkia</string>
   <string name="setting_app_proxy_desc">Aukeratu zein aplikaziok konektatuko diren Internetera VPN bidez</string>
   <string name="setting_ads_block">Iragarkien blokeoa</string>

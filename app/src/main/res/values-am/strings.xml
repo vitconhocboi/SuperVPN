@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">ሱፐርቪፒኤን</string>
   <string name="ads_message_inter">ቪፒኤን እየሰራ ነው፣ እባክዎ ይጠብቁ…</string>
   <string name="ads_message_open">እንኳን ወደ SuperVPN ተመለሱ</string>
   <string name="ads_message_notice">ይህ ድርጊት ማስታወቂያዎችን ሊይዝ ይችላል።</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">አገልጋዮች</string>
   <string name="ip_quick_access">ፈጣን መዳረሻ</string>
   <string name="ip_all">ሁሉም</string>
+  <string name="ip_game">ጨዋታ</string>
+  <string name="ip_streaming">በዥረት መልቀቅ</string>
+  <string name="recommend">ይመክራል።</string>
   <string name="setting_app_proxy">የመተግበሪያ ማጣሪያ</string>
   <string name="setting_app_proxy_desc">የትኞቹ መተግበሪያዎች በ VPN በኩል ከበይነመረቡ ጋር እንደሚገናኙ ይምረጡ</string>
   <string name="setting_ads_block">ማስታወቂያዎች አግድ</string>

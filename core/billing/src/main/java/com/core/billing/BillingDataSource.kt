@@ -915,50 +915,50 @@ class BillingDataSource @Inject constructor(
 
     companion object {
         const val TAG = "BillingManager"
-        /* const val PRO = "pro"
-         const val PRO_BY_YEAR = "pro_by_year"
-         const val PRO_BY_MONTH = "pro_by_month"
+       /* const val PRO = "pro"
+        const val PRO_BY_YEAR = "pro_by_year"
+        const val PRO_BY_MONTH = "pro_by_month"
 
-         const val PRODUCT_ID_IN_APP_PRO_LIFE_TIME = "pro"
+        const val PRODUCT_ID_IN_APP_PRO_LIFE_TIME = "pro"
 
-         const val PRODUCT_ID_SUBSCRIPTION_BY_YEAR = "pro_by_year"
+        const val PRODUCT_ID_SUBSCRIPTION_BY_YEAR = "pro_by_year"
 
-         const val PRODUCT_ID_SUBSCRIPTION_BY_MONTH = "pro_by_month"
+        const val PRODUCT_ID_SUBSCRIPTION_BY_MONTH = "pro_by_month"
 
-         const val PRODUCT_ID_SUBSCRIPTION_BY_WEEK = "pro_by_week"
+        const val PRODUCT_ID_SUBSCRIPTION_BY_WEEK = "pro_by_week"
 
-         const val PRODUCT_ID_SUPPORT_TOOLS_1 = "support_tools_1"
-         const val PRODUCT_ID_SUPPORT_TOOLS_2 = "support_tools_2"
-         const val PRODUCT_ID_PACKAGE_KEY_1 = "key_1"
-         const val PRODUCT_ID_PACKAGE_KEY_3 = "key_3"
-         const val PRODUCT_ID_VIP_FOREVER_10 = "key_10"
+        const val PRODUCT_ID_SUPPORT_TOOLS_1 = "support_tools_1"
+        const val PRODUCT_ID_SUPPORT_TOOLS_2 = "support_tools_2"
+        const val PRODUCT_ID_PACKAGE_KEY_1 = "key_1"
+        const val PRODUCT_ID_PACKAGE_KEY_3 = "key_3"
+        const val PRODUCT_ID_VIP_FOREVER_10 = "key_10"
 
 
-         // Sản phẩm tiêu dùng hoặc mau vip 1 lần
-         val IN_APP_PRODUCTS = arrayOf<String>(
-             PRODUCT_ID_IN_APP_PRO_LIFE_TIME,
-             PRODUCT_ID_SUPPORT_TOOLS_1,
-             PRODUCT_ID_SUPPORT_TOOLS_2,
-             PRODUCT_ID_PACKAGE_KEY_1,
-             PRODUCT_ID_PACKAGE_KEY_3,
-             PRODUCT_ID_VIP_FOREVER_10 // mua vip 1 lần thì remove khỏi list AUTO_CONSUME_PRODUCTS
-         )
+        // Sản phẩm tiêu dùng hoặc mau vip 1 lần
+        val IN_APP_PRODUCTS = arrayOf<String>(
+            PRODUCT_ID_IN_APP_PRO_LIFE_TIME,
+            PRODUCT_ID_SUPPORT_TOOLS_1,
+            PRODUCT_ID_SUPPORT_TOOLS_2,
+            PRODUCT_ID_PACKAGE_KEY_1,
+            PRODUCT_ID_PACKAGE_KEY_3,
+            PRODUCT_ID_VIP_FOREVER_10 // mua vip 1 lần thì remove khỏi list AUTO_CONSUME_PRODUCTS
+        )
 
-         // Subscription products
-         val SUBSCRIPTION_PRODUCTS = arrayOf(
-             PRODUCT_ID_SUBSCRIPTION_BY_YEAR,
-             PRODUCT_ID_SUBSCRIPTION_BY_MONTH,
-             PRODUCT_ID_SUBSCRIPTION_BY_WEEK
-         )
+        // Subscription products
+        val SUBSCRIPTION_PRODUCTS = arrayOf(
+            PRODUCT_ID_SUBSCRIPTION_BY_YEAR,
+            PRODUCT_ID_SUBSCRIPTION_BY_MONTH,
+            PRODUCT_ID_SUBSCRIPTION_BY_WEEK
+        )
 
-         // Tự động xóa sản phẩm sau khi sử dụng
-         val AUTO_CONSUME_PRODUCTS = arrayOf<String>(
-             PRODUCT_ID_SUPPORT_TOOLS_1,
-             PRODUCT_ID_SUPPORT_TOOLS_2,
-             PRODUCT_ID_PACKAGE_KEY_1,
-             PRODUCT_ID_PACKAGE_KEY_3,
- //            PRODUCT_ID_VIP_FOREVER_10
-         )*/
+        // Tự động xóa sản phẩm sau khi sử dụng
+        val AUTO_CONSUME_PRODUCTS = arrayOf<String>(
+            PRODUCT_ID_SUPPORT_TOOLS_1,
+            PRODUCT_ID_SUPPORT_TOOLS_2,
+            PRODUCT_ID_PACKAGE_KEY_1,
+            PRODUCT_ID_PACKAGE_KEY_3,
+//            PRODUCT_ID_VIP_FOREVER_10
+        )*/
 
         private val handler = Handler(Looper.getMainLooper())
     }

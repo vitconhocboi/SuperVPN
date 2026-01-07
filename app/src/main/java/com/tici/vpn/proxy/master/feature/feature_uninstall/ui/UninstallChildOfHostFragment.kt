@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
-import com.tici.vpn.proxy.master.feature.feature_uninstall.ui.navigate.UninstallNavigateEvent
 import com.core.ads.domain.AdLoadBannerNativeUiResource
 import com.core.baseui.InsetsViewModel
 import com.core.baseui.fragment.BaseChildOfHostFragment
@@ -15,6 +14,7 @@ import com.core.config.domain.data.CoreAdPlaceName
 import com.core.config.domain.data.IAdPlaceName
 import com.core.utilities.setOnSingleClick
 import com.tici.vpn.proxy.master.databinding.CoreFragmentUninstallBinding
+import com.tici.vpn.proxy.master.feature.feature_uninstall.ui.navigate.UninstallNavigateEvent
 import com.tici.vpn.proxy.master.required.shortcut.AppScreenType
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -43,6 +43,19 @@ class UninstallChildOfHostFragment :
             btnBack.setOnSingleClick {
                 hostViewModel.navigateActionBack()
             }
+
+            tvDontWantUninstall.setOnSingleClick {
+                hostViewModel.navigateActionBack()
+            }
+
+            bgClNoLongInteresting.setOnSingleClick {
+                hostViewModel.navigateActionBack()
+            }
+
+            bgClUnableConnectVPN.setOnSingleClick {
+                hostViewModel.navigateActionBack()
+            }
+
         }
 
         collectFlowOn(insetsViewModel.systemInsets) { systemInsets ->

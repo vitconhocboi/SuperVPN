@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@color/backgroundColor"
-    android:orientation="vertical">
+    android:background="@color/backgroundColor">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/actionBar"
@@ -50,10 +50,10 @@
                 android:text="@string/fast_and_safe"
                 android:textColor="@color/white"
                 android:textSize="@dimen/size20"
-                android:autoSizeTextType="uniform"
-                android:autoSizeMinTextSize="12sp"
-                android:autoSizeMaxTextSize="@dimen/size20"
-                android:autoSizeStepGranularity="2sp"/>
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="12sp"
+                app:autoSizeMaxTextSize="20sp"
+                app:autoSizeStepGranularity="2sp" />
 <!--            <TextView-->
 <!--                android:id="@+id/ivVipReady"-->
 <!--                android:layout_width="0dp"-->

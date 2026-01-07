@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">Il-VPN qed jaħdem, jekk jogħġbok stenna...</string>
   <string name="ads_message_open">Merħba lura f\'SuperVPN</string>
   <string name="ads_message_notice">Din l-azzjoni tista\' fiha reklami</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Servers</string>
   <string name="ip_quick_access">Aċċess Rapidu</string>
   <string name="ip_all">KOLLHA</string>
+  <string name="ip_game">Logħba</string>
+  <string name="ip_streaming">Streaming</string>
+  <string name="recommend">Irrakkomanda</string>
   <string name="setting_app_proxy">Filtru tal-App</string>
   <string name="setting_app_proxy_desc">Agħżel liema apps se jikkonnettjaw mal-Internet permezz ta\' VPN</string>
   <string name="setting_ads_block">Blokk tar-reklami</string>

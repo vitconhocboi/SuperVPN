@@ -24,8 +24,8 @@ android {
         applicationId = "com.tici.vpn.proxy.master"
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
-        versionCode = 28
-        versionName = "1.28"
+        versionCode = 46
+        versionName = "1.46"
 //
 //        resourceConfigurations.addAll(
 //            listOf("en", "vi", "ar", "hi", "id", "ms", "ru", "pt", "fr", "de", "es", "ja", "ko")
@@ -39,12 +39,12 @@ android {
         externalNativeBuild {
             cmake {
                 cppFlags("")
-                arguments("-DANDROID_STL=c++_shared")
+//                arguments("-DANDROID_STL=c++_shared")
             }
         }
 
         ndk {
-            abiFilters += listOf("armeabi-v7a", "arm64-v8a","x86_64") // Specify architectures
+            abiFilters += listOf("armeabi-v7a", "arm64-v8a", "x86", "x86_64")
         }
 
         val date = Date()
@@ -213,6 +213,15 @@ dependencies {
     implementation(libs.dotsindicator)
     //implementation(libs.circularprogressbar)
 
+    // Moshi
+    implementation (libs.moshi.kotlin)
+    implementation (libs.moshi)
+    implementation (libs.moshi.adapters)
+    ksp(libs.moshi.kotlin.codegen)
+    implementation(libs.play.services.ads.identifier)
+    // Thêm dòng này để hỗ trợ desugaring Java 8+ API trên Android cũ
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
+
     implementation(project(":BaseUI"))
     implementation(project(":libads"))
 
@@ -224,4 +233,5 @@ dependencies {
     implementation(project(":core:utilities"))
     implementation(project(":core:billing"))
     implementation(project(":core:dimens"))
+    implementation(project(":core:rate"))
 }

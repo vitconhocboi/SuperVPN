@@ -5,14 +5,14 @@
         <selector>
             <item android:state_enabled="true">
                 <shape>
-                    <solid android:color="@color/fb_color_button_submit_enable" />
+                    <solid android:color="#0EC74B" />
                     <corners android:radius="@dimen/fb_radius_submit_size"/>
                 </shape>
             </item>
 
             <item android:state_enabled="false">
                 <shape>
-                    <solid android:color="@color/fb_color_button_submit_disable" />
+                    <solid android:color="#0EC74B" />
                     <corners android:radius="@dimen/fb_radius_submit_size"/>
                 </shape>
             </item>

@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">VPN жұмыс істеп тұр, күте тұрыңыз…</string>
   <string name="ads_message_open">SuperVPN қызметіне қайта қош келдіңіз</string>
   <string name="ads_message_notice">Бұл әрекетте жарнамалар болуы мүмкін</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Серверлер</string>
   <string name="ip_quick_access">Жылдам қол жеткізу</string>
   <string name="ip_all">БАРЛЫҒЫ</string>
+  <string name="ip_game">Ойын</string>
+  <string name="ip_streaming">Ағын</string>
+  <string name="recommend">Ұсыныңыз</string>
   <string name="setting_app_proxy">Қолданба сүзгісі</string>
   <string name="setting_app_proxy_desc">VPN арқылы Интернетке қосылатын қолданбаларды таңдаңыз</string>
   <string name="setting_ads_block">Жарнамаларды блоктау</string>

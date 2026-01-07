@@ -19,7 +19,6 @@ import com.core.baseui.countdown.JsgCountDownTimer
 import com.core.baseui.ext.collectFlowOn
 import com.core.config.data.FetchRemoteConfigState
 import com.core.config.domain.data.AdType
-import com.core.config.domain.data.AppConfig
 import com.core.config.domain.data.CoreAdPlaceName
 import com.core.config.domain.data.IAdPlaceName
 import com.core.preference.SharedPrefs
@@ -29,10 +28,11 @@ import com.core.utilities.manager.isNetworkConnected
 import com.core.utilities.util.Timber
 import com.tici.vpn.proxy.master.core.base_ui.CoreActivity
 import com.tici.vpn.proxy.master.feature.feature_language.ui.LanguageActivity
-import com.tici.vpn.proxy.master.feature.feature_onboarding.ui.OnBoardingActivity
+import com.tici.vpn.proxy.master.feature.feature_onboarding.ui.helper.OnBoardingConfigFactory
 import com.tici.vpn.proxy.master.feature.feature_uninstall.ui.UninstallActivityHost
 import com.tici.vpn.proxy.master.main.MainActivity
 import com.tici.vpn.proxy.master.required.ads.AppAdPlaceName
+import com.tici.vpn.proxy.master.required.ads.GetDataFromRemoteUseCaseImpl
 import com.tici.vpn.proxy.master.required.inapp.InAppBillingViewModel
 import com.tici.vpn.proxy.master.required.shortcut.AppScreenType
 import com.tici.vpn.proxy.master.required.shortcut.AppShortCut
@@ -43,6 +43,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import java.util.Calendar
 import java.util.concurrent.TimeUnit
+import javax.inject.Inject
 
 
 private const val TAG = "BaseSplashActivity"
@@ -51,6 +52,9 @@ abstract class BaseSplashActivity<VB : ViewBinding> : CoreActivity<VB>() {
 
 
     private val viewModel by viewModels<SplashViewModel>()
+
+    @Inject
+    lateinit var getDataFromRemoteUseCase: GetDataFromRemoteUseCaseImpl
 
 
     private val inAppBillingViewModel: BillingViewModel by viewModels<InAppBillingViewModel>()
@@ -207,11 +211,14 @@ abstract class BaseSplashActivity<VB : ViewBinding> : CoreActivity<VB>() {
             if (isLoadLanguage) {
                 add(CoreAdPlaceName.ANCHORED_CHANGE_LANGUAGE_BOTTOM)
             }
+
             if (isEnableIntroductionScreen && isLoadLanguage) {
-                add(CoreAdPlaceName.ANCHORED_ONBOARDING_BOTTOM)
-                if (remoteConfigRepository.getAppConfig().introData.contains(AppConfig.DEFINE_INTRO_FULL_AD)) {
-                    add(CoreAdPlaceName.ANCHORED_FULL_ONBOARDING)
-                }
+                addAll(
+                    OnBoardingConfigFactory.getOnBoardingAdPlaceName(
+                        getDataFromRemoteUseCase.onBoardingConfig,
+                        remoteConfigRepository.getAppConfig()
+                    )
+                )
             }
 
             if (targetScreenFromShortCut == AppScreenType.Uninstall.screenName) {
@@ -576,7 +583,10 @@ abstract class BaseSplashActivity<VB : ViewBinding> : CoreActivity<VB>() {
             )
         } else if (!isEnableLanguageScreen && isEnableIntroductionScreen) {
             timeShowIntro = System.currentTimeMillis()
-            Intent(this@BaseSplashActivity, OnBoardingActivity::class.java)
+            Intent(
+                this@BaseSplashActivity,
+                OnBoardingConfigFactory.getOnBoardingClass(getDataFromRemoteUseCase.onBoardingConfig)
+            )
         } else {
             Intent(this@BaseSplashActivity, MainActivity::class.java)
         }

@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">Mae VPN yn rhedeg, arhoswch…</string>
   <string name="ads_message_open">Croeso yn ôl i SuperVPN</string>
   <string name="ads_message_notice">Gall y weithred hon gynnwys hysbysebion</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Gweinyddion</string>
   <string name="ip_quick_access">Mynediad Cyflym</string>
   <string name="ip_all">PAWB</string>
+  <string name="ip_game">Gêm</string>
+  <string name="ip_streaming">Ffrydio</string>
+  <string name="recommend">Argymhellwch</string>
   <string name="setting_app_proxy">Hidlo Apiau</string>
   <string name="setting_app_proxy_desc">Dewiswch pa apiau fydd yn cysylltu â\'r Rhyngrwyd trwy VPN</string>
   <string name="setting_ads_block">Bloc hysbysebion</string>

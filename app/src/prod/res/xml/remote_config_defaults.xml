@@ -257,7 +257,7 @@
             "place_name": "anchored_bottom_connected_success",
             "ad_id": "ca-app-pub-4253116256630907/9471180116",
             "ad_type": "native",
-            "native_template_size": "medium_cta_bottom",
+            "native_template_size": "medium_cta_top",
             "is_enable": true,
             "is_tracking_click": true,
             "background_color": "#232836",
@@ -273,11 +273,11 @@
             "native_template_size": "small_cta_bottom",
             "is_enable": true,
             "is_tracking_click": true,
-            "background_color": "#FFFFFF",
-            "primary_text_color": "#090909",
-            "body_text_color": "#828282",
+            "background_color": "#232836",
+            "primary_text_color": "#FFFFFF",
+            "body_text_color": "#70788F",
             "background_cta": "#0EC74B",
-            "border_color": "#FFFFFF"
+            "border_color": "#373D4E"
             },
             {
             "place_name": "anchored_bottom_dns_default",
@@ -286,11 +286,11 @@
             "native_template_size": "small_cta_bottom",
             "is_enable": true,
             "is_tracking_click": true,
-            "background_color": "#FFFFFF",
-            "primary_text_color": "#090909",
-            "body_text_color": "#828282",
+            "background_color": "#232836",
+            "primary_text_color": "#FFFFFF",
+            "body_text_color": "#70788F",
             "background_cta": "#0EC74B",
-            "border_color": "#FFFFFF"
+            "border_color": "#373D4E"
             },
             {
             "place_name": "anchored_bottom_app_proxy",
@@ -299,11 +299,11 @@
             "native_template_size": "small_cta_bottom",
             "is_enable": true,
             "is_tracking_click": true,
-            "background_color": "#FFFFFF",
-            "primary_text_color": "#090909",
-            "body_text_color": "#828282",
+            "background_color": "#232836",
+            "primary_text_color": "#FFFFFF",
+            "body_text_color": "#70788F",
             "background_cta": "#0EC74B",
-            "border_color": "#FFFFFF"
+            "border_color": "#373D4E"
             },
             {
             "place_name": "anchored_bottom_exit",
@@ -422,6 +422,13 @@
             "is_enable": true
             },
             {
+            "place_name": "action_next_in_introduction",
+            "ad_id": "ca-app-pub-4253116256630907/2676064914",
+            "ad_type": "interstitial",
+            "is_ignore_interval": true,
+            "is_enable": true
+            },
+            {
             "place_name": "fullscreen_show_to_home",
             "ad_id": "ca-app-pub-4253116256630907/2676064914",
             "ad_type": "interstitial",
@@ -443,6 +450,27 @@
             "place_name": "fullscreen_back_main",
             "ad_id": "ca-app-pub-4253116256630907/2676064914",
             "ad_type": "interstitial",
+            "is_enable": true
+            },
+            {
+            "place_name": "fullscreen_back_tab_proxy",
+            "ad_id": "ca-app-pub-4253116256630907/2676064914",
+            "ad_type": "interstitial",
+            "is_ignore_interval": true,
+            "is_enable": true
+            },
+            {
+            "place_name": "fullscreen_connected_proxy",
+            "ad_id": "ca-app-pub-4253116256630907/2676064914",
+            "ad_type": "interstitial",
+            "is_ignore_interval": true,
+            "is_enable": true
+            },
+            {
+            "place_name": "fullscreen_connected_proxy_game",
+            "ad_id": "ca-app-pub-4253116256630907/2676064914",
+            "ad_type": "interstitial",
+            "is_ignore_interval": true,
             "is_enable": true
             },
             {
@@ -551,4 +579,14 @@
             }
         </value>
     </entry>
+
+    <entry>
+        <key>onboarding_config</key>
+        <value>
+            {
+            "version": 2
+            }
+        </value>
+    </entry>
+
 </defaults>

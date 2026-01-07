@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">ಸೂಪರ್‌ವಿಪಿಎನ್</string>
   <string name="ads_message_inter">VPN ಚಾಲನೆಯಲ್ಲಿದೆ, ದಯವಿಟ್ಟು ನಿರೀಕ್ಷಿಸಿ…</string>
   <string name="ads_message_open">ಸೂಪರ್‌ವಿಪಿಎನ್‌ಗೆ ಮತ್ತೆ ಸ್ವಾಗತ.</string>
   <string name="ads_message_notice">ಈ ಕ್ರಿಯೆಯು ಜಾಹೀರಾತುಗಳನ್ನು ಒಳಗೊಂಡಿರಬಹುದು</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">ಸರ್ವರ್‌ಗಳು</string>
   <string name="ip_quick_access">ತ್ವರಿತ ಪ್ರವೇಶ</string>
   <string name="ip_all">ಎಲ್ಲಾ</string>
+  <string name="ip_game">ಆಟ</string>
+  <string name="ip_streaming">ಸ್ಟ್ರೀಮಿಂಗ್</string>
+  <string name="recommend">ಶಿಫಾರಸು ಮಾಡಿ</string>
   <string name="setting_app_proxy">ಅಪ್ಲಿಕೇಶನ್ ಫಿಲ್ಟರ್</string>
   <string name="setting_app_proxy_desc">VPN ಮೂಲಕ ಇಂಟರ್ನೆಟ್‌ಗೆ ಯಾವ ಅಪ್ಲಿಕೇಶನ್‌ಗಳು ಸಂಪರ್ಕಗೊಳ್ಳುತ್ತವೆ ಎಂಬುದನ್ನು ಆರಿಸಿ</string>
   <string name="setting_ads_block">ಜಾಹೀರಾತುಗಳ ನಿರ್ಬಂಧ</string>

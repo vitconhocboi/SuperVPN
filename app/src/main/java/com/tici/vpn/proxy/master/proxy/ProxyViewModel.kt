@@ -80,9 +80,10 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
                         val listProxies = countriesResponse.countries.map { country ->
                             ProxyGroupUI(
                                 country = country.name,
-                                active = country.name == BaseAppConfig.proxyCountry,
+                                active = country.name == BaseAppConfig.proxyCountry && country.proxy_group == BaseAppConfig.proxyGroup,
 //                                isQuickAccess = country.is_quick_access == 1,
-                                type = country.type
+                                type = country.type,
+                                proxy_group = country.proxy_group
                             )
                         }
                         allFreeProxy.emit(ResultData.Companion.success(listProxies))
@@ -123,9 +124,10 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
                         val listProxies = countriesResponse.countries.map { country ->
                             ProxyGroupUI(
                                 country = country.name,
-                                active = country.name == BaseAppConfig.proxyCountry,
+                                active = country.name == BaseAppConfig.proxyCountry && country.proxy_group == BaseAppConfig.proxyGroup,
 //                                isQuickAccess = country.is_quick_access == 1,
-                                type = country.type
+                                type = country.type,
+                                proxy_group = country.proxy_group
                             )
                         }
                         Timber.d("load countries success size emit ${countriesResponse.countries.size}")
@@ -278,13 +280,14 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
 
     }
 
-    suspend fun setActiveProxy(item: ProxyGroupUI?, deviceId: String?, type: String) {
+    suspend fun setActiveProxy(item: ProxyGroupUI?, deviceId: String?, type: String, proxyGroup: String? = "all") {
         Timber.d("click country item setActiveProxy")
         if (item != null && deviceId != null) {
             Timber.d("click country item setActiveProxy assign ${item.country}")
             BaseAppConfig.proxyCountry = item.country
+            BaseAppConfig.proxyGroup = proxyGroup ?: "all"
 
-            val request = ProxyRequest(user_id = deviceId, country = item.country, type = type)
+            val request = ProxyRequest(user_id = deviceId, country = item.country, type = type, proxy_group = proxyGroup)
 //            val response = apiService.assignProxy(request)
 //
 //            if (response.isSuccessful) {
@@ -313,6 +316,7 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
             BaseAppConfig.proxy = ""
             BaseAppConfig.proxyHost = ""
             BaseAppConfig.proxyCountry = ""
+            BaseAppConfig.proxyGroup = ""
 
             // Notify API about disconnection if we have a device ID
             if (deviceId != null) {
@@ -336,14 +340,6 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
 
         viewModelScope.launch(Dispatchers.IO) {
             if (deviceId != null) {
-//                apiService.connect(
-//                    Users(
-//                        user_id = deviceId,
-//                        ip_address = BaseAppConfig.proxyHost,
-//                        type = "connect"
-//                    )
-//                )
-
                 val result = connectSafe(
                     Users(
                         user_id = deviceId,
@@ -369,20 +365,11 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
 
     fun stopProxy(deviceId: String?, context: Context?) {
         proxyUpdate.setProxyUpdate(this)
-//        Log.i("SuperVpn", "TestRelease stopProxy")
         context!!.startService(Intent(context, LocalVpnService::class.java).apply {
             action = ACTION_STOP
         })
         viewModelScope.launch(Dispatchers.IO) {
             if (deviceId != null) {
-//                apiService.connect(
-//                    Users(
-//                        user_id = deviceId,
-//                        ip_address = BaseAppConfig.proxyHost,
-//                        type = "disconnect"
-//                    )
-//                )
-
                 val result = connectSafe(
                     Users(
                         user_id = deviceId,
@@ -395,9 +382,6 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
 
                     }
                     .onFailure { _ ->
-//                        throw Exception("Failed to assign proxy: $error")
-//                        Timber.d("isError connectSafe stopProxy $isError")
-//                        isError.postValue(true)
                     }
             }
         }
@@ -456,6 +440,33 @@ class ProxyViewModel @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class
     suspend fun connectSafe(user: Users): Result<DisconnectResponse> {
         return try {
             val response = apiService.connect(user)
+            if (response.isSuccessful) {
+                val body = response.body()
+                if (body != null) {
+                    Result.success(body)
+                } else {
+                    Result.failure(Exception("Empty response from server"))
+                }
+            } else {
+                Result.failure(Exception("Server error: ${response.code()}"))
+            }
+        } catch (e: SSLHandshakeException) {
+            Result.failure(Exception("SSL Handshake failed"))
+        } catch (e: SocketTimeoutException) {
+            Result.failure(Exception("Connection timed out. Please try again later."))
+        } catch (e: UnknownHostException) {
+            Result.failure(Exception("No internet connection or DNS resolution failed"))
+        } catch (e: IOException) {
+            Result.failure(Exception("Network I/O error occurred"))
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
+
+    suspend fun disconnectSafe(user: Users): Result<DisconnectResponse> {
+        return try {
+            val req = DisconnectRequest(user_id = user.user_id)
+            val response = apiService.disconnect(req)
             if (response.isSuccessful) {
                 val body = response.body()
                 if (body != null) {

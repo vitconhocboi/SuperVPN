@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">VPN кор мекунад, лутфан интизор шавед…</string>
   <string name="ads_message_open">Хуш омадед ба SuperVPN</string>
   <string name="ads_message_notice">Ин амал метавонад дорои таблиғ бошад</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Серверҳо</string>
   <string name="ip_quick_access">Дастрасии зуд</string>
   <string name="ip_all">ҲАМАИ</string>
+  <string name="ip_game">Бозӣ</string>
+  <string name="ip_streaming">Ҷараён</string>
+  <string name="recommend">Тавсия кунед</string>
   <string name="setting_app_proxy">Филтри барнома</string>
   <string name="setting_app_proxy_desc">Интихоб кунед, ки кадом барномаҳо тавассути VPN ба Интернет пайваст мешаванд</string>
   <string name="setting_ads_block">Блоки реклама</string>

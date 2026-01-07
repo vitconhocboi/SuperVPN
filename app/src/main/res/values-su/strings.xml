@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">VPN jalan, mangga antosan…</string>
   <string name="ads_message_open">Wilujeng sumping deui ka SuperVPN</string>
   <string name="ads_message_notice">Peta ieu tiasa ngandung iklan</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Palayan</string>
   <string name="ip_quick_access">Aksés Gancang</string>
   <string name="ip_all">KABEH</string>
+  <string name="ip_game">Kaulinan</string>
+  <string name="ip_streaming">Streaming</string>
+  <string name="recommend">Nyarankeun</string>
   <string name="setting_app_proxy">Filter Aplikasi</string>
   <string name="setting_app_proxy_desc">Pilih aplikasi mana anu bakal nyambung ka Internét ngalangkungan VPN</string>
   <string name="setting_ads_block">Blok iklan</string>

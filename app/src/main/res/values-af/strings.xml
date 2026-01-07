@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">VPN loop, wag asseblief…</string>
   <string name="ads_message_open">Welkom terug by SuperVPN</string>
   <string name="ads_message_notice">Hierdie aksie kan advertensies bevat</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Bedieners</string>
   <string name="ip_quick_access">Vinnige Toegang</string>
   <string name="ip_all">ALMAL</string>
+  <string name="ip_game">Spel</string>
+  <string name="ip_streaming">Stroom</string>
+  <string name="recommend">Aanbeveel</string>
   <string name="setting_app_proxy">App-filter</string>
   <string name="setting_app_proxy_desc">Kies watter programme via VPN aan die internet sal koppel</string>
   <string name="setting_ads_block">Advertensieblokkering</string>

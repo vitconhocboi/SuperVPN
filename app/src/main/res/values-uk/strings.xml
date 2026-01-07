@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">СуперVPN</string>
   <string name="ads_message_inter">VPN працює, зачекайте…</string>
   <string name="ads_message_open">Ласкаво просимо назад до SuperVPN</string>
   <string name="ads_message_notice">Ця дія може містити рекламу</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Сервери</string>
   <string name="ip_quick_access">Швидкий доступ</string>
   <string name="ip_all">ВСЕ</string>
+  <string name="ip_game">Гра</string>
+  <string name="ip_streaming">Потокове передавання</string>
+  <string name="recommend">Рекомендувати</string>
   <string name="setting_app_proxy">Фільтр програм</string>
   <string name="setting_app_proxy_desc">Виберіть, які програми підключатимуться до Інтернету через VPN</string>
   <string name="setting_ads_block">Блок реклами</string>

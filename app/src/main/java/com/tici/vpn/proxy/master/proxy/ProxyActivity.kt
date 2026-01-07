@@ -21,7 +21,8 @@ class ProxyActivity : BaseActivity<ActivityProxyBinding>() {
     override fun initViews(savedInstanceState: Bundle?) {
         supportFragmentManager.beginTransaction().replace(
             R.id.fragment_container,
-            PremiumProxyFragment()
+//            PremiumProxyFragment()
+            TabProxyFragment()
         )
             .commit()
     }

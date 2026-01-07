@@ -44,7 +44,11 @@ fun Context.openAppInStore() {
             startActivity(webIntent)
         } catch (webException: ActivityNotFoundException) {
             // Notify the user if no browser or Play Store app is available
-            Toast.makeText(this, getString(R.string.fb_common_unable_find_market), Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                this,
+                getString(R.string.fb_common_unable_find_market),
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 }

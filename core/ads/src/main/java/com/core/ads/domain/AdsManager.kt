@@ -1,9 +1,6 @@
 package com.core.ads.domain
 
 import android.app.Activity
-import androidx.lifecycle.LifecycleOwner
-import com.core.ads.customviews.ads.BannerNativeContainerLayout
-import com.core.ads.model.AdHolder
 import com.core.ads.model.AppOpenAdHolder
 import com.core.ads.model.NativeAdHolder
 import com.core.config.domain.data.AdPlace
@@ -60,4 +57,9 @@ interface AdsManager {
     fun getNativeHolder(activity: Activity, adPlaceName: IAdPlaceName): NativeAdHolder?
 
     fun startDisableAdCountDownTimer()
+
+    /*
+        Xóa quảng cáo để ứng dụng có thể tải lại quảng cáo khi vào lại app (thường dùng cho các quảng cáo sử dụng oneTimeLoad = true
+     */
+    fun removeAds(adPlaceName: IAdPlaceName)
 }

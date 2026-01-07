@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">VPN is actief, even geduld a.u.b.</string>
   <string name="ads_message_open">Welkom terug bij SuperVPN</string>
   <string name="ads_message_notice">Deze actie kan advertenties bevatten</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Servers</string>
   <string name="ip_quick_access">Snelle toegang</string>
   <string name="ip_all">ALLE</string>
+  <string name="ip_game">Spel</string>
+  <string name="ip_streaming">Streamen</string>
+  <string name="recommend">Aanbevelen</string>
   <string name="setting_app_proxy">App-filter</string>
   <string name="setting_app_proxy_desc">Kies welke apps verbinding maken met internet via VPN</string>
   <string name="setting_ads_block">Advertentieblok</string>

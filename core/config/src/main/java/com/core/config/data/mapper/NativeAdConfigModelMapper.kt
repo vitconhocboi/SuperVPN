@@ -15,6 +15,7 @@ internal class NativeAdConfigModelMapper @Inject constructor(
             isEnableRetry = model.isEnableRetry ?: ConfigParam.RETRY_IS_ENABLE_RETRY,
             maxRetryCount = model.maxRetryCount ?: ConfigParam.RETRY_MAX_RETRY_COUNT,
             retryIntervalSecondList = model.retryIntervalSecondList ?: ConfigParam.RETRY_INTERVAL_LIST,
+            expiredTimeSecond = model.expiredTimeSecond ?: ConfigParam.EXPIRED_NATIVE_TIME_DEFAULT,
         )
     }
 

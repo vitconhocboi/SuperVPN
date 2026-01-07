@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">VPN ກຳລັງເຮັດວຽກຢູ່, ກະລຸນາລໍຖ້າ...</string>
   <string name="ads_message_open">ຍິນດີຕ້ອນຮັບກັບຄືນສູ່ SuperVPN</string>
   <string name="ads_message_notice">ຄຳສັ່ງນີ້ສາມາດມີໂຄສະນາໄດ້</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">ເຊີບເວີ</string>
   <string name="ip_quick_access">ການເຂົ້າເຖິງດ່ວນ</string>
   <string name="ip_all">ທັງໝົດ</string>
+  <string name="ip_game">ເກມ</string>
+  <string name="ip_streaming">ການຖ່າຍທອດ</string>
+  <string name="recommend">ແນະນໍາ</string>
   <string name="setting_app_proxy">App Filter</string>
   <string name="setting_app_proxy_desc">ເລືອກວ່າແອັບໃດຈະເຊື່ອມຕໍ່ອິນເຕີເນັດຜ່ານ VPN</string>
   <string name="setting_ads_block">ບລັອກໂຄສະນາ</string>

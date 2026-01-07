@@ -52,7 +52,10 @@ class RateInApp {
                     isCanShowAppOpen = true
                     if (isShowThanks && activity is AppCompatActivity) {
                         if (isThankForFeedbackGravityBottom) {
-                            ThankForFeedbackBottomDialog().show(activity.supportFragmentManager, "thanks")
+                            ThankForFeedbackBottomDialog().show(
+                                activity.supportFragmentManager,
+                                "thanks"
+                            )
                         } else {
                             ThankForFeedbackCenterDialog(activity).show()
                         }
@@ -90,7 +93,7 @@ class RateInApp {
     ) {
         fun rateStar(star: Int) {
             onRated(star)
-            if (star == 5) {
+            if (star == 5 || star == 4) {
                 context.rateApp(inAppReview = inAppReview)
             } else {
                 showFeedback(
@@ -143,9 +146,10 @@ class RateInApp {
 
     // Call this method in onCreate() of Activity
     private fun registerForFeedback(activity: ComponentActivity) {
-        intentActivity[activity.hashCode()] = activity.registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-            onResult?.invoke(it)
-        }
+        intentActivity[activity.hashCode()] =
+            activity.registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+                onResult?.invoke(it)
+            }
     }
 
     private fun showActivityFeedback(context: Context, onResult: (ActivityResult) -> Unit) {

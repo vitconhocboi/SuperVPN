@@ -4,8 +4,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.tici.vpn.proxy.master.feature.feature_onboarding.ui.OnBoardingFragment
-import com.tici.vpn.proxy.master.feature.feature_onboarding.ui.OnBoardingFullNativeFragment
+import com.tici.vpn.proxy.master.feature.feature_onboarding.ui.v1.OnBoardingFragment
+import com.tici.vpn.proxy.master.feature.feature_onboarding.ui.v1.OnBoardingFullNativeFragment
 import com.tici.vpn.proxy.master.feature.feature_onboarding.ui.model.OnBoardingItem
 
 class OnBoardingPagerAdapter(

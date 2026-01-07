@@ -30,13 +30,13 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
+            android:background="?selectableItemBackgroundBorderless"
             android:gravity="center"
             android:padding="@dimen/_16dp"
-            android:visibility="gone"
-            android:background="?selectableItemBackgroundBorderless"
             android:text="@string/core_common_skip"
             android:textColor="@color/white"
-            android:textSize="@dimen/_16sp" />
+            android:textSize="@dimen/_16sp"
+            android:visibility="gone" />
     </RelativeLayout>
 
     <FrameLayout

@@ -12,17 +12,23 @@ import com.core.ads.domain.AdLoadBannerNativeUiResource
 import com.core.baseui.fragment.BaseFragment
 import com.core.baseui.fragment.ScreenType
 import com.core.config.domain.data.IAdPlaceName
+import com.core.rate.RateInApp
+import com.core.utilities.util.Timber
+import com.google.firebase.Firebase
+import com.google.firebase.analytics.analytics
 import com.tici.vpn.proxy.master.R
 import com.tici.vpn.proxy.master.databinding.FragmentConnectedBinding
 import com.tici.vpn.proxy.master.network.ProxySpeedTest
 import com.tici.vpn.proxy.master.required.ads.AppAdPlaceName
+import com.tici.vpn.proxy.master.required.preferences.CoreAppPreferences
 import com.tici.vpn.proxy.master.required.shortcut.AppScreenType
 import com.tici.vpn.proxy.master.utils.Navigator
 import com.tici.vpn.proxy.master.utils.Utils
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
-class ConnectedFragment : BackActionBarFragment, BaseFragment<FragmentConnectedBinding>() {
+class ConnectedFragment : BaseFragment<FragmentConnectedBinding>() {
 
     override val screenType: ScreenType
         get() = AppScreenType.ConnectedFragment
@@ -75,13 +81,13 @@ class ConnectedFragment : BackActionBarFragment, BaseFragment<FragmentConnectedB
         return if (resId != 0) getString(resId) else null
     }
 
-    override fun getTitle(): String {
-        return try {
-            resources.getString(R.string.connect_success)
-        } catch (e: Exception) {
-            "Connected success"
-        }
-    }
+//    override fun getTitle(): String {
+//        return try {
+//            resources.getString(R.string.connect_success)
+//        } catch (e: Exception) {
+//            resources.getString(R.string.connect_success)
+//        }
+//    }
 
     fun setCurrentProxy(proxy: ProxySpeedTest.ProxyConfig?) {
         currentProxy = proxy

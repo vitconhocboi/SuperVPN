@@ -82,7 +82,9 @@ internal class AdPlaceModelMapper @Inject constructor(
                 isTrackingShow = isTrackingShow,
                 ctaRadius = ctaRadius,
                 backgroundRadius = model.backgroundRadius,
-                ctaBorderColor = model.ctaBorderColor
+                ctaBorderColor = model.ctaBorderColor,
+                backgroundFullColor = model.backgroundFullColor,
+                expiredTimeSecond = model.expiredTimeSecond
             )
             AdType.Banner -> BannerAdPlace(
                 placeName = placeName,

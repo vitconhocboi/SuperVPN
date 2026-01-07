@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">VPN သုံးနေသည်၊ ခဏစောင့်ပါ...</string>
   <string name="ads_message_open">SuperVPN မှ ကြိုဆိုပါတယ်။</string>
   <string name="ads_message_notice">ဤလုပ်ဆောင်ချက်တွင် ကြော်ငြာများ ပါဝင်နိုင်သည်။</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">ဆာဗာများ</string>
   <string name="ip_quick_access">အမြန်ဝင်ရောက်ပါ။</string>
   <string name="ip_all">အားလုံး</string>
+  <string name="ip_game">ဂိမ်း</string>
+  <string name="ip_streaming">လွှ</string>
+  <string name="recommend">အကြံပြုသည်။</string>
   <string name="setting_app_proxy">အက်ပ်စစ်ထုတ်မှု</string>
   <string name="setting_app_proxy_desc">VPN မှတစ်ဆင့် အင်တာနက်သို့ ချိတ်ဆက်မည့်အက်ပ်များကို ရွေးပါ။</string>
   <string name="setting_ads_block">ကြော်ငြာများပိတ်ဆို့</string>

@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">ՍուպերVPN</string>
   <string name="ads_message_inter">VPN-ը աշխատում է, խնդրում ենք սպասել…</string>
   <string name="ads_message_open">Բարի վերադարձ SuperVPN</string>
   <string name="ads_message_notice">Այս գործողությունը կարող է պարունակել գովազդ</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Սերվերներ</string>
   <string name="ip_quick_access">Արագ մուտք</string>
   <string name="ip_all">ԲՈԼՈՐ</string>
+  <string name="ip_game">Խաղ</string>
+  <string name="ip_streaming">Հոսքային հեռարձակում</string>
+  <string name="recommend">Առաջարկել</string>
   <string name="setting_app_proxy">Հավելվածի ֆիլտր</string>
   <string name="setting_app_proxy_desc">Ընտրեք, թե որ հավելվածները կմիանան ինտերնետին VPN-ի միջոցով</string>
   <string name="setting_ads_block">Գովազդի արգելափակում</string>

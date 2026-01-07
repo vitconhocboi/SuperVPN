@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">سوبر في بي ان</string>
   <string name="ads_message_inter">VPN قيد التشغيل، يرجى الانتظار…</string>
   <string name="ads_message_open">مرحبًا بك مرة أخرى في SuperVPN</string>
   <string name="ads_message_notice">يمكن أن يحتوي هذا الإجراء على إعلانات</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">الخوادم</string>
   <string name="ip_quick_access">الوصول السريع</string>
   <string name="ip_all">الجميع</string>
+  <string name="ip_game">لعبة</string>
+  <string name="ip_streaming">جاري</string>
+  <string name="recommend">يوصي</string>
   <string name="setting_app_proxy">مرشح التطبيق</string>
   <string name="setting_app_proxy_desc">اختر التطبيقات التي ستتصل بالإنترنت عبر VPN</string>
   <string name="setting_ads_block">كتلة الإعلانات</string>

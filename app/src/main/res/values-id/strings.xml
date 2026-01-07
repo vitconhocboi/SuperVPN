@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">VPN terbaik</string>
   <string name="ads_message_inter">VPN sedang berjalan, harap tunggu…</string>
   <string name="ads_message_open">Selamat datang kembali di SuperVPN</string>
   <string name="ads_message_notice">Tindakan ini dapat berisi iklan</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Server</string>
   <string name="ip_quick_access">Akses Cepat</string>
   <string name="ip_all">SEMUA</string>
+  <string name="ip_game">Permainan</string>
+  <string name="ip_streaming">Mengalir</string>
+  <string name="recommend">Menyarankan</string>
   <string name="setting_app_proxy">Filter Aplikasi</string>
   <string name="setting_app_proxy_desc">Pilih aplikasi mana yang akan terhubung ke Internet melalui VPN</string>
   <string name="setting_ads_block">Blok iklan</string>

@@ -1,11 +1,8 @@
 package com.tici.vpn.proxy.master.main
 
 import android.annotation.SuppressLint
-import android.app.ComponentCaller
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
@@ -18,11 +15,14 @@ import com.common.baseui.BaseAppConfig
 import com.core.baseui.BaseActivity
 import com.core.baseui.BillingViewModel
 import com.core.config.domain.data.IAdPlaceName
+import com.core.rate.RateInApp
+import com.core.utilities.util.Timber
+import com.google.firebase.Firebase
+import com.google.firebase.analytics.analytics
 import com.simple.libads.setVisible
 import com.tici.vpn.proxy.master.R
 import com.tici.vpn.proxy.master.databinding.ActivityMainBinding
 import com.tici.vpn.proxy.master.feature.feature_exit.DialogFragmentExitApp
-import com.tici.vpn.proxy.master.home.BackActionBarFragment
 import com.tici.vpn.proxy.master.home.ConnectedFragment
 import com.tici.vpn.proxy.master.home.DisconnectedFragment
 import com.tici.vpn.proxy.master.home.HomeFragment
@@ -31,11 +31,13 @@ import com.tici.vpn.proxy.master.network.ProxySpeedTest
 import com.tici.vpn.proxy.master.remoteconfig.FirebaseConfigManager
 import com.tici.vpn.proxy.master.required.ads.AppAdPlaceName
 import com.tici.vpn.proxy.master.required.inapp.InAppBillingViewModel
+import com.tici.vpn.proxy.master.required.preferences.CoreAppPreferences
 import com.tici.vpn.proxy.master.settings.SettingFragment
 import com.tici.vpn.proxy.master.settings.appproxy.AppProxyFragment
 import com.tici.vpn.proxy.master.settings.dns.DNSFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>() {
@@ -45,6 +47,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     var isDnsFragment = false
     var isConnectedFragment = false
     var isDisconnectedFragment = false
+
+
+    @Inject
+    lateinit var coreAppPreferences: CoreAppPreferences
+
 
     private val inAppBillingViewModel: BillingViewModel by viewModels<InAppBillingViewModel>()
 
@@ -88,6 +95,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     companion object {
         private const val ADVERTISING_ID_PERMISSION = 1001
+
+        private const val CACHE_EXPIRY_TIME = 4 * 60 * 60 * 1000L
     }
 
     override fun bindingProvider(inflater: LayoutInflater): ActivityMainBinding {
@@ -117,7 +126,26 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun initViews(savedInstanceState: Bundle?) {
         requestAdvertisingIdPermission()
         val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
+//<<<<<<< HEAD
         val reconnect = intent.getStringExtra("state")
+//        if (reconnect != null && reconnect == "POPUP") {
+////            SettingSuccessDialog(
+////                R.string.setting_choose_proxy, R.string.home_reconnect_to_take_effect
+////            ).show(supportFragmentManager, "SettingSuccessDialog")
+//            isAutoConnect = true
+//        } else {
+//            isAutoConnect = false
+//        }
+//        intent.removeExtra("state")
+//=======
+//        val reconnect = intent.getStringExtra("state")
+//        if (reconnect != null && reconnect == "POPUP") {
+//            isAutoConnect = true
+//        } else {
+//            isAutoConnect = false
+//        }
+//        intent.removeExtra("state")
+//>>>>>>> feature/08092025_update_core_base
 
         mListFragment.add(mHomeFragment)
         mListFragment.add(mSettingFragment)
@@ -173,20 +201,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                     } else if (isDisconnectedFragment) {
                         showFragment(mHomeFragment)
                     } else {
-//<<<<<<< HEAD
-//                        CloseAppDialog(
-//                            onClose = {
-//                                Timber.d("exit finishAffinity")
-//                                finishAffinity()
-//                            }
-//                        ).show(supportFragmentManager, "CloseApp")
-//=======
                         val dialogFragmentExitApp = DialogFragmentExitApp()
                         dialogFragmentExitApp.show(
                             supportFragmentManager,
                             DialogFragmentExitApp::class.java.simpleName
                         )
-//>>>>>>> feature/08092025_update_core_base
                     }
                 }
             })
@@ -203,7 +222,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
         if (fragment.isAdded) {
             if (isAppProxyFragment) {
-                mAppProxyFragment.loadData()
+//                mAppProxyFragment.loadData()
             }
             fragmentTransaction.show(fragment)
         } else {
@@ -218,9 +237,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
         lifecycleScope.launch {
             lifecycle.whenResumed {
-                fragmentTransaction.commitNow()
+                if (!supportFragmentManager.isStateSaved) {
+                    fragmentTransaction.commit()
+                }
             }
         }
+
 //        fragmentTransaction.commitAllowingStateLoss()
 
         isAppProxyFragment = false
@@ -307,7 +329,19 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                     dnsActionBar.setVisible(false)
                     selectAll.setVisible(false)
                     backActionBar.setVisible(true)
-                    tvTitle2.text = (fragment as? BackActionBarFragment)?.getTitle()
+                    tvTitle2.text = when (fragment) {
+                        is ConnectedFragment -> {
+                            resources.getString(R.string.connect_success)
+                        }
+
+                        is DisconnectedFragment -> {
+                            resources.getString(R.string.connect_report)
+                        }
+
+                        else -> {
+                            ""
+                        }
+                    }
                     actionBar.setBackgroundColor(resources.getColor(R.color.backgroundColor))
                 }
             }
@@ -321,8 +355,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 //>>>>>>> feature/08092025_update_core_base
 //        mainViewModel.getInstalledAppsWithInternetPermission(baseContext)
         showFragment(mAppProxyFragment)
-        mAppProxyFragment.loadData()
-        mAppProxyFragment.clearUI()
+//        mAppProxyFragment.loadData()
+//        mAppProxyFragment.clearUI()
     }
 
     //<<<<<<< HEAD
@@ -340,6 +374,34 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         mConnectedFragment.setCurrentProxy(proxy)
         isConnectedFragment = true
         showFragment(mConnectedFragment)
+
+        checkShowRateDialog()
+    }
+
+    private fun checkShowRateDialog() {
+        val lastTimeConnectedProxy = coreAppPreferences.lastTimeConnectedProxy
+        val currencyTime = System.currentTimeMillis()
+        coreAppPreferences.numberConnectedProxy = coreAppPreferences.numberConnectedProxy + 1L
+
+        Timber.tag("checkShowRateDialog")
+            .d("lastTimeConnectedProxy: $lastTimeConnectedProxy -isEnableRateLogic:${coreAppPreferences.isEnableRateLogic} ")
+
+        if (coreAppPreferences.numberConnectedProxy == 2L ||
+            (lastTimeConnectedProxy != 0L && currencyTime - lastTimeConnectedProxy >= CACHE_EXPIRY_TIME && coreAppPreferences.isEnableRateLogic)
+        ) {
+            showDialogRate()
+            coreAppPreferences.lastTimeConnectedProxy = currencyTime
+        }
+    }
+
+    private fun showDialogRate() {
+        RateInApp.instance.showDialogRateAndFeedback(
+            context = this@MainActivity,
+            onRated = {
+                Firebase.analytics.logEvent("rate_app", Bundle())
+                coreAppPreferences.isEnableRateLogic = false
+            }
+        )
     }
 
     fun showDisconnected(report: ProxyReport) {

@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">超VPN</string>
   <string name="ads_message_inter">VPN 正在運行，請等待...</string>
   <string name="ads_message_open">歡迎回到 SuperVPN</string>
   <string name="ads_message_notice">此操作可能包含廣告</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">伺服器</string>
   <string name="ip_quick_access">快速存取</string>
   <string name="ip_all">全部</string>
+  <string name="ip_game">遊戲</string>
+  <string name="ip_streaming">串流媒體</string>
+  <string name="recommend">推薦</string>
   <string name="setting_app_proxy">應用程式過濾器</string>
   <string name="setting_app_proxy_desc">選擇哪些應用程式將透過 VPN 連接到互聯網</string>
   <string name="setting_ads_block">廣告攔截</string>

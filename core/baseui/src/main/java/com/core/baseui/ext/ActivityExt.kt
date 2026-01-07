@@ -10,6 +10,8 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -37,6 +39,15 @@ inline fun <T> AppCompatActivity.bindFlowResume(
     lifecycleScope.launch {
         lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
             source.collect { action.invoke(it) }
+        }
+    }
+}
+
+fun LifecycleOwner.launchWhenResumed(block: suspend CoroutineScope.() -> Unit) {
+    lifecycleScope.launch {
+        repeatOnLifecycle(Lifecycle.State.RESUMED) {
+            block()
+            this@launch.cancel()
         }
     }
 }
@@ -73,7 +84,7 @@ inline fun <T> AppCompatActivity.bindLiveData(
 }
 
 fun AppCompatActivity.updateAlwaysOnDisplay(isEnable: Boolean) {
-    if(isEnable) {
+    if (isEnable) {
         window.addFlags(FLAG_KEEP_SCREEN_ON)
     } else {
         window.clearFlags(FLAG_KEEP_SCREEN_ON)
@@ -109,7 +120,6 @@ inline fun <T : Any?> AppCompatActivity.collectFlowOnNullable(
 }
 
 
-
 inline fun <T : Any> AppCompatActivity.collectFlowOn(
     stateFlow: StateFlow<T>,
     lifecycleState: Lifecycle.State = Lifecycle.State.CREATED,
@@ -137,7 +147,6 @@ inline fun <T : Any> AppCompatActivity.collectFlowOn(
         }
     }
 }
-
 
 
 inline fun <T : Any?> collectFlowOnNullable(

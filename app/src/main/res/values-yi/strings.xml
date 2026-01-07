@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">סופּערוויפּיען</string>
   <string name="ads_message_inter">די ווי-פי-ען לויפט, ביטע ווארט...</string>
   <string name="ads_message_open">ברוכים הבאים צוריק צו סופּערוויפּיען</string>
   <string name="ads_message_notice">דער קאַמף קענען אַנטהאַלטן אַדס</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">סערווערס</string>
   <string name="ip_quick_access">שנעלער צוטריט</string>
   <string name="ip_all">אַלע</string>
+  <string name="ip_game">שפּיל</string>
+  <string name="ip_streaming">סטרימינג</string>
+  <string name="recommend">רעקאָמענדירן</string>
   <string name="setting_app_proxy">אַפּ פילטער</string>
   <string name="setting_app_proxy_desc">אויסקלײַבן וועלכע אַפּפּס וועלן זיך פֿאַרבינדן צום אינטערנעט דורך VPN</string>
   <string name="setting_ads_block">אַדס בלאָק</string>

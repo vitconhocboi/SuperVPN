@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">Το VPN εκτελείται, περιμένετε…</string>
   <string name="ads_message_open">Καλώς ορίσατε πίσω στο SuperVPN</string>
   <string name="ads_message_notice">Αυτή η ενέργεια μπορεί να περιέχει διαφημίσεις</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Διακομιστές</string>
   <string name="ip_quick_access">Γρήγορη πρόσβαση</string>
   <string name="ip_all">ΟΛΟΙ</string>
+  <string name="ip_game">Παιχνίδι</string>
+  <string name="ip_streaming">Ροή</string>
+  <string name="recommend">Συνιστώ</string>
   <string name="setting_app_proxy">Φίλτρο εφαρμογής</string>
   <string name="setting_app_proxy_desc">Επιλέξτε ποιες εφαρμογές θα συνδέονται στο Διαδίκτυο μέσω VPN</string>
   <string name="setting_ads_block">Αποκλεισμός διαφημίσεων</string>

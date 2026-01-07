@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">Tá VPN ag rith, fan le do thoil…</string>
   <string name="ads_message_open">Fáilte ar ais chuig SuperVPN</string>
   <string name="ads_message_notice">Is féidir fógraí a bheith sa ghníomh seo</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Freastalaithe</string>
   <string name="ip_quick_access">Rochtain Thapa</string>
   <string name="ip_all">GACH</string>
+  <string name="ip_game">Cluiche</string>
+  <string name="ip_streaming">Sruthú</string>
+  <string name="recommend">Mol</string>
   <string name="setting_app_proxy">Scagaire Aipeanna</string>
   <string name="setting_app_proxy_desc">Roghnaigh cé na haipeanna a nascfaidh leis an Idirlíon trí VPN</string>
   <string name="setting_ads_block">Bloc fógraí</string>

@@ -132,7 +132,7 @@ class NativeMiniCtaRightTemplateView @JvmOverloads constructor(
         }
 
         styles.callToActionRadius?.let {
-            binding.layoutCta.updateRadius(dpToPx(it.toFloat()).toFloat())
+            binding.layoutCta.updateRadius(it.toFloat())
         }
 
         styles.borderColor?.let {

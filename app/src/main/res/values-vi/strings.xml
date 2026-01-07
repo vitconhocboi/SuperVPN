@@ -1,11 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">Siêu VPN</string>
   <string name="ads_message_inter">VPN đang chạy, vui lòng đợi…</string>
   <string name="ads_message_open">Chào mừng bạn trở lại SuperVPN</string>
   <string name="ads_message_notice">Hành động này có thể chứa quảng cáo</string>
-  <string name="hello_blank_fragment">Xin chào đoạn trống</string>
-  <string name="language_fragment">Đoạn ngôn ngữ</string>
+  <string name="hello_blank_fragment">Xin chào</string>
+  <string name="language_fragment">Ngôn ngữ</string>
   <string name="lang_default">Mặc định</string>
   <string name="text_error">Đã xảy ra lỗi</string>
   <string name="setting_language">Ngôn ngữ</string>
@@ -17,13 +16,16 @@
   <string name="ip_proxy">Máy chủ</string>
   <string name="ip_quick_access">Truy cập nhanh</string>
   <string name="ip_all">Tất cả</string>
+  <string name="ip_game">Game</string>
+  <string name="ip_streaming">Phát trực tuyến</string>
+  <string name="recommend">Gợi ý</string>
   <string name="setting_app_proxy">Bộ lọc ứng dụng</string>
   <string name="setting_app_proxy_desc">Chọn ứng dụng nào sẽ kết nối với Internet thông qua VPN</string>
   <string name="setting_ads_block">Chặn quảng cáo</string>
   <string name="setting_ads_desc">Hạn chế quảng cáo khi duyệt web</string>
   <string name="setting_dns_default">DNS mặc định</string>
   <string name="dns_desc">Chọn và lưu máy chủ DNS làm máy chủ mặc định để sử dụng ứng dụng sau này.</string>
-  <string name="setting_rate">Tỷ lệ</string>
+  <string name="setting_rate">Đánh giá</string>
   <string name="setting_share">Chia sẻ</string>
   <string name="setting_feedback">Nhận xét</string>
   <string name="select_connection_area">Chọn vùng kết nối</string>
@@ -96,7 +98,7 @@
   <string name="uruguay">Urugoay</string>
   <string name="connecting">Đang kết nối…</string>
   <string name="connected">Đã kết nối</string>
-  <string name="private_internet">Internet riêng</string>
+  <string name="private_internet">Kết nối riêng tư</string>
   <string name="disconnecting">Đang ngắt kết nối…</string>
   <string name="disconnected">Đã ngắt kết nối</string>
   <string name="connect_error">Kết nối không thành công</string>
@@ -105,12 +107,12 @@
   <string name="download">Tải về</string>
   <string name="home_settime">Chọn thời gian kết nối</string>
   <string name="home_settime_1">Sau một giờ</string>
-  <string name="btn_ok">ĐƯỢC RỒI</string>
-  <string name="common_ok">ĐƯỢC RỒI</string>
+  <string name="btn_ok">OK</string>
+  <string name="common_ok">OK</string>
   <string name="btn_save">Lưu</string>
   <string name="btn_connect">Kết nối</string>
   <string name="btn_cancel">Hủy bỏ</string>
-  <string name="btn_exit">Ra</string>
+  <string name="btn_exit">Thoát</string>
   <string name="btn_reset">Cài lại</string>
   <string name="auto">Tự động</string>
   <string name="min_60">60 phút</string>
@@ -134,8 +136,8 @@
   <string name="confirm_collect">Quyền riêng tư của bạn, quyền kiểm soát của bạn</string>
   <string name="confirm_accept_msg">Để hoàn tất đăng ký, ứng dụng này sẽ thu thập ID Quảng cáo của bạn để xác minh đăng ký, nâng cao chất lượng dịch vụ và ngăn chặn hành vi gian lận. Bạn có đồng ý với việc thu thập dữ liệu này không?</string>
   <string name="accept_continue">Chấp nhận và Tiếp tục</string>
-  <string name="go_back">Mặt sau</string>
-  <string name="leave_anyway">Ra</string>
+  <string name="go_back">Quay lại</string>
+  <string name="leave_anyway">Thoát</string>
   <string name="confirm_accept_msg_1">Xin chào, cảm ơn bạn đã sử dụng SuperVPN</string>
   <string name="confirm_accept_msg_2">Chúng tôi chỉ thu thập dữ liệu tối thiểu cần thiết để đảm bảo kết nối của bạn luôn mượt mà và an toàn. Dưới đây là thông tin chi tiết.</string>
   <string name="confirm_accept_msg_3">ID quảng cáo: giúp theo dõi đăng ký và sử dụng VPN của bạn.</string>
@@ -171,7 +173,7 @@
   <string name="text_rate_app">Đánh giá trên Google Play</string>
   <string name="fb_common_unable_find_market">Không tìm thấy ứng dụng thị trường</string>
   <string name="text_feedback_problem">Hãy cho chúng tôi biết bạn gặp phải vấn đề gì.</string>
-  <string name="text_type">Kiểu:</string>
+  <string name="text_type">Loại:</string>
   <string name="text_type_feature">Chất lượng tính năng</string>
   <string name="text_type_crash">Lỗi sập ứng dụng</string>
   <string name="text_type_bug">Lỗi</string>
@@ -186,9 +188,9 @@
   <string name="exit_app">Thoát khỏi ứng dụng?</string>
   <string name="exit_app_msg">Bạn có chắc chắn muốn thoát không?</string>
   <string name="free">Miễn phí</string>
-  <string name="premium">Phần thưởng</string>
+  <string name="premium">Trả phí</string>
   <string name="unlock_premium">Mở khóa VPN cao cấp</string>
-  <string name="get_premium">Nhận cao cấp</string>
+  <string name="get_premium">Sử dụng trả phí</string>
   <string name="watch_ads">Xem quảng cáo để kết nối</string>
   <string name="guide_1">Chỉ cần một chạm để kết nối.</string>
   <string name="guide_2">Nhiều máy chủ VPN ở nhiều quốc gia khác nhau</string>

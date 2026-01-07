@@ -2,6 +2,7 @@ package com.core.ads.customviews.ads
 
 import android.content.Context
 import android.util.AttributeSet
+import android.view.LayoutInflater
 import android.widget.FrameLayout
 import com.facebook.shimmer.ShimmerFrameLayout
 
@@ -11,9 +12,15 @@ class PlaceHolderView @JvmOverloads constructor(
     private var shimmerLayout: ShimmerFrameLayout? = null
 
     fun setPlaceHolder(layoutResId: Int) {
-        shimmerLayout = (inflate(context, layoutResId, null) as? ShimmerFrameLayout) ?: throw RuntimeException("Layout must be a ShimmerFrameLayout")
+        // Dùng parent = this, attachToRoot = false để LayoutInflater tạo đúng LayoutParams (có margin)
+        val view = LayoutInflater.from(context).inflate(layoutResId, this, false)
+        shimmerLayout = view as? ShimmerFrameLayout ?: throw RuntimeException("Layout must be a ShimmerFrameLayout")
+
+        // Không tự tạo LayoutParams mới -> giữ nguyên margin từ XML
         removeAllViews()
-        addView(shimmerLayout, LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT))
+        // Dùng chính layoutParams đã được inflate ra
+        val lp = shimmerLayout?.layoutParams ?: LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
+        addView(shimmerLayout, lp)
     }
 
     fun startShimmer() {

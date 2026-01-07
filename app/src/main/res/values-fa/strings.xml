@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">سوپر وی پی ان</string>
   <string name="ads_message_inter">وی پی ان در حال اجرا است، لطفا صبر کنید…</string>
   <string name="ads_message_open">به SuperVPN خوش آمدید</string>
   <string name="ads_message_notice">این عمل می تواند حاوی تبلیغات باشد</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">سرورها</string>
   <string name="ip_quick_access">دسترسی سریع</string>
   <string name="ip_all">همه</string>
+  <string name="ip_game">بازی</string>
+  <string name="ip_streaming">پخش جریانی</string>
+  <string name="recommend">توصیه</string>
   <string name="setting_app_proxy">فیلتر برنامه</string>
   <string name="setting_app_proxy_desc">انتخاب کنید کدام برنامه‌ها از طریق VPN به اینترنت متصل شوند</string>
   <string name="setting_ads_block">بلوک تبلیغات</string>

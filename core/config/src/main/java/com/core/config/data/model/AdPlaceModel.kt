@@ -39,6 +39,9 @@ internal data class AdPlaceModel(
     val nativeTemplateSize: String?,
 
     // For NativeAd
+    @Json(name = "expired_time_second")
+    val expiredTimeSecond: Int?,
+
     @Json(name = "background_cta")
     val backgroundCta: String?,
 
@@ -53,6 +56,9 @@ internal data class AdPlaceModel(
 
     @Json(name = "background_color")
     val backgroundColor: String?,
+
+    @Json(name = "background_full_color")
+    val backgroundFullColor: String?,
 
     @Json(name = "background_radius")
     val backgroundRadius: Int?,

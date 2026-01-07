@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">СуперВПН</string>
   <string name="ads_message_inter">VPN эшләй, зинһар, көтөгөҙ...</string>
   <string name="ads_message_open">Ҡайтып рәхим итегеҙ SuperVPN</string>
   <string name="ads_message_notice">Был ғәмәл иғландарҙы үҙ эсенә ала</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Серверҙар</string>
   <string name="ip_quick_access">Тиҙ инеү</string>
   <string name="ip_all">БӨТӘ</string>
+  <string name="ip_game">Уйын</string>
+  <string name="ip_streaming">Стриминг</string>
+  <string name="recommend">Кәңәш бирергә</string>
   <string name="setting_app_proxy">Ҡушымта фильтры</string>
   <string name="setting_app_proxy_desc">Һайлау, ниндәй ҡушымталар VPN аша интернетҡа тоташтырыласаҡ .</string>
   <string name="setting_ads_block">Иғландарҙы блоклау</string>

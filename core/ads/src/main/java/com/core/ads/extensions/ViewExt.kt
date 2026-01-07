@@ -98,12 +98,116 @@ private fun setRadiusDeep(d: Drawable, radiusPx: Float) {
 fun View.updateBackgroundColor(colorString: String?) {
     try {
         colorString?.let {
-            val bg = this.background
-            if (bg is GradientDrawable) {
-                bg.setColor(it.toColorInt())
+            val split = colorString.split(",")
+            if(split.size == 2) {
+                val startColor = split[0].toColorInt()
+                val endColor = split[1].toColorInt()
+                val bg = this.background
+                if (bg is GradientDrawable) {
+                    bg.orientation = GradientDrawable.Orientation.LEFT_RIGHT
+                    bg.colors = intArrayOf(startColor, endColor)
+                }
+            } else {
+                if (colorString.isEmpty()) return
+                val colorInt = try {
+                    colorString.toColorInt()
+                } catch (_: Throwable) {
+                    return
+                }
+
+                val bg = background ?: return
+
+                when (bg) {
+                    is GradientDrawable -> {
+                        bg.mutate()
+                        bg.setColor(colorInt)
+                    }
+
+                    is StateListDrawable -> {
+                        bg.mutate()
+
+                        // 1) Dùng reflection truy cập danh sách state drawables
+                        val okByMethods = try {
+                            val getCount = StateListDrawable::class.java.getMethod("getStateCount")
+                            val getDrawable = StateListDrawable::class.java.getMethod("getStateDrawable", Int::class.javaPrimitiveType)
+                            val count = getCount.invoke(bg) as Int
+                            for (i in 0 until count) {
+                                (getDrawable.invoke(bg, i) as? Drawable)?.let { d ->
+                                    setColorDeep(d, colorInt)
+                                }
+                            }
+                            true
+                        } catch (_: Throwable) {
+                            false
+                        }
+
+                        // 2) Fallback nếu cách trên không hoạt động
+                        if (!okByMethods) {
+                            try {
+                                val stateObj = bg.constantState ?: return
+                                val field = stateObj.javaClass.getDeclaredField("mDrawables")
+                                field.isAccessible = true
+                                val arr = field.get(stateObj) as? Array<Drawable> ?: return
+                                arr.forEach { setColorDeep(it, colorInt) }
+                            } catch (_: Throwable) {
+                                // Bỏ qua nếu lỗi, tránh crash
+                            }
+                        }
+
+                        invalidate()
+                    }
+
+                    else -> {
+                        setColorDeep(bg, colorInt)
+                        invalidate()
+                    }
+                }
             }
         }
     } catch (e: Exception) {
         e.printStackTrace()
+    }
+}
+
+/**
+ * Đặt màu đệ quy cho nhiều loại Drawable lồng nhau.
+ */
+private fun setColorDeep(d: Drawable, colorInt: Int) {
+    when (d) {
+        is GradientDrawable -> {
+            d.mutate()
+            d.setColor(colorInt)
+        }
+
+        is InsetDrawable -> {
+            d.drawable?.let { setColorDeep(it, colorInt) }
+        }
+
+        is LayerDrawable -> {
+            for (i in 0 until d.numberOfLayers) {
+                setColorDeep(d.getDrawable(i), colorInt)
+            }
+        }
+
+        is ScaleDrawable -> {
+            d.drawable?.let { setColorDeep(it, colorInt) }
+        }
+
+        is StateListDrawable -> {
+            // Gọi lại chính nó để áp dụng màu cho từng state
+            try {
+                val getCount = StateListDrawable::class.java.getMethod("getStateCount")
+                val getDrawable = StateListDrawable::class.java.getMethod("getStateDrawable", Int::class.javaPrimitiveType)
+                val count = getCount.invoke(d) as Int
+                for (i in 0 until count) {
+                    (getDrawable.invoke(d, i) as? Drawable)?.let { setColorDeep(it, colorInt) }
+                }
+            } catch (_: Throwable) {
+            }
+        }
+
+        else -> {
+            // Các loại khác: bỏ qua
+        }
     }
 }

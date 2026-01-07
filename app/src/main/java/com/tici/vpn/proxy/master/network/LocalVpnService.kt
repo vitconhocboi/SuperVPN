@@ -207,6 +207,7 @@ class LocalVpnService : VpnService(), Runnable {
                 BaseAppConfig.proxy = ""
                 BaseAppConfig.proxyHost = ""
                 BaseAppConfig.proxyCountry = ""
+                BaseAppConfig.proxyGroup = ""
             }
             Timber.tag(Constant.TAG).d("VPNService stopped.")
         }

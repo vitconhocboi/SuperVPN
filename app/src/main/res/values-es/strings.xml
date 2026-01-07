@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">La VPN se está ejecutando, por favor espere…</string>
   <string name="ads_message_open">Bienvenido de nuevo a SuperVPN</string>
   <string name="ads_message_notice">Esta acción puede contener anuncios.</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Servidores</string>
   <string name="ip_quick_access">Acceso rápido</string>
   <string name="ip_all">TODO</string>
+  <string name="ip_game">Juego</string>
+  <string name="ip_streaming">Transmisión</string>
+  <string name="recommend">Recomendar</string>
   <string name="setting_app_proxy">Filtro de aplicaciones</string>
   <string name="setting_app_proxy_desc">Elija qué aplicaciones se conectarán a Internet a través de VPN</string>
   <string name="setting_ads_block">Bloqueo de anuncios</string>

@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SüperVPN</string>
   <string name="ads_message_inter">VPN çalışıyor, lütfen bekleyin…</string>
   <string name="ads_message_open">SuperVPN\'e tekrar hoş geldiniz</string>
   <string name="ads_message_notice">Bu eylem reklam içerebilir</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Sunucular</string>
   <string name="ip_quick_access">Hızlı Erişim</string>
   <string name="ip_all">TÜM</string>
+  <string name="ip_game">Oyun</string>
+  <string name="ip_streaming">Akış</string>
+  <string name="recommend">Tavsiye etmek</string>
   <string name="setting_app_proxy">Uygulama Filtresi</string>
   <string name="setting_app_proxy_desc">Hangi uygulamaların VPN aracılığıyla İnternete bağlanacağını seçin</string>
   <string name="setting_ads_block">Reklam engelleme</string>

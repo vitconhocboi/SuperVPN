@@ -54,6 +54,13 @@ object BaseAppConfig {
             SharedPrefs.instance.put(KEY_PROXY_COUNTRY, value)
         }
 
+    private const val KEY_PROXY_GROUP = "PROXY_GROUP"
+    var proxyGroup: String
+        get() = SharedPrefs.instance[KEY_PROXY_GROUP, String::class.java, "all"]
+        set(value) {
+            SharedPrefs.instance.put(KEY_PROXY_GROUP, value)
+        }
+
     private const val KEY_PROXY_HOST = "PROXY_HOST"
     var proxyHost: String
         get() = SharedPrefs.instance[KEY_PROXY_HOST, String::class.java, ""]

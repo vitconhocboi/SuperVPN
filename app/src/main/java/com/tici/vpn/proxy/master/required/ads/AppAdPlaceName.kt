@@ -46,6 +46,12 @@ sealed class AppAdPlaceName(override val name: String) : IAdPlaceName {
 
     object FULLSCREEN_BACK_MAIN: AppAdPlaceName("fullscreen_back_main")
 
+    object FULLSCREEN_BACK_TAB_PROXY: AppAdPlaceName("fullscreen_back_tab_proxy")
+
+    object FULLSCREEN_CONNECTED_PROXY: AppAdPlaceName("fullscreen_connected_proxy")
+
+    object FULLSCREEN_CONNECTED_PROXY_GAME: AppAdPlaceName("fullscreen_connected_proxy_game")
+
     object FULLSCREEN_SELECTED_CHANGE_VPN_SERVERS :
         AppAdPlaceName("fullscreen_selected_change_vpn_servers")
 

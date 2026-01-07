@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">சூப்பர்விபிஎன்</string>
   <string name="ads_message_inter">VPN இயங்குகிறது, தயவுசெய்து காத்திருங்கள்…</string>
   <string name="ads_message_open">SuperVPN-க்கு மீண்டும் வருக.</string>
   <string name="ads_message_notice">இந்தச் செயலில் விளம்பரங்கள் இருக்கலாம்</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">சேவையகங்கள்</string>
   <string name="ip_quick_access">விரைவான அணுகல்</string>
   <string name="ip_all">அனைத்து</string>
+  <string name="ip_game">விளையாட்டு</string>
+  <string name="ip_streaming">ஸ்ட்ரீமிங்</string>
+  <string name="recommend">பரிந்துரை</string>
   <string name="setting_app_proxy">பயன்பாட்டு வடிகட்டி</string>
   <string name="setting_app_proxy_desc">VPN மூலம் இணையத்துடன் இணைக்க வேண்டிய பயன்பாடுகளைத் தேர்வுசெய்யவும்.</string>
   <string name="setting_ads_block">விளம்பரத் தடுப்பு</string>

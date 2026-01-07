@@ -28,7 +28,7 @@ class FeedbackActivity : BaseActivity<FbActivityFeedbackBinding>() {
     override fun initViews(savedInstanceState: Bundle?) {
         super.initViews(savedInstanceState)
 
-        viewBinding.apply {
+        binding.apply {
             ivBack.setOnClickListener {
                 finish()
             }

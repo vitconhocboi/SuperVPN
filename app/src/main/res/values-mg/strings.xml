@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">Mandeha ny VPN, andraso azafady…</string>
   <string name="ads_message_open">Tongasoa eto amin\'ny SuperVPN</string>
   <string name="ads_message_notice">Ity hetsika ity dia mety misy doka</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">LOHAMILINA</string>
   <string name="ip_quick_access">Fidirana haingana</string>
   <string name="ip_all">rEHETRA</string>
+  <string name="ip_game">Tapaka ny</string>
+  <string name="ip_streaming">nirohotra</string>
+  <string name="recommend">Recommend</string>
   <string name="setting_app_proxy">App Filter</string>
   <string name="setting_app_proxy_desc">Fidio izay fampiharana hifandray amin\'ny Internet amin\'ny VPN</string>
   <string name="setting_ads_block">Sakana doka</string>

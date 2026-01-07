@@ -44,8 +44,10 @@ class DisconnectConfirmDialog(val onConfirm: () -> Unit) :
                 dismiss()
             }
             tvConfirm.setOnClickListener {
-                onConfirm()
-                dismiss()
+                showInterAd(AppAdPlaceName.FULLSCREEN_SELECTED_PROXY_HOME) {
+                    onConfirm()
+                    dismiss()
+                }
             }
         }
     }

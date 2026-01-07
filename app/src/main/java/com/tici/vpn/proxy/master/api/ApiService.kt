@@ -49,7 +49,8 @@ data class Users(
 data class ProxyRequest(
     @SerializedName("user_id") val user_id: String,
     @SerializedName("country") val country: String,
-    @SerializedName("type") val type: String
+    @SerializedName("type") val type: String,
+    @SerializedName("proxy_group") val proxy_group: String?
 )
 
 data class AssignProxyResponse(
@@ -84,6 +85,7 @@ data class Country(
     @SerializedName("country") val name: String,
     @SerializedName("is_quick_access") val is_quick_access: Int,
     @SerializedName("type") val type: String,
+    @SerializedName("proxy_group") val proxy_group: String,
 )
 
 data class DnsDB(

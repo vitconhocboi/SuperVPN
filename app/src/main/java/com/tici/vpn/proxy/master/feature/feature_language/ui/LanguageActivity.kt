@@ -20,7 +20,6 @@ import com.core.baseui.ext.autoCleared
 import com.core.baseui.ext.bindLiveData
 import com.core.baseui.recyclerview.NpaLinearLayoutManager
 import com.core.baseui.supportedlanguage.SupportedLanguage
-import com.core.config.domain.data.AppConfig
 import com.core.config.domain.data.CoreAdPlaceName
 import com.core.config.domain.data.IAdPlaceName
 import com.core.utilities.getCurrentLanguageCode
@@ -31,14 +30,18 @@ import com.core.utilities.visibleIf
 import com.tici.vpn.proxy.master.core.base_ui.CoreActivity
 import com.tici.vpn.proxy.master.databinding.CoreActivityLanguageBinding
 import com.tici.vpn.proxy.master.feature.feature_language.ui.adapter.SupportedLanguageAdapter
-import com.tici.vpn.proxy.master.feature.feature_onboarding.ui.OnBoardingActivity
+import com.tici.vpn.proxy.master.feature.feature_onboarding.ui.helper.OnBoardingConfigFactory
 import com.tici.vpn.proxy.master.main.MainActivity
+import com.tici.vpn.proxy.master.required.ads.GetDataFromRemoteUseCaseImpl
 import com.tici.vpn.proxy.master.required.shortcut.AppShortCut
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class LanguageActivity : CoreActivity<CoreActivityLanguageBinding>() {
+
+    @Inject
+    lateinit var getDataFromRemoteUseCase: GetDataFromRemoteUseCaseImpl
 
     override val isHideStatusBar: Boolean
         get() = true
@@ -128,11 +131,11 @@ class LanguageActivity : CoreActivity<CoreActivityLanguageBinding>() {
                 }
                 intent.putExtras(bundle)
                 this@LanguageActivity.startActivity(intent)
-            } else {
+            } else if (isOpenFromSlash || backFromIntroduction) {
                 val intent = Intent(
                     this@LanguageActivity,
                     if (isEnableIntroductionScreen) {
-                        OnBoardingActivity::class.java
+                        OnBoardingConfigFactory.getOnBoardingClass(getDataFromRemoteUseCase.onBoardingConfig)
                     } else {
                         MainActivity::class.java
                     }
@@ -146,6 +149,8 @@ class LanguageActivity : CoreActivity<CoreActivityLanguageBinding>() {
                 }
                 intent.putExtras(bundle)
                 this@LanguageActivity.startActivity(intent)
+            } else {
+                finish()
             }
         }
     }
@@ -238,10 +243,12 @@ class LanguageActivity : CoreActivity<CoreActivityLanguageBinding>() {
         return mutableListOf<IAdPlaceName>().apply {
             add(CoreAdPlaceName.ANCHORED_CHANGE_LANGUAGE_BOTTOM)
             if ((isOpenFromSlash || backFromIntroduction) && isEnableIntroductionScreen) {
-                add(CoreAdPlaceName.ANCHORED_ONBOARDING_BOTTOM)
-                if (remoteConfigRepository.getAppConfig().introData.contains(AppConfig.Companion.DEFINE_INTRO_FULL_AD)) {
-                    add(CoreAdPlaceName.ANCHORED_FULL_ONBOARDING)
-                }
+                addAll(
+                    OnBoardingConfigFactory.getOnBoardingAdPlaceName(
+                        getDataFromRemoteUseCase.onBoardingConfig,
+                        remoteConfigRepository.getAppConfig()
+                    )
+                )
             }
         }
     }

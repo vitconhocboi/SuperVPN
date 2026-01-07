@@ -11,13 +11,13 @@ interface BillingViewModel {
     val productMonthly: StateFlow<BillingModel.SubscriptionProduct?>
     val productWeekly: StateFlow<BillingModel.SubscriptionProduct?>
     val vipState: StateFlow<Result<Boolean>?>
-    val newPurchaseProLifeTime: StateFlow<String?>
-    val newPurchaseAny: StateFlow<List<String>?>
-    val newPurchaseYearly: StateFlow<String?>
-    val newPurchaseMonthly: StateFlow<String?>
-    val newPurchaseWeekly: StateFlow<String?>
-    val restorePurchaseState: SharedFlow<Result<Boolean>?>
 
+    val newPurchaseProLifeTime: SharedFlow<String?>
+    val newPurchaseAny: SharedFlow<List<String>?>
+    val newPurchaseYearly: SharedFlow<String?>
+    val newPurchaseMonthly: SharedFlow<String?>
+    val newPurchaseWeekly: SharedFlow<String?>
+    val restorePurchaseState: SharedFlow<Result<Boolean>?>
     val checkReadyState: SharedFlow<Boolean?>
 
     fun loadSubscription(id: String)

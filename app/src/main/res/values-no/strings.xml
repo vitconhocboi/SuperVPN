@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">VPN kjører, vennligst vent ...</string>
   <string name="ads_message_open">Velkommen tilbake til SuperVPN</string>
   <string name="ads_message_notice">Denne handlingen kan inneholde annonser</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Servere</string>
   <string name="ip_quick_access">Hurtigtilgang</string>
   <string name="ip_all">ALLE</string>
+  <string name="ip_game">Spill</string>
+  <string name="ip_streaming">Strømming</string>
+  <string name="recommend">Anbefale</string>
   <string name="setting_app_proxy">Appfilter</string>
   <string name="setting_app_proxy_desc">Velg hvilke apper som skal koble til internett via VPN</string>
   <string name="setting_ads_block">Annonseblokkering</string>

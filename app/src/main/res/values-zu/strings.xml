@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">I-SuperVPN</string>
   <string name="ads_message_inter">I-VPN iyasebenza, sicela ulinde...</string>
   <string name="ads_message_open">Siyakwamukela futhi ku-SuperVPN</string>
   <string name="ads_message_notice">Lesi senzo singaqukatha izikhangiso</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Amaseva</string>
   <string name="ip_quick_access">Ukufinyelela Ngokushesha</string>
   <string name="ip_all">KONKE</string>
+  <string name="ip_game">Umdlalo</string>
+  <string name="ip_streaming">Ukusakaza</string>
+  <string name="recommend">Ncoma</string>
   <string name="setting_app_proxy">Isihlungi Sohlelo Lokusebenza</string>
   <string name="setting_app_proxy_desc">Khetha ukuthi iziphi izinhlelo zokusebenza ezizoxhumeka ku-inthanethi nge-VPN</string>
   <string name="setting_ads_block">Vimba izikhangiso</string>

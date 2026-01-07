@@ -9,13 +9,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.Window
 import android.view.WindowManager
+import androidx.core.app.ActivityCompat
 import androidx.core.graphics.drawable.toDrawable
 import com.core.ads.domain.AdLoadBannerNativeUiResource
 import com.core.baseui.BaseAdsDialogFragment
 import com.core.config.domain.data.IAdPlaceName
 import com.core.utilities.setOnSingleClick
 import com.tici.vpn.proxy.master.databinding.FragmentDialogExitAppBinding
-import com.tici.vpn.proxy.master.main.MainActivity
 import com.tici.vpn.proxy.master.required.ads.AppAdPlaceName
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -49,7 +49,8 @@ class DialogFragmentExitApp :
         }
 
         viewBinding.tvExitApp.setOnSingleClick {
-            (activity as? MainActivity)?.finish()
+            adsManager.removeAds(adPlaceName = AppAdPlaceName.ANCHORED_BOTTOM_EXIT)
+            ActivityCompat.finishAffinity(requireActivity())
         }
     }
 

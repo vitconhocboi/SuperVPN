@@ -33,7 +33,7 @@
     <color name="fb_feedback_title">#000000</color>
     <color name="fb_color_button_submit_enable">#0989eb</color>
     <color name="fb_color_button_submit_disable">#800989EB</color>
-    <color name="fb_bg_feedback_matter_selected">#D2F5FF</color>
+    <color name="fb_bg_feedback_matter_selected">#660EC74B</color>
     <color name="fb_bg_feedback_matter_unselected">#F8F8F8</color>
     <color name="fb_text_feedback_matter_unselected">#000000</color>
     <color name="fb_text_feedback_matter_selected">#000000</color>

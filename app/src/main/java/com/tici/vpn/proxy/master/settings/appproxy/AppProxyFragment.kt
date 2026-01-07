@@ -94,7 +94,6 @@ class AppProxyFragment() : BaseFragment<FragmentAppProxyBinding>() {
             btnCancel.setOnClickListener {
                 edtSearch.hideKeyboard()
                 loadData()
-//                activity?.onBackPressedDispatcher?.onBackPressed()
             }
 
             edtSearch.textChanges(lifecycleScope) {
@@ -159,9 +158,11 @@ class AppProxyFragment() : BaseFragment<FragmentAppProxyBinding>() {
     override fun onResume() {
         super.onResume()
         binding.edtSearch.setText("")
+        selectedList.clear()
+        allowAppViewModel.getInstalledAppsWithInternetPermission(requireContext())
     }
 
-    fun loadData() {
+    private fun loadData() {
         selectedList.clear()
         binding.edtSearch.setText("")
         allowAppViewModel.getInstalledAppsWithInternetPermission(requireContext())
@@ -191,7 +192,7 @@ class AppProxyFragment() : BaseFragment<FragmentAppProxyBinding>() {
         binding.edtSearch.hideKeyboard()
     }
 
-    fun clearUI() {
-        binding.edtSearch.setText("")
-    }
+//    fun clearUI() {
+//        binding.edtSearch.setText("")
+//    }
 }

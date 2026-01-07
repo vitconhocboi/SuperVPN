@@ -10,6 +10,8 @@ object Constant {
 
     object FirebaseConstant {
         const val REASON_UNINSTALL = "reason_uninstall_"
+
+        const val CONNECT_PROXY_RECOMMEND = "connect_proxy_recommend"
     }
 
     object ModeProTime {

@@ -20,6 +20,8 @@ internal class NativeAdConfigModel(
     val isEnableRetry: Boolean?,
     @Json(name = "max_retry_count")
     val maxRetryCount: Int?,
+    @Json(name = "expired_time_second")
+    val expiredTimeSecond: Int?,
     @Json(name = "retry_interval_second_list")
     val retryIntervalSecondList: List<Long>?,
 )

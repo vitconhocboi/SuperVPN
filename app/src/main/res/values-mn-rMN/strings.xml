@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">SuperVPN</string>
   <string name="ads_message_inter">VPN ажиллаж байна, түр хүлээнэ үү…</string>
   <string name="ads_message_open">SuperVPN-д дахин тавтай морил</string>
   <string name="ads_message_notice">Энэ үйлдэл нь зар агуулж болно</string>
@@ -17,6 +16,9 @@
   <string name="ip_proxy">Серверүүд</string>
   <string name="ip_quick_access">Түргэн нэвтрэх</string>
   <string name="ip_all">БҮГД</string>
+  <string name="ip_game">Тоглоом</string>
+  <string name="ip_streaming">Дамжуулж байна</string>
+  <string name="recommend">Санал болгож байна</string>
   <string name="setting_app_proxy">Апп шүүлтүүр</string>
   <string name="setting_app_proxy_desc">VPN-ээр дамжуулан ямар программууд интернетэд холбогдохыг сонгоно уу</string>
   <string name="setting_ads_block">Зар хориглох</string>
