@@ -59,13 +59,13 @@ android {
 dependencies {
 
     implementation (project(":core:utilities"))
-    implementation (project(":core:ads"))
     implementation (project(":core:config"))
     implementation (project(":core:preference"))
     implementation (project(":core:analytics"))
     implementation (project(":core:dimens"))
     implementation (project(":core:billing"))
 
+    implementation(libs.gson)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -79,6 +79,9 @@ dependencies {
     implementation (libs.androidx.activity.ktx)
     implementation (libs.material)
 
+    // Glide
+    api(libs.glide)
+
     // Moshi
     implementation (libs.moshi.kotlin)
     implementation (libs.moshi)
@@ -88,9 +91,6 @@ dependencies {
     //Hilt
     implementation (libs.hilt.android)
     ksp(libs.hilt.android.compiler)
-
-    // Google play service
-    implementation (libs.play.services.ads)
 
     // Mediation
     implementation (libs.lottie)

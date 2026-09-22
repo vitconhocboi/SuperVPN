@@ -14,7 +14,6 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import com.common.baseui.R
-import com.simple.libads.NetworkUtils
 import timber.log.Timber
 
 val Context.inflater get() = LayoutInflater.from(this)
@@ -107,8 +106,7 @@ fun Context.getPermissionString(id: Int) = when (id) {
 }
 
 fun Context.isNetworkAvailable(): Boolean {
-    return NetworkUtils.isInternetAvailable(this)
-    /*val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
     return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
         val network = connectivityManager.activeNetwork
         val capabilities = connectivityManager.getNetworkCapabilities(network)
@@ -117,7 +115,7 @@ fun Context.isNetworkAvailable(): Boolean {
     } else {
         val networkInfo = connectivityManager.activeNetworkInfo
         networkInfo != null && networkInfo.isConnected
-    }*/
+    }
 }
 
 tailrec fun Context.getActivity(): AppCompatActivity? = this as? AppCompatActivity ?: (this as? ContextWrapper)?.baseContext?.getActivity()

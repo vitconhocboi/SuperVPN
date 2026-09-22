@@ -2,6 +2,7 @@ package com.tici.vpn.proxy.master.di
 
 import android.content.Context
 import androidx.room.Room
+import com.tici.vpn.proxy.master.db.MIGRATION_1_2
 import com.tici.vpn.proxy.master.db.VpnDatabase
 import dagger.Module
 import dagger.Provides
@@ -20,6 +21,6 @@ class RoomModule {
             context.applicationContext,
             VpnDatabase::class.java,
             "vpn_database"
-        ).build()
+        ).addMigrations(MIGRATION_1_2).build()
     }
 }

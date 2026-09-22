@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Text styles shared by :app screens (relocated from the deleted :core:ads module) -->
+
+    <style name="Title18Bold" parent="TextBase.Bold">
+        <item name="android:textSize">@dimen/_18dp</item>
+    </style>
+
+    <style name="Title18Medium" parent="TextBase.Medium">
+        <item name="android:textSize">@dimen/_18dp</item>
+    </style>
+
+    <style name="TitleActionBar" parent="TextBase.Medium">
+        <item name="android:textSize">@dimen/_20dp</item>
+    </style>
+
+    <style name="Title16Medium" parent="TextBase.Medium">
+        <item name="android:textSize">@dimen/_16dp</item>
+    </style>
+
+    <style name="Body14Medium" parent="TextBase.Medium">
+        <item name="android:textSize">@dimen/_14dp</item>
+    </style>
+
+    <style name="TitleMedium" parent="TextBase.Medium">
+        <item name="android:textSize">@dimen/_16sp</item>
+        <item name="android:lineSpacingExtra">@dimen/_3sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="CtaViewStyle" parent="TextBase.Bold">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/_48dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_18dp</item>
+    </style>
+
+    <!--  TextBase  -->
+    <style name="TextBase.Medium" parent="SlTextBase">    <!--500-->
+        <item name="android:fontFamily">@font/inter_medium</item>
+    </style>
+
+    <style name="TextBase.Bold" parent="SlTextBase">   <!--700-->
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/inter_bold</item>
+    </style>
+
+    <style name="SlTextBase" />
+</resources>

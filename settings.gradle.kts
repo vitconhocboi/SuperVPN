@@ -1,9 +1,6 @@
 include(":core:baseui")
 
 
-include(":core:ads")
-
-
 include(":core:billing")
 
 
@@ -41,7 +38,6 @@ dependencyResolutionManagement {
 rootProject.name = "SuperVPN"
 include(":app")
 include(":BaseUI")
-include(":libads")
 include(":core")
 include(":core:preference")
 include(":core:dimens")

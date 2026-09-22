@@ -61,16 +61,8 @@ android {
     buildTypes {
         debug {
             isMinifyEnabled = true
-            buildConfigField("boolean", "ADS_ON", "true")
             buildConfigField("boolean", "FIREBASE_DEBUG", "false")
 
-            buildConfigField("String", "app_ads_id_new", "\"ca-app-pub-3940256099942544~3347511713\"")
-            buildConfigField("String", "ads_native_id_new", "\"ca-app-pub-3940256099942544/2247696110\"")
-            buildConfigField("String", "ads_banner_id_new", "\"ca-app-pub-3940256099942544/6300978111\"")
-            buildConfigField("String", "ads_full_without_video_new", "\"ca-app-pub-3940256099942544/1033173712\"")
-            buildConfigField("String", "ads_full_with_video_new", "\"ca-app-pub-3940256099942544/1033173712\"")
-            buildConfigField("String", "app_ads_open_resume_id_new", "\"ca-app-pub-3940256099942544/9257395921\"")
-            buildConfigField("String", "ads_reward_id_new", "\"ca-app-pub-3940256099942544/5224354917\"")
 
             isShrinkResources = true
             proguardFiles(
@@ -81,16 +73,8 @@ android {
 
         release {
             isMinifyEnabled = true
-            buildConfigField("boolean", "ADS_ON", "true")
             buildConfigField("boolean", "FIREBASE_DEBUG", "false")
 
-            buildConfigField("String", "app_ads_id_new", "\"ca-app-pub-4253116256630907~7625139262\"")
-            buildConfigField("String", "ads_native_id_new", "\"ca-app-pub-4253116256630907/4890887109\"")
-            buildConfigField("String", "ads_banner_id_new", "\"ca-app-pub-4253116256630907/3619247978\"")
-            buildConfigField("String", "ads_full_without_video_new", "\"ca-app-pub-4253116256630907/2676064914\"")
-            buildConfigField("String", "ads_full_with_video_new", "\"ca-app-pub-4253116256630907/2676064914\"")
-            buildConfigField("String", "app_ads_open_resume_id_new", "\"ca-app-pub-4253116256630907/3257954190\"")
-            buildConfigField("String", "ads_reward_id_new", "\"ca-app-pub-4253116256630907/6423594072\"")
             buildConfigField("boolean", "LOG_ENABLED", "true")
 
             isShrinkResources = true
@@ -180,7 +164,6 @@ dependencies {
     ksp("androidx.room:room-compiler:2.6.1")
     implementation(libs.androidx.room.ktx)
     implementation(libs.hilt.android)
-    implementation (libs.play.services.ads)
     ksp(libs.hilt.android.compiler)
     implementation(libs.androidx.multidex)
 
@@ -188,8 +171,6 @@ dependencies {
     implementation("com.jcraft:jzlib:1.1.3")
     implementation(group = ":tun2socks", name="tun2socks", ext = "aar")
     implementation(libs.okhttp)
-    implementation("com.google.android.gms:play-services-ads-identifier:18.2.0")
-    implementation("com.google.android.ump:user-messaging-platform:3.2.0")
     implementation("com.google.android.flexbox:flexbox:3.0.0")
 
     //Lottie Animation
@@ -218,14 +199,11 @@ dependencies {
     implementation (libs.moshi)
     implementation (libs.moshi.adapters)
     ksp(libs.moshi.kotlin.codegen)
-    implementation(libs.play.services.ads.identifier)
     // Thêm dòng này để hỗ trợ desugaring Java 8+ API trên Android cũ
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
 
     implementation(project(":BaseUI"))
-    implementation(project(":libads"))
 
-    implementation(project(":core:ads"))
     implementation(project(":core:analytics"))
     implementation(project(":core:baseui"))
     implementation(project(":core:config"))

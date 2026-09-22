@@ -4,8 +4,6 @@ import android.view.LayoutInflater
 import androidx.activity.viewModels
 import com.tici.vpn.proxy.master.feature.feature_uninstall.ui.navigate.UninstallNavigateEvent
 import com.core.baseui.HostBaseActivity
-import com.core.config.domain.data.CoreAdPlaceName
-import com.core.config.domain.data.IAdPlaceName
 import com.tici.vpn.proxy.master.databinding.CoreActivityBaseBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -36,10 +34,4 @@ class UninstallActivityHost :
         replaceFragment(UninstallHostFragment())
     }
 
-    override fun providerPreloadBannerNativeAdPlaceName(): List<IAdPlaceName> {
-        return listOf(
-            CoreAdPlaceName.ANCHORED_UNINSTALL_BOTTOM_STEP_1,
-            CoreAdPlaceName.ANCHORED_UNINSTALL_BOTTOM_STEP_2
-        )
-    }
 }

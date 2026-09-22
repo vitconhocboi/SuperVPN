@@ -8,14 +8,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.common.baseui.extension.setVisible
-import com.core.ads.domain.AdLoadBannerNativeUiResource
 import com.core.baseui.fragment.BaseFragment
 import com.core.baseui.fragment.ScreenType
-import com.core.config.domain.data.IAdPlaceName
 import com.tici.vpn.proxy.master.R
 import com.tici.vpn.proxy.master.databinding.FragmentAppProxyBinding
 import com.tici.vpn.proxy.master.dialog.SettingSuccessDialog
-import com.tici.vpn.proxy.master.required.ads.AppAdPlaceName
 import com.tici.vpn.proxy.master.required.shortcut.AppScreenType
 import com.tici.vpn.proxy.master.utils.hideKeyboard
 import com.tici.vpn.proxy.master.utils.textChanges
@@ -39,19 +36,6 @@ class AppProxyFragment() : BaseFragment<FragmentAppProxyBinding>() {
 
     override val screenType: ScreenType
         get() = AppScreenType.AppProxyFragment
-
-    override fun onBannerNativeResult(adResource: AdLoadBannerNativeUiResource) {
-        binding.layoutBannerNative.processAdResource(
-            adResource,
-            AppAdPlaceName.ANCHORED_BOTTOM_APP_PROXY
-        )
-    }
-
-    override fun providerBannerNativeAdPlaceName(): List<IAdPlaceName> {
-        return listOf(
-            AppAdPlaceName.ANCHORED_BOTTOM_APP_PROXY
-        )
-    }
 
     @OptIn(ExperimentalCoroutinesApi::class)
     @SuppressLint("NotifyDataSetChanged")

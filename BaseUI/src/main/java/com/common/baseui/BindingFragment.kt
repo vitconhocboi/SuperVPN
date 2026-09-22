@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.annotation.ColorRes
+import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import com.common.baseui.util.ConnectionLiveData
-import com.simple.libads.AdsFragment
 
-abstract class BindingFragment<VB : ViewBinding> : AdsFragment() {
+abstract class BindingFragment<VB : ViewBinding> : Fragment() {
 
     private val dialogLoadingAd by lazy { DialogShowLoading(requireContext()) }
     private var _binding: VB? = null

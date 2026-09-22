@@ -220,20 +220,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.tici.vpn.proxy.master.required.view.SafeNestedScrollView>
-    <!-- Placeholder cho Quảng cáo -->
-    <FrameLayout
-        android:id="@+id/ad_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-        <!-- SDK quảng cáo của bạn sẽ được đặt ở đây -->
-        <com.core.ads.customviews.ads.BannerNativeContainerLayout
-            android:id="@+id/layoutBannerNative"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </FrameLayout>
 
 </LinearLayout>
 

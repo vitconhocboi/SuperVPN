@@ -9,9 +9,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.annotation.CallSuper
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Lifecycle
 import androidx.viewbinding.ViewBinding
-import com.core.ads.domain.AdsManager
 import com.core.baseui.BaseSharedViewModel
 import com.core.baseui.ext.TransitionType
 import com.core.baseui.ext.handleAdd
@@ -20,15 +18,10 @@ import com.core.baseui.ext.popBackStack
 import com.core.baseui.ext.viewBinding
 import com.core.baseui.navigator.NavigatorEvent
 import com.core.config.domain.RemoteConfigRepository
-import com.core.utilities.checkIfFragmentAttached
 import com.core.utilities.isLoaderShowing
-import com.core.utilities.manager.NetworkConnectionManager
-import com.core.utilities.manager.isNetworkConnected
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 
@@ -46,13 +39,7 @@ abstract class BaseHostFragment<B: ViewBinding, E : NavigatorEvent, VM : BaseSha
     }
 
     @Inject
-    lateinit var adsManager: AdsManager
-
-    @Inject
     lateinit var remoteConfigRepository: RemoteConfigRepository
-
-    @Inject
-    lateinit var networkConnectionManager: NetworkConnectionManager
 
     private val job = Job()
 
@@ -69,7 +56,6 @@ abstract class BaseHostFragment<B: ViewBinding, E : NavigatorEvent, VM : BaseSha
 
     abstract val hostViewModel: VM
 
-    private var previousNetworkConnection = true
 
     open fun handleOnBackPressed() {
         if (requireActivity().isLoaderShowing()) {
@@ -170,26 +156,7 @@ abstract class BaseHostFragment<B: ViewBinding, E : NavigatorEvent, VM : BaseSha
                 hostViewModel.needHandleEventWhenResume = true
             }
         }
-
-        collectFlowOn(adsManager.isDisableAdDueManyClickFlow, Lifecycle.State.STARTED) {
-            preloadAds()
-        }
-
-        collectFlowOn(networkConnectionManager.isNetworkConnectedFlow, Lifecycle.State.RESUMED) {
-            CoroutineScope(coroutineContext).launch {
-                delay(1000)
-                checkIfFragmentAttached {
-                    val isNetworkConnected = requireActivity().isNetworkConnected()
-                    if (isNetworkConnected && !previousNetworkConnection) {
-                        preloadAds()
-                    }
-                    previousNetworkConnection = isNetworkConnected
-                }
-            }
-        }
     }
-
-    open fun preloadAds() {}
 
     fun replaceFragment(
         fragment: Fragment,

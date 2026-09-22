@@ -7,9 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.common.baseui.BaseAppConfig
 import com.common.baseui.ResultData
 import com.tici.vpn.proxy.master.api.ApiService
-import com.tici.vpn.proxy.master.api.CountriesResponse
 import com.tici.vpn.proxy.master.api.DnsResponse
-import com.tici.vpn.proxy.master.proxy.ProxyGroupUI
 import com.tici.vpn.proxy.master.utils.toast
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers

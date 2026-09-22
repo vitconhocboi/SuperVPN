@@ -9,21 +9,6 @@
     android:fitsSystemWindows="true"
     tools:context=".feature.feature_splash.ui.SplashActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/viewLoadAdsOpen"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="invisible"
-        tools:visibility="visible">
-
-        <eightbitlab.com.blurview.BlurView
-            android:id="@+id/blurView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:blurOverlayColor="@color/backgroundColor2" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ic_splash"
         android:layout_width="86dp"
@@ -58,17 +43,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
+        android:visibility="invisible"
         app:lottie_rawRes="@raw/loading_splash"
         tools:visibility="visible" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/ads_notice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/size10"
-        android:text="@string/ads_message_notice"
-        android:textColor="@color/gray_2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

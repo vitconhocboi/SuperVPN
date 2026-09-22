@@ -557,18 +557,5 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <RelativeLayout
-        android:id="@+id/layout_ads"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_marginVertical="@dimen/_6dp">
-
-        <com.core.ads.customviews.ads.BannerNativeContainerLayout
-            android:id="@+id/layout_banner_native"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true" />
-    </RelativeLayout>
 
 </LinearLayout>

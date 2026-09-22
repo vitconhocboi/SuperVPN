@@ -5,7 +5,6 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.tici.vpn.proxy.master.feature.feature_onboarding.ui.v1.OnBoardingFragment
-import com.tici.vpn.proxy.master.feature.feature_onboarding.ui.v1.OnBoardingFullNativeFragment
 import com.tici.vpn.proxy.master.feature.feature_onboarding.ui.model.OnBoardingItem
 
 class OnBoardingPagerAdapter(
@@ -21,11 +20,6 @@ class OnBoardingPagerAdapter(
 
 
     override fun createFragment(position: Int): Fragment {
-        val item = items[position]
-        return if(item is OnBoardingItem.FullNativeItem) {
-            OnBoardingFullNativeFragment.Companion.newInstance()
-        } else {
-            OnBoardingFragment.Companion.newInstance((item as OnBoardingItem.Item).position)
-        }
+        return OnBoardingFragment.Companion.newInstance(items[position].position)
     }
 }

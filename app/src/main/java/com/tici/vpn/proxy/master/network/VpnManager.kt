@@ -1,7 +1,6 @@
 package com.tici.vpn.proxy.master.network
 
 import android.content.Context
-import android.util.Base64
 import com.tici.vpn.proxy.master.utils.Constant
 import com.common.baseui.BaseAppConfig
 import timber.log.Timber
@@ -14,7 +13,6 @@ class VpnManager(private val context: Context) {
     private var port: Int = 8118 // Default Privoxy port
     private val UPLOAD: Int = 0
     private val DOWNLOAD: Int = 1
-    var currentProxy: ProxySpeedTest.ProxyConfig? = null
 
     companion object {
         init {
@@ -31,14 +29,13 @@ class VpnManager(private val context: Context) {
         private external fun nativeIsRunning(): Boolean
     }
 
-    fun initialize(proxy: ProxySpeedTest.ProxyConfig?): Boolean {
+    fun initialize(): Boolean {
         try {
             // Create Privoxy configuration directory
             val privoxyDir = File(context.filesDir, "privoxy")
             if (!privoxyDir.exists()) {
                 privoxyDir.mkdirs()
             }
-            currentProxy = proxy
             // Create config file
             configPath = createConfigFile(privoxyDir)
             return true
@@ -146,20 +143,6 @@ prebid.*
             )
         }
 
-        if (currentProxy?.type?.lowercase() == "http") {
-            actionFile.appendText(
-                """
-{+add-header{proxy-authorization: Basic ${
-                    Base64.encodeToString(
-                        "${currentProxy!!.username}:${currentProxy!!.password}".toByteArray(),
-                        Base64.NO_WRAP
-                    )
-                }}}
-/
-                """.replaceIndent()
-            )
-        }
-
         val configFile = File(privoxyDir, "config")
         configFile.writeText(
             """listen-address 127.0.0.1:$port
@@ -172,20 +155,12 @@ ${getForwardSettings()}
         return configFile.absolutePath
     }
 
+    /**
+     * Privoxy runs standalone: it filters locally and dials destinations itself.
+     * No upstream proxy server, so forwarding is always direct.
+     */
     private fun getForwardSettings(): String {
-        // Get proxy settings from your existing configuration
-//        Timber.tag(Constant.TAG).d("${currentProxy?.type}://${currentProxy!!.username}:${currentProxy!!.password}@${currentProxy!!.host}:${currentProxy!!.port}")
-        return if (currentProxy != null) {
-            if (currentProxy?.type?.lowercase() == "http") {
-                """forward / ${currentProxy!!.host}:${currentProxy!!.port}
-    enable-proxy-authentication-forwarding 1
-    """.replaceIndent("")
-            } else {
-                """forward-socks5 / ${currentProxy!!.username}:${currentProxy!!.password}@${currentProxy!!.host}:${currentProxy!!.port} .
-    """.trimMargin().replaceIndent("")
-            }
-        } else {
-            "forward / ."  // Direct connection
-        }
+        return "forward / ."
     }
-} 
+}
+ 

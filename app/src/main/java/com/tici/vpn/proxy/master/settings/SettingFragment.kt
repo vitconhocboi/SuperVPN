@@ -10,12 +10,10 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import com.common.baseui.BaseAppConfig
 import com.common.baseui.extension.setOnClickNoDoubleClick
-import com.core.ads.domain.AdLoadBannerNativeUiResource
 import com.core.baseui.BillingViewModel
 import com.core.baseui.fragment.BaseFragment
 import com.core.baseui.fragment.ScreenType
 import com.core.baseui.fragment.collectFlowOn
-import com.core.config.domain.data.IAdPlaceName
 import com.core.rate.RateInApp
 import com.core.utilities.setOnSingleClick
 import com.core.utilities.toast
@@ -27,7 +25,6 @@ import com.tici.vpn.proxy.master.databinding.FragmentSettingBinding
 import com.tici.vpn.proxy.master.dialog.DialogFeedback
 import com.tici.vpn.proxy.master.dialog.SettingSuccessDialog
 import com.tici.vpn.proxy.master.main.MainActivity
-import com.tici.vpn.proxy.master.required.ads.AppAdPlaceName
 import com.tici.vpn.proxy.master.required.inapp.InAppBillingViewModel
 import com.tici.vpn.proxy.master.required.preferences.CoreAppPreferences
 import com.tici.vpn.proxy.master.required.shortcut.AppScreenType
@@ -51,19 +48,6 @@ class SettingFragment() : BaseFragment<FragmentSettingBinding>() {
 
     override val screenType: ScreenType
         get() = AppScreenType.SettingFragment
-
-    override fun onBannerNativeResult(adResource: AdLoadBannerNativeUiResource) {
-        binding.layoutBannerNative.processAdResource(
-            adResource,
-            AppAdPlaceName.ANCHORED_BOTTOM_DNS_DEFAULT
-        )
-    }
-
-    override fun providerBannerNativeAdPlaceName(): List<IAdPlaceName> {
-        return listOf(
-            AppAdPlaceName.ANCHORED_BOTTOM_DNS_DEFAULT
-        )
-    }
 
     override fun initViews(savedInstanceState: Bundle?) {
         val bitmap = BitmapFactory.decodeResource(resources, R.drawable.ic_setting_pro_bg)

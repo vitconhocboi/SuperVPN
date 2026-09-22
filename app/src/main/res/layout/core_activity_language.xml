@@ -88,19 +88,4 @@
     </FrameLayout>
 
 
-    <RelativeLayout
-        android:id="@+id/layout_ads"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <com.core.ads.customviews.ads.BannerNativeContainerLayout
-            android:id="@+id/layout_banner_native"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:background="@color/black" />
-    </RelativeLayout>
-
 </androidx.appcompat.widget.LinearLayoutCompat>

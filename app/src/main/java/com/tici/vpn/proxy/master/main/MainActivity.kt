@@ -14,12 +14,11 @@ import androidx.lifecycle.whenResumed
 import com.common.baseui.BaseAppConfig
 import com.core.baseui.BaseActivity
 import com.core.baseui.BillingViewModel
-import com.core.config.domain.data.IAdPlaceName
 import com.core.rate.RateInApp
 import com.core.utilities.util.Timber
 import com.google.firebase.Firebase
 import com.google.firebase.analytics.analytics
-import com.simple.libads.setVisible
+import com.common.baseui.extension.setVisible
 import com.tici.vpn.proxy.master.R
 import com.tici.vpn.proxy.master.databinding.ActivityMainBinding
 import com.tici.vpn.proxy.master.feature.feature_exit.DialogFragmentExitApp
@@ -27,9 +26,6 @@ import com.tici.vpn.proxy.master.home.ConnectedFragment
 import com.tici.vpn.proxy.master.home.DisconnectedFragment
 import com.tici.vpn.proxy.master.home.HomeFragment
 import com.tici.vpn.proxy.master.home.ProxyReport
-import com.tici.vpn.proxy.master.network.ProxySpeedTest
-import com.tici.vpn.proxy.master.remoteconfig.FirebaseConfigManager
-import com.tici.vpn.proxy.master.required.ads.AppAdPlaceName
 import com.tici.vpn.proxy.master.required.inapp.InAppBillingViewModel
 import com.tici.vpn.proxy.master.required.preferences.CoreAppPreferences
 import com.tici.vpn.proxy.master.settings.SettingFragment
@@ -56,8 +52,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     private val inAppBillingViewModel: BillingViewModel by viewModels<InAppBillingViewModel>()
 
 //    var isAutoConnect = false
-
-    private var configAd: FirebaseConfigManager = FirebaseConfigManager.get()
 
     private val mainViewModel: MainViewModel by viewModels()
 
@@ -90,7 +84,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     private val mDisonnectedFragment by lazy {
-        DisconnectedFragment.newInstance(BaseAppConfig.proxyCountry)
+        DisconnectedFragment.newInstance()
     }
 
     companion object {
@@ -101,12 +95,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun bindingProvider(inflater: LayoutInflater): ActivityMainBinding {
         return ActivityMainBinding.inflate(inflater)
-    }
-
-    override fun providerInterAdPlaceName(): List<IAdPlaceName> {
-        return listOf(
-            AppAdPlaceName.FULLSCREEN_BACK_MAIN
-        )
     }
 
     override fun onBackPressed() {
@@ -166,17 +154,14 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             }
 
             icBack.setOnClickListener {
-                showInterAd(AppAdPlaceName.FULLSCREEN_BACK_MAIN) {}
                 onBackPressedDispatcher.onBackPressed()
             }
 
             ivBack.setOnClickListener {
-                showInterAd(AppAdPlaceName.FULLSCREEN_BACK_MAIN) {}
                 showFragment(mSettingFragment)
             }
 
             ivBack2.setOnClickListener {
-                showInterAd(AppAdPlaceName.FULLSCREEN_BACK_MAIN) {}
                 showFragment(mHomeFragment)
             }
 
@@ -370,8 +355,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         showFragment(mDnsFragment)
     }
 
-    fun showConnected(proxy: ProxySpeedTest.ProxyConfig?) {
-        mConnectedFragment.setCurrentProxy(proxy)
+    fun showConnected() {
         isConnectedFragment = true
         showFragment(mConnectedFragment)
 

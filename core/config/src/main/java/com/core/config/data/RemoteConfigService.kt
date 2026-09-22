@@ -3,21 +3,10 @@ package com.core.config.data
 import com.core.config.BuildConfig
 import com.squareup.moshi.Moshi
 import com.core.config.R
-import com.core.config.data.model.AppOpenAdConfigModel
-import com.core.config.data.model.InterstitialAdConfigModel
-import com.core.config.data.model.NativeAdConfigModel
-import com.core.config.data.model.RewardedAdConfigModel
-import com.core.config.data.model.RewardedInterstitialAdConfigModel
-import com.core.config.data.model.PreventAdClickConfigModel
-import com.core.config.data.model.SplashScreenConfigModel
 import com.core.config.data.helper.ConfigParam
 import com.core.config.data.helper.read
-import com.core.config.data.helper.readList
-import com.core.config.data.model.AdPlaceModel
 import com.core.config.data.model.AppConfigModel
-import com.core.config.data.model.BannerAdConfigModel
 import com.core.config.data.model.IapConfigModel
-import com.core.config.data.model.RequestConsentConfigModel
 import com.google.firebase.Firebase
 import com.google.firebase.remoteconfig.remoteConfig
 import com.google.firebase.remoteconfig.remoteConfigSettings
@@ -106,86 +95,6 @@ class RemoteConfigService @Inject constructor(
         return remoteConfig.read(
             moshi,
             ConfigParam.IapConfig
-        )
-    }
-
-    internal fun getPreventAdClickConfig(): PreventAdClickConfigModel? {
-        return remoteConfig.read(
-            moshi,
-            ConfigParam.PreventAdClickConfigParam
-        )
-    }
-
-    internal fun getAdsDisableByCountry(): List<String> {
-        return remoteConfig.readList(
-            moshi,
-            ConfigParam.AdsDisabledByCountryParam
-        )
-    }
-
-    internal fun getSplashScreenConfig(): SplashScreenConfigModel? {
-        return remoteConfig.read(
-            moshi, ConfigParam.SplashScreenConfigParam
-        )
-    }
-
-    internal fun getBannerNativeAdPlaces(): List<AdPlaceModel> {
-        return remoteConfig.readList(
-            moshi, ConfigParam.BannerNativeAdPlaces
-        )
-    }
-
-    internal fun getAppOpenAdPlaces(): List<AdPlaceModel> {
-        return remoteConfig.readList(
-            moshi, ConfigParam.AppOpenAdPlaces
-        )
-    }
-
-    internal fun getRewardedRewardedInterInterAdPlaces(): List<AdPlaceModel> {
-        return remoteConfig.readList(
-            moshi, ConfigParam.RewardedRewardedInterInterAdPlaces
-        )
-    }
-
-    internal fun getBannerAdConfig(): BannerAdConfigModel? {
-        return remoteConfig.read(
-            moshi, ConfigParam.BannerAdsParam
-        )
-    }
-
-    internal fun getNativeAdConfig(): NativeAdConfigModel? {
-        return remoteConfig.read(
-            moshi, ConfigParam.NativeAdsParam
-        )
-    }
-
-    internal fun getInterstitialAdConfig(): InterstitialAdConfigModel? {
-        return remoteConfig.read(
-            moshi, ConfigParam.InterstitialAdsParam
-        )
-    }
-
-    internal fun getRewardedInterstitialAdConfig(): RewardedInterstitialAdConfigModel? {
-        return remoteConfig.read(
-            moshi, ConfigParam.InterstitialRewardedAdsParam
-        )
-    }
-
-    internal fun getRewardedAdConfig(): RewardedAdConfigModel? {
-        return remoteConfig.read(
-            moshi, ConfigParam.RewardedAdsParam
-        )
-    }
-
-    internal fun getAppOpenAdConfig(): AppOpenAdConfigModel? {
-        return remoteConfig.read(
-            moshi, ConfigParam.AppOpenAdsParam
-        )
-    }
-
-    internal fun getRequestConsentConfig(): RequestConsentConfigModel? {
-        return remoteConfig.read(
-            moshi, ConfigParam.RequestConsentConfigParam
         )
     }
 

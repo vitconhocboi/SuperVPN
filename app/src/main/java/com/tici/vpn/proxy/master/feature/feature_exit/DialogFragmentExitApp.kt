@@ -2,7 +2,6 @@ package com.tici.vpn.proxy.master.feature.feature_exit
 
 import android.graphics.Color
 import android.graphics.Point
-import android.os.Bundle
 import android.view.Display
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -11,17 +10,14 @@ import android.view.Window
 import android.view.WindowManager
 import androidx.core.app.ActivityCompat
 import androidx.core.graphics.drawable.toDrawable
-import com.core.ads.domain.AdLoadBannerNativeUiResource
-import com.core.baseui.BaseAdsDialogFragment
-import com.core.config.domain.data.IAdPlaceName
+import com.core.baseui.BaseDialogFragment
 import com.core.utilities.setOnSingleClick
 import com.tici.vpn.proxy.master.databinding.FragmentDialogExitAppBinding
-import com.tici.vpn.proxy.master.required.ads.AppAdPlaceName
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class DialogFragmentExitApp :
-    BaseAdsDialogFragment<FragmentDialogExitAppBinding>() {
+    BaseDialogFragment<FragmentDialogExitAppBinding>() {
 
     override fun bindingProvider(
         inflater: LayoutInflater,
@@ -30,26 +26,12 @@ class DialogFragmentExitApp :
         return FragmentDialogExitAppBinding.inflate(inflater, container, false)
     }
 
-    override fun providerBannerNativeAdPlaceName(): List<IAdPlaceName> {
-        return listOf(
-            AppAdPlaceName.ANCHORED_BOTTOM_EXIT
-        )
-    }
-
-    override fun onBannerNativeResult(adResource: AdLoadBannerNativeUiResource) {
-        viewBinding.layoutBannerNative.processAdResource(
-            adResource,
-            AppAdPlaceName.ANCHORED_BOTTOM_EXIT
-        )
-    }
-
-    override fun initViews(savedInstanceState: Bundle?) {
+    override fun initView() {
         viewBinding.tvNoExit.setOnSingleClick {
             dismiss()
         }
 
         viewBinding.tvExitApp.setOnSingleClick {
-            adsManager.removeAds(adPlaceName = AppAdPlaceName.ANCHORED_BOTTOM_EXIT)
             ActivityCompat.finishAffinity(requireActivity())
         }
     }

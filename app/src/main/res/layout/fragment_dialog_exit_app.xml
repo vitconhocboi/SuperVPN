@@ -50,7 +50,7 @@
         android:text="@string/tv_no"
         android:textColor="@color/black"
         android:textSize="@dimen/_15sp"
-        app:layout_constraintBottom_toTopOf="@+id/layoutBannerNative"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tvExitApp"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -67,16 +67,9 @@
         android:text="@string/tv_exit_new"
         android:textColor="@color/blue_language_select"
         android:textSize="@dimen/_15sp"
-        app:layout_constraintBottom_toTopOf="@+id/layoutBannerNative"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvNoExit" />
     
-    <com.core.ads.customviews.ads.BannerNativeContainerLayout
-        android:layout_width="match_parent"
-        android:id="@+id/layoutBannerNative"
-        android:layout_marginHorizontal="@dimen/_7dp"
-        android:layout_marginBottom="@dimen/_12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

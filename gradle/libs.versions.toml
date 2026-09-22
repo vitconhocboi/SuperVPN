@@ -39,12 +39,9 @@ picasso = "2.71828"
 
 #----------------- Google & Firebase Services -----------------#
 firebaseBom = "34.0.0"
-playServicesAds = "24.4.0"
-playServicesAdsIdentifier = "18.2.0"
 playServicesBase = "18.5.0"
 playServicesBasement = "18.5.0"
 billingKtx = "7.1.1"
-userMessagingPlatform = "3.1.0"
 googleService = "4.4.2"
 crashlytics = "3.0.2"
 firebasePerf = "2.0.0"
@@ -162,12 +159,9 @@ androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecy
 circularprogressbar = { group = "com.mikhaellopez", name = "circularprogressbar", version.ref = "circularprogressbar" }
 
 
-# --- Google Play Services & Ads ---
-play-services-ads = { module = "com.google.android.gms:play-services-ads", version.ref = "playServicesAds" }
-play-services-ads-identifier = { module = "com.google.android.gms:play-services-ads-identifier", version.ref = "playServicesAdsIdentifier" }
+# --- Google Play Services ---
 play-services-base = { module = "com.google.android.gms:play-services-base", version.ref = "playServicesBase" }
 play-services-basement = { module = "com.google.android.gms:play-services-basement", version.ref = "playServicesBasement" }
-user-messaging-platform = { module = "com.google.android.ump:user-messaging-platform", version.ref = "userMessagingPlatform" }
 play-services-measurement-api = { group = "com.google.android.gms", name = "play-services-measurement-api", version.ref = "playServicesMeasurementApi" }
 
 [plugins]

@@ -6,14 +6,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.common.baseui.extension.setVisible
-import com.core.ads.domain.AdLoadBannerNativeUiResource
 import com.core.baseui.fragment.BaseFragment
 import com.core.baseui.fragment.ScreenType
-import com.core.config.domain.data.IAdPlaceName
 import com.tici.vpn.proxy.master.R
 import com.tici.vpn.proxy.master.databinding.FragmentDnsBinding
 import com.tici.vpn.proxy.master.dialog.SettingSuccessDialog
-import com.tici.vpn.proxy.master.required.ads.AppAdPlaceName
 import com.tici.vpn.proxy.master.required.shortcut.AppScreenType
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -33,19 +30,6 @@ class DNSFragment : BaseFragment<FragmentDnsBinding>() {
 
     override val screenType: ScreenType
         get() = AppScreenType.DNSFragment
-
-    override fun onBannerNativeResult(adResource: AdLoadBannerNativeUiResource) {
-        binding.layoutBannerNative.processAdResource(
-            adResource,
-            AppAdPlaceName.ANCHORED_BOTTOM_SETTINGS
-        )
-    }
-
-    override fun providerBannerNativeAdPlaceName(): List<IAdPlaceName> {
-        return listOf(
-            AppAdPlaceName.ANCHORED_BOTTOM_SETTINGS
-        )
-    }
 
     var isChange : Boolean = false
 

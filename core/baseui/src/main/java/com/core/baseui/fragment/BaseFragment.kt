@@ -14,19 +14,14 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
 import com.bumptech.glide.Glide
-import com.core.ads.domain.AdLoadBannerNativeUiResource
-import com.core.ads.domain.AdsManager
 import com.core.analytics.AnalyticsEvent
 import com.core.analytics.AnalyticsManager
-import com.core.baseui.ContextAds
 import com.core.baseui.DialogShowLoadingProgress
 import com.core.baseui.executor.AppExecutors
 import com.core.baseui.ext.bindLiveData
 import com.core.config.domain.RemoteConfigRepository
-import com.core.config.domain.data.IAdPlaceName
 import com.core.preference.AppPreferences
 import com.core.preference.PurchasePreferences
 import com.core.utilities.checkIfFragmentAttached
@@ -68,9 +63,6 @@ abstract class BaseFragment<B : ViewBinding>(
 
     @Inject
     lateinit var purchasePreferences: PurchasePreferences
-
-    @Inject
-    lateinit var adsManager: AdsManager
 
     @Inject
     lateinit var analyticsManager: AnalyticsManager
@@ -159,7 +151,6 @@ abstract class BaseFragment<B : ViewBinding>(
 
 
     open var isAwaitCallInitView = false
-    var contextAds: ContextAds?= null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -177,22 +168,6 @@ abstract class BaseFragment<B : ViewBinding>(
                 _onBackPressedCallback
             )
         }
-        contextAds = object : ContextAds(
-            adsManager = adsManager,
-            lifecycleOwner = this,
-            lifecycleScope = lifecycleScope,
-            activity = requireActivity(),
-            fragmentManager = childFragmentManager,
-            remoteConfigRepository = remoteConfigRepository,
-            initRewardAdPlaceName = providerRewardAdPlaceName(),
-            initInterstitialAdPlaceName = providerInterAdPlaceName(),
-            initBannerNativeAdPlaceName = providerBannerNativeAdPlaceName(),
-            initPreloadBannerNativeAdPlaceName = providerPreloadBannerNativeAdPlaceName(),
-        ) {
-            override fun onBannerNativeResult(adResource: AdLoadBannerNativeUiResource) {
-                this@BaseFragment.onBannerNativeResult(adResource)
-            }
-        }
         init(savedInstanceState)
         if (!isAwaitCallInitView) {
             initViews(savedInstanceState)
@@ -205,7 +180,6 @@ abstract class BaseFragment<B : ViewBinding>(
             Timber.Forest.d("Listener $state")
             if (isVip != state) {
                 isVip = state
-                contextAds?.preloadAds()
                 Timber.Forest.d("onChangeVipState $state")
                 onChangeVipState(isVip)
             }
@@ -230,7 +204,7 @@ abstract class BaseFragment<B : ViewBinding>(
      * Xử lý sự kiện thay đổi trạng thái kết nối mạng.
      *
      * Hàm này lắng nghe sự thay đổi trạng thái kết nối mạng và thực hiện các hành động tương ứng,
-     * chẳng hạn như tải lại quảng cáo hoặc gửi sự kiện phân tích.
+     * chẳng hạn như gửi sự kiện phân tích.
      */
     private fun handleNetworkChange() {
         collectFlowOn(networkConnectionManager.isNetworkConnectedFlow, Lifecycle.State.RESUMED) {
@@ -240,7 +214,6 @@ abstract class BaseFragment<B : ViewBinding>(
                     val isNetworkConnected = isNetworkConnected()
                     if (isNetworkConnected && !previousNetworkConnection) {
                         analyticsManager.logEvent(AnalyticsEvent.NETWORK_OFF_TO_ON)
-                        contextAds?.preloadAds()
                     }
                     if (!isNetworkConnected && previousNetworkConnection) {
                         analyticsManager.logEvent(AnalyticsEvent.NETWORK_ON_TO_OFF)
@@ -264,7 +237,7 @@ abstract class BaseFragment<B : ViewBinding>(
         Glide.with(this).onStart()
         super.onStart()
         Log.i(TAG, "$screenType onStart")
-//        preloadAds()
+
     }
 
 
@@ -313,8 +286,6 @@ abstract class BaseFragment<B : ViewBinding>(
         } catch (_: Exception) {
         }
         super.onDestroyView()
-        contextAds?.onDestroy()
-        contextAds = null
         Log.i(TAG, "$screenType onDestroyView")
     }
 
@@ -331,98 +302,6 @@ abstract class BaseFragment<B : ViewBinding>(
     open fun initViews(savedInstanceState: Bundle?) {}
 
     open fun handleObservable() {}
-
-    //region Ads implement
-
-    /**
-     * Tải quảng cáo banner hoặc native.
-     *
-     * @param adPlaceName Tên vị trí quảng cáo.
-     * @param oneTimeLoad Chỉ tải quảng cáo một lần nếu true.
-     */
-    fun loadBannerOrNativeAds(adPlaceName: IAdPlaceName, oneTimeLoad: Boolean, isReload: Boolean = false) {
-        contextAds?.loadBannerOrNativeAds(adPlaceName, oneTimeLoad, isReload = isReload)
-    }
-
-    /**
-     * Tải quảng cáo interstitial.
-     *
-     * @param adPlaceName Tên vị trí quảng cáo.
-     * @param oneTimeLoad Chỉ tải quảng cáo một lần nếu true.
-     */
-    fun loadInterstitialAds(adPlaceName: IAdPlaceName, oneTimeLoad: Boolean) {
-        contextAds?.loadInterstitialAds(adPlaceName, oneTimeLoad)
-    }
-
-    /**
-     * Tải quảng cáo reward.
-     *
-     * @param adPlaceName Tên vị trí quảng cáo.
-     * @param oneTimeLoad Chỉ tải quảng cáo một lần nếu true.
-     */
-    fun loadRewardAds(adPlaceName: IAdPlaceName, oneTimeLoad: Boolean) {
-        contextAds?.loadRewardAds(adPlaceName, oneTimeLoad)
-    }
-
-    /**
-     * Hiển thị quảng cáo reward.
-     *
-     * @param adPlaceName Tên vị trí quảng cáo.
-     * @param onHandleCompleted Callback được gọi khi quảng cáo được hiển thị hoặc không và người dùng có nhận được phần thưởng hay không.
-     */
-    fun showRewardAd(
-        adPlaceName: IAdPlaceName,
-        onHandleCompleted: ((isShown: Boolean, isEarnedReward: Boolean) -> Unit)
-    ) {
-        contextAds?.showRewardAd(adPlaceName, onHandleCompleted)
-    }
-
-    /**
-     * Hiển thị quảng cáo interstitial.
-     *
-     * @param adPlaceName Tên vị trí quảng cáo.
-     * @param onHandleCompleted Callback được gọi khi quảng cáo được hiển thị hoặc không.
-     */
-    fun showInterAd(adPlaceName: IAdPlaceName, onHandleCompleted: ((isShown: Boolean) -> Unit)) {
-        contextAds?.showInterAd(adPlaceName, onHandleCompleted)
-    }
-
-    /**
-     * Cung cấp danh sách các vị trí quảng cáo banner/native cần tải trước.
-     *
-     * @return Danh sách các [IAdPlaceName] cho quảng cáo banner/native cần tải trước.
-     */
-    open fun providerPreloadBannerNativeAdPlaceName(): List<IAdPlaceName> = listOf()
-
-    /**
-     * Cung cấp danh sách các vị trí quảng cáo interstitial.
-     *
-     * @return Danh sách các [IAdPlaceName] cho quảng cáo interstitial.
-     */
-    open fun providerInterAdPlaceName(): List<IAdPlaceName> = listOf()
-
-    /**
-     * Cung cấp danh sách các vị trí quảng cáo reward.
-     *
-     * @return Danh sách các [IAdPlaceName] cho quảng cáo reward.
-     */
-    open fun providerRewardAdPlaceName(): List<IAdPlaceName> = listOf()
-
-    /**
-     * Cung cấp danh sách các vị trí quảng cáo banner/native.
-     *
-     * @return Danh sách các [IAdPlaceName] cho quảng cáo banner/native.
-     */
-    open fun providerBannerNativeAdPlaceName(): List<IAdPlaceName> = listOf()
-
-    /**
-     * Được gọi khi quảng cáo banner/native đã được tải.
-     *
-     * @param adResource Tài nguyên quảng cáo banner/native đã tải.
-     */
-    open fun onBannerNativeResult(adResource: AdLoadBannerNativeUiResource) {
-    }
-    //endregion
 
     open fun displayFirstData() {}
 

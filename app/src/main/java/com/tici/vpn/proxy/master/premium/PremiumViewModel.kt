@@ -18,7 +18,6 @@ import com.common.baseui.BaseAppConfig
 import com.tici.vpn.proxy.master.api.ApiService
 import com.tici.vpn.proxy.master.api.DisconnectResponse
 import com.tici.vpn.proxy.master.api.Subscription
-import com.tici.vpn.proxy.master.api.Users
 import com.tici.vpn.proxy.master.billing.BillingManager
 import com.tici.vpn.proxy.master.main.SharedData
 import dagger.hilt.android.lifecycle.HiltViewModel

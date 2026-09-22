@@ -2,6 +2,7 @@ package com.tici.vpn.proxy.master.utils
 
 import android.content.Context
 import android.net.ConnectivityManager
+import android.net.Network
 import android.net.NetworkCapabilities
 import android.os.StrictMode
 import android.util.Log
@@ -17,25 +18,29 @@ import java.net.Socket
 object NetworkUtils {
     @Suppress("DEPRECATION")
     fun isInternetAvailable(context: Context): Boolean {
-        var result = false
-        val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager?
-        cm?.run {
-            cm.getNetworkCapabilities(cm.activeNetwork)
-                ?.run {
-                    if (when {
-
-                            hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
-                            hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
-                            hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> true
-                            hasTransport(NetworkCapabilities.TRANSPORT_VPN) -> true
-                            else -> false
-                        }
-                    ) {
-                        result = hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
-                    }
-                }
+        val cm = context.applicationContext
+            .getSystemService(Context.CONNECTIVITY_SERVICE) as? ConnectivityManager ?: return false
+        return try {
+            // activeNetwork can be null transiently (e.g. while the VPN tunnel is being
+            // established or torn down), so fall back to scanning every known network.
+            if (hasInternetCapability(cm, cm.activeNetwork)) return true
+            if (cm.allNetworks.any { hasInternetCapability(cm, it) }) return true
+            // Last resort for OEMs where NetworkCapabilities is unreliable.
+            cm.activeNetworkInfo?.isConnected == true
+        } catch (e: Exception) {
+            Log.d("NetworkUtils", "Error checking network state", e)
+            // Don't block the user because of a platform failure.
+            true
         }
-        return result
+    }
+
+    private fun hasInternetCapability(cm: ConnectivityManager, network: Network?): Boolean {
+        val caps = network?.let { cm.getNetworkCapabilities(it) } ?: return false
+        val hasTransport = caps.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ||
+                caps.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) ||
+                caps.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) ||
+                caps.hasTransport(NetworkCapabilities.TRANSPORT_VPN)
+        return hasTransport && caps.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
     }
 
     fun hasInternetAccess(context: Context): Boolean {

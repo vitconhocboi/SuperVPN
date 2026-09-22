@@ -43,9 +43,7 @@ class PurchasePreferences @Inject constructor(@ApplicationContext private val ap
      * Kiểm tra xem người dùng đã mua vip chưa
      */
     fun isUserVip(): Boolean {
-        return currentKeyVipList.any { keyVip ->
-            prefs.get(keyVip, false)
-        }
+        return true
     }
 
     fun saveBoughtState(key: String, value: Boolean){

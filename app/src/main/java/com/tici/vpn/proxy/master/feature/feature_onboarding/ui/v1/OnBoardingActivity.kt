@@ -6,29 +6,17 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
-import androidx.viewpager2.widget.ViewPager2
-import com.core.ads.BaseAdmobApplication
-import com.core.ads.domain.AdLoadBannerNativeUiResource
+import com.core.baseui.BaseCoreApplication
 import com.core.analytics.AnalyticsEvent
 import com.core.baseui.ext.collectFlowOn
-import com.core.config.domain.data.AppConfig.Companion.DEFINE_INTRO_FULL_AD
-import com.core.config.domain.data.AppConfig.Companion.DEFINE_INTRO_HAVE_ADS
-import com.core.config.domain.data.AppConfig.Companion.DEFINE_INTRO_NO_ADS
-import com.core.config.domain.data.CoreAdPlaceName
-import com.core.config.domain.data.IAdPlaceName
 import com.core.utilities.getStatusBarHeight
-import com.core.utilities.gone
-import com.core.utilities.visibleIf
 import com.tici.vpn.proxy.master.core.base_ui.CoreActivity
 import com.tici.vpn.proxy.master.databinding.CoreActivityOnboardingBinding
 import com.tici.vpn.proxy.master.feature.feature_onboarding.ui.adapter.OnBoardingPagerAdapter
-import com.tici.vpn.proxy.master.feature.feature_onboarding.ui.helper.OnBoardingConfigFactory
 import com.tici.vpn.proxy.master.feature.feature_onboarding.ui.model.OnBoardingItem
 import com.tici.vpn.proxy.master.main.MainActivity
-import com.tici.vpn.proxy.master.required.ads.GetDataFromRemoteUseCaseImpl
 import com.tici.vpn.proxy.master.required.shortcut.AppShortCut
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class OnBoardingActivity : CoreActivity<CoreActivityOnboardingBinding>() {
@@ -41,9 +29,6 @@ class OnBoardingActivity : CoreActivity<CoreActivityOnboardingBinding>() {
     override val isSpaceDisplayCutout: Boolean
         get() = false
 
-    @Inject
-    lateinit var getDataFromRemoteUseCase: GetDataFromRemoteUseCaseImpl
-
     private val sharedViewModel: OnBoardingViewModel by viewModels()
 
     override fun bindingProvider(inflater: LayoutInflater): CoreActivityOnboardingBinding {
@@ -54,16 +39,9 @@ class OnBoardingActivity : CoreActivity<CoreActivityOnboardingBinding>() {
         intent.extras?.getString(AppShortCut.KEY_SHORTCUT_TARGET_SCREEN, "")
     }
 
-
-    private val introData by lazy {
-        remoteConfigRepository.getAppConfig().introData.takeIf { it.isNotEmpty() } ?: arrayListOf(
-            DEFINE_INTRO_HAVE_ADS,
-            DEFINE_INTRO_HAVE_ADS,
-            DEFINE_INTRO_HAVE_ADS
-        )
+    val itemsOnboarding by lazy {
+        OnBoardingItem.fromIntroData(remoteConfigRepository.getAppConfig().introData)
     }
-
-    val itemsOnboarding = ArrayList<OnBoardingItem>()
 
     private val onBackPressedCallback = object : OnBackPressedCallback(true) {
         override fun handleOnBackPressed() {
@@ -84,44 +62,6 @@ class OnBoardingActivity : CoreActivity<CoreActivityOnboardingBinding>() {
             this,
             onBackPressedCallback
         )
-        itemsOnboarding.apply {
-            var indexIntro = 0
-            introData.forEachIndexed { index, defineIntro ->
-
-                when (defineIntro) {
-                    DEFINE_INTRO_HAVE_ADS -> {
-                        add(
-                            OnBoardingItem.Item(
-                                position = indexIntro,
-                                isShowAds = !purchasePreferences.isUserVip(),
-                                isPageEnd = false
-                            )
-                        )
-                        indexIntro++
-                    }
-
-                    DEFINE_INTRO_NO_ADS -> {
-                        add(
-                            OnBoardingItem.Item(
-                                position = indexIntro,
-                                isShowAds = false,
-                                isPageEnd = false
-                            )
-                        )
-                        indexIntro++
-                    }
-
-                    DEFINE_INTRO_FULL_AD -> {
-                        if (!adsManager.isNotAbleToVisibleAdsToUser(CoreAdPlaceName.ANCHORED_FULL_ONBOARDING)) {
-                            add(
-                                OnBoardingItem.FullNativeItem
-                            )
-                        }
-                    }
-                }
-            }
-            itemsOnboarding.lastOrNull { it is OnBoardingItem.Item }?.isPageEnd = true
-        }
 
         super.initViews(savedInstanceState)
         val adapter = OnBoardingPagerAdapter(
@@ -134,66 +74,9 @@ class OnBoardingActivity : CoreActivity<CoreActivityOnboardingBinding>() {
         params.topMargin = getStatusBarHeight()
         binding.layoutToolbar.layoutParams = params
 
-
         binding.run {
             viewPager.adapter = adapter
             viewPager.offscreenPageLimit = adapter.itemCount
-            viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-                override fun onPageSelected(position: Int) {
-                    val itemOnBoarding = itemsOnboarding[position]
-                    layoutAds.visibleIf(itemOnBoarding.isShowAds && !purchasePreferences.isUserVip())
-                }
-            })
-        }
-    }
-
-    override fun onBannerNativeResult(adResource: AdLoadBannerNativeUiResource) {
-        super.onBannerNativeResult(adResource)
-        if (adResource.commonAdPlaceName == CoreAdPlaceName.ANCHORED_ONBOARDING_BOTTOM) {
-            when (adResource) {
-                is AdLoadBannerNativeUiResource.Loading -> {
-                    binding.layoutBannerNative.setAdSize(
-                        adResource.adType,
-                        adResource.bannerSize,
-                        adResource.nativeTemplateSize
-                    )
-                    val isShowAds =
-                        (itemsOnboarding[binding.viewPager.currentItem]).isShowAds
-                    if (isShowAds) {
-                        binding.layoutBannerNative.visibleIf(!purchasePreferences.isUserVip())
-                    }
-                }
-
-                is AdLoadBannerNativeUiResource.AdFailed -> {
-                    this@OnBoardingActivity.binding.layoutBannerNative.gone()
-                }
-
-                is AdLoadBannerNativeUiResource.BannerAdLoaded -> {
-                    val isShowAds =
-                        (itemsOnboarding[binding.viewPager.currentItem]).isShowAds
-                    binding.layoutBannerNative.onAdLoaded(adResource.bannerAd)
-                    if (isShowAds) {
-                        binding.layoutBannerNative.visibleIf(!purchasePreferences.isUserVip())
-                    }
-                }
-
-                is AdLoadBannerNativeUiResource.NativeAdLoaded -> {
-                    val isShowAds = (itemsOnboarding[binding.viewPager.currentItem]).isShowAds
-                    binding.layoutBannerNative.onAdLoaded(
-                        adResource.nativeAd,
-                        adResource.nativeAdPlace
-                    )
-                    if (!isShowAds) {
-                        binding.layoutBannerNative.visibleIf(!purchasePreferences.isUserVip())
-                    }
-                }
-
-                is AdLoadBannerNativeUiResource.AdNetworkError -> {
-                    /*if(isHideNativeBannerWhenNetworkError) {
-                        binding.layoutBannerNative.gone()
-                    }*/
-                }
-            }
         }
     }
 
@@ -214,35 +97,15 @@ class OnBoardingActivity : CoreActivity<CoreActivityOnboardingBinding>() {
                 }
 
                 OnBoardingEvent.FinishStep -> {
-                    if (BaseAdmobApplication.isFirstSaveLanguage) {
-                        BaseAdmobApplication.isFirstSaveLanguage = false
+                    if (BaseCoreApplication.isFirstSaveLanguage) {
+                        BaseCoreApplication.isFirstSaveLanguage = false
                         analyticsManager.logEvent(AnalyticsEvent.EVENT_ACTION_PASS_INTRO)
                     }
-                    showInterAd(
-                        CoreAdPlaceName.ACTION_NEXT_IN_INTRODUCTION
-                    ) {
-                        openMain()
-                    }
+                    openMain()
                 }
             }
         }
 
-    }
-
-    override fun providerBannerNativeAdPlaceName(): List<IAdPlaceName> {
-        return OnBoardingConfigFactory.getOnBoardingAdPlaceName(getDataFromRemoteUseCase.onBoardingConfig, remoteConfigRepository.getAppConfig())
-    }
-
-    override fun providerInterAdPlaceName(): List<IAdPlaceName> {
-        return listOf(
-            CoreAdPlaceName.ACTION_NEXT_IN_INTRODUCTION,
-            CoreAdPlaceName.ACTION_SKIP_IN_INTRODUCTION
-        )
-    }
-
-    override fun onDestroy() {
-        adsManager.releaseBannerNative(CoreAdPlaceName.ANCHORED_FULL_ONBOARDING)
-        super.onDestroy()
     }
 
     private fun openMain() {

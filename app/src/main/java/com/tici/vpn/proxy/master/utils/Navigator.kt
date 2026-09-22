@@ -4,11 +4,8 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import com.tici.vpn.proxy.master.feature.feature_language.ui.LanguageActivity
-import com.tici.vpn.proxy.master.ipinfo.IpInfoActivity
 import com.tici.vpn.proxy.master.main.MainActivity
-import com.tici.vpn.proxy.master.network.ProxySpeedTest.ProxyConfig
 import com.tici.vpn.proxy.master.premium.PremiumActivity
-import com.tici.vpn.proxy.master.proxy.ProxyActivity
 import com.tici.vpn.proxy.master.settings.dns.DNSActivity
 
 object Navigator {
@@ -37,14 +34,6 @@ object Navigator {
         )
     }
 
-    fun startProxyActivity(context: Context, proxyId: String?) {
-        context.startActivity(Intent(context, ProxyActivity::class.java).apply {
-            flags =
-                Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
-            putExtra("ID", proxyId)
-        })
-    }
-
     fun startPremiumActivity(context: Context) {
         context.startActivity(Intent(context, PremiumActivity::class.java).apply {
             flags =
@@ -54,13 +43,5 @@ object Navigator {
 
     fun startDnsActivity(context: Context) {
         context.startActivity(Intent(context, DNSActivity::class.java))
-    }
-
-    fun startProxyInfoActivity(context: Context, proxy: ProxyConfig?) {
-        context.startActivity(Intent(context, IpInfoActivity::class.java).apply {
-            flags =
-                Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
-            putExtra("Proxy", proxy)
-        })
     }
 }

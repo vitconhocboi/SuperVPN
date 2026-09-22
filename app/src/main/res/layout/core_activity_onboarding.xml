@@ -11,7 +11,7 @@
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/layout_ads"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <RelativeLayout
@@ -39,17 +39,5 @@
             android:visibility="gone" />
     </RelativeLayout>
 
-    <FrameLayout
-        android:id="@+id/layout_ads"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <com.core.ads.customviews.ads.BannerNativeContainerLayout
-            android:id="@+id/layout_banner_native"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom" />
-    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

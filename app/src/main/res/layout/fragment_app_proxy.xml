@@ -50,7 +50,7 @@
         android:layout_marginBottom="@dimen/margin_16"
         android:gravity="center"
         android:weightSum="2"
-        app:layout_constraintBottom_toTopOf="@+id/layout_ads"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerViewApps">
@@ -87,21 +87,6 @@
     </LinearLayout>
 
 
-    <RelativeLayout
-        android:id="@+id/layout_ads"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_marginVertical="@dimen/_6dp"
-        android:background="@color/backgroundColor2"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <com.core.ads.customviews.ads.BannerNativeContainerLayout
-            android:id="@+id/layout_banner_native"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true" />
-    </RelativeLayout>
 
     <ProgressBar
         android:id="@+id/progress"

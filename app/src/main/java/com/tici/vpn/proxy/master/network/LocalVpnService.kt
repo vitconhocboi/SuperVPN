@@ -18,7 +18,6 @@ import androidx.core.app.NotificationCompat
 import com.tici.vpn.proxy.master.R
 import com.tici.vpn.proxy.master.home.HomeFragment
 import com.tici.vpn.proxy.master.main.MainActivity
-import com.tici.vpn.proxy.master.proxy.ProxyConnection
 import com.tici.vpn.proxy.master.utils.Constant
 import com.common.baseui.BaseAppConfig
 import com.tici.vpn.proxy.master.main.SharedData
@@ -40,8 +39,7 @@ class LocalVpnService : VpnService(), Runnable {
 
     @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
     @Inject
-    lateinit var proxyConnection: ProxyConnection
-    var currentProxy: ProxySpeedTest.ProxyConfig? = null
+    lateinit var proxyConnection: VpnStateListener
     private val vpnInterface = AtomicReference<FileDescriptor?>(null)
 
     init {
@@ -119,28 +117,13 @@ class LocalVpnService : VpnService(), Runnable {
                 m_VPNThread = Thread(this, "VPNServiceThread")
                 m_VPNThread!!.start()
 
-                engine.Engine.decodeString(BaseAppConfig.proxy).split(":").let { parts ->
-                    if (parts.size >= 5) {
-                        BaseAppConfig.proxyHost = parts[1]
-                        currentProxy = ProxySpeedTest.ProxyConfig(
-                            host = parts[1],
-                            port = parts[2].toInt(),
-                            username = parts.getOrNull(3) ?: "",
-                            password = parts.getOrNull(4) ?: "",
-                            type = parts.getOrNull(0) ?: "http"
-                        )
-                    } else {
-                        currentProxy = null
-                    }
-                }
-
+                // Privoxy runs purely as a local filter (ad/tracker blocking via
+                // default.action) and forwards direct — there is no remote server.
                 m_PrivoxyManager = VpnManager(this)
-                if (m_PrivoxyManager!!.initialize(currentProxy) && m_PrivoxyManager!!.start()) {
-//                    Timber.tag(Constant.TAG)
-//                        .d("Privoxy started on: ${m_PrivoxyManager!!.getProxyAddress()}")
+                if (m_PrivoxyManager!!.initialize() && m_PrivoxyManager!!.start()) {
                     proxyConnection.updateUI(HomeFragment.CONNECTED)
                 } else {
-//                    Timber.tag(Constant.TAG).d("Failed to start Privoxy")
+                    Timber.tag(Constant.TAG).d("Failed to start local filter")
                     proxyConnection.updateUI(HomeFragment.DISCONNECTED)
                 }
             }
@@ -190,10 +173,9 @@ class LocalVpnService : VpnService(), Runnable {
 //            if (BaseAppConfig.proxy.isNotEmpty()) {
                 engine.Engine.stop()
 //            }
-            // Stop other components
+
             m_PrivoxyManager?.stop()
             m_PrivoxyManager = null
-            currentProxy = null
 
             if (Instance != null) {
 //                Log.i("SuperVpn", "TestRelease Instance")
@@ -244,12 +226,10 @@ class LocalVpnService : VpnService(), Runnable {
         key.device = "fd://" + pfdDescriptor?.fd
         key.logLevel = "silent"
         key.directUDP = Build.VERSION.SDK_INT < Build.VERSION_CODES.Q
-        if (currentProxy?.type?.lowercase() == "socks5") {
-            key.proxy =
-                "socks5://${currentProxy!!.username}:${currentProxy!!.password}@${currentProxy!!.host}:${currentProxy!!.port}"
-        } else {
-            key.proxy = "http://127.0.0.1:8118"
-        }
+        // Traffic goes through the local Privoxy filter, which forwards direct.
+        // The app's own UID is excluded from the tun (see establishVPN), so the
+        // filter's outbound dials cannot loop back through the interface.
+        key.proxy = LOCAL_FILTER_PROXY
         engine.Engine.insert(key)
         engine.Engine.start()
         Timber.tag(Constant.TAG).d("Started stun to socks")
@@ -276,31 +256,7 @@ class LocalVpnService : VpnService(), Runnable {
     @Throws(Exception::class)
     private fun runVPN() {
         m_VPNInterface = establishVPN()!!
-//        val duplicatedFd  = Os.dup(m_VPNInterface!!.fileDescriptor)
-//        vpnInterface.set(duplicatedFd)
-        if (BaseAppConfig.proxy.isNotEmpty()) {
-            startTunToSock(m_VPNInterface)
-        }
-//        protect(m_VPNInterface!!.detachFd())
-//        this.m_VPNOutputStream = FileOutputStream(m_VPNInterface!!.getFileDescriptor())
-//        val input = FileInputStream(m_VPNInterface!!.getFileDescriptor())
-//        try {
-//            while (IsRunning) {
-//                var idle = true
-//                val size = input.read(m_Packet)
-//                if (size > 0) {
-//                    m_VPNOutputStream!!.write(m_IPHeader.m_Data, m_IPHeader.m_Offset, size)
-//                    idle = false
-//                }
-//                if (idle) {
-//                    Thread.sleep(100)
-//                }
-//            }
-//        } catch (e: Exception) {
-//            e.printStackTrace()
-//        } finally {
-//            input.close()
-//        }
+        startTunToSock(m_VPNInterface)
     }
 
     private fun waitUntilPrepared() {
@@ -317,14 +273,12 @@ class LocalVpnService : VpnService(), Runnable {
     private fun establishVPN(): ParcelFileDescriptor? {
         val builder: Builder = Builder()
         builder.setMtu(ProxyConfig.Instance.mTU)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q && BaseAppConfig.proxy.isNotEmpty()) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             builder.setHttpProxy(ProxyInfo.buildDirectProxy("127.0.0.1", 8118))
         }
 
         builder.addAddress("10.0.0.2", 32)
-        if (BaseAppConfig.proxy.isNotEmpty()) {
-            builder.addRoute("0.0.0.0", 0)
-        }
+        builder.addRoute("0.0.0.0", 0)
 
         if (BaseAppConfig.dnsServer.isNotEmpty()) {
             val dnsArray = BaseAppConfig.dnsServer.split(",")
@@ -368,6 +322,9 @@ class LocalVpnService : VpnService(), Runnable {
         private var allowApp: List<String>? = null
         const val ACTION_START = "ACTION_START"
         const val ACTION_STOP = "ACTION_STOP"
+
+        /** Local Privoxy listener; mirrors VpnManager's configured port. */
+        private const val LOCAL_FILTER_PROXY = "http://127.0.0.1:8118"
 
         var Instance: LocalVpnService? = null
         var IsRunning: Boolean = false

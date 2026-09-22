@@ -12,16 +12,13 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.LocaleListCompat
 import androidx.recyclerview.widget.DefaultItemAnimator
-import com.core.ads.BaseAdmobApplication
-import com.core.ads.domain.AdLoadBannerNativeUiResource
+import com.core.baseui.BaseCoreApplication
 import com.core.analytics.AnalyticsEvent
 import com.core.baseui.executor.AppExecutors
 import com.core.baseui.ext.autoCleared
 import com.core.baseui.ext.bindLiveData
 import com.core.baseui.recyclerview.NpaLinearLayoutManager
 import com.core.baseui.supportedlanguage.SupportedLanguage
-import com.core.config.domain.data.CoreAdPlaceName
-import com.core.config.domain.data.IAdPlaceName
 import com.core.utilities.getCurrentLanguageCode
 import com.core.utilities.gone
 import com.core.utilities.setOnSingleClick
@@ -32,7 +29,7 @@ import com.tici.vpn.proxy.master.databinding.CoreActivityLanguageBinding
 import com.tici.vpn.proxy.master.feature.feature_language.ui.adapter.SupportedLanguageAdapter
 import com.tici.vpn.proxy.master.feature.feature_onboarding.ui.helper.OnBoardingConfigFactory
 import com.tici.vpn.proxy.master.main.MainActivity
-import com.tici.vpn.proxy.master.required.ads.GetDataFromRemoteUseCaseImpl
+import com.tici.vpn.proxy.master.required.GetDataFromRemoteUseCaseImpl
 import com.tici.vpn.proxy.master.required.shortcut.AppShortCut
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -95,8 +92,6 @@ class LanguageActivity : CoreActivity<CoreActivityLanguageBinding>() {
         intent.extras?.getBoolean(KEY_BACK_FROM_INTRODUCTION, false) ?: false
     }
 
-    private var isRecreated = false
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         checkIfNavigationIsNeeded()
@@ -104,10 +99,6 @@ class LanguageActivity : CoreActivity<CoreActivityLanguageBinding>() {
             this,
             onBackPressedCallback
         )
-    }
-
-    override fun showFirstScreen() {
-        isRecreated = appPreferences.navigateAfterChangeLanguage
     }
 
     private fun checkIfNavigationIsNeeded() {
@@ -218,48 +209,23 @@ class LanguageActivity : CoreActivity<CoreActivityLanguageBinding>() {
 
     private fun processNextScreen() {
         supportedLanguageAdapter.currentList.find { it.isSelected }?.let {
-            BaseAdmobApplication.Companion.isFirstSaveLanguage =
+            BaseCoreApplication.Companion.isFirstSaveLanguage =
                 isOpenFromSlash && getCurrentLanguageCode().isBlank()
             if (getCurrentLanguageCode().isBlank()) {
                 analyticsManager.logEvent(AnalyticsEvent.EVENT_ACTION_SAVE_LANGUAGE_FIRST)
             }
             if (isOpenFromSlash || backFromIntroduction) {
-                if (BaseAdmobApplication.Companion.isFirstSaveLanguage && it.languageCode != appPreferences.systemLanguageCode) {
+                if (BaseCoreApplication.Companion.isFirstSaveLanguage && it.languageCode != appPreferences.systemLanguageCode) {
                     analyticsManager.logEvent(AnalyticsEvent.CHANGE_LANGUAGE_NOT_DEFAULT)
-                    BaseAdmobApplication.Companion.isUserSelectLanguageNotDefault = true
+                    BaseCoreApplication.Companion.isUserSelectLanguageNotDefault = true
                 } else {
-                    BaseAdmobApplication.Companion.isUserSelectLanguageNotDefault = false
+                    BaseCoreApplication.Companion.isUserSelectLanguageNotDefault = false
                 }
             }
             appPreferences.navigateAfterChangeLanguage
             userChoosesToGoToSettingsAfterLanguageChange(it)
         }
     }
-
-    override fun providerBannerNativeAdPlaceName(): List<IAdPlaceName> {
-        if (isRecreated) {
-            return listOf()
-        }
-        return mutableListOf<IAdPlaceName>().apply {
-            add(CoreAdPlaceName.ANCHORED_CHANGE_LANGUAGE_BOTTOM)
-            if ((isOpenFromSlash || backFromIntroduction) && isEnableIntroductionScreen) {
-                addAll(
-                    OnBoardingConfigFactory.getOnBoardingAdPlaceName(
-                        getDataFromRemoteUseCase.onBoardingConfig,
-                        remoteConfigRepository.getAppConfig()
-                    )
-                )
-            }
-        }
-    }
-
-    override fun onBannerNativeResult(adResource: AdLoadBannerNativeUiResource) {
-        binding.layoutBannerNative.processAdResource(
-            adResource,
-            CoreAdPlaceName.ANCHORED_CHANGE_LANGUAGE_BOTTOM
-        )
-    }
-
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)

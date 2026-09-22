@@ -10,13 +10,10 @@ import android.view.ViewGroup
 import android.widget.RadioButton
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
-import com.core.ads.domain.AdLoadBannerNativeUiResource
 import com.core.baseui.InsetsViewModel
 import com.core.baseui.fragment.BaseChildOfHostFragment
 import com.core.baseui.fragment.ScreenType
 import com.core.baseui.fragment.collectFlowOn
-import com.core.config.domain.data.CoreAdPlaceName
-import com.core.config.domain.data.IAdPlaceName
 import com.core.utilities.setOnSingleClick
 import com.tici.vpn.proxy.master.databinding.CoreFragmentUninstallFeedbackBinding
 import com.tici.vpn.proxy.master.feature.feature_uninstall.ui.navigate.UninstallNavigateEvent
@@ -228,13 +225,4 @@ class UninstallFeedbackChildOfHostFragment:
     
     
 
-    override fun providerBannerNativeAdPlaceName(): List<IAdPlaceName> {
-        return listOf(
-            CoreAdPlaceName.ANCHORED_UNINSTALL_BOTTOM_STEP_2
-        )
-    }
-
-    override fun onBannerNativeResult(adResource: AdLoadBannerNativeUiResource) {
-        binding.layoutBannerNative.processAdResource(adResource, CoreAdPlaceName.ANCHORED_UNINSTALL_BOTTOM_STEP_2)
-    }
 }

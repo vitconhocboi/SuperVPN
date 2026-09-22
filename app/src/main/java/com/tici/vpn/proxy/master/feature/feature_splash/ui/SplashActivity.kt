@@ -3,7 +3,7 @@ package com.tici.vpn.proxy.master.feature.feature_splash.ui
 import android.view.LayoutInflater
 import androidx.activity.viewModels
 import com.core.baseui.ext.bindLiveData
-import com.core.utilities.invisible
+import com.core.utilities.visible
 import com.tici.vpn.proxy.master.databinding.ActivitySplashBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.getValue
@@ -28,7 +28,7 @@ class SplashActivity : BaseSplashActivity<ActivitySplashBinding>() {
         }
     }
 
-    override fun hideLoading() {
-        binding.viewLoadAdsOpen.invisible()
+    override fun showLoading() {
+        binding.lottieAnimationLoadingSplash.visible()
     }
 }

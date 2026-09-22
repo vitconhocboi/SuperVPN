@@ -1,8 +1,7 @@
 package com.tici.vpn.proxy.master
 
 import com.common.baseui.BaseApplication
-import com.core.ads.BaseAdmobApplication
-import com.core.ads.admob.ReOpenShowCondition
+import com.core.baseui.BaseCoreApplication
 import com.core.billing.ProductIdManager
 import com.core.preference.PurchasePreferences
 import com.core.rate.RateInApp
@@ -10,16 +9,13 @@ import dagger.hilt.android.HiltAndroidApp
 import javax.inject.Inject
 
 @HiltAndroidApp
-class SuperVpnApplication : BaseAdmobApplication() {
+class SuperVpnApplication : BaseCoreApplication() {
 
     @Inject
     lateinit var purchasePreferences: PurchasePreferences
 
     @Inject
     lateinit var productIdManager: ProductIdManager
-
-    @Inject
-    lateinit var reOpenShowCondition: ReOpenShowCondition
 
     init {
         instance = this

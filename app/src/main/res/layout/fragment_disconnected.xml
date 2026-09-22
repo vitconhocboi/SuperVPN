@@ -15,25 +15,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/ivFlag"
-            android:layout_width="@dimen/size64"
-            android:layout_height="@dimen/size64"
-            android:layout_marginTop="@dimen/_10dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/flag_us"
-            app:shapeAppearanceOverlay="@style/CircleImageView" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/titleCountry"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/size16"
-            android:fontFamily="@font/inter_bold"
-            android:text="United States"
-            android:textColor="#FFFFFF"
-            android:textSize="@dimen/size14" />
-
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/pn_ip_info"
             android:layout_width="match_parent"
@@ -124,20 +105,6 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <RelativeLayout
-        android:id="@+id/layout_ads"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/_8dp"
-        android:layout_marginTop="@dimen/_12dp"
-        app:layout_constraintTop_toBottomOf="@+id/bgLlInfo">
-
-        <com.core.ads.customviews.ads.BannerNativeContainerLayout
-            android:id="@+id/layout_banner_native"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true" />
-    </RelativeLayout>
 
 
     <TextView

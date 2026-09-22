@@ -3,7 +3,7 @@ package com.core.baseui
 import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
-import com.core.baseui.databinding.DialogLoadingAdsBinding
+import com.core.baseui.databinding.DialogShowLoadingBinding
 
 class DialogShowLoadingProgress(context: Context) : AlertDialog(context) {
 
@@ -13,10 +13,10 @@ class DialogShowLoadingProgress(context: Context) : AlertDialog(context) {
         setCancelable(false)
     }
 
-    private lateinit var viewBinding: DialogLoadingAdsBinding
+    private lateinit var viewBinding: DialogShowLoadingBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewBinding = DialogLoadingAdsBinding.inflate(layoutInflater)
+        viewBinding = DialogShowLoadingBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
     }
 
