@@ -1,0 +1,41 @@
+# Default ad-block rules, seeded on first launch and restored by "Reset to defaults".
+# One domain per line, no wildcards. Each entry blocks the domain AND all its subdomains.
+# Lines starting with '#' are comments.
+#
+# Replaces the old hardcoded list in VpnManager. Entries such as "*adsystem.com" or
+# "ads.pubmatic.com" were anchored by label count and never matched subdomains; they are
+# now stored as the bare registrable domain. "prebid.*" (a TLD glob) has no no-glob
+# equivalent and was dropped.
+
+# Ad networks
+doubleclick.net
+googlesyndication.com
+googleadservices.com
+adsystem.com
+pubmatic.com
+betweendigital.com
+stickyadstv.com
+smartadserver.com
+pubpowerplatform.io
+adnxs.com
+creativecdn.com
+unrulymedia.com
+richaudience.com
+aralego.com
+adsterra.com
+zmedia.vn
+vietadx.net
+
+# Specific ad hosts (kept narrow; the parent domain also serves regular content)
+qph.cf2.quoracdn.net
+
+# Gambling ad domains
+man88.spa
+lu88.mba
+tx88.vote
+du88.chat
+11win.dance
+789club.nrw
+9bet.vote
+k88.cyou
+vu88.tax
