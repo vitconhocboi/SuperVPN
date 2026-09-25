@@ -10,7 +10,7 @@ import com.tici.vpn.proxy.master.R
 import com.tici.vpn.proxy.master.databinding.FragmentDisconnectedBinding
 import com.tici.vpn.proxy.master.extension.safeGetString
 import com.tici.vpn.proxy.master.main.MainActivity
-import com.tici.vpn.proxy.master.network.ProxySpeedTest
+import com.tici.vpn.proxy.master.network.SpeedTest
 import com.tici.vpn.proxy.master.required.shortcut.AppScreenType
 import com.tici.vpn.proxy.master.utils.Utils
 import dagger.hilt.android.AndroidEntryPoint
@@ -19,7 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class DisconnectedFragment : BaseFragment<FragmentDisconnectedBinding>() {
 
-    var report: ProxyReport? = null
+    var report: SessionReport? = null
 
 
     override val screenType: ScreenType
@@ -46,12 +46,11 @@ class DisconnectedFragment : BaseFragment<FragmentDisconnectedBinding>() {
             tvUpload.text = report?.upload
             tvDownload.text = report?.download
             if (report?.upload?.isEmpty() == true && report?.upload?.isEmpty() == true) {
-                ProxySpeedTest.Instance.startSpeedTest(
-                    report?.proxyConfig,
+                SpeedTest.Instance.startSpeedTest(
                     callback = { download, upload ->
                         try {
-                            if (ProxySpeedTest.FAILED != download) tvDownload.text = download
-                            if (ProxySpeedTest.FAILED != upload) tvUpload.text = upload
+                            if (SpeedTest.FAILED != download) tvDownload.text = download
+                            if (SpeedTest.FAILED != upload) tvUpload.text = upload
                         } catch (e: Exception) {
                         }
                     })
@@ -71,7 +70,7 @@ class DisconnectedFragment : BaseFragment<FragmentDisconnectedBinding>() {
 //        }
 //    }
 
-    fun loadData(report: ProxyReport) {
+    fun loadData(report: SessionReport) {
         this.report = report;
     }
 }

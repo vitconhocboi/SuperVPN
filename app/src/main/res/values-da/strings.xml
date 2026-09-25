@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Få ubegrænset adgang til alle funktioner, uden reklamer.</string>
   <string name="setting_trial">Gratis prøveperiode i 3 dage</string>
   <string name="setting_upgrade">Opgrader</string>
-  <string name="ip_proxy">Servere</string>
-  <string name="ip_quick_access">Hurtig adgang</string>
-  <string name="ip_all">ALLE</string>
-  <string name="ip_game">Spil</string>
-  <string name="ip_streaming">Streaming</string>
   <string name="recommend">Anbefale</string>
   <string name="setting_app_proxy">App-filter</string>
   <string name="setting_app_proxy_desc">Vælg hvilke apps der skal oprette forbindelse til internettet via VPN</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Sats</string>
   <string name="setting_share">Dele</string>
   <string name="setting_feedback">Feedback</string>
-  <string name="select_connection_area">Vælg forbindelsesområde</string>
   <string name="first_fragment_label">Første fragment</string>
   <string name="second_fragment_label">Andet fragment</string>
   <string name="start">STARTE</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Appens VPN-filter er indstillet</string>
   <string name="setting_ads_limit">Annoncegrænsen er indstillet</string>
   <string name="setting_dns_set">DNS er indstillet</string>
-  <string name="setting_choose_proxy">VPN-serveren er indstillet</string>
   <string name="reconnect_to_take_effect">Gå tilbage til startskærmen og nulstil VPN\'en for at indstillingerne kan træde i kraft.</string>
   <string name="home_reconnect_to_take_effect">Nulstil venligst VPN\'en for at indstillingerne kan træde i kraft</string>
-  <string name="premium_select_sku">Vælg venligst én periode</string>
   <string name="premium_purchase_success">Købet er gennemført</string>
   <string name="select_vpn">Vælg VPN</string>
   <string name="dns_only">Kun DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Giv os venligst flere detaljer, så vi kan identificere og løse dit problem hurtigere (mindst 6 tegn)</string>
   <string name="text_thanks_feedback">Tak for din feedback</string>
   <string name="text_feedback_content">Vi løser dette problem i en fremtidig version. Beklager ulejligheden.</string>
-  <string name="no_available_vpn">Der er ingen gratis VPN tilgængelig. Gå venligst til VPN-skærmen og vælg en server.</string>
   <string name="msg_device_does_not_support_this_feature">Denne funktion understøttes ikke på denne enhed!</string>
   <string name="search_app">søgeapp..</string>
   <string name="exit_app">Luk appen?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Bare et enkelt tryk for at oprette forbindelse.</string>
   <string name="guide_2">Flere VPN-servere i forskellige lande</string>
   <string name="guide_3">Beskyt dit privatliv online</string>
-  <string name="what_is_my_ip">Hvad er min ip-adresse?</string>
-  <string name="ip_address">IP-adresse</string>
   <string name="network_provider">Netværksudbyder</string>
-  <string name="location">Beliggenhed</string>
   <string name="pincode">PIN-kode</string>
   <string name="timezone">Tidszone</string>
   <string name="duration">Varighed</string>

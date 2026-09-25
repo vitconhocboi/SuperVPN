@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Iegūstiet neierobežotu piekļuvi visām funkcijām bez reklāmām.</string>
   <string name="setting_trial">Bezmaksas izmēģinājums 3 dienas</string>
   <string name="setting_upgrade">Uzlabot</string>
-  <string name="ip_proxy">Serveri</string>
-  <string name="ip_quick_access">Ātrā piekļuve</string>
-  <string name="ip_all">VISI</string>
-  <string name="ip_game">Spēle</string>
-  <string name="ip_streaming">Straumēšana</string>
   <string name="recommend">Ieteikt</string>
   <string name="setting_app_proxy">Lietotņu filtrs</string>
   <string name="setting_app_proxy_desc">Izvēlieties, kuras lietotnes izveidos savienojumu ar internetu, izmantojot VPN</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Likme</string>
   <string name="setting_share">Dalīties</string>
   <string name="setting_feedback">Atsauksmes</string>
-  <string name="select_connection_area">Izvēlieties savienojuma apgabalu</string>
   <string name="first_fragment_label">Pirmais fragments</string>
   <string name="second_fragment_label">Otrais fragments</string>
   <string name="start">SĀKT</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Lietotnes VPN filtrs ir iestatīts</string>
   <string name="setting_ads_limit">Reklāmu ierobežojums ir iestatīts</string>
   <string name="setting_dns_set">DNS ir iestatīts</string>
-  <string name="setting_choose_proxy">VPN serveris ir iestatīts</string>
   <string name="reconnect_to_take_effect">Lūdzu, atgriezieties sākuma ekrānā un atiestatiet VPN, lai iestatījumi stātos spēkā.</string>
   <string name="home_reconnect_to_take_effect">Lūdzu, atiestatiet VPN, lai iestatījumi stātos spēkā.</string>
-  <string name="premium_select_sku">Lūdzu, izvēlieties vienu periodu</string>
   <string name="premium_purchase_success">Pirkums veiksmīgs</string>
   <string name="select_vpn">Izvēlieties VPN</string>
   <string name="dns_only">Tikai DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Lūdzu, sniedziet mums sīkāku informāciju, lai mēs varētu ātrāk identificēt un atrisināt jūsu problēmu (vismaz 6 rakstzīmes)</string>
   <string name="text_thanks_feedback">Paldies par atsauksmēm</string>
   <string name="text_feedback_content">Mēs novērsīsim šo problēmu nākamajā versijā. Atvainojiet par sagādātajām neērtībām.</string>
-  <string name="no_available_vpn">Nav pieejams bezmaksas VPN. Lūdzu, dodieties uz VPN ekrānu un izvēlieties serveri.</string>
   <string name="msg_device_does_not_support_this_feature">Šī funkcija šajā ierīcē netiek atbalstīta!</string>
   <string name="search_app">meklēšanas lietotne..</string>
   <string name="exit_app">Iziet no lietotnes?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Tikai viens pieskāriens, lai izveidotu savienojumu.</string>
   <string name="guide_2">Vairāki VPN serveri dažādās valstīs</string>
   <string name="guide_3">Aizsargājiet savu tiešsaistes privātumu</string>
-  <string name="what_is_my_ip">Kāda ir mana IP adrese?</string>
-  <string name="ip_address">IP adrese</string>
   <string name="network_provider">Tīkla pakalpojumu sniedzējs</string>
-  <string name="location">Atrašanās vieta</string>
   <string name="pincode">PIN kods</string>
   <string name="timezone">Laika josla</string>
   <string name="duration">Ilgums</string>

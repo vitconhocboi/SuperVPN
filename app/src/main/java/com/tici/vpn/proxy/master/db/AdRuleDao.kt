@@ -18,6 +18,9 @@ interface AdRuleDao {
     @Query("SELECT domain FROM AdRuleDB WHERE enabled = 1 ORDER BY domain ASC")
     suspend fun getEnabledDomains(): List<String>
 
+    @Query("SELECT domain FROM AdRuleDB WHERE enabled = 1 AND isDefault = 1 ORDER BY domain ASC")
+    suspend fun getEnabledDefaultDomains(): List<String>
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(item: AdRuleDB): Long
 

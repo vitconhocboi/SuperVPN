@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Kry onbeperkte toegang tot alle funksies, advertensievry.</string>
   <string name="setting_trial">Gratis proeflopie 3 dae</string>
   <string name="setting_upgrade">Gradeer op</string>
-  <string name="ip_proxy">Bedieners</string>
-  <string name="ip_quick_access">Vinnige Toegang</string>
-  <string name="ip_all">ALMAL</string>
-  <string name="ip_game">Spel</string>
-  <string name="ip_streaming">Stroom</string>
   <string name="recommend">Aanbeveel</string>
   <string name="setting_app_proxy">App-filter</string>
   <string name="setting_app_proxy_desc">Kies watter programme via VPN aan die internet sal koppel</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Beoordeel</string>
   <string name="setting_share">Deel</string>
   <string name="setting_feedback">Terugvoer</string>
-  <string name="select_connection_area">Kies verbindingsarea</string>
   <string name="first_fragment_label">Eerste Fragment</string>
   <string name="second_fragment_label">Tweede Fragment</string>
   <string name="start">BEGIN</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Program se VPN-filter is ingestel</string>
   <string name="setting_ads_limit">Advertensielimiet is gestel</string>
   <string name="setting_dns_set">DNS is ingestel</string>
-  <string name="setting_choose_proxy">VPN-bediener is ingestel</string>
   <string name="reconnect_to_take_effect">Keer asseblief terug na die tuisskerm en herstel die VPN sodat die instellings in werking kan tree.</string>
   <string name="home_reconnect_to_take_effect">Herstel asseblief die VPN sodat die instellings in werking kan tree</string>
-  <string name="premium_select_sku">Kies asseblief een periode</string>
   <string name="premium_purchase_success">Koop suksesvol</string>
   <string name="select_vpn">Kies VPN</string>
   <string name="dns_only">Slegs DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Gee ons asseblief meer besonderhede sodat ons jou probleem vinniger kan identifiseer en oplos (ten minste 6 karakters)</string>
   <string name="text_thanks_feedback">Dankie vir jou terugvoer</string>
   <string name="text_feedback_content">Ons sal hierdie probleem in \'n toekomstige weergawe regstel. Jammer vir die ongerief.</string>
-  <string name="no_available_vpn">Daar is geen gratis VPN beskikbaar nie, gaan asseblief na die VPN-skerm en kies \'n bediener.</string>
   <string name="msg_device_does_not_support_this_feature">Hierdie funksie word nie vir hierdie toestel ondersteun nie!</string>
   <string name="search_app">soek-app..</string>
   <string name="exit_app">Verlaat die program?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Net een aanraking om te koppel.</string>
   <string name="guide_2">Verskeie VPN-bedieners in verskillende lande</string>
   <string name="guide_3">Beskerm jou aanlyn privaatheid</string>
-  <string name="what_is_my_ip">Wat is my IP-adres?</string>
-  <string name="ip_address">IP-adres</string>
   <string name="network_provider">Netwerkverskaffer</string>
-  <string name="location">Ligging</string>
   <string name="pincode">PIN-kode</string>
   <string name="timezone">Tydsone</string>
   <string name="duration">Duur</string>

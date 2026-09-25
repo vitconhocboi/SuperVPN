@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Жарнамасыз бардык функцияларга чексиз мүмкүнчүлүк алыңыз.</string>
   <string name="setting_trial">Акысыз сыноо 3 күн</string>
   <string name="setting_upgrade">Жаңыртуу</string>
-  <string name="ip_proxy">Серверлер</string>
-  <string name="ip_quick_access">Ыкчам жетүү</string>
-  <string name="ip_all">БААРЫ</string>
-  <string name="ip_game">Оюн</string>
-  <string name="ip_streaming">Агым</string>
   <string name="recommend">сунуштайбыз</string>
   <string name="setting_app_proxy">Колдонмо чыпкасы</string>
   <string name="setting_app_proxy_desc">Кайсы колдонмолор VPN аркылуу Интернетке туташа турганын тандаңыз</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Баа</string>
   <string name="setting_share">Бөлүшүү</string>
   <string name="setting_feedback">Пикир</string>
-  <string name="select_connection_area">Туташуу аймагын тандаңыз</string>
   <string name="first_fragment_label">Биринчи фрагмент</string>
   <string name="second_fragment_label">Экинчи фрагмент</string>
   <string name="start">START</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Колдонмонун VPN чыпкасы орнотулду</string>
   <string name="setting_ads_limit">Жарнамаларга чектөө коюлган</string>
   <string name="setting_dns_set">DNS коюлган</string>
-  <string name="setting_choose_proxy">VPN сервери орнотулду</string>
   <string name="reconnect_to_take_effect">Жөндөөлөр күчүнө кириши үчүн үй экранына кайтып, VPNди баштапкы абалга келтириңиз</string>
   <string name="home_reconnect_to_take_effect">Жөндөөлөр күчүнө кириши үчүн VPNди баштапкы абалга келтириңиз</string>
-  <string name="premium_select_sku">Сураныч, бир мезгилди тандаңыз</string>
   <string name="premium_purchase_success">Сатып алуу ийгиликтүү</string>
   <string name="select_vpn">VPN тандаңыз</string>
   <string name="dns_only">DNS гана</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Маселеңизди тезирээк аныктап чечишибиз үчүн бизге кененирээк маалымат бериңиз (кеминде 6 белги)</string>
   <string name="text_thanks_feedback">Пикириңиз үчүн рахмат</string>
   <string name="text_feedback_content">Бул маселени келечектеги версияда оңдойбуз. Ыңгайсыздык үчүн кечирим сурайбыз.</string>
-  <string name="no_available_vpn">Акысыз VPN жок, VPN экранына өтүп, серверди тандаңыз.</string>
   <string name="msg_device_does_not_support_this_feature">Бул функция бул түзмөктө колдоого алынбайт!</string>
   <string name="search_app">издөө колдонмо..</string>
   <string name="exit_app">Колдонмодон чыгасызбы?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Туташуу үчүн бир гана тийүү.</string>
   <string name="guide_2">Ар кайсы өлкөлөрдө бир нече VPN серверлери</string>
   <string name="guide_3">Онлайн купуялыгыңызды коргоңуз</string>
-  <string name="what_is_my_ip">Менин IP деген эмне?</string>
-  <string name="ip_address">IP дареги</string>
   <string name="network_provider">Тармак камсыздоочу</string>
-  <string name="location">Жайгашкан жер</string>
   <string name="pincode">PIN код</string>
   <string name="timezone">Убакыт алкагы</string>
   <string name="duration">Узактыгы</string>

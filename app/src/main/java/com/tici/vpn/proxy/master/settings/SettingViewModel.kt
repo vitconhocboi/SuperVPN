@@ -4,7 +4,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.common.baseui.BaseAppConfig
-import com.tici.vpn.proxy.master.api.ApiService
 import com.tici.vpn.proxy.master.db.VpnDatabase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers

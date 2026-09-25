@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">広告なしで、すべての機能に無制限にアクセスできます。</string>
   <string name="setting_trial">3日間無料トライアル</string>
   <string name="setting_upgrade">アップグレード</string>
-  <string name="ip_proxy">サーバー</string>
-  <string name="ip_quick_access">クイックアクセス</string>
-  <string name="ip_all">全て</string>
-  <string name="ip_game">ゲーム</string>
-  <string name="ip_streaming">ストリーミング</string>
   <string name="recommend">推薦する</string>
   <string name="setting_app_proxy">アプリフィルター</string>
   <string name="setting_app_proxy_desc">VPN経由でインターネットに接続するアプリを選択する</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">レート</string>
   <string name="setting_share">共有</string>
   <string name="setting_feedback">フィードバック</string>
-  <string name="select_connection_area">接続エリアを選択</string>
   <string name="first_fragment_label">最初の断片</string>
   <string name="second_fragment_label">2番目の断片</string>
   <string name="start">始める</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">アプリVPNフィルターが設定されています</string>
   <string name="setting_ads_limit">広告制限が設定されました</string>
   <string name="setting_dns_set">DNSが設定されています</string>
-  <string name="setting_choose_proxy">VPNサーバーが設定されています</string>
   <string name="reconnect_to_take_effect">設定を有効にするには、ホーム画面に戻ってVPNをリセットしてください。</string>
   <string name="home_reconnect_to_take_effect">設定を有効にするにはVPNをリセットしてください</string>
-  <string name="premium_select_sku">期間を1つ選択してください</string>
   <string name="premium_purchase_success">購入が完了しました</string>
   <string name="select_vpn">VPNを選択</string>
   <string name="dns_only">DNSのみ</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">問題をより早く特定し解決できるよう、より詳しい情報をお知らせください（6文字以上）</string>
   <string name="text_thanks_feedback">フィードバックありがとうございます</string>
   <string name="text_feedback_content">この問題は今後のバージョンで修正される予定です。ご不便をおかけして申し訳ございません。</string>
-  <string name="no_available_vpn">利用できる無料 VPN はありません。VPN 画面に移動してサーバーを選択してください。</string>
   <string name="msg_device_does_not_support_this_feature">この機能はこのデバイスではサポートされていません。</string>
   <string name="search_app">検索アプリ</string>
   <string name="exit_app">アプリを終了しますか?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">ワンタッチで接続できます。</string>
   <string name="guide_2">複数の国に複数のVPNサーバー</string>
   <string name="guide_3">オンラインプライバシーを保護する</string>
-  <string name="what_is_my_ip">私のIPは何ですか?</string>
-  <string name="ip_address">IPアドレス</string>
   <string name="network_provider">ネットワークプロバイダー</string>
-  <string name="location">位置</string>
   <string name="pincode">PINコード</string>
   <string name="timezone">タイムゾーン</string>
   <string name="duration">間隔</string>

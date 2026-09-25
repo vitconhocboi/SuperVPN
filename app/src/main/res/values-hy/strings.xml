@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Ստացեք անսահմանափակ մուտք բոլոր գործառույթներին՝ առանց գովազդի։</string>
   <string name="setting_trial">Անվճար փորձաշրջան 3 օր</string>
   <string name="setting_upgrade">Թարմացնել</string>
-  <string name="ip_proxy">Սերվերներ</string>
-  <string name="ip_quick_access">Արագ մուտք</string>
-  <string name="ip_all">ԲՈԼՈՐ</string>
-  <string name="ip_game">Խաղ</string>
-  <string name="ip_streaming">Հոսքային հեռարձակում</string>
   <string name="recommend">Առաջարկել</string>
   <string name="setting_app_proxy">Հավելվածի ֆիլտր</string>
   <string name="setting_app_proxy_desc">Ընտրեք, թե որ հավելվածները կմիանան ինտերնետին VPN-ի միջոցով</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Գնահատել</string>
   <string name="setting_share">Կիսվել</string>
   <string name="setting_feedback">Հետադարձ կապ</string>
-  <string name="select_connection_area">Ընտրեք միացման տարածքը</string>
   <string name="first_fragment_label">Առաջին հատված</string>
   <string name="second_fragment_label">Երկրորդ հատված</string>
   <string name="start">ՍԿՍԵԼ</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Հավելվածի VPN ֆիլտրը կարգավորված է</string>
   <string name="setting_ads_limit">Գովազդի սահմանաչափը սահմանված է</string>
   <string name="setting_dns_set">DNS-ը կարգավորված է</string>
-  <string name="setting_choose_proxy">VPN սերվերը կարգավորված է</string>
   <string name="reconnect_to_take_effect">Խնդրում ենք վերադառնալ գլխավոր էկրան և վերագործարկել VPN-ը՝ կարգավորումներն ուժի մեջ մտնելու համար։</string>
   <string name="home_reconnect_to_take_effect">Խնդրում ենք վերագործարկել VPN-ը, որպեսզի կարգավորումները ուժի մեջ մտնեն։</string>
-  <string name="premium_select_sku">Խնդրում ենք ընտրել մեկ ժամանակահատված</string>
   <string name="premium_purchase_success">Գնումը հաջողվեց</string>
   <string name="select_vpn">Ընտրեք VPN</string>
   <string name="dns_only">Միայն DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Խնդրում ենք տրամադրել մեզ ավելի շատ մանրամասներ, որպեսզի մենք կարողանանք ավելի արագ բացահայտել և լուծել ձեր խնդիրը (առնվազն 6 նիշ)</string>
   <string name="text_thanks_feedback">Շնորհակալություն արձագանքի համար</string>
   <string name="text_feedback_content">Մենք կլուծենք այս խնդիրը հետագա տարբերակում: Կներեք անհարմարության համար։</string>
-  <string name="no_available_vpn">Անվճար VPN չկա, խնդրում ենք մտնել VPN էկրան և ընտրել սերվեր։</string>
   <string name="msg_device_does_not_support_this_feature">Այս գործառույթը չի աջակցվում այս սարքի համար։</string>
   <string name="search_app">որոնման հավելվածը ..</string>
   <string name="exit_app">Փակե՞լ հավելվածը։</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Միանալու համար ընդամենը մեկ հպում։</string>
   <string name="guide_2">Բազմաթիվ VPN սերվերներ տարբեր երկրներում</string>
   <string name="guide_3">Պաշտպանեք ձեր առցանց գաղտնիությունը</string>
-  <string name="what_is_my_ip">Ի՞նչ է իմ IP-ն։</string>
-  <string name="ip_address">IP հասցե</string>
   <string name="network_provider">Ցանցի մատակարար</string>
-  <string name="location">Գտնվելու վայրը</string>
   <string name="pincode">PIN կոդը</string>
   <string name="timezone">Ժամային գոտի</string>
   <string name="duration">Տևողություն</string>

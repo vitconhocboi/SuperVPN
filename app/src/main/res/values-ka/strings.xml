@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">მიიღეთ შეუზღუდავი წვდომა ყველა ფუნქციაზე, რეკლამის გარეშე.</string>
   <string name="setting_trial">უფასო საცდელი პერიოდი 3 დღე</string>
   <string name="setting_upgrade">განახლება</string>
-  <string name="ip_proxy">სერვერები</string>
-  <string name="ip_quick_access">სწრაფი წვდომა</string>
-  <string name="ip_all">ყველა</string>
-  <string name="ip_game">თამაში</string>
-  <string name="ip_streaming">სტრიმინგი</string>
   <string name="recommend">რეკომენდაცია</string>
   <string name="setting_app_proxy">აპლიკაციის ფილტრი</string>
   <string name="setting_app_proxy_desc">აირჩიეთ, რომელი აპლიკაციები დაუკავშირდება ინტერნეტს VPN-ის საშუალებით</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">შეფასება</string>
   <string name="setting_share">გააზიარეთ</string>
   <string name="setting_feedback">კავშირი</string>
-  <string name="select_connection_area">კავშირის არეალის არჩევა</string>
   <string name="first_fragment_label">პირველი ფრაგმენტი</string>
   <string name="second_fragment_label">მეორე ფრაგმენტი</string>
   <string name="start">დაწყება</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">აპლიკაციის VPN ფილტრი დაყენებულია</string>
   <string name="setting_ads_limit">რეკლამის ლიმიტი დაყენებულია</string>
   <string name="setting_dns_set">DNS დაყენებულია</string>
-  <string name="setting_choose_proxy">VPN სერვერი დაყენებულია</string>
   <string name="reconnect_to_take_effect">პარამეტრების ამოქმედების მიზნით, გთხოვთ, დაბრუნდეთ მთავარ ეკრანზე და გადატვირთოთ VPN</string>
   <string name="home_reconnect_to_take_effect">პარამეტრების ძალაში შესასვლელად, გთხოვთ, გადააყენოთ VPN</string>
-  <string name="premium_select_sku">გთხოვთ, აირჩიოთ ერთი პერიოდი</string>
   <string name="premium_purchase_success">შეძენა წარმატებით დასრულდა</string>
   <string name="select_vpn">აირჩიეთ VPN</string>
   <string name="dns_only">მხოლოდ DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">გთხოვთ მოგვაწოდოთ მეტი დეტალი, რათა უფრო სწრაფად დავადგინოთ და მოვაგვაროთ თქვენი პრობლემა (მინიმუმ 6 სიმბოლო)</string>
   <string name="text_thanks_feedback">გმადლობთ თქვენი გამოხმაურებისთვის</string>
   <string name="text_feedback_content">ჩვენ მოვაგვარებთ ამ პრობლემას მომავალ ვერსიაში. ბოდიშს გიხდით უხერხულობისთვის.</string>
-  <string name="no_available_vpn">უფასო VPN არ არის ხელმისაწვდომი, გთხოვთ, გადახვიდეთ VPN ეკრანზე და აირჩიოთ სერვერი.</string>
   <string name="msg_device_does_not_support_this_feature">ეს ფუნქცია ამ მოწყობილობაზე მხარდაჭერილი არ არის!</string>
   <string name="search_app">საძიებო აპლიკაცია..</string>
   <string name="exit_app">აპლიკაციიდან გასვლა?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">დასაკავშირებლად მხოლოდ ერთი შეხებაა საჭირო.</string>
   <string name="guide_2">მრავალი VPN სერვერი სხვადასხვა ქვეყანაში</string>
   <string name="guide_3">დაიცავით თქვენი ონლაინ კონფიდენციალურობა</string>
-  <string name="what_is_my_ip">რა არის ჩემი IP?</string>
-  <string name="ip_address">IP მისამართი</string>
   <string name="network_provider">ქსელის პროვაიდერი</string>
-  <string name="location">მდებარეობა</string>
   <string name="pincode">PIN კოდი</string>
   <string name="timezone">დროის სარტყელი</string>
   <string name="duration">ხანგრძლივობა</string>

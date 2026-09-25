@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Korlátlan hozzáférés minden funkcióhoz, reklámmentesen.</string>
   <string name="setting_trial">3 napos ingyenes próbaidőszak</string>
   <string name="setting_upgrade">Frissítés</string>
-  <string name="ip_proxy">Szerverek</string>
-  <string name="ip_quick_access">Gyors hozzáférés</string>
-  <string name="ip_all">MINDEN</string>
-  <string name="ip_game">Játék</string>
-  <string name="ip_streaming">Folyó</string>
   <string name="recommend">Ajánlás</string>
   <string name="setting_app_proxy">Alkalmazásszűrő</string>
   <string name="setting_app_proxy_desc">Válassza ki, hogy mely alkalmazások csatlakozhatnak az internethez VPN-en keresztül</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Arány</string>
   <string name="setting_share">Részesedés</string>
   <string name="setting_feedback">Visszacsatolás</string>
-  <string name="select_connection_area">Csatlakozási terület kiválasztása</string>
   <string name="first_fragment_label">Első töredék</string>
   <string name="second_fragment_label">Második töredék</string>
   <string name="start">INDUL</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Alkalmazás VPN szűrő be van állítva</string>
   <string name="setting_ads_limit">Hirdetési korlát beállítva</string>
   <string name="setting_dns_set">DNS beállítva</string>
-  <string name="setting_choose_proxy">VPN-kiszolgáló beállítva</string>
   <string name="reconnect_to_take_effect">A beállítások érvénybe léptetéséhez térjen vissza a kezdőképernyőre, és állítsa alaphelyzetbe a VPN-t.</string>
   <string name="home_reconnect_to_take_effect">A beállítások érvénybe léptetéséhez állítsa alaphelyzetbe a VPN-t.</string>
-  <string name="premium_select_sku">Kérjük, válasszon ki egy időszakot</string>
   <string name="premium_purchase_success">Sikeres vásárlás</string>
   <string name="select_vpn">VPN kiválasztása</string>
   <string name="dns_only">Csak DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Kérjük, adjon meg további részleteket, hogy gyorsabban azonosíthassuk és megoldhassuk a problémát (legalább 6 karakter)</string>
   <string name="text_thanks_feedback">Köszönjük visszajelzését</string>
   <string name="text_feedback_content">Ezt a problémát egy későbbi verzióban megoldjuk. Elnézést a kellemetlenségért.</string>
-  <string name="no_available_vpn">Nincs elérhető ingyenes vpn, kérjük, lépjen a VPN képernyőre, és válasszon egy szervert.</string>
   <string name="msg_device_does_not_support_this_feature">Ez a funkció nem támogatott ezen az eszközön!</string>
   <string name="search_app">kereső alkalmazás..</string>
   <string name="exit_app">Kilépés az alkalmazásból?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Csak egy érintés a csatlakozáshoz.</string>
   <string name="guide_2">Több VPN-kiszolgáló különböző országokban</string>
   <string name="guide_3">Védje online adatvédelmét</string>
-  <string name="what_is_my_ip">Mi az ip címem?</string>
-  <string name="ip_address">IP-cím</string>
   <string name="network_provider">Hálózati szolgáltató</string>
-  <string name="location">Elhelyezkedés</string>
   <string name="pincode">PIN kód</string>
   <string name="timezone">Időzóna</string>
   <string name="duration">Időtartam</string>

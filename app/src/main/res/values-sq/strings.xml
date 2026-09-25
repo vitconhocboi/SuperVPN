@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Merrni akses të pakufizuar në të gjitha veçoritë, pa reklama.</string>
   <string name="setting_trial">Provë falas 3 ditë</string>
   <string name="setting_upgrade">Përmirëso</string>
-  <string name="ip_proxy">Serverat</string>
-  <string name="ip_quick_access">Qasje e shpejtë</string>
-  <string name="ip_all">TE GJITHA</string>
-  <string name="ip_game">Lojë</string>
-  <string name="ip_streaming">Transmetim</string>
   <string name="recommend">Rekomandoj</string>
   <string name="setting_app_proxy">Filtri i Aplikacionit</string>
   <string name="setting_app_proxy_desc">Zgjidhni cilat aplikacione do të lidhen me internetin përmes VPN-së</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Vlerësoni</string>
   <string name="setting_share">Shpërndaje</string>
   <string name="setting_feedback">Feedback</string>
-  <string name="select_connection_area">Zgjidhni zonën e lidhjes</string>
   <string name="first_fragment_label">Fragmenti i Parë</string>
   <string name="second_fragment_label">Fragmenti i Dytë</string>
   <string name="start">FILLO</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Filtri VPN i aplikacionit është vendosur</string>
   <string name="setting_ads_limit">Limiti i reklamave është vendosur</string>
   <string name="setting_dns_set">DNS është vendosur</string>
-  <string name="setting_choose_proxy">Serveri VPN është vendosur</string>
   <string name="reconnect_to_take_effect">Kthehuni në ekranin kryesor dhe rivendosni VPN-në që cilësimet të hyjnë në fuqi.</string>
   <string name="home_reconnect_to_take_effect">Ju lutemi rivendosni VPN-në që cilësimet të hyjnë në fuqi</string>
-  <string name="premium_select_sku">Ju lutem zgjidhni një periudhë</string>
   <string name="premium_purchase_success">Blerja u krye me sukses</string>
   <string name="select_vpn">Zgjidh VPN-në</string>
   <string name="dns_only">Vetëm DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Ju lutemi, na jepni më shumë detaje që të mund ta identifikojmë dhe zgjidhim problemin tuaj më shpejt (të paktën 6 karaktere)</string>
   <string name="text_thanks_feedback">Faleminderit për komentet tuaja</string>
   <string name="text_feedback_content">Ne do ta rregullojmë këtë problem në një version të ardhshëm. Na vjen keq për shqetësimin.</string>
-  <string name="no_available_vpn">Nuk ka asnjë VPN falas në dispozicion, ju lutemi shkoni te ekrani VPN dhe zgjidhni një server.</string>
   <string name="msg_device_does_not_support_this_feature">Kjo veçori nuk mbështetet për këtë pajisje!</string>
   <string name="search_app">aplikacioni i kërkimit..</string>
   <string name="exit_app">Të dalësh nga aplikacioni?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Vetëm një prekje për t\'u lidhur.</string>
   <string name="guide_2">Servera të shumtë VPN në vende të ndryshme</string>
   <string name="guide_3">Mbroni privatësinë tuaj në internet</string>
-  <string name="what_is_my_ip">Cila është IP-ja ime?</string>
-  <string name="ip_address">Adresa IP</string>
   <string name="network_provider">Ofruesi i rrjetit</string>
-  <string name="location">Vendndodhja</string>
   <string name="pincode">Kodi PIN</string>
   <string name="timezone">Zona kohore</string>
   <string name="duration">Kohëzgjatja</string>

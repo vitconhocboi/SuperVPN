@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Krijg onbeperkte toegang tot alle functies, zonder advertenties.</string>
   <string name="setting_trial">Gratis proefperiode van 3 dagen</string>
   <string name="setting_upgrade">Upgrade</string>
-  <string name="ip_proxy">Servers</string>
-  <string name="ip_quick_access">Snelle toegang</string>
-  <string name="ip_all">ALLE</string>
-  <string name="ip_game">Spel</string>
-  <string name="ip_streaming">Streamen</string>
   <string name="recommend">Aanbevelen</string>
   <string name="setting_app_proxy">App-filter</string>
   <string name="setting_app_proxy_desc">Kies welke apps verbinding maken met internet via VPN</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Tarief</string>
   <string name="setting_share">Deel</string>
   <string name="setting_feedback">Feedback</string>
-  <string name="select_connection_area">Selecteer verbindingsgebied</string>
   <string name="first_fragment_label">Eerste fragment</string>
   <string name="second_fragment_label">Tweede fragment</string>
   <string name="start">BEGIN</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">App VPN-filter is ingesteld</string>
   <string name="setting_ads_limit">Advertentielimiet is ingesteld</string>
   <string name="setting_dns_set">DNS is ingesteld</string>
-  <string name="setting_choose_proxy">VPN-server is ingesteld</string>
   <string name="reconnect_to_take_effect">Ga terug naar het startscherm en reset de VPN om de instellingen van kracht te laten worden.</string>
   <string name="home_reconnect_to_take_effect">Reset de VPN om de instellingen van kracht te laten worden</string>
-  <string name="premium_select_sku">Selecteer één periode</string>
   <string name="premium_purchase_success">Aankoop succesvol</string>
   <string name="select_vpn">Selecteer VPN</string>
   <string name="dns_only">Alleen DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Geef ons meer details zodat we uw probleem sneller kunnen identificeren en oplossen (minimaal 6 tekens)</string>
   <string name="text_thanks_feedback">Bedankt voor je feedback</string>
   <string name="text_feedback_content">We zullen dit probleem in een toekomstige versie oplossen. Excuses voor het ongemak.</string>
-  <string name="no_available_vpn">Er is geen gratis VPN beschikbaar. Ga naar het VPN-scherm en kies een server.</string>
   <string name="msg_device_does_not_support_this_feature">Deze functie wordt niet ondersteund voor dit apparaat!</string>
   <string name="search_app">zoek-app..</string>
   <string name="exit_app">App afsluiten?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Met één aanraking verbinding maken.</string>
   <string name="guide_2">Meerdere VPN-servers in verschillende landen</string>
   <string name="guide_3">Bescherm uw online privacy</string>
-  <string name="what_is_my_ip">Wat is mijn IP?</string>
-  <string name="ip_address">IP-adres</string>
   <string name="network_provider">Netwerkaanbieder</string>
-  <string name="location">Locatie</string>
   <string name="pincode">Pincode</string>
   <string name="timezone">Tijdzone</string>
   <string name="duration">Duur</string>

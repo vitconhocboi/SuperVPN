@@ -6,7 +6,6 @@ import android.view.View
 import androidx.fragment.app.FragmentActivity
 import com.tici.vpn.proxy.master.base.BaseDialog
 import com.tici.vpn.proxy.master.databinding.DialogAcceptCollectDataBinding
-import com.tici.vpn.proxy.master.databinding.DialogConfirmDnsSettingBinding
 
 class AcceptCollectDataDialog(
     activity: FragmentActivity,

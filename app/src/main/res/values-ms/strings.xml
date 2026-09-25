@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Dapatkan akses tanpa had kepada semua ciri, tanpa iklan.</string>
   <string name="setting_trial">Percubaan percuma 3 hari</string>
   <string name="setting_upgrade">Naik taraf</string>
-  <string name="ip_proxy">Pelayan</string>
-  <string name="ip_quick_access">Akses Pantas</string>
-  <string name="ip_all">SEMUA</string>
-  <string name="ip_game">Permainan</string>
-  <string name="ip_streaming">Penstriman</string>
   <string name="recommend">Mengesyorkan</string>
   <string name="setting_app_proxy">Penapis Apl</string>
   <string name="setting_app_proxy_desc">Pilih apl yang akan disambungkan ke Internet melalui VPN</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Kadar</string>
   <string name="setting_share">Kongsi</string>
   <string name="setting_feedback">Maklum balas</string>
-  <string name="select_connection_area">Pilih kawasan sambungan</string>
   <string name="first_fragment_label">Serpihan Pertama</string>
   <string name="second_fragment_label">Serpihan Kedua</string>
   <string name="start">MULAKAN</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Penapis VPN apl ditetapkan</string>
   <string name="setting_ads_limit">Had iklan ditetapkan</string>
   <string name="setting_dns_set">DNS ditetapkan</string>
-  <string name="setting_choose_proxy">Pelayan VPN ditetapkan</string>
   <string name="reconnect_to_take_effect">Sila kembali ke skrin utama dan tetapkan semula VPN untuk tetapan berkuat kuasa</string>
   <string name="home_reconnect_to_take_effect">Sila tetapkan semula VPN untuk tetapan berkuat kuasa</string>
-  <string name="premium_select_sku">Sila pilih satu tempoh</string>
   <string name="premium_purchase_success">Pembelian berjaya</string>
   <string name="select_vpn">Pilih VPN</string>
   <string name="dns_only">DNS sahaja</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Sila berikan kami butiran lanjut supaya kami dapat mengenal pasti dan menyelesaikan isu anda dengan lebih cepat (sekurang-kurangnya 6 aksara)</string>
   <string name="text_thanks_feedback">Terima kasih atas maklum balas anda</string>
   <string name="text_feedback_content">Kami akan membetulkan isu ini dalam versi akan datang. Maaf atas kesulitan ini.</string>
-  <string name="no_available_vpn">Tiada vpn percuma tersedia, sila pergi ke skrin VPN dan pilih pelayan.</string>
   <string name="msg_device_does_not_support_this_feature">Ciri ini tidak disokong untuk peranti ini!</string>
   <string name="search_app">aplikasi carian..</string>
   <string name="exit_app">Keluar dari apl?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Hanya satu sentuhan untuk menyambung.</string>
   <string name="guide_2">Berbilang pelayan VPN di negara yang berbeza</string>
   <string name="guide_3">Lindungi privasi dalam talian anda</string>
-  <string name="what_is_my_ip">Apakah ip saya?</string>
-  <string name="ip_address">alamat IP</string>
   <string name="network_provider">Pembekal rangkaian</string>
-  <string name="location">Lokasi</string>
   <string name="pincode">Kod PIN</string>
   <string name="timezone">Zon masa</string>
   <string name="duration">Tempoh</string>

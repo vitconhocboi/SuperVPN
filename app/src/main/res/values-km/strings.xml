@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">ទទួលបានការចូលប្រើគ្មានដែនកំណត់ចំពោះមុខងារទាំងអស់ គ្មានការផ្សាយពាណិជ្ជកម្ម។</string>
   <string name="setting_trial">ការសាកល្បងឥតគិតថ្លៃ 3 ថ្ងៃ។</string>
   <string name="setting_upgrade">ធ្វើឱ្យប្រសើរឡើង</string>
-  <string name="ip_proxy">ម៉ាស៊ីនមេ</string>
-  <string name="ip_quick_access">ការចូលប្រើរហ័ស</string>
-  <string name="ip_all">ទាំងអស់។</string>
-  <string name="ip_game">ហ្គេម</string>
-  <string name="ip_streaming">ស្ទ្រីម</string>
   <string name="recommend">ណែនាំ</string>
   <string name="setting_app_proxy">តម្រងកម្មវិធី</string>
   <string name="setting_app_proxy_desc">ជ្រើសរើសកម្មវិធីណាមួយដែលនឹងភ្ជាប់អ៊ីនធឺណិតតាមរយៈ VPN</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">អត្រា</string>
   <string name="setting_share">ចែករំលែក</string>
   <string name="setting_feedback">មតិកែលម្អ</string>
-  <string name="select_connection_area">ជ្រើសរើសតំបន់តភ្ជាប់</string>
   <string name="first_fragment_label">បំណែកទីមួយ</string>
   <string name="second_fragment_label">បំណែកទីពីរ</string>
   <string name="start">ចាប់ផ្តើម</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">តម្រង VPN កម្មវិធីត្រូវបានកំណត់</string>
   <string name="setting_ads_limit">ដែនកំណត់ការផ្សាយពាណិជ្ជកម្មត្រូវបានកំណត់</string>
   <string name="setting_dns_set">DNS ត្រូវបានកំណត់</string>
-  <string name="setting_choose_proxy">ម៉ាស៊ីនមេ VPN ត្រូវបានកំណត់</string>
   <string name="reconnect_to_take_effect">សូមត្រលប់ទៅអេក្រង់ដើមវិញ ហើយកំណត់ VPN ឡើងវិញដើម្បីឱ្យការកំណត់មានប្រសិទ្ធភាព</string>
   <string name="home_reconnect_to_take_effect">សូមកំណត់ VPN ឡើងវិញដើម្បីឱ្យការកំណត់មានប្រសិទ្ធភាព</string>
-  <string name="premium_select_sku">សូមជ្រើសរើសរយៈពេលមួយ។</string>
   <string name="premium_purchase_success">ទិញដោយជោគជ័យ</string>
   <string name="select_vpn">ជ្រើសរើស VPN</string>
   <string name="dns_only">DNS តែប៉ុណ្ណោះ</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">សូមផ្តល់ឱ្យយើងនូវព័ត៌មានលម្អិតបន្ថែមទៀត ដូច្នេះយើងអាចកំណត់អត្តសញ្ញាណ និងដោះស្រាយបញ្ហារបស់អ្នកបានលឿនជាងមុន (យ៉ាងហោចណាស់ 6 តួអក្សរ)</string>
   <string name="text_thanks_feedback">អរគុណសម្រាប់មតិកែលម្អរបស់អ្នក។</string>
   <string name="text_feedback_content">យើងនឹងដោះស្រាយបញ្ហានេះនៅក្នុងកំណែនាពេលអនាគត។ សូមអភ័យទោសចំពោះការរអាក់រអួល។</string>
-  <string name="no_available_vpn">មិនមាន vpn ឥតគិតថ្លៃទេ សូមចូលទៅកាន់អេក្រង់ VPN ហើយជ្រើសរើសម៉ាស៊ីនមេ។</string>
   <string name="msg_device_does_not_support_this_feature">មុខងារនេះមិនត្រូវបានគាំទ្រសម្រាប់ឧបករណ៍នេះទេ!</string>
   <string name="search_app">កម្មវិធីស្វែងរក..</string>
   <string name="exit_app">ចាកចេញពីកម្មវិធី?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">គ្រាន់តែប៉ះមួយដើម្បីភ្ជាប់។</string>
   <string name="guide_2">ម៉ាស៊ីនមេ VPN ជាច្រើននៅក្នុងប្រទេសផ្សេងៗគ្នា</string>
   <string name="guide_3">ការពារភាពឯកជនលើអ៊ីនធឺណិតរបស់អ្នក។</string>
-  <string name="what_is_my_ip">តើ IP របស់ខ្ញុំជាអ្វី?</string>
-  <string name="ip_address">អាសយដ្ឋាន IP</string>
   <string name="network_provider">អ្នកផ្តល់បណ្តាញ</string>
-  <string name="location">ទីតាំង</string>
   <string name="pincode">កូដ PIN</string>
   <string name="timezone">តំបន់ពេលវេលា</string>
   <string name="duration">រយៈពេល</string>

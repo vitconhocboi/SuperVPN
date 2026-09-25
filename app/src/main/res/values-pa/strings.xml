@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">ਸਾਰੀਆਂ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਤੱਕ ਅਸੀਮਤ ਪਹੁੰਚ ਪ੍ਰਾਪਤ ਕਰੋ, ਵਿਗਿਆਪਨ-ਮੁਕਤ।</string>
   <string name="setting_trial">3 ਦਿਨ ਮੁਫ਼ਤ ਟ੍ਰਾਇਲ</string>
   <string name="setting_upgrade">ਅੱਪਗ੍ਰੇਡ ਕਰੋ</string>
-  <string name="ip_proxy">ਸਰਵਰ</string>
-  <string name="ip_quick_access">ਤੇਜ਼ ਪਹੁੰਚ</string>
-  <string name="ip_all">ਸਾਰੇ</string>
-  <string name="ip_game">ਖੇਡ</string>
-  <string name="ip_streaming">ਸਟ੍ਰੀਮਿੰਗ</string>
   <string name="recommend">ਸਿਫ਼ਾਰਸ਼ ਕਰੋ</string>
   <string name="setting_app_proxy">ਐਪ ਫਿਲਟਰ</string>
   <string name="setting_app_proxy_desc">ਚੁਣੋ ਕਿ ਕਿਹੜੀਆਂ ਐਪਾਂ VPN ਰਾਹੀਂ ਇੰਟਰਨੈੱਟ ਨਾਲ ਜੁੜਨਗੀਆਂ</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">ਰੇਟ ਕਰੋ</string>
   <string name="setting_share">ਸ਼ੇਅਰ ਕਰੋ</string>
   <string name="setting_feedback">ਫੀਡਬੈਕ</string>
-  <string name="select_connection_area">ਕਨੈਕਸ਼ਨ ਖੇਤਰ ਚੁਣੋ</string>
   <string name="first_fragment_label">ਪਹਿਲਾ ਟੁਕੜਾ</string>
   <string name="second_fragment_label">ਦੂਜਾ ਟੁਕੜਾ</string>
   <string name="start">START</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">ਐਪ VPN ਫਿਲਟਰ ਸੈੱਟ ਹੈ</string>
   <string name="setting_ads_limit">ਇਸ਼ਤਿਹਾਰਾਂ ਦੀ ਸੀਮਾ ਸੈੱਟ ਹੈ</string>
   <string name="setting_dns_set">DNS ਸੈੱਟ ਹੈ</string>
-  <string name="setting_choose_proxy">VPN ਸਰਵਰ ਸੈੱਟ ਹੈ।</string>
   <string name="reconnect_to_take_effect">ਸੈਟਿੰਗਾਂ ਦੇ ਪ੍ਰਭਾਵੀ ਹੋਣ ਲਈ ਕਿਰਪਾ ਕਰਕੇ ਹੋਮ ਸਕ੍ਰੀਨ \'ਤੇ ਵਾਪਸ ਜਾਓ ਅਤੇ VPN ਰੀਸੈਟ ਕਰੋ।</string>
   <string name="home_reconnect_to_take_effect">ਸੈਟਿੰਗਾਂ ਦੇ ਪ੍ਰਭਾਵੀ ਹੋਣ ਲਈ ਕਿਰਪਾ ਕਰਕੇ VPN ਰੀਸੈੱਟ ਕਰੋ।</string>
-  <string name="premium_select_sku">ਕਿਰਪਾ ਕਰਕੇ ਇੱਕ ਮਿਆਦ ਚੁਣੋ।</string>
   <string name="premium_purchase_success">ਖਰੀਦ ਸਫਲਤਾਪੂਰਵਕ ਕੀਤੀ ਗਈ</string>
   <string name="select_vpn">VPN ਚੁਣੋ</string>
   <string name="dns_only">ਸਿਰਫ਼ DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">ਕਿਰਪਾ ਕਰਕੇ ਸਾਨੂੰ ਹੋਰ ਵੇਰਵੇ ਦਿਓ ਤਾਂ ਜੋ ਅਸੀਂ ਤੁਹਾਡੀ ਸਮੱਸਿਆ ਨੂੰ ਤੇਜ਼ੀ ਨਾਲ ਪਛਾਣ ਸਕੀਏ ਅਤੇ ਹੱਲ ਕਰ ਸਕੀਏ (ਘੱਟੋ-ਘੱਟ 6 ਅੱਖਰ)</string>
   <string name="text_thanks_feedback">ਤੁਹਾਡੇ ਫੀਡਬੈਕ ਲਈ ਧੰਨਵਾਦ।</string>
   <string name="text_feedback_content">ਅਸੀਂ ਇਸ ਸਮੱਸਿਆ ਨੂੰ ਭਵਿੱਖ ਦੇ ਸੰਸਕਰਣ ਵਿੱਚ ਹੱਲ ਕਰਾਂਗੇ। ਅਸੁਵਿਧਾ ਲਈ ਮਾਫ਼ੀ।</string>
-  <string name="no_available_vpn">ਕੋਈ ਮੁਫ਼ਤ ਵੀਪੀਐਨ ਉਪਲਬਧ ਨਹੀਂ ਹੈ, ਕਿਰਪਾ ਕਰਕੇ ਵੀਪੀਐਨ ਸਕ੍ਰੀਨ ਤੇ ਜਾਓ ਅਤੇ ਇੱਕ ਸਰਵਰ ਚੁਣੋ।</string>
   <string name="msg_device_does_not_support_this_feature">ਇਹ ਵਿਸ਼ੇਸ਼ਤਾ ਇਸ ਡਿਵਾਈਸ ਲਈ ਸਮਰਥਿਤ ਨਹੀਂ ਹੈ!</string>
   <string name="search_app">ਖੋਜ ਐਪ..</string>
   <string name="exit_app">ਕੀ ਐਪ ਤੋਂ ਬਾਹਰ ਨਿਕਲਣਾ ਹੈ?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">ਜੁੜਨ ਲਈ ਸਿਰਫ਼ ਇੱਕ ਛੋਹ।</string>
   <string name="guide_2">ਵੱਖ-ਵੱਖ ਦੇਸ਼ਾਂ ਵਿੱਚ ਕਈ VPN ਸਰਵਰ</string>
   <string name="guide_3">ਆਪਣੀ ਔਨਲਾਈਨ ਗੋਪਨੀਯਤਾ ਦੀ ਰੱਖਿਆ ਕਰੋ</string>
-  <string name="what_is_my_ip">ਮੇਰਾ ਆਈਪੀ ਕੀ ਹੈ?</string>
-  <string name="ip_address">IP ਪਤਾ</string>
   <string name="network_provider">ਨੈੱਟਵਰਕ ਪ੍ਰਦਾਤਾ</string>
-  <string name="location">ਟਿਕਾਣਾ</string>
   <string name="pincode">ਪਿੰਨ ਕੋਡ</string>
   <string name="timezone">ਸਮਾਂ ਖੇਤਰ</string>
   <string name="duration">ਮਿਆਦ</string>

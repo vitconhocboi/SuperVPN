@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor2">
+
+    <!-- Shown when the master "Ads block" switch in Settings is off. -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/bannerMasterOff"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_24"
+        android:layout_marginTop="@dimen/margin_16"
+        android:layout_marginEnd="@dimen/margin_24"
+        android:background="@drawable/bg_text_search"
+        android:foreground="?selectableItemBackground"
+        android:padding="@dimen/margin_12"
+        android:text="@string/ads_rules_banner_master_off"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <!-- Shown when a previous filter start crashed and custom rules were turned off. -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/bannerQuarantine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_24"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_24"
+        android:background="@drawable/bg_text_search"
+        android:foreground="?selectableItemBackground"
+        android:padding="@dimen/margin_12"
+        android:text="@string/ads_rules_banner_quarantine"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bannerMasterOff"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_24"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_24"
+        android:text="@string/ads_rules_description"
+        android:textColor="@color/text_gray_2"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bannerQuarantine" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edtAddRule"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_24"
+        android:layout_marginTop="@dimen/margin_12"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:background="@drawable/bg_text_search"
+        android:hint="@string/ads_rules_add_hint"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="textUri"
+        android:maxLength="300"
+        android:padding="@dimen/margin_12"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textColorHint="@color/text_gray_2"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/btnAddRule"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDescription" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAddRule"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/margin_24"
+        android:background="@drawable/bg_save_button"
+        android:foreground="?selectableItemBackgroundBorderless"
+        android:paddingStart="@dimen/margin_16"
+        android:paddingEnd="@dimen/margin_16"
+        android:text="@string/ads_rules_add"
+        android:textAppearance="@style/App_TextAppearanceButton2"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/edtAddRule"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/edtAddRule" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAddError"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_24"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="@dimen/margin_24"
+        android:textColor="#FF6B6B"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtAddRule"
+        tools:text="@string/ads_rules_error_format"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edtSearch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_24"
+        android:layout_marginTop="@dimen/margin_12"
+        android:layout_marginEnd="@dimen/margin_24"
+        android:background="@drawable/bg_text_search"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="@dimen/margin_medium"
+        android:hint="@string/ads_rules_search_hint"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:padding="@dimen/margin_12"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textColorHint="@color/text_gray_2"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAddError" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewRules"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_big"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_big"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/tvFootnote"
+        app:layout_constraintTop_toBottomOf="@id/edtSearch"
+        tools:listitem="@layout/ad_rule_item" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvFootnote"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_24"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_24"
+        android:text="@string/ads_rules_footnote"
+        android:textColor="@color/text_gray_2"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toTopOf="@id/btnReset"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnReset"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="@dimen/margin_big"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_big"
+        android:layout_marginBottom="@dimen/margin_16"
+        android:background="@drawable/bg_cancel_button"
+        android:foreground="?selectableItemBackgroundBorderless"
+        android:text="@string/ads_rules_reset"
+        android:textAppearance="@style/App_TextAppearanceButton2"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:indeterminateTint="@color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/recyclerViewRules"
+        app:layout_constraintEnd_toEndOf="@id/recyclerViewRules"
+        app:layout_constraintStart_toStartOf="@id/recyclerViewRules"
+        app:layout_constraintTop_toTopOf="@id/recyclerViewRules" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

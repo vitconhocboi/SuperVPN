@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Entuk akses tanpa watesan menyang kabeh fitur, tanpa iklan.</string>
   <string name="setting_trial">Uji coba gratis 3 dina</string>
   <string name="setting_upgrade">Nganyarke</string>
-  <string name="ip_proxy">Server</string>
-  <string name="ip_quick_access">Akses cepet</string>
-  <string name="ip_all">KABEH</string>
-  <string name="ip_game">Game</string>
-  <string name="ip_streaming">Streaming</string>
   <string name="recommend">nyaranake</string>
   <string name="setting_app_proxy">Filter Aplikasi</string>
   <string name="setting_app_proxy_desc">Pilih aplikasi sing bakal nyambung menyang Internet liwat VPN</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Rate</string>
   <string name="setting_share">Nuduhake</string>
   <string name="setting_feedback">Umpan balik</string>
-  <string name="select_connection_area">Pilih area sambungan</string>
   <string name="first_fragment_label">Fragmen pisanan</string>
   <string name="second_fragment_label">Fragmen kapindho</string>
   <string name="start">MULAI</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Filter VPN app disetel</string>
   <string name="setting_ads_limit">Watesan iklan disetel</string>
   <string name="setting_dns_set">DNS disetel</string>
-  <string name="setting_choose_proxy">VPN Server disetel</string>
   <string name="reconnect_to_take_effect">Mangga bali menyang layar ngarep lan ngreset VPN supaya setelan bisa ditrapake</string>
   <string name="home_reconnect_to_take_effect">Mangga setel ulang VPN supaya setelan bisa ditrapake</string>
-  <string name="premium_select_sku">Mangga pilih siji periode</string>
   <string name="premium_purchase_success">Tuku kasil</string>
   <string name="select_vpn">Pilih VPN</string>
   <string name="dns_only">DNS mung</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Mangga wenehi rincian liyane supaya kita bisa ngenali lan ngatasi masalah sampeyan luwih cepet (paling ora 6 karakter)</string>
   <string name="text_thanks_feedback">Matur nuwun kanggo saran sampeyan</string>
   <string name="text_feedback_content">Kita bakal ndandani masalah iki ing versi sing bakal teka. Nuwun sewu.</string>
-  <string name="no_available_vpn">Ora ana vpn gratis sing kasedhiya, bukak layar VPN lan pilih server.</string>
   <string name="msg_device_does_not_support_this_feature">Fitur iki ora didhukung kanggo piranti iki!</string>
   <string name="search_app">golek aplikasi..</string>
   <string name="exit_app">Metu app?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Mung siji tutul kanggo nyambung.</string>
   <string name="guide_2">Akeh server VPN ing macem-macem negara</string>
   <string name="guide_3">Nglindhungi privasi online</string>
-  <string name="what_is_my_ip">Apa ipku?</string>
-  <string name="ip_address">alamat IP</string>
   <string name="network_provider">panyedhiya jaringan</string>
-  <string name="location">lokasi</string>
   <string name="pincode">kode PIN</string>
   <string name="timezone">Zona wektu</string>
   <string name="duration">Duration</string>

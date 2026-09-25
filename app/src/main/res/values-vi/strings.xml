@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Truy cập không giới hạn vào tất cả các tính năng, không có quảng cáo.</string>
   <string name="setting_trial">Dùng thử miễn phí 3 ngày</string>
   <string name="setting_upgrade">Nâng cấp</string>
-  <string name="ip_proxy">Máy chủ</string>
-  <string name="ip_quick_access">Truy cập nhanh</string>
-  <string name="ip_all">Tất cả</string>
-  <string name="ip_game">Game</string>
-  <string name="ip_streaming">Phát trực tuyến</string>
   <string name="recommend">Gợi ý</string>
   <string name="setting_app_proxy">Bộ lọc ứng dụng</string>
   <string name="setting_app_proxy_desc">Chọn ứng dụng nào sẽ kết nối với Internet thông qua VPN</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Đánh giá</string>
   <string name="setting_share">Chia sẻ</string>
   <string name="setting_feedback">Nhận xét</string>
-  <string name="select_connection_area">Chọn vùng kết nối</string>
   <string name="first_fragment_label">Mảnh vỡ đầu tiên</string>
   <string name="second_fragment_label">Mảnh thứ hai</string>
   <string name="start">Bắt đầu</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Bộ lọc VPN ứng dụng đã được thiết lập</string>
   <string name="setting_ads_limit">Giới hạn quảng cáo đã được thiết lập</string>
   <string name="setting_dns_set">DNS đã được thiết lập</string>
-  <string name="setting_choose_proxy">Máy chủ VPN đã được thiết lập</string>
   <string name="reconnect_to_take_effect">Vui lòng quay lại màn hình chính và đặt lại VPN để các thiết lập có hiệu lực</string>
   <string name="home_reconnect_to_take_effect">Vui lòng đặt lại VPN để các thiết lập có hiệu lực</string>
-  <string name="premium_select_sku">Vui lòng chọn một khoảng thời gian</string>
   <string name="premium_purchase_success">Mua hàng thành công</string>
   <string name="select_vpn">Chọn VPN</string>
   <string name="dns_only">Chỉ DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Vui lòng cung cấp cho chúng tôi thêm thông tin chi tiết để chúng tôi có thể xác định và giải quyết vấn đề của bạn nhanh hơn (ít nhất 6 ký tự)</string>
   <string name="text_thanks_feedback">Cảm ơn phản hồi của bạn</string>
   <string name="text_feedback_content">Chúng tôi sẽ khắc phục sự cố này trong phiên bản sau. Xin lỗi vì sự bất tiện này.</string>
-  <string name="no_available_vpn">Không có VPN miễn phí nào khả dụng, vui lòng vào màn hình VPN và chọn máy chủ.</string>
   <string name="msg_device_does_not_support_this_feature">Tính năng này không được hỗ trợ cho thiết bị này!</string>
   <string name="search_app">ứng dụng tìm kiếm..</string>
   <string name="exit_app">Thoát khỏi ứng dụng?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Chỉ cần một chạm để kết nối.</string>
   <string name="guide_2">Nhiều máy chủ VPN ở nhiều quốc gia khác nhau</string>
   <string name="guide_3">Bảo vệ quyền riêng tư trực tuyến của bạn</string>
-  <string name="what_is_my_ip">Địa chỉ IP của tôi là gì?</string>
-  <string name="ip_address">Địa chỉ IP</string>
   <string name="network_provider">Nhà cung cấp mạng</string>
-  <string name="location">Vị trí</string>
   <string name="pincode">Mã PIN</string>
   <string name="timezone">Múi giờ</string>
   <string name="duration">Khoảng thời gian</string>

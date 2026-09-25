@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Жарнамасыз барлық мүмкіндіктерге шексіз қол жеткізіңіз.</string>
   <string name="setting_trial">Тегін сынақ нұсқасы 3 күн</string>
   <string name="setting_upgrade">Жаңарту</string>
-  <string name="ip_proxy">Серверлер</string>
-  <string name="ip_quick_access">Жылдам қол жеткізу</string>
-  <string name="ip_all">БАРЛЫҒЫ</string>
-  <string name="ip_game">Ойын</string>
-  <string name="ip_streaming">Ағын</string>
   <string name="recommend">Ұсыныңыз</string>
   <string name="setting_app_proxy">Қолданба сүзгісі</string>
   <string name="setting_app_proxy_desc">VPN арқылы Интернетке қосылатын қолданбаларды таңдаңыз</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Бағалау</string>
   <string name="setting_share">Бөлісу</string>
   <string name="setting_feedback">Кері байланыс</string>
-  <string name="select_connection_area">Қосылым аймағын таңдаңыз</string>
   <string name="first_fragment_label">Бірінші фрагмент</string>
   <string name="second_fragment_label">Екінші фрагмент</string>
   <string name="start">БАСТАУ</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Қолданба VPN сүзгісі орнатылды</string>
   <string name="setting_ads_limit">Жарнамалар шегі орнатылған</string>
   <string name="setting_dns_set">DNS орнатылған</string>
-  <string name="setting_choose_proxy">VPN сервері орнатылды</string>
   <string name="reconnect_to_take_effect">Параметрлер күшіне енуі үшін бастапқы экранға оралыңыз және VPN қалпына келтіріңіз</string>
   <string name="home_reconnect_to_take_effect">Параметрлердің күшіне енуі үшін VPN желісін қалпына келтіріңіз</string>
-  <string name="premium_select_sku">Бір кезеңді таңдаңыз</string>
   <string name="premium_purchase_success">Сатып алу сәтті</string>
   <string name="select_vpn">VPN таңдаңыз</string>
   <string name="dns_only">Тек DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Мәселеңізді тезірек анықтау және шешу үшін бізге толығырақ мәлімет беріңіз (кемінде 6 таңба)</string>
   <string name="text_thanks_feedback">Пікіріңізге рахмет</string>
   <string name="text_feedback_content">Біз бұл мәселені болашақ нұсқада түзетеміз. Қолайсыздық үшін кешіріңіз.</string>
-  <string name="no_available_vpn">Қолжетімді тегін VPN жоқ, VPN экранына өтіп, серверді таңдаңыз.</string>
   <string name="msg_device_does_not_support_this_feature">Бұл құрылғы үшін бұл мүмкіндікке қолдау көрсетілмейді!</string>
   <string name="search_app">іздеу қолданбасы..</string>
   <string name="exit_app">Қолданбадан шығу керек пе?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Қосылу үшін бір рет түрту.</string>
   <string name="guide_2">Әртүрлі елдердегі бірнеше VPN серверлері</string>
   <string name="guide_3">Интернеттегі құпиялылығыңызды қорғаңыз</string>
-  <string name="what_is_my_ip">Менің IP деген не?</string>
-  <string name="ip_address">IP мекенжайы</string>
   <string name="network_provider">Желі провайдері</string>
-  <string name="location">Орналасқан жері</string>
   <string name="pincode">PIN коды</string>
   <string name="timezone">Уақыт белдеуі</string>
   <string name="duration">Ұзақтығы</string>

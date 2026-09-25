@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">קבל גישה בלתי מוגבלת לכל התכונות, ללא פרסומות.</string>
   <string name="setting_trial">תקופת ניסיון בחינם 3 ימים</string>
   <string name="setting_upgrade">שדרוג</string>
-  <string name="ip_proxy">שרתים</string>
-  <string name="ip_quick_access">גישה מהירה</string>
-  <string name="ip_all">כֹּל</string>
-  <string name="ip_game">מִשְׂחָק</string>
-  <string name="ip_streaming">נְהִירָה</string>
   <string name="recommend">לְהַמלִיץ</string>
   <string name="setting_app_proxy">מסנן אפליקציות</string>
   <string name="setting_app_proxy_desc">בחר אילו אפליקציות יתחברו לאינטרנט דרך VPN</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">קֶצֶב</string>
   <string name="setting_share">לַחֲלוֹק</string>
   <string name="setting_feedback">מָשׁוֹב</string>
-  <string name="select_connection_area">בחירת אזור חיבור</string>
   <string name="first_fragment_label">פרגמנט ראשון</string>
   <string name="second_fragment_label">פרגמנט שני</string>
   <string name="start">הַתחָלָה</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">מסנן ה-VPN של האפליקציה מוגדר</string>
   <string name="setting_ads_limit">מגבלת הפרסומות נקבעה</string>
   <string name="setting_dns_set">DNS מוגדר</string>
-  <string name="setting_choose_proxy">שרת ה-VPN מוגדר</string>
   <string name="reconnect_to_take_effect">אנא חזור למסך הבית ואפס את ה-VPN כדי שההגדרות ייכנסו לתוקף.</string>
   <string name="home_reconnect_to_take_effect">אנא אפס את ה-VPN כדי שההגדרות ייכנסו לתוקף</string>
-  <string name="premium_select_sku">אנא בחר תקופה אחת</string>
   <string name="premium_purchase_success">הרכישה בהצלחה</string>
   <string name="select_vpn">בחר VPN</string>
   <string name="dns_only">DNS בלבד</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">אנא ספק לנו פרטים נוספים כדי שנוכל לזהות ולפתור את הבעיה שלך מהר יותר (לפחות 6 תווים)</string>
   <string name="text_thanks_feedback">תודה על המשוב שלך</string>
   <string name="text_feedback_content">אנו נתקן בעיה זו בגרסה עתידית. סליחה על אי הנוחות.</string>
-  <string name="no_available_vpn">אין VPN חינמי זמין, אנא עבור למסך VPN ובחר שרת.</string>
   <string name="msg_device_does_not_support_this_feature">תכונה זו אינה נתמכת עבור מכשיר זה!</string>
   <string name="search_app">אפליקציית חיפוש..</string>
   <string name="exit_app">לצאת מהאפליקציה?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">רק נגיעה אחת כדי להתחבר.</string>
   <string name="guide_2">מספר שרתי VPN במדינות שונות</string>
   <string name="guide_3">הגן על הפרטיות שלך באינטרנט</string>
-  <string name="what_is_my_ip">מה ה-IP שלי?</string>
-  <string name="ip_address">כתובת IP</string>
   <string name="network_provider">ספק רשת</string>
-  <string name="location">מִקוּם</string>
   <string name="pincode">קוד PIN</string>
   <string name="timezone">אזור זמן</string>
   <string name="duration">מֶשֶׁך</string>

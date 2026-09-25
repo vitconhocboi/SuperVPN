@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">விளம்பரமில்லாமல், அனைத்து அம்சங்களுக்கும் வரம்பற்ற அணுகலைப் பெறுங்கள்.</string>
   <string name="setting_trial">இலவச சோதனை 3 நாட்கள்</string>
   <string name="setting_upgrade">மேம்படுத்து</string>
-  <string name="ip_proxy">சேவையகங்கள்</string>
-  <string name="ip_quick_access">விரைவான அணுகல்</string>
-  <string name="ip_all">அனைத்து</string>
-  <string name="ip_game">விளையாட்டு</string>
-  <string name="ip_streaming">ஸ்ட்ரீமிங்</string>
   <string name="recommend">பரிந்துரை</string>
   <string name="setting_app_proxy">பயன்பாட்டு வடிகட்டி</string>
   <string name="setting_app_proxy_desc">VPN மூலம் இணையத்துடன் இணைக்க வேண்டிய பயன்பாடுகளைத் தேர்வுசெய்யவும்.</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">மதிப்பீடு</string>
   <string name="setting_share">பகிரவும்</string>
   <string name="setting_feedback">பின்னூட்டம்</string>
-  <string name="select_connection_area">இணைப்புப் பகுதியைத் தேர்ந்தெடுக்கவும்</string>
   <string name="first_fragment_label">முதல் துண்டு</string>
   <string name="second_fragment_label">இரண்டாவது துண்டு</string>
   <string name="start">START</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">ஆப்ஸ் VPN வடிப்பான் அமைக்கப்பட்டது.</string>
   <string name="setting_ads_limit">விளம்பர வரம்பு அமைக்கப்பட்டுள்ளது.</string>
   <string name="setting_dns_set">DNS அமைக்கப்பட்டுள்ளது.</string>
-  <string name="setting_choose_proxy">VPN சேவையகம் அமைக்கப்பட்டுள்ளது.</string>
   <string name="reconnect_to_take_effect">அமைப்புகள் நடைமுறைக்கு வர, முகப்புத் திரைக்குத் திரும்பி VPNஐ மீட்டமைக்கவும்.</string>
   <string name="home_reconnect_to_take_effect">அமைப்புகள் நடைமுறைக்கு வர VPN-ஐ மீட்டமைக்கவும்.</string>
-  <string name="premium_select_sku">தயவுசெய்து ஒரு காலகட்டத்தைத் தேர்ந்தெடுக்கவும்.</string>
   <string name="premium_purchase_success">வெற்றிகரமாக வாங்கவும்</string>
   <string name="select_vpn">VPN ஐத் தேர்ந்தெடுக்கவும்</string>
   <string name="dns_only">DNS மட்டும்</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">உங்கள் சிக்கலை விரைவாகக் கண்டறிந்து தீர்க்க, எங்களுக்கு கூடுதல் விவரங்களைத் தரவும் (குறைந்தது 6 எழுத்துகள்)</string>
   <string name="text_thanks_feedback">உங்கள் கருத்துக்கு நன்றி.</string>
   <string name="text_feedback_content">எதிர்கால பதிப்பில் இந்த சிக்கலை நாங்கள் சரிசெய்வோம். சிரமத்திற்கு மன்னிக்கவும்.</string>
-  <string name="no_available_vpn">இலவச VPN எதுவும் கிடைக்கவில்லை, தயவுசெய்து VPN திரைக்குச் சென்று ஒரு சேவையகத்தைத் தேர்ந்தெடுக்கவும்.</string>
   <string name="msg_device_does_not_support_this_feature">இந்த அம்சம் இந்த சாதனத்தில் ஆதரிக்கப்படவில்லை!</string>
   <string name="search_app">தேடல் பயன்பாடு..</string>
   <string name="exit_app">பயன்பாட்டிலிருந்து வெளியேறவா?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">இணைக்க ஒரே ஒரு தொடுதல் போதும்.</string>
   <string name="guide_2">வெவ்வேறு நாடுகளில் பல VPN சேவையகங்கள்</string>
   <string name="guide_3">உங்கள் ஆன்லைன் தனியுரிமையைப் பாதுகாக்கவும்</string>
-  <string name="what_is_my_ip">என்னுடைய ஐபி என்ன?</string>
-  <string name="ip_address">ஐபி முகவரி</string>
   <string name="network_provider">பிணைய வழங்குநர்</string>
-  <string name="location">இடம்</string>
   <string name="pincode">பின் குறியீடு</string>
   <string name="timezone">நேர மண்டலம்</string>
   <string name="duration">கால அளவு</string>

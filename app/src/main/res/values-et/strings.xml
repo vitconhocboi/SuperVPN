@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Saa piiramatu juurdepääs kõigile funktsioonidele, reklaamivabalt.</string>
   <string name="setting_trial">Tasuta prooviperiood 3 päeva</string>
   <string name="setting_upgrade">Uuendage</string>
-  <string name="ip_proxy">Serverid</string>
-  <string name="ip_quick_access">Kiire juurdepääs</string>
-  <string name="ip_all">KÕIK</string>
-  <string name="ip_game">Mäng</string>
-  <string name="ip_streaming">Voogesitus</string>
   <string name="recommend">Soovita</string>
   <string name="setting_app_proxy">Rakenduste filter</string>
   <string name="setting_app_proxy_desc">Valige, millised rakendused loovad VPN-i kaudu internetiühenduse</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Hinda</string>
   <string name="setting_share">Jaga</string>
   <string name="setting_feedback">Tagasiside</string>
-  <string name="select_connection_area">Valige ühendusala</string>
   <string name="first_fragment_label">Esimene fragment</string>
   <string name="second_fragment_label">Teine fragment</string>
   <string name="start">START</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Rakenduse VPN-filter on määratud</string>
   <string name="setting_ads_limit">Reklaamide limiit on seatud</string>
   <string name="setting_dns_set">DNS on seatud</string>
-  <string name="setting_choose_proxy">VPN-server on seadistatud</string>
   <string name="reconnect_to_take_effect">Seadete jõustumiseks naaske avakuvale ja lähtestage VPN.</string>
   <string name="home_reconnect_to_take_effect">Seadete jõustumiseks lähtestage VPN.</string>
-  <string name="premium_select_sku">Palun valige üks periood</string>
   <string name="premium_purchase_success">Ost õnnestus</string>
   <string name="select_vpn">Valige VPN</string>
   <string name="dns_only">Ainult DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Andke meile rohkem üksikasju, et saaksime teie probleemi kiiremini tuvastada ja lahendada (vähemalt 6 tähemärki)</string>
   <string name="text_thanks_feedback">Täname tagasiside eest</string>
   <string name="text_feedback_content">Lahendame selle probleemi tulevases versioonis. Vabandame ebamugavuste pärast.</string>
-  <string name="no_available_vpn">Tasuta VPN-i pole saadaval, palun minge VPN-i ekraanile ja valige server.</string>
   <string name="msg_device_does_not_support_this_feature">See funktsioon pole selle seadme puhul toetatud!</string>
   <string name="search_app">otsingu rakendus..</string>
   <string name="exit_app">Kas rakendusest väljuda?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Ühe puudutusega saab ühenduse luua.</string>
   <string name="guide_2">Mitu VPN-serverit erinevates riikides</string>
   <string name="guide_3">Kaitske oma privaatsust veebis</string>
-  <string name="what_is_my_ip">Mis on minu IP?</string>
-  <string name="ip_address">IP-aadress</string>
   <string name="network_provider">Võrgupakkuja</string>
-  <string name="location">Asukoht</string>
   <string name="pincode">PIN-kood</string>
   <string name="timezone">Ajavöönd</string>
   <string name="duration">Kestus</string>

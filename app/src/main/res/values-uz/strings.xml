@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Reklamasiz, barcha funksiyalardan cheksiz foydalanish.</string>
   <string name="setting_trial">Bepul sinov muddati 3 kun</string>
   <string name="setting_upgrade">Yangilash</string>
-  <string name="ip_proxy">Serverlar</string>
-  <string name="ip_quick_access">Tez kirish</string>
-  <string name="ip_all">HAMMA</string>
-  <string name="ip_game">O\'yin</string>
-  <string name="ip_streaming">Striming</string>
   <string name="recommend">Tavsiya eting</string>
   <string name="setting_app_proxy">Ilova filtri</string>
   <string name="setting_app_proxy_desc">Qaysi ilovalar VPN orqali internetga ulanishini tanlang</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Baho</string>
   <string name="setting_share">Ulashish</string>
   <string name="setting_feedback">Fikr-mulohaza</string>
-  <string name="select_connection_area">Ulanish maydonini tanlang</string>
   <string name="first_fragment_label">Birinchi fragment</string>
   <string name="second_fragment_label">Ikkinchi fragment</string>
   <string name="start">START</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Ilova VPN filtri oʻrnatildi</string>
   <string name="setting_ads_limit">Reklama cheklovi belgilandi</string>
   <string name="setting_dns_set">DNS o\'rnatilgan</string>
-  <string name="setting_choose_proxy">VPN serveri oʻrnatildi</string>
   <string name="reconnect_to_take_effect">Iltimos, sozlamalar kuchga kirishi uchun asosiy ekranga qayting va VPN-ni asl holatiga qaytaring</string>
   <string name="home_reconnect_to_take_effect">Sozlamalar kuchga kirishi uchun VPN-ni asl holatiga qaytaring</string>
-  <string name="premium_select_sku">Iltimos, bitta davrni tanlang</string>
   <string name="premium_purchase_success">Muvaffaqiyatli xarid</string>
   <string name="select_vpn">VPN-ni tanlang</string>
   <string name="dns_only">Faqat DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Muammoni tezroq aniqlashimiz va hal qilishimiz uchun bizga batafsil ma\'lumot bering (kamida 6 belgi)</string>
   <string name="text_thanks_feedback">Fikr-mulohazangiz uchun rahmat</string>
   <string name="text_feedback_content">Bu muammoni keyingi versiyada tuzatamiz. Noqulayliklar uchun uzr so\'raymiz.</string>
-  <string name="no_available_vpn">Bepul VPN yo\'q, iltimos, VPN ekraniga o\'ting va serverni tanlang.</string>
   <string name="msg_device_does_not_support_this_feature">Ushbu xususiyat ushbu qurilmada qo\'llab-quvvatlanmaydi!</string>
   <string name="search_app">qidiruv ilovasi..</string>
   <string name="exit_app">Ilovadan chiqasizmi?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Ulanish uchun bir marta bosish kifoya.</string>
   <string name="guide_2">Turli mamlakatlarda bir nechta VPN serverlari</string>
   <string name="guide_3">Onlayn maxfiyligingizni himoya qiling</string>
-  <string name="what_is_my_ip">Mening ipim nima?</string>
-  <string name="ip_address">IP manzili</string>
   <string name="network_provider">Tarmoq provayderi</string>
-  <string name="location">Joylashuv</string>
   <string name="pincode">PIN kod</string>
   <string name="timezone">Vaqt mintaqasi</string>
   <string name="duration">Davomiyligi</string>

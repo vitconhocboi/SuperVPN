@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Бөтә функцияларға сикләнмәгән рөхсәт ала, рекламаһыҙ.</string>
   <string name="setting_trial">Бушлай һынау 3 көн</string>
   <string name="setting_upgrade">Яңыртыу</string>
-  <string name="ip_proxy">Серверҙар</string>
-  <string name="ip_quick_access">Тиҙ инеү</string>
-  <string name="ip_all">БӨТӘ</string>
-  <string name="ip_game">Уйын</string>
-  <string name="ip_streaming">Стриминг</string>
   <string name="recommend">Кәңәш бирергә</string>
   <string name="setting_app_proxy">Ҡушымта фильтры</string>
   <string name="setting_app_proxy_desc">Һайлау, ниндәй ҡушымталар VPN аша интернетҡа тоташтырыласаҡ .</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Тариф</string>
   <string name="setting_share">Бүлешергә</string>
   <string name="setting_feedback">Һөрәнләнеш</string>
-  <string name="select_connection_area">Тоташыу майҙанын һайлағыҙ</string>
   <string name="first_fragment_label">Беренсе өҙөк</string>
   <string name="second_fragment_label">Икенсе өҙөк</string>
   <string name="start">БАШЛАРҒА</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Ҡушымта VPN фильтр ҡуйылған</string>
   <string name="setting_ads_limit">Иғландар сиге ҡуйылған</string>
   <string name="setting_dns_set">DNS ҡуйылған</string>
-  <string name="setting_choose_proxy">VPN серверы ҡуйылған</string>
   <string name="reconnect_to_take_effect">Зинһар, төп экранға ҡайтып, VPN өсөн параметрҙарҙы ғәмәлгә индереү өсөн сброс</string>
   <string name="home_reconnect_to_take_effect">Зинһар, VPN өсөн параметрҙарҙы ҡабаттан тергеҙеү ғәмәлгә инә</string>
-  <string name="premium_select_sku">Зинһар, бер осорҙо һайлағыҙ</string>
   <string name="premium_purchase_success">Һатып алыу уңышлы</string>
   <string name="select_vpn">VPN һайлағыҙ</string>
   <string name="dns_only">DNS ғына</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Зинһар, беҙгә ентеклерәк мәғлүмәт бирегеҙ, беҙ һеҙҙең мәсьәләне тиҙерәк асыҡлай һәм хәл итә алабыҙ (кәмендә 6 символ)</string>
   <string name="text_thanks_feedback">Һеҙҙең фекерҙәрегеҙ өсөн рәхмәт</string>
   <string name="text_feedback_content">Был мәсьәләне киләсәк версияла хәл итербеҙ. Уңайһыҙлыҡтар өсөн ғәфү итегеҙ.</string>
-  <string name="no_available_vpn">Бушлай vpn юҡ, рәхим итеп, VPN экранға инеп, сервер һайлағыҙ.</string>
   <string name="msg_device_does_not_support_this_feature">Был функция был ҡоролма өсөн эшләмәй!</string>
   <string name="search_app">эҙләү ҡушымтаһы..</string>
   <string name="exit_app">Ҡушымтанан сығырғамы?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Бер генә ҡағылыу менән тоташтырырға.</string>
   <string name="guide_2">Төрлө илдәрҙә бер нисә VPN серверҙары.</string>
   <string name="guide_3">Һеҙҙең онлайн хосуси һаҡлау</string>
-  <string name="what_is_my_ip">Минең ip ниндәй?</string>
-  <string name="ip_address">IP адресы</string>
   <string name="network_provider">Селтәр провайдеры</string>
-  <string name="location">Урынлашыуы</string>
   <string name="pincode">PIN-код</string>
   <string name="timezone">Ваҡыт бүлкәте</string>
   <string name="duration">Оҙайлыҡ</string>

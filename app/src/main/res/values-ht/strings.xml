@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Jwenn aksè san limit a tout fonksyonalite yo, san piblisite.</string>
   <string name="setting_trial">Esè gratis 3 jou</string>
   <string name="setting_upgrade">Mizajou</string>
-  <string name="ip_proxy">Sèvè</string>
-  <string name="ip_quick_access">Aksè rapid</string>
-  <string name="ip_all">TOUT</string>
-  <string name="ip_game">Jwèt</string>
-  <string name="ip_streaming">Difizyon</string>
   <string name="recommend">Rekòmande</string>
   <string name="setting_app_proxy">Filtè Aplikasyon</string>
   <string name="setting_app_proxy_desc">Chwazi ki aplikasyon ki pral konekte ak Entènèt la atravè VPN lan</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Pousantaj</string>
   <string name="setting_share">Pataje</string>
   <string name="setting_feedback">Feedback</string>
-  <string name="select_connection_area">Chwazi zòn koneksyon an</string>
   <string name="first_fragment_label">Premye Fragman</string>
   <string name="second_fragment_label">Dezyèm Fragman</string>
   <string name="start">KÒMANSE</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Filtè VPN aplikasyon an configuré</string>
   <string name="setting_ads_limit">Limit piblisite yo fikse</string>
   <string name="setting_dns_set">DNS la configuré</string>
-  <string name="setting_choose_proxy">Sèvè VPN lan configuré</string>
   <string name="reconnect_to_take_effect">Tanpri retounen nan ekran prensipal la epi retabli VPN nan pou paramèt yo ka pran efè.</string>
   <string name="home_reconnect_to_take_effect">Tanpri retabli VPN lan pou paramèt yo ka pran efè.</string>
-  <string name="premium_select_sku">Tanpri chwazi yon peryòd</string>
   <string name="premium_purchase_success">Acha a te fèt avèk siksè</string>
   <string name="select_vpn">Chwazi VPN</string>
   <string name="dns_only">DNS sèlman</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Tanpri ban nou plis detay pou nou ka idantifye ak rezoud pwoblèm ou pi vit (omwen 6 karaktè)</string>
   <string name="text_thanks_feedback">Mèsi pou fidbak ou</string>
   <string name="text_feedback_content">Nou pral ranje pwoblèm sa a nan yon vèsyon nan lavni. Padon pou deranjman an.</string>
-  <string name="no_available_vpn">Pa gen okenn vpn gratis ki disponib, tanpri ale nan ekran VPN lan epi chwazi yon sèvè.</string>
   <string name="msg_device_does_not_support_this_feature">Fonksyonalite sa a pa konpatib ak aparèy sa a!</string>
   <string name="search_app">aplikasyon rechèch..</string>
   <string name="exit_app">Kite aplikasyon an?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Jis yon sèl touche pou konekte.</string>
   <string name="guide_2">Plizyè sèvè VPN nan diferan peyi</string>
   <string name="guide_3">Pwoteje vi prive ou sou entènèt la</string>
-  <string name="what_is_my_ip">Ki IP mwen an?</string>
-  <string name="ip_address">Adrès IP</string>
   <string name="network_provider">Founisè rezo</string>
-  <string name="location">Kote</string>
   <string name="pincode">Kòd PIN</string>
   <string name="timezone">Zòn tan</string>
   <string name="duration">Dire</string>

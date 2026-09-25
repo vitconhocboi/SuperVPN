@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Fáðu ótakmarkaðan aðgang að öllum eiginleikum, án auglýsinga.</string>
   <string name="setting_trial">Ókeypis prufutímabil í 3 daga</string>
   <string name="setting_upgrade">Uppfærsla</string>
-  <string name="ip_proxy">Þjónar</string>
-  <string name="ip_quick_access">Fljótleg aðgangur</string>
-  <string name="ip_all">ALLT</string>
-  <string name="ip_game">Leikur</string>
-  <string name="ip_streaming">Streymi</string>
   <string name="recommend">Mæla með</string>
   <string name="setting_app_proxy">Forritsía</string>
   <string name="setting_app_proxy_desc">Veldu hvaða forrit munu tengjast internetinu í gegnum VPN</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Gefa</string>
   <string name="setting_share">Deila</string>
   <string name="setting_feedback">Endurgjöf</string>
-  <string name="select_connection_area">Veldu tengisvæði</string>
   <string name="first_fragment_label">Fyrsta brotið</string>
   <string name="second_fragment_label">Annað brot</string>
   <string name="start">BYRJA</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">VPN-sía forritsins er stillt</string>
   <string name="setting_ads_limit">Auglýsingatakmörk eru stillt</string>
   <string name="setting_dns_set">DNS er stillt</string>
-  <string name="setting_choose_proxy">VPN-þjónn er stilltur</string>
   <string name="reconnect_to_take_effect">Farðu aftur á heimaskjáinn og endurstilltu VPN-ið til að stillingarnar taki gildi.</string>
   <string name="home_reconnect_to_take_effect">Endurstilltu VPN-ið til að stillingarnar taki gildi.</string>
-  <string name="premium_select_sku">Veldu eitt tímabil</string>
   <string name="premium_purchase_success">Kaup tókst</string>
   <string name="select_vpn">Veldu VPN</string>
   <string name="dns_only">Aðeins DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Vinsamlegast gefðu okkur frekari upplýsingar svo við getum greint og leyst vandamál þitt hraðar (að minnsta kosti 6 stafir)</string>
   <string name="text_thanks_feedback">Takk fyrir álit þitt</string>
   <string name="text_feedback_content">Við munum laga þetta mál í framtíðarútgáfu. Afsakið óþægindin.</string>
-  <string name="no_available_vpn">Það er ekkert ókeypis VPN í boði, vinsamlegast farðu á VPN skjáinn og veldu netþjón.</string>
   <string name="msg_device_does_not_support_this_feature">Þessi eiginleiki er ekki studdur fyrir þetta tæki!</string>
   <string name="search_app">leitarforrit..</string>
   <string name="exit_app">Hætta í forritinu?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Bara ein snerting til að tengjast.</string>
   <string name="guide_2">Margir VPN netþjónar í mismunandi löndum</string>
   <string name="guide_3">Verndaðu friðhelgi þína á netinu</string>
-  <string name="what_is_my_ip">Hvað er IP-talan mín?</string>
-  <string name="ip_address">IP-tala</string>
   <string name="network_provider">Netveita</string>
-  <string name="location">Staðsetning</string>
   <string name="pincode">PIN-númer</string>
   <string name="timezone">Tímabelti</string>
   <string name="duration">Tímalengd</string>

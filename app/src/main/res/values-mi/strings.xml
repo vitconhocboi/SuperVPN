@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Tikina te uru mutunga kore ki nga ahuatanga katoa, kore utu.</string>
   <string name="setting_trial">Whakamatau kore utu 3 ra</string>
   <string name="setting_upgrade">Whakapai ake</string>
-  <string name="ip_proxy">Tūmau</string>
-  <string name="ip_quick_access">Uru Tere</string>
-  <string name="ip_all">KATOA</string>
-  <string name="ip_game">kēmu</string>
-  <string name="ip_streaming">Rererenga</string>
   <string name="recommend">Tohutohu</string>
   <string name="setting_app_proxy">Tātari Taupānga</string>
   <string name="setting_app_proxy_desc">Kōwhiria ko ēhea taupānga ka tūhono ki te Ipurangi mā te VPN</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Reiti</string>
   <string name="setting_share">Tiria</string>
   <string name="setting_feedback">Urupare</string>
-  <string name="select_connection_area">Tīpakohia te wāhi hononga</string>
   <string name="first_fragment_label">Mahinga Tuatahi</string>
   <string name="second_fragment_label">Wahi Tuarua</string>
   <string name="start">Timata</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Kua whakaritea te tātari App VPN</string>
   <string name="setting_ads_limit">Kua whakaritea te rohe panui</string>
   <string name="setting_dns_set">Kua whakaritea te DNS</string>
-  <string name="setting_choose_proxy">Kua whakaritea te Tūmau VPN</string>
   <string name="reconnect_to_take_effect">Tena koa hoki mai ki te mata o te kaainga me te tautuhi ano i te VPN kia whai mana nga tautuhinga</string>
   <string name="home_reconnect_to_take_effect">Me tautuhi ano i te VPN kia whai mana nga tautuhinga</string>
-  <string name="premium_select_sku">Tīpakohia koa tētahi wā</string>
   <string name="premium_purchase_success">Kua angitu te hoko</string>
   <string name="select_vpn">Tīpakohia VPN</string>
   <string name="dns_only">DNS anake</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Tena koa homai etahi atu taipitopito kia taea ai e matou te tautuhi me te whakatau tere i to take (kia 6 nga tohu)</string>
   <string name="text_thanks_feedback">Mauruuru mo to korero</string>
   <string name="text_feedback_content">Ka whakatikahia e matou tenei take i roto i te putanga kei te heke mai. Aroha mai mo te raruraru.</string>
-  <string name="no_available_vpn">Kaore he vpn koreutu e waatea ana, tena koa haere ki te mata VPN ka kowhiria he tūmau.</string>
   <string name="msg_device_does_not_support_this_feature">Kaore tenei waahanga i te tautokohia mo tenei taputapu!</string>
   <string name="search_app">rapu taupānga..</string>
   <string name="exit_app">Puta taupānga?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Kotahi noa te pa ki te hono.</string>
   <string name="guide_2">He maha nga kaiwhakarato VPN i nga whenua rereke</string>
   <string name="guide_3">Tiakina to tūmataitinga ipurangi</string>
-  <string name="what_is_my_ip">He aha taku ip?</string>
-  <string name="ip_address">Wāhitau IP</string>
   <string name="network_provider">Kaiwhakarato whatunga</string>
-  <string name="location">Tauwāhi</string>
   <string name="pincode">Waehere PIN</string>
   <string name="timezone">Rohe wa</string>
   <string name="duration">Roanga</string>

@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Gaukite neribotą prieigą prie visų funkcijų be reklamų.</string>
   <string name="setting_trial">Nemokamas bandomasis laikotarpis 3 dienos</string>
   <string name="setting_upgrade">Atnaujinti</string>
-  <string name="ip_proxy">Serveriai</string>
-  <string name="ip_quick_access">Greita prieiga</string>
-  <string name="ip_all">VISI</string>
-  <string name="ip_game">Žaidimas</string>
-  <string name="ip_streaming">Srautinis transliavimas</string>
   <string name="recommend">Rekomenduoti</string>
   <string name="setting_app_proxy">Programų filtras</string>
   <string name="setting_app_proxy_desc">Pasirinkite, kurios programos jungsis prie interneto per VPN</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Įvertink</string>
   <string name="setting_share">Dalintis</string>
   <string name="setting_feedback">Atsiliepimai</string>
-  <string name="select_connection_area">Pasirinkite ryšio sritį</string>
   <string name="first_fragment_label">Pirmasis fragmentas</string>
   <string name="second_fragment_label">Antrasis fragmentas</string>
   <string name="start">PRADĖTI</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Programėlės VPN filtras nustatytas</string>
   <string name="setting_ads_limit">Nustatytas skelbimų limitas</string>
   <string name="setting_dns_set">DNS nustatytas</string>
-  <string name="setting_choose_proxy">VPN serveris nustatytas</string>
   <string name="reconnect_to_take_effect">Kad nustatymai įsigaliotų, grįžkite į pagrindinį ekraną ir iš naujo nustatykite VPN.</string>
   <string name="home_reconnect_to_take_effect">Kad nustatymai įsigaliotų, iš naujo nustatykite VPN</string>
-  <string name="premium_select_sku">Pasirinkite vieną laikotarpį</string>
   <string name="premium_purchase_success">Pirkimas sėkmingas</string>
   <string name="select_vpn">Pasirinkite VPN</string>
   <string name="dns_only">Tik DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Pateikite daugiau informacijos, kad galėtume greičiau nustatyti ir išspręsti jūsų problemą (mažiausiai 6 simboliai)</string>
   <string name="text_thanks_feedback">Dėkojame už atsiliepimą</string>
   <string name="text_feedback_content">Šią problemą išspręsime būsimoje versijoje. Atsiprašome už nepatogumus.</string>
-  <string name="no_available_vpn">Nėra nemokamo VPN, eikite į VPN ekraną ir pasirinkite serverį.</string>
   <string name="msg_device_does_not_support_this_feature">Ši funkcija nepalaikoma šiame įrenginyje!</string>
   <string name="search_app">paieškos programėlė..</string>
   <string name="exit_app">Išeiti iš programėlės?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Vos vienas prisilietimas, kad prisijungtumėte.</string>
   <string name="guide_2">Keli VPN serveriai skirtingose ​​šalyse</string>
   <string name="guide_3">Apsaugokite savo privatumą internete</string>
-  <string name="what_is_my_ip">Koks mano IP adresas?</string>
-  <string name="ip_address">IP adresas</string>
   <string name="network_provider">Tinklo tiekėjas</string>
-  <string name="location">Vieta</string>
   <string name="pincode">PIN kodas</string>
   <string name="timezone">Laiko juosta</string>
   <string name="duration">Trukmė</string>

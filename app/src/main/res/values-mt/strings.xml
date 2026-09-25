@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Ikseb aċċess illimitat għall-karatteristiċi kollha, mingħajr reklami.</string>
   <string name="setting_trial">Prova bla ħlas ta\' 3 ijiem</string>
   <string name="setting_upgrade">Taġġorna</string>
-  <string name="ip_proxy">Servers</string>
-  <string name="ip_quick_access">Aċċess Rapidu</string>
-  <string name="ip_all">KOLLHA</string>
-  <string name="ip_game">Logħba</string>
-  <string name="ip_streaming">Streaming</string>
   <string name="recommend">Irrakkomanda</string>
   <string name="setting_app_proxy">Filtru tal-App</string>
   <string name="setting_app_proxy_desc">Agħżel liema apps se jikkonnettjaw mal-Internet permezz ta\' VPN</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Rata</string>
   <string name="setting_share">Aqsam</string>
   <string name="setting_feedback">Feedback</string>
-  <string name="select_connection_area">Agħżel iż-żona tal-konnessjoni</string>
   <string name="first_fragment_label">L-Ewwel Framment</string>
   <string name="second_fragment_label">It-Tieni Framment</string>
   <string name="start">BIDU</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Il-filtru tal-App VPN huwa ssettjat</string>
   <string name="setting_ads_limit">Il-limitu tar-reklami huwa stabbilit</string>
   <string name="setting_dns_set">Id-DNS huwa ssettjat</string>
-  <string name="setting_choose_proxy">Is-Server tal-VPN huwa ssettjat</string>
   <string name="reconnect_to_take_effect">Jekk jogħġbok erġa\' lura għall-iskrin tad-dar u rrisettja l-VPN biex is-settings jidħlu fis-seħħ.</string>
   <string name="home_reconnect_to_take_effect">Jekk jogħġbok irrisettja l-VPN biex is-settings jidħlu fis-seħħ</string>
-  <string name="premium_select_sku">Jekk jogħġbok agħżel perjodu wieħed</string>
   <string name="premium_purchase_success">Ix-xiri b\'suċċess</string>
   <string name="select_vpn">Agħżel VPN</string>
   <string name="dns_only">DNS biss</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Jekk jogħġbok agħtina aktar dettalji sabiex inkunu nistgħu nidentifikaw u nsolvu l-kwistjoni tiegħek aktar malajr (mill-inqas 6 karattri)</string>
   <string name="text_thanks_feedback">Grazzi għall-feedback tiegħek</string>
   <string name="text_feedback_content">Se nirranġaw din il-kwistjoni f\'verżjoni futura. Jiddispjacini għall-inkonvenjent.</string>
-  <string name="no_available_vpn">M\'hemm l-ebda vpn b\'xejn disponibbli, jekk jogħġbok mur fl-iskrin tal-VPN u agħżel server.</string>
   <string name="msg_device_does_not_support_this_feature">Din il-karatteristika mhijiex appoġġjata għal dan l-apparat!</string>
   <string name="search_app">app tat-tiftix..</string>
   <string name="exit_app">Toħroġ mill-app?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Mess wieħed biss biex tikkonnettja.</string>
   <string name="guide_2">Servers VPN multipli f\'pajjiżi differenti</string>
   <string name="guide_3">Ipproteġi l-privatezza online tiegħek</string>
-  <string name="what_is_my_ip">X\'inhu l-IP tiegħi?</string>
-  <string name="ip_address">Indirizz tal-IP</string>
   <string name="network_provider">Fornitur tan-netwerk</string>
-  <string name="location">Post</string>
   <string name="pincode">Kodiċi PIN</string>
   <string name="timezone">Żona tal-ħin</string>
   <string name="duration">Tul ta\' żmien</string>

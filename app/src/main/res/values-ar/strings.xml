@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">احصل على وصول غير محدود إلى جميع الميزات، بدون إعلانات.</string>
   <string name="setting_trial">تجربة مجانية لمدة 3 أيام</string>
   <string name="setting_upgrade">يرقي</string>
-  <string name="ip_proxy">الخوادم</string>
-  <string name="ip_quick_access">الوصول السريع</string>
-  <string name="ip_all">الجميع</string>
-  <string name="ip_game">لعبة</string>
-  <string name="ip_streaming">جاري</string>
   <string name="recommend">يوصي</string>
   <string name="setting_app_proxy">مرشح التطبيق</string>
   <string name="setting_app_proxy_desc">اختر التطبيقات التي ستتصل بالإنترنت عبر VPN</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">معدل</string>
   <string name="setting_share">يشارك</string>
   <string name="setting_feedback">تعليق</string>
-  <string name="select_connection_area">حدد منطقة الاتصال</string>
   <string name="first_fragment_label">القطعة الأولى</string>
   <string name="second_fragment_label">القطعة الثانية</string>
   <string name="start">يبدأ</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">تم تعيين مرشح VPN للتطبيق</string>
   <string name="setting_ads_limit">تم تعيين حد الإعلانات</string>
   <string name="setting_dns_set">تم تعيين DNS</string>
-  <string name="setting_choose_proxy">تم تعيين خادم VPN</string>
   <string name="reconnect_to_take_effect">يرجى العودة إلى الشاشة الرئيسية وإعادة تعيين VPN حتى يتم تطبيق الإعدادات</string>
   <string name="home_reconnect_to_take_effect">يرجى إعادة تعيين VPN حتى يتم تطبيق الإعدادات</string>
-  <string name="premium_select_sku">الرجاء اختيار فترة واحدة</string>
   <string name="premium_purchase_success">تم الشراء بنجاح</string>
   <string name="select_vpn">حدد VPN</string>
   <string name="dns_only">DNS فقط</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">يرجى تزويدنا بمزيد من التفاصيل حتى نتمكن من تحديد مشكلتك وحلها بشكل أسرع (6 أحرف على الأقل)</string>
   <string name="text_thanks_feedback">شكرا على تعليقاتك</string>
   <string name="text_feedback_content">سنُصلح هذه المشكلة في إصدارٍ لاحق. نأسف للإزعاج.</string>
-  <string name="no_available_vpn">لا يوجد VPN مجاني متاح، يرجى الانتقال إلى شاشة VPN واختيار الخادم.</string>
   <string name="msg_device_does_not_support_this_feature">هذه الميزة غير مدعومة لهذا الجهاز!</string>
   <string name="search_app">تطبيق البحث..</string>
   <string name="exit_app">الخروج من التطبيق؟</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">لمسة واحدة فقط للاتصال.</string>
   <string name="guide_2">خوادم VPN متعددة في بلدان مختلفة</string>
   <string name="guide_3">حماية خصوصيتك على الإنترنت</string>
-  <string name="what_is_my_ip">ما هو عنوان IP الخاص بي؟</string>
-  <string name="ip_address">عنوان IP</string>
   <string name="network_provider">مزود الشبكة</string>
-  <string name="location">موقع</string>
   <string name="pincode">رمز PIN</string>
   <string name="timezone">المنطقة الزمنية</string>
   <string name="duration">مدة</string>

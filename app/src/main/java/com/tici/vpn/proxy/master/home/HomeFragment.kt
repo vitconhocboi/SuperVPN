@@ -38,7 +38,7 @@ import com.tici.vpn.proxy.master.extension.safeGetString
 import com.tici.vpn.proxy.master.main.MainActivity
 import com.tici.vpn.proxy.master.main.MainViewModel
 import com.tici.vpn.proxy.master.network.LocalVpnService
-import com.tici.vpn.proxy.master.network.ProxySpeedTest
+import com.tici.vpn.proxy.master.network.SpeedTest
 import com.tici.vpn.proxy.master.required.shortcut.AppScreenType
 import com.tici.vpn.proxy.master.settings.appproxy.AppProxyViewModel
 import com.tici.vpn.proxy.master.utils.Navigator
@@ -66,12 +66,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         const val INTERVAL = 10000L
         var isShowReport = true
         var lastProcess = 50f
-        var report = ProxyReport()
+        var report = SessionReport()
         var isShowDisconnect = true
 
         fun newInstance(
             showConnected: () -> Unit,
-            showDisconnected: (report: ProxyReport) -> Unit
+            showDisconnected: (report: SessionReport) -> Unit
         ): HomeFragment {
             val fragment = HomeFragment()
             /*fragment.onShowConnected = showConnected
@@ -238,8 +238,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private val speedTestRunnable = object : Runnable {
         override fun run() {
             run {
-                ProxySpeedTest.Instance.startSpeedTest(
-                    null,
+                SpeedTest.Instance.startSpeedTest(
                     callback = { download, upload ->
                         try {
                             if (download.isNotEmpty()) report.download = download
@@ -364,7 +363,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private fun stopSpeedTest() {
         handler.removeCallbacks(speedTestRunnable)
         handler.removeCallbacks(updateRunnable)
-        ProxySpeedTest.Instance.stopProxyTest()
+        SpeedTest.Instance.stopProxyTest()
     }
 
     private fun startVpnService() {

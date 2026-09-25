@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">දැන්වීම්-රහිතව, සියලුම විශේෂාංග වෙත අසීමිත ප්‍රවේශය ලබා ගන්න.</string>
   <string name="setting_trial">නොමිලේ අත්හදා බැලීම දින 3 යි</string>
   <string name="setting_upgrade">උත්ශ්‍රේණි කරන්න</string>
-  <string name="ip_proxy">සේවාදායකයන්</string>
-  <string name="ip_quick_access">ඉක්මන් ප්‍රවේශය</string>
-  <string name="ip_all">සියලුම</string>
-  <string name="ip_game">ක්‍රීඩාව</string>
-  <string name="ip_streaming">ප්‍රවාහය</string>
   <string name="recommend">නිර්දේශ කරන්න</string>
   <string name="setting_app_proxy">යෙදුම් පෙරහන</string>
   <string name="setting_app_proxy_desc">VPN හරහා අන්තර්ජාලයට සම්බන්ධ වන්නේ කුමන යෙදුම්ද යන්න තෝරන්න</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">අනුපාතය</string>
   <string name="setting_share">බෙදාගන්න</string>
   <string name="setting_feedback">ප්රතිපෝෂණ</string>
-  <string name="select_connection_area">සම්බන්ධතා ප්‍රදේශය තෝරන්න</string>
   <string name="first_fragment_label">පළමු කොටස</string>
   <string name="second_fragment_label">දෙවන කොටස</string>
   <string name="start">ආරම්භ කරන්න</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">යෙදුම් VPN පෙරහන සකසා ඇත</string>
   <string name="setting_ads_limit">දැන්වීම් සීමාව සකසා ඇත</string>
   <string name="setting_dns_set">DNS සකසා ඇත</string>
-  <string name="setting_choose_proxy">VPN සේවාදායකය සකසා ඇත</string>
   <string name="reconnect_to_take_effect">කරුණාකර මුල් තිරයට ආපසු ගොස් සැකසුම් ක්‍රියාත්මක වීමට VPN නැවත සකසන්න.</string>
   <string name="home_reconnect_to_take_effect">සැකසීම් ක්‍රියාත්මක වීමට VPN නැවත සකසන්න.</string>
-  <string name="premium_select_sku">කරුණාකර එක් කාල පරිච්ඡේදයක් තෝරන්න.</string>
   <string name="premium_purchase_success">සාර්ථකව මිලදී ගන්න</string>
   <string name="select_vpn">VPN තෝරන්න</string>
   <string name="dns_only">DNS පමණි</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">කරුණාකර අපට වැඩි විස්තර ලබා දෙන්න, එවිට අපට ඔබේ ගැටලුව ඉක්මනින් හඳුනාගෙන විසඳා ගත හැකිය (අවම වශයෙන් අක්ෂර 6ක්)</string>
   <string name="text_thanks_feedback">ඔබගේ ප්‍රතිපෝෂණයට ස්තූතියි.</string>
   <string name="text_feedback_content">අපි මෙම ගැටළුව අනාගත අනුවාදයකින් විසඳන්නෙමු. අපහසුතාවයට සමාවෙන්න.</string>
-  <string name="no_available_vpn">නොමිලේ VPN එකක් නොමැත, කරුණාකර VPN තිරයට ගොස් සේවාදායකයක් තෝරන්න.</string>
   <string name="msg_device_does_not_support_this_feature">මෙම උපාංගය සඳහා මෙම විශේෂාංගය සහාය නොදක්වයි!</string>
   <string name="search_app">සෙවුම් යෙදුම..</string>
   <string name="exit_app">යෙදුමෙන් ඉවත් වන්නද?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">සම්බන්ධ වීමට එක් ස්පර්ශයක් පමණි.</string>
   <string name="guide_2">විවිධ රටවල බහු VPN සේවාදායක</string>
   <string name="guide_3">ඔබගේ සබැඳි පෞද්ගලිකත්වය ආරක්ෂා කරන්න</string>
-  <string name="what_is_my_ip">මගේ ip එක මොකක්ද?</string>
-  <string name="ip_address">IP ලිපිනය</string>
   <string name="network_provider">ජාල සැපයුම්කරු</string>
-  <string name="location">ස්ථානය</string>
   <string name="pincode">PIN කේතය</string>
   <string name="timezone">වේලා කලාපය</string>
   <string name="duration">කාල සීමාව</string>

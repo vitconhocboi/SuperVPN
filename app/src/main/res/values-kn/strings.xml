@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">ಜಾಹೀರಾತು-ಮುಕ್ತವಾಗಿ, ಎಲ್ಲಾ ವೈಶಿಷ್ಟ್ಯಗಳಿಗೆ ಅನಿಯಮಿತ ಪ್ರವೇಶವನ್ನು ಪಡೆಯಿರಿ.</string>
   <string name="setting_trial">3 ದಿನಗಳ ಉಚಿತ ಪ್ರಯೋಗ</string>
   <string name="setting_upgrade">ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಿ</string>
-  <string name="ip_proxy">ಸರ್ವರ್‌ಗಳು</string>
-  <string name="ip_quick_access">ತ್ವರಿತ ಪ್ರವೇಶ</string>
-  <string name="ip_all">ಎಲ್ಲಾ</string>
-  <string name="ip_game">ಆಟ</string>
-  <string name="ip_streaming">ಸ್ಟ್ರೀಮಿಂಗ್</string>
   <string name="recommend">ಶಿಫಾರಸು ಮಾಡಿ</string>
   <string name="setting_app_proxy">ಅಪ್ಲಿಕೇಶನ್ ಫಿಲ್ಟರ್</string>
   <string name="setting_app_proxy_desc">VPN ಮೂಲಕ ಇಂಟರ್ನೆಟ್‌ಗೆ ಯಾವ ಅಪ್ಲಿಕೇಶನ್‌ಗಳು ಸಂಪರ್ಕಗೊಳ್ಳುತ್ತವೆ ಎಂಬುದನ್ನು ಆರಿಸಿ</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">ದರ</string>
   <string name="setting_share">ಹಂಚಿಕೊಳ್ಳಿ</string>
   <string name="setting_feedback">ಪ್ರತಿಕ್ರಿಯೆ</string>
-  <string name="select_connection_area">ಸಂಪರ್ಕ ಪ್ರದೇಶವನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
   <string name="first_fragment_label">ಮೊದಲ ತುಣುಕು</string>
   <string name="second_fragment_label">ಎರಡನೇ ತುಣುಕು</string>
   <string name="start">ಪ್ರಾರಂಭಿಸಿ</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">ಅಪ್ಲಿಕೇಶನ್ VPN ಫಿಲ್ಟರ್ ಅನ್ನು ಹೊಂದಿಸಲಾಗಿದೆ</string>
   <string name="setting_ads_limit">ಜಾಹೀರಾತುಗಳ ಮಿತಿಯನ್ನು ನಿಗದಿಪಡಿಸಲಾಗಿದೆ.</string>
   <string name="setting_dns_set">DNS ಅನ್ನು ಹೊಂದಿಸಲಾಗಿದೆ</string>
-  <string name="setting_choose_proxy">VPN ಸರ್ವರ್ ಅನ್ನು ಹೊಂದಿಸಲಾಗಿದೆ</string>
   <string name="reconnect_to_take_effect">ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಜಾರಿಗೆ ಬರಲು ದಯವಿಟ್ಟು ಮುಖಪುಟ ಪರದೆಗೆ ಹಿಂತಿರುಗಿ ಮತ್ತು VPN ಅನ್ನು ಮರುಹೊಂದಿಸಿ.</string>
   <string name="home_reconnect_to_take_effect">ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಜಾರಿಗೆ ಬರಲು ದಯವಿಟ್ಟು VPN ಅನ್ನು ಮರುಹೊಂದಿಸಿ.</string>
-  <string name="premium_select_sku">ದಯವಿಟ್ಟು ಒಂದು ಅವಧಿಯನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
   <string name="premium_purchase_success">ಯಶಸ್ವಿಯಾಗಿ ಖರೀದಿಸಿ</string>
   <string name="select_vpn">VPN ಆಯ್ಕೆಮಾಡಿ</string>
   <string name="dns_only">DNS ಮಾತ್ರ</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">ದಯವಿಟ್ಟು ನಮಗೆ ಹೆಚ್ಚಿನ ವಿವರಗಳನ್ನು ನೀಡಿ ಇದರಿಂದ ನಾವು ನಿಮ್ಮ ಸಮಸ್ಯೆಯನ್ನು ವೇಗವಾಗಿ ಗುರುತಿಸಿ ಪರಿಹರಿಸಬಹುದು (ಕನಿಷ್ಠ 6 ಅಕ್ಷರಗಳು)</string>
   <string name="text_thanks_feedback">ನಿಮ್ಮ ಪ್ರತಿಕ್ರಿಯೆಗೆ ಧನ್ಯವಾದಗಳು.</string>
   <string name="text_feedback_content">ನಾವು ಈ ಸಮಸ್ಯೆಯನ್ನು ಮುಂದಿನ ಆವೃತ್ತಿಯಲ್ಲಿ ಸರಿಪಡಿಸುತ್ತೇವೆ. ಅನಾನುಕೂಲತೆಗಾಗಿ ಕ್ಷಮಿಸಿ.</string>
-  <string name="no_available_vpn">ಉಚಿತ VPN ಲಭ್ಯವಿಲ್ಲ, ದಯವಿಟ್ಟು VPN ಪರದೆಗೆ ಹೋಗಿ ಸರ್ವರ್ ಆಯ್ಕೆಮಾಡಿ.</string>
   <string name="msg_device_does_not_support_this_feature">ಈ ಸಾಧನಕ್ಕೆ ಈ ವೈಶಿಷ್ಟ್ಯವು ಬೆಂಬಲಿತವಾಗಿಲ್ಲ!</string>
   <string name="search_app">ಹುಡುಕಾಟ ಅಪ್ಲಿಕೇಶನ್..</string>
   <string name="exit_app">ಅಪ್ಲಿಕೇಶನ್‌ನಿಂದ ನಿರ್ಗಮಿಸುವುದೇ?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">ಸಂಪರ್ಕಿಸಲು ಕೇವಲ ಒಂದು ಸ್ಪರ್ಶ.</string>
   <string name="guide_2">ವಿವಿಧ ದೇಶಗಳಲ್ಲಿ ಬಹು VPN ಸರ್ವರ್‌ಗಳು</string>
   <string name="guide_3">ನಿಮ್ಮ ಆನ್‌ಲೈನ್ ಗೌಪ್ಯತೆಯನ್ನು ರಕ್ಷಿಸಿ</string>
-  <string name="what_is_my_ip">ನನ್ನ ಐಪಿ ಏನು?</string>
-  <string name="ip_address">ಐಪಿ ವಿಳಾಸ</string>
   <string name="network_provider">ನೆಟ್‌ವರ್ಕ್ ಪೂರೈಕೆದಾರರು</string>
-  <string name="location">ಸ್ಥಳ</string>
   <string name="pincode">ಪಿನ್ ಕೋಡ್</string>
   <string name="timezone">ಸಮಯ ವಲಯ</string>
   <string name="duration">ಅವಧಿ</string>

@@ -25,10 +25,11 @@ import com.tici.vpn.proxy.master.feature.feature_exit.DialogFragmentExitApp
 import com.tici.vpn.proxy.master.home.ConnectedFragment
 import com.tici.vpn.proxy.master.home.DisconnectedFragment
 import com.tici.vpn.proxy.master.home.HomeFragment
-import com.tici.vpn.proxy.master.home.ProxyReport
+import com.tici.vpn.proxy.master.home.SessionReport
 import com.tici.vpn.proxy.master.required.inapp.InAppBillingViewModel
 import com.tici.vpn.proxy.master.required.preferences.CoreAppPreferences
 import com.tici.vpn.proxy.master.settings.SettingFragment
+import com.tici.vpn.proxy.master.settings.adsblock.AdsBlockFragment
 import com.tici.vpn.proxy.master.settings.appproxy.AppProxyFragment
 import com.tici.vpn.proxy.master.settings.dns.DNSFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -41,6 +42,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     var isSettingFragment = false
     var isAppProxyFragment = false
     var isDnsFragment = false
+    var isAdsBlockFragment = false
     var isConnectedFragment = false
     var isDisconnectedFragment = false
 
@@ -73,6 +75,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     private val mDnsFragment by lazy {
         DNSFragment()
+    }
+
+    private val mAdsBlockFragment by lazy {
+        AdsBlockFragment()
     }
 
     private val mSettingFragment by lazy {
@@ -139,6 +145,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         mListFragment.add(mSettingFragment)
         mListFragment.add(mAppProxyFragment)
         mListFragment.add(mDnsFragment)
+        mListFragment.add(mAdsBlockFragment)
         mListFragment.add(mConnectedFragment)
         mListFragment.add(mDisonnectedFragment)
 
@@ -180,6 +187,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                         mAppProxyFragment.hideKeyboard()
                         showFragment(mSettingFragment)
                     } else if (isDnsFragment) {
+                        showFragment(mSettingFragment)
+                    } else if (isAdsBlockFragment) {
+                        mAdsBlockFragment.hideKeyboard()
                         showFragment(mSettingFragment)
                     } else if (isConnectedFragment) {
                         showFragment(mHomeFragment)
@@ -232,8 +242,25 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
         isAppProxyFragment = false
         isSettingFragment = false
+        isAdsBlockFragment = false
 
         when (fragment) {
+            is AdsBlockFragment -> {
+                isAdsBlockFragment = true
+                isDnsFragment = false
+                isConnectedFragment = false
+                isDisconnectedFragment = false
+                with(binding) {
+                    lbSetting.text = getString(R.string.setting_ads_rules)
+                    homeActionBar.setVisible(false)
+                    subActionbar.setVisible(true)
+                    dnsActionBar.setVisible(false)
+                    selectAll.setVisible(false)
+                    backActionBar.setVisible(false)
+                    actionBar.setBackgroundColor(resources.getColor(R.color.gray_3))
+                }
+            }
+
             is AppProxyFragment -> {
                 isAppProxyFragment = true
                 isSettingFragment = false
@@ -355,6 +382,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         showFragment(mDnsFragment)
     }
 
+    fun showAdsBlock() {
+        showFragment(mAdsBlockFragment)
+    }
+
     fun showConnected() {
         isConnectedFragment = true
         showFragment(mConnectedFragment)
@@ -388,7 +419,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         )
     }
 
-    fun showDisconnected(report: ProxyReport) {
+    fun showDisconnected(report: SessionReport) {
         mDisonnectedFragment.loadData(report)
         isDisconnectedFragment = true
         showFragment(mDisonnectedFragment)

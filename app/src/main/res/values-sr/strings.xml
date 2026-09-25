@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Добијте неограничен приступ свим функцијама, без реклама.</string>
   <string name="setting_trial">Бесплатна пробна верзија од 3 дана</string>
   <string name="setting_upgrade">Надоградите</string>
-  <string name="ip_proxy">Сервери</string>
-  <string name="ip_quick_access">Брзи приступ</string>
-  <string name="ip_all">СВЕ</string>
-  <string name="ip_game">Игра</string>
-  <string name="ip_streaming">Стримовање</string>
   <string name="recommend">Препоручи</string>
   <string name="setting_app_proxy">Филтер апликација</string>
   <string name="setting_app_proxy_desc">Изаберите које ће се апликације повезивати на интернет путем VPN-а</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Рате</string>
   <string name="setting_share">Схаре</string>
   <string name="setting_feedback">Повратне информације</string>
-  <string name="select_connection_area">Изаберите подручје повезивања</string>
   <string name="first_fragment_label">Први фрагмент</string>
   <string name="second_fragment_label">Други фрагмент</string>
   <string name="start">СТАРТ</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Филтер VPN-а за апликације је подешен</string>
   <string name="setting_ads_limit">Ограничење огласа је подешено</string>
   <string name="setting_dns_set">ДНС је подешен</string>
-  <string name="setting_choose_proxy">VPN сервер је подешен</string>
   <string name="reconnect_to_take_effect">Вратите се на почетни екран и ресетујте VPN да би подешавања ступила на снагу</string>
   <string name="home_reconnect_to_take_effect">Ресетујте VPN да би подешавања ступила на снагу</string>
-  <string name="premium_select_sku">Молимо вас да изаберете један период</string>
   <string name="premium_purchase_success">Куповина је успешно</string>
   <string name="select_vpn">Изаберите VPN</string>
   <string name="dns_only">Само ДНС</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Дајте нам више детаља како бисмо брже идентификовали и решили ваш проблем (најмање 6 знакова)</string>
   <string name="text_thanks_feedback">Хвала на повратним информацијама</string>
   <string name="text_feedback_content">Решићемо овај проблем у будућој верзији. Извините због непријатности.</string>
-  <string name="no_available_vpn">Нема доступних бесплатних VPN-ова, идите на VPN екран и изаберите сервер.</string>
   <string name="msg_device_does_not_support_this_feature">Ова функција није подржана на овом уређају!</string>
   <string name="search_app">апликација за претрагу..</string>
   <string name="exit_app">Изаћи из апликације?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Само један додир за повезивање.</string>
   <string name="guide_2">Више VPN сервера у различитим земљама</string>
   <string name="guide_3">Заштитите своју приватност на мрежи</string>
-  <string name="what_is_my_ip">Која је моја ИП адреса?</string>
-  <string name="ip_address">ИП адреса</string>
   <string name="network_provider">Мрежни провајдер</string>
-  <string name="location">Локација</string>
   <string name="pincode">ПИН код</string>
   <string name="timezone">Временска зона</string>
   <string name="duration">Трајање</string>

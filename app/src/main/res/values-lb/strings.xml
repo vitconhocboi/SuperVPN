@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Kritt onlimitéierten Zougang zu all Funktiounen, ouni Reklammen.</string>
   <string name="setting_trial">Gratis Testphase vun 3 Deeg</string>
   <string name="setting_upgrade">Upgrade</string>
-  <string name="ip_proxy">Serveren</string>
-  <string name="ip_quick_access">Schnellzougang</string>
-  <string name="ip_all">ALL</string>
-  <string name="ip_game">Spill</string>
-  <string name="ip_streaming">Streaming</string>
   <string name="recommend">Recommandéieren</string>
   <string name="setting_app_proxy">App-Filter</string>
   <string name="setting_app_proxy_desc">Wielt wéi eng Apps iwwer VPN mam Internet verbannen</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Taux</string>
   <string name="setting_share">Deelen</string>
   <string name="setting_feedback">Feedback</string>
-  <string name="select_connection_area">Verbindungsberäich auswielen</string>
   <string name="first_fragment_label">Éischt Fragment</string>
   <string name="second_fragment_label">Zweet Fragment</string>
   <string name="start">START</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">App VPN-Filter ass agestallt</string>
   <string name="setting_ads_limit">D\'Reklammlimit ass festgeluecht</string>
   <string name="setting_dns_set">DNS ass agestallt</string>
-  <string name="setting_choose_proxy">VPN-Server ass agestallt</string>
   <string name="reconnect_to_take_effect">Gitt w.e.g. zréck op den Homescreen a setzt de VPN zréck, fir datt d\'Astellungen a Kraaft trieden.</string>
   <string name="home_reconnect_to_take_effect">Reset w.e.g. de VPN fir datt d\'Astellungen a Kraaft trieden.</string>
-  <string name="premium_select_sku">Wielt w.e.g. eng Period</string>
   <string name="premium_purchase_success">Erfollegräich akafen</string>
   <string name="select_vpn">VPN auswielen</string>
   <string name="dns_only">Nëmmen DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Gitt eis w.e.g. méi Detailer fir datt mir Äert Problem méi séier identifizéieren an léisen (op d\'mannst 6 Zeechen)</string>
   <string name="text_thanks_feedback">Merci fir Äre Feedback</string>
   <string name="text_feedback_content">Mir fixen dëst Thema an enger zukünfteg Versioun. Entschëllegt fir d\'Onbequemlechkeet.</string>
-  <string name="no_available_vpn">Et gëtt kee gratis VPN verfügbar, gitt w. e. g. op de VPN-Bildschierm a wielt e Server aus.</string>
   <string name="msg_device_does_not_support_this_feature">Dës Funktioun gëtt fir dësen Apparat net ënnerstëtzt!</string>
   <string name="search_app">Sich-App..</string>
   <string name="exit_app">App verloossen?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Just een Touch fir ze verbannen.</string>
   <string name="guide_2">Verschidde VPN-Serveren a verschiddene Länner</string>
   <string name="guide_3">Schützt Är Online-Privatsphär</string>
-  <string name="what_is_my_ip">Wat ass meng IP-Adress?</string>
-  <string name="ip_address">IP-Adress</string>
   <string name="network_provider">Netzwierkprovider</string>
-  <string name="location">Standuert</string>
   <string name="pincode">PIN Code</string>
   <string name="timezone">Zäitzon</string>
   <string name="duration">Dauer</string>

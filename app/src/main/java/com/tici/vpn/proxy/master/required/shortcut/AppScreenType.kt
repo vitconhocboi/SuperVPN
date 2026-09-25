@@ -43,4 +43,6 @@ sealed class AppScreenType(override val screenName: String) : ScreenType {
 
     data object AppProxyFragment : AppScreenType("AppProxyFragment")
 
+    data object AdsBlockFragment : AppScreenType("AdsBlockFragment")
+
 }

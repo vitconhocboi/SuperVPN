@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Faigh rochtain gan teorainn ar gach gné, saor ó fhógraí.</string>
   <string name="setting_trial">Triail saor in aisce 3 lá</string>
   <string name="setting_upgrade">Uasghrádú</string>
-  <string name="ip_proxy">Freastalaithe</string>
-  <string name="ip_quick_access">Rochtain Thapa</string>
-  <string name="ip_all">GACH</string>
-  <string name="ip_game">Cluiche</string>
-  <string name="ip_streaming">Sruthú</string>
   <string name="recommend">Mol</string>
   <string name="setting_app_proxy">Scagaire Aipeanna</string>
   <string name="setting_app_proxy_desc">Roghnaigh cé na haipeanna a nascfaidh leis an Idirlíon trí VPN</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Ráta</string>
   <string name="setting_share">Comhroinn</string>
   <string name="setting_feedback">Aiseolas</string>
-  <string name="select_connection_area">Roghnaigh limistéar nasctha</string>
   <string name="first_fragment_label">An Chéad Bhlúire</string>
   <string name="second_fragment_label">An Dara Blúirín</string>
   <string name="start">TÚS</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Tá scagaire VPN an aip socraithe</string>
   <string name="setting_ads_limit">Tá teorainn fógraí socraithe</string>
   <string name="setting_dns_set">Tá DNS socraithe</string>
-  <string name="setting_choose_proxy">Tá Freastalaí VPN socraithe</string>
   <string name="reconnect_to_take_effect">Fill ar an scáileán baile agus athshocraigh an VPN le go dtiocfaidh na socruithe i bhfeidhm.</string>
   <string name="home_reconnect_to_take_effect">Athshocraigh an VPN le go dtiocfaidh na socruithe i bhfeidhm</string>
-  <string name="premium_select_sku">Roghnaigh tréimhse amháin le do thoil</string>
   <string name="premium_purchase_success">Ceannach rathúil</string>
   <string name="select_vpn">Roghnaigh VPN</string>
   <string name="dns_only">DNS amháin</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Tabhair tuilleadh sonraí dúinn le do thoil ionas gur féidir linn do cheist a aithint agus a réiteach níos tapúla (6 charachtar ar a laghad)</string>
   <string name="text_thanks_feedback">Go raibh maith agat as do chuid aiseolais</string>
   <string name="text_feedback_content">Déanfaimid an cheist seo a réiteach i leagan amach anseo. Gabh mo leithscéal as an míchaoithiúlacht.</string>
-  <string name="no_available_vpn">Níl aon vpn saor in aisce ar fáil, téigh go dtí an scáileán VPN agus roghnaigh freastalaí.</string>
   <string name="msg_device_does_not_support_this_feature">Ní thacaítear leis an ngné seo don ghléas seo!</string>
   <string name="search_app">aip cuardaigh..</string>
   <string name="exit_app">Scoir den aip?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Níl le déanamh ach teagmháil amháin le ceangal.</string>
   <string name="guide_2">Il-fhreastalaithe VPN i dtíortha éagsúla</string>
   <string name="guide_3">Cosain do phríobháideacht ar líne</string>
-  <string name="what_is_my_ip">Cad é mo sheoladh IP?</string>
-  <string name="ip_address">Seoladh IP</string>
   <string name="network_provider">Soláthraí líonra</string>
-  <string name="location">Suíomh</string>
   <string name="pincode">Cód PIN</string>
   <string name="timezone">Crios ama</string>
   <string name="duration">Fad</string>

@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Pata ufikiaji usio na kikomo kwa vipengele vyote, bila matangazo.</string>
   <string name="setting_trial">Jaribio la bure kwa siku 3</string>
   <string name="setting_upgrade">Boresha</string>
-  <string name="ip_proxy">Seva</string>
-  <string name="ip_quick_access">Ufikiaji wa Haraka</string>
-  <string name="ip_all">YOTE</string>
-  <string name="ip_game">Mchezo</string>
-  <string name="ip_streaming">Kutiririsha</string>
   <string name="recommend">Pendekeza</string>
   <string name="setting_app_proxy">Kichujio cha Programu</string>
   <string name="setting_app_proxy_desc">Chagua ni programu zipi zitaunganishwa kwenye Mtandao kupitia VPN</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Kiwango</string>
   <string name="setting_share">Shiriki</string>
   <string name="setting_feedback">Maoni</string>
-  <string name="select_connection_area">Chagua eneo la uunganisho</string>
   <string name="first_fragment_label">Sehemu ya Kwanza</string>
   <string name="second_fragment_label">Sehemu ya Pili</string>
   <string name="start">ANZA</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Kichujio cha VPN ya programu kimewekwa</string>
   <string name="setting_ads_limit">Kikomo cha matangazo kimewekwa</string>
   <string name="setting_dns_set">DNS imewekwa</string>
-  <string name="setting_choose_proxy">Seva ya VPN imewekwa</string>
   <string name="reconnect_to_take_effect">Tafadhali rudi kwenye skrini ya kwanza na uweke upya VPN ili mipangilio ianze kutumika</string>
   <string name="home_reconnect_to_take_effect">Tafadhali weka upya VPN ili mipangilio ianze kutumika</string>
-  <string name="premium_select_sku">Tafadhali chagua kipindi kimoja</string>
   <string name="premium_purchase_success">Imefanikiwa kununua</string>
   <string name="select_vpn">Chagua VPN</string>
   <string name="dns_only">DNS pekee</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Tafadhali tupe maelezo zaidi ili tuweze kutambua na kutatua suala lako haraka (angalau vibambo 6)</string>
   <string name="text_thanks_feedback">Asante kwa maoni yako</string>
   <string name="text_feedback_content">Tutarekebisha suala hili katika toleo la baadaye. Pole kwa usumbufu.</string>
-  <string name="no_available_vpn">Hakuna vpn ya bure inayopatikana, tafadhali nenda kwenye skrini ya VPN na uchague seva.</string>
   <string name="msg_device_does_not_support_this_feature">Kipengele hiki hakitumiki kwa kifaa hiki!</string>
   <string name="search_app">tafuta programu..</string>
   <string name="exit_app">Ungependa kufunga programu?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Mguso mmoja tu wa kuunganisha.</string>
   <string name="guide_2">Seva nyingi za VPN katika nchi tofauti</string>
   <string name="guide_3">Linda faragha yako mtandaoni</string>
-  <string name="what_is_my_ip">IP yangu ni nini?</string>
-  <string name="ip_address">Anwani ya IP</string>
   <string name="network_provider">Mtoa huduma wa mtandao</string>
-  <string name="location">Mahali</string>
   <string name="pincode">Msimbo wa PIN</string>
   <string name="timezone">Saa za eneo</string>
   <string name="duration">Muda</string>

@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Fumana ukufikelela okungenamkhawulo kuzo zonke iimpawu, ngaphandle kwentengiso.</string>
   <string name="setting_trial">Isilingo sasimahla seentsuku ezi-3</string>
   <string name="setting_upgrade">Uphuculo</string>
-  <string name="ip_proxy">Iiseva</string>
-  <string name="ip_quick_access">Ukufikelela ngokukhawuleza</string>
-  <string name="ip_all">ZONKE</string>
-  <string name="ip_game">Umdlalo</string>
-  <string name="ip_streaming">Umsinga</string>
   <string name="recommend">Ncoma</string>
   <string name="setting_app_proxy">Isihluzi sosetyenziso</string>
   <string name="setting_app_proxy_desc">Khetha ukuba zeziphi ii-apps eziza kuqhagamshela kwi-Intanethi ngeVPN</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Ixabiso</string>
   <string name="setting_share">Yabelana</string>
   <string name="setting_feedback">Ingxelo</string>
-  <string name="select_connection_area">Khetha indawo yoqhagamshelwano</string>
   <string name="first_fragment_label">Iqhekeza lokuqala</string>
   <string name="second_fragment_label">Iqhekeza lesibini</string>
   <string name="start">QALA</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Isihluzi se-app yeVPN sisetiwe</string>
   <string name="setting_ads_limit">Umda weentengiso usetiwe</string>
   <string name="setting_dns_set">I-DNS isetiwe</string>
-  <string name="setting_choose_proxy">Iseva yeVPN isetiwe</string>
   <string name="reconnect_to_take_effect">Nceda ubuyele kwisikrini sasekhaya kwaye usete kwakhona i-VPN ukuze useto lusebenze</string>
   <string name="home_reconnect_to_take_effect">Nceda useta ngokutsha iVPN ukuze useto lusebenze</string>
-  <string name="premium_select_sku">Nceda ukhethe ixesha elinye</string>
   <string name="premium_purchase_success">Thenga ngempumelelo</string>
   <string name="select_vpn">Khetha iVPN</string>
   <string name="dns_only">DNS kuphela</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Nceda usinike iinkcukacha ezithe kratya ukuze sikwazi ukubona kwaye sisombulule ingxaki yakho ngokukhawuleza (ubuncinci abalinganiswa aba-6)</string>
   <string name="text_thanks_feedback">Enkosi ngempendulo yakho</string>
   <string name="text_feedback_content">Siza kulungisa lo mba kuguqulelo oluzayo. Uxolo ngokwenzela ingxaki.</string>
-  <string name="no_available_vpn">Akukho vpn ekhoyo yasimahla, nceda uye kwiscreen seVPN kwaye ukhethe iseva.</string>
   <string name="msg_device_does_not_support_this_feature">Olu phawu aluxhaswanga kwesi sixhobo!</string>
   <string name="search_app">Khangela iapp..</string>
   <string name="exit_app">Phuma kwi-app?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Ukuchukumisa nje kube kanye ukudibanisa.</string>
   <string name="guide_2">Iiseva ezininzi zeVPN kumazwe ahlukeneyo</string>
   <string name="guide_3">Khusela ubumfihlo bakho kwi-intanethi</string>
-  <string name="what_is_my_ip">Yintoni i-ip yam?</string>
-  <string name="ip_address">Idilesi ye-IP</string>
   <string name="network_provider">Umboneleli womnatha</string>
-  <string name="location">Indawo</string>
   <string name="pincode">Ikhowudi ye-PIN</string>
   <string name="timezone">Ixesha lendawo</string>
   <string name="duration">Ubude bexesha</string>

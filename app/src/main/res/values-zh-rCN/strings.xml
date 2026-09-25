@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">无限制访问所有功能，无广告。</string>
   <string name="setting_trial">免费试用 3 天</string>
   <string name="setting_upgrade">升级</string>
-  <string name="ip_proxy">服务器</string>
-  <string name="ip_quick_access">快速访问</string>
-  <string name="ip_all">全部</string>
-  <string name="ip_game">游戏</string>
-  <string name="ip_streaming">流媒体</string>
   <string name="recommend">推荐</string>
   <string name="setting_app_proxy">应用程序过滤器</string>
   <string name="setting_app_proxy_desc">选择哪些应用将通过 VPN 连接到互联网</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">速度</string>
   <string name="setting_share">分享</string>
   <string name="setting_feedback">反馈</string>
-  <string name="select_connection_area">选择连接区域</string>
   <string name="first_fragment_label">第一个片段</string>
   <string name="second_fragment_label">第二片段</string>
   <string name="start">开始</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">已设置应用程序 VPN 过滤器</string>
   <string name="setting_ads_limit">已设置广告限制</string>
   <string name="setting_dns_set">DNS已设置</string>
-  <string name="setting_choose_proxy">VPN 服务器已设置</string>
   <string name="reconnect_to_take_effect">请返回主屏幕并重置VPN以使设置生效</string>
   <string name="home_reconnect_to_take_effect">请重置VPN以使设置生效</string>
-  <string name="premium_select_sku">请选择一个时期</string>
   <string name="premium_purchase_success">购买成功</string>
   <string name="select_vpn">选择 VPN</string>
   <string name="dns_only">仅 DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">请向我们提供更多详细信息，以便我们更快地识别和解决您的问题（至少 6 个字符）</string>
   <string name="text_thanks_feedback">感谢您的反馈</string>
   <string name="text_feedback_content">我们将在后续版本中修复此问题。给您带来的不便敬请谅解。</string>
-  <string name="no_available_vpn">没有可用的免费 vpn，请转到 VPN 屏幕并选择服务器。</string>
   <string name="msg_device_does_not_support_this_feature">此设备不支持此功能！</string>
   <string name="search_app">搜索应用程序..</string>
   <string name="exit_app">退出應用程序？</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">只需轻轻一触即可连接。</string>
   <string name="guide_2">不同国家的多个 VPN 服务器</string>
   <string name="guide_3">保护您的在线隐私</string>
-  <string name="what_is_my_ip">我的 IP 是什么？</string>
-  <string name="ip_address">IP 地址</string>
   <string name="network_provider">网络提供商</string>
-  <string name="location">地点</string>
   <string name="pincode">PIN 码</string>
   <string name="timezone">时区</string>
   <string name="duration">期间</string>

@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">ကြော်ငြာမပါဘဲ ဝန်ဆောင်မှုအားလုံးကို အကန့်အသတ်မရှိ ဝင်ရောက်ကြည့်ရှုလိုက်ပါ။</string>
   <string name="setting_trial">အခမဲ့ အစမ်းသုံးကာလ ၃ ရက်</string>
   <string name="setting_upgrade">အဆင့်မြှင့်ပါ။</string>
-  <string name="ip_proxy">ဆာဗာများ</string>
-  <string name="ip_quick_access">အမြန်ဝင်ရောက်ပါ။</string>
-  <string name="ip_all">အားလုံး</string>
-  <string name="ip_game">ဂိမ်း</string>
-  <string name="ip_streaming">လွှ</string>
   <string name="recommend">အကြံပြုသည်။</string>
   <string name="setting_app_proxy">အက်ပ်စစ်ထုတ်မှု</string>
   <string name="setting_app_proxy_desc">VPN မှတစ်ဆင့် အင်တာနက်သို့ ချိတ်ဆက်မည့်အက်ပ်များကို ရွေးပါ။</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">နှုန်းထား</string>
   <string name="setting_share">မျှဝေပါ။</string>
   <string name="setting_feedback">တုံ့ပြန်ချက်</string>
-  <string name="select_connection_area">ချိတ်ဆက်မှုဧရိယာကို ရွေးပါ။</string>
   <string name="first_fragment_label">ပထမအပိုင်း</string>
   <string name="second_fragment_label">ဒုတိယအပိုင်း</string>
   <string name="start">စတင်ပါ။</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">အက်ပ် VPN စစ်ထုတ်မှုကို သတ်မှတ်ထားသည်။</string>
   <string name="setting_ads_limit">ကြော်ငြာကန့်သတ်ချက် သတ်မှတ်ထားသည်။</string>
   <string name="setting_dns_set">DNS ကိုသတ်မှတ်ထားသည်။</string>
-  <string name="setting_choose_proxy">VPN Server ကိုသတ်မှတ်ထားသည်။</string>
   <string name="reconnect_to_take_effect">ပင်မစခရင်သို့ ပြန်သွားပြီး ဆက်တင်များအကျိုးသက်ရောက်စေရန်အတွက် VPN ကို ပြန်လည်သတ်မှတ်ပါ။</string>
   <string name="home_reconnect_to_take_effect">ဆက်တင်များအကျိုးသက်ရောက်စေရန်အတွက် VPN ကို ပြန်လည်သတ်မှတ်ပါ။</string>
-  <string name="premium_select_sku">ကာလတစ်ခုကို ရွေးပါ။</string>
   <string name="premium_purchase_success">အောင်မြင်စွာဝယ်ယူပါ။</string>
   <string name="select_vpn">VPN ကို ရွေးပါ။</string>
   <string name="dns_only">DNS သာ</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">သင့်ပြဿနာကို ပိုမိုမြန်ဆန်စွာ ဖော်ထုတ်ဖြေရှင်းနိုင်စေရန်အတွက် ကျွန်ုပ်တို့အား နောက်ထပ်အသေးစိတ်အချက်အလက်များကို ပေးပါ။ (အနည်းဆုံး စာလုံး 6 လုံး)</string>
   <string name="text_thanks_feedback">သင့်အကြံပြုချက်အတွက် ကျေးဇူးတင်ပါသည်။</string>
   <string name="text_feedback_content">ကျွန်ုပ်တို့သည် အနာဂတ်ဗားရှင်းတွင် ဤပြဿနာကို ဖြေရှင်းပါမည်။ အဆင်မပြေမှုအတွက်တောင်းပန်ပါတယ်။</string>
-  <string name="no_available_vpn">အခမဲ့ vpn မရနိုင်ပါ၊ ကျေးဇူးပြု၍ VPN မျက်နှာပြင်သို့သွား၍ ဆာဗာတစ်ခုကို ရွေးချယ်ပါ။</string>
   <string name="msg_device_does_not_support_this_feature">ဤအင်္ဂါရပ်ကို ဤစက်ပစ္စည်းအတွက် ပံ့ပိုးမထားပါ။</string>
   <string name="search_app">ရှာဖွေရေးအက်ပ်။ ။</string>
   <string name="exit_app">အက်ပ်မှ ထွက်မလား။</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">ချိတ်ဆက်ရန် တစ်ချက်ထိရုံ။</string>
   <string name="guide_2">နိုင်ငံအသီးသီးရှိ VPN ဆာဗာများစွာ</string>
   <string name="guide_3">သင်၏အွန်လိုင်း privacy ကိုကာကွယ်ပါ။</string>
-  <string name="what_is_my_ip">ငါ့ ip ကဘာလဲ။</string>
-  <string name="ip_address">IP လိပ်စာ</string>
   <string name="network_provider">ကွန်ရက်ပံ့ပိုးသူ</string>
-  <string name="location">တည်နေရာ</string>
   <string name="pincode">ပင်နံပါတ်</string>
   <string name="timezone">အချိန်ဇုန်</string>
   <string name="duration">သင်တန်းကာလ</string>

@@ -1,10 +1,12 @@
 package com.tici.vpn.proxy.master
 
+import com.common.baseui.BaseAppConfig
 import com.common.baseui.BaseApplication
 import com.core.baseui.BaseCoreApplication
 import com.core.billing.ProductIdManager
 import com.core.preference.PurchasePreferences
 import com.core.rate.RateInApp
+import com.tici.vpn.proxy.master.settings.adsblock.AdRulesCrashGuard
 import com.tici.vpn.proxy.master.settings.adsblock.AdsBlockInterface
 import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.CoroutineScope
@@ -26,6 +28,9 @@ class SuperVpnApplication : BaseCoreApplication() {
     @Inject
     lateinit var adsBlockRepository: AdsBlockInterface
 
+    @Inject
+    lateinit var adRulesCrashGuard: AdRulesCrashGuard
+
     private val appScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
     init {
@@ -37,6 +42,10 @@ class SuperVpnApplication : BaseCoreApplication() {
         registerKeyVipList()
         BaseApplication.attachInstance(this) // gán thủ công
         RateInApp.instance.registerActivityLifecycle(this)
+        // Purge remote-proxy settings (incl. encoded credentials) left by older versions.
+        BaseAppConfig.clearLegacyProxyPrefs()
+        // Before any VPN start: a filter start that never finished means Privoxy killed the process.
+        adRulesCrashGuard.onAppLaunch()
         seedAdRules()
     }
 

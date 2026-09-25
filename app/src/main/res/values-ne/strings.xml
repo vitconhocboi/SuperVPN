@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">सबै सुविधाहरूमा असीमित पहुँच पाउनुहोस्, विज्ञापन-रहित।</string>
   <string name="setting_trial">३ दिनको नि:शुल्क परीक्षण</string>
   <string name="setting_upgrade">स्तरवृद्धि गर्नुहोस्</string>
-  <string name="ip_proxy">सर्भरहरू</string>
-  <string name="ip_quick_access">द्रुत पहुँच</string>
-  <string name="ip_all">सबै</string>
-  <string name="ip_game">खेल</string>
-  <string name="ip_streaming">स्ट्रिमिङ</string>
   <string name="recommend">सिफारिस गर्नुहोस्</string>
   <string name="setting_app_proxy">एप फिल्टर</string>
   <string name="setting_app_proxy_desc">VPN मार्फत कुन एपहरू इन्टरनेटमा जडान हुनेछन् छनौट गर्नुहोस्</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">मूल्याङ्कन गर्नुहोस्</string>
   <string name="setting_share">सेयर गर्नुहोस्</string>
   <string name="setting_feedback">प्रतिक्रिया</string>
-  <string name="select_connection_area">जडान क्षेत्र चयन गर्नुहोस्</string>
   <string name="first_fragment_label">पहिलो खण्ड</string>
   <string name="second_fragment_label">दोस्रो खण्ड</string>
   <string name="start">START</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">एप VPN फिल्टर सेट गरिएको छ</string>
   <string name="setting_ads_limit">विज्ञापन सीमा सेट गरिएको छ</string>
   <string name="setting_dns_set">DNS सेट गरिएको छ</string>
-  <string name="setting_choose_proxy">VPN सर्भर सेट गरिएको छ</string>
   <string name="reconnect_to_take_effect">सेटिङहरू प्रभावकारी हुनको लागि कृपया गृह स्क्रिनमा फर्कनुहोस् र VPN रिसेट गर्नुहोस्।</string>
   <string name="home_reconnect_to_take_effect">सेटिङहरू लागू हुनको लागि कृपया VPN रिसेट गर्नुहोस्।</string>
-  <string name="premium_select_sku">कृपया एउटा अवधि चयन गर्नुहोस्</string>
   <string name="premium_purchase_success">सफलतापूर्वक खरिद गरियो</string>
   <string name="select_vpn">VPN छान्नुहोस्</string>
   <string name="dns_only">DNS मात्र</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">तपाईंको समस्या छिटो पहिचान गर्न र समाधान गर्न सकियोस् भन्नाका खातिर कृपया हामीलाई थप विवरणहरू दिनुहोस् (कम्तिमा ६ वर्ण)</string>
   <string name="text_thanks_feedback">तपाईंको प्रतिक्रियाको लागि धन्यवाद।</string>
   <string name="text_feedback_content">हामी भविष्यको संस्करणमा यो समस्या समाधान गर्नेछौं। असुविधाको लागि माफ गर्नुहोस्।</string>
-  <string name="no_available_vpn">कुनै पनि नि: शुल्क vpn उपलब्ध छैन, कृपया VPN स्क्रिनमा जानुहोस् र सर्भर छनौट गर्नुहोस्।</string>
   <string name="msg_device_does_not_support_this_feature">यो सुविधा यस उपकरणको लागि समर्थित छैन!</string>
   <string name="search_app">खोज एप..</string>
   <string name="exit_app">एपबाट बाहिर निस्कने हो?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">जडान गर्न केवल एक स्पर्श।</string>
   <string name="guide_2">विभिन्न देशहरूमा धेरै VPN सर्भरहरू</string>
   <string name="guide_3">आफ्नो अनलाइन गोपनीयता सुरक्षित गर्नुहोस्</string>
-  <string name="what_is_my_ip">मेरो आईपी के हो?</string>
-  <string name="ip_address">आईपी ​​ठेगाना</string>
   <string name="network_provider">नेटवर्क प्रदायक</string>
-  <string name="location">स्थानहरू</string>
   <string name="pincode">पिन कोड</string>
   <string name="timezone">समय क्षेत्र</string>
   <string name="duration">अवधि</string>

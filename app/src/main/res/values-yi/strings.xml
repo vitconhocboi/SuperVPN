@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">באַקומט אַנלימאַטאַד צוטריט צו אַלע פֿעיִקייטן, אָן אַדווערטייזמאַנץ.</string>
   <string name="setting_trial">פרייע פּראָבע 3 טעג</string>
   <string name="setting_upgrade">אַפּגרייד</string>
-  <string name="ip_proxy">סערווערס</string>
-  <string name="ip_quick_access">שנעלער צוטריט</string>
-  <string name="ip_all">אַלע</string>
-  <string name="ip_game">שפּיל</string>
-  <string name="ip_streaming">סטרימינג</string>
   <string name="recommend">רעקאָמענדירן</string>
   <string name="setting_app_proxy">אַפּ פילטער</string>
   <string name="setting_app_proxy_desc">אויסקלײַבן וועלכע אַפּפּס וועלן זיך פֿאַרבינדן צום אינטערנעט דורך VPN</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">קורס</string>
   <string name="setting_share">ייַנטיילן</string>
   <string name="setting_feedback">באַמערקונגען</string>
-  <string name="select_connection_area">אויסקלייבן פֿאַרבינדונג געגנט</string>
   <string name="first_fragment_label">ערשטער פראַגמענט</string>
   <string name="second_fragment_label">צווייטע פראַגמענט</string>
   <string name="start">אָנהייב</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">אַפּ וויפּיען פילטער איז געשטעלט</string>
   <string name="setting_ads_limit">אדווערטייזמענט לימיט איז באַשטימט</string>
   <string name="setting_dns_set">DNS איז איינגעשטעלט</string>
-  <string name="setting_choose_proxy">VPN סערווער איז איינגעשטעלט</string>
   <string name="reconnect_to_take_effect">ביטע צוריק צום היים עקראַן און ריסעט די VPN כדי די סעטטינגס זאלן אריינקומען אין קראַפט</string>
   <string name="home_reconnect_to_take_effect">ביטע ריסעט די VPN כדי די סעטינגס זאלן אריינקומען אין קראפט</string>
-  <string name="premium_select_sku">ביטע אויסקלויבן איין פעריאד</string>
   <string name="premium_purchase_success">קויפן געראָטן</string>
   <string name="select_vpn">אויסקלייבן VPN</string>
   <string name="dns_only">נאָר די-ען-עס</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">ביטע געבן אונדז מער דעטאַילס אַזוי מיר קענען ידענטיפיצירן און סאָלווע דיין פּראָבלעם פאַסטער (לפּחות 6 אותיות)</string>
   <string name="text_thanks_feedback">דאַנקען פֿאַר דיין באַמערקונגען</string>
   <string name="text_feedback_content">מיר וועלן פאַרריכטן דעם אַרויסגעבן אין אַ צוקונפֿט ווערסיע. אנטשולדיגט פֿאַר די ינקאַנוויניאַנס.</string>
-  <string name="no_available_vpn">עס איז נישטאָ קיין פרייער VPN, ביטע גייט צום VPN עקראַן און קלייבט אַ סערווער.</string>
   <string name="msg_device_does_not_support_this_feature">די פֿונקציע איז נישט געשטיצט פֿאַר דעם מיטל!</string>
   <string name="search_app">זוכן אַפּ..</string>
   <string name="exit_app">ארויסגיין פון די אַפּ?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">נאָר איין ריר צו פֿאַרבינדן.</string>
   <string name="guide_2">קייפל VPN סערווערס אין פאַרשידענע לענדער</string>
   <string name="guide_3">באַשיצן אייער אָנליין פּריוואַטקייט</string>
-  <string name="what_is_my_ip">וואָס איז מײַן IP אַדרעס?</string>
-  <string name="ip_address">IP אַדרעס</string>
   <string name="network_provider">נעץ פּראַוויידער</string>
-  <string name="location">לאָקאַציע</string>
   <string name="pincode">PIN קאָד</string>
   <string name="timezone">צייט זאָנע</string>
   <string name="duration">געדויער</string>

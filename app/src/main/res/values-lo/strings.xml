@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">ເຂົ້າເຖິງຄຸນສົມບັດທັງໝົດແບບບໍ່ຈຳກັດ, ບໍ່ມີໂຄສະນາ.</string>
   <string name="setting_trial">ການທົດລອງໃຊ້ຟຣີ 3 ມື້</string>
   <string name="setting_upgrade">ຍົກລະດັບ</string>
-  <string name="ip_proxy">ເຊີບເວີ</string>
-  <string name="ip_quick_access">ການເຂົ້າເຖິງດ່ວນ</string>
-  <string name="ip_all">ທັງໝົດ</string>
-  <string name="ip_game">ເກມ</string>
-  <string name="ip_streaming">ການຖ່າຍທອດ</string>
   <string name="recommend">ແນະນໍາ</string>
   <string name="setting_app_proxy">App Filter</string>
   <string name="setting_app_proxy_desc">ເລືອກວ່າແອັບໃດຈະເຊື່ອມຕໍ່ອິນເຕີເນັດຜ່ານ VPN</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">ອັດຕາ</string>
   <string name="setting_share">ແບ່ງປັນ</string>
   <string name="setting_feedback">ຄໍາຕິຊົມ</string>
-  <string name="select_connection_area">ເລືອກພື້ນທີ່ເຊື່ອມຕໍ່</string>
   <string name="first_fragment_label">ຊິ້ນທໍາອິດ</string>
   <string name="second_fragment_label">ຊິ້ນທີສອງ</string>
   <string name="start">ເລີ່ມ</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">ຕັ້ງຄ່າຕົວກອງແອັບ VPN ແລ້ວ</string>
   <string name="setting_ads_limit">ກໍານົດຂອບເຂດການໂຄສະນາ</string>
   <string name="setting_dns_set">DNS ຖືກຕັ້ງ</string>
-  <string name="setting_choose_proxy">ເຊີບເວີ VPN ຖືກຕັ້ງ</string>
   <string name="reconnect_to_take_effect">ກະ​ລຸ​ນາ​ກັບ​ຄືນ​ໄປ​ທີ່​ຫນ້າ​ຈໍ​ເຮືອນ​ແລະ​ປັບ VPN ສໍາ​ລັບ​ການ​ຕັ້ງ​ຄ່າ​ມີ​ຜົນ​ກະ​ທົບ​</string>
   <string name="home_reconnect_to_take_effect">ກະລຸນາຣີເຊັດ VPN ເພື່ອໃຫ້ການຕັ້ງຄ່າມີຜົນ</string>
-  <string name="premium_select_sku">ກະລຸນາເລືອກໄລຍະໜຶ່ງ</string>
   <string name="premium_purchase_success">ຊື້ສຳເລັດແລ້ວ</string>
   <string name="select_vpn">ເລືອກ VPN</string>
   <string name="dns_only">DNS ເທົ່ານັ້ນ</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">ກະ​ລຸ​ນາ​ໃຫ້​ລາຍ​ລະ​ອຽດ​ເພີ່ມ​ເຕີມ​ພວກ​ເຮົາ​ເພື່ອ​ໃຫ້​ພວກ​ເຮົາ​ກໍາ​ນົດ​ແລະ​ແກ້​ໄຂ​ບັນ​ຫາ​ຂອງ​ທ່ານ​ໄວ​ຂຶ້ນ (ຢ່າງ​ຫນ້ອຍ 6 ຕົວ​ອັກ​ສອນ​)</string>
   <string name="text_thanks_feedback">ຂອບໃຈສໍາລັບຄໍາຄິດເຫັນຂອງທ່ານ</string>
   <string name="text_feedback_content">ພວກເຮົາຈະແກ້ໄຂບັນຫານີ້ໃນສະບັບໃນອະນາຄົດ. ຂໍອະໄພໃນຄວາມບໍ່ສະດວກ.</string>
-  <string name="no_available_vpn">ບໍ່ມີ vpn ຟຣີທີ່ມີຢູ່, ກະລຸນາໄປທີ່ໜ້າຈໍ VPN ແລະເລືອກເຊີບເວີ.</string>
   <string name="msg_device_does_not_support_this_feature">ຄຸນສົມບັດນີ້ບໍ່ຮອງຮັບສຳລັບອຸປະກອນນີ້!</string>
   <string name="search_app">ແອັບຊອກຫາ..</string>
   <string name="exit_app">ອອກຈາກແອັບບໍ?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">ພຽງແຕ່ຫນຶ່ງສໍາພັດເພື່ອເຊື່ອມຕໍ່.</string>
   <string name="guide_2">ຫຼາຍເຊີບເວີ VPN ໃນປະເທດຕ່າງໆ</string>
   <string name="guide_3">ປົກປ້ອງຄວາມເປັນສ່ວນຕົວອອນໄລນ໌ຂອງທ່ານ</string>
-  <string name="what_is_my_ip">ip ຂອງຂ້ອຍແມ່ນຫຍັງ?</string>
-  <string name="ip_address">ທີ່ຢູ່ IP</string>
   <string name="network_provider">ຜູ້ໃຫ້ບໍລິການເຄືອຂ່າຍ</string>
-  <string name="location">ສະຖານທີ່</string>
   <string name="pincode">ລະຫັດ PIN</string>
   <string name="timezone">ເຂດເວລາ</string>
   <string name="duration">ໄລຍະເວລາ</string>

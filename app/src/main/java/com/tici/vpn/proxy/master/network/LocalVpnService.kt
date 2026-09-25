@@ -21,9 +21,19 @@ import com.tici.vpn.proxy.master.main.MainActivity
 import com.tici.vpn.proxy.master.utils.Constant
 import com.common.baseui.BaseAppConfig
 import com.tici.vpn.proxy.master.main.SharedData
+import com.tici.vpn.proxy.master.settings.adsblock.AdRulesCrashGuard
+import com.tici.vpn.proxy.master.settings.adsblock.AdsBlockInterface
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.launch
 import timber.log.Timber
 import java.io.FileDescriptor
 import java.util.concurrent.atomic.AtomicReference
@@ -35,7 +45,20 @@ class LocalVpnService : VpnService(), Runnable {
 //    private val m_IPHeader: IPHeader
     private var m_VPNThread: Thread? = null
     private var m_VPNInterface: ParcelFileDescriptor? = null
+    @Volatile
     private var m_PrivoxyManager: VpnManager? = null
+
+    @Inject
+    lateinit var adsBlockRepository: AdsBlockInterface
+
+    @Inject
+    lateinit var crashGuard: AdRulesCrashGuard
+
+    private val serviceScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
+    private var filterStartJob: Job? = null
+
+    /** True only once Privoxy has actually started (not while [startLocalFilter] is in flight). */
+    val isFilterRunning: Boolean get() = m_PrivoxyManager != null
 
     @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
     @Inject
@@ -117,15 +140,7 @@ class LocalVpnService : VpnService(), Runnable {
                 m_VPNThread = Thread(this, "VPNServiceThread")
                 m_VPNThread!!.start()
 
-                // Privoxy runs purely as a local filter (ad/tracker blocking via
-                // default.action) and forwards direct — there is no remote server.
-                m_PrivoxyManager = VpnManager(this)
-                if (m_PrivoxyManager!!.initialize() && m_PrivoxyManager!!.start()) {
-                    proxyConnection.updateUI(HomeFragment.CONNECTED)
-                } else {
-                    Timber.tag(Constant.TAG).d("Failed to start local filter")
-                    proxyConnection.updateUI(HomeFragment.DISCONNECTED)
-                }
+                startLocalFilter()
             }
 
             ACTION_STOP -> {
@@ -136,6 +151,49 @@ class LocalVpnService : VpnService(), Runnable {
         }
 
         return START_NOT_STICKY
+    }
+
+    /**
+     * Privoxy runs purely as a local filter (ad/tracker blocking via default.action) and forwards
+     * direct — there is no remote server. Off the main thread: rendering the rules reads Room.
+     */
+    @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
+    private fun startLocalFilter() {
+        filterStartJob?.cancel()
+        filterStartJob = serviceScope.launch {
+            val ok = try {
+                val body = adsBlockRepository.renderActionFile()
+                val manager = VpnManager(this@LocalVpnService)
+                if (!isActive || !manager.initialize(body)) {
+                    false
+                } else {
+                    // A malformed action file makes Privoxy exit(1) the whole process inside
+                    // start(); the breadcrumb lets the next launch detect that and quarantine rules.
+                    crashGuard.markStartPending()
+                    val started = manager.start()
+                    crashGuard.clearStartPending()
+                    if (started) m_PrivoxyManager = manager
+                    started
+                }
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                Timber.tag(Constant.TAG).e(e, "Failed to prepare local filter")
+                false
+            }
+            if (!IsRunning) {
+                // stopVPN() ran while we were starting; don't leave Privoxy running behind it.
+                m_PrivoxyManager?.stop()
+                m_PrivoxyManager = null
+                return@launch
+            }
+            if (ok) {
+                proxyConnection.updateUI(HomeFragment.CONNECTED)
+            } else {
+                Timber.tag(Constant.TAG).d("Failed to start local filter")
+                proxyConnection.updateUI(HomeFragment.DISCONNECTED)
+            }
+        }
     }
 
     @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
@@ -169,11 +227,10 @@ class LocalVpnService : VpnService(), Runnable {
             }
 
             // Now stop engine after fd is detached
-//            Log.i("SuperVpn", "TestRelease engine.Engine.stop() ${BaseAppConfig.proxy.isNotEmpty()}")
-//            if (BaseAppConfig.proxy.isNotEmpty()) {
-                engine.Engine.stop()
-//            }
+            engine.Engine.stop()
 
+            filterStartJob?.cancel()
+            filterStartJob = null
             m_PrivoxyManager?.stop()
             m_PrivoxyManager = null
 
@@ -184,13 +241,6 @@ class LocalVpnService : VpnService(), Runnable {
                 Instance = null // Clear the instance reference
             }
             proxyConnection.updateUI(HomeFragment.DISCONNECTED)
-//            Log.i("SuperVpn", "TestRelease isSub stopVPN ${SharedData.isSub.value}")
-            if (SharedData.isSub.value == false && BaseAppConfig.usingType == "premium") {
-                BaseAppConfig.proxy = ""
-                BaseAppConfig.proxyHost = ""
-                BaseAppConfig.proxyCountry = ""
-                BaseAppConfig.proxyGroup = ""
-            }
             Timber.tag(Constant.TAG).d("VPNService stopped.")
         }
     }
@@ -315,6 +365,7 @@ class LocalVpnService : VpnService(), Runnable {
     @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
     override fun onDestroy() {
         Timber.tag(Constant.TAG).d("VPNService($ID) destroyed")
+        serviceScope.cancel()
         super.onDestroy()
     }
 

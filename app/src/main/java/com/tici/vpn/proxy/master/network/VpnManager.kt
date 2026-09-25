@@ -2,7 +2,6 @@ package com.tici.vpn.proxy.master.network
 
 import android.content.Context
 import com.tici.vpn.proxy.master.utils.Constant
-import com.common.baseui.BaseAppConfig
 import timber.log.Timber
 import java.io.File
 import androidx.core.content.edit
@@ -29,7 +28,11 @@ class VpnManager(private val context: Context) {
         private external fun nativeIsRunning(): Boolean
     }
 
-    fun initialize(): Boolean {
+    /**
+     * Writes Privoxy's files. [actionFileBody] is pre-rendered and pre-validated by
+     * `AdsBlockRepository.renderActionFile()`; this class knows nothing about rules or settings.
+     */
+    fun initialize(actionFileBody: String): Boolean {
         try {
             // Create Privoxy configuration directory
             val privoxyDir = File(context.filesDir, "privoxy")
@@ -37,7 +40,7 @@ class VpnManager(private val context: Context) {
                 privoxyDir.mkdirs()
             }
             // Create config file
-            configPath = createConfigFile(privoxyDir)
+            configPath = createConfigFile(privoxyDir, actionFileBody)
             return true
         } catch (e: Exception) {
             Timber.tag("PrivoxyManager").e(e, "Failed to initialize Privoxy")
@@ -107,41 +110,10 @@ class VpnManager(private val context: Context) {
         return "127.0.0.1:$port"
     }
 
-    private fun createConfigFile(privoxyDir: File): String {
-        val actionFile = File(privoxyDir, "default.action")
+    private fun createConfigFile(privoxyDir: File, actionFileBody: String): String {
+        val actionFile = PrivoxyActionFile.file(context)
         Timber.tag(Constant.TAG).d("createConfigFile: $actionFile")
-        if (BaseAppConfig.adsBlock) {
-            actionFile.writeText(
-                """
-{+block{Doubleclick banners.} +handle-as-image}
-*.doubleclick.net
-.doubleclick.net
-ads.pubmatic.com
-ads.betweendigital.com
-ads.stickyadstv.com
-*adsystem.com
-*.smartadserver.com
-*.googlesyndication.com
-pix.pubpowerplatform.io
-*.adnxs.com
-*.creativecdn.com
-*.unrulymedia.com
-*.pubmatic.com
-*.richaudience.com
-*.aralego.com
-*.googleadservices.com
-.googleadservices.com
-prebid.*
-
-
-""".replaceIndent()
-            )
-        } else {
-            actionFile.writeText(
-                """
-""".replaceIndent()
-            )
-        }
+        PrivoxyActionFile.write(actionFile, actionFileBody)
 
         val configFile = File(privoxyDir, "config")
         configFile.writeText(

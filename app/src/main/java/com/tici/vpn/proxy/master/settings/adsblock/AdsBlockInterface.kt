@@ -7,8 +7,19 @@ interface AdsBlockInterface {
     /** Canonical domains of enabled rules, for the Privoxy action file. */
     suspend fun getEnabledDomains(): List<String>
 
+    /**
+     * Body for Privoxy's `default.action`: empty when ad-block is off (DB not touched); honours the
+     * crash quarantine level; every domain passes [DomainValidator] again (gate 2).
+     */
+    suspend fun renderActionFile(): String
+
     /** @return false if [domain] already exists (unique index). */
     suspend fun addRule(domain: String, displayName: String): Boolean
+
+    /** Undo of [delete]: re-inserts [rule] keeping its domain, enabled and isDefault flags. */
+    suspend fun restoreRule(rule: AdRuleUI)
+
+    suspend fun count(): Int
 
     suspend fun delete(id: Long)
 

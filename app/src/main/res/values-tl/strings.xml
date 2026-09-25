@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Makakuha ng walang limitasyong access sa lahat ng feature, walang ad.</string>
   <string name="setting_trial">Libreng pagsubok 3 araw</string>
   <string name="setting_upgrade">Mag-upgrade</string>
-  <string name="ip_proxy">Mga server</string>
-  <string name="ip_quick_access">Mabilis na Access</string>
-  <string name="ip_all">LAHAT</string>
-  <string name="ip_game">Laro</string>
-  <string name="ip_streaming">Streaming</string>
   <string name="recommend">Magrekomenda</string>
   <string name="setting_app_proxy">Filter ng App</string>
   <string name="setting_app_proxy_desc">Piliin kung aling mga app ang kumonekta sa Internet sa pamamagitan ng VPN</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Rate</string>
   <string name="setting_share">Ibahagi</string>
   <string name="setting_feedback">Feedback</string>
-  <string name="select_connection_area">Piliin ang lugar ng koneksyon</string>
   <string name="first_fragment_label">Unang Fragment</string>
   <string name="second_fragment_label">Pangalawang Fragment</string>
   <string name="start">MAGSIMULA</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Nakatakda ang filter ng App VPN</string>
   <string name="setting_ads_limit">Nakatakda ang limitasyon ng mga ad</string>
   <string name="setting_dns_set">Nakatakda ang DNS</string>
-  <string name="setting_choose_proxy">Nakatakda ang VPN Server</string>
   <string name="reconnect_to_take_effect">Mangyaring bumalik sa home screen at i-reset ang VPN para magkabisa ang mga setting</string>
   <string name="home_reconnect_to_take_effect">Paki-reset ang VPN para magkabisa ang mga setting</string>
-  <string name="premium_select_sku">Mangyaring pumili ng isang panahon</string>
   <string name="premium_purchase_success">Matagumpay na nakabili</string>
   <string name="select_vpn">Piliin ang VPN</string>
   <string name="dns_only">DNS lang</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Mangyaring bigyan kami ng higit pang mga detalye upang mas mabilis naming matukoy at malutas ang iyong isyu (hindi bababa sa 6 na character)</string>
   <string name="text_thanks_feedback">Salamat sa iyong feedback</string>
   <string name="text_feedback_content">Aayusin namin ang isyung ito sa isang bersyon sa hinaharap. Paumanhin para sa abala.</string>
-  <string name="no_available_vpn">Walang magagamit na libreng vpn, mangyaring pumunta sa screen ng VPN at pumili ng isang server.</string>
   <string name="msg_device_does_not_support_this_feature">Hindi sinusuportahan ang feature na ito para sa device na ito!</string>
   <string name="search_app">search app..</string>
   <string name="exit_app">Lumabas sa app?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Isang pindot lang para kumonekta.</string>
   <string name="guide_2">Maramihang mga server ng VPN sa iba\'t ibang bansa</string>
   <string name="guide_3">Protektahan ang iyong online na privacy</string>
-  <string name="what_is_my_ip">Ano ang aking ip?</string>
-  <string name="ip_address">IP address</string>
   <string name="network_provider">Network provider</string>
-  <string name="location">Lokasyon</string>
   <string name="pincode">PIN code</string>
   <string name="timezone">Time zone</string>
   <string name="duration">Tagal</string>

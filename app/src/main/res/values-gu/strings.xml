@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">જાહેરાત-મુક્ત, બધી સુવિધાઓની અમર્યાદિત ઍક્સેસ મેળવો.</string>
   <string name="setting_trial">૩ દિવસ મફત અજમાયશ</string>
   <string name="setting_upgrade">અપગ્રેડ કરો</string>
-  <string name="ip_proxy">સર્વર્સ</string>
-  <string name="ip_quick_access">ઝડપી પ્રવેશ</string>
-  <string name="ip_all">બધા</string>
-  <string name="ip_game">રમત</string>
-  <string name="ip_streaming">સ્ટ્રીમિંગ</string>
   <string name="recommend">ભલામણ કરો</string>
   <string name="setting_app_proxy">એપ્લિકેશન ફિલ્ટર</string>
   <string name="setting_app_proxy_desc">VPN દ્વારા કઈ એપ્સ ઇન્ટરનેટથી કનેક્ટ થશે તે પસંદ કરો</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">દર</string>
   <string name="setting_share">શેર કરો</string>
   <string name="setting_feedback">પ્રતિસાદ</string>
-  <string name="select_connection_area">કનેક્શન ક્ષેત્ર પસંદ કરો</string>
   <string name="first_fragment_label">પહેલો ટુકડો</string>
   <string name="second_fragment_label">બીજો ટુકડો</string>
   <string name="start">START</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">એપ્લિકેશન VPN ફિલ્ટર સેટ કરેલ છે</string>
   <string name="setting_ads_limit">જાહેરાત મર્યાદા સેટ કરેલી છે</string>
   <string name="setting_dns_set">DNS સેટ કરેલ છે</string>
-  <string name="setting_choose_proxy">VPN સર્વર સેટ થયેલ છે</string>
   <string name="reconnect_to_take_effect">સેટિંગ્સ પ્રભાવમાં આવે તે માટે કૃપા કરીને હોમ સ્ક્રીન પર પાછા ફરો અને VPN રીસેટ કરો.</string>
   <string name="home_reconnect_to_take_effect">સેટિંગ્સ પ્રભાવમાં આવે તે માટે કૃપા કરીને VPN રીસેટ કરો.</string>
-  <string name="premium_select_sku">કૃપા કરીને એક સમયગાળો પસંદ કરો</string>
   <string name="premium_purchase_success">ખરીદી સફળતાપૂર્વક થઈ</string>
   <string name="select_vpn">VPN પસંદ કરો</string>
   <string name="dns_only">ફક્ત DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">કૃપા કરીને અમને વધુ વિગતો આપો જેથી અમે તમારી સમસ્યાને ઝડપથી ઓળખી શકીએ અને તેનો ઉકેલ લાવી શકીએ (ઓછામાં ઓછા 6 અક્ષરો)</string>
   <string name="text_thanks_feedback">તમારા પ્રતિભાવ બદલ આભાર.</string>
   <string name="text_feedback_content">અમે ભવિષ્યના સંસ્કરણમાં આ સમસ્યાને ઠીક કરીશું. અસુવિધા બદલ માફ કરશો.</string>
-  <string name="no_available_vpn">કોઈ મફત VPN ઉપલબ્ધ નથી, કૃપા કરીને VPN સ્ક્રીન પર જાઓ અને સર્વર પસંદ કરો.</string>
   <string name="msg_device_does_not_support_this_feature">આ સુવિધા આ ઉપકરણ માટે સમર્થિત નથી!</string>
   <string name="search_app">શોધ એપ્લિકેશન..</string>
   <string name="exit_app">એપ્લિકેશનમાંથી બહાર નીકળીએ?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">કનેક્ટ થવા માટે ફક્ત એક ટચ.</string>
   <string name="guide_2">વિવિધ દેશોમાં બહુવિધ VPN સર્વર્સ</string>
   <string name="guide_3">તમારી ઓનલાઈન ગોપનીયતાને સુરક્ષિત કરો</string>
-  <string name="what_is_my_ip">મારો આઈપી શું છે?</string>
-  <string name="ip_address">IP સરનામું</string>
   <string name="network_provider">નેટવર્ક પ્રદાતા</string>
-  <string name="location">સ્થાન</string>
   <string name="pincode">પિન કોડ</string>
   <string name="timezone">સમય ઝોન</string>
   <string name="duration">સમયગાળો</string>

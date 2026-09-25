@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Saat rajattoman pääsyn kaikkiin ominaisuuksiin ilman mainoksia.</string>
   <string name="setting_trial">Ilmainen kokeilujakso 3 päivää</string>
   <string name="setting_upgrade">Päivitä</string>
-  <string name="ip_proxy">Palvelimet</string>
-  <string name="ip_quick_access">Pikakäyttö</string>
-  <string name="ip_all">KAIKKI</string>
-  <string name="ip_game">Peli</string>
-  <string name="ip_streaming">Suoratoisto</string>
   <string name="recommend">Suositella</string>
   <string name="setting_app_proxy">Sovellussuodatin</string>
   <string name="setting_app_proxy_desc">Valitse, mitkä sovellukset muodostavat yhteyden Internetiin VPN:n kautta</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Rate</string>
   <string name="setting_share">Jakaa</string>
   <string name="setting_feedback">Palaute</string>
-  <string name="select_connection_area">Valitse yhteysalue</string>
   <string name="first_fragment_label">Ensimmäinen fragmentti</string>
   <string name="second_fragment_label">Toinen fragmentti</string>
   <string name="start">ALOITA</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Sovelluksen VPN-suodatin on asetettu</string>
   <string name="setting_ads_limit">Mainosten raja on asetettu</string>
   <string name="setting_dns_set">DNS on asetettu</string>
-  <string name="setting_choose_proxy">VPN-palvelin on asetettu</string>
   <string name="reconnect_to_take_effect">Palaa aloitusnäyttöön ja nollaa VPN, jotta asetukset tulevat voimaan.</string>
   <string name="home_reconnect_to_take_effect">Nollaa VPN, jotta asetukset tulevat voimaan.</string>
-  <string name="premium_select_sku">Valitse yksi ajanjakso</string>
   <string name="premium_purchase_success">Osto onnistui</string>
   <string name="select_vpn">Valitse VPN</string>
   <string name="dns_only">Vain DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Anna meille lisätietoja, jotta voimme tunnistaa ja ratkaista ongelmasi nopeammin (vähintään 6 merkkiä)</string>
   <string name="text_thanks_feedback">Kiitos palautteestasi</string>
   <string name="text_feedback_content">Korjaamme tämän ongelman tulevassa versiossa. Pahoittelemme häiriötä.</string>
-  <string name="no_available_vpn">Ilmaisia ​​VPN-palveluita ei ole saatavilla. Siirry VPN-näyttöön ja valitse palvelin.</string>
   <string name="msg_device_does_not_support_this_feature">Tätä ominaisuutta ei tueta tässä laitteessa!</string>
   <string name="search_app">haku sovellus..</string>
   <string name="exit_app">Poistu sovelluksesta?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Yhdistäminen onnistuu yhdellä kosketuksella.</string>
   <string name="guide_2">Useita VPN-palvelimia eri maissa</string>
   <string name="guide_3">Suojaa yksityisyyttäsi verkossa</string>
-  <string name="what_is_my_ip">Mikä on IP-osoitteeni?</string>
-  <string name="ip_address">IP-osoite</string>
   <string name="network_provider">Verkkopalveluntarjoaja</string>
-  <string name="location">Sijainti</string>
   <string name="pincode">PIN-koodi</string>
   <string name="timezone">Aikavyöhyke</string>
   <string name="duration">Kesto</string>

@@ -15,14 +15,6 @@
     <string name="setting_vpn_fast_and_safe_desc">Get unlimited access to all features, ad-free.</string>
     <string name="setting_trial">Free trial 3 days</string>
     <string name="setting_upgrade">Upgrade</string>
-    <string name="ip_proxy">Servers</string>
-
-    <string name="ip_quick_access">Quick Access</string>
-    <string name="ip_all">All</string>
-
-    <string name="ip_game">Game</string>
-    <string name="ip_streaming">Streaming</string>
-
     <string name="recommend">Recommend</string>
 
     <string name="setting_app_proxy">App Filter</string>
@@ -34,7 +26,6 @@
     <string name="setting_rate">Rate</string>
     <string name="setting_share">Share</string>
     <string name="setting_feedback">Feedback</string>
-    <string name="select_connection_area">Select connection area</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -139,10 +130,8 @@
     <string name="setting_app_proxy_success">App VPN filter is set</string>
     <string name="setting_ads_limit">Ads limit is set</string>
     <string name="setting_dns_set">DNS is set</string>
-    <string name="setting_choose_proxy">VPN Server is set</string>
     <string name="reconnect_to_take_effect">Please return to the home screen and reset the VPN for the settings to take effect</string>
     <string name="home_reconnect_to_take_effect">Please reset the VPN for the settings to take effect</string>
-    <string name="premium_select_sku">Please select one period</string>
     <string name="premium_purchase_success">Purchase successfully</string>
 
     <string name="select_vpn">Select VPN</string>
@@ -206,8 +195,6 @@
     <string name="text_feedback_hint">Please give us more details so we can identify and resolve your issue faster (at least 6 characters)</string>
     <string name="text_thanks_feedback">Thanks for your feedback</string>
     <string name="text_feedback_content">We will fix this issue in a future version. Sorry for the inconvenience.</string>
-    <string name="no_available_vpn">There is no available free vpn, please go to VPN screen and choose a server.</string>
-
     <string name="msg_device_does_not_support_this_feature">This feature is not supported for this device!</string>
     <string name="search_app">search app..</string>
 
@@ -223,10 +210,7 @@
     <string name="guide_1">Just one touch to connect.</string>
     <string name="guide_2">Multiple VPN servers in different countries</string>
     <string name="guide_3">Protect your online privacy</string>
-    <string name="what_is_my_ip">What is my ip?</string>
-    <string name="ip_address">IP address</string>
     <string name="network_provider">Network provider</string>
-    <string name="location">Location</string>
     <string name="pincode">Pin code</string>
     <string name="timezone">Time zone</string>
     <string name="duration">Duration</string>
@@ -236,4 +220,29 @@
 
     <string name="no_internet">No internet connection</string>
     <string name="network_error">No internet connection</string>
+
+    <!-- Ad-block rule list -->
+    <string name="setting_ads_rules">Ad block rules</string>
+    <string name="setting_ads_rules_desc">Choose which domains are blocked</string>
+    <string name="ads_rules_description">Blocks connections to the domains below and all their subdomains.</string>
+    <string name="ads_rules_footnote">Some apps and sites use connection methods this cannot filter, so a few ads may still get through.</string>
+    <string name="ads_rules_banner_master_off">Ad blocking is off, so these rules are inactive. Tap to turn it on in Settings.</string>
+    <string name="ads_rules_banner_quarantine">Your custom rules were turned off because they stopped the filter. Tap to turn them back on.</string>
+    <string name="ads_rules_add_hint">Add a domain, e.g. ads.example.com</string>
+    <string name="ads_rules_add">Add</string>
+    <string name="ads_rules_search_hint">Search rules…</string>
+    <string name="ads_rules_reset">Reset to defaults</string>
+    <string name="ads_rules_reset_confirm">This removes all rules, including ones you added, and restores the default list.</string>
+    <string name="ads_rules_deleted">Rule deleted</string>
+    <string name="ads_rules_undo">Undo</string>
+    <string name="ads_rules_toggle_cd">Turn rule on or off</string>
+    <string name="ads_rules_delete_cd">Delete rule</string>
+    <string name="ads_rules_error_empty">Enter a domain.</string>
+    <string name="ads_rules_error_wildcard">Wildcards are not needed. A domain already covers all its subdomains.</string>
+    <string name="ads_rules_error_too_long">That domain is too long.</string>
+    <string name="ads_rules_error_format">Not a valid domain. Use a name like ads.example.com.</string>
+    <string name="ads_rules_error_duplicate">That domain is already in the list.</string>
+    <string name="setting_ads_off">Ad blocking is off</string>
+    <string name="ads_rules_applied">Applies right away, or the next time you connect.</string>
+    <string name="ads_rules_error_cap">The rule list is full. Delete some rules before adding more.</string>
 </resources>

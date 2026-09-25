@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">تمام خصوصیات تک لامحدود رسائی حاصل کریں، بغیر اشتہار۔</string>
   <string name="setting_trial">مفت ٹرائل 3 دن</string>
   <string name="setting_upgrade">اپ گریڈ کریں۔</string>
-  <string name="ip_proxy">سرورز</string>
-  <string name="ip_quick_access">فوری رسائی</string>
-  <string name="ip_all">تمام</string>
-  <string name="ip_game">کھیل</string>
-  <string name="ip_streaming">سلسلہ بندی</string>
   <string name="recommend">تجویز کریں۔</string>
   <string name="setting_app_proxy">ایپ فلٹر</string>
   <string name="setting_app_proxy_desc">منتخب کریں کہ کون سی ایپس VPN کے ذریعے انٹرنیٹ سے منسلک ہوں گی۔</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">شرح</string>
   <string name="setting_share">شیئر کریں۔</string>
   <string name="setting_feedback">تاثرات</string>
-  <string name="select_connection_area">کنکشن کا علاقہ منتخب کریں۔</string>
   <string name="first_fragment_label">پہلا ٹکڑا</string>
   <string name="second_fragment_label">دوسرا ٹکڑا</string>
   <string name="start">شروع کریں</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">ایپ VPN فلٹر سیٹ ہے۔</string>
   <string name="setting_ads_limit">اشتہارات کی حد مقرر ہے۔</string>
   <string name="setting_dns_set">DNS سیٹ ہے۔</string>
-  <string name="setting_choose_proxy">VPN سرور سیٹ ہے۔</string>
   <string name="reconnect_to_take_effect">براہ کرم ہوم اسکرین پر واپس جائیں اور ترتیبات کے مؤثر ہونے کے لیے VPN کو دوبارہ ترتیب دیں۔</string>
   <string name="home_reconnect_to_take_effect">براہ کرم VPN کو دوبارہ ترتیب دیں تاکہ ترتیبات مؤثر ہوں۔</string>
-  <string name="premium_select_sku">براہ کرم ایک مدت منتخب کریں۔</string>
   <string name="premium_purchase_success">کامیابی سے خریداری</string>
   <string name="select_vpn">VPN منتخب کریں۔</string>
   <string name="dns_only">صرف DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">براہ کرم ہمیں مزید تفصیلات دیں تاکہ ہم آپ کے مسئلے کی تیزی سے شناخت اور حل کر سکیں (کم از کم 6 حروف)</string>
   <string name="text_thanks_feedback">آپ کی رائے کا شکریہ</string>
   <string name="text_feedback_content">ہم مستقبل کے ورژن میں اس مسئلے کو حل کریں گے۔ زحمت کے لیے معذرت۔</string>
-  <string name="no_available_vpn">کوئی مفت وی پی این دستیاب نہیں ہے، براہ کرم وی پی این اسکرین پر جائیں اور سرور کا انتخاب کریں۔</string>
   <string name="msg_device_does_not_support_this_feature">یہ خصوصیت اس آلہ کے لیے تعاون یافتہ نہیں ہے!</string>
   <string name="search_app">تلاش ایپ ..</string>
   <string name="exit_app">ایپ سے باہر نکلیں؟</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">جڑنے کے لیے صرف ایک ٹچ۔</string>
   <string name="guide_2">مختلف ممالک میں متعدد VPN سرورز</string>
   <string name="guide_3">اپنی آن لائن رازداری کی حفاظت کریں۔</string>
-  <string name="what_is_my_ip">میرا آئی پی کیا ہے؟</string>
-  <string name="ip_address">آئی پی ایڈریس</string>
   <string name="network_provider">نیٹ ورک فراہم کنندہ</string>
-  <string name="location">مقام</string>
   <string name="pincode">پن کوڈ</string>
   <string name="timezone">ٹائم زون</string>
   <string name="duration">دورانیہ</string>

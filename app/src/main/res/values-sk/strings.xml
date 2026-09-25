@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Získajte neobmedzený prístup ku všetkým funkciám bez reklám.</string>
   <string name="setting_trial">Bezplatná skúšobná doba 3 dni</string>
   <string name="setting_upgrade">Inovovať</string>
-  <string name="ip_proxy">Servery</string>
-  <string name="ip_quick_access">Rýchly prístup</string>
-  <string name="ip_all">VŠETKY</string>
-  <string name="ip_game">Hra</string>
-  <string name="ip_streaming">Streamovanie</string>
   <string name="recommend">Odporúčam</string>
   <string name="setting_app_proxy">Filter aplikácií</string>
   <string name="setting_app_proxy_desc">Vyberte, ktoré aplikácie sa budú pripájať k internetu prostredníctvom VPN</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">ohodnotiť</string>
   <string name="setting_share">zdieľať</string>
   <string name="setting_feedback">Spätná väzba</string>
-  <string name="select_connection_area">Vyberte oblasť pripojenia</string>
   <string name="first_fragment_label">Prvý fragment</string>
   <string name="second_fragment_label">Druhý fragment</string>
   <string name="start">ŠTART</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Filter VPN aplikácií je nastavený</string>
   <string name="setting_ads_limit">Limit reklám je nastavený</string>
   <string name="setting_dns_set">DNS je nastavený</string>
-  <string name="setting_choose_proxy">VPN server je nastavený</string>
   <string name="reconnect_to_take_effect">Vráťte sa na domovskú obrazovku a resetujte VPN, aby sa nastavenia prejavili.</string>
   <string name="home_reconnect_to_take_effect">Pre aktiváciu nastavení resetujte VPN.</string>
-  <string name="premium_select_sku">Vyberte jedno obdobie</string>
   <string name="premium_purchase_success">Nákup bol úspešný</string>
   <string name="select_vpn">Vyberte VPN</string>
   <string name="dns_only">Iba DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Poskytnite nám viac podrobností, aby sme mohli identifikovať a vyriešiť váš problém rýchlejšie (aspoň 6 znakov)</string>
   <string name="text_thanks_feedback">ďakujeme za spätnú väzbu</string>
   <string name="text_feedback_content">Tento problém vyriešime v budúcej verzii. Ospravedlňujeme sa za nepríjemnosti.</string>
-  <string name="no_available_vpn">Nie je k dispozícii žiadna bezplatná VPN, prejdite na obrazovku VPN a vyberte si server.</string>
   <string name="msg_device_does_not_support_this_feature">Táto funkcia nie je na tomto zariadení podporovaná!</string>
   <string name="search_app">vyhľadávacia aplikácia..</string>
   <string name="exit_app">Ukončiť aplikáciu?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Stačí jeden dotyk na pripojenie.</string>
   <string name="guide_2">Viacero VPN serverov v rôznych krajinách</string>
   <string name="guide_3">Chráňte svoje súkromie online</string>
-  <string name="what_is_my_ip">Aká je moja IP adresa?</string>
-  <string name="ip_address">IP adresa</string>
   <string name="network_provider">Poskytovateľ siete</string>
-  <string name="location">Poloha</string>
   <string name="pincode">PIN kód</string>
   <string name="timezone">Časové pásmo</string>
   <string name="duration">Trvanie</string>

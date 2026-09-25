@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Reklamsız bütün funksiyalara məhdudiyyətsiz giriş əldə edin.</string>
   <string name="setting_trial">Pulsuz sınaq 3 gün</string>
   <string name="setting_upgrade">Təkmilləşdirin</string>
-  <string name="ip_proxy">Serverlər</string>
-  <string name="ip_quick_access">Sürətli giriş</string>
-  <string name="ip_all">HAMISI</string>
-  <string name="ip_game">Oyun</string>
-  <string name="ip_streaming">Axın</string>
   <string name="recommend">tövsiyə edin</string>
   <string name="setting_app_proxy">Tətbiq Filtri</string>
   <string name="setting_app_proxy_desc">Hansı proqramların VPN vasitəsilə İnternetə qoşulacağını seçin</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Qiymətləndirmə</string>
   <string name="setting_share">Paylaşın</string>
   <string name="setting_feedback">Əlaqə</string>
-  <string name="select_connection_area">Bağlantı sahəsini seçin</string>
   <string name="first_fragment_label">Birinci fraqment</string>
   <string name="second_fragment_label">İkinci fraqment</string>
   <string name="start">START</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Tətbiq VPN filtri quraşdırılıb</string>
   <string name="setting_ads_limit">Reklam limiti qoyulub</string>
   <string name="setting_dns_set">DNS qurulub</string>
-  <string name="setting_choose_proxy">VPN Server quraşdırılıb</string>
   <string name="reconnect_to_take_effect">Parametrlərin qüvvəyə minməsi üçün əsas ekrana qayıdın və VPN-i sıfırlayın</string>
   <string name="home_reconnect_to_take_effect">Parametrlərin qüvvəyə minməsi üçün VPN-i sıfırlayın</string>
-  <string name="premium_select_sku">Zəhmət olmasa bir dövr seçin</string>
   <string name="premium_purchase_success">Uğurla satın alın</string>
   <string name="select_vpn">VPN seçin</string>
   <string name="dns_only">Yalnız DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Probleminizi daha tez müəyyən edib həll etmək üçün bizə ətraflı məlumat verin (ən azı 6 simvol)</string>
   <string name="text_thanks_feedback">Rəyiniz üçün təşəkkür edirik</string>
   <string name="text_feedback_content">Gələcək versiyada bu problemi həll edəcəyik. Narahatçılığa görə üzr istəyirik.</string>
-  <string name="no_available_vpn">Pulsuz VPN yoxdur, zəhmət olmasa VPN ekranına keçin və server seçin.</string>
   <string name="msg_device_does_not_support_this_feature">Bu funksiya bu cihaz üçün dəstəklənmir!</string>
   <string name="search_app">axtarış proqramı. .</string>
   <string name="exit_app">Tətbiqdən çıxın?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Qoşulmaq üçün sadəcə bir toxunuş.</string>
   <string name="guide_2">Müxtəlif ölkələrdə çoxlu VPN serverləri</string>
   <string name="guide_3">Onlayn məxfiliyinizi qoruyun</string>
-  <string name="what_is_my_ip">Mənim ipim nədir?</string>
-  <string name="ip_address">IP ünvanı</string>
   <string name="network_provider">Şəbəkə provayderi</string>
-  <string name="location">Məkan</string>
   <string name="pincode">PIN kodu</string>
   <string name="timezone">Saat qurşağı</string>
   <string name="duration">Müddət</string>

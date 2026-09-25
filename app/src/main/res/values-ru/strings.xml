@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Получите неограниченный доступ ко всем функциям без рекламы.</string>
   <string name="setting_trial">Бесплатная пробная версия 3 дня</string>
   <string name="setting_upgrade">Обновление</string>
-  <string name="ip_proxy">Серверы</string>
-  <string name="ip_quick_access">Быстрый доступ</string>
-  <string name="ip_all">ВСЕ</string>
-  <string name="ip_game">Игра</string>
-  <string name="ip_streaming">Потоковое вещание</string>
   <string name="recommend">Рекомендовать</string>
   <string name="setting_app_proxy">Фильтр приложений</string>
   <string name="setting_app_proxy_desc">Выберите, какие приложения будут подключаться к Интернету через VPN</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Ставка</string>
   <string name="setting_share">Делиться</string>
   <string name="setting_feedback">Обратная связь</string>
-  <string name="select_connection_area">Выберите область подключения</string>
   <string name="first_fragment_label">Первый Фрагмент</string>
   <string name="second_fragment_label">Второй Фрагмент</string>
   <string name="start">НАЧИНАТЬ</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Фильтр VPN приложения установлен</string>
   <string name="setting_ads_limit">Установлен лимит рекламы</string>
   <string name="setting_dns_set">DNS настроен</string>
-  <string name="setting_choose_proxy">VPN-сервер настроен</string>
   <string name="reconnect_to_take_effect">Вернитесь на главный экран и сбросьте настройки VPN, чтобы настройки вступили в силу.</string>
   <string name="home_reconnect_to_take_effect">Пожалуйста, сбросьте настройки VPN, чтобы они вступили в силу.</string>
-  <string name="premium_select_sku">Пожалуйста, выберите один период</string>
   <string name="premium_purchase_success">Покупка прошла успешно</string>
   <string name="select_vpn">Выбрать VPN</string>
   <string name="dns_only">только DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Пожалуйста, предоставьте нам более подробную информацию, чтобы мы могли быстрее определить и решить вашу проблему (не менее 6 символов)</string>
   <string name="text_thanks_feedback">Спасибо за ваш отзыв.</string>
   <string name="text_feedback_content">Мы исправим эту проблему в будущей версии. Извините за неудобства.</string>
-  <string name="no_available_vpn">Доступного бесплатного VPN нет, перейдите на экран VPN и выберите сервер.</string>
   <string name="msg_device_does_not_support_this_feature">Эта функция не поддерживается для этого устройства!</string>
   <string name="search_app">приложение поиска..</string>
   <string name="exit_app">Выйти из приложения?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Для подключения достаточно одного касания.</string>
   <string name="guide_2">Несколько VPN-серверов в разных странах</string>
   <string name="guide_3">Защитите свою конфиденциальность в Интернете</string>
-  <string name="what_is_my_ip">Какой у меня IP?</string>
-  <string name="ip_address">IP-адрес</string>
   <string name="network_provider">Сетевой провайдер</string>
-  <string name="location">Расположение</string>
   <string name="pincode">ПИН-код</string>
   <string name="timezone">Часовой пояс</string>
   <string name="duration">Продолжительность</string>

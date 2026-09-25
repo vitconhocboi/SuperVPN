@@ -2,29 +2,28 @@ package com.tici.vpn.proxy.master.network
 
 import android.annotation.SuppressLint
 import android.os.AsyncTask
-import okhttp3.Credentials
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.RequestBody.Companion.toRequestBody
-import okhttp3.Response
-import okhttp3.Route
 import timber.log.Timber
-import java.io.Serializable
-import java.net.Authenticator
-import java.net.InetSocketAddress
-import java.net.PasswordAuthentication
-import java.net.Proxy
 import java.util.concurrent.TimeUnit
 
 
-class ProxySpeedTest {
+/**
+ * Measures real device throughput against Cloudflare over whatever route is active.
+ *
+ * Was `ProxySpeedTest`, which measured the remote proxy hop. With no remote server the
+ * connection is dialled directly, so this now reports the device's own throughput
+ * through the tun interface.
+ */
+class SpeedTest {
 
     companion object {
 
-        val Instance: ProxySpeedTest = ProxySpeedTest()
+        val Instance: SpeedTest = SpeedTest()
 
-        private const val TAG = "Socks5SpeedTest"
+        private const val TAG = "SpeedTest"
         private const val DOWNLOAD_URL =
             "https://speed.cloudflare.com/__down?bytes=1000000" // 1MB test file
         private const val UPLOAD_URL =
@@ -33,38 +32,24 @@ class ProxySpeedTest {
         const val FAILED = "Failed"
     }
 
-    private var testProxyTask: TestProxyTask? = null
+    private var speedTestTask: SpeedTestTask? = null
 
-    // SOCKS5 proxy configuration with authentication
-    data class ProxyConfig(
-        val host: String,
-        val port: Int,
-        val username: String,
-        val password: String,
-        val type: String
-    ) : Serializable
-
-    // Test SOCKS5 proxy download and upload speeds
-    fun startSpeedTest(
-        proxyConfig: ProxyConfig?,
-        callback: (download: String, upload: String) -> Unit
-    ) {
-        testProxyTask = TestProxyTask(proxyConfig, callback)
-        testProxyTask?.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR)
+    fun startSpeedTest(callback: (download: String, upload: String) -> Unit) {
+        speedTestTask = SpeedTestTask(callback)
+        speedTestTask?.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR)
     }
 
     fun stopProxyTest() {
-        testProxyTask?.cancel(true)
+        speedTestTask?.cancel(true)
     }
 
-    private class TestProxyTask(
-        private val proxyConfig: ProxyConfig?,
+    private class SpeedTestTask(
         private val callback: (download: String, upload: String) -> Unit
     ) : AsyncTask<Void, Void, Pair<String, String>>() {
 
         @Deprecated("Deprecated in Java")
         override fun onPreExecute() {
-            Timber.i("$TAG Starting SOCKS5 proxy test for $proxyConfig")
+            Timber.i("$TAG Starting speed test")
         }
 
         @Deprecated("Deprecated in Java")
@@ -74,7 +59,7 @@ class ProxySpeedTest {
                 if (isCancelled()) {
                     return Pair("", "")
                 }
-                val client = buildOkHttpClient(proxyConfig)
+                val client = buildOkHttpClient()
 
                 // Measure download speed
                 val downloadSpeed = try {
@@ -108,45 +93,12 @@ class ProxySpeedTest {
             callback("", "")
         }
 
-        private fun buildOkHttpClient(proxyConfig: ProxyConfig?): OkHttpClient {
-            val builder = OkHttpClient.Builder()
+        private fun buildOkHttpClient(): OkHttpClient {
+            return OkHttpClient.Builder()
                 .connectTimeout(15, TimeUnit.SECONDS)
                 .readTimeout(15, TimeUnit.SECONDS)
                 .writeTimeout(15, TimeUnit.SECONDS)
-            if (proxyConfig != null) {
-                val proxy = Proxy(
-                    when (proxyConfig.type.uppercase()) {
-                        "SOCKS5" -> Proxy.Type.SOCKS
-                        "HTTP" -> Proxy.Type.HTTP
-                        else -> throw IllegalArgumentException("Unsupported proxy type: ${proxyConfig.type}")
-                    },
-                    InetSocketAddress(proxyConfig.host, proxyConfig.port)
-                )
-                builder.proxy(proxy)
-            }
-            if (proxyConfig?.type?.uppercase() == "HTTP") {
-                builder.proxyAuthenticator(object : okhttp3.Authenticator {
-                    override fun authenticate(route: Route?, response: Response): Request? {
-                        val credential = Credentials.basic(
-                            proxyConfig.username,
-                            proxyConfig.password
-                        )
-                        return response.request.newBuilder()
-                            .header("Proxy-Authorization", credential)
-                            .build()
-                    }
-                })
-            } else if (proxyConfig?.type?.uppercase() == "SOCKS5") {
-                Authenticator.setDefault(object : Authenticator() {
-                    override fun getPasswordAuthentication(): PasswordAuthentication {
-                        return PasswordAuthentication(
-                            proxyConfig.username,
-                            proxyConfig.password.toCharArray()
-                        )
-                    }
-                })
-            }
-            return builder.build()
+                .build()
         }
 
         private fun measureDownloadSpeed(client: OkHttpClient): Double {

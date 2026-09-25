@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Obțineți acces nelimitat la toate funcțiile, fără reclame.</string>
   <string name="setting_trial">Perioadă de încercare gratuită de 3 zile</string>
   <string name="setting_upgrade">Upgrade</string>
-  <string name="ip_proxy">Servere</string>
-  <string name="ip_quick_access">Acces rapid</string>
-  <string name="ip_all">TOATE</string>
-  <string name="ip_game">Joc</string>
-  <string name="ip_streaming">Streaming</string>
   <string name="recommend">Recomanda</string>
   <string name="setting_app_proxy">Filtru de aplicații</string>
   <string name="setting_app_proxy_desc">Alegeți ce aplicații se vor conecta la internet prin VPN</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Rata</string>
   <string name="setting_share">Distribuie</string>
   <string name="setting_feedback">Feedback</string>
-  <string name="select_connection_area">Selectați zona de conectare</string>
   <string name="first_fragment_label">Primul fragment</string>
   <string name="second_fragment_label">Al doilea fragment</string>
   <string name="start">ÎNCEPUT</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Filtrul VPN pentru aplicații este setat</string>
   <string name="setting_ads_limit">Limita de anunțuri este setată</string>
   <string name="setting_dns_set">DNS-ul este configurat</string>
-  <string name="setting_choose_proxy">Serverul VPN este configurat</string>
   <string name="reconnect_to_take_effect">Reveniți la ecranul principal și resetați VPN-ul pentru ca setările să aibă efect.</string>
   <string name="home_reconnect_to_take_effect">Resetați VPN-ul pentru ca setările să aibă efect.</string>
-  <string name="premium_select_sku">Vă rugăm să selectați o perioadă</string>
   <string name="premium_purchase_success">Achiziția a fost efectuată cu succes</string>
   <string name="select_vpn">Selectați VPN-ul</string>
   <string name="dns_only">Numai DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Vă rugăm să ne oferiți mai multe detalii pentru a vă putea identifica și rezolva problema mai rapid (cel puțin 6 caractere)</string>
   <string name="text_thanks_feedback">Vă mulțumim pentru feedback</string>
   <string name="text_feedback_content">Vom rezolva această problemă într-o versiune viitoare. Îmi pare rău pentru neplăcerile create.</string>
-  <string name="no_available_vpn">Nu există un VPN gratuit disponibil, vă rugăm să accesați ecranul VPN și să alegeți un server.</string>
   <string name="msg_device_does_not_support_this_feature">Această funcție nu este compatibilă cu acest dispozitiv!</string>
   <string name="search_app">aplicație de căutare..</string>
   <string name="exit_app">Ieși din aplicație?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Doar o atingere pentru conectare.</string>
   <string name="guide_2">Mai multe servere VPN în diferite țări</string>
   <string name="guide_3">Protejați-vă confidențialitatea online</string>
-  <string name="what_is_my_ip">Care este IP-ul meu?</string>
-  <string name="ip_address">Adresă IP</string>
   <string name="network_provider">Furnizor de rețea</string>
-  <string name="location">Locaţie</string>
   <string name="pincode">codul PIN</string>
   <string name="timezone">Fus orar</string>
   <string name="duration">Durată</string>

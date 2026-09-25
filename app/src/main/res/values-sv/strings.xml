@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Få obegränsad tillgång till alla funktioner, utan reklam.</string>
   <string name="setting_trial">Gratis provperiod i 3 dagar</string>
   <string name="setting_upgrade">Uppgradera</string>
-  <string name="ip_proxy">Servrar</string>
-  <string name="ip_quick_access">Snabbåtkomst</string>
-  <string name="ip_all">ALLA</string>
-  <string name="ip_game">Spel</string>
-  <string name="ip_streaming">Streaming</string>
   <string name="recommend">Rekommendera</string>
   <string name="setting_app_proxy">Appfilter</string>
   <string name="setting_app_proxy_desc">Välj vilka appar som ska ansluta till internet via VPN</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Hastighet</string>
   <string name="setting_share">Dela</string>
   <string name="setting_feedback">Feed-back</string>
-  <string name="select_connection_area">Välj anslutningsområde</string>
   <string name="first_fragment_label">Första fragmentet</string>
   <string name="second_fragment_label">Andra fragmentet</string>
   <string name="start">START</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Appens VPN-filter är inställt</string>
   <string name="setting_ads_limit">Annonsgränsen är inställd</string>
   <string name="setting_dns_set">DNS är inställt</string>
-  <string name="setting_choose_proxy">VPN-servern är inställd</string>
   <string name="reconnect_to_take_effect">Gå tillbaka till startskärmen och återställ VPN-tjänsten för att inställningarna ska träda i kraft.</string>
   <string name="home_reconnect_to_take_effect">Återställ VPN-tjänsten för att inställningarna ska träda i kraft.</string>
-  <string name="premium_select_sku">Vänligen välj en period</string>
   <string name="premium_purchase_success">Köpet lyckades</string>
   <string name="select_vpn">Välj VPN</string>
   <string name="dns_only">Endast DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Ge oss mer information så att vi kan identifiera och lösa ditt problem snabbare (minst 6 tecken)</string>
   <string name="text_thanks_feedback">Tack för din feedback</string>
   <string name="text_feedback_content">Vi kommer att åtgärda det här problemet i en framtida version. Ursäkta besväret.</string>
-  <string name="no_available_vpn">Det finns ingen gratis VPN tillgänglig, gå till VPN-skärmen och välj en server.</string>
   <string name="msg_device_does_not_support_this_feature">Den här funktionen stöds inte för den här enheten!</string>
   <string name="search_app">sök-appen..</string>
   <string name="exit_app">Avsluta appen?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Bara en knapptryckning för att ansluta.</string>
   <string name="guide_2">Flera VPN-servrar i olika länder</string>
   <string name="guide_3">Skydda din integritet online</string>
-  <string name="what_is_my_ip">Vad är min IP-adress?</string>
-  <string name="ip_address">IP-adress</string>
   <string name="network_provider">Nätleverantör</string>
-  <string name="location">Plats</string>
   <string name="pincode">PIN-kod</string>
   <string name="timezone">Tidszon</string>
   <string name="duration">Varaktighet</string>

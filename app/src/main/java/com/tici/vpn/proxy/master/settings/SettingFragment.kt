@@ -31,10 +31,14 @@ import com.tici.vpn.proxy.master.required.shortcut.AppScreenType
 import com.tici.vpn.proxy.master.utils.Navigator
 import com.tici.vpn.proxy.master.utils.shareApp
 import dagger.hilt.android.AndroidEntryPoint
+import com.tici.vpn.proxy.master.settings.adsblock.AdsRuleReapplier
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class SettingFragment() : BaseFragment<FragmentSettingBinding>() {
+    @Inject
+    lateinit var adsRuleReapplier: AdsRuleReapplier
+
     private val inAppPurchasedViewModel: BillingViewModel by viewModels<InAppBillingViewModel>()
 
     @Inject
@@ -66,6 +70,7 @@ class SettingFragment() : BaseFragment<FragmentSettingBinding>() {
             btnShareAction.scaleX = if (isRTL) -1f else 1f
             btnFeedbackAction.scaleX = if (isRTL) -1f else 1f
             btnAdsAction.scaleX = if (isRTL) -1f else 1f
+            btnAdsRulesAction.scaleX = if (isRTL) -1f else 1f
 
             rowAppProxy.setOnClickListener {
                 fetchInstalledApps()
@@ -82,10 +87,19 @@ class SettingFragment() : BaseFragment<FragmentSettingBinding>() {
                 inAppPurchasedViewModel.restorePurchased(false, true)
             }
 
+            // Reflect the stored master switch; previously the row always rendered as off.
+            rowAdsBlock.isSelected = BaseAppConfig.adsBlock
+            rowAdsBlockRules.setOnClickListener {
+                (activity as? MainActivity)?.showAdsBlock()
+            }
+
             rowAdsBlock.setOnClickListener {
                 rowAdsBlock.isSelected = !rowAdsBlock.isSelected
                 BaseAppConfig.adsBlock = rowAdsBlock.isSelected
-                SettingSuccessDialog(R.string.setting_ads_limit).show(
+                // Applies to a running filter immediately; no reconnect needed.
+                adsRuleReapplier.notifyRulesChanged()
+                val title = if (rowAdsBlock.isSelected) R.string.setting_ads_limit else R.string.setting_ads_off
+                SettingSuccessDialog(title, R.string.ads_rules_applied).show(
                     childFragmentManager,
                     "SettingSuccessDialog"
                 )

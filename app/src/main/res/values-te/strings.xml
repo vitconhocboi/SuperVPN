@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">అన్ని ఫీచర్లకు అపరిమిత యాక్సెస్‌ను, ప్రకటన రహితంగా పొందండి.</string>
   <string name="setting_trial">ఉచిత ట్రయల్ 3 రోజులు</string>
   <string name="setting_upgrade">అప్‌గ్రేడ్ చేయండి</string>
-  <string name="ip_proxy">సర్వర్లు</string>
-  <string name="ip_quick_access">త్వరిత యాక్సెస్</string>
-  <string name="ip_all">అన్ని</string>
-  <string name="ip_game">ఆట</string>
-  <string name="ip_streaming">స్ట్రీమింగ్</string>
   <string name="recommend">సిఫార్సు చేయండి</string>
   <string name="setting_app_proxy">యాప్ ఫిల్టర్</string>
   <string name="setting_app_proxy_desc">VPN ద్వారా ఇంటర్నెట్‌కు కనెక్ట్ అయ్యే యాప్‌లను ఎంచుకోండి</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">రేటు</string>
   <string name="setting_share">షేర్ చేయండి</string>
   <string name="setting_feedback">అభిప్రాయం</string>
-  <string name="select_connection_area">కనెక్షన్ ప్రాంతాన్ని ఎంచుకోండి</string>
   <string name="first_fragment_label">మొదటి భాగం</string>
   <string name="second_fragment_label">రెండవ భాగం</string>
   <string name="start">START</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">యాప్ VPN ఫిల్టర్ సెట్ చేయబడింది</string>
   <string name="setting_ads_limit">ప్రకటనల పరిమితి సెట్ చేయబడింది</string>
   <string name="setting_dns_set">DNS సెట్ చేయబడింది</string>
-  <string name="setting_choose_proxy">VPN సర్వర్ సెట్ చేయబడింది</string>
   <string name="reconnect_to_take_effect">సెట్టింగ్‌లు అమలులోకి రావడానికి దయచేసి హోమ్ స్క్రీన్‌కు తిరిగి వెళ్లి VPNని రీసెట్ చేయండి.</string>
   <string name="home_reconnect_to_take_effect">సెట్టింగ్‌లు అమలులోకి రావడానికి దయచేసి VPNని రీసెట్ చేయండి.</string>
-  <string name="premium_select_sku">దయచేసి ఒక వ్యవధిని ఎంచుకోండి.</string>
   <string name="premium_purchase_success">విజయవంతంగా కొనుగోలు చేయబడింది</string>
   <string name="select_vpn">VPN ని ఎంచుకోండి</string>
   <string name="dns_only">DNS మాత్రమే</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">దయచేసి మాకు మరిన్ని వివరాలు ఇవ్వండి, తద్వారా మేము మీ సమస్యను వేగంగా గుర్తించి పరిష్కరించగలము (కనీసం 6 అక్షరాలు)</string>
   <string name="text_thanks_feedback">మీ అభిప్రాయానికి ధన్యవాదాలు.</string>
   <string name="text_feedback_content">మేము ఈ సమస్యను భవిష్యత్తు వెర్షన్‌లో పరిష్కరిస్తాము. అసౌకర్యానికి క్షమించండి.</string>
-  <string name="no_available_vpn">ఉచిత VPN అందుబాటులో లేదు, దయచేసి VPN స్క్రీన్‌కి వెళ్లి సర్వర్‌ను ఎంచుకోండి.</string>
   <string name="msg_device_does_not_support_this_feature">ఈ పరికరంలో ఈ ఫీచర్‌కు మద్దతు లేదు!</string>
   <string name="search_app">శోధన యాప్..</string>
   <string name="exit_app">యాప్ నుండి నిష్క్రమించాలా?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">కనెక్ట్ అవ్వడానికి ఒక్క టచ్ చాలు.</string>
   <string name="guide_2">వివిధ దేశాలలో బహుళ VPN సర్వర్లు</string>
   <string name="guide_3">మీ ఆన్‌లైన్ గోప్యతను రక్షించండి</string>
-  <string name="what_is_my_ip">నా ఐపీ ఏమిటి?</string>
-  <string name="ip_address">IP చిరునామా</string>
   <string name="network_provider">నెట్‌వర్క్ ప్రొవైడర్</string>
-  <string name="location">స్థానం</string>
   <string name="pincode">పిన్ కోడ్</string>
   <string name="timezone">సమయ మండలం</string>
   <string name="duration">వ్యవధి</string>

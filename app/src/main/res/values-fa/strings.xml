@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">دسترسی نامحدود به تمام ویژگی‌ها، بدون تبلیغات.</string>
   <string name="setting_trial">۳ روز آزمایشی رایگان</string>
   <string name="setting_upgrade">ارتقا دهید</string>
-  <string name="ip_proxy">سرورها</string>
-  <string name="ip_quick_access">دسترسی سریع</string>
-  <string name="ip_all">همه</string>
-  <string name="ip_game">بازی</string>
-  <string name="ip_streaming">پخش جریانی</string>
   <string name="recommend">توصیه</string>
   <string name="setting_app_proxy">فیلتر برنامه</string>
   <string name="setting_app_proxy_desc">انتخاب کنید کدام برنامه‌ها از طریق VPN به اینترنت متصل شوند</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">امتیاز دهید</string>
   <string name="setting_share">به اشتراک بگذارید</string>
   <string name="setting_feedback">بازخورد</string>
-  <string name="select_connection_area">انتخاب ناحیه اتصال</string>
   <string name="first_fragment_label">قطعه اول</string>
   <string name="second_fragment_label">قطعه دوم</string>
   <string name="start">شروع کنید</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">فیلتر VPN برنامه تنظیم شده است</string>
   <string name="setting_ads_limit">محدودیت تبلیغات تعیین شده است</string>
   <string name="setting_dns_set">دی‌ان‌اس تنظیم شده است</string>
-  <string name="setting_choose_proxy">سرور VPN تنظیم شده است</string>
   <string name="reconnect_to_take_effect">لطفاً به صفحه اصلی برگردید و VPN را مجدداً تنظیم کنید تا تنظیمات اعمال شوند.</string>
   <string name="home_reconnect_to_take_effect">لطفاً VPN را مجدداً تنظیم کنید تا تنظیمات اعمال شوند.</string>
-  <string name="premium_select_sku">لطفا یک دوره را انتخاب کنید</string>
   <string name="premium_purchase_success">خرید با موفقیت انجام شد</string>
   <string name="select_vpn">انتخاب وی‌پی‌ان</string>
   <string name="dns_only">فقط دی‌ان‌اس</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">لطفاً جزئیات بیشتری به ما بدهید تا بتوانیم مشکل شما را سریعتر شناسایی و حل کنیم (حداقل 6 کاراکتر)</string>
   <string name="text_thanks_feedback">با تشکر از بازخورد شما</string>
   <string name="text_feedback_content">در نسخه بعدی این مشکل را برطرف خواهیم کرد. با عرض پوزش برای ناراحتی.</string>
-  <string name="no_available_vpn">هیچ VPN رایگانی موجود نیست، لطفاً به صفحه VPN بروید و یک سرور انتخاب کنید.</string>
   <string name="msg_device_does_not_support_this_feature">این قابلیت برای این دستگاه پشتیبانی نمی‌شود!</string>
   <string name="search_app">برنامه جستجو..</string>
   <string name="exit_app">از برنامه خارج شوید؟</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">فقط یک لمس برای اتصال.</string>
   <string name="guide_2">سرورهای VPN متعدد در کشورهای مختلف</string>
   <string name="guide_3">از حریم خصوصی آنلاین خود محافظت کنید</string>
-  <string name="what_is_my_ip">آی پی من چیست؟</string>
-  <string name="ip_address">آدرس آی‌پی</string>
   <string name="network_provider">ارائه دهنده شبکه</string>
-  <string name="location">مکان</string>
   <string name="pincode">کد پین</string>
   <string name="timezone">منطقه زمانی</string>
   <string name="duration">مدت زمان</string>

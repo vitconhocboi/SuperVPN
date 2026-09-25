@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Obtén accés il·limitat a totes les funcions, sense anuncis.</string>
   <string name="setting_trial">Prova gratuïta de 3 dies</string>
   <string name="setting_upgrade">Actualitza</string>
-  <string name="ip_proxy">Servidors</string>
-  <string name="ip_quick_access">Accés ràpid</string>
-  <string name="ip_all">TOTS</string>
-  <string name="ip_game">Joc</string>
-  <string name="ip_streaming">Transmissió en temps real</string>
   <string name="recommend">Recomana</string>
   <string name="setting_app_proxy">Filtre d\'aplicacions</string>
   <string name="setting_app_proxy_desc">Trieu quines aplicacions es connectaran a Internet mitjançant una VPN</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Taxa</string>
   <string name="setting_share">Comparteix</string>
   <string name="setting_feedback">Feedback</string>
-  <string name="select_connection_area">Selecciona l\'àrea de connexió</string>
   <string name="first_fragment_label">Primer fragment</string>
   <string name="second_fragment_label">Segon fragment</string>
   <string name="start">COMENÇA</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">El filtre de VPN d\'aplicacions està configurat</string>
   <string name="setting_ads_limit">S\'ha establert un límit d\'anuncis</string>
   <string name="setting_dns_set">El DNS està configurat</string>
-  <string name="setting_choose_proxy">El servidor VPN està configurat</string>
   <string name="reconnect_to_take_effect">Si us plau, torneu a la pantalla d\'inici i restableixeu la VPN perquè la configuració tingui efecte.</string>
   <string name="home_reconnect_to_take_effect">Restableix la VPN perquè la configuració tingui efecte.</string>
-  <string name="premium_select_sku">Si us plau, seleccioneu un període</string>
   <string name="premium_purchase_success">Compra realitzada correctament</string>
   <string name="select_vpn">Selecciona una VPN</string>
   <string name="dns_only">Només DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Doneu-nos més detalls perquè puguem identificar i resoldre el vostre problema més ràpidament (almenys 6 caràcters)</string>
   <string name="text_thanks_feedback">Gràcies pels teus comentaris</string>
   <string name="text_feedback_content">Arreglarem aquest problema en una versió futura. Disculpeu les molèsties.</string>
-  <string name="no_available_vpn">No hi ha cap VPN gratuïta disponible, aneu a la pantalla VPN i trieu un servidor.</string>
   <string name="msg_device_does_not_support_this_feature">Aquesta funció no és compatible amb aquest dispositiu!</string>
   <string name="search_app">aplicació de cerca..</string>
   <string name="exit_app">Vols sortir de l\'aplicació?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Només un toc per connectar.</string>
   <string name="guide_2">Múltiples servidors VPN en diferents països</string>
   <string name="guide_3">Protegiu la vostra privadesa en línia</string>
-  <string name="what_is_my_ip">Quina és la meva IP?</string>
-  <string name="ip_address">Adreça IP</string>
   <string name="network_provider">proveïdor de xarxa</string>
-  <string name="location">Ubicació</string>
   <string name="pincode">codi PIN</string>
   <string name="timezone">Zona horària</string>
   <string name="duration">Durada</string>

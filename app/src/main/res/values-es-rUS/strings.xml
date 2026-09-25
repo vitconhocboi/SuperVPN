@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Obtenga acceso ilimitado a todas las funciones, sin publicidad.</string>
   <string name="setting_trial">Prueba gratuita de 3 días</string>
   <string name="setting_upgrade">Mejora</string>
-  <string name="ip_proxy">Servidores</string>
-  <string name="ip_quick_access">Acceso rápido</string>
-  <string name="ip_all">TODO</string>
-  <string name="ip_game">Juego</string>
-  <string name="ip_streaming">Transmisión</string>
   <string name="recommend">Recomendar</string>
   <string name="setting_app_proxy">Filtro de aplicaciones</string>
   <string name="setting_app_proxy_desc">Elija qué aplicaciones se conectarán a Internet a través de VPN</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Tasa</string>
   <string name="setting_share">Compartir</string>
   <string name="setting_feedback">Comentario</string>
-  <string name="select_connection_area">Seleccionar área de conexión</string>
   <string name="first_fragment_label">Primer fragmento</string>
   <string name="second_fragment_label">Segundo Fragmento</string>
   <string name="start">COMENZAR</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">El filtro VPN de la aplicación está configurado</string>
   <string name="setting_ads_limit">Se ha establecido un límite de anuncios</string>
   <string name="setting_dns_set">El DNS está configurado</string>
-  <string name="setting_choose_proxy">El servidor VPN está configurado</string>
   <string name="reconnect_to_take_effect">Regrese a la pantalla de inicio y restablezca la VPN para que la configuración surta efecto.</string>
   <string name="home_reconnect_to_take_effect">Restablezca la VPN para que la configuración surta efecto.</string>
-  <string name="premium_select_sku">Por favor seleccione un periodo</string>
   <string name="premium_purchase_success">Compra realizada con éxito</string>
   <string name="select_vpn">Seleccionar VPN</string>
   <string name="dns_only">Sólo DNS</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Proporciónanos más detalles para que podamos identificar y resolver tu problema más rápidamente (al menos 6 caracteres)</string>
   <string name="text_thanks_feedback">Gracias por tus comentarios.</string>
   <string name="text_feedback_content">Solucionaremos este problema en una próxima versión. Disculpen las molestias.</string>
-  <string name="no_available_vpn">No hay ninguna VPN gratuita disponible, vaya a la pantalla VPN y elija un servidor.</string>
   <string name="msg_device_does_not_support_this_feature">¡Esta función no es compatible con este dispositivo!</string>
   <string name="search_app">aplicación de búsqueda..</string>
   <string name="exit_app">¿Salir de la aplicación?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Sólo un toque para conectarse.</string>
   <string name="guide_2">Múltiples servidores VPN en diferentes países</string>
   <string name="guide_3">Proteja su privacidad en línea</string>
-  <string name="what_is_my_ip">¿Cual es mi ip?</string>
-  <string name="ip_address">Dirección IP</string>
   <string name="network_provider">Proveedor de red</string>
-  <string name="location">Ubicación</string>
   <string name="pincode">Código PIN</string>
   <string name="timezone">Huso horario</string>
   <string name="duration">Duración</string>

@@ -13,11 +13,6 @@
   <string name="setting_vpn_fast_and_safe_desc">Mynnwch fynediad diderfyn i bob nodwedd, heb hysbysebion.</string>
   <string name="setting_trial">Treial am ddim 3 diwrnod</string>
   <string name="setting_upgrade">Uwchraddio</string>
-  <string name="ip_proxy">Gweinyddion</string>
-  <string name="ip_quick_access">Mynediad Cyflym</string>
-  <string name="ip_all">PAWB</string>
-  <string name="ip_game">Gêm</string>
-  <string name="ip_streaming">Ffrydio</string>
   <string name="recommend">Argymhellwch</string>
   <string name="setting_app_proxy">Hidlo Apiau</string>
   <string name="setting_app_proxy_desc">Dewiswch pa apiau fydd yn cysylltu â\'r Rhyngrwyd trwy VPN</string>
@@ -28,7 +23,6 @@
   <string name="setting_rate">Cyfradd</string>
   <string name="setting_share">Rhannu</string>
   <string name="setting_feedback">Adborth</string>
-  <string name="select_connection_area">Dewiswch ardal cysylltu</string>
   <string name="first_fragment_label">Darn Cyntaf</string>
   <string name="second_fragment_label">Ail Darn</string>
   <string name="start">DECHRAU</string>
@@ -123,10 +117,8 @@
   <string name="setting_app_proxy_success">Mae hidlydd VPN yr ap wedi\'i osod</string>
   <string name="setting_ads_limit">Mae terfyn hysbysebion wedi\'i osod</string>
   <string name="setting_dns_set">Mae DNS wedi\'i osod</string>
-  <string name="setting_choose_proxy">Mae\'r Gweinydd VPN wedi\'i osod</string>
   <string name="reconnect_to_take_effect">Dychwelwch i\'r sgrin gartref ac ailosodwch y VPN er mwyn i\'r gosodiadau ddod i rym.</string>
   <string name="home_reconnect_to_take_effect">Ailosodwch y VPN er mwyn i\'r gosodiadau ddod i rym</string>
-  <string name="premium_select_sku">Dewiswch un cyfnod</string>
   <string name="premium_purchase_success">Prynu\'n llwyddiannus</string>
   <string name="select_vpn">Dewiswch VPN</string>
   <string name="dns_only">DNS yn unig</string>
@@ -182,7 +174,6 @@
   <string name="text_feedback_hint">Rhowch fwy o fanylion i ni fel y gallwn nodi a datrys eich mater yn gyflymach (o leiaf 6 nod)</string>
   <string name="text_thanks_feedback">Diolch am eich adborth</string>
   <string name="text_feedback_content">Byddwn yn trwsio\'r mater hwn mewn fersiwn yn y dyfodol. Ymddiheuriadau am yr anghyfleustra.</string>
-  <string name="no_available_vpn">Nid oes vpn am ddim ar gael, ewch i\'r sgrin VPN a dewiswch weinydd.</string>
   <string name="msg_device_does_not_support_this_feature">Nid yw\'r nodwedd hon yn cael ei chefnogi ar gyfer y ddyfais hon!</string>
   <string name="search_app">ap chwilio..</string>
   <string name="exit_app">Gadael yr ap?</string>
@@ -195,10 +186,7 @@
   <string name="guide_1">Dim ond un cyffyrddiad i gysylltu.</string>
   <string name="guide_2">Gweinyddion VPN lluosog mewn gwahanol wledydd</string>
   <string name="guide_3">Diogelu eich preifatrwydd ar-lein</string>
-  <string name="what_is_my_ip">Beth yw fy nghyfeiriad IP?</string>
-  <string name="ip_address">Cyfeiriad IP</string>
   <string name="network_provider">Darparwr rhwydwaith</string>
-  <string name="location">Lleoliad</string>
   <string name="pincode">Cod PIN</string>
   <string name="timezone">Parth amser</string>
   <string name="duration">Hyd</string>
