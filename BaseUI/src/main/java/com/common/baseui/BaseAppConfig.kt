@@ -23,13 +23,18 @@ object BaseAppConfig {
             SharedPrefs.instance.put(KEY_FIRST_TIME_SETUP, value)
         }
 
-    private const val KEY_PROXY = "PROXY"
-
-    var proxy: String
-        get() = SharedPrefs.instance[KEY_PROXY, String::class.java, ""]
-        set(value) {
-            SharedPrefs.instance.put(KEY_PROXY, value)
+    /**
+     * Wipes the remote-proxy settings left over from before the proxy server was removed.
+     * The old "PROXY" value held encoded server credentials, so it is purged rather than
+     * abandoned in place. Per-key removal — clear() would also drop VIP state and device id.
+     */
+    fun clearLegacyProxyPrefs() {
+        for (key in arrayOf("PROXY", "PROXY_COUNTRY", "PROXY_GROUP", "PROXY_HOST")) {
+            if (SharedPrefs.instance[key, String::class.java, ""].isNotEmpty()) {
+                SharedPrefs.instance.remove(key)
+            }
         }
+    }
 
     private const val DEVICE_ID = "DEVICE_ID"
 
@@ -47,26 +52,6 @@ object BaseAppConfig {
 //            SharedPrefs.instance.put(KEY_PROXY_TYPE, value)
 //        }
 
-    private const val KEY_PROXY_COUNTRY = "PROXY_COUNTRY"
-    var proxyCountry: String
-        get() = SharedPrefs.instance[KEY_PROXY_COUNTRY, String::class.java, ""]
-        set(value) {
-            SharedPrefs.instance.put(KEY_PROXY_COUNTRY, value)
-        }
-
-    private const val KEY_PROXY_GROUP = "PROXY_GROUP"
-    var proxyGroup: String
-        get() = SharedPrefs.instance[KEY_PROXY_GROUP, String::class.java, "all"]
-        set(value) {
-            SharedPrefs.instance.put(KEY_PROXY_GROUP, value)
-        }
-
-    private const val KEY_PROXY_HOST = "PROXY_HOST"
-    var proxyHost: String
-        get() = SharedPrefs.instance[KEY_PROXY_HOST, String::class.java, ""]
-        set(value) {
-            SharedPrefs.instance.put(KEY_PROXY_HOST, value)
-        }
 //
 //    private const val KEY_PROXY_PORT = "PROXY_PORT"
 //    var proxyPort: String
@@ -113,8 +98,12 @@ object BaseAppConfig {
         }
 
     private const val KEY_ADS_BLOCK = "ADS_BLOCK"
+    /**
+     * On by default. The setter writes on every toggle, so a stored key means the user chose:
+     * never-touched users (key absent) get the new default, explicit ON/OFF choices are kept.
+     */
     var adsBlock: Boolean
-        get() = SharedPrefs.instance[KEY_ADS_BLOCK, Boolean::class.java, false]
+        get() = SharedPrefs.instance[KEY_ADS_BLOCK, Boolean::class.java, true]
         set(value) {
             SharedPrefs.instance.put(KEY_ADS_BLOCK, value)
         }

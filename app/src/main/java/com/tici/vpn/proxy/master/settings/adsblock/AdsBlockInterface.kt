@@ -4,14 +4,14 @@ package com.tici.vpn.proxy.master.settings.adsblock
 interface AdsBlockInterface {
     suspend fun getAll(): List<AdRuleUI>
 
-    /** Canonical domains of enabled rules, for the Privoxy action file. */
+    /** Canonical rules (`domain` or `domain/path`) of enabled rows. */
     suspend fun getEnabledDomains(): List<String>
 
     /**
-     * Body for Privoxy's `default.action`: empty when ad-block is off (DB not touched); honours the
-     * crash quarantine level; every domain passes [DomainValidator] again (gate 2).
+     * Body of the engine's blocklist file: empty when ad-block is off (DB not touched); honours
+     * the crash quarantine level; every rule passes [DomainValidator] again (gate 2).
      */
-    suspend fun renderActionFile(): String
+    suspend fun renderBlocklist(): String
 
     /** @return false if [domain] already exists (unique index). */
     suspend fun addRule(domain: String, displayName: String): Boolean

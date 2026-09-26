@@ -158,6 +158,23 @@
         android:text="@string/ads_rules_footnote"
         android:textColor="@color/text_gray_2"
         android:textSize="11sp"
+        app:layout_constraintBottom_toTopOf="@id/tvExportCa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Path rules (domain/path) need the user to trust our CA; see MitmCaStore. -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvExportCa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        android:gravity="center"
+        android:minHeight="48dp"
+        android:paddingStart="@dimen/margin_medium"
+        android:paddingEnd="@dimen/margin_medium"
+        android:text="@string/ads_rules_export_ca"
+        android:textColor="@color/white"
+        android:textSize="13sp"
         app:layout_constraintBottom_toTopOf="@id/btnReset"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

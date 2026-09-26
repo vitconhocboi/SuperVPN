@@ -16,7 +16,10 @@ object DefaultAdRulesParser {
             .toList()
     }
 
+    /** Lowercases the host only — a `/path` suffix is case-sensitive and kept as-is. */
     fun canonicalize(raw: String): String {
-        return raw.trim().lowercase().trimStart('.')
+        val s = raw.trim().trimStart('.')
+        val slash = s.indexOf('/')
+        return if (slash < 0) s.lowercase() else s.substring(0, slash).lowercase() + s.substring(slash)
     }
 }

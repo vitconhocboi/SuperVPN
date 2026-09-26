@@ -6,34 +6,28 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Intent
 import android.content.pm.ServiceInfo
-import android.net.ProxyInfo
 import android.net.VpnService
 import android.os.Binder
 import android.os.Build
 import android.os.DeadObjectException
 import android.os.IBinder
 import android.os.ParcelFileDescriptor
-import android.util.Log
 import androidx.core.app.NotificationCompat
+import com.common.baseui.BaseAppConfig
 import com.tici.vpn.proxy.master.R
 import com.tici.vpn.proxy.master.home.HomeFragment
 import com.tici.vpn.proxy.master.main.MainActivity
-import com.tici.vpn.proxy.master.utils.Constant
-import com.common.baseui.BaseAppConfig
-import com.tici.vpn.proxy.master.main.SharedData
 import com.tici.vpn.proxy.master.settings.adsblock.AdRulesCrashGuard
 import com.tici.vpn.proxy.master.settings.adsblock.AdsBlockInterface
+import com.tici.vpn.proxy.master.utils.Constant
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
-import kotlinx.coroutines.isActive
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import timber.log.Timber
 import java.io.FileDescriptor
 import java.util.concurrent.atomic.AtomicReference
@@ -41,12 +35,9 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class LocalVpnService : VpnService(), Runnable {
-//    private val m_Packet: ByteArray
-//    private val m_IPHeader: IPHeader
+    @Volatile
     private var m_VPNThread: Thread? = null
     private var m_VPNInterface: ParcelFileDescriptor? = null
-    @Volatile
-    private var m_PrivoxyManager: VpnManager? = null
 
     @Inject
     lateinit var adsBlockRepository: AdsBlockInterface
@@ -55,10 +46,8 @@ class LocalVpnService : VpnService(), Runnable {
     lateinit var crashGuard: AdRulesCrashGuard
 
     private val serviceScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
-    private var filterStartJob: Job? = null
 
-    /** True only once Privoxy has actually started (not while [startLocalFilter] is in flight). */
-    val isFilterRunning: Boolean get() = m_PrivoxyManager != null
+    val isFilterRunning: Boolean get() = IsRunning
 
     @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
     @Inject
@@ -136,15 +125,12 @@ class LocalVpnService : VpnService(), Runnable {
                         buildNotification()
                     )
                 }
-                // Start a new session by creating a new thread.
+
                 m_VPNThread = Thread(this, "VPNServiceThread")
                 m_VPNThread!!.start()
-
-                startLocalFilter()
             }
 
             ACTION_STOP -> {
-//                Timber.tag(Constant.TAG).d("Stop super vpn service")
                 stopVPN()
                 stopForeground(true)
             }
@@ -154,69 +140,42 @@ class LocalVpnService : VpnService(), Runnable {
     }
 
     /**
-     * Privoxy runs purely as a local filter (ad/tracker blocking via default.action) and forwards
-     * direct — there is no remote server. Off the main thread: rendering the rules reads Room.
+     * Renders the blocklist file from Room (honours the ad-block toggle and crash quarantine).
+     * Runs on the VPN thread before the engine starts, so start never races a stale file.
+     * @return the file path, or "" to start without blocking.
      */
-    @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
-    private fun startLocalFilter() {
-        filterStartJob?.cancel()
-        filterStartJob = serviceScope.launch {
-            val ok = try {
-                val body = adsBlockRepository.renderActionFile()
-                val manager = VpnManager(this@LocalVpnService)
-                if (!isActive || !manager.initialize(body)) {
-                    false
-                } else {
-                    // A malformed action file makes Privoxy exit(1) the whole process inside
-                    // start(); the breadcrumb lets the next launch detect that and quarantine rules.
-                    crashGuard.markStartPending()
-                    val started = manager.start()
-                    crashGuard.clearStartPending()
-                    if (started) m_PrivoxyManager = manager
-                    started
-                }
-            } catch (e: CancellationException) {
-                throw e
-            } catch (e: Exception) {
-                Timber.tag(Constant.TAG).e(e, "Failed to prepare local filter")
-                false
-            }
-            if (!IsRunning) {
-                // stopVPN() ran while we were starting; don't leave Privoxy running behind it.
-                m_PrivoxyManager?.stop()
-                m_PrivoxyManager = null
-                return@launch
-            }
-            if (ok) {
-                proxyConnection.updateUI(HomeFragment.CONNECTED)
-            } else {
-                Timber.tag(Constant.TAG).d("Failed to start local filter")
-                proxyConnection.updateUI(HomeFragment.DISCONNECTED)
-            }
-        }
+    private fun writeBlocklist(): String = try {
+        val body = runBlocking { adsBlockRepository.renderBlocklist() }
+        EngineBlocklistFile.write(this, body).absolutePath
+    } catch (e: Exception) {
+        Timber.tag(Constant.TAG).e(e, "Failed to prepare blocklist")
+        ""
+    }
+
+    /** Persisted MITM CA for path rules; null disables MITM (path rules then pass through). */
+    private fun loadMitmCa(): MitmCaStore.Pem? = try {
+        MitmCaStore.loadOrCreate(this)
+    } catch (e: Exception) {
+        Timber.tag(Constant.TAG).e(e, "MITM CA unavailable; path rules disabled")
+        null
     }
 
     @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
     fun stopVPN() {
-//        Log.i("SuperVpn", "TestRelease stopVPN $IsRunning")
         if (IsRunning) {
             IsRunning = false
-            // First stop the VPN thread to prevent new operations
             if (m_VPNThread != null) {
-//                Log.i("SuperVpn", "TestRelease stopVPN m_VPNThread")
                 m_VPNThread!!.interrupt()
                 try {
-                    m_VPNThread!!.join(1000) // Wait up to 1 second for thread to finish
+                    m_VPNThread!!.join(1000)
                 } catch (e: InterruptedException) {
                     Timber.tag(Constant.TAG).d("VPN thread interrupt error")
                 }
                 m_VPNThread = null
             }
 
-            // Detach file descriptor before stopping engine
             if (m_VPNInterface != null) {
                 try {
-//                    Log.i("SuperVpn", "TestRelease stopVPN m_VPNInterface")
                     m_VPNInterface!!.close()
                     Timber.tag(Constant.TAG).d("Successfully detached fd:")
                 } catch (e: Exception) {
@@ -226,19 +185,12 @@ class LocalVpnService : VpnService(), Runnable {
                 m_VPNInterface = null
             }
 
-            // Now stop engine after fd is detached
             engine.Engine.stop()
 
-            filterStartJob?.cancel()
-            filterStartJob = null
-            m_PrivoxyManager?.stop()
-            m_PrivoxyManager = null
-
             if (Instance != null) {
-//                Log.i("SuperVpn", "TestRelease Instance")
                 Instance!!.stopForeground(true)
-                Instance!!.stopSelf() // Stop the service after cleanup
-                Instance = null // Clear the instance reference
+                Instance!!.stopSelf()
+                Instance = null
             }
             proxyConnection.updateUI(HomeFragment.DISCONNECTED)
             Timber.tag(Constant.TAG).d("VPNService stopped.")
@@ -250,10 +202,8 @@ class LocalVpnService : VpnService(), Runnable {
     }
 
     override fun onUnbind(intent: Intent?): Boolean {
-        // Ensure clean unbinding
         try {
             if (IsRunning) {
-                // If still running, initiate cleanup
                 stopVPN()
             }
         } catch (e: DeadObjectException) {
@@ -269,20 +219,23 @@ class LocalVpnService : VpnService(), Runnable {
         stopVPN()
     }
 
-    private fun startTunToSock(pfdDescriptor: ParcelFileDescriptor? = null) {
+    private fun startTunToSock(
+        pfdDescriptor: ParcelFileDescriptor,
+        blocklistPath: String,
+        ca: MitmCaStore.Pem?
+    ) {
         val key = engine.Key()
-        key.mark = 0
-        key.mtu = ProxyConfig.Instance.mTU.toLong()
-        key.device = "fd://" + pfdDescriptor?.fd
-        key.logLevel = "silent"
-        key.directUDP = Build.VERSION.SDK_INT < Build.VERSION_CODES.Q
-        // Traffic goes through the local Privoxy filter, which forwards direct.
-        // The app's own UID is excluded from the tun (see establishVPN), so the
-        // filter's outbound dials cannot loop back through the interface.
-        key.proxy = LOCAL_FILTER_PROXY
+        key.setMTU(ProxyConfig.Instance.mTU.toLong())
+        key.setFD(pfdDescriptor.fd)
+        key.setLogLevel("silent")
+        key.setDNSServers(BaseAppConfig.dnsServer)
+        key.setBlocklistPath(blocklistPath)
+        key.setCACertPEM(ca?.certPem.orEmpty())
+        key.setCAKeyPEM(ca?.keyPem.orEmpty())
         engine.Engine.insert(key)
         engine.Engine.start()
-        Timber.tag(Constant.TAG).d("Started stun to socks")
+        proxyConnection.updateUI(HomeFragment.CONNECTED)
+        Timber.tag(Constant.TAG).d("Started netstack engine")
     }
 
     @Synchronized
@@ -305,9 +258,25 @@ class LocalVpnService : VpnService(), Runnable {
 
     @Throws(Exception::class)
     private fun runVPN() {
-        m_VPNInterface = establishVPN()!!
-        startTunToSock(m_VPNInterface)
+        // Slow prep first (Room query, Keystore, first-run CA keygen) so a stop landing during it
+        // never leaves a tun fd or a running engine behind.
+        val blocklistPath = writeBlocklist()
+        val ca = loadMitmCa()
+        if (!isCurrentVpnThread()) return
+        val pfd = establishVPN()!!
+        m_VPNInterface = pfd
+        startTunToSock(pfd, blocklistPath, ca)
+        if (!isCurrentVpnThread()) {
+            // stopVPN() ran mid-start and could not see this engine; without this the next
+            // connect fails with "engine: already started".
+            engine.Engine.stop()
+            pfd.close()
+            proxyConnection.updateUI(HomeFragment.DISCONNECTED)
+        }
     }
+
+    /** stopVPN() (or a newer start) replaces/clears [m_VPNThread]; a stale thread must bail out. */
+    private fun isCurrentVpnThread() = m_VPNThread === Thread.currentThread()
 
     private fun waitUntilPrepared() {
         while (prepare(this) != null) {
@@ -323,9 +292,6 @@ class LocalVpnService : VpnService(), Runnable {
     private fun establishVPN(): ParcelFileDescriptor? {
         val builder: Builder = Builder()
         builder.setMtu(ProxyConfig.Instance.mTU)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            builder.setHttpProxy(ProxyInfo.buildDirectProxy("127.0.0.1", 8118))
-        }
 
         builder.addAddress("10.0.0.2", 32)
         builder.addRoute("0.0.0.0", 0)
@@ -357,11 +323,6 @@ class LocalVpnService : VpnService(), Runnable {
         return pfdDescriptor
     }
 
-//    override fun onTaskRemoved(rootIntent: Intent?) {
-//        stopVPN()
-//        super.onTaskRemoved(rootIntent)
-//    }
-
     @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
     override fun onDestroy() {
         Timber.tag(Constant.TAG).d("VPNService($ID) destroyed")
@@ -373,9 +334,6 @@ class LocalVpnService : VpnService(), Runnable {
         private var allowApp: List<String>? = null
         const val ACTION_START = "ACTION_START"
         const val ACTION_STOP = "ACTION_STOP"
-
-        /** Local Privoxy listener; mirrors VpnManager's configured port. */
-        private const val LOCAL_FILTER_PROXY = "http://127.0.0.1:8118"
 
         var Instance: LocalVpnService? = null
         var IsRunning: Boolean = false

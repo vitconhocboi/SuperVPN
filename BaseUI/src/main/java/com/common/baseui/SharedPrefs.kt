@@ -102,6 +102,10 @@ open class SharedPrefs(private var _name: String = "com.common.baseui") {
         editor.apply()
     }
 
+    fun remove(key: String) {
+        mSharedPreferences.edit().remove(key).apply()
+    }
+
     fun clear() {
         mSharedPreferences.edit().clear().apply()
     }

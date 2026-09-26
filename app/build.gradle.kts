@@ -169,7 +169,7 @@ dependencies {
 
     // Add zlib dependency for compression functionality
     implementation("com.jcraft:jzlib:1.1.3")
-    implementation(group = ":tun2socks", name="tun2socks", ext = "aar")
+    implementation(group = ":netstack", name="netstack", ext = "aar")
     implementation(libs.okhttp)
     implementation("com.google.android.flexbox:flexbox:3.0.0")
 

@@ -54,6 +54,11 @@ class DefaultAdRulesParserTest {
     }
 
     @Test
+    fun canonicalizeLowercasesHostButKeepsPathCase() {
+        assertEquals("ads.example.com/Banner/X.png", DefaultAdRulesParser.canonicalize(" .ADS.Example.com/Banner/X.png "))
+    }
+
+    @Test
     fun preservesTrailingDotsForValidatorToReject() {
         // Trailing dots are not stripped by the parser (only leading dots are).
         // This allows the validator in phase-03 to catch and reject malformed domains.

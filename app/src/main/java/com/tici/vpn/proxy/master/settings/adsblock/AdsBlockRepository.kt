@@ -33,14 +33,14 @@ class AdsBlockRepository @Inject constructor(
         dao.getEnabledDomains()
     }
 
-    override suspend fun renderActionFile(): String = withContext(Dispatchers.IO) {
+    override suspend fun renderBlocklist(): String = withContext(Dispatchers.IO) {
         if (!BaseAppConfig.adsBlock) return@withContext ""
         val domains = when (crashGuard.level) {
             AdRulesCrashGuard.Level.ALL_RULES -> dao.getEnabledDomains()
             AdRulesCrashGuard.Level.DEFAULTS_ONLY -> dao.getEnabledDefaultDomains()
             AdRulesCrashGuard.Level.DISABLED -> return@withContext ""
         }
-        val result = ActionFileGenerator.render(domains)
+        val result = BlocklistGenerator.render(domains)
         if (result.droppedCount > 0) {
             Timber.w("Dropped %d invalid ad-block rule(s) at render time", result.droppedCount)
         }

@@ -4,16 +4,19 @@ import java.net.IDN
 import java.util.Locale
 
 /**
- * Normalises and validates a domain before it may reach Privoxy's action file.
+ * Normalises and validates an ad-block rule before it may reach the engine's blocklist file.
  *
- * Privoxy runs in-process and `exit(1)`s on a malformed action file, killing the app, so this is
- * an allow-list: a valid result contains only `[a-z0-9.-]`. No wildcards, no paths, no IPs.
- * Pure (no Android deps) — used both when the user adds a rule and again at render time.
+ * A rule is a domain (blocks it and all subdomains) or a domain plus a path prefix
+ * (`ads.example.com/banner` — blocked via selective MITM, see engine/mitm.go). This is an
+ * allow-list: a valid host contains only `[a-z0-9.-]`, a valid path only URL path characters.
+ * No wildcards, no IPs, no query/fragment. The output is one line of the blocklist file, so it
+ * can never contain whitespace or newlines. Pure (no Android deps) — used both when the user adds
+ * a rule and again at render time.
  */
 object DomainValidator {
 
     sealed class Result {
-        /** [domain] is canonical: ASCII (punycode), lowercase, no leading dot. */
+        /** [domain] is canonical: ASCII (punycode) lowercase host, no leading dot, optional `/path`. */
         data class Valid(val domain: String) : Result()
         data class Invalid(val reason: Reason) : Result()
     }
@@ -21,6 +24,7 @@ object DomainValidator {
     enum class Reason { EMPTY, WILDCARD, TOO_LONG, INVALID_FORMAT }
 
     private const val MAX_LENGTH = 253
+    private const val MAX_PATH_LENGTH = 512
     private val SCHEME = Regex("^[a-zA-Z][a-zA-Z0-9+.-]*://")
     private val PORT_SUFFIX = Regex(":\\d{1,5}$")
 
@@ -29,26 +33,36 @@ object DomainValidator {
         "^([a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?\\.)+([a-z]{2,63}|xn--[a-z0-9-]{1,59})$"
     )
 
+    // RFC 3986 path characters (pchar + "/"), percent-encoding allowed.
+    private val PATH = Regex("^/[A-Za-z0-9._~!$&'()+,;=:@%/-]*$")
+
     fun validate(raw: String): Result {
         var s = raw.trim().removeSurrounding("\"").removeSurrounding("'").trim()
         if (s.isEmpty()) return Result.Invalid(Reason.EMPTY)
         if (s.contains('*')) return Result.Invalid(Reason.WILDCARD)
 
         s = s.replaceFirst(SCHEME, "")
-        s = s.substringBefore('/')
-        s = s.replaceFirst(PORT_SUFFIX, "")
-        s = s.removePrefix(".")
+        val slash = s.indexOf('/')
+        var host = if (slash >= 0) s.substring(0, slash) else s
+        // Query and fragment never reach the engine's path matcher; drop them.
+        val path = if (slash >= 0) s.substring(slash).substringBefore('?').substringBefore('#') else ""
 
-        s = try {
-            IDN.toASCII(s, IDN.ALLOW_UNASSIGNED)
+        host = host.replaceFirst(PORT_SUFFIX, "").removePrefix(".")
+        host = try {
+            IDN.toASCII(host, IDN.ALLOW_UNASSIGNED)
         } catch (e: IllegalArgumentException) {
             return Result.Invalid(Reason.INVALID_FORMAT)
         }
-        s = s.lowercase(Locale.ROOT)
+        host = host.lowercase(Locale.ROOT)
 
-        if (s.isEmpty()) return Result.Invalid(Reason.EMPTY)
-        if (s.length > MAX_LENGTH) return Result.Invalid(Reason.TOO_LONG)
-        if (!DOMAIN.matches(s)) return Result.Invalid(Reason.INVALID_FORMAT)
-        return Result.Valid(s)
+        if (host.isEmpty()) return Result.Invalid(Reason.EMPTY)
+        if (host.length > MAX_LENGTH) return Result.Invalid(Reason.TOO_LONG)
+        if (!DOMAIN.matches(host)) return Result.Invalid(Reason.INVALID_FORMAT)
+
+        // A bare "/" means the whole domain.
+        if (path.isEmpty() || path == "/") return Result.Valid(host)
+        if (path.length > MAX_PATH_LENGTH) return Result.Invalid(Reason.TOO_LONG)
+        if (!PATH.matches(path)) return Result.Invalid(Reason.INVALID_FORMAT)
+        return Result.Valid(host + path)
     }
 }

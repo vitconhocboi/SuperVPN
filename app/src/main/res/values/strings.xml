@@ -228,7 +228,7 @@
     <string name="ads_rules_footnote">Some apps and sites use connection methods this cannot filter, so a few ads may still get through.</string>
     <string name="ads_rules_banner_master_off">Ad blocking is off, so these rules are inactive. Tap to turn it on in Settings.</string>
     <string name="ads_rules_banner_quarantine">Your custom rules were turned off because they stopped the filter. Tap to turn them back on.</string>
-    <string name="ads_rules_add_hint">Add a domain, e.g. ads.example.com</string>
+    <string name="ads_rules_add_hint">Add a domain or path, e.g. ads.example.com/banner</string>
     <string name="ads_rules_add">Add</string>
     <string name="ads_rules_search_hint">Search rules…</string>
     <string name="ads_rules_reset">Reset to defaults</string>
@@ -240,9 +240,15 @@
     <string name="ads_rules_error_empty">Enter a domain.</string>
     <string name="ads_rules_error_wildcard">Wildcards are not needed. A domain already covers all its subdomains.</string>
     <string name="ads_rules_error_too_long">That domain is too long.</string>
-    <string name="ads_rules_error_format">Not a valid domain. Use a name like ads.example.com.</string>
+    <string name="ads_rules_error_format">Not a valid rule. Use a domain like ads.example.com, optionally with a path like /banner.</string>
     <string name="ads_rules_error_duplicate">That domain is already in the list.</string>
     <string name="setting_ads_off">Ad blocking is off</string>
     <string name="ads_rules_applied">Applies right away, or the next time you connect.</string>
+    <string name="ads_rules_export_ca">Blocking paths? Install certificate</string>
+    <string name="ads_rules_export_ca_file">SuperVPN-CA.crt</string>
+    <string name="ads_rules_ca_saved_title">Certificate saved</string>
+    <string name="ads_rules_ca_saved_message">Rules with a path (like ads.example.com/banner) only work after you trust this certificate.\n\nOpen Settings → Security → Encryption &amp; credentials → Install a certificate → CA certificate, then pick SuperVPN-CA.crt.\n\nOnly browsers and apps that trust user certificates are filtered by path. Other apps keep working normally. Banking and payment sites are never inspected.</string>
+    <string name="ads_rules_ca_open_settings">Open Settings</string>
+    <string name="ads_rules_ca_save_failed">Could not save the certificate.</string>
     <string name="ads_rules_error_cap">The rule list is full. Delete some rules before adding more.</string>
 </resources>
