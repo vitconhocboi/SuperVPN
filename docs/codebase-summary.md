@@ -79,11 +79,23 @@ Output: `netstack.aar` (JNI bindings + Go runtime; size ~8-12 MB).
 
 ### Key Kotlin Files
 
+**network/VpnStartRequest.kt** — Start source mapping (P3):
+- Enum maps intent action → start type (USER_START, SYSTEM_START, STOP, UNKNOWN).
+- `from(action)` is pure mapping (compile-time inlined); `sticky` property controls START_STICKY vs START_NOT_STICKY.
+- USER_START: `LocalVpnService.ACTION_START` (UI button), sticky=true.
+- SYSTEM_START: `VpnService.SERVICE_INTERFACE` (Always-on) or null (sticky restart), sticky=true.
+- STOP: `LocalVpnService.ACTION_STOP` (UI disconnect), sticky=false.
+
 **network/LocalVpnService.kt** — VPN lifecycle:
-- `onStartCommand(intent)`: check intent action (START/STOP), spin VPN thread, setup TUN fd.
+- `onStartCommand(intent)`: parse intent to VpnStartRequest → call startSession or stopVPN; return START_STICKY/START_NOT_STICKY.
+- `startSession(fromUser)`: duplicate start guard, background consent guard (must have prior consent if fromUser=false), FGS start exception handling → startForeground or stopSelf.
 - `writeBlocklist()`: call `adsBlockRepository.renderBlocklist()` → `EngineBlocklistFile.write()`, pass path to engine.
-- `run()`: build VPN interface (10.0.0.2/32, full route, split tunnel logic), fd handover to engine, Start(key).
+- `run()`: blocklist prep (Room I/O) → CA prep (Keystore) → stale-thread check → establishVPN (load split-tunnel from Room) → startTunToSock → re-check stale.
+- `establishVPN()`: build VPN interface (10.0.0.2/32, full route, split-tunnel exclusions from Room).
 - `stopVPN()`: engine.Stop(), close fd, notify listeners.
+- `onBind(SERVICE_INTERFACE)`: returns `super.onBind()` for system lifecycle (Always-on, onRevoke).
+- `onUnbind()`: if running, stopVPN() → stopSelf.
+- `onRevoke()`: stopVPN() on permission revoke.
 
 **network/EngineBlocklistFile.kt** — Atomic blocklist writes:
 - `write(context, text)`: temp file + atomic rename (so engine never loads half-written file).
@@ -141,15 +153,17 @@ Output: `netstack.aar` (JNI bindings + Go runtime; size ~8-12 MB).
 6. Next TCP/UDP/DNS flow uses new Trie
 ```
 
-**At VPN Start**:
+**At VPN Start** (P3):
 ```
-LocalVpnService.onStartCommand()
+onStartCommand(intent) → VpnStartRequest.from(intent.action)
+  ↓ [USER_START or SYSTEM_START]
+startSession(fromUser) — guards: duplicate, background consent, FGS exception
   ↓ [VPN thread]
 writeBlocklist() → adsBlockRepository.renderBlocklist()
+  ↓ [Stale-thread check]
+establishVPN() [Load split-tunnel from Room]
   ↓
-EngineBlocklistFile.write()
-  ↓
-engine.Start(key) where key.BlocklistPath = "...blocklist.txt"
+startTunToSock() → engine.Start(key) where key.BlocklistPath = "...blocklist.txt"
 ```
 
 ## Test Coverage & Key Tests
@@ -161,6 +175,7 @@ engine.Start(key) where key.BlocklistPath = "...blocklist.txt"
 - `mitm_test.go`: request relay, path blocking, pinning.
 
 **Kotlin tests** (app/src/test/java/com/tici/vpn/proxy/master/):
+- `network/VpnStartRequestTest.kt` (P3): USER_START sticky, SYSTEM_START sticky, STOP not sticky, null intent (sticky restart), unknown action (ignored).
 - `DomainValidatorTest.kt`: valid/invalid rules, edge cases (IDN, ports, schemes, paths).
 - `BlocklistGeneratorTest.kt`: render, dedup, invalid dropping.
 - `AdsBlockRepositoryTest.kt`: Room insertion, deletion, render.
@@ -181,7 +196,11 @@ engine.Start(key) where key.BlocklistPath = "...blocklist.txt"
 | `app/src/main/cpp/privoxy/` | Vendored Privoxy source | Removed in P1 build cleanup |
 | `DefaultAdRulesParser.kt` (old methods) | Privoxy action-file parser | `canonicalize()` kept; old parsing dead |
 
-**Cleanup timing**: After device testing validates P2 acceptance, these are safe to delete in a commit (no functional impact).
+**Removed in P3**:
+- `broadcast/SchedulerReceiver.kt` — Scheduler-based stop (no longer needed; Always-on + sticky restart + explicit stop handle all cases).
+- `scheduler/StopProxyScheduler.kt` — Scheduler logic (merged into lifecycle-based stop paths).
+
+**Cleanup timing**: After device testing validates P2 acceptance, remaining entries safe to delete in a commit (no functional impact).
 
 ## Build & Dependencies
 

@@ -69,6 +69,10 @@
             <intent-filter>
                 <action android:name="android.service.vpn.VpnService" />
             </intent-filter>
+            <!-- Required justification for the specialUse FGS type (Play review, API 34+). -->
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Local on-device VPN that filters ads and trackers" />
         </service>
 
         <activity

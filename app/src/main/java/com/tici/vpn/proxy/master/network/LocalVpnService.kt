@@ -5,6 +5,7 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.content.pm.ServiceInfo
 import android.net.VpnService
 import android.os.Binder
@@ -13,8 +14,10 @@ import android.os.DeadObjectException
 import android.os.IBinder
 import android.os.ParcelFileDescriptor
 import androidx.core.app.NotificationCompat
+import androidx.core.app.ServiceCompat
 import com.common.baseui.BaseAppConfig
 import com.tici.vpn.proxy.master.R
+import com.tici.vpn.proxy.master.db.VpnDatabase
 import com.tici.vpn.proxy.master.home.HomeFragment
 import com.tici.vpn.proxy.master.main.MainActivity
 import com.tici.vpn.proxy.master.settings.adsblock.AdRulesCrashGuard
@@ -44,6 +47,9 @@ class LocalVpnService : VpnService(), Runnable {
 
     @Inject
     lateinit var crashGuard: AdRulesCrashGuard
+
+    @Inject
+    lateinit var database: VpnDatabase
 
     private val serviceScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
@@ -106,37 +112,57 @@ class LocalVpnService : VpnService(), Runnable {
         manager.createNotificationChannel(channel)
     }
 
+    /**
+     * See [VpnStartRequest] for the start sources. START_STICKY only revives a session that was
+     * running: [stopVPN] calls stopSelf(), and an explicitly stopped service is never restarted.
+     */
     @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
-    override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         super.onStartCommand(intent, flags, startId)
-        if (intent.getStringArrayListExtra("allowApp")?.isNotEmpty() == true) {
-            allowApp = intent.getStringArrayListExtra("allowApp")
-        }
-
-        when (intent.action) {
-            ACTION_START -> {
-                IsRunning = true
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                    createNotificationChannel()
-                    startForeground(1, buildNotification(), ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE)
-                } else {
-                    startForeground(
-                        1,
-                        buildNotification()
-                    )
-                }
-
-                m_VPNThread = Thread(this, "VPNServiceThread")
-                m_VPNThread!!.start()
-            }
-
-            ACTION_STOP -> {
+        val request = VpnStartRequest.from(intent?.action)
+        when (request) {
+            VpnStartRequest.STOP -> {
                 stopVPN()
-                stopForeground(true)
+                // stopVPN() is a no-op when no session runs; still drop this idle instance.
+                stopSelf()
             }
+            VpnStartRequest.USER_START -> startSession(fromUser = true)
+            VpnStartRequest.SYSTEM_START -> startSession(fromUser = false)
+            VpnStartRequest.UNKNOWN -> Timber.tag(Constant.TAG).w("Ignored start action %s", intent?.action)
         }
+        return if (request.sticky) START_STICKY else START_NOT_STICKY
+    }
 
-        return START_NOT_STICKY
+    private fun startSession(fromUser: Boolean) {
+        if (IsRunning && m_VPNThread?.isAlive == true) {
+            // Always-on and sticky restarts can re-deliver a start for a live session.
+            Timber.tag(Constant.TAG).d("VPN session already running; start ignored")
+            return
+        }
+        // A background start cannot show the consent dialog; without consent, give up cleanly
+        // instead of spinning in waitUntilPrepared().
+        if (!fromUser && prepare(this) != null) {
+            Timber.tag(Constant.TAG).w("VPN consent missing on background start; stopping")
+            stopSelf()
+            return
+        }
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                createNotificationChannel()
+                startForeground(1, buildNotification(), ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE)
+            } else {
+                startForeground(1, buildNotification())
+            }
+        } catch (e: Exception) {
+            // Android 12+ may refuse a background FGS start (ForegroundServiceStartNotAllowedException).
+            Timber.tag(Constant.TAG).e(e, "Cannot start VPN in foreground; stopping")
+            stopSelf()
+            return
+        }
+        Instance = this
+        IsRunning = true
+        m_VPNThread = Thread(this, "VPNServiceThread")
+        m_VPNThread!!.start()
     }
 
     /**
@@ -188,7 +214,7 @@ class LocalVpnService : VpnService(), Runnable {
             engine.Engine.stop()
 
             if (Instance != null) {
-                Instance!!.stopForeground(true)
+                ServiceCompat.stopForeground(Instance!!, ServiceCompat.STOP_FOREGROUND_REMOVE)
                 Instance!!.stopSelf()
                 Instance = null
             }
@@ -198,6 +224,9 @@ class LocalVpnService : VpnService(), Runnable {
     }
 
     override fun onBind(intent: Intent): IBinder? {
+        // The system binds with SERVICE_INTERFACE and needs VpnService's own binder to deliver
+        // onRevoke() and Always-on lifecycle calls.
+        if (intent.action == SERVICE_INTERFACE) return super.onBind(intent)
         return LocalBinder(this)
     }
 
@@ -305,13 +334,20 @@ class LocalVpnService : VpnService(), Runnable {
             }
         }
 
-        Timber.tag(Constant.TAG).d("VpnProxy add disallowed applications: %s", allowApp)
-        if (allowApp?.isNotEmpty() == true) {
-            for (app in allowApp!!) {
+        // Room is the source of truth for split tunneling, so UI starts, Always-on starts and
+        // sticky restarts all exclude the same apps (including an emptied list).
+        val excludedApps = database.appVpnDao().getAll().map { it.packageName }
+        Timber.tag(Constant.TAG).d("VpnProxy add disallowed applications: %s", excludedApps)
+        for (app in excludedApps) {
+            try {
                 builder.addDisallowedApplication(app)
+            } catch (e: PackageManager.NameNotFoundException) {
+                // Uninstalled since it was excluded; must not fail the whole tunnel.
+                Timber.tag(Constant.TAG).w("Skip excluded app not installed: %s", app)
             }
         }
 
+        // Own package is always installed; excluding it keeps engine dials out of the tun.
         builder.addDisallowedApplication(packageName)
 
         val intent = Intent(this, MainActivity::class.java)
@@ -331,11 +367,13 @@ class LocalVpnService : VpnService(), Runnable {
     }
 
     companion object {
-        private var allowApp: List<String>? = null
         const val ACTION_START = "ACTION_START"
         const val ACTION_STOP = "ACTION_STOP"
 
+        // Written on the main thread, read from the VPN thread and IO coroutines.
+        @Volatile
         var Instance: LocalVpnService? = null
+        @Volatile
         var IsRunning: Boolean = false
         var version_bypass: String = "1.0.1"
         private var ID = 0
