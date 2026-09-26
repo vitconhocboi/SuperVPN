@@ -85,7 +85,7 @@ target_compile_options(
         -O3
         -funroll-loops
         -fvisibility=hidden
-        "SHELL:-mllvm -bcf -mllvm -fla -mllvm -icall  -mllvm -igv -mllvm -ibr -mllvm -sobf"
+#        "SHELL:-mllvm -bcf -mllvm -fla -mllvm -icall  -mllvm -igv -mllvm -ibr -mllvm -sobf"
 )
 
 #target_link_options(

@@ -102,6 +102,41 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             }
         }
 
+    private fun onVpnConnected() {
+        val prefs = context?.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE) ?: return
+        if (prefs.getInt("vpn_start_time", 0) == 0) {
+            val nowSec = (System.currentTimeMillis() / 1000).toInt()
+            prefs.edit().putInt("vpn_start_time", nowSec).apply()
+        }
+    }
+
+    private fun onVpnDisconnected() {
+        val prefs = context?.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE) ?: return
+        val startTime = prefs.getInt("vpn_start_time", 0)
+        if (startTime > 0) {
+            val nowSec = (System.currentTimeMillis() / 1000).toInt()
+            val sessionSec = maxOf(0, nowSec - startTime)
+            val accumulated = prefs.getInt("vpn_accumulated_time", 0)
+            prefs.edit()
+                .putInt("vpn_accumulated_time", accumulated + sessionSec)
+                .putInt("vpn_start_time", 0)
+                .apply()
+        }
+    }
+
+    private fun getVpnDurationSeconds(): Int {
+        val prefs = context?.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE) ?: return 0
+        val startTime = prefs.getInt("vpn_start_time", 0)
+        val accumulated = prefs.getInt("vpn_accumulated_time", 0)
+        return if (startTime > 0 && isConnected) {
+            val nowSec = (System.currentTimeMillis() / 1000).toInt()
+            val currentSession = maxOf(0, nowSec - startTime)
+            accumulated + currentSession
+        } else {
+            accumulated
+        }
+    }
+
     private fun updateUI(status: String?) {
         when (status) {
             CONNECTING -> {
@@ -135,6 +170,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                     binding.ivConnectPanel.isEnabled = true
                     isConnected = true
                     binding.lnConnected.visible()
+                    onVpnConnected()
                     if (!isShowReport) {
                         isShowReport = true
                         (activity as? MainActivity)?.showConnected()
@@ -169,13 +205,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 binding.ivConnectPanel.isEnabled = true
                 binding.lnConnected.invisible()
                 isConnected = false
+                onVpnDisconnected()
                 if (state != "CONNECT" && !isShowReport) {
                     isShowReport = true
-                    val start = context?.getSharedPreferences(
-                        "privoxy_traffic", Context.MODE_PRIVATE
-                    )?.getInt("start", 0)
-                    val diff = System.currentTimeMillis().toInt() / 1000 - start!!
-                    report.duration = formatSecondsToTime(diff)
+                    report.duration = formatSecondsToTime(getVpnDurationSeconds())
                     (activity as? MainActivity)?.showDisconnected(report)
                 }
                 if (state == "CONNECT") {
@@ -253,10 +286,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     private val updateRunnable = object : Runnable {
         override fun run() {
-            val start = context?.getSharedPreferences("privoxy_traffic", Context.MODE_PRIVATE)
-                ?.getInt("start", 0)
-            val diff = System.currentTimeMillis().toInt() / 1000 - start!!
-            binding.tvPrivateInternet.text = formatSecondsToTime(diff)
+            val totalSecs = getVpnDurationSeconds()
+            binding.tvPrivateInternet.text = formatSecondsToTime(totalSecs)
             handler.postDelayed(this, 1000L)
         }
     }

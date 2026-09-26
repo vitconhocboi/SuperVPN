@@ -387,9 +387,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     fun showConnected() {
-        isConnectedFragment = true
-        showFragment(mConnectedFragment)
-
         checkShowRateDialog()
     }
 
@@ -420,9 +417,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     fun showDisconnected(report: SessionReport) {
-        mDisonnectedFragment.loadData(report)
-        isDisconnectedFragment = true
-        showFragment(mDisonnectedFragment)
     }
 
     fun navigateHome() {

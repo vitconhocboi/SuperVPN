@@ -5,10 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.common.baseui.BaseAppConfig
-import com.common.baseui.ResultData
 import com.tici.vpn.proxy.master.api.ApiService
 import com.tici.vpn.proxy.master.api.DnsResponse
-import com.tici.vpn.proxy.master.utils.toast
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -30,47 +28,65 @@ class DNSViewModel @Inject constructor(private val apiService: ApiService) : Vie
     fun getAllProxy(context: Context) {
         viewModelScope.launch(Dispatchers.IO) {
             isLoading.postValue(true)
-//            val response = apiService.getDns()
-//            if (response.isSuccessful) {
-//                response.body()?.let { dnsResponse ->
-//                    val listDNS = dnsResponse.dns.map { dns ->
-//                        DnsUI(
-//                            id = dns.ip_address,
-//                            name = dns.name,
-//                            server = dns.ip_address,
-//                            icon = "",
-//                            active = (BaseAppConfig.dnsServer.contains(dns.ip_address))
-//                        )
-//                    }
-//                    allDNS.postValue(listDNS)
-//                }
-//            }
 
+            val defaultList = getDefaultDnsList()
             val result = getDnsSafe()
             result
                 .onSuccess { dnsResponse ->
-                    val listDNS = dnsResponse.dns.map { dns ->
+                    val remoteList = dnsResponse.dns.map { dns ->
                         DnsUI(
                             id = dns.ip_address,
                             name = dns.name,
                             server = dns.ip_address,
                             icon = "",
-                            active = (BaseAppConfig.dnsServer.contains(dns.ip_address))
+                            active = isDnsActive(dns.ip_address)
                         )
                     }
-                    allDNS.postValue(listDNS)
+                    val combinedList = mergeDnsLists(defaultList, remoteList)
+                    allDNS.postValue(combinedList)
                     isLoading.postValue(false)
                 }
-                .onFailure { error ->
+                .onFailure {
+                    // Fallback to default free DNS list when network/endpoint is unavailable
+                    allDNS.postValue(defaultList)
                     isLoading.postValue(false)
-                    errorMessage.postValue("error_internet")
                 }
         }
     }
 
-    fun saveDnsSetting(dns : ArrayList<DnsUI?>) {
+    private fun getDefaultDnsList(): List<DnsUI> {
+        val servers = listOf(
+            DnsUI("google", "Google Public DNS", "8.8.8.8, 8.8.4.4", ""),
+            DnsUI("cloudflare", "Cloudflare DNS", "1.1.1.1, 1.0.0.1", ""),
+            DnsUI("quad9", "Quad9 DNS", "9.9.9.9, 149.112.112.112", ""),
+            DnsUI("opendns", "OpenDNS", "208.67.222.222, 208.67.220.220", ""),
+            DnsUI("adguard", "AdGuard DNS", "94.140.14.14, 94.140.15.15", ""),
+            DnsUI("cleanbrowsing", "CleanBrowsing DNS", "185.228.168.9, 185.228.169.9", "")
+        )
+        return servers.map { dns ->
+            dns.copy(active = isDnsActive(dns.server))
+        }
+    }
+
+    private fun isDnsActive(server: String): Boolean {
+        val currentDns = BaseAppConfig.dnsServer
+        if (currentDns.isBlank()) return false
+        val currentIps = currentDns.split(",").map { it.trim() }.filter { it.isNotEmpty() }
+        val serverIps = server.split(",").map { it.trim() }.filter { it.isNotEmpty() }
+        return serverIps.any { currentIps.contains(it) }
+    }
+
+    private fun mergeDnsLists(defaultList: List<DnsUI>, remoteList: List<DnsUI>): List<DnsUI> {
+        val defaultIps = defaultList.flatMap { it.server.split(",").map { s -> s.trim() } }.toSet()
+        val uniqueRemote = remoteList.filter { remote ->
+            remote.server.split(",").map { it.trim() }.none { defaultIps.contains(it) }
+        }
+        return defaultList + uniqueRemote
+    }
+
+    fun saveDnsSetting(dns: ArrayList<DnsUI?>) {
         if (dns.isNotEmpty()) {
-            val savedItems = dns.filter { it?.active == true }.map { it?.server }
+            val savedItems = dns.filter { it?.active == true }.mapNotNull { it?.server }
             BaseAppConfig.dnsServer = savedItems.joinToString(", ")
         } else {
             BaseAppConfig.dnsServer = ""
@@ -93,7 +109,7 @@ class DNSViewModel @Inject constructor(private val apiService: ApiService) : Vie
         } catch (e: SSLHandshakeException) {
             Result.failure(Exception("SSL Handshake failed"))
         } catch (e: SocketTimeoutException) {
-            Result.failure(Exception("Connection timed out. Please try again later."))
+            Result.failure(Exception("Connection timed out"))
         } catch (e: UnknownHostException) {
             Result.failure(Exception("No internet connection or DNS resolution failed"))
         } catch (e: IOException) {

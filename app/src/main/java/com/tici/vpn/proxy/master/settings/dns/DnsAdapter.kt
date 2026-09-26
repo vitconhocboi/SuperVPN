@@ -1,11 +1,12 @@
 package com.tici.vpn.proxy.master.settings.dns
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import com.tici.vpn.proxy.master.databinding.AdapterDnsBinding
 import com.common.baseui.adapter.BaseAdapter
 import com.common.baseui.adapter.BaseViewHolder
 import com.common.baseui.extension.setOnClickNoDoubleClick
+import com.tici.vpn.proxy.master.databinding.AdapterDnsBinding
 import javax.inject.Inject
 
 class DnsAdapter @Inject constructor() : BaseAdapter<DnsUI, BaseViewHolder<DnsUI>>() {
@@ -19,22 +20,23 @@ class DnsAdapter @Inject constructor() : BaseAdapter<DnsUI, BaseViewHolder<DnsUI
         )
     }
 
-//    var onProxyClick: ((position: Int, item: ProxyUI) -> Unit)? = null
-
     inner class ProxyGroupViewHolder(private val mViewBinding: AdapterDnsBinding) :
         BaseViewHolder<DnsUI>(mViewBinding.root) {
         override fun bindData(position: Int, data: DnsUI) {
             mViewBinding.apply {
-//                ivFlag.setImageResource(Utils.getFlag(data.country))
+                ivFlag.visibility = View.GONE
                 tvTitle.text = data.name
-
                 tvProxyIp.text = data.server
-
                 lnMain.isSelected = data.active
+                ivSelect.isSelected = data.active
 
                 lnMain.setOnClickNoDoubleClick {
-                    data.active = !data.active
-                    notifyItemChanged(position)
+                    val wasActive = data.active
+                    datas.forEach { item ->
+                        item?.active = false
+                    }
+                    data.active = !wasActive
+                    notifyDataSetChanged()
                 }
             }
         }

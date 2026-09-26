@@ -1,23 +1,14 @@
 package com.tici.vpn.proxy.master.settings
 
-import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
-import androidx.core.view.isVisible
-import androidx.fragment.app.viewModels
 import com.common.baseui.BaseAppConfig
 import com.common.baseui.extension.setOnClickNoDoubleClick
-import com.core.baseui.BillingViewModel
 import com.core.baseui.fragment.BaseFragment
 import com.core.baseui.fragment.ScreenType
-import com.core.baseui.fragment.collectFlowOn
 import com.core.rate.RateInApp
-import com.core.utilities.setOnSingleClick
-import com.core.utilities.toast
-import com.core.utilities.util.toast.Toasty
 import com.google.firebase.Firebase
 import com.google.firebase.analytics.analytics
 import com.tici.vpn.proxy.master.R
@@ -25,21 +16,18 @@ import com.tici.vpn.proxy.master.databinding.FragmentSettingBinding
 import com.tici.vpn.proxy.master.dialog.DialogFeedback
 import com.tici.vpn.proxy.master.dialog.SettingSuccessDialog
 import com.tici.vpn.proxy.master.main.MainActivity
-import com.tici.vpn.proxy.master.required.inapp.InAppBillingViewModel
 import com.tici.vpn.proxy.master.required.preferences.CoreAppPreferences
 import com.tici.vpn.proxy.master.required.shortcut.AppScreenType
+import com.tici.vpn.proxy.master.settings.adsblock.AdsRuleReapplier
 import com.tici.vpn.proxy.master.utils.Navigator
 import com.tici.vpn.proxy.master.utils.shareApp
 import dagger.hilt.android.AndroidEntryPoint
-import com.tici.vpn.proxy.master.settings.adsblock.AdsRuleReapplier
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class SettingFragment() : BaseFragment<FragmentSettingBinding>() {
+class SettingFragment : BaseFragment<FragmentSettingBinding>() {
     @Inject
     lateinit var adsRuleReapplier: AdsRuleReapplier
-
-    private val inAppPurchasedViewModel: BillingViewModel by viewModels<InAppBillingViewModel>()
 
     @Inject
     lateinit var coreAppPreferences: CoreAppPreferences
@@ -54,11 +42,6 @@ class SettingFragment() : BaseFragment<FragmentSettingBinding>() {
         get() = AppScreenType.SettingFragment
 
     override fun initViews(savedInstanceState: Bundle?) {
-        val bitmap = BitmapFactory.decodeResource(resources, R.drawable.ic_setting_pro_bg)
-        val roundedDrawable = RoundedBitmapDrawableFactory.create(resources, bitmap)
-        roundedDrawable.cornerRadius = 20f  // Adjust your radius
-        initEvent()
-
         val isRTL = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_RTL
 
         binding.apply {
@@ -75,16 +58,8 @@ class SettingFragment() : BaseFragment<FragmentSettingBinding>() {
             rowAppProxy.setOnClickListener {
                 fetchInstalledApps()
             }
-            rowDns.setOnClickListener() {
+            rowDns.setOnClickListener {
                 (activity as? MainActivity)?.showDns()
-            }
-
-            btnPro.setOnClickListener {
-                Navigator.startPremiumActivity(requireContext())
-            }
-
-            rowRestore.setOnSingleClick {
-                inAppPurchasedViewModel.restorePurchased(false, true)
             }
 
             // Reflect the stored master switch; previously the row always rendered as off.
@@ -142,58 +117,6 @@ class SettingFragment() : BaseFragment<FragmentSettingBinding>() {
     }
 
     override fun handleObservable() {
-        collectFlowOn(inAppPurchasedViewModel.restorePurchaseState) {
-            it?.let {
-                if (purchasePreferences.isUserVip()) {
-                    Toasty.success(requireContext(), this.getString(R.string.text_restore_member))
-                        .show()
-                } else {
-                    Toasty.normal(
-                        requireContext(),
-                        this.getString(R.string.text_restore_member_failed)
-                    ).show()
-                }
-                updateViewVip()
-            }
-        }
-
-        collectFlowOn(inAppPurchasedViewModel.vipState) {
-            updateViewVip()
-        }
-    }
-
-    private fun initEvent() {
-        binding.viewClickBgClVip.setOnSingleClick {
-            if (purchasePreferences.isProByYear) {
-                toast(
-                    String.format(
-                        "%s %s!",
-                        getString(R.string.text_congrats_to_join),
-                        getString(R.string.text_name_pro),
-                    ), Toasty.INFO
-                )
-            } else {
-                Navigator.startPremiumActivity(requireContext())
-            }
-        }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        updateViewVip()
-    }
-
-
-    fun updateViewVip() {
-        if (isAdded && view != null) {
-            if (purchasePreferences.isUserVip()) {
-                binding.bgClIsVipMember.isVisible = true
-                binding.bgClNoneVipMember.isVisible = false
-            } else {
-                binding.bgClIsVipMember.isVisible = false
-                binding.bgClNoneVipMember.isVisible = true
-            }
-        }
     }
 
     private fun fetchInstalledApps() {
@@ -201,11 +124,9 @@ class SettingFragment() : BaseFragment<FragmentSettingBinding>() {
     }
 
     private fun openAppProxy() {
-//        binding.progress.setVisible(true)
         (activity as? MainActivity)?.showAppProxy()
     }
 
     fun showProgress(status: Boolean) {
-//        binding.progress.setVisible(status)
     }
 }
